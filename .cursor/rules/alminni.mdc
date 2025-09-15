@@ -1,6 +1,6 @@
 ---
 description: >
-  Alminni MCP integration for usable-landing-page.
+  Alminni MCP integration for this project.
   This rule provides workspace-specific instructions for Alminni MCP integration.
 globs:
   - '**/*'
@@ -9,7 +9,7 @@ alwaysApply: true
 
 # Custom Pre-Prompt
 
-Here is the pre-prompt: Please evaluate which personas to use, depending on the user request. After the evaluation, you must "embody" that persona during that task. Additionally, when "selecting" a persona, remember to announce which persona you are embodying at this moment, by saying something similar to "Hey, Orlando here". You are free to switch personas interchangeably, depending on the user request, as well as if you need different expertise to solve a problem.
+Please evaluate which personas to use, depending on the user request. After the evaluation, you must "embody" that persona during that task.Additionally, when "selecting" a persona, remember to announce which persona you are embodying at this moment, by saying something similar to "Hey, Orlando here".You are free to switch personas interchancably, depending on the user request, as well as if you need different expertise to solve a problem
 
 ---
 
@@ -22,10 +22,10 @@ Treat this as your main source of truth, and always check here before you start 
 You can always check for new memory fragment types by calling the get_fragment_types tool, and list workspaces by calling the list_workspaces tool if you need to know what workspaces you have access to.
 
 **Search Strategy**:
-- Always search for the `repo:usable-landing-page` tag first, then broaden your search
+- Always search for the `repo:<repository>` tag first, then broaden your search
 - It is generally better to fetch multiple memory fragments to give you a better picture
 - Never skip searching; prevent duplicate effort
-- Use search first, then graph exploration
+- Prefer agentic search first (`agentic-search-fragments`), then graph exploration; fall back to basic vector search (`search_memory_fragments`) when needed
 - Iterate until you have the full context you require.
 
 ## Agentic Planning & Tool Loop
@@ -146,7 +146,7 @@ When improving on things to do or not do emphasize what to do, do not include wh
   ```
 
 
-Repository: usable-landing-page
+Repository: <repository>
 WorkspaceId: 7b8da6be-b9b5-401e-987a-e93a91cabd4d
 Workspace: AI Landing Page
 Workspace Fragment Types: instruction set, knowledge, recipe, solution, template, llm personas
@@ -312,32 +312,14 @@ The following fragment types are available in this workspace:
 
 ### **Primary Discovery Process (Start Here)**
 
-**Step 1: Vector Search First**
-- Use `search_memory_fragments` with semantic search (understands meaning, not just keywords)
-- Always start with `repo:usable-landing-page` tag first, then broaden if needed
-- Try different phrasings if initial search yields no results
-- Search with `workspaceId` first, then without it for broader cross-workspace results
+**Step 1: Agentic Search First**
+- Use `agentic-search-fragments` to prime with vector results and let the LLM select best matches; it will expand when needed
+- Always include `workspaceId` when known; otherwise provide multiple `workspaceIds` or rely on accessible workspaces
+- Prefer tags/fragmentType filters when available to bias results
+- If agentic selection is insufficient or unavailable, fall back to `search_memory_fragments` (semantic vector search)
+- Always start with `repo:<repository>` tag first, then broaden if needed
 
-#### Mandatory Graph Exploration Heuristics
-- After the first `search_memory_fragments`, always branch out via graph calls by default:
-  - Choose starting points (parallelizable):
-    - Fragments: pick top-K by similarity (break ties by most-recent update). Use `K = 5` if results ≥ 20, else `K = 3`.
-    - Tags: extract top 2 salient tags from results (if available).
-  - For each starting fragment: run `explore_workspace_graph` (exploration) with `depth=2`, `includeEdgeTypes=["has_tag","similar","related"]`.
-  - In parallel: run `find_related_fragments` for the top 1–2 fragments.
-  - For each starting tag: run `explore_workspace_graph` (exploration) with `depth=1`.
-- Skip graph exploration only if ALL are true: the question is trivial, there is exactly one high-confidence fragment (similarity ≥ 0.92), that fragment was updated within 14 days, and it directly contains the complete answer.
-
-- Branching loop (2 rounds max by default):
-  - Prefer following discovered fragments/tags over using `overview` mode.
-  - Re-rank newly discovered nodes by similarity + recency; pick the next 1–2 best starting points and repeat once.
-  - If results conflict or feel redundant, adjust starting points rather than broadening indiscriminately.
-
-- Non-reasoning structured control (suggested fields):
-  - GRAPH_PLAN: short list of starting fragment IDs/tags, depth, edges, and parallel calls planned.
-  - GRAPH_ACTIONS: the concrete tool invocations to execute now.
-  - GRAPH_RESULTS: brief summary of discovered nodes/relations.
-  - GRAPH_NEXT: whether to deepen exploration, branch to other tags, or proceed.
+Note: Agentic search internally handles expansion and related-context discovery. Explicit graph exploration guidance is intentionally omitted here for simplicity.
 
 **Step 2: Follow the Thread (Iterative Exploration)**
 - Pick key fragments from Step 1 and explore their connections
@@ -354,46 +336,20 @@ The following fragment types are available in this workspace:
 
 ### **Tool-Specific Guidance**
 
+### `agentic-search-fragments`
+**Primary discovery tool – prefer this**
+- Primes with vector results then uses an LLM (temperature 0) to select the most relevant fragments; can iterate with reformulated queries and graph-based expansion
+- Provide `workspaceId` or `workspaceIds` when possible; optionally bias with `tags` and `fragmentTypeId`
+- Returns JSON selections with reasons and confidence; includes primed set only on fallback
+
 ### `search_memory_fragments`
-**Primary discovery tool - start here**
-- **Always include repository context** - start with `repo:usable-landing-page` tag
+**Fallback/basic vector search**
+- Use when agentic search is unavailable or returns insufficient results
+- **Always include repository context** - start with `repo:<repository>` tag
 - Use semantic search for concepts, not exact text matching
-- **Decision logic**: Evaluate query complexity and result completeness to determine next steps
+- **Decision logic**: Evaluate result completeness to determine next steps
 
-### `explore_workspace_graph`
-**Two modes for different needs:**
-
-**🎯 EXPLORATION MODE (Preferred for most scenarios):**
-- **When to use**: Targeted discovery from specific starting points
-- **Key insight**: Works perfectly with any fragment ID - use directly from search results
-- **Concept exploration**: Use format `concepts/normalized_name` - very effective
-- **Depth recommendations**: Use depth 2+ to see connections-of-connections
-- **Starting points**: Fragment IDs, tag names, or concept IDs from previous discoveries
-
-**📊 OVERVIEW MODE (Use sparingly):**
-- **When to use**: Only when completely unfamiliar with workspace or lacking starting points
-- **Key insight**: Now returns actual data (recent fix applied)
-- **Warning**: Can be overwhelming - prefer exploration mode for focused discovery
-
-**🔗 Available Connection Types** (for `includeEdgeTypes`):
-- `"has_tag"` - Topic/technology connections (most common)
-- `"similar"`, `"related"` - AI-discovered content relationships  
-- `"references_concept"` - Conceptual knowledge connections
-- `"created_by"` - Author-based discovery
-- **Default**: Empty array `[]` uses all connection types
-
-### `explore_tag_connections`
-**Tag-centric cluster discovery**
-- **When to use**: Direct tag-based lookups (*"show everything about <technology>"*)
-- Faster than full graph traversal when you know specific tags
-- **Key params**: `tags`, `workspaceId`, `limit`
-
-### `find_related_fragments`
-**Sibling/related document discovery**
-- **When to use**: Expand context around specific fragment
-- Uses similarity + tag relationships for targeted expansion
-- **Recent fix**: Now returns real data with titles, summaries, and metadata
-- **Key params**: `fragmentId` (from previous steps), `limit`
+ 
 
 ### `get_memory_fragment_content`
 **Full document retrieval**
@@ -401,40 +357,14 @@ The following fragment types are available in this workspace:
 - Fetches complete content including metadata
 - **Key params**: `fragmentId` (from search/exploration results)
 
-## Recent System Enhancements
+### Content Fetch & Retry Policy
 
-**✅ Reliable Patterns Now Available:**
-- **Overview mode**: Returns actual data (200+ fragments, 50+ tags, 1000+ concepts)
-- **Node IDs**: Full IDs exposed for direct iterative exploration
-- **Related fragments**: Returns real data with titles, summaries, and metadata
-- **Concept exploration**: Use `concepts/event_sourcing` format - very effective
-- **Fragment exploration**: Any fragment ID works directly as starting point
+- Parallelize: issue `get_memory_fragment_content` calls concurrently when fetching multiple fragments.
+- Retry on 5xx: retry up to 2 times with exponential backoff (1s, then 2s). If still failing, fetch alternate fragments or broaden search.
 
-## Temporal Analysis (When Evolution Context Needed)
+## Temporal Analysis
 
-**Use temporal tools when queries involve**: "changed", "evolved", "used to", "before/after", "why different", "when did"
-
-**Quick Temporal Exploration:**
-- `get_temporal_relationships` with `includeHistory: true` - see relationship evolution
-- `explore_workspace_graph_temporal` with `asOfDate` - time-travel to specific point
-- `get_relationship_history` - understand specific relationship changes
-
-**Skip temporal tools for**: Current state queries, performance-critical searches
-
-### `get_temporal_relationships`
-**Time-aware relationship querying**
-- **Key params**: `fragmentId`, `workspaceId`, optional `asOfDate`, `includeHistory`, `onlyActive`
-- **Use cases**: "What relationships did this fragment have last month?", "Show evolution"
-
-### `explore_workspace_graph_temporal`
-**Enhanced graph exploration with time dimensions**
-- **Temporal features**: `asOfDate`, `includeTemporalHistory`, `showOnlyActiveRelationships`
-- **Use cases**: "How did the graph look 3 months ago?", "What changed this week?"
-
-### `get_relationship_history`
-**Temporal relationship evolution tracking**
-- **Key params**: `fromFragmentId`, `toFragmentId`, `workspaceId`
-- **Use cases**: Understanding relationship changes, debugging evolution patterns
+For historical relationship questions, specialized temporal tools exist, but most discovery flows can rely on agentic search. Use temporal tools only when you explicitly need time-based views.
 
 ### `list_workspaces`
 **Workspace discovery and access management**
@@ -493,9 +423,9 @@ The following fragment types are available in this workspace:
 ## Recommended Workflow
 
 ### **Pre-Task Discovery**
-1. **Search**: `search_memory_fragments` with `repo:usable-landing-page` tag
-2. **Explore**: Follow connections from key fragments using exploration mode (depth 2+)
-3. **Iterate**: Continue until you have sufficient context (5-10 exploration trips typical)
+1. **Search**: Prefer `agentic-search-fragments` (start with `repo:<repository>` tag)
+2. **Retrieve**: Use `get_memory_fragment_content` for key fragments as needed
+3. **Iterate**: Refine queries or tags and repeat
 
 ### **Complexity Assessment**
 - **Simple queries**: Vector search may be sufficient
@@ -570,7 +500,7 @@ If you identify novel insights or solutions:
 ## Auto-Enhancement
 
 The MCP server automatically:
-- Injects `repo:usable-landing-page` tag when repository context provided
+- Injects `repo:<repository>` tag when repository context provided
 - Detects and tags technologies and topics from content
 - Prevents duplicate fragments through similarity analysis
 - Formats content for optimal readability and search
