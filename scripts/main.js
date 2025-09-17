@@ -29,6 +29,7 @@ class UsableApp {
     this.setupIntersectionObserver();
     this.setupParallaxEffects();
     this.setupHoverEffects();
+    this.setupUseCasesTabs();
   }
   
   /**
@@ -106,7 +107,7 @@ class UsableApp {
   }
   
   /**
-   * Setup FAQ accordion functionality
+   * Setup FAQ accordion functionality with smooth animations
    */
   setupFAQAccordion() {
     this.faqItems.forEach(item => {
@@ -114,6 +115,12 @@ class UsableApp {
       const content = item.querySelector('.faq__answer');
       
       if (!summary || !content) return;
+      
+      // Set initial state
+      content.style.maxHeight = '0px';
+      content.style.opacity = '0';
+      content.style.paddingTop = '0px';
+      content.style.paddingBottom = '0px';
       
       // Add click event to summary
       summary.addEventListener('click', (e) => {
@@ -124,18 +131,56 @@ class UsableApp {
         // Close all other FAQ items
         this.faqItems.forEach(otherItem => {
           if (otherItem !== item) {
-            otherItem.removeAttribute('open');
+            this.closeFAQItem(otherItem);
           }
         });
         
         // Toggle current item
         if (isOpen) {
-          item.removeAttribute('open');
+          this.closeFAQItem(item);
         } else {
-          item.setAttribute('open', '');
+          this.openFAQItem(item);
         }
       });
     });
+  }
+  
+  /**
+   * Open FAQ item with smooth animation
+   */
+  openFAQItem(item) {
+    const content = item.querySelector('.faq__answer');
+    if (!content) return;
+    
+    item.setAttribute('open', '');
+    
+    // Get the natural height
+    const naturalHeight = content.scrollHeight;
+    
+    // Animate to natural height
+    content.style.maxHeight = naturalHeight + 'px';
+    content.style.opacity = '1';
+    content.style.paddingTop = '0px';
+    content.style.paddingBottom = '80px';
+  }
+  
+  /**
+   * Close FAQ item with smooth animation
+   */
+  closeFAQItem(item) {
+    const content = item.querySelector('.faq__answer');
+    if (!content) return;
+    
+    // Animate to closed state
+    content.style.maxHeight = '0px';
+    content.style.opacity = '0';
+    content.style.paddingTop = '0px';
+    content.style.paddingBottom = '0px';
+    
+    // Remove open attribute after animation
+    setTimeout(() => {
+      item.removeAttribute('open');
+    }, 400);
   }
   
   /**
@@ -327,6 +372,58 @@ class UsableApp {
       const scrollPercent = (scrollTop / docHeight) * 100;
       
       progressBar.style.width = scrollPercent + '%';
+    });
+  }
+  
+  /**
+   * Setup use cases tab functionality
+   */
+  setupUseCasesTabs() {
+    const tabs = document.querySelectorAll('.use-cases__tab');
+    const panels = document.querySelectorAll('.use-cases__panel');
+    const content = document.querySelector('.use-cases__content');
+    
+    if (!tabs.length || !panels.length || !content) return;
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetTab = tab.getAttribute('data-tab');
+        const targetPanel = document.getElementById(targetTab);
+        
+        // Don't do anything if clicking the same tab
+        if (tab.classList.contains('use-cases__tab--active')) return;
+        
+        // Add loading state to prevent multiple clicks
+        tab.style.pointerEvents = 'none';
+        
+        // Get current height
+        const currentHeight = content.scrollHeight;
+        
+        // Remove active class from all tabs and panels
+        tabs.forEach(t => t.classList.remove('use-cases__tab--active'));
+        panels.forEach(panel => panel.classList.remove('use-cases__panel--active'));
+        
+        // Add active class to clicked tab
+        tab.classList.add('use-cases__tab--active');
+        
+        // Show the target panel
+        targetPanel.classList.add('use-cases__panel--active');
+        
+        // Get new height after content change
+        const newHeight = content.scrollHeight;
+        
+        // Animate height change using max-height
+        content.style.maxHeight = currentHeight + 'px';
+        content.offsetHeight; // Force reflow
+        
+        content.style.maxHeight = newHeight + 'px';
+        
+        // Clean up after animation
+        setTimeout(() => {
+          content.style.maxHeight = 'none';
+          tab.style.pointerEvents = 'auto';
+        }, 300);
+      });
     });
   }
 }

@@ -6,6 +6,12 @@
     <title>Usable - Shared Memory for Development Teams</title>
     <meta name="description" content="Usable is the shared memory that development teams need. Capture architectural decisions, code patterns, debugging solutions, and team knowledge—then find it instantly when you need it.">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Usable - Logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Usable - Logo.png">
+    <link rel="apple-touch-icon" href="assets/images/Usable - Logo.png">
+    <link rel="shortcut icon" href="assets/images/Usable - Logo.png">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,13 +57,14 @@
     <nav class="nav">
             <div class="nav__container">
                 <a href="#" class="nav__logo">
-                    <img src="assets/images/Alminni - Logo - transparent.png" alt="Usable" class="nav__logo-img">
-                    <span class="nav__logo-text">Usable.dev</span>
+                    <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="nav__logo-img">
+                    <span class="nav__logo-text">Usable</span>
                 </a>
                 
                 <div class="nav__menu">
-                    <a href="#features" class="nav__link">Features</a>
+                    <a href="#use-cases" class="nav__link">Use Cases</a>
                     <a href="#how-it-works" class="nav__link">How It Works</a>
+                    <a href="#features" class="nav__link">Features</a>
                     <a href="#pricing" class="nav__link">Pricing</a>
                     <a href="#faq" class="nav__link">FAQ</a>
                 </div>
@@ -107,7 +114,403 @@
                 </div>
             </div>
             <div class="hero__visual">
-                    <img src="assets/images/alminni-mascot.png" alt="Usable Nudibranch Mascot" class="hero__mascot">
+                    <img src="assets/images/usable-mascot.png" alt="Usable Nudibranch Mascot" class="hero__mascot">
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="section use-cases">
+        <div class="container">
+            <div class="section__header">
+                <p class="section__subtitle">Real-world use cases</p>
+                <h2 class="section__title">How Usable turns team knowledge into shipped work</h2>
+                <p class="section__description">
+                    Pick a role to follow the step-by-step flow with a preview.
+                </p>
+            </div>
+            
+            <div class="use-cases__container">
+                <!-- Tab Navigation -->
+                <div class="use-cases__tabs">
+                    <button class="use-cases__tab use-cases__tab--active" data-tab="engineer">
+                        Software Engineer
+                    </button>
+                    <button class="use-cases__tab" data-tab="devops">
+                        DevOps
+                    </button>
+                    <button class="use-cases__tab" data-tab="team">
+                        Team
+                    </button>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="use-cases__content">
+                    <!-- Software Engineer Tab -->
+                    <div class="use-cases__panel use-cases__panel--active" id="engineer">
+                        <div class="use-cases__grid">
+                            <div class="use-cases__card">
+                                <div class="use-cases__card-header">
+                                    <h3 class="use-cases__card-title">Document and Implement Internal Library</h3>
+                                </div>
+                                <div class="use-cases__card-content">
+                                    <ol class="use-cases__steps">
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">1</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Author library docs</h4>
+                                                <p class="use-cases__step-description">
+                                                    You have a private library without documentation. In the repo, ask Usable to create a documentation fragment, focusing on key feature X or Y.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">2</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Consumer asks to implement</h4>
+                                                <p class="use-cases__step-description">
+                                                    Another developer asks their agent to implement the library in their app.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">3</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Agent finds docs</h4>
+                                                <p class="use-cases__step-description">
+                                                    The agent searches Usable, finds the documentation fragment, and understands the API and examples.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">4</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">First-try implementation</h4>
+                                                <p class="use-cases__step-description">
+                                                    It implements the library without hallucinations and wires up the key feature.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">5</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Auto-linked knowledge</h4>
+                                                <p class="use-cases__step-description">
+                                                    After merge, the agent documents the integration. Usable links the docs and implementation via tags and concepts.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div class="use-cases__demo">
+                                <div class="use-cases__demo-header">
+                                    <div class="use-cases__demo-dots">
+                                        <span class="use-cases__demo-dot use-cases__demo-dot--red"></span>
+                                        <span class="use-cases__demo-dot use-cases__demo-dot--yellow"></span>
+                                        <span class="use-cases__demo-dot use-cases__demo-dot--green"></span>
+                                    </div>
+                                    <span class="use-cases__demo-title">.repo/alminni – engineer.tsx</span>
+                                </div>
+                                <div class="use-cases__demo-content">
+                                    <div class="use-cases__demo-code">
+                                        <div class="use-cases__demo-line">
+                                            <span class="use-cases__demo-prompt">repo: internal-lib</span>
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            $ create documentation fragment focusing on feature X
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            → Usable: created "Internal Lib – Feature X" (type: knowledge)
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            $ implement internal-lib feature X
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            → Agent: found fragment, generating edits…
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            → PR ready. Linked with tags: library, feature-x
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- DevOps Tab -->
+                    <div class="use-cases__panel" id="devops">
+                        <div class="use-cases__grid">
+                            <div class="use-cases__card">
+                                <div class="use-cases__card-header">
+                                    <h3 class="use-cases__card-title">Provision Databases with Secure Crossplane CRDs</h3>
+                                </div>
+                                <div class="use-cases__card-content">
+                                    <ol class="use-cases__steps">
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">1</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Develop secure CRDs</h4>
+                                                <p class="use-cases__step-description">
+                                                    DevOps engineers build Crossplane CRDs encoding company best practices for secure Postgres/MySQL across supported clouds.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">2</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Document CRDs & spec</h4>
+                                                <p class="use-cases__step-description">
+                                                    Ask the LLM to create fragments that document the CRD itself (schema/fields, validation, examples) and also extract best practices and security constraints.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">3</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Provision database</h4>
+                                                <p class="use-cases__step-description">
+                                                    A developer asks the agent to set up a Postgres database on AWS.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">4</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Apply best-practice profile</h4>
+                                                <p class="use-cases__step-description">
+                                                    The agent finds the relevant fragments (e.g., Azure/AWS profiles), generates YAML, and runs kubectl to apply the CRD configuration.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">5</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Capture issues for reuse</h4>
+                                                <p class="use-cases__step-description">
+                                                    Any issues discovered during provisioning are captured as solution fragments for future sessions.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div class="use-cases__demo">
+                                <div class="use-cases__demo-header">
+                                    <div class="use-cases__demo-dots">
+                                        <span class="use-cases__demo-dot use-cases__demo-dot--red"></span>
+                                        <span class="use-cases__demo-dot use-cases__demo-dot--yellow"></span>
+                                        <span class="use-cases__demo-dot use-cases__demo-dot--green"></span>
+                                    </div>
+                                    <span class="use-cases__demo-title">provision.yaml</span>
+                                </div>
+                                <div class="use-cases__demo-content">
+                                    <div class="use-cases__demo-code">
+                                        <div class="use-cases__demo-line">
+                                            <span class="use-cases__demo-prompt"># Fragment: PostgresInstance CRD (excerpt)</span>
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            apiVersion: apiextensions.k8s.io/v1
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            kind: CustomResourceDefinition
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            metadata:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;name: postgresinstances.database.example
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            spec:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;group: database.example
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;names:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;kind: PostgresInstance
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;versions:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;- name: v1
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;schema:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;openAPIV3Schema:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spec:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;profile: enum[aws-secure, azure-secure, gcp-secure]
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storageGiB: integer
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;highAvailability: boolean
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            # Example resource
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            apiVersion: database.example/v1
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            kind: PostgresInstance
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            metadata:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;name: app-prod
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            spec:
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            &nbsp;&nbsp;profile: aws-secure
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            # $ kubectl apply -f crossplane/app-db.yaml
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            # → Applied secure profile; docs + spec linked in fragment
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Tab -->
+                    <div class="use-cases__panel" id="team">
+                        <div class="use-cases__grid">
+                            <div class="use-cases__card">
+                                <div class="use-cases__card-header">
+                                    <h3 class="use-cases__card-title">Onboard Teams and Scale Standards</h3>
+                                </div>
+                                <div class="use-cases__card-content">
+                                    <ol class="use-cases__steps">
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">1</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Teach the LLM</h4>
+                                                <p class="use-cases__step-description">
+                                                    Team members teach the LLM best practices, tech stack, and patterns; the LLM creates learnings as fragments.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">2</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">Onboard fast</h4>
+                                                <p class="use-cases__step-description">
+                                                    New members scaffold and ship code guided by the agent, with comparisons to team standards.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="use-cases__step">
+                                            <div class="use-cases__step-number">3</div>
+                                            <div class="use-cases__step-content">
+                                                <h4 class="use-cases__step-title">10× delivery</h4>
+                                                <p class="use-cases__step-description">
+                                                    Existing members move faster with the team's combined knowledge of services, libraries, and deployments.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            
+                            <div class="use-cases__demo">
+                                <div class="use-cases__demo-header">
+                                    <div class="use-cases__demo-dots">
+                                        <span class="use-cases__demo-dot use-cases__demo-dot--red"></span>
+                                        <span class="use-cases__demo-dot use-cases__demo-dot--yellow"></span>
+                                        <span class="use-cases__demo-dot use-cases__demo-dot--green"></span>
+                                    </div>
+                                    <span class="use-cases__demo-title">onboarding.md</span>
+                                </div>
+                                <div class="use-cases__demo-content">
+                                    <div class="use-cases__demo-code">
+                                        <div class="use-cases__demo-line">
+                                            <span class="use-cases__demo-prompt"># Team Onboarding Checklist</span>
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            - Install dependencies
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            - Connect IDE to Usable
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            - Read 'Frontend Standards' fragment
+                                        </div>
+                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
+                                            - Ask agent: scaffold dashboard page
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="how-it-works__container">
+            <div class="section__header">
+                <h2 class="section__title">How it works</h2>
+                <p class="section__description">
+                    Get started with Usable in minutes. No complex setup required.
+                </p>
+            </div>
+            
+            <div class="how-it-works__steps">
+                <div class="step">
+                    <div class="step__number">1</div>
+                    <h3 class="step__title">Connect Your Tools</h3>
+                    <p class="step__description">
+                        Integrate with your existing development tools and platforms. 
+                        Usable automatically captures knowledge from your workflows.
+                    </p>
+                </div>
+                
+                <div class="step">
+                    <div class="step__number">2</div>
+                    <h3 class="step__title">Start Capturing</h3>
+                    <p class="step__description">
+                        Begin documenting decisions, solutions, and insights. 
+                        Usable learns from every interaction and builds your team's memory.
+                    </p>
+                </div>
+                
+                <div class="step">
+                    <div class="step__number">3</div>
+                    <h3 class="step__title">Find Anything Instantly</h3>
+                    <p class="step__description">
+                        Search your team's collective knowledge with natural language. 
+                        Get relevant answers and insights in seconds.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -200,63 +603,9 @@
                     </p>
                 </div>
                 
-                <div class="feature">
-                    <div class="feature__icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="feature__title">Enterprise Security</h3>
-                    <p class="feature__description">
-                        Bank-level security with SOC 2 compliance, end-to-end encryption, 
-                        and granular access controls to keep your knowledge safe.
-                    </p>
-                </div>
             </div>
         </div>
     </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="how-it-works__container">
-            <div class="section__header">
-                <h2 class="section__title">How it works</h2>
-                <p class="section__description">
-                    Get started with Alminni in minutes. No complex setup required.
-                </p>
-            </div>
-            
-            <div class="how-it-works__steps">
-                <div class="step">
-                    <div class="step__number">1</div>
-                    <h3 class="step__title">Connect Your Tools</h3>
-                    <p class="step__description">
-                        Integrate with your existing development tools and platforms. 
-                        Usable automatically captures knowledge from your workflows.
-                    </p>
-                </div>
-                
-                <div class="step">
-                    <div class="step__number">2</div>
-                    <h3 class="step__title">Start Capturing</h3>
-                    <p class="step__description">
-                        Begin documenting decisions, solutions, and insights. 
-                        Usable learns from every interaction and builds your team's memory.
-                    </p>
-                </div>
-                
-                <div class="step">
-                    <div class="step__number">3</div>
-                    <h3 class="step__title">Find Anything Instantly</h3>
-                    <p class="step__description">
-                        Search your team's collective knowledge with natural language. 
-                        Get relevant answers and insights in seconds.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
@@ -336,13 +685,13 @@
             <div class="section__header">
                 <h2 class="section__title">Frequently asked questions</h2>
                 <p class="section__description">
-                    Everything you need to know about Alminni.
+                    Everything you need to know about Usable.
                 </p>
             </div>
             
             <div class="faq__list">
                 <details class="faq__item">
-                    <summary class="faq__question">How does Alminni work?</summary>
+                    <summary class="faq__question">How does Usable work?</summary>
                     <div class="faq__answer">
                         Usable uses AI to capture, compress, and organize your team's knowledge. 
                         It learns from your interactions and builds a searchable memory that grows 
@@ -409,8 +758,8 @@
             <div class="footer__main">
                 <div class="footer__brand">
                     <a href="#" class="footer__logo">
-                        <img src="assets/images/Alminni - Logo - transparent.png" alt="Usable" class="footer__logo-img">
-                        <span class="footer__logo-text">Usable.dev</span>
+                        <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="footer__logo-img">
+          <span class="footer__logo-text">Usable</span>
                     </a>
                     <p class="footer__tagline">
                         The shared memory that development teams need. Capture, find, and share 
@@ -453,6 +802,7 @@
                 <div class="footer__links">
                     <div class="footer__section">
                         <h3 class="footer__section-title">Product</h3>
+                        <a href="#use-cases" class="footer__link">Use Cases</a>
                         <a href="#features" class="footer__link">Features</a>
                         <a href="#pricing" class="footer__link">Pricing</a>
                         <a href="/api-docs" class="footer__link">API Docs</a>
