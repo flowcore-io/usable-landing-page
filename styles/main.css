@@ -2901,6 +2901,14 @@ a:hover {
   }
 }
 
+/* Hero Mascot Mobile (up to 767px) */
+@media (max-width: 767px) {
+  .hero__mascot {
+    max-height: 200px !important;
+    transform: translateY(-20px) !important;
+  }
+}
+
 /* Footer Mobile (up to 767px) */
 @media (max-width: 767px) {
   .footer {
