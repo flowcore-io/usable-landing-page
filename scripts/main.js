@@ -7,7 +7,9 @@ class UsableApp {
   constructor() {
     this.mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     this.nav = document.querySelector('.nav');
+    this.mobileMenu = document.querySelector('.nav__menu--mobile');
     this.navLinks = document.querySelectorAll('.nav__link');
+    this.mobileNavLinks = document.querySelectorAll('.nav__link--mobile');
     this.faqItems = document.querySelectorAll('.faq__item');
     this.observerOptions = {
       threshold: 0.1,
@@ -36,21 +38,28 @@ class UsableApp {
    * Setup mobile menu functionality
    */
   setupMobileMenu() {
-    if (!this.mobileMenuToggle) return;
+    if (!this.mobileMenuToggle || !this.mobileMenu) return;
     
     this.mobileMenuToggle.addEventListener('click', () => {
       const isExpanded = this.mobileMenuToggle.getAttribute('aria-expanded') === 'true';
       this.mobileMenuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
       
       // Toggle mobile menu visibility
-      this.nav.classList.toggle('nav--mobile-open');
+      this.mobileMenu.classList.toggle('active');
       
       // Animate hamburger to X
       this.mobileMenuToggle.classList.toggle('mobile-menu-toggle--active');
+      
+      // Prevent body scroll when menu is open (from memory fragment solution)
+      if (!isExpanded) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
     });
     
-    // Close mobile menu when clicking on nav links
-    this.navLinks.forEach(link => {
+    // Close mobile menu when clicking on mobile nav links
+    this.mobileNavLinks.forEach(link => {
       link.addEventListener('click', () => {
         this.closeMobileMenu();
       });
@@ -58,19 +67,27 @@ class UsableApp {
     
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
-      if (!this.nav.contains(e.target)) {
+      if (!this.nav.contains(e.target) && !this.mobileMenu.contains(e.target)) {
         this.closeMobileMenu();
       }
     });
+    
+    // Theme toggle is now handled by ThemeManager class
   }
   
   /**
    * Close mobile menu
    */
   closeMobileMenu() {
-    this.nav.classList.remove('nav--mobile-open');
-    this.mobileMenuToggle.classList.remove('mobile-menu-toggle--active');
-    this.mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    if (this.mobileMenu) {
+      this.mobileMenu.classList.remove('active');
+    }
+    if (this.mobileMenuToggle) {
+      this.mobileMenuToggle.classList.remove('mobile-menu-toggle--active');
+      this.mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    }
+    // Restore body scroll when menu is closed (from memory fragment solution)
+    document.body.style.overflow = '';
   }
   
   /**

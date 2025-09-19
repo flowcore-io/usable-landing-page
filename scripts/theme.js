@@ -6,7 +6,7 @@
 
 class ThemeManager {
   constructor() {
-    this.themeToggle = document.querySelector('.theme-toggle');
+    this.themeToggles = document.querySelectorAll('.theme-toggle');
     this.htmlElement = document.documentElement;
     this.currentTheme = this.getStoredTheme() || this.getSystemPreference();
     
@@ -20,8 +20,10 @@ class ThemeManager {
     // Set initial theme
     this.setTheme(this.currentTheme);
     
-    // Add event listeners
-    this.themeToggle?.addEventListener('click', () => this.toggleTheme());
+    // Add event listeners to all theme toggles
+    this.themeToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => this.toggleTheme());
+    });
     
     // Listen for system preference changes
     this.watchSystemPreference();
@@ -70,29 +72,33 @@ class ThemeManager {
    * Update toggle button state
    */
   updateToggleState() {
-    if (!this.themeToggle) return;
+    if (!this.themeToggles.length) return;
     
     const isDark = this.currentTheme === 'dark';
-    this.themeToggle.setAttribute('aria-pressed', isDark.toString());
     
-    // Update button text for screen readers
-    this.themeToggle.setAttribute('aria-label', 
-      isDark ? 'Switch to light theme' : 'Switch to dark theme'
-    );
-    
-    // Update icon visibility
-    const sunIcon = this.themeToggle.querySelector('.theme-toggle__icon--sun');
-    const moonIcon = this.themeToggle.querySelector('.theme-toggle__icon--moon');
-    
-    if (sunIcon && moonIcon) {
-      if (isDark) {
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-      } else {
-        sunIcon.style.display = 'block';
-        moonIcon.style.display = 'none';
+    // Update all theme toggles
+    this.themeToggles.forEach(toggle => {
+      toggle.setAttribute('aria-pressed', isDark.toString());
+      
+      // Update button text for screen readers
+      toggle.setAttribute('aria-label', 
+        isDark ? 'Switch to light theme' : 'Switch to dark theme'
+      );
+      
+      // Update icon visibility
+      const sunIcon = toggle.querySelector('.theme-toggle__icon--sun');
+      const moonIcon = toggle.querySelector('.theme-toggle__icon--moon');
+      
+      if (sunIcon && moonIcon) {
+        if (isDark) {
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'block';
+        } else {
+          sunIcon.style.display = 'block';
+          moonIcon.style.display = 'none';
+        }
       }
-    }
+    });
   }
   
   /**
