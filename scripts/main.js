@@ -219,28 +219,27 @@ class UsableApp {
   }
   
   /**
-   * Setup intersection observer for animations
+   * Setup intersection observer for scroll animations
    */
   setupIntersectionObserver() {
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-          
-          // Add staggered animation for child elements
-          const animatedChildren = entry.target.querySelectorAll('[data-animate]');
-          animatedChildren.forEach((child, index) => {
-            setTimeout(() => {
-              child.classList.add('animate-in');
-            }, index * 100);
-          });
+          entry.target.classList.add('animate');
         }
       });
-    }, this.observerOptions);
+    }, observerOptions);
     
-    // Observe elements with animation classes
-    const animatedElements = document.querySelectorAll('.feature-card, .audience-card, .step-card, .pricing-card');
-    animatedElements.forEach(el => observer.observe(el));
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
   }
   
   /**

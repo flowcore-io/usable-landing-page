@@ -1292,7 +1292,6 @@ a:hover {
   height: auto;
   max-height: 400px;
   filter: drop-shadow(0 10px 30px rgba(52, 124, 191, 0.15));
-  animation: scaleIn 1.2s ease-out 0.6s both;
 }
 
 /* ===================================
@@ -2905,7 +2904,6 @@ a:hover {
 @media (max-width: 767px) {
   .hero__mascot {
     max-height: 200px !important;
-    transform: translateY(-20px) !important;
   }
 }
 
@@ -5246,5 +5244,124 @@ a .nav__logo-text {
   letter-spacing: -0.02em !important;
 }
 
+/* ===================================
+   SCROLL ANIMATION SYSTEM
+   =================================== */
 
+/* Scroll Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animate {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+/* Fade animations */
+.fade-in-up {
+    transform: translateY(30px);
+}
+
+.fade-in-down {
+    transform: translateY(-30px);
+}
+
+.fade-in-left {
+    transform: translateX(-30px);
+}
+
+.fade-in-right {
+    transform: translateX(30px);
+}
+
+.scale-in {
+    transform: scale(0.9);
+}
+
+/* Stagger delays for sequential animations */
+.stagger-delay-1 { transition-delay: 0.1s; }
+.stagger-delay-2 { transition-delay: 0.2s; }
+.stagger-delay-3 { transition-delay: 0.3s; }
+.stagger-delay-4 { transition-delay: 0.4s; }
+.stagger-delay-5 { transition-delay: 0.5s; }
+.stagger-delay-6 { transition-delay: 0.6s; }
+
+/* Hero section on-load animations - Desktop */
+.hero__mascot {
+    animation: scaleIn 1.2s ease-out 0.6s both;
+}
+
+/* Mobile-specific hero animations */
+@media (max-width: 767px) {
+    .hero__actions {
+        animation: heroFadeInUp 1.0s ease-out 0.3s both;
+    }
+
+    .hero__mascot {
+        animation: mascotFadeInUp 1.2s ease-out 0.9s both !important;
+    }
+}
+
+@keyframes heroFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mascotFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Accessibility: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    
+    .animate-on-scroll.animate {
+        opacity: 1;
+        transform: none;
+    }
+    
+    .fade-in-up,
+    .fade-in-down,
+    .fade-in-left,
+    .fade-in-right,
+    .scale-in {
+        transform: none;
+    }
+    
+    .stagger-delay-1,
+    .stagger-delay-2,
+    .stagger-delay-3,
+    .stagger-delay-4,
+    .stagger-delay-5,
+    .stagger-delay-6 {
+        transition-delay: 0s;
+    }
+    
+    .hero__actions,
+    .hero__mascot {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
 
