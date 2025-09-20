@@ -453,6 +453,19 @@ a:hover {
   border-radius: var(--radius-full);
 }
 
+/* External link icon spacing for Docs link */
+.nav__link .fa-up-right-from-square {
+  margin-left: var(--space-2);
+  font-size: 0.85em;
+  line-height: 1;
+}
+
+.nav__menu--mobile .nav__link--mobile .fa-up-right-from-square {
+  margin-left: var(--space-2);
+  font-size: 0.85em;
+  line-height: 1;
+}
+
 
 .nav__actions {
   display: flex;
