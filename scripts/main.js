@@ -453,6 +453,40 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Add scroll progress indicator
   app.addScrollProgress();
+
+  // Fetch and render Usable version in footer
+  (async () => {
+    const versionTarget = document.getElementById('usable-version');
+    if (!versionTarget) return;
+    
+    const directUrl = 'https://alminni.com/api/version';
+    const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(directUrl);
+    
+    async function tryFetch(url) {
+      const response = await fetch(url, { headers: { 'Accept': 'application/json' }, cache: 'no-store' });
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    }
+    
+    try {
+      versionTarget.textContent = 'Fetching version…';
+      let data;
+      try {
+        // Primary attempt (may fail due to CORS when served from file:// or other origins)
+        data = await tryFetch(directUrl);
+      } catch (e) {
+        // Fallback via CORS-friendly proxy
+        data = await tryFetch(proxyUrl);
+      }
+      if (data && typeof data.version === 'string' && data.version) {
+        versionTarget.textContent = `Usable ${data.version}`;
+      } else {
+        versionTarget.textContent = '';
+      }
+    } catch (err) {
+      versionTarget.textContent = '';
+    }
+  })();
 });
 
 // Add CSS for new features
