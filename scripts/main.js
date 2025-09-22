@@ -444,8 +444,31 @@ class UsableApp {
   }
 }
 
+/**
+ * Route redirection - ensures users are always redirected to root
+ */
+function handleRouteRedirection() {
+  const currentPath = window.location.pathname;
+  const currentHash = window.location.hash;
+  
+  // Allow root path and index.html
+  if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+    return;
+  }
+  
+  // Redirect any other path to root
+  // Preserve hash fragments for internal navigation (like #pricing, #features)
+  const redirectUrl = '/' + currentHash;
+  
+  // Use replace instead of assign to avoid adding to browser history
+  window.location.replace(redirectUrl);
+}
+
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+  // Handle route redirection first
+  handleRouteRedirection();
+  
   const app = new UsableApp();
   
   // Add loading animation

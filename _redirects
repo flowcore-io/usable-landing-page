@@ -1,0 +1,18 @@
+# Netlify redirects file for Usable Landing Page
+# Redirect all non-root routes to the root index.html
+
+# Allow static assets
+/assets/*  200
+/scripts/* 200
+/styles/*  200
+
+# Allow common files
+/robots.txt 200
+/sitemap.xml 200
+/favicon.ico 200
+/CNAME 200
+/README.md 200
+/TROUBLESHOOTING.md 200
+
+# Redirect all other routes to root with 301 redirect
+/*  /index.html  301

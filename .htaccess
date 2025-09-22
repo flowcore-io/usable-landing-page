@@ -1,0 +1,17 @@
+# Apache redirection rules for Usable Landing Page
+# Redirect all non-root routes to the root index.html
+
+RewriteEngine On
+
+# Allow access to assets, scripts, styles directories
+RewriteRule ^(assets|scripts|styles)/.*$ - [L]
+
+# Allow common files
+RewriteRule ^(robots\.txt|sitemap\.xml|favicon\.ico|CNAME|README\.md|TROUBLESHOOTING\.md)$ - [L]
+
+# Redirect all other routes to root, preserving query string and fragment
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !^/index\.html$
+RewriteRule ^.*$ /index.html [R=301,L,QSA]
