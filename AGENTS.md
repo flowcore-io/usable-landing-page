@@ -1,19 +1,4 @@
----
-description: >
-  Alminni MCP integration for this project.
-  This rule provides workspace-specific instructions for Alminni MCP integration.
-globs:
-  - '**/*'
-alwaysApply: true
----
-
-# Custom Pre-Prompt
-
-Please evaluate which personas to use, depending on the user request. After the evaluation, you must "embody" that persona during that task.Additionally, when "selecting" a persona, remember to announce which persona you are embodying at this moment, by saying something similar to "Hey, Orlando here".You are free to switch personas interchancably, depending on the user request, as well as if you need different expertise to solve a problem
-
----
-
-# 🧠 Alminni MCP - SYSTEM PROMPT (LONG-TERM MEMORY)
+# 🧠 Usable MCP - SYSTEM PROMPT (LONG-TERM MEMORY)
 
 This is your main way of storing and fetching data, always check here before you start a task.
 
@@ -22,7 +7,7 @@ Treat this as your main source of truth, and always check here before you start 
 You can always check for new memory fragment types by calling the get_fragment_types tool, and list workspaces by calling the list_workspaces tool if you need to know what workspaces you have access to.
 
 **Search Strategy**:
-- Always search for the `repo:<repository>` tag first, then broaden your search
+- Always search for the `repo:usable-landing-page` tag first, then broaden your search
 - It is generally better to fetch multiple memory fragments to give you a better picture
 - Never skip searching; prevent duplicate effort
 - Prefer agentic search first (`agentic-search-fragments`), then graph exploration; fall back to basic vector search (`search_memory_fragments`) when needed
@@ -31,7 +16,7 @@ You can always check for new memory fragment types by calling the get_fragment_t
 ## Agentic Planning & Tool Loop
 
 - **Plan First**: Before acting, outline brief sub-goals and which tools you will use to satisfy each.
-- **Act with Tools**: Prefer Alminni search first; then explore the graph with targeted depth. Keep actions minimal and verifiable.
+- **Act with Tools**: Prefer Usable search first; then explore the graph with targeted depth. Keep actions minimal and verifiable.
 - **Reflect & Verify**: After each batch of tool calls, assess sufficiency, freshness, and consistency. If gaps remain, iterate.
 - **Parallelize When Safe**: For independent, read-only lookups (e.g., multiple searches/reads), enumerate and run them concurrently.
 - **Timebox Exploration**: Limit to 2–3 iterations before escalating to external research.
@@ -48,11 +33,11 @@ You can always check for new memory fragment types by calling the get_fragment_t
 - If critical standards are missing or outdated, propose an update and request confirmation before writing.
 
 ### External Research Escalation
-- If Alminni is insufficient or contradictory after 2–3 iterations, run targeted external research, then reconcile with internal standards.
+- If Usable is insufficient or contradictory after 2–3 iterations, run targeted external research, then reconcile with internal standards.
 - Cite authoritative sources and align final recommendation with workspace rules and standards.
 
 ### Coding Task Bootstrap (Generic)
-- Before writing code, fetch current language/framework/library standards from Alminni (linting, testing, data access, UI, security).
+- Before writing code, fetch current language/framework/library standards from Usable (linting, testing, data access, UI, security).
 - Enforce workspace rules: avoid adding new dependencies without consent; follow established data-access, state-management, and theming patterns.
 - Validate environment assumptions and platform constraints before implementation.
 
@@ -146,7 +131,7 @@ When improving on things to do or not do emphasize what to do, do not include wh
   ```
 
 
-Repository: <repository>
+Repository: usable-landing-page
 WorkspaceId: 7b8da6be-b9b5-401e-987a-e93a91cabd4d
 Workspace: AI Landing Page
 Workspace Fragment Types: instruction set, knowledge, recipe, solution, template, llm personas
@@ -308,7 +293,7 @@ The following fragment types are available in this workspace:
 
 **🎯 REMEMBER: The fragment type should match the content's PRIMARY PURPOSE, not just its format!**
 
-## Alminni Discovery & Exploration
+## Usable Discovery & Exploration
 
 ### **Primary Discovery Process (Start Here)**
 
@@ -317,7 +302,7 @@ The following fragment types are available in this workspace:
 - Always include `workspaceId` when known; otherwise provide multiple `workspaceIds` or rely on accessible workspaces
 - Prefer tags/fragmentType filters when available to bias results
 - If agentic selection is insufficient or unavailable, fall back to `search_memory_fragments` (semantic vector search)
-- Always start with `repo:<repository>` tag first, then broaden if needed
+- Always start with `repo:usable-landing-page` tag first, then broaden if needed
 
 Note: Agentic search internally handles expansion and related-context discovery. Explicit graph exploration guidance is intentionally omitted here for simplicity.
 
@@ -345,7 +330,7 @@ Note: Agentic search internally handles expansion and related-context discovery.
 ### `search_memory_fragments`
 **Fallback/basic vector search**
 - Use when agentic search is unavailable or returns insufficient results
-- **Always include repository context** - start with `repo:<repository>` tag
+- **Always include repository context** - start with `repo:usable-landing-page` tag
 - Use semantic search for concepts, not exact text matching
 - **Decision logic**: Evaluate result completeness to determine next steps
 
@@ -423,7 +408,7 @@ For historical relationship questions, specialized temporal tools exist, but mos
 ## Recommended Workflow
 
 ### **Pre-Task Discovery**
-1. **Search**: Prefer `agentic-search-fragments` (start with `repo:<repository>` tag)
+1. **Search**: Prefer `agentic-search-fragments` (start with `repo:usable-landing-page` tag)
 2. **Retrieve**: Use `get_memory_fragment_content` for key fragments as needed
 3. **Iterate**: Refine queries or tags and repeat
 
@@ -443,7 +428,7 @@ If you identify novel insights or solutions:
 
 ## Fragment Creation Strategy
 
-**Always provide `repository` context** in every MCP call when available (e.g. `"memory-mesh"`).
+**Always provide `repository` context** in every MCP call when available (e.g. `"usable"`).
 
 **Document when you identify:**
 - Novel solutions or non-obvious patterns
@@ -500,7 +485,7 @@ If you identify novel insights or solutions:
 ## Auto-Enhancement
 
 The MCP server automatically:
-- Injects `repo:<repository>` tag when repository context provided
+- Injects `repo:usable-landing-page` tag when repository context provided
 - Detects and tags technologies and topics from content
 - Prevents duplicate fragments through similarity analysis
 - Formats content for optimal readability and search
