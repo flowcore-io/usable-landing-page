@@ -482,7 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const versionTarget = document.getElementById('usable-version');
     if (!versionTarget) return;
     
-    const directUrl = 'https://alminni.com/api/version';
+    const directUrl = 'https://usable.dev/api/version';
     const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(directUrl);
     
     async function tryFetch(url) {
