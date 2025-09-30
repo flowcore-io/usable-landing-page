@@ -40,10 +40,23 @@
     </div>
     
     <script>
-        // GitHub Pages 404 redirect to root
-        // Preserve hash fragments for internal navigation
-        const redirectUrl = '/' + window.location.hash;
-        window.location.replace(redirectUrl);
+		// Handle explicit external redirects for hosts that don't honor `_redirects`
+		(function () {
+			var path = window.location.pathname;
+			if (path === '/login') {
+				window.location.replace('https://usable.dev/login');
+				return;
+			}
+			if (path === '/signup') {
+				window.location.replace('https://usable.dev/signup');
+				return;
+			}
+
+			// Fallback: redirect SPA-style unknown routes to the site root
+			// Preserve hash fragments for internal navigation
+			var redirectUrl = '/' + window.location.hash;
+			window.location.replace(redirectUrl);
+		})();
     </script>
 </body>
 </html>
