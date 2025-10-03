@@ -89,6 +89,71 @@
   --container-padding: 1.5rem;
 }
 
+/* ===================================
+   ACCESSIBILITY ENHANCEMENTS
+   =================================== */
+
+/* Skip to Content Link - Visible on Focus for Keyboard Users */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-blue);
+  color: var(--color-white);
+  padding: var(--space-3) var(--space-6);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-md) 0;
+  z-index: 10000;
+  transition: top var(--transition-fast);
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: 3px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+/* Enhanced Focus Indicators for Keyboard Navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Reduced Motion Support - Respects User Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .bokeh {
+    animation: none !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-blue: #0056b3;
+    --color-orange: #d97706;
+  }
+  
+  button,
+  .btn {
+    border: 2px solid currentColor;
+  }
+}
+
 /* Dark Theme - Professional Dark Mode */
 [data-theme="dark"] {
   --color-white: #1c2f40;  /* Black becomes background */
@@ -338,6 +403,9 @@ a:hover {
   backdrop-filter: blur(30px);
   border-bottom: 1px solid rgba(52, 124, 191, 0.15);
   box-shadow: 0 4px 30px rgba(28, 47, 64, 0.08);
+  
+  /* Smooth fade-in animation */
+  animation: navFadeIn 0.5s ease-out;
   height: 60px;
   overflow: hidden;
 }
@@ -621,8 +689,6 @@ a:hover {
   text-decoration: none !important;
 }
 
-/* Removed conflicting :not(:hover) rules that were preventing hover colors */
-
 /* Mobile Menu */
 .mobile-menu-toggle {
   display: none;
@@ -791,10 +857,6 @@ a:hover {
   background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
 }
 
-/* Removed conflicting background gradient rules - keeping only the numbered circles */
-
-/* Removed orphaned keyframes for removed background gradients */
-
 .hero__container {
   display: grid;
   grid-template-columns: 1fr;
@@ -807,14 +869,6 @@ a:hover {
   z-index: 1;
   width: 100%;
 }
-
-/* Removed conflicting hero__container rules - keeping only numbered versions */
-
-/* Removed conflicting hero__content rules - keeping only numbered versions */
-
-/* Removed conflicting hero__title rules - keeping only numbered versions */
-
-/* Removed conflicting hero__visual rules - keeping only numbered versions */
 
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -1008,8 +1062,6 @@ a:hover {
   animation: badgeShine 4s linear infinite;
 }
 
-/* Removed sparkle emoji */
-
 @keyframes badgeGlow {
   0%, 100% { box-shadow: var(--shadow-md), 0 0 20px rgba(252, 175, 42, 0.3); }
   50% { box-shadow: var(--shadow-md), 0 0 30px rgba(252, 175, 42, 0.6); }
@@ -1155,89 +1207,28 @@ a:hover {
   position: relative;
 }
 
-/* AESTHETICALLY positioned beautiful circles for hero visual background */
-/* Removed conflicting hero__visual rules that were overriding circle sizes */
-
-/* Removed conflicting hero__container overlay dots that were interfering with numbered circles */
-
-/* Removed small decorative dots from hero mascot */
-
-/* Removed small decorative dots from hero section */
-
-/* REMOVED conflicting orange dots to preserve big beautiful circles */
-
-/* Removed small decorative dots from hero subtitle */
-
-/* Removed small decorative dots from hero actions */
-
-/* AESTHETICALLY positioned beautiful circles for hero content background */
-/* Removed conflicting hero__content rules that were overriding circle sizes */
-
-/* Removed small decorative dots from hero badge */
-
-/* Removed additional small decorative dots from hero section */
-
-/* AESTHETICALLY positioned beautiful circles using hero title */
-/* Removed conflicting hero__title rules that were overriding circle sizes */
-
-/* Removed conflicting hero__subtitle rules - keeping only numbered versions */
-
-/* Removed conflicting hero__actions rules - keeping only numbered versions */
-
-/* Removed conflicting hero__badge rules - keeping only numbered versions */
-
-/* Removed conflicting hero__mascot rules - keeping only numbered versions */
-
-/* MORE orange dots using hero container for additional particles */
+/* Hero container particles */
 .hero__container {
   position: relative;
 }
 
-/* Removed conflicting small dots from hero__container (these elements have large circles) */
-
-/* MORE orange dots using hero badge for additional particles */
+/* Hero elements with relative positioning for particle effects */
 .hero__badge {
   position: relative;
 }
 
-/* Removed conflicting small dots from hero__badge (these elements have large circles) */
-
-/* REMOVED conflicting orange dots to preserve big beautiful circles */
-
-/* MORE orange dots using hero subtitle for additional particles */
 .hero__subtitle {
   position: relative;
 }
 
-/* Removed conflicting small dots from hero__subtitle (these elements have large circles) */
-
-/* MORE orange dots using hero actions for additional particles */
 .hero__actions {
   position: relative;
 }
 
-/* Removed conflicting small dots from hero__actions (these elements have large circles) */
-
-/* ADDITIONAL orange dots using hero section for more particles */
 .hero {
   position: relative;
 }
 
-/* Removed conflicting small dots from hero (these elements have large circles) */
-
-/* AESTHETICALLY positioned beautiful circles using hero section for additional background elements */
-.hero {
-  position: relative;
-}
-
-/* Removed conflicting hero rules - keeping only numbered versions */
-
-/* AESTHETICALLY positioned beautiful circles using hero container for additional background elements */
-.hero__container {
-  position: relative;
-}
-
-/* Removed conflicting hero__container rules that were overriding circle sizes */
 
 @keyframes particleFloat {
   0% {
@@ -1347,8 +1338,6 @@ a:hover {
   overflow: hidden;
 }
 
-/* Removed conflicting features rules - keeping only numbered versions */
-
 [data-theme="dark"] .features {
   background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(52, 124, 191, 0.25) 100%);
 }
@@ -1440,17 +1429,6 @@ a:hover {
   transform: translate(35px, -35px);
 }
 
-.feature:hover {
-  /* Hover effects removed */
-}
-
-.feature:hover::before {
-  /* Hover effects removed */
-}
-
-.feature:hover::after {
-  /* Hover effects removed */
-}
 
 .feature__icon {
   display: flex;
@@ -1515,18 +1493,10 @@ a:hover {
   gap: var(--space-2);
 }
 
-.feature__cta-link:hover {
-  /* Hover effects removed */
-}
-
 .feature__cta-link::after {
   content: '→';
   font-weight: 700;
   transition: transform var(--transition-fast);
-}
-
-.feature__cta-link:hover::after {
-  /* Hover effects removed */
 }
 
 /* ===================================
@@ -1543,8 +1513,6 @@ a:hover {
 [data-theme="dark"] .how-it-works {
   background: linear-gradient(135deg, rgba(52, 124, 191, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
 }
-
-/* Removed conflicting how-it-works rules - keeping only numbered versions */
 
 .how-it-works__container {
   max-width: var(--container-max-width);
@@ -1572,14 +1540,6 @@ a:hover {
 
 .step::before {
   display: none;
-}
-
-.step:hover {
-  /* Hover effects removed */
-}
-
-.step:hover::before {
-  /* Hover effects removed */
 }
 
 .step__number {
@@ -1624,16 +1584,10 @@ a:hover {
   overflow: hidden;
 }
 
-/* Removed conflicting cta rules - keeping only numbered versions */
-
 [data-theme="dark"] .cta {
   background: linear-gradient(135deg, rgba(52, 124, 191, 0.25) 0%, rgba(169, 204, 233, 0.25) 100%) !important;
   color: var(--color-gray-100);
 }
-
-/* Removed conflicting .cta::before overlay rule that was adding gradient to circle 11 */
-
-/* Removed conflicting .cta::after rule that was covering the blue circle */
 
 @keyframes ctaGlow {
   0%, 100% { opacity: 0.8; }
@@ -1940,13 +1894,9 @@ a:hover {
   overflow: hidden;
 }
 
-/* Removed conflicting pricing rules - keeping only numbered versions */
-
 [data-theme="dark"] .pricing {
   background: linear-gradient(135deg, rgba(252, 175, 42, 0.25) 0%, rgba(169, 204, 233, 0.25) 100%);
 }
-
-/* Removed conflicting .pricing::before rule that was covering circle 13 */
 
 .pricing__container {
   max-width: var(--container-max-width);
@@ -2012,25 +1962,11 @@ a:hover {
   z-index: 1;
 }
 
-.pricing__card:hover::before {
-  /* Hover effects removed */
-}
-
-.pricing__card:hover {
-  /* Hover effects removed */
-}
-
-
 .pricing__card--popular {
   border-color: var(--color-gray-200);
   transform: none;
   box-shadow: none;
   background: var(--color-white);
-}
-
-
-.pricing__card--popular:hover {
-  /* Hover effects removed */
 }
 
 .pricing__card--popular::before {
@@ -2148,10 +2084,6 @@ a:hover {
 
 .pricing__card--popular .pricing__card-features li::before {
   color: var(--color-green);
-}
-
-.pricing__card-features li:hover::before {
-  /* Hover effects removed */
 }
 
 .pricing__card-cta {
@@ -3158,6 +3090,7 @@ a:hover {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  order: 2;
 }
 
 .footer__social-link {
@@ -3231,8 +3164,9 @@ a:hover {
 
 .footer__version {
   margin-left: auto;
-  color: var(--color-gray-600);
+  color: var(--color-blue);
   font-size: var(--text-sm);
+  order: 3;
 }
 
 @media (max-width: 640px) {
@@ -3453,10 +3387,14 @@ a:hover {
 .footer__copyright {
   color: var(--color-blue);
   font-size: var(--text-sm);
+  order: 1;
 }
 
 .footer__legal {
   display: none;
+  gap: var(--space-6);
+  align-items: center;
+  order: 4;
 }
 
 .footer__legal a {
@@ -3832,7 +3770,6 @@ html[data-theme="dark"] .cta .btn.btn--primary:hover,
   box-shadow: none !important;
 }
 
-
 [data-theme="dark"] .footer {
   background: rgba(28, 47, 64, 0.95);
   backdrop-filter: blur(30px);
@@ -3851,6 +3788,11 @@ html[data-theme="dark"] .footer__section a,
 
 html[data-theme="dark"] .footer__copyright,
 [data-theme="dark"] .footer__copyright {
+  color: var(--color-blue-light) !important;
+}
+
+html[data-theme="dark"] .footer__version,
+[data-theme="dark"] .footer__version {
   color: var(--color-blue-light) !important;
 }
 
@@ -4034,8 +3976,6 @@ html[data-theme="dark"] .footer__circle-5,
   position: relative;
   overflow: hidden;
 }
-
-/* Removed gradient line at top of cards */
 
 .use-cases__card-header {
   margin-bottom: var(--space-6);
@@ -4699,9 +4639,6 @@ html[data-theme="dark"] .footer__circle-5,
   overflow: hidden;
 }
 
-/* Removed conflicting faq rules - keeping only numbered versions */
-
-
 .faq__container {
   position: relative;
   z-index: 1;
@@ -4739,8 +4676,6 @@ html[data-theme="dark"] .footer__circle-5,
   position: relative;
 }
 
-/* Removed complex gradient line for cleaner look */
-
 .faq__item {
   background: #f4f3f3;
   border: none;
@@ -4751,16 +4686,10 @@ html[data-theme="dark"] .footer__circle-5,
   position: relative;
 }
 
-/* Removed complex shimmer effect for cleaner interactions */
-
-/* Removed hover animation for cleaner interaction */
-
 .faq__item[open] {
   box-shadow: 0 4px 16px rgba(252, 175, 42, 0.15);
   background: var(--color-white);
 }
-
-/* Removed complex top border for cleaner open state */
 
 .faq__question {
   padding: var(--space-5) var(--space-6);
@@ -4777,8 +4706,6 @@ html[data-theme="dark"] .footer__circle-5,
   justify-content: space-between;
   transition: all var(--transition-fast);
 }
-
-/* Removed hover effect for cleaner interaction */
 
 .faq__question::after {
   content: '+';
@@ -4821,8 +4748,6 @@ html[data-theme="dark"] .footer__circle-5,
   padding: 0;
 }
 
-/* Removed keyframe animation - using smooth CSS transitions instead */
-
 /* FAQ Dark Mode */
 [data-theme="dark"] .faq {
   background: linear-gradient(135deg, rgba(52, 124, 191, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
@@ -4845,13 +4770,9 @@ html[data-theme="dark"] .footer__circle-5,
   color: var(--color-white-text);
 }
 
-/* Removed dark mode hover effect */
-
 [data-theme="dark"] .faq__answer {
   color: var(--color-gray-700);
 }
-
-/* Removed complex dark mode list styling */
 
 [data-theme="dark"] .faq__question::after {
   background: var(--color-gray-200);
@@ -4914,51 +4835,6 @@ html[data-theme="dark"] .footer__circle-5,
    ANIMATIONS - SUBTLE & PROFESSIONAL
    =================================== */
 
-/* Loading Screen */
-.page-loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-gray-50) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  transition: opacity 0.5s ease-out;
-}
-
-.page-loader.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.loader-content {
-  text-align: center;
-}
-
-.loader-spinner {
-  width: 60px;
-  height: 60px;
-  border: 4px solid var(--color-gray-200);
-  border-top: 4px solid var(--color-blue);
-  border-radius: var(--radius-full);
-  animation: spin 1s linear infinite;
-  margin: 0 auto var(--space-6);
-}
-
-.loader-text {
-  font-size: var(--text-lg);
-  color: var(--color-gray-600);
-  font-weight: 500;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 /* Scroll Progress Bar */
 .scroll-progress {
   position: fixed;
@@ -4976,6 +4852,17 @@ html[data-theme="dark"] .footer__circle-5,
   from {
     opacity: 0;
     transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;

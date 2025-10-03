@@ -311,18 +311,7 @@ class UsableApp {
    * Setup accessibility features
    */
   setupAccessibility() {
-    // Skip to main content link
-    const skipLink = document.createElement('a');
-    skipLink.href = '#main-content';
-    skipLink.textContent = 'Skip to main content';
-    skipLink.className = 'skip-link';
-    document.body.insertBefore(skipLink, document.body.firstChild);
-    
-    // Add main content id
-    const mainContent = document.querySelector('main') || document.querySelector('.hero');
-    if (mainContent) {
-      mainContent.id = 'main-content';
-    }
+    // Skip link already exists in HTML - no need to create it here
     
     // Keyboard navigation for FAQ
     this.faqItems.forEach(item => {
@@ -347,33 +336,6 @@ class UsableApp {
       });
     }
   }
-  
-  /**
-   * Add loading animation to page
-   */
-  addLoadingAnimation() {
-    const loader = document.createElement('div');
-    loader.className = 'page-loader';
-    loader.innerHTML = `
-      <div class="loader-content">
-        <div class="loader-spinner"></div>
-        <p>Loading Usable...</p>
-      </div>
-    `;
-    
-    document.body.appendChild(loader);
-    
-    // Remove loader after page loads
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        loader.style.opacity = '0';
-        setTimeout(() => {
-          loader.remove();
-        }, 300);
-      }, 500);
-    });
-  }
-  
   /**
    * Add scroll progress indicator
    */
@@ -471,9 +433,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const app = new UsableApp();
   
-  // Add loading animation
-  app.addLoadingAnimation();
-  
   // Add scroll progress indicator
   app.addScrollProgress();
 
@@ -514,56 +473,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Add CSS for new features
 const additionalStyles = `
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 6px;
-    background: var(--color-primary);
-    color: white;
-    padding: 8px;
-    text-decoration: none;
-    border-radius: 4px;
-    z-index: 10000;
-    transition: top 0.3s;
-  }
-  
-  .skip-link:focus {
-    top: 6px;
-  }
-  
-  .page-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    transition: opacity 0.3s;
-  }
-  
-  .loader-content {
-    text-align: center;
-  }
-  
-  .loader-spinner {
-    width: 50px;
-    height: 50px;
-    border: 4px solid var(--color-gray-200);
-    border-top: 4px solid var(--color-primary);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
   .scroll-progress {
     position: fixed;
     top: 0;

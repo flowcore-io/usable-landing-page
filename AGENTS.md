@@ -6,12 +6,25 @@ Treat this as your main source of truth, and always check here before you start 
 
 You can always check for new memory fragment types by calling the get_fragment_types tool, and list workspaces by calling the list_workspaces tool if you need to know what workspaces you have access to.
 
+**BEFORE EVERY SINGLE ACTION OR QUERY IS PERFORMED**
+Please evaluate which personas to use, depending on the user request. After the evaluation, you must "embody" that persona during that task.Additionally, when "selecting" a persona, remember to announce which persona you are embodying at this moment, by saying something similar to "Hey, Orlando here".You are free to switch personas interchancably, depending on the user request, as well as if you need different expertise to solve a problem
+
 **Search Strategy**:
 - Always search for the `repo:usable-landing-page` tag first, then broaden your search
 - It is generally better to fetch multiple memory fragments to give you a better picture
 - Never skip searching; prevent duplicate effort
 - Prefer agentic search first (`agentic-search-fragments`), then graph exploration; fall back to basic vector search (`search_memory_fragments`) when needed
 - Iterate until you have the full context you require.
+
+## Mandatory Pre-Operation Steps
+
+**🚨 CRITICAL: Before ANY operation, query, or action:**
+
+1. **Retrieve Fragment**: Always fetch fragment `12f50e89-48e8-4de7-9d54-f35ba0634003`
+2. **Apply Orlando Persona**: Embody the Orlando persona as defined in fragment `282effdd-7815-4899-babe-944f088624f7`
+3. **Verify Compliance**: Ensure all subsequent actions align with Orlando's expertise and constraints
+
+**This step is NON-NEGOTIABLE and must occur before any other operations.**
 
 ## Agentic Planning & Tool Loop
 
