@@ -11,14 +11,13 @@
     <meta name="author" content="Flowcore Sp/f">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://usable.dev/">
-    <meta name="theme-color" content="#347cbf">
+    <meta name="theme-color" content="#347cbf" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
     
     <!-- Web App Manifest -->
     <link rel="manifest" href="/site.webmanifest">
     
     <!-- DNS Prefetch for External Resources -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://plausible.io">
     
@@ -174,7 +173,7 @@
     <nav class="nav">
             <div class="nav__container">
                 <a href="#" class="nav__logo">
-                    <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="nav__logo-img">
+                    <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="nav__logo-img" fetchpriority="high">
                     <span class="nav__logo-text">Usable</span>
                 </a>
                 
