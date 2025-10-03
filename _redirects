@@ -14,5 +14,9 @@
 /README.md 200
 /TROUBLESHOOTING.md 200
 
+# Authentication redirects
+/signup  https://usable.dev/signup  301
+/login   https://usable.dev/login   301
+
 # Redirect all other routes to root with 301 redirect
 /*  /index.html  301
