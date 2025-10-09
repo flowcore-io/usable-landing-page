@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+	  "usable-local": {
+			"command": "npx",
+	    "args": ["@usabledev/mcp-server@latest", "server"],
+      "envFile": ".env.local"
+    }
+  }
+}

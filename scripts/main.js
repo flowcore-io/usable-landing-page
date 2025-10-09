@@ -127,36 +127,66 @@ class UsableApp {
    * Setup FAQ accordion functionality with smooth animations
    */
   setupFAQAccordion() {
-    this.faqItems.forEach(item => {
-      const summary = item.querySelector('summary');
-      const content = item.querySelector('.faq__answer');
+    // Get all FAQ items
+    this.faqItems = document.querySelectorAll('.faq__item');
+    
+    this.faqItems.forEach((item, index) => {
+      const question = item.querySelector('.faq__question');
+      const answer = item.querySelector('.faq__answer');
+      const answerContent = item.querySelector('.faq__answer-content');
       
-      if (!summary || !content) return;
+      if (!question || !answer || !answerContent) return;
       
-      // Set initial state
-      content.style.maxHeight = '0px';
-      content.style.opacity = '0';
-      content.style.paddingTop = '0px';
-      content.style.paddingBottom = '0px';
+      // Add unique ID to each item
+      item.dataset.faqId = `faq-${index}`;
       
-      // Add click event to summary
-      summary.addEventListener('click', (e) => {
+      // Click handler for the FAQ question only (not the entire item)
+      const handleClick = (e) => {
+        // Only trigger if clicking the question area
+        if (!e.target.closest('.faq__question')) return;
+        
         e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
         
-        const isOpen = item.hasAttribute('open');
+        // Check if currently animating
+        if (item.classList.contains('faq-animating')) return;
         
-        // Close all other FAQ items
-        this.faqItems.forEach(otherItem => {
-          if (otherItem !== item) {
+        // Get the exact clicked item by ID
+        const clickedId = item.dataset.faqId;
+        
+        // Get current state
+        const isExpanded = item.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other FAQ items explicitly
+        document.querySelectorAll('.faq__item').forEach((otherItem) => {
+          if (otherItem.dataset.faqId !== clickedId && otherItem.getAttribute('aria-expanded') === 'true') {
             this.closeFAQItem(otherItem);
           }
         });
         
         // Toggle current item
-        if (isOpen) {
+        if (isExpanded) {
           this.closeFAQItem(item);
         } else {
           this.openFAQItem(item);
+        }
+      };
+      
+      // Add click event only to the question
+      question.addEventListener('click', handleClick, { once: false, capture: true });
+      
+      // Keyboard support
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          // Simulate click on question
+          const clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window
+          });
+          question.dispatchEvent(clickEvent);
         }
       });
     });
@@ -166,38 +196,65 @@ class UsableApp {
    * Open FAQ item with smooth animation
    */
   openFAQItem(item) {
-    const content = item.querySelector('.faq__answer');
-    if (!content) return;
+    const answer = item.querySelector('.faq__answer');
+    const answerContent = item.querySelector('.faq__answer-content');
     
-    item.setAttribute('open', '');
+    if (!answer || !answerContent) return;
     
-    // Get the natural height
-    const naturalHeight = content.scrollHeight;
+    // Double check this item isn't already open
+    if (item.getAttribute('aria-expanded') === 'true') return;
     
-    // Animate to natural height
-    content.style.maxHeight = naturalHeight + 'px';
-    content.style.opacity = '1';
-    content.style.paddingTop = '0px';
-    content.style.paddingBottom = '80px';
+    // Mark as animating
+    item.classList.add('faq-animating');
+    
+    // Set aria-expanded to true
+    item.setAttribute('aria-expanded', 'true');
+    
+    // Force a reflow
+    void item.offsetHeight;
+    
+    // Get the full height of the content
+    const contentHeight = answerContent.scrollHeight;
+    
+    // Animate the answer opening with RAF for better performance
+    requestAnimationFrame(() => {
+      answer.style.maxHeight = (contentHeight + 50) + 'px';
+      answer.style.paddingTop = '16px';
+      answer.style.paddingBottom = '16px';
+    });
+    
+    // Remove animation lock after transition
+    setTimeout(() => {
+      item.classList.remove('faq-animating');
+    }, 450);
   }
   
   /**
    * Close FAQ item with smooth animation
    */
   closeFAQItem(item) {
-    const content = item.querySelector('.faq__answer');
-    if (!content) return;
+    const answer = item.querySelector('.faq__answer');
     
-    // Animate to closed state
-    content.style.maxHeight = '0px';
-    content.style.opacity = '0';
-    content.style.paddingTop = '0px';
-    content.style.paddingBottom = '0px';
+    if (!answer) return;
     
-    // Remove open attribute after animation
+    // Check if already closed
+    if (item.getAttribute('aria-expanded') !== 'true') return;
+    
+    // Mark as animating
+    item.classList.add('faq-animating');
+    
+    // Animate the answer closing with RAF
+    requestAnimationFrame(() => {
+      answer.style.maxHeight = '0px';
+      answer.style.paddingTop = '0px';
+      answer.style.paddingBottom = '0px';
+    });
+    
+    // Set aria-expanded to false after animation
     setTimeout(() => {
-      item.removeAttribute('open');
-    }, 400);
+      item.setAttribute('aria-expanded', 'false');
+      item.classList.remove('faq-animating');
+    }, 450);
   }
   
   /**
@@ -313,18 +370,7 @@ class UsableApp {
   setupAccessibility() {
     // Skip link already exists in HTML - no need to create it here
     
-    // Keyboard navigation for FAQ
-    this.faqItems.forEach(item => {
-      const summary = item.querySelector('summary');
-      if (summary) {
-        summary.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            summary.click();
-          }
-        });
-      }
-    });
+    // Keyboard navigation for FAQ is now handled in setupFAQAccordion
     
     // Focus management for mobile menu
     if (this.mobileMenuToggle) {
