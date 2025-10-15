@@ -13,7 +13,7 @@ git add .
 echo.
 
 echo Committing changes...
-git commit -m "Update landing page - competitive improvements, built with Usable showcase, brand consistency"
+git commit -m "Add premium hamburger menu animation and mobile optimizations"
 echo.
 
 echo Pushing to GitHub Pages...

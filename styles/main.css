@@ -689,29 +689,50 @@ a:hover {
   text-decoration: none !important;
 }
 
-/* Mobile Menu */
+/* Mobile Menu - Premium Hamburger Animation */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
   cursor: pointer;
-  padding: var(--space-2);
-  border-radius: var(--radius-lg);
-  transition: none; /* Remove all transitions */
-  background: transparent !important; /* Force transparent background */
-  border: none !important; /* Force no border */
-  box-shadow: none !important; /* Remove any box shadows */
-  outline: none !important; /* Remove focus outline */
+  padding: 0;
+  z-index: 101;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-/* Ensure no styling changes in any state */
+.mobile-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.mobile-menu-toggle:active {
+  transform: scale(0.95);
+}
+
 .mobile-menu-toggle:focus,
 .mobile-menu-toggle:active,
 .mobile-menu-toggle:focus-visible {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
   outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .mobile-menu-toggle {
+  background: rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .mobile-menu-toggle:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Responsive Navbar */
@@ -796,20 +817,65 @@ a:hover {
   max-height: 40px !important;
 }
 
-.mobile-menu-toggle:hover {
-  background: transparent !important; /* Keep transparent on hover */
-  transform: none; /* Remove scale effect */
-}
-
-.mobile-menu-toggle__icon {
+/* Hamburger Lines (Closed State) */
+.hamburger-line {
   width: 24px;
-  height: 24px;
-  color: #1c2f40; /* Black in light mode */
-  transition: all var(--transition-fast);
+  height: 2.5px;
+  background: #1c2f40;
+  border-radius: 3px;
+  transition: all 0.35s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
 }
 
-[data-theme="dark"] .mobile-menu-toggle__icon {
-  color: #f4f3f3; /* White in dark mode */
+/* Dark mode line color */
+[data-theme="dark"] .hamburger-line {
+  background: #f4f3f3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Position each line absolutely for precise control */
+.hamburger-line:nth-child(1) {
+  top: 14px;
+}
+
+.hamburger-line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-line:nth-child(3) {
+  bottom: 14px;
+}
+
+/* X Icon Transformation (Open State) */
+/* Top line: Rotates 45° and moves to center */
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* Middle line: Scales to 0 and fades out */
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateY(-50%) scale(0);
+}
+
+/* Bottom line: Rotates -45° and moves to center */
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+/* Button appearance when open */
+.mobile-menu-toggle[aria-expanded="true"] {
+  background: rgba(52, 124, 191, 0.2);
+  border-color: rgba(52, 124, 191, 0.4);
+}
+
+[data-theme="dark"] .mobile-menu-toggle[aria-expanded="true"] {
+  background: rgba(52, 124, 191, 0.25);
+  border-color: rgba(52, 124, 191, 0.5);
 }
 
 /* Enhanced Navbar Interactions */
@@ -823,20 +889,6 @@ a:hover {
 }
 
 /* Navbar Scroll Effects - Disabled to prevent flashing */
-
-/* Icon toggle states */
-.mobile-menu-toggle--active .mobile-menu-toggle__icon--hamburger {
-  display: none;
-}
-
-.mobile-menu-toggle--active .mobile-menu-toggle__icon--close {
-  display: block !important;
-  color: #1c2f40; /* Black in light mode */
-}
-
-[data-theme="dark"] .mobile-menu-toggle--active .mobile-menu-toggle__icon--close {
-  color: #f4f3f3; /* White in dark mode */
-}
 
 /* ===================================
    HERO SECTION - CONVERSION FOCUSED
@@ -2367,6 +2419,25 @@ a:hover {
     font-size: var(--text-lg);
     margin-bottom: var(--space-8);
     line-height: 1.6;
+  }
+  
+  /* Make badge less prominent on mobile */
+  .hero__badge {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+    margin-bottom: var(--space-4);
+    animation: none; /* Remove glow animation */
+    box-shadow: none;
+  }
+  
+  .hero__badge-icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .hero__badge:hover {
+    transform: none;
+    box-shadow: none;
   }
   
   .hero__actions {
