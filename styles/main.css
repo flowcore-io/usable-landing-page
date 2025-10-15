@@ -1035,19 +1035,57 @@ a:hover {
 .hero__badge {
   display: inline-flex;
   align-items: center;
+  gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
-  background: linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange) 100%);
-  color: #f4f3f3;
+  background: var(--color-orange);
+  color: #f4f3f3 !important;
   border-radius: var(--radius-full);
   font-size: var(--text-sm);
   font-weight: 700;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
+  text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   box-shadow: none;
   position: relative;
   overflow: hidden;
   animation: badgeGlow 3s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero__badge-icon {
+  flex-shrink: 0;
+}
+
+.hero__badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(252, 175, 42, 0.8);
+  color: #f4f3f3 !important;
+}
+
+.hero__badge:focus,
+.hero__badge:active,
+.hero__badge:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  color: #f4f3f3 !important;
+}
+
+[data-theme="dark"] .hero__badge {
+  color: #1c2f40 !important;
+}
+
+[data-theme="dark"] .hero__badge:hover {
+  color: #1c2f40 !important;
+}
+
+[data-theme="dark"] .hero__badge:focus,
+[data-theme="dark"] .hero__badge:active,
+[data-theme="dark"] .hero__badge:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  color: #1c2f40 !important;
 }
 
 .hero__badge::before {
@@ -1569,6 +1607,44 @@ a:hover {
   color: var(--color-black);
   line-height: 1.6;
   font-size: var(--text-lg);
+}
+
+/* ===================================
+   BUILT WITH USABLE SECTION
+   =================================== */
+
+.built-with-usable {
+  padding: var(--space-48) 0;
+  background: linear-gradient(135deg, rgba(52, 124, 191, 0.05) 0%, rgba(169, 204, 233, 0.05) 100%);
+  text-align: center;
+  position: relative;
+}
+
+.built-with-usable__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.built-with-usable__tagline {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-orange);
+  margin-top: var(--space-8);
+}
+
+[data-theme="dark"] .built-with-usable {
+  background: linear-gradient(135deg, rgba(52, 124, 191, 0.25) 0%, rgba(169, 204, 233, 0.25) 100%);
+}
+
+@media (max-width: 768px) {
+  .built-with-usable {
+    padding: var(--space-32) 0;
+  }
+  
+  .built-with-usable__tagline {
+    font-size: var(--text-lg);
+  }
 }
 
 /* ===================================
@@ -5201,6 +5277,34 @@ a .nav__logo-text {
   font-family: 'Outfit', sans-serif !important;
   font-weight: 700 !important;
   letter-spacing: -0.02em !important;
+}
+
+.brand-link {
+  color: var(--color-orange);
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.brand-link:hover {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+.brand-link:focus,
+.brand-link:active,
+.brand-link:focus-visible {
+  outline: none !important;
+  color: var(--color-orange);
+}
+
+[data-theme="dark"] .brand-link {
+  color: var(--color-orange);
+}
+
+[data-theme="dark"] .brand-link:hover {
+  color: var(--color-blue-light);
 }
 
 /* ===================================
