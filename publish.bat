@@ -13,7 +13,7 @@ git add .
 echo.
 
 echo Committing changes...
-git commit -m "Improve navbar layout: Move Docs to button format alongside Log In for better visual hierarchy"
+git commit -m "Improve navbar and integrations: Move Docs to button format, make all integration logos clickable, add Roo Code, remove focus outlines"
 echo.
 
 echo Pushing to GitHub Pages...

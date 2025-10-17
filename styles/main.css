@@ -4060,6 +4060,8 @@ html[data-theme="dark"] .footer__circle-5,
   justify-content: center;
   width: 120px;
   height: 60px;
+  text-decoration: none;
+  cursor: pointer;
   transition: transform var(--transition-normal);
 }
 
@@ -4070,10 +4072,17 @@ html[data-theme="dark"] .footer__circle-5,
   height: auto;
   object-fit: contain;
   transition: all var(--transition-normal);
+  pointer-events: none;
 }
 
 .integrations__item:hover {
   transform: translateY(-4px);
+}
+
+.integrations__item:focus,
+.integrations__item:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .integrations__divider {
