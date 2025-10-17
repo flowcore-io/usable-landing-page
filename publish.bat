@@ -13,7 +13,7 @@ git add .
 echo.
 
 echo Committing changes...
-git commit -m "Add premium hamburger menu animation and mobile optimizations"
+git commit -m "Update landing page: Add MCP integrations section with 10 tools, Usable Chat promotion, rename Standard tier, optimize hero CTAs"
 echo.
 
 echo Pushing to GitHub Pages...
