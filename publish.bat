@@ -13,7 +13,7 @@ git add .
 echo.
 
 echo Committing changes...
-git commit -m "Update landing page: Add MCP integrations section with 10 tools, Usable Chat promotion, rename Standard tier, optimize hero CTAs"
+git commit -m "Improve navbar layout: Move Docs to button format alongside Log In for better visual hierarchy"
 echo.
 
 echo Pushing to GitHub Pages...
