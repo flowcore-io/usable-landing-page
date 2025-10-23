@@ -4138,7 +4138,7 @@ html[data-theme="dark"] .footer__circle-5,
 }
 
 [data-theme="dark"] .integrations__chat-text {
-  color: var(--color-white);
+  color: var(--color-white-text);
 }
 
 .integrations__chat .btn:focus,
