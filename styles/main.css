@@ -4075,6 +4075,33 @@ html[data-theme="dark"] .footer__circle-5,
   pointer-events: none;
 }
 
+/* Logo theme switching */
+[data-theme="light"] .integrations__logo--dark {
+  display: none;
+}
+
+[data-theme="dark"] .integrations__logo--light {
+  display: none;
+}
+
+/* Kiro logo + wordmark layout */
+.integrations__item--kiro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.integrations__logo--kiro-icon {
+  max-width: 30%;
+  flex-shrink: 0;
+}
+
+.integrations__logo--kiro-wordmark {
+  max-width: 65%;
+  flex-shrink: 0;
+}
+
 .integrations__item:hover {
   transform: translateY(-4px);
 }

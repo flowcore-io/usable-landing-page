@@ -13,7 +13,7 @@ git add .
 echo.
 
 echo Committing changes...
-git commit -m "Improve navbar and integrations: Move Docs to button format, make all integration logos clickable, add Roo Code, remove focus outlines"
+git commit -m "Add light/dark mode logo variants and Kiro logo + wordmark combination"
 echo.
 
 echo Pushing to GitHub Pages...
