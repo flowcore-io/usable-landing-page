@@ -940,13 +940,13 @@ a:hover {
   }
   
   .hero__container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: var(--space-20);
     padding: var(--space-10) var(--space-8);
   }
   
   .hero__title {
-    font-size: clamp(3.5rem, 5vw, 5rem);
+    font-size: clamp(3.1rem, 4.5vw, 4.5rem) !important;
   }
   
   .pricing__grid {
@@ -967,19 +967,19 @@ a:hover {
   }
   
   .hero__container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: var(--space-12);
     padding: var(--space-8) var(--space-6);
   }
   
   .hero__title {
-    font-size: clamp(2.8rem, 4vw, 3.8rem);
-    margin-bottom: var(--space-6);
+    font-size: clamp(3.3rem, 5vw, 4.8rem) !important;
+    margin-bottom: var(--space-4);
   }
   
   .hero__description {
     font-size: var(--text-lg);
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
   }
   
   .pricing__grid {
@@ -999,6 +999,24 @@ a:hover {
   .hero__actions {
     margin-bottom: var(--space-4);
     margin-top: var(--space-4);
+  }
+  
+  /* Laptop mascot size optimization - Option 2 */
+  .hero__mascot {
+    max-height: 300px;
+  }
+  
+  /* Laptop hero spacing reduction */
+  .hero__badge {
+    margin-bottom: var(--space-4);
+  }
+  
+  .hero__title {
+    margin-bottom: var(--space-4);
+  }
+  
+  .hero__description {
+    margin-bottom: var(--space-6);
   }
   
   /* Laptop typography adjustments */
@@ -1088,11 +1106,11 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
+  padding: var(--space-2) var(--space-5);
   background: var(--color-orange);
   color: #f4f3f3 !important;
   border-radius: var(--radius-full);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   font-weight: 700;
   margin-bottom: var(--space-6);
   text-decoration: none;
@@ -1108,6 +1126,8 @@ a:hover {
 
 .hero__badge-icon {
   flex-shrink: 0;
+  width: 14px;
+  height: 14px;
 }
 
 .hero__badge:hover {
@@ -4100,6 +4120,12 @@ html[data-theme="dark"] .footer__circle-5,
 .integrations__logo--kiro-wordmark {
   max-width: 65%;
   flex-shrink: 0;
+  transition: none;
+}
+
+/* Kiro wordmark - black in light mode, white in dark mode */
+[data-theme="light"] .integrations__logo--kiro-wordmark {
+  filter: brightness(0);
 }
 
 .integrations__item:hover {

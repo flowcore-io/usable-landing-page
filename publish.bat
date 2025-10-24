@@ -13,7 +13,7 @@ git add .
 echo.
 
 echo Committing changes...
-git commit -m "Add light/dark mode logo variants, Kiro logo + wordmark, fix integrations chat text color in dark mode"
+git commit -m "Update logo files, optimize hero section for laptops, reorder integration logos, update hero badge styling"
 echo.
 
 echo Pushing to GitHub Pages...
