@@ -8,6 +8,10 @@ echo.
 echo Current directory: %CD%
 echo.
 
+echo Pulling latest changes from GitHub...
+git pull origin main
+echo.
+
 echo Staging all changes...
 git add .
 echo.
