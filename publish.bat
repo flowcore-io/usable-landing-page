@@ -13,7 +13,7 @@ git add .
 echo.
 
 echo Committing changes...
-git commit -m "Update logo files, optimize hero section for laptops, reorder integration logos, update hero badge styling"
+git commit -m "Update messaging for universal knowledge management positioning - hero, navigation, features, and how-it-works sections"
 echo.
 
 echo Pushing to GitHub Pages...
