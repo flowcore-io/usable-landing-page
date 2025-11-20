@@ -32,6 +32,7 @@ class UsableApp {
     this.setupParallaxEffects();
     this.setupHoverEffects();
     this.setupUseCasesTabs();
+    this.setupAnnouncement();
   }
   
   /**
@@ -400,6 +401,39 @@ class UsableApp {
   }
   
   /**
+   * Setup announcement banner close functionality
+   */
+  setupAnnouncement() {
+    const announcement = document.querySelector('.announcement');
+    const closeButton = document.querySelector('.announcement__close');
+    
+    if (!announcement || !closeButton) return;
+    
+    // Check if user has previously dismissed the announcement
+    const announcementDismissed = localStorage.getItem('announcement-dismissed');
+    if (announcementDismissed === 'true') {
+      announcement.classList.add('announcement--hidden');
+      document.body.classList.add('announcement-hidden');
+      return;
+    }
+    
+    // Close button click handler
+    closeButton.addEventListener('click', () => {
+      announcement.classList.add('announcement--hidden');
+      document.body.classList.add('announcement-hidden');
+      localStorage.setItem('announcement-dismissed', 'true');
+    });
+    
+    // Keyboard support for close button
+    closeButton.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        closeButton.click();
+      }
+    });
+  }
+  
+  /**
    * Setup use cases tab functionality
    */
   setupUseCasesTabs() {
@@ -459,8 +493,16 @@ function handleRouteRedirection() {
   const currentPath = window.location.pathname;
   const currentHash = window.location.hash;
   
-  // Allow root path and index.html
-  if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+  // Allow root path, index.html, and other HTML pages
+  const allowedPaths = [
+    '/',
+    '/index.html',
+    '/fragments-2026.html',
+    '/404.html',
+    ''
+  ];
+  
+  if (allowedPaths.includes(currentPath) || currentPath.endsWith('.html')) {
     return;
   }
   

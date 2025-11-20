@@ -30,7 +30,10 @@ class RedirectingRequestHandler(http.server.SimpleHTTPRequestHandler):
                 "/README.md",
                 "/TROUBLESHOOTING.md",
                 "/index.html",
+                "/fragments-2026.html",
+                "/404.html",
             )
+            or path.endswith(".html")
         )
 
     def _redirect(self, location: str):
