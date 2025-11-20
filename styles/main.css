@@ -387,6 +387,34 @@ a:hover {
   width: 100%;
 }
 
+.btn--disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  background: var(--color-gray-400) !important;
+  color: var(--color-gray-600) !important;
+  border-color: var(--color-gray-400) !important;
+}
+
+.btn--disabled:hover,
+.btn--disabled:focus,
+.btn--disabled:active,
+.btn[aria-disabled="true"]:hover,
+.btn[aria-disabled="true"]:focus,
+.btn[aria-disabled="true"]:active {
+  background: var(--color-gray-400) !important;
+  color: var(--color-gray-600) !important;
+  border-color: var(--color-gray-400) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.btn--disabled::before,
+.btn[aria-disabled="true"]::before {
+  display: none;
+}
+
 /* ===================================
    HEADER - PROFESSIONAL NAVIGATION
    =================================== */
@@ -6269,6 +6297,81 @@ a .nav__logo-text {
 
   .conference-program__time {
     min-width: auto;
+  }
+}
+
+/* ===================================
+   CONFERENCE PREVIEW SECTION (Main Page)
+   =================================== */
+
+.conference-preview {
+  padding: var(--space-20) 0;
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.15) 0%, rgba(252, 175, 42, 0.15) 100%);
+}
+
+.conference-preview__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.conference-preview__content {
+  max-width: 800px;
+  margin: var(--space-10) auto 0;
+  text-align: center;
+}
+
+.conference-preview__details {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-8);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.conference-preview__detail {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-black);
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+
+.conference-preview__detail svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-blue);
+  flex-shrink: 0;
+}
+
+.conference-preview__text {
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  color: var(--color-black);
+  margin-bottom: var(--space-8);
+}
+
+.conference-preview__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+/* Responsive adjustments for conference preview */
+@media (max-width: 768px) {
+  .conference-preview {
+    padding: var(--space-16) 0;
+  }
+
+  .conference-preview__details {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .conference-preview__text {
+    font-size: var(--text-base);
   }
 }
 
