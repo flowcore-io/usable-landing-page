@@ -17,7 +17,7 @@ git add .
 echo.
 
 echo Committing changes...
-git commit -m "Update messaging for universal knowledge management positioning - hero, navigation, features, and how-it-works sections"
+git commit -m "Fix footer links and style legal pages to match front page design"
 echo.
 
 echo Pushing to GitHub Pages...

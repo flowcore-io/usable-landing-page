@@ -459,8 +459,14 @@ function handleRouteRedirection() {
   const currentPath = window.location.pathname;
   const currentHash = window.location.hash;
   
-  // Allow root path and index.html
-  if (currentPath === '/' || currentPath === '/index.html' || currentPath === '') {
+  // Allow root path, index.html, and legal pages (both clean URLs and .html)
+  if (currentPath === '/' || 
+      currentPath === '/index.html' || 
+      currentPath === '' ||
+      currentPath === '/privacy' ||
+      currentPath === '/privacy.html' ||
+      currentPath === '/terms' ||
+      currentPath === '/terms.html') {
     return;
   }
   
@@ -474,6 +480,15 @@ function handleRouteRedirection() {
 
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+  // Convert .html links to clean URLs for production compatibility
+  document.querySelectorAll('a[data-clean-url]').forEach(link => {
+    const cleanUrl = link.getAttribute('data-clean-url');
+    // Only use clean URL if we're not on a simple file server
+    if (window.location.protocol !== 'file:' && !window.location.hostname.includes('localhost')) {
+      link.href = cleanUrl;
+    }
+  });
+  
   // Handle route redirection first
   handleRouteRedirection();
   

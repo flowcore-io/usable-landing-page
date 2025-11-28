@@ -57,6 +57,14 @@ class RedirectingRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.path = "/index.html"
             return super().do_HEAD() if method == "HEAD" else super().do_GET()
 
+        if path == "/privacy" or path == "/privacy.html":
+            self.path = "/privacy.html"
+            return super().do_HEAD() if method == "HEAD" else super().do_GET()
+
+        if path == "/terms" or path == "/terms.html":
+            self.path = "/terms.html"
+            return super().do_HEAD() if method == "HEAD" else super().do_GET()
+
         if self._should_serve_static_direct(path):
             return super().do_HEAD() if method == "HEAD" else super().do_GET()
 

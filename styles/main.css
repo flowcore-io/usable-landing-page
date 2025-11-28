@@ -2973,13 +2973,16 @@ a:hover {
     height: 40px !important;
   }
   
-  .footer__copyright {
-    font-size: var(--text-sm) !important;
+  .footer__copyright-group {
     order: 2 !important;
   }
   
+  .footer__copyright {
+    font-size: var(--text-sm) !important;
+  }
+  
   .footer__legal {
-    display: none !important;
+    display: flex !important;
   }
   
   .footer__legal a {
@@ -3145,8 +3148,17 @@ a:hover {
     order: 2 !important;
   }
   
+  .footer__copyright-group {
+    order: 2 !important;
+  }
+  
+  .footer__copyright {
+    font-size: var(--text-xs) !important;
+    line-height: 1.4 !important;
+  }
+  
   .footer__legal {
-    display: none !important;
+    display: flex !important;
   }
   
   /* Hide most decorative circles on mobile for cleaner look */
@@ -3332,7 +3344,7 @@ a:hover {
   margin-left: auto;
   color: var(--color-blue);
   font-size: var(--text-sm);
-  order: 3;
+  order: 4;
 }
 
 @media (max-width: 640px) {
@@ -3543,6 +3555,10 @@ a:hover {
     min-height: 48px;
   }
   
+  .footer__copyright-group {
+    align-items: center;
+  }
+  
   .footer__copyright {
     font-size: var(--text-sm);
     text-align: center;
@@ -3562,17 +3578,24 @@ a:hover {
   }
 }
 
-.footer__copyright {
-  color: var(--color-blue);
-  font-size: var(--text-sm);
+.footer__copyright-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: flex-start;
   order: 1;
 }
 
+.footer__copyright {
+  color: var(--color-blue);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
 .footer__legal {
-  display: none;
+  display: flex;
   gap: var(--space-6);
   align-items: center;
-  order: 4;
 }
 
 .footer__legal a {
@@ -4694,6 +4717,223 @@ html[data-theme="dark"] .footer__circle-5,
   max-width: 700px;
   margin: 0 auto;
   font-weight: 400;
+}
+
+/* ===================================
+   LEGAL PAGES STYLING
+   =================================== */
+
+.legal-page {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure bokeh circles are visible on legal pages - increase opacity slightly */
+.legal-page ~ .bokeh,
+body .legal-page ~ .bokeh {
+  z-index: 0;
+  opacity: 1;
+}
+
+/* Make bokeh circles more visible on legal pages */
+body:has(.legal-page) .bokeh-1,
+body:has(.legal-page) .bokeh-2,
+body:has(.legal-page) .bokeh-3,
+body:has(.legal-page) .bokeh-4,
+body:has(.legal-page) .bokeh-5 {
+  opacity: 0.8;
+}
+
+.legal-page .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+}
+
+.legal-page h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: var(--space-4);
+  color: var(--color-blue);
+  font-weight: 700;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.legal-page__meta {
+  font-size: var(--text-sm);
+  color: #666666;
+  margin-bottom: var(--space-8);
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="dark"] .legal-page__meta {
+  color: #b0b0b0;
+}
+
+.legal-page__content {
+  line-height: 1.8;
+  color: var(--color-black);
+  background: rgba(255, 255, 255, 0.98);
+  padding: var(--space-10);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="dark"] .legal-page__content {
+  background: rgba(28, 47, 64, 0.98);
+  color: var(--color-white-text);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.legal-page__content h2 {
+  font-size: var(--text-2xl);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  color: var(--color-blue);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .legal-page__content h2 {
+  color: #60a5fa;
+}
+
+.legal-page__content h3 {
+  font-size: var(--text-xl);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+[data-theme="dark"] .legal-page__content h3 {
+  color: var(--color-white-text);
+}
+
+.legal-page__content p {
+  margin-bottom: var(--space-4);
+  color: var(--color-black);
+}
+
+[data-theme="dark"] .legal-page__content p {
+  color: var(--color-white-text);
+}
+
+.legal-page__content ul {
+  margin-left: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.legal-page__content li {
+  margin-bottom: var(--space-2);
+  color: var(--color-black);
+}
+
+[data-theme="dark"] .legal-page__content li {
+  color: var(--color-white-text);
+}
+
+.legal-page__content a {
+  color: var(--color-blue);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.legal-page__content a:hover {
+  color: var(--color-blue-light);
+  text-decoration-thickness: 2px;
+}
+
+[data-theme="dark"] .legal-page__content a {
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .legal-page__content a:hover {
+  color: #93c5fd;
+}
+
+/* Ensure strong and em tags have good contrast */
+.legal-page__content strong {
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .legal-page__content strong {
+  color: var(--color-white-text);
+}
+
+.legal-page__content em {
+  color: var(--color-black);
+  font-style: italic;
+}
+
+[data-theme="dark"] .legal-page__content em {
+  color: var(--color-white-text);
+}
+
+.legal-page__content code {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  color: var(--color-black);
+}
+
+[data-theme="dark"] .legal-page__content code {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white-text);
+}
+
+.legal-page__disclaimer {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.legal-page__compliance {
+  margin-top: var(--space-8);
+  font-size: var(--text-sm);
+  color: #666666;
+}
+
+[data-theme="dark"] .legal-page__compliance {
+  color: #b0b0b0;
+}
+
+.legal-page__compliance strong {
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .legal-page__compliance strong {
+  color: var(--color-white-text);
+}
+
+@media (max-width: 767px) {
+  .legal-page {
+    padding-top: 100px;
+    padding-bottom: var(--space-8);
+  }
+  
+  .legal-page .container {
+    padding: 0 var(--space-4);
+  }
+  
+  .legal-page__content h2 {
+    font-size: var(--text-xl);
+  }
+  
+  .legal-page__content h3 {
+    font-size: var(--text-lg);
+  }
 }
 
 .use-cases__shared-memory-grid {
