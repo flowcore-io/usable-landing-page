@@ -17,7 +17,7 @@ git add .
 echo.
 
 echo Committing changes...
-git commit -m "Fix footer links and style legal pages to match front page design"
+git commit -m "Update Privacy Policy and Terms of Service to match memory fragments v1.0.0"
 echo.
 
 echo Pushing to GitHub Pages...
