@@ -47,8 +47,8 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=block" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Styles -->
@@ -60,6 +60,9 @@
         .policy-page {
             padding: var(--space-24) var(--space-4);
             min-height: calc(100vh - 80px);
+            background: transparent;
+            position: relative;
+            z-index: 1;
         }
         
         .policy-page__container {
@@ -99,45 +102,64 @@
         
         .policy-page__updated {
             font-size: var(--text-sm);
-            color: var(--color-gray-500);
+            color: #666666;
             margin-bottom: var(--space-8);
+            position: relative;
+            z-index: 1;
+        }
+        
+        [data-theme="dark"] .policy-page__updated {
+            color: #b0b0b0;
         }
         
         .policy-page__content {
-            color: var(--color-gray-700);
+            color: var(--color-black);
             line-height: 1.8;
+            background: rgba(255, 255, 255, 0.98);
+            padding: var(--space-10);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 1;
         }
         
         [data-theme="dark"] .policy-page__content {
-            color: var(--color-gray-300);
+            color: var(--color-white-text);
+            background: rgba(28, 47, 64, 0.98);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
         
         .policy-page__content h2 {
             font-size: var(--text-2xl);
             font-weight: 600;
-            color: var(--color-gray-900);
+            color: var(--color-blue);
             margin-top: var(--space-10);
             margin-bottom: var(--space-4);
         }
         
         [data-theme="dark"] .policy-page__content h2 {
-            color: var(--color-white);
+            color: #60a5fa;
         }
         
         .policy-page__content h3 {
             font-size: var(--text-xl);
             font-weight: 600;
-            color: var(--color-gray-900);
+            color: var(--color-black);
             margin-top: var(--space-6);
             margin-bottom: var(--space-3);
         }
         
         [data-theme="dark"] .policy-page__content h3 {
-            color: var(--color-white);
+            color: var(--color-white-text);
         }
         
         .policy-page__content p {
             margin-bottom: var(--space-4);
+            color: var(--color-black);
+        }
+        
+        [data-theme="dark"] .policy-page__content p {
+            color: var(--color-white-text);
         }
         
         .policy-page__content ul,
@@ -148,20 +170,31 @@
         
         .policy-page__content li {
             margin-bottom: var(--space-2);
+            color: var(--color-black);
+        }
+        
+        [data-theme="dark"] .policy-page__content li {
+            color: var(--color-white-text);
         }
         
         .policy-page__content a {
             color: var(--color-blue);
             text-decoration: underline;
             transition: color var(--transition-fast);
+            font-weight: 500;
         }
         
         .policy-page__content a:hover {
-            color: var(--color-blue-dark);
+            color: var(--color-blue-light);
+            text-decoration-thickness: 2px;
+        }
+        
+        [data-theme="dark"] .policy-page__content a {
+            color: #60a5fa;
         }
         
         [data-theme="dark"] .policy-page__content a:hover {
-            color: var(--color-blue-light);
+            color: #93c5fd;
         }
         
         .policy-highlight {
@@ -289,6 +322,38 @@
             </div>
         </div>
     </div>
+
+    <!-- Bokeh Background Circles -->
+    <div class="bokeh bokeh-1"></div>
+    <div class="bokeh bokeh-2"></div>
+    <div class="bokeh bokeh-3"></div>
+    <div class="bokeh bokeh-4"></div>
+    <div class="bokeh bokeh-5"></div>
+    <div class="bokeh bokeh-6"></div>
+    <div class="bokeh bokeh-7"></div>
+    <div class="bokeh bokeh-8"></div>
+    <div class="bokeh bokeh-9"></div>
+    <div class="bokeh bokeh-10"></div>
+    <div class="bokeh bokeh-11"></div>
+    <div class="bokeh bokeh-12"></div>
+    <div class="bokeh bokeh-13"></div>
+    <div class="bokeh bokeh-14"></div>
+    <div class="bokeh bokeh-15"></div>
+    <div class="bokeh bokeh-16"></div>
+    <div class="bokeh bokeh-17"></div>
+    <div class="bokeh bokeh-18"></div>
+    <div class="bokeh bokeh-19"></div>
+    <div class="bokeh bokeh-20"></div>
+    <div class="bokeh bokeh-21"></div>
+    <div class="bokeh bokeh-22"></div>
+    <div class="bokeh bokeh-23"></div>
+    <div class="bokeh bokeh-24"></div>
+    <div class="bokeh bokeh-25"></div>
+    <div class="bokeh bokeh-26"></div>
+    <div class="bokeh bokeh-27"></div>
+    <div class="bokeh bokeh-28"></div>
+    <div class="bokeh bokeh-29"></div>
+    <div class="bokeh bokeh-30"></div>
 
     <!-- Terms of Service Content -->
     <main id="main-content" class="policy-page" role="main">
@@ -568,9 +633,15 @@
             </div>
             
             <div class="footer__bottom">
-                <p class="footer__copyright">
-                    © 2025 <a href="https://www.flowcore.com" class="brand-text" target="_blank" rel="noopener noreferrer">Flowcore Sp/f</a> - All rights reserved.
-                </p>
+                <div class="footer__copyright-group">
+                    <p class="footer__copyright">
+                        © 2025 <a href="https://www.flowcore.com" class="brand-text" target="_blank" rel="noopener noreferrer">Flowcore Sp/f</a> - All rights reserved.
+                    </p>
+                    <div class="footer__legal">
+                        <a href="/privacy.html" class="footer__link">Privacy Policy</a>
+                        <a href="/terms.html" class="footer__link">Terms of Service</a>
+                    </div>
+                </div>
                 <div class="footer__social">
                     <a href="https://discord.gg/36AuxFNnSE" class="footer__social-link" aria-label="Join our Discord" target="_blank" rel="noopener noreferrer">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -607,10 +678,6 @@
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                     </a>
-                </div>
-                <div class="footer__legal">
-                    <a href="/privacy.html" class="footer__link">Privacy Policy</a>
-                    <a href="/terms.html" class="footer__link">Terms of Service</a>
                 </div>
             </div>
         </div>
