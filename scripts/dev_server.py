@@ -24,12 +24,16 @@ class RedirectingRequestHandler(http.server.SimpleHTTPRequestHandler):
             or path in (
                 "/robots.txt",
                 "/sitemap.xml",
+                "/site.webmanifest",
                 "/favicon.ico",
                 "/CNAME",
                 "/README.md",
                 "/TROUBLESHOOTING.md",
                 "/index.html",
+                "/fragments-2026.html",
+                "/404.html",
             )
+            or path.endswith(".html")
         )
 
     def _redirect(self, location: str):

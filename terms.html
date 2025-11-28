@@ -3,37 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Usable</title>
-    <meta name="description" content="Terms of Service for Usable - Smart Knowledge Management for Teams. Read our terms and conditions for using the Service.">
+    <title>Terms of Service | Usable</title>
+    <meta name="description" content="Terms of Service for Usable - Read our terms and conditions for using our services.">
     
     <!-- SEO Meta Tags -->
+    <meta name="author" content="Flowcore Sp/f">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://usable.dev/terms">
+    <meta name="theme-color" content="#347cbf" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
     
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- DNS Prefetch for External Resources -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://plausible.io">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://usable.dev/terms">
+    <meta property="og:title" content="Terms of Service | Usable">
+    <meta property="og:description" content="Terms of Service for Usable - Read our terms and conditions for using our services.">
+    <meta property="og:image" content="https://usable.dev/assets/images/Usable - Logo.png">
+    <meta property="og:site_name" content="Usable">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://usable.dev/terms">
+    <meta property="twitter:title" content="Terms of Service | Usable">
+    <meta property="twitter:description" content="Terms of Service for Usable - Read our terms and conditions for using our services.">
+    <meta property="twitter:image" content="https://usable.dev/assets/images/Usable - Logo.png">
+    <meta name="twitter:creator" content="@UsableDev">
+    <meta name="twitter:site" content="@UsableDev">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Usable - Logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Usable - Logo.png">
     <link rel="apple-touch-icon" href="assets/images/Usable - Logo.png">
+    <link rel="shortcut icon" href="assets/images/Usable - Logo.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=block" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
+    <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
     
-    <!-- Theme Flash Prevention -->
-    <script>
-    (function() {
-        const savedTheme = localStorage.getItem('theme');
-        const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = savedTheme || (systemDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-    })();
-    </script>
+    <!-- Policy Page Specific Styles -->
+    <style>
+        .policy-page {
+            padding: var(--space-24) var(--space-4);
+            min-height: calc(100vh - 80px);
+        }
+        
+        .policy-page__container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .policy-page__back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--color-blue);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-6);
+            transition: color var(--transition-fast);
+        }
+        
+        .policy-page__back-link:hover {
+            color: var(--color-blue-dark);
+        }
+        
+        [data-theme="dark"] .policy-page__back-link:hover {
+            color: var(--color-blue-light);
+        }
+        
+        .policy-page__title {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--space-2);
+        }
+        
+        [data-theme="dark"] .policy-page__title {
+            color: var(--color-white);
+        }
+        
+        .policy-page__updated {
+            font-size: var(--text-sm);
+            color: var(--color-gray-500);
+            margin-bottom: var(--space-8);
+        }
+        
+        .policy-page__content {
+            color: var(--color-gray-700);
+            line-height: 1.8;
+        }
+        
+        [data-theme="dark"] .policy-page__content {
+            color: var(--color-gray-300);
+        }
+        
+        .policy-page__content h2 {
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            color: var(--color-gray-900);
+            margin-top: var(--space-10);
+            margin-bottom: var(--space-4);
+        }
+        
+        [data-theme="dark"] .policy-page__content h2 {
+            color: var(--color-white);
+        }
+        
+        .policy-page__content h3 {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--color-gray-900);
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-3);
+        }
+        
+        [data-theme="dark"] .policy-page__content h3 {
+            color: var(--color-white);
+        }
+        
+        .policy-page__content p {
+            margin-bottom: var(--space-4);
+        }
+        
+        .policy-page__content ul,
+        .policy-page__content ol {
+            margin-bottom: var(--space-4);
+            padding-left: var(--space-6);
+        }
+        
+        .policy-page__content li {
+            margin-bottom: var(--space-2);
+        }
+        
+        .policy-page__content a {
+            color: var(--color-blue);
+            text-decoration: underline;
+            transition: color var(--transition-fast);
+        }
+        
+        .policy-page__content a:hover {
+            color: var(--color-blue-dark);
+        }
+        
+        [data-theme="dark"] .policy-page__content a:hover {
+            color: var(--color-blue-light);
+        }
+        
+        .policy-highlight {
+            background: var(--color-blue-50);
+            border-left: 4px solid var(--color-blue);
+            padding: var(--space-4) var(--space-6);
+            margin: var(--space-6) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        }
+        
+        [data-theme="dark"] .policy-highlight {
+            background: rgba(52, 124, 191, 0.1);
+        }
+        
+        .policy-highlight p {
+            margin-bottom: 0;
+        }
+        
+        .policy-page__contact {
+            margin-top: var(--space-10);
+            padding: var(--space-6);
+            background: var(--color-gray-50);
+            border-radius: var(--radius-lg);
+        }
+        
+        [data-theme="dark"] .policy-page__contact {
+            background: var(--color-gray-800);
+        }
+        
+        @media (max-width: 768px) {
+            .policy-page {
+                padding: var(--space-20) var(--space-4) var(--space-12);
+            }
+            
+            .policy-page__title {
+                font-size: var(--text-3xl);
+            }
+            
+            .policy-page__content h2 {
+                font-size: var(--text-xl);
+            }
+            
+            .policy-page__content h3 {
+                font-size: var(--text-lg);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
@@ -115,311 +290,241 @@
         </div>
     </div>
 
-    <!-- Bokeh Background Circles -->
-    <div class="bokeh bokeh-1"></div>
-    <div class="bokeh bokeh-2"></div>
-    <div class="bokeh bokeh-3"></div>
-    <div class="bokeh bokeh-4"></div>
-    <div class="bokeh bokeh-5"></div>
-    <div class="bokeh bokeh-6"></div>
-    <div class="bokeh bokeh-7"></div>
-    <div class="bokeh bokeh-8"></div>
-    <div class="bokeh bokeh-9"></div>
-    <div class="bokeh bokeh-10"></div>
-    <div class="bokeh bokeh-11"></div>
-    <div class="bokeh bokeh-12"></div>
-    <div class="bokeh bokeh-13"></div>
-    <div class="bokeh bokeh-14"></div>
-    <div class="bokeh bokeh-15"></div>
-    <div class="bokeh bokeh-16"></div>
-    <div class="bokeh bokeh-17"></div>
-    <div class="bokeh bokeh-18"></div>
-    <div class="bokeh bokeh-19"></div>
-    <div class="bokeh bokeh-20"></div>
-    <div class="bokeh bokeh-21"></div>
-    <div class="bokeh bokeh-22"></div>
-    <div class="bokeh bokeh-23"></div>
-    <div class="bokeh bokeh-24"></div>
-    <div class="bokeh bokeh-25"></div>
-    <div class="bokeh bokeh-26"></div>
-    <div class="bokeh bokeh-27"></div>
-    <div class="bokeh bokeh-28"></div>
-    <div class="bokeh bokeh-29"></div>
-    <div class="bokeh bokeh-30"></div>
-
-    <!-- Main Content -->
-    <main id="main-content" class="legal-page" role="main">
-        <div class="container">
-            <h1>Terms of Service</h1>
-            <p class="legal-page__meta"><strong>Version 1.0.0</strong><br><strong>Effective Date:</strong> 28th October 2025</p>
+    <!-- Terms of Service Content -->
+    <main id="main-content" class="policy-page" role="main">
+        <div class="policy-page__container">
+            <a href="/" class="policy-page__back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Home
+            </a>
             
-            <div class="legal-page__content">
+            <h1 class="policy-page__title">Terms of Service</h1>
+            <p class="policy-page__updated">Last updated: November 27, 2025</p>
+            
+            <div class="policy-page__content">
+                <p>
+                    Welcome to <span class="brand-text">Usable</span>. These Terms of Service ("Terms") govern your access to and use of the 
+                    <span class="brand-text">Usable</span> website, products, and services (collectively, the "Services") operated by 
+                    Flowcore Sp/f ("Company," "we," "our," or "us").
+                </p>
+                
+                <p>
+                    By accessing or using our Services, you agree to be bound by these Terms. If you do not agree to these Terms, 
+                    you may not access or use the Services.
+                </p>
+
                 <h2>1. Acceptance of Terms</h2>
-                <p>By accessing or using Usable ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not use the Service.</p>
-                
-                <h3>1.1 Eligibility</h3>
-                <p>You must be at least 16 years old to use the Service. By using the Service, you represent that you meet this age requirement and have the legal capacity to enter into these Terms.</p>
-                
-                <h3>1.2 Updates to Terms</h3>
-                <p>We may update these Terms from time to time. We will notify you of material changes by email or through the Service. Your continued use of the Service after such notification constitutes acceptance of the updated Terms.</p>
-                
-                <h2>2. Description of Service</h2>
-                <p>Usable is a shared memory platform for developer teams that provides:</p>
+                <p>
+                    By creating an account, accessing, or using our Services, you confirm that you:
+                </p>
                 <ul>
-                    <li><strong>Memory Fragments:</strong> Store and organize knowledge, recipes, solutions, templates, and other information</li>
-                    <li><strong>Semantic Search:</strong> AI-powered search across your team's knowledge base</li>
-                    <li><strong>Knowledge Graphs:</strong> Visualize relationships between information</li>
-                    <li><strong>Workspaces:</strong> Collaborate with team members in shared or private workspaces</li>
-                    <li><strong>Integrations:</strong> Connect with development tools via MCP (Model Context Protocol)</li>
+                    <li>Are at least 16 years of age</li>
+                    <li>Have the legal capacity to enter into a binding agreement</li>
+                    <li>Are not prohibited from using the Services under applicable laws</li>
+                    <li>Agree to be bound by these Terms and our <a href="/privacy">Privacy Policy</a></li>
                 </ul>
-                
-                <h3>2.1 Service Availability</h3>
-                <p>We strive to provide reliable access to the Service but do not guarantee uninterrupted availability. We may:</p>
+
+                <h2>2. Description of Services</h2>
+                <p>
+                    <span class="brand-text">Usable</span> provides a knowledge management platform designed for teams working with AI agents. 
+                    Our Services include:
+                </p>
                 <ul>
-                    <li>Perform scheduled maintenance (with advance notice)</li>
-                    <li>Make updates to improve the Service</li>
-                    <li>Temporarily suspend the Service for security or technical reasons</li>
+                    <li>Knowledge fragment creation and management</li>
+                    <li>Team collaboration and workspace features</li>
+                    <li>MCP (Model Context Protocol) server integration</li>
+                    <li>API access for programmatic interactions</li>
+                    <li>Related documentation and support resources</li>
                 </ul>
-                
-                <h3>2.2 Beta Features</h3>
-                <p>Some features may be designated as "beta" or "experimental." These features are provided "as is" and may not work as intended. We may discontinue beta features at any time without notice.</p>
-                
-                <h2>3. User Accounts</h2>
+
+                <h2>3. Account Registration</h2>
                 
                 <h3>3.1 Account Creation</h3>
-                <p>To use the Service, you must create an account using our authentication provider (Keycloak). You agree to:</p>
+                <p>
+                    To use certain features of our Services, you must register for an account. When you register, you agree to:
+                </p>
                 <ul>
-                    <li>Provide accurate and complete information during registration</li>
-                    <li>Keep your account credentials secure</li>
-                    <li>Notify us immediately of any unauthorized access</li>
-                    <li>Be responsible for all activities under your account</li>
+                    <li>Provide accurate, current, and complete information</li>
+                    <li>Maintain and promptly update your account information</li>
+                    <li>Keep your password secure and confidential</li>
+                    <li>Accept responsibility for all activities under your account</li>
+                    <li>Notify us immediately of any unauthorized use</li>
                 </ul>
                 
-                <h3>3.2 Account Termination</h3>
-                <p>We reserve the right to suspend or terminate your account if:</p>
+                <h3>3.2 Account Security</h3>
+                <p>
+                    You are responsible for safeguarding your account credentials. We recommend using a strong, unique password 
+                    and enabling any available security features. We are not liable for any loss or damage arising from your 
+                    failure to comply with this security obligation.
+                </p>
+
+                <h2>4. Subscription and Payments</h2>
+                
+                <h3>4.1 Subscription Plans</h3>
+                <p>
+                    We offer various subscription plans with different features and usage limits. The current plans and pricing 
+                    are available on our website. We reserve the right to modify our pricing with reasonable notice.
+                </p>
+                
+                <h3>4.2 Billing</h3>
+                <p>
+                    By subscribing to a paid plan, you authorize us to charge your payment method on a recurring basis. 
+                    All fees are non-refundable unless otherwise stated or required by law.
+                </p>
+                
+                <h3>4.3 Usage Limits</h3>
+                <p>
+                    Each plan includes specific limits on storage, tokens, and other resources. If you exceed these limits, 
+                    you may need to upgrade your plan or reduce usage.
+                </p>
+
+                <h2>5. Acceptable Use</h2>
+                <p>You agree not to use our Services to:</p>
                 <ul>
-                    <li>You violate these Terms</li>
-                    <li>You engage in fraudulent or illegal activities</li>
-                    <li>Your account is inactive for more than 12 months</li>
-                    <li>Required by law</li>
+                    <li>Violate any applicable law or regulation</li>
+                    <li>Infringe on the intellectual property rights of others</li>
+                    <li>Upload or transmit malicious code or harmful content</li>
+                    <li>Attempt to gain unauthorized access to our systems</li>
+                    <li>Interfere with or disrupt the Services or servers</li>
+                    <li>Engage in any form of automated data collection without permission</li>
+                    <li>Use the Services to store or transmit illegal content</li>
+                    <li>Impersonate any person or entity</li>
+                    <li>Send spam or unsolicited communications</li>
+                    <li>Engage in any activity that could harm or damage our reputation</li>
                 </ul>
-                <p>You may terminate your account at any time from your account settings.</p>
+
+                <h2>6. Intellectual Property</h2>
                 
-                <h2>4. User Content and Data</h2>
+                <h3>6.1 Our Intellectual Property</h3>
+                <p>
+                    The Services, including all content, features, and functionality, are owned by Flowcore Sp/f and are 
+                    protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, 
+                    distribute, or create derivative works without our express written permission.
+                </p>
                 
-                <h3>4.1 Your Content</h3>
-                <p>You retain ownership of all content you create, upload, or store in the Service ("Your Content"). By using the Service, you grant us a limited license to:</p>
+                <h3>6.2 Your Content</h3>
+                <p>
+                    You retain ownership of any content you create or upload to the Services ("Your Content"). By uploading 
+                    Your Content, you grant us a limited license to store, process, and display it as necessary to provide 
+                    the Services to you and your authorized team members.
+                </p>
+                
+                <h3>6.3 Feedback</h3>
+                <p>
+                    If you provide us with feedback, suggestions, or ideas about our Services, you grant us the right to use 
+                    such feedback without restriction or compensation to you.
+                </p>
+
+                <h2>7. Data and Privacy</h2>
+                <p>
+                    Your use of the Services is also governed by our <a href="/privacy">Privacy Policy</a>, which describes 
+                    how we collect, use, and protect your personal information. By using our Services, you consent to our 
+                    data practices as described in the Privacy Policy.
+                </p>
+
+                <h2>8. Third-Party Services</h2>
+                <p>
+                    Our Services may integrate with or contain links to third-party services. We are not responsible for 
+                    the content, privacy practices, or terms of any third-party services. Your use of third-party services 
+                    is at your own risk and subject to their respective terms.
+                </p>
+
+                <h2>9. Disclaimer of Warranties</h2>
+                <div class="policy-highlight">
+                    <p>
+                        THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS 
+                        OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+                        PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, 
+                        ERROR-FREE, OR COMPLETELY SECURE.
+                    </p>
+                </div>
+
+                <h2>10. Limitation of Liability</h2>
+                <p>
+                    TO THE MAXIMUM EXTENT PERMITTED BY LAW, FLOWCORE SP/F SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, 
+                    SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED 
+                    DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:
+                </p>
                 <ul>
-                    <li>Store and process Your Content to provide the Service</li>
-                    <li>Generate embeddings and semantic relationships for search functionality</li>
-                    <li>Back up Your Content for disaster recovery</li>
-                    <li>Display Your Content to users you authorize (workspace members)</li>
+                    <li>Your use or inability to use the Services</li>
+                    <li>Any unauthorized access to or use of our servers or your data</li>
+                    <li>Any interruption or cessation of transmission to or from the Services</li>
+                    <li>Any bugs, viruses, or similar issues transmitted through the Services</li>
+                    <li>Any errors or omissions in any content</li>
                 </ul>
+
+                <h2>11. Indemnification</h2>
+                <p>
+                    You agree to indemnify, defend, and hold harmless Flowcore Sp/f and its officers, directors, employees, 
+                    and agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) 
+                    arising from your use of the Services, your violation of these Terms, or your violation of any rights of 
+                    another party.
+                </p>
+
+                <h2>12. Termination</h2>
                 
-                <h3>4.2 Content Restrictions</h3>
-                <p>You agree not to upload, store, or share content that:</p>
-                <ul>
-                    <li>Violates any law or regulation</li>
-                    <li>Infringes intellectual property rights</li>
-                    <li>Contains malware or malicious code</li>
-                    <li>Harasses, threatens, or harms others</li>
-                    <li>Contains personal data of third parties without consent</li>
-                </ul>
+                <h3>12.1 Termination by You</h3>
+                <p>
+                    You may terminate your account at any time by contacting us or using the account settings in the Services. 
+                    Upon termination, your right to use the Services will immediately cease.
+                </p>
                 
-                <h3>4.3 Content Monitoring</h3>
-                <p>We do not actively monitor Your Content but reserve the right to:</p>
-                <ul>
-                    <li>Review content if we receive complaints</li>
-                    <li>Remove content that violates these Terms</li>
-                    <li>Cooperate with law enforcement investigations</li>
-                </ul>
+                <h3>12.2 Termination by Us</h3>
+                <p>
+                    We may suspend or terminate your access to the Services at any time, with or without cause, and with or 
+                    without notice. Reasons for termination may include violation of these Terms, non-payment, or extended 
+                    periods of inactivity.
+                </p>
                 
-                <h3>4.4 Data Portability</h3>
-                <p>You can export Your Content at any time using our export tools. Upon account termination, we will retain Your Content for 30 days, after which it will be permanently deleted.</p>
-                
-                <h2>5. Workspaces and Collaboration</h2>
-                
-                <h3>5.1 Workspace Ownership</h3>
-                <p>The user who creates a workspace ("Workspace Owner") has full control over:</p>
-                <ul>
-                    <li>Inviting and removing members</li>
-                    <li>Setting access permissions</li>
-                    <li>Managing workspace settings</li>
-                    <li>Deleting the workspace</li>
-                </ul>
-                
-                <h3>5.2 Shared Workspaces</h3>
-                <p>When you join a shared workspace:</p>
-                <ul>
-                    <li>You agree to collaborate respectfully with other members</li>
-                    <li>The Workspace Owner controls access to workspace content</li>
-                    <li>You may only access content you have permission to view</li>
-                    <li>You must comply with the workspace's usage policies</li>
-                </ul>
-                
-                <h3>5.3 Leaving a Workspace</h3>
-                <p>You may leave a workspace at any time. Content you created remains in the workspace unless you delete it before leaving.</p>
-                
-                <h2>6. Subscription and Payments</h2>
-                
-                <h3>6.1 Subscription Plans</h3>
-                <p>Usable offers:</p>
-                <ul>
-                    <li><strong>Free Plan:</strong> Limited features and storage</li>
-                    <li><strong>Paid Plans:</strong> Enhanced features, increased storage, and priority support</li>
-                </ul>
-                
-                <h3>6.2 Billing</h3>
-                <p>Paid subscriptions are billed:</p>
-                <ul>
-                    <li>Monthly or annually as selected</li>
-                    <li>Automatically renewed unless cancelled</li>
-                    <li>In advance at the start of each billing period</li>
-                </ul>
-                
-                <h3>6.3 Cancellation and Refunds</h3>
-                <ul>
-                    <li>You may cancel your subscription at any time</li>
-                    <li>Cancellation takes effect at the end of the current billing period</li>
-                    <li>No refunds for partial months or unused services</li>
-                    <li>Upon downgrade to free plan, content exceeding free plan limits may be archived</li>
-                </ul>
-                
-                <h3>6.4 Price Changes</h3>
-                <p>We may change subscription prices with 30 days' notice. Price changes apply to renewals after the notice period.</p>
-                
-                <h2>7. Intellectual Property</h2>
-                
-                <h3>7.1 Usable IP</h3>
-                <p>The Service, including its design, code, branding, and documentation, is owned by Flowcore and protected by intellectual property laws. You may not:</p>
-                <ul>
-                    <li>Copy, modify, or reverse-engineer the Service</li>
-                    <li>Use our trademarks without permission</li>
-                    <li>Claim ownership of any part of the Service</li>
-                </ul>
-                
-                <h3>7.2 Feedback</h3>
-                <p>If you provide feedback, suggestions, or ideas about the Service, we may use them without compensation or attribution to you.</p>
-                
-                <h2>8. Prohibited Activities</h2>
-                <p>You agree not to:</p>
-                <ul>
-                    <li>Use the Service for illegal purposes</li>
-                    <li>Attempt to gain unauthorized access to systems or data</li>
-                    <li>Interfere with the Service's operation</li>
-                    <li>Scrape or crawl the Service without permission</li>
-                    <li>Resell or redistribute the Service</li>
-                    <li>Use the Service to spam or phish others</li>
-                    <li>Impersonate others or misrepresent your affiliation</li>
-                </ul>
-                <p>Violations may result in immediate account termination and legal action.</p>
-                
-                <h2>9. AI and Automated Processing</h2>
-                
-                <h3>9.1 AI-Generated Content</h3>
-                <p>The Service uses AI to:</p>
-                <ul>
-                    <li>Generate semantic embeddings for search</li>
-                    <li>Suggest related content</li>
-                    <li>Provide insights and recommendations</li>
-                </ul>
-                <p>AI-generated suggestions are not guaranteed to be accurate. You are responsible for verifying information before relying on it.</p>
-                
-                <h3>9.2 Training Data</h3>
-                <p>We do <strong>not</strong> use Your Content to train AI models for other users or third parties. Your data remains private within your workspaces.</p>
-                
-                <h2>10. Privacy and Data Protection</h2>
-                
-                <h3>10.1 Data Collection</h3>
-                <p>We collect and process data as described in our <a href="/privacy.html">Privacy Policy</a>. By using the Service, you consent to such processing.</p>
-                
-                <h3>10.2 GDPR Rights</h3>
-                <p>If you are in the EU/EEA, you have rights under GDPR including:</p>
-                <ul>
-                    <li>Access to your personal data</li>
-                    <li>Correction of inaccurate data</li>
-                    <li>Deletion of your data ("right to be forgotten")</li>
-                    <li>Data portability</li>
-                    <li>Objection to processing</li>
-                </ul>
-                <p>Contact privacy@usable.dev to exercise these rights.</p>
-                
-                <h2>11. Third-Party Services</h2>
-                
-                <h3>11.1 Integrations</h3>
-                <p>The Service may integrate with third-party services (e.g., GitHub, Slack). Your use of those services is subject to their terms.</p>
-                
-                <h3>11.2 Links</h3>
-                <p>We are not responsible for content on external websites linked from the Service.</p>
-                
-                <h2>12. Disclaimers and Limitations of Liability</h2>
-                
-                <h3>12.1 "As Is" Disclaimer</h3>
-                <p class="legal-page__disclaimer">THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DISCLAIM ALL WARRANTIES INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
-                
-                <h3>12.2 Limitation of Liability</h3>
-                <p class="legal-page__disclaimer">TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
-                <ul class="legal-page__disclaimer">
-                    <li>WE ARE NOT LIABLE FOR INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES</li>
-                    <li>OUR TOTAL LIABILITY IS LIMITED TO THE AMOUNT YOU PAID US IN THE PAST 12 MONTHS</li>
-                    <li>WE ARE NOT LIABLE FOR DATA LOSS (YOU SHOULD MAINTAIN BACKUPS)</li>
-                </ul>
-                
-                <h3>12.3 User Responsibility</h3>
-                <p>You are responsible for:</p>
-                <ul>
-                    <li>Maintaining backups of Your Content</li>
-                    <li>Ensuring Your Content complies with laws</li>
-                    <li>Managing access to your account</li>
-                </ul>
-                
-                <h2>13. Indemnification</h2>
-                <p>You agree to indemnify and hold harmless Flowcore, its affiliates, and employees from any claims, damages, or expenses arising from:</p>
-                <ul>
-                    <li>Your violation of these Terms</li>
-                    <li>Your Content</li>
-                    <li>Your use of the Service</li>
-                </ul>
-                
-                <h2>14. Dispute Resolution</h2>
-                
-                <h3>14.1 Governing Law</h3>
-                <p>These Terms are governed by the laws of [Jurisdiction - Faroe Islands or Denmark], without regard to conflict of law principles.</p>
-                
-                <h3>14.2 Arbitration</h3>
-                <p>Disputes will be resolved through binding arbitration in [Location] under [Arbitration Rules], except where prohibited by law.</p>
-                
-                <h3>14.3 Class Action Waiver</h3>
-                <p>You agree to resolve disputes individually and waive participation in class actions.</p>
-                
+                <h3>12.3 Effect of Termination</h3>
+                <p>
+                    Upon termination, your right to use the Services will immediately cease. We may delete your data in 
+                    accordance with our data retention policies. Sections that by their nature should survive termination 
+                    will survive, including intellectual property provisions, disclaimers, and limitations of liability.
+                </p>
+
+                <h2>13. Changes to Terms</h2>
+                <p>
+                    We reserve the right to modify these Terms at any time. We will provide notice of material changes by 
+                    posting the updated Terms on our website and updating the "Last updated" date. Your continued use of 
+                    the Services after such changes constitutes acceptance of the modified Terms.
+                </p>
+
+                <h2>14. Governing Law</h2>
+                <p>
+                    These Terms shall be governed by and construed in accordance with the laws of the Faroe Islands, 
+                    without regard to its conflict of law provisions. Any disputes arising under these Terms shall be 
+                    subject to the exclusive jurisdiction of the courts located in the Faroe Islands.
+                </p>
+
                 <h2>15. General Provisions</h2>
-                
-                <h3>15.1 Entire Agreement</h3>
-                <p>These Terms constitute the entire agreement between you and Flowcore regarding the Service.</p>
-                
-                <h3>15.2 Severability</h3>
-                <p>If any provision is found unenforceable, the remaining provisions remain in effect.</p>
-                
-                <h3>15.3 Waiver</h3>
-                <p>Failure to enforce any provision does not waive our right to enforce it later.</p>
-                
-                <h3>15.4 Assignment</h3>
-                <p>You may not assign these Terms. We may assign them to affiliates or in connection with a merger or sale.</p>
-                
-                <h3>15.5 Force Majeure</h3>
-                <p>We are not liable for delays or failures due to events beyond our reasonable control (natural disasters, war, pandemics, etc.).</p>
-                
-                <h2>16. Contact Information</h2>
-                <p>For questions about these Terms:</p>
-                <p><strong>Email:</strong> legal@usable.dev<br>
-                <strong>Website:</strong> https://usable.dev<br>
-                <strong>Mailing Address:</strong><br>
-                Flowcore<br>
-                Vestara Bryggja 15<br>
-                Tórshavn 100, Faroe Islands</p>
-                
-                <h2>17. Acknowledgment</h2>
-                <p>By clicking "Accept" or using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+                <ul>
+                    <li><strong>Entire Agreement:</strong> These Terms constitute the entire agreement between you and 
+                    Flowcore Sp/f regarding the Services.</li>
+                    <li><strong>Severability:</strong> If any provision of these Terms is found unenforceable, the 
+                    remaining provisions will continue in effect.</li>
+                    <li><strong>Waiver:</strong> Our failure to enforce any right or provision of these Terms will not 
+                    be deemed a waiver of such right or provision.</li>
+                    <li><strong>Assignment:</strong> You may not assign your rights under these Terms without our prior 
+                    written consent. We may assign our rights without restriction.</li>
+                </ul>
+
+                <div class="policy-page__contact">
+                    <h2 style="margin-top: 0;">16. Contact Us</h2>
+                    <p>If you have any questions about these Terms of Service, please contact us:</p>
+                    <p>
+                        <strong>Flowcore Sp/f</strong><br>
+                        Vestara Bryggja 15<br>
+                        100 Tórshavn<br>
+                        Faroe Islands
+                    </p>
+                    <p>
+                        Email: <a href="mailto:legal@flowcore.com">legal@flowcore.com</a>
+                    </p>
+                </div>
             </div>
         </div>
     </main>
@@ -439,7 +544,7 @@
                         <span class="footer__logo-text"><span class="brand-text">Usable</span></span>
                     </a>
                     <p class="footer__tagline">
-                        <span class="brand-text">Usable</span> is not just adorable<br>- it is actually useful.
+                        <span class="brand-text">Usable</span> is not just adorable<br>- it is actually usable.
                     </p>
                 </div>
                 
@@ -463,15 +568,9 @@
             </div>
             
             <div class="footer__bottom">
-                <div class="footer__copyright-group">
-                    <p class="footer__copyright">
-                        © 2025 <a href="https://www.flowcore.com" class="brand-text" target="_blank" rel="noopener noreferrer">Flowcore Sp/f</a> - All rights reserved.
-                    </p>
-                    <div class="footer__legal">
-                        <a href="/privacy.html" class="footer__link">Privacy Policy</a>
-                        <a href="/terms.html" class="footer__link">Terms of Service</a>
-                    </div>
-                </div>
+                <p class="footer__copyright">
+                    © 2025 <a href="https://www.flowcore.com" class="brand-text" target="_blank" rel="noopener noreferrer">Flowcore Sp/f</a> - All rights reserved.
+                </p>
                 <div class="footer__social">
                     <a href="https://discord.gg/36AuxFNnSE" class="footer__social-link" aria-label="Join our Discord" target="_blank" rel="noopener noreferrer">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -509,7 +608,10 @@
                         </svg>
                     </a>
                 </div>
-                <div id="usable-version" class="footer__version" aria-live="polite"></div>
+                <div class="footer__legal">
+                    <a href="/privacy.html" class="footer__link">Privacy Policy</a>
+                    <a href="/terms.html" class="footer__link">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>

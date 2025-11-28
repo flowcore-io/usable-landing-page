@@ -56,6 +56,9 @@
     <link rel="stylesheet" href="styles/main.css">
     <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
     
+    <!-- RB2B Tracking -->
+    <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("0OV0VHYLWW6Z");</script>
+    
     <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
     {
@@ -246,6 +249,26 @@
         </div>
     </div>
 
+    <!-- Announcement Banner -->
+    <div class="announcement" role="region" aria-label="Conference announcement">
+        <div class="announcement__container">
+            <div class="announcement__content">
+                <span class="announcement__badge">Conference</span>
+                <p class="announcement__text">
+                    <strong>Fragments Conference 2026</strong> - May 6-7, 2026 in the Faroe Islands. 
+                    Building Beautiful AI Agent Solutions with the Best Knowledge Management on the Planet. 
+                    <a href="/fragments-2026.html" class="announcement__link">Learn more</a>
+                </p>
+            </div>
+            <button class="announcement__close" aria-label="Close announcement" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section id="main-content" class="hero" role="main">
         <div class="hero__container">
@@ -260,11 +283,11 @@
                     </svg>
                 </a>
                 <h1 class="hero__title" role="heading" aria-level="1">
-                    Knowledge gets lost.<br>
-                    <span class="hero__title-accent"><span class="brand-text">Usable</span> remembers.</span>
+                    Your AI Agent <b>Sucks</b> at Knowledge Management<br>
+                    <span class="hero__title-accent"><span class="brand-text">Usable</span> to the rescue.</span>
                 </h1>
                 <p class="hero__description">
-                    Smart knowledge management for modern teams. Capture important decisions, procedures, and insights — then find them instantly when you or your team need them.
+                    Plug‑and‑play knowledge management for your AI agent. Skip the RAG/GraphRAG chaos—connect your content to Usable and get production‑grade answers in minutes, without building a knowledge stack yourself.
                 </p>
                 <div class="hero__actions animate-on-scroll fade-in-up stagger-delay-1">
                     <a href="https://www.youtube.com/playlist?list=PLfhO045jHxoX4STfnP73JOtpE1VqPePIA" class="btn btn--primary btn--large" target="_blank" rel="noopener noreferrer">WATCH DEMOS</a>
@@ -853,18 +876,18 @@
                         <h3 class="pricing__card-title">Free</h3>
                         <div class="pricing__card-price">
                             <span class="pricing__card-amount">$0</span>
-                            <span class="pricing__card-period">Free — no credit card required</span>
+                            <span class="pricing__card-period">no credit card required</span>
                         </div>
                     </div>
+                    <a href="https://usable.dev/" class="btn btn--secondary btn--full">START FREE</a>
                     <ul class="pricing__card-features">
-                        <li>1 GiB storage included</li>
-                        <li>1M knowledge creation tokens/month</li>
-                        <li>500K knowledge search tokens/month</li>
-                        <li>Up to 5 owned workspaces</li>
-                        <li>Up to 5 team members</li>
+                        <li><strong>1</strong> GiB storage included</li>
+                        <li><strong>5M</strong> knowledge creation tokens/month</li>
+                        <li><strong>500K</strong> knowledge search tokens/month</li>
+                        <li>Up to <strong>5</strong> owned workspaces</li>
+                        <li>Up to <strong>5</strong> team members</li>
                         <li>Community support</li>
                     </ul>
-                    <a href="https://usable.dev/" class="btn btn--secondary btn--full">START FREE</a>
                 </div>
                 
                 <div class="pricing__card pricing__card--popular animate-on-scroll scale-in stagger-delay-2">
@@ -873,18 +896,18 @@
                         <h3 class="pricing__card-title">Standard</h3>
                         <div class="pricing__card-price">
                             <span class="pricing__card-amount">$20</span>
-                            <span class="pricing__card-period">per user per month</span>
                         </div>
                     </div>
+                    <a href="https://usable.dev/" class="btn btn--primary btn--full">CHOOSE STANDARD</a>
                     <ul class="pricing__card-features">
-                        <li>5 GiB storage included</li>
-                        <li>6M knowledge creation tokens/month</li>
-                        <li>3M knowledge search tokens/month</li>
+                        <li><strong>5</strong> GiB storage included</li>
+                        <li><strong>16M</strong> knowledge creation tokens/month</li>
+                        <li><strong>3M</strong> knowledge search tokens/month</li>
+                        <li>Advanced graph analysis</li>
                         <li>Unlimited workspaces</li>
                         <li>Unlimited team members</li>
                         <li>Email support</li>
                     </ul>
-                    <a href="https://usable.dev/" class="btn btn--primary btn--full">CHOOSE STANDARD</a>
                 </div>
                 
                 <div class="pricing__card animate-on-scroll fade-in-up stagger-delay-3">
@@ -892,18 +915,19 @@
                         <h3 class="pricing__card-title">Pro</h3>
                         <div class="pricing__card-price">
                             <span class="pricing__card-amount">$100</span>
-                            <span class="pricing__card-period">per user per month</span>
                         </div>
                     </div>
+                    <a href="https://usable.dev/" class="btn btn--secondary btn--full">CHOOSE PRO</a>
                     <ul class="pricing__card-features">
-                        <li>80 GiB storage included</li>
-                        <li>15M knowledge creation tokens/month</li>
-                        <li>7.5M knowledge search tokens/month</li>
+                        <li><strong>80</strong> GiB storage included</li>
+                        <li><strong>40M</strong> knowledge creation tokens/month</li>
+                        <li><strong>7.5M</strong> knowledge search tokens/month</li>
+                        <li>Advanced graph analysis</li>
+                        <li>BYOK agentic search</li>
                         <li>Unlimited workspaces</li>
                         <li>Unlimited team members</li>
-                        <li>Email support</li>
+                        <li>Dedicated Slack channel</li>
                     </ul>
-                    <a href="https://usable.dev/" class="btn btn--secondary btn--full">CHOOSE PRO</a>
                 </div>
             </div>
         </div>
@@ -956,7 +980,7 @@
                     <div class="faq__question">How do tokens work with multiple users?</div>
                     <div class="faq__answer">
                         <div class="faq__answer-content">
-                            Storage and knowledge creation tokens accumulate across your organization. For example, if you have 1 Pro user + 5 Starter users + 4 Free users, you get 49M creation tokens total (15M + 30M + 4M). Storage works the same way, giving you 105 GiB total (80 GiB + 25 GiB + 4 GiB). However, knowledge search tokens are individual per user. This makes it cost-effective for mixed teams.
+                            Storage and knowledge creation tokens accumulate across your organization. For example, if you have 1 Pro user + 5 Starter users + 4 Free users, you get 140M creation tokens total (40M + 80M + 20M). Storage works the same way, giving you 105 GiB total (80 GiB + 25 GiB + 4 GiB). However, knowledge search tokens are individual per user. This makes it cost-effective for mixed teams.
                         </div>
                     </div>
                 </div>
@@ -965,7 +989,7 @@
                     <div class="faq__question">What's the difference between pricing tiers?</div>
                     <div class="faq__answer">
                         <div class="faq__answer-content">
-                            The main differences are storage limits (1 GiB / 5 GiB / 80 GiB), knowledge creation token limits (1M / 6M / 15M per month), knowledge search token limits (500K / 3M / 7.5M per month), team size limits (5 members / unlimited / unlimited), and support levels (Community / Email / Email).
+                            The main differences are storage limits (1 GiB / 5 GiB / 80 GiB), knowledge creation token limits (5M / 16M / 40M per month), knowledge search token limits (500K / 3M / 7.5M per month), team size limits (5 members / unlimited / unlimited), and support levels (Community / Email / Email).
                         </div>
                     </div>
                 </div>
@@ -1040,6 +1064,48 @@
         </div>
     </section>
 
+    <!-- Conference Section -->
+    <section id="conference" class="conference-preview">
+        <div class="conference-preview__container">
+            <div class="section__header animate-on-scroll fade-in-down">
+                <h2 class="section__title">Fragments Conference 2026</h2>
+                <p class="section__description">
+                    Join the global AI agent builder community in the breathtaking Faroe Islands.
+                </p>
+            </div>
+            
+            <div class="conference-preview__content animate-on-scroll fade-in-up stagger-delay-1">
+                <div class="conference-preview__details">
+                    <div class="conference-preview__detail">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>May 6-7, 2026</span>
+                    </div>
+                    <div class="conference-preview__detail">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Faroe Islands</span>
+                    </div>
+                </div>
+                
+                <p class="conference-preview__text">
+                    A 2-day gathering of the global AI agent builder community, held in one of the most spectacular places on Earth. 
+                    Connect with peers, share breakthroughs, and discover how to build better AI agents with the best knowledge management on the planet.
+                </p>
+                
+                <div class="conference-preview__actions">
+                    <a href="/fragments-2026.html" class="btn btn--primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Built with Usable Section -->
     <section id="built-with-usable" class="built-with-usable">
         <div class="built-with-usable__container">
@@ -1074,7 +1140,7 @@
           <span class="footer__logo-text"><span class="brand-text">Usable</span></span>
                     </a>
                     <p class="footer__tagline">
-                        <span class="brand-text">Usable</span> is not just adorable<br>- it is actually useful.
+                        <span class="brand-text">Usable</span> is not just adorable<br>- it is actually usable.
                     </p>
                 </div>
                 
