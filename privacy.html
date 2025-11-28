@@ -358,9 +358,392 @@
             </a>
             
             <h1 class="policy-page__title">Privacy Policy</h1>
-            <p class="policy-page__updated">Last updated: November 27, 2025</p>
+            <p class="policy-page__updated">Last updated: 28th October 2025</p>
             
             <div class="policy-page__content">
+                <h2>Introduction</h2>
+                <p>At Usable (operated by Flowcore), we are committed to protecting your privacy and being transparent about how we collect, use, and protect your personal data. This Privacy Policy explains our data practices in accordance with the General Data Protection Regulation (GDPR) and other applicable privacy laws.</p>
+                
+                <h3>Who We Are</h3>
+                <p><strong>Data Controller:</strong><br>
+                Flowcore<br>
+                Vestara Bryggja 15<br>
+                Tórshavn 100, Faroe Islands<br>
+                Email: privacy@usable.dev</p>
+                
+                <h2>1. Information We Collect</h2>
+                
+                <h3>1.1 Account Information</h3>
+                <p>When you create an account, we collect:</p>
+                <ul>
+                    <li><strong>Identity Data:</strong> Name, username, email address</li>
+                    <li><strong>Authentication Data:</strong> Password (encrypted), authentication tokens</li>
+                    <li><strong>Profile Data:</strong> Optional profile picture, bio, preferences</li>
+                    <li><strong>Organization Data:</strong> Company name, team size (if provided)</li>
+                </ul>
+                
+                <h3>1.2 Content You Create</h3>
+                <p>When you use the Service, we store:</p>
+                <ul>
+                    <li><strong>Memory Fragments:</strong> Knowledge, recipes, solutions, templates, and other content you create</li>
+                    <li><strong>Metadata:</strong> Titles, tags, timestamps, fragment types</li>
+                    <li><strong>Workspace Data:</strong> Workspace names, descriptions, member lists</li>
+                    <li><strong>Collaboration Data:</strong> Comments, edits, version history</li>
+                </ul>
+                
+                <h3>1.3 Usage Data</h3>
+                <p>We automatically collect:</p>
+                <ul>
+                    <li><strong>Log Data:</strong> IP address, browser type, device information, operating system</li>
+                    <li><strong>Usage Analytics:</strong> Pages visited, features used, time spent, search queries</li>
+                    <li><strong>Performance Data:</strong> Error logs, load times, API response times</li>
+                    <li><strong>Session Data:</strong> Login times, session duration, authentication events</li>
+                </ul>
+                
+                <h3>1.4 AI Processing Data</h3>
+                <p>To provide AI-powered features, we generate:</p>
+                <ul>
+                    <li><strong>Semantic Embeddings:</strong> Vector representations of your content for search</li>
+                    <li><strong>Relationship Graphs:</strong> Connections between fragments based on similarity and tags</li>
+                    <li><strong>Search Analytics:</strong> Query patterns to improve search relevance</li>
+                </ul>
+                
+                <h3>1.5 Cookies and Tracking</h3>
+                <p>We use:</p>
+                <ul>
+                    <li><strong>Essential Cookies:</strong> Session management, authentication (necessary for service operation)</li>
+                    <li><strong>Analytics Cookies:</strong> Usage tracking to improve the Service (with consent)</li>
+                    <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+                </ul>
+                <p>You can manage cookie preferences in your browser settings.</p>
+                
+                <h3>1.6 Information from Third Parties</h3>
+                <p>We may receive data from:</p>
+                <ul>
+                    <li><strong>Authentication Providers:</strong> Keycloak (email, name, authentication status)</li>
+                    <li><strong>Payment Processors:</strong> Stripe (payment status, subscription tier)</li>
+                    <li><strong>Integration Partners:</strong> Data you authorize us to access (e.g., GitHub repositories)</li>
+                </ul>
+                
+                <h2>2. How We Use Your Information</h2>
+                
+                <h3>2.1 Service Provision</h3>
+                <p>We use your data to:</p>
+                <ul>
+                    <li>Provide and maintain the Usable platform</li>
+                    <li>Process your authentication and access control</li>
+                    <li>Store and organize your memory fragments</li>
+                    <li>Enable semantic search and knowledge graphs</li>
+                    <li>Facilitate workspace collaboration</li>
+                    <li>Provide customer support</li>
+                </ul>
+                <p><strong>Legal Basis (GDPR):</strong> Contract performance (Art. 6(1)(b))</p>
+                
+                <h3>2.2 Service Improvement</h3>
+                <p>We use aggregated and anonymized data to:</p>
+                <ul>
+                    <li>Analyze usage patterns and feature adoption</li>
+                    <li>Improve search algorithms and AI models</li>
+                    <li>Identify and fix bugs and performance issues</li>
+                    <li>Develop new features based on user needs</li>
+                </ul>
+                <p><strong>Legal Basis (GDPR):</strong> Legitimate interests (Art. 6(1)(f))</p>
+                
+                <h3>2.3 Communication</h3>
+                <p>We may contact you for:</p>
+                <ul>
+                    <li>Service announcements and updates</li>
+                    <li>Security alerts and policy changes</li>
+                    <li>Subscription and billing notifications</li>
+                    <li>Customer support responses</li>
+                    <li>Marketing (with your consent)</li>
+                </ul>
+                <p><strong>Legal Basis (GDPR):</strong> Contract performance (transactional), Consent (marketing)</p>
+                
+                <h3>2.4 Security and Fraud Prevention</h3>
+                <p>We process data to:</p>
+                <ul>
+                    <li>Detect and prevent unauthorized access</li>
+                    <li>Identify suspicious activity and abuse</li>
+                    <li>Enforce our Terms of Service</li>
+                    <li>Comply with legal obligations</li>
+                </ul>
+                <p><strong>Legal Basis (GDPR):</strong> Legitimate interests, Legal obligation (Art. 6(1)(c))</p>
+                
+                <h3>2.5 Legal Compliance</h3>
+                <p>We may process data to:</p>
+                <ul>
+                    <li>Respond to legal requests (subpoenas, court orders)</li>
+                    <li>Comply with data protection regulations</li>
+                    <li>Protect our legal rights and property</li>
+                    <li>Prevent illegal activities</li>
+                </ul>
+                <p><strong>Legal Basis (GDPR):</strong> Legal obligation, Legitimate interests</p>
+                
+                <h2>3. Data Storage and Security</h2>
+                
+                <h3>3.1 Where We Store Data</h3>
+                <p>Your data is stored:</p>
+                <ul>
+                    <li><strong>Primary Servers:</strong> [Cloud Provider - e.g., AWS, Google Cloud] in [Region - e.g., EU]</li>
+                    <li><strong>Event Storage:</strong> Flowcore event sourcing system (immutable audit trail)</li>
+                    <li><strong>Backups:</strong> Encrypted backups in multiple geographic locations</li>
+                </ul>
+                <p><strong>International Transfers:</strong> If data is transferred outside the EU/EEA, we use:</p>
+                <ul>
+                    <li>Standard Contractual Clauses (SCCs)</li>
+                    <li>Adequacy decisions by the European Commission</li>
+                    <li>Other approved transfer mechanisms</li>
+                </ul>
+                
+                <h3>3.2 Security Measures</h3>
+                <p>We implement:</p>
+                <ul>
+                    <li><strong>Encryption in Transit:</strong> TLS 1.3 for all data transmission</li>
+                    <li><strong>Encryption at Rest:</strong> AES-256 encryption for stored data</li>
+                    <li><strong>Access Controls:</strong> Role-based access control (RBAC), least privilege principle</li>
+                    <li><strong>Authentication:</strong> Multi-factor authentication (MFA) support</li>
+                    <li><strong>Monitoring:</strong> 24/7 security monitoring and intrusion detection</li>
+                    <li><strong>Auditing:</strong> Comprehensive audit logs for all data access</li>
+                </ul>
+                
+                <h3>3.3 Data Retention</h3>
+                <p>We retain your data:</p>
+                <ul>
+                    <li><strong>Active Accounts:</strong> As long as your account is active</li>
+                    <li><strong>Deleted Content:</strong> 30 days in backups after deletion (for recovery)</li>
+                    <li><strong>Closed Accounts:</strong> 30 days after account closure</li>
+                    <li><strong>Legal Obligations:</strong> Longer if required by law (e.g., financial records)</li>
+                </ul>
+                <p>After retention periods, data is permanently deleted using secure erasure methods.</p>
+                
+                <h3>3.4 Event Sourcing Architecture</h3>
+                <p>Usable uses event sourcing, meaning:</p>
+                <ul>
+                    <li>All changes are recorded as immutable events</li>
+                    <li>Events contain metadata (who, what, when) for audit trails</li>
+                    <li>Events are stored in Flowcore (separate from the main database)</li>
+                    <li>Read models (database) can be rebuilt from events</li>
+                </ul>
+                <p><strong>Implication:</strong> Some audit data may be retained longer for compliance and system integrity.</p>
+                
+                <h2>4. Data Sharing and Disclosure</h2>
+                
+                <h3>4.1 Within Workspaces</h3>
+                <p>Your content is shared with:</p>
+                <ul>
+                    <li><strong>Workspace Members:</strong> Users you invite to your workspaces</li>
+                    <li><strong>Workspace Owners:</strong> Users who create and manage workspaces you join</li>
+                </ul>
+                <p>You control sharing by managing workspace membership and permissions.</p>
+                
+                <h3>4.2 Service Providers</h3>
+                <p>We share data with third-party processors who help us operate the Service:</p>
+                <ul>
+                    <li><strong>Hosting Providers:</strong> [AWS, Google Cloud] - infrastructure</li>
+                    <li><strong>Authentication:</strong> Keycloak - identity management</li>
+                    <li><strong>Payment Processing:</strong> Stripe - subscription billing</li>
+                    <li><strong>Email Services:</strong> [Provider] - transactional emails</li>
+                    <li><strong>Analytics:</strong> [Provider] - usage analytics (anonymized)</li>
+                </ul>
+                <p>All processors are bound by data processing agreements (DPAs) and GDPR requirements.</p>
+                
+                <h3>4.3 Legal Requirements</h3>
+                <p>We may disclose data when required by:</p>
+                <ul>
+                    <li>Court orders, subpoenas, or legal processes</li>
+                    <li>Law enforcement requests (with proper legal basis)</li>
+                    <li>National security requirements</li>
+                    <li>Protection of our rights or safety of others</li>
+                </ul>
+                <p>We will notify you of such requests unless prohibited by law.</p>
+                
+                <h3>4.4 Business Transfers</h3>
+                <p>If Flowcore is involved in a merger, acquisition, or sale of assets:</p>
+                <ul>
+                    <li>Your data may be transferred to the acquiring entity</li>
+                    <li>We will notify you before your data is subject to a different Privacy Policy</li>
+                    <li>You may delete your account before the transfer</li>
+                </ul>
+                
+                <h3>4.5 What We Don't Share</h3>
+                <p>We <strong>never</strong> sell your personal data to third parties for marketing purposes.</p>
+                <p>We <strong>never</strong> use your content to train AI models for other users or external purposes.</p>
+                
+                <h2>5. Your Privacy Rights (GDPR)</h2>
+                <p>If you are in the EU/EEA, you have the following rights:</p>
+                
+                <h3>5.1 Right of Access (Art. 15)</h3>
+                <p>You can request a copy of all personal data we hold about you.</p>
+                
+                <h3>5.2 Right to Rectification (Art. 16)</h3>
+                <p>You can correct inaccurate or incomplete personal data.</p>
+                
+                <h3>5.3 Right to Erasure (Art. 17)</h3>
+                <p>You can request deletion of your personal data ("right to be forgotten") unless:</p>
+                <ul>
+                    <li>We need it to comply with legal obligations</li>
+                    <li>It's necessary for establishing or defending legal claims</li>
+                </ul>
+                
+                <h3>5.4 Right to Restriction (Art. 18)</h3>
+                <p>You can request we limit processing of your data in certain circumstances.</p>
+                
+                <h3>5.5 Right to Data Portability (Art. 20)</h3>
+                <p>You can receive your data in a structured, machine-readable format and transfer it to another service.</p>
+                <p><strong>Export Formats:</strong> JSON, CSV, Markdown</p>
+                
+                <h3>5.6 Right to Object (Art. 21)</h3>
+                <p>You can object to processing based on legitimate interests. We will stop processing unless we have compelling legitimate grounds.</p>
+                
+                <h3>5.7 Right to Withdraw Consent (Art. 7(3))</h3>
+                <p>You can withdraw consent for marketing communications or optional data processing at any time.</p>
+                
+                <h3>5.8 Right to Lodge a Complaint</h3>
+                <p>You can file a complaint with your national data protection authority:</p>
+                <ul>
+                    <li><strong>Faroe Islands:</strong> Dátueftirlitið (<a href="https://www.dat.fo" target="_blank" rel="noopener noreferrer">www.dat.fo</a>)</li>
+                    <li><strong>Denmark:</strong> Datatilsynet (<a href="https://www.datatilsynet.dk" target="_blank" rel="noopener noreferrer">www.datatilsynet.dk</a>)</li>
+                </ul>
+                
+                <h3>How to Exercise Your Rights</h3>
+                <p>Email: <a href="mailto:privacy@usable.dev">privacy@usable.dev</a><br>
+                Subject: "GDPR Request - [Your Name]"</p>
+                <p>We will respond within 30 days.</p>
+                
+                <h2>6. Children's Privacy</h2>
+                <p>Usable is not intended for children under 16. We do not knowingly collect data from children. If we learn we have collected data from a child under 16, we will delete it immediately.</p>
+                <p>Parents: If you believe your child has provided data to us, contact <a href="mailto:privacy@usable.dev">privacy@usable.dev</a>.</p>
+                
+                <h2>7. Marketing Communications</h2>
+                
+                <h3>7.1 Transactional Emails</h3>
+                <p>We send essential emails (account verification, password resets, billing) as part of the Service. You cannot opt out of these.</p>
+                
+                <h3>7.2 Marketing Emails</h3>
+                <p>We may send promotional emails with your explicit consent:</p>
+                <ul>
+                    <li>Product updates and new features</li>
+                    <li>Tips and best practices</li>
+                    <li>Community events and webinars</li>
+                </ul>
+                <p><strong>Opt-Out:</strong> Click "Unsubscribe" in any marketing email or manage preferences in your account settings.</p>
+                
+                <h2>8. Third-Party Links and Integrations</h2>
+                
+                <h3>8.1 External Links</h3>
+                <p>The Service may contain links to third-party websites. We are not responsible for their privacy practices. Review their privacy policies before providing data.</p>
+                
+                <h3>8.2 Integrations</h3>
+                <p>When you connect third-party services (GitHub, Slack):</p>
+                <ul>
+                    <li>You authorize us to access data as specified in the integration</li>
+                    <li>We only access data necessary to provide the integration</li>
+                    <li>You can disconnect integrations at any time</li>
+                </ul>
+                
+                <h2>9. Cookies Policy</h2>
+                
+                <h3>9.1 Essential Cookies</h3>
+                <p>Required for the Service to function:</p>
+                <ul>
+                    <li><code>session_token</code> - Authentication (expires: session)</li>
+                    <li><code>csrf_token</code> - Security (expires: session)</li>
+                </ul>
+                <p><strong>Legal Basis:</strong> Legitimate interests (necessary for service operation)</p>
+                
+                <h3>9.2 Analytics Cookies (Optional)</h3>
+                <p>Help us understand usage patterns:</p>
+                <ul>
+                    <li><code>_ga</code>, <code>_gid</code> - Google Analytics (expires: 2 years)</li>
+                    <li><code>usage_tracking</code> - Internal analytics (expires: 1 year)</li>
+                </ul>
+                <p><strong>Legal Basis:</strong> Consent</p>
+                
+                <h3>9.3 Preference Cookies (Optional)</h3>
+                <p>Remember your settings:</p>
+                <ul>
+                    <li><code>theme</code> - UI theme preference (expires: 1 year)</li>
+                    <li><code>language</code> - Language preference (expires: 1 year)</li>
+                </ul>
+                <p><strong>Legal Basis:</strong> Consent</p>
+                
+                <h3>9.4 Managing Cookies</h3>
+                <p>You can:</p>
+                <ul>
+                    <li>Manage preferences in your account settings</li>
+                    <li>Block cookies in your browser (may affect functionality)</li>
+                    <li>Use browser extensions to control tracking</li>
+                </ul>
+                
+                <h2>10. Data Breach Notification</h2>
+                <p>In the event of a data breach affecting your personal data:</p>
+                <ul>
+                    <li>We will notify you within 72 hours (as required by GDPR Art. 33-34)</li>
+                    <li>Notification includes: nature of breach, data affected, mitigation steps</li>
+                    <li>We will notify relevant data protection authorities</li>
+                    <li>We maintain an incident response plan to minimize impact</li>
+                </ul>
+                
+                <h2>11. Automated Decision-Making</h2>
+                <p>We do <strong>not</strong> use automated decision-making or profiling that produces legal or similarly significant effects.</p>
+                <p>AI features (semantic search, recommendations) are advisory only and do not make decisions about you.</p>
+                
+                <h2>12. International Users</h2>
+                
+                <h3>12.1 EU/EEA Users</h3>
+                <p>This Privacy Policy complies with GDPR. Your data is processed in accordance with EU data protection standards.</p>
+                
+                <h3>12.2 UK Users</h3>
+                <p>We comply with the UK GDPR and Data Protection Act 2018.</p>
+                
+                <h3>12.3 US Users</h3>
+                <p>We do not participate in the EU-US Data Privacy Framework (if applicable) but use SCCs for transfers.</p>
+                
+                <h3>12.4 Other Countries</h3>
+                <p>We comply with local data protection laws where applicable. If your country has stricter requirements, those apply.</p>
+                
+                <h2>13. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy to reflect:</p>
+                <ul>
+                    <li>Changes in data practices</li>
+                    <li>New legal requirements</li>
+                    <li>Service improvements</li>
+                </ul>
+                <p><strong>Notification:</strong></p>
+                <ul>
+                    <li>Email notification for material changes</li>
+                    <li>In-app notification when you next log in</li>
+                    <li>Effective date displayed at the top of the policy</li>
+                </ul>
+                <p><strong>Your Options:</strong></p>
+                <ul>
+                    <li>Continue using the Service (acceptance of updated policy)</li>
+                    <li>Delete your account if you disagree with changes</li>
+                </ul>
+                
+                <h2>14. Contact Us</h2>
+                <p>For privacy-related questions or requests:</p>
+                <p><strong>Email:</strong> <a href="mailto:privacy@usable.dev">privacy@usable.dev</a><br>
+                <strong>Mailing Address:</strong><br>
+                Flowcore<br>
+                Vestara Bryggja 15<br>
+                Tórshavn 100, Faroe Islands</p>
+                <p><strong>Response Time:</strong> We aim to respond within 3 business days.</p>
+                
+                <h2>15. Definitions</h2>
+                <ul>
+                    <li><strong>Personal Data:</strong> Any information relating to an identified or identifiable person</li>
+                    <li><strong>Processing:</strong> Any operation performed on personal data (collection, storage, use, disclosure, deletion)</li>
+                    <li><strong>Data Controller:</strong> Flowcore (determines purposes and means of processing)</li>
+                    <li><strong>Data Processor:</strong> Third parties processing data on our behalf</li>
+                    <li><strong>Data Subject:</strong> You (the individual whose data is processed)</li>
+                </ul>
+                
+                <h2>Acknowledgment</h2>
+                <p>By clicking "Accept" or using the Service, you acknowledge that you have read and understood this Privacy Policy and consent to the data practices described herein.</p>
+                
+                <p class="legal-page__compliance"><strong>Compliance Framework:</strong> GDPR, ePrivacy Directive, Data Protection Act</p>
                 <p>
                     <span class="brand-text">Usable</span>, operated by Flowcore Sp/f ("we," "our," or "us"), is committed to protecting your privacy. 
                     This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website 
