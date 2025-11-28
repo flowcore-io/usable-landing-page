@@ -51,11 +51,6 @@
 				window.location.replace('https://usable.dev/login');
 				return;
 			}
-			if (path === '/signup') {
-				window.location.replace('https://usable.dev/signup');
-				return;
-			}
-
 			// Fallback: redirect SPA-style unknown routes to the site root
 			// Preserve hash fragments for internal navigation
 			var redirectUrl = '/' + window.location.hash;

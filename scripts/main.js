@@ -459,14 +459,16 @@ function handleRouteRedirection() {
   const currentPath = window.location.pathname;
   const currentHash = window.location.hash;
   
-  // Allow root path, index.html, and legal pages (both clean URLs and .html)
+  // Allow root path, index.html, legal pages, and other static pages (both clean URLs and .html)
   if (currentPath === '/' || 
       currentPath === '/index.html' || 
       currentPath === '' ||
       currentPath === '/privacy' ||
       currentPath === '/privacy.html' ||
       currentPath === '/terms' ||
-      currentPath === '/terms.html') {
+      currentPath === '/terms.html' ||
+      currentPath === '/fragments-2026' ||
+      currentPath === '/fragments-2026.html') {
     return;
   }
   
