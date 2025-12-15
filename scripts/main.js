@@ -474,6 +474,8 @@ function handleRouteRedirection() {
       currentPath === '/terms.html' ||
       currentPath === '/fragments-2026' ||
       currentPath === '/fragments-2026.html' ||
+      currentPath === '/media-kit' ||
+      currentPath === '/media-kit.html' ||
       currentPath.startsWith('/news') ||
       currentPath.startsWith('/blog') ||
       currentPath.endsWith('.html')) {
