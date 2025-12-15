@@ -50,6 +50,9 @@ class RedirectingRequestHandler(http.server.SimpleHTTPRequestHandler):
     def _handle(self, method: str):
         parsed = urlparse(self.path)
         path = parsed.path or "/"
+        # Normalize path: remove trailing slash except for root
+        if path != "/" and path.endswith("/"):
+            path = path[:-1]
 
         if path == "/login":
             return self._redirect(LOGIN_REDIRECT)
@@ -67,6 +70,10 @@ class RedirectingRequestHandler(http.server.SimpleHTTPRequestHandler):
 
         if path == "/terms" or path == "/terms.html":
             self.path = "/terms.html"
+            return super().do_HEAD() if method == "HEAD" else super().do_GET()
+
+        if path == "/media-kit" or path == "/media-kit.html":
+            self.path = "/media-kit.html"
             return super().do_HEAD() if method == "HEAD" else super().do_GET()
 
         if self._should_serve_static_direct(path):

@@ -9,6 +9,15 @@ RewriteRule ^(assets|scripts|styles)/.*$ - [L]
 # Allow common files
 RewriteRule ^(robots\.txt|sitemap\.xml|favicon\.ico|CNAME|README\.md|TROUBLESHOOTING\.md)$ - [L]
 
+# Clean URLs - serve .html files without extension
+# Check if request doesn't end with .html and doesn't have a file extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(html|css|js|png|jpg|jpeg|gif|svg|ico|xml|txt)$ [NC]
+RewriteCond %{REQUEST_URI} ^/([^/]+)/?$
+RewriteCond %{DOCUMENT_ROOT}/%1.html -f
+RewriteRule ^([^/]+)/?$ /$1.html [L]
+
 # Redirect all other routes to root, preserving query string and fragment
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

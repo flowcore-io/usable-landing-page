@@ -456,6 +456,11 @@ class UsableApp {
  * Route redirection - ensures users are always redirected to root
  */
 function handleRouteRedirection() {
+  // Skip redirection logic for local or file-based browsing
+  const isFileProtocol = window.location.protocol === 'file:';
+  const isLocalhost = window.location.hostname.includes('localhost') || window.location.hostname === '127.0.0.1';
+  if (isFileProtocol || isLocalhost) return;
+
   const currentPath = window.location.pathname;
   const currentHash = window.location.hash;
   
@@ -468,7 +473,10 @@ function handleRouteRedirection() {
       currentPath === '/terms' ||
       currentPath === '/terms.html' ||
       currentPath === '/fragments-2026' ||
-      currentPath === '/fragments-2026.html') {
+      currentPath === '/fragments-2026.html' ||
+      currentPath.startsWith('/news') ||
+      currentPath.startsWith('/blog') ||
+      currentPath.endsWith('.html')) {
     return;
   }
   
