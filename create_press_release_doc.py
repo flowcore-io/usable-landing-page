@@ -129,9 +129,9 @@ heading = doc.paragraphs[-1]
 heading.paragraph_format.space_after = Pt(6)
 
 add_bullet_list(doc, [
-    'Website: https://usable.dev',
-    'Founder\'s blog: https://usable.dev/blog/why-were-embracing-the-usable-brand',
-    'Press assets: https://usable.dev/media-kit'
+    'Website: https://www.usable.dev',
+    'Founder\'s blog: https://www.usable.dev/blog/why-were-embracing-the-usable-brand',
+    'Press assets: https://www.usable.dev/media-kit'
 ])
 
 doc.add_paragraph('')  # Add spacing
@@ -142,7 +142,10 @@ doc.add_heading('About Usable Sp/f', 1)
 heading = doc.paragraphs[-1]
 heading.paragraph_format.space_after = Pt(6)
 
-p10 = doc.add_paragraph('Usable (formerly Flowcore) is a Faroese technology company building developer-first knowledge management infrastructure for AI agents. The company provides the shared memory layer that enables agents to access structured, persistent knowledge across systems and sessions. Usable serves startups and developer teams globally from its base in the Faroe Islands.')
+p10 = doc.add_paragraph()
+p10.add_run('Usable (formerly Flowcore) is a Faroese technology company building developer-first knowledge management infrastructure for AI agents. The company provides the shared memory layer that enables agents to access structured, persistent knowledge across systems and sessions. Usable serves startups and developer teams globally from its base in the Faroe Islands. ')
+p10.add_run('Website: ').bold = True
+p10.add_run('https://www.usable.dev')
 p10.paragraph_format.space_after = Pt(6)
 
 p11 = doc.add_paragraph('Usable was founded by Ólavur Ellefsen, Julius á Rógvi Biskopstø, and Brian Bischoff. The company employs 8 full-time employees.')
@@ -176,7 +179,7 @@ footer_format = footer.runs[0].font
 footer_format.size = Pt(8)
 footer.paragraph_format.space_after = Pt(6)
 
-footer_note = doc.add_paragraph('This press release is available online at: https://usable.dev/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors')
+footer_note = doc.add_paragraph('This press release is available online at: https://www.usable.dev/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors')
 footer_note.alignment = WD_ALIGN_PARAGRAPH.CENTER
 footer_note_format = footer_note.runs[0].font
 footer_note_format.size = Pt(9)
