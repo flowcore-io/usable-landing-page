@@ -50,8 +50,8 @@ intro.add_run(' and ')
 intro.add_run('Kustaa Valtonen').bold = True
 intro.add_run(' from ')
 intro.add_run('Random Ventures').bold = True
-intro.add_run(' have joined the company as strategic advisors and investors. The move marks an important milestone for Usable as it scales globally following strong momentum in 2024, including being selected as a ')
-intro.add_run('Top 20 company in the Slush pitching competition.').bold = True
+intro.add_run(' have joined the company as strategic advisors and investors. The move marks an important milestone for Usable as it scales globally following strong momentum, including being selected as a ')
+intro.add_run('Top 20 company in the Slush 2024 pitching competition.').bold = True
 intro.paragraph_format.space_after = Pt(12)
 
 p2 = doc.add_paragraph('Usable is building the knowledge management layer for AI agents — enabling agents to access, share, and retain long-term organizational knowledge. The company evolved from Flowcore, where the founding team built robust event-driven data infrastructure before narrowing its focus to AI-native knowledge systems under the Usable brand.')
