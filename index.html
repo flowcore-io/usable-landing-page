@@ -48,12 +48,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=block" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
+    <!-- Use main.min.css in production for better performance (saves ~37KB) -->
     <link rel="stylesheet" href="styles/main.css">
+    <!-- <link rel="stylesheet" href="styles/main.min.css"> -->
     <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
     
     <!-- RB2B Tracking -->
@@ -177,7 +178,7 @@
     <nav class="nav">
             <div class="nav__container">
                 <a href="/" class="nav__logo">
-                    <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="nav__logo-img" fetchpriority="high">
+                    <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="nav__logo-img" fetchpriority="high" width="32" height="32">
                     <span class="nav__logo-text"><span class="brand-text">Usable</span></span>
                 </a>
                 
@@ -259,7 +260,7 @@
                 <span class="announcement__badge">News</span>
                 <p class="announcement__text">
                     <strong>Peter Vesterbacka & Kustaa Valtonen Join Usable</strong> - Strategic advisors from Random Ventures join to accelerate global expansion. 
-                    <a href="/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors.html" data-clean-url="/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors" class="announcement__link">Learn more</a>
+                    <a href="/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors.html" data-clean-url="/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors" class="announcement__link">Learn more about our strategic advisors</a>
                 </p>
             </div>
             <button class="announcement__close" aria-label="Close announcement" type="button">
@@ -299,7 +300,7 @@
             <div class="hero__visual">
                     <picture>
                         <source srcset="assets/images/usable-mascot.webp" type="image/webp">
-                        <img src="assets/images/usable-mascot.png" alt="Usable Nudibranch Mascot" class="hero__mascot" loading="lazy">
+                        <img src="assets/images/usable-mascot.png" alt="Usable Nudibranch Mascot" class="hero__mascot" loading="lazy" width="400" height="400">
                     </picture>
             </div>
         </div>
@@ -489,7 +490,11 @@
                 
                 <div class="feature animate-on-scroll fade-in-up stagger-delay-2">
                     <div class="feature__icon">
-                        <i class="fas fa-plug"></i>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <line x1="12" y1="2" x2="12" y2="22"></line>
+                            <path d="M8 12h8"></path>
+                        </svg>
                     </div>
                     <h3 class="feature__title">Seamless Integration</h3>
                     <p class="feature__description">
@@ -500,7 +505,11 @@
                 
                 <div class="feature animate-on-scroll fade-in-up stagger-delay-3">
                     <div class="feature__icon">
-                        <i class="fas fa-info-circle"></i>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
                     </div>
                     <h3 class="feature__title">Development Context</h3>
                     <p class="feature__description">
@@ -539,7 +548,12 @@
                 
                 <div class="feature animate-on-scroll fade-in-up stagger-delay-6">
                     <div class="feature__icon">
-                        <i class="fas fa-bug-slash"></i>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                            <line x1="12" y1="6" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                        </svg>
                     </div>
                     <h3 class="feature__title">Debugging Stories</h3>
                     <p class="feature__description">
@@ -1146,7 +1160,7 @@
                 </p>
                 
                 <div class="conference-preview__actions">
-                    <a href="/fragments-2026.html" class="btn btn--primary">Learn More</a>
+                    <a href="/fragments-2026.html" class="btn btn--primary">Learn more about Fragments Conference 2026</a>
                 </div>
             </div>
         </div>
@@ -1182,7 +1196,7 @@
             <div class="footer__main">
                 <div class="footer__brand">
                     <a href="#" class="footer__logo">
-                        <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="footer__logo-img" loading="lazy">
+                        <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="footer__logo-img" loading="lazy" width="32" height="32">
           <span class="footer__logo-text"><span class="brand-text">Usable</span></span>
                     </a>
                     <p class="footer__tagline">

@@ -1,0 +1,35 @@
+{
+  "content": [
+    "**/*.html",
+    "scripts/**/*.js"
+  ],
+  "css": [
+    "styles/main.css"
+  ],
+  "output": "styles/",
+  "safelist": [
+    "data-theme",
+    "[data-theme]",
+    "dark",
+    "light",
+    "animate-on-scroll",
+    "fade-in-up",
+    "fade-in-down",
+    "fade-in-left",
+    "fade-in-right",
+    "stagger-delay-1",
+    "stagger-delay-2",
+    "stagger-delay-3",
+    "stagger-delay-4",
+    "stagger-delay-5",
+    "stagger-delay-6",
+    "stagger-delay-7",
+    "stagger-delay-8",
+    "stagger-delay-9",
+    "stagger-delay-10",
+    "scale-in"
+  ],
+  "keyframes": true,
+  "fontFace": true
+}
+

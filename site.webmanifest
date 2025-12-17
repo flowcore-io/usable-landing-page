@@ -9,13 +9,13 @@
     "orientation": "any",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/assets/images/Usable - Logo.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/android-chrome-512x512.png",
+            "src": "/assets/images/Usable - Logo.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
