@@ -502,15 +502,21 @@
                 <div class="media-kit-grid">
                     <div class="media-kit-card">
                         <div class="media-kit-card__preview">
-                            <img src="assets/images/usable-mascot.png" alt="Usable Mascot">
+                            <picture>
+                                <source srcset="assets/images/usable-mascot.webp" type="image/webp">
+                                <img src="assets/images/usable-mascot.png" alt="Usable Mascot">
+                            </picture>
                         </div>
                         <div class="media-kit-card__info">
                             <h3 class="media-kit-card__name">Mascot - Standard</h3>
-                            <p class="media-kit-card__details">PNG format, standard mascot image.</p>
+                            <p class="media-kit-card__details">WebP format (PNG fallback), standard mascot image.</p>
                         </div>
                         <div class="media-kit-card__actions">
-                            <a href="assets/images/usable-mascot.png" download class="media-kit-card__download">
-                                <i class="fas fa-download"></i> Download
+                            <a href="assets/images/usable-mascot.webp" download class="media-kit-card__download">
+                                <i class="fas fa-download"></i> Download WebP
+                            </a>
+                            <a href="assets/images/usable-mascot.png" download class="media-kit-card__download" style="margin-left: 0.5rem;">
+                                <i class="fas fa-download"></i> Download PNG
                             </a>
                         </div>
                     </div>
