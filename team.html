@@ -232,6 +232,11 @@
             color: var(--color-white-text);
         }
 
+        .team-card img[style*="border-radius: var(--radius-lg)"] {
+            border: none;
+            object-fit: cover;
+        }
+
         @media (max-width: 768px) {
             .team-page {
                 padding: var(--space-20) var(--space-4) var(--space-12);
@@ -267,6 +272,7 @@
                         <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__dropdown-item">How It Works</a>
                         <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__dropdown-item">Use Cases</a>
                         <a href="/demo.html" data-clean-url="/demo" class="nav__dropdown-item">Demo</a>
+                        <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__dropdown-item">Detailed Screenshots</a>
                     </div>
                 </div>
                 <a href="/pricing.html" data-clean-url="/pricing" class="nav__link">Pricing</a>
@@ -323,6 +329,7 @@
             <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile">How It Works</a>
             <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile">Use Cases</a>
             <a href="/demo.html" data-clean-url="/demo" class="nav__link nav__link--mobile">Demo</a>
+            <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__link nav__link--mobile">Detailed Screenshots</a>
             <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile">Pricing</a>
             <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile">Blog</a>
             <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile">News</a>
@@ -446,10 +453,29 @@
             <section class="advisors-section">
                 <h2 class="advisors-section__title">Strategic Advisors</h2>
                 <p class="advisors-section__content">
-                    We're proud to have <strong>Peter Vesterbacka</strong> and <strong>Kustaa Valtonen</strong> as strategic advisors and investors, bringing extensive experience in building global tech ecosystems and scaling startups internationally.
+                    We're fortunate to have the guidance of experienced advisors who bring deep expertise in scaling global tech companies and building international markets.
                 </p>
-                <div style="text-align: center; margin-top: var(--space-6);">
-                    <a href="/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors.html" data-clean-url="/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors" class="btn btn--secondary">Learn More</a>
+                
+                <div class="team-grid" style="margin-top: var(--space-8);">
+                    <article class="team-card" style="max-width: 600px; margin: 0 auto;">
+                        <img src="assets/images/kustaa-and-peter.jpg" alt="Kustaa Valtonen and Peter Vesterbacka" style="width: 100%; height: auto; border-radius: var(--radius-lg); max-width: 500px; display: block; margin: 0 auto var(--space-6); object-fit: cover;">
+                        <div style="margin-top: var(--space-6);">
+                            <h3 class="team-card__name" style="font-size: var(--text-xl); margin-bottom: var(--space-4);">Kustaa Valtonen & Peter Vesterbacka</h3>
+                            <p class="team-card__title" style="margin-bottom: var(--space-4);">Strategic Advisors & Investors</p>
+                            <p class="team-card__bio" style="text-align: left; margin-bottom: var(--space-4);">
+                                <strong>Peter Vesterbacka</strong> is best known for his work with Rovio, the Angry Birds company, where he served as the Mighty Eagle (CMO). He is also the founder of <strong>Slush</strong>, the world's leading startup event. Peter brings extensive experience in building global tech ecosystems, scaling startups, and connecting founders with international markets—expertise that's invaluable as we expand Usable globally.
+                            </p>
+                            <p class="team-card__bio" style="text-align: left; margin-bottom: var(--space-4);">
+                                <strong>Kustaa Valtonen</strong> is a seasoned early-stage investor and technology advisor with deep experience in enterprise software and B2B SaaS. Through Random Ventures, he works closely with founders to scale products and organizations internationally, bringing strategic insight that helps us navigate the complexities of building a developer-first platform for global markets.
+                            </p>
+                            <p class="team-card__bio" style="text-align: left; margin-bottom: var(--space-6);">
+                                <strong>Random Ventures</strong> is a Finest Bay Area investment company that invests globally in early-stage startups. The firm supports ambitious founders with both capital and hands-on strategic guidance across markets, helping companies like Usable accelerate their growth and international expansion.
+                            </p>
+                            <div style="text-align: center;">
+                                <a href="/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors.html" data-clean-url="/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors" class="btn btn--secondary">Read Press Release</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </section>
 

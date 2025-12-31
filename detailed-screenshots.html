@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Screenshots - A Visual Tour of Usable | Usable</title>
+    <meta name="description" content="Take a comprehensive visual tour of Usable's interface. See how workspaces, memory fragments, Usable Chat, and MCP integration work together to give your AI agents persistent memory.">
+    <meta name="keywords" content="Usable screenshots, product tour, UI walkthrough, knowledge management, AI memory, MCP integration, Usable Chat">
+    <meta name="author" content="Usable Sp/f">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://usable.dev/detailed-screenshots">
+    <meta name="theme-color" content="#347cbf" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://usable.dev/detailed-screenshots">
+    <meta property="og:title" content="Detailed Screenshots - A Visual Tour of Usable">
+    <meta property="og:description" content="Take a comprehensive visual tour of Usable's interface. See how workspaces, memory fragments, Usable Chat, and MCP integration work together.">
+    <meta property="og:image" content="https://usable.dev/assets/images/Usable - Logo.png">
+    <meta property="og:site_name" content="Usable">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://usable.dev/detailed-screenshots">
+    <meta property="twitter:title" content="Detailed Screenshots - A Visual Tour of Usable">
+    <meta property="twitter:description" content="Take a comprehensive visual tour of Usable's interface. See how workspaces, memory fragments, Usable Chat, and MCP integration work together.">
+    <meta property="twitter:image" content="https://usable.dev/assets/images/Usable - Logo.png">
+    <meta name="twitter:creator" content="@UsableDev">
+    <meta name="twitter:site" content="@UsableDev">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Usable - Logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Usable - Logo.png">
+    <link rel="apple-touch-icon" href="assets/images/Usable - Logo.png">
+    <link rel="shortcut icon" href="assets/images/Usable - Logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=block" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
+
+    <style>
+        .screenshots-page {
+            padding: var(--space-24) var(--space-4) var(--space-16);
+            min-height: calc(100vh - 80px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .screenshots-page__container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .screenshots-hero {
+            margin-bottom: var(--space-12);
+            text-align: center;
+        }
+
+        .screenshots-hero__title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            line-height: 1.1;
+            font-weight: 800;
+            color: var(--color-gray-900);
+            margin-bottom: var(--space-4);
+        }
+
+        [data-theme="dark"] .screenshots-hero__title {
+            color: var(--color-white-text);
+        }
+
+        .screenshots-hero__description {
+            max-width: 780px;
+            font-size: var(--text-lg);
+            color: var(--color-gray-700);
+            margin: 0 auto var(--space-6);
+            line-height: 1.7;
+        }
+
+        [data-theme="dark"] .screenshots-hero__description {
+            color: var(--color-white-text);
+        }
+
+        .screenshots-hero__hint {
+            font-weight: 500;
+            color: var(--color-gray-900);
+        }
+
+        [data-theme="dark"] .screenshots-hero__hint {
+            color: var(--color-white-text);
+        }
+
+        .screenshots-toc {
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(52, 124, 191, 0.08);
+            margin-bottom: var(--space-12);
+        }
+
+        [data-theme="dark"] .screenshots-toc {
+            background: rgba(28, 47, 64, 0.96);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+            border-color: rgba(96, 165, 250, 0.18);
+        }
+
+        .screenshots-toc__title {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--space-4);
+        }
+
+        [data-theme="dark"] .screenshots-toc__title {
+            color: var(--color-white-text);
+        }
+
+        .screenshots-toc__list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--space-2);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .screenshots-toc__link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-3);
+            color: var(--color-gray-900);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: var(--radius-md);
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        [data-theme="dark"] .screenshots-toc__link {
+            color: var(--color-white-text);
+        }
+
+        .screenshots-toc__link:hover {
+            background-color: rgba(52, 124, 191, 0.1);
+            color: var(--color-primary);
+        }
+
+        [data-theme="dark"] .screenshots-toc__link:hover {
+            background-color: rgba(96, 165, 250, 0.15);
+            color: var(--color-blue-light);
+        }
+
+        .screenshots-toc__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .screenshot-section {
+            margin-bottom: var(--space-16);
+            scroll-margin-top: 100px;
+        }
+
+        .screenshot-section__header {
+            margin-bottom: var(--space-6);
+        }
+
+        .screenshot-section__title {
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--space-2);
+        }
+
+        [data-theme="dark"] .screenshot-section__title {
+            color: var(--color-white-text);
+        }
+
+        .screenshot-section__description {
+            font-size: var(--text-lg);
+            line-height: 1.7;
+            color: var(--color-gray-700);
+            max-width: 800px;
+        }
+
+        [data-theme="dark"] .screenshot-section__description {
+            color: var(--color-white-text);
+        }
+
+        .screenshot-section__description strong {
+            color: var(--color-gray-900);
+        }
+
+        [data-theme="dark"] .screenshot-section__description strong {
+            color: var(--color-white-text);
+            font-weight: 600;
+        }
+
+        .screenshot-item {
+            margin-bottom: var(--space-8);
+        }
+
+        picture {
+            display: block;
+            width: 100%;
+        }
+
+        .screenshot-item__image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-4);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            display: block;
+            background: linear-gradient(90deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.05) 100%);
+            background-size: 200% 100%;
+            min-height: 200px;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .screenshot-item__image[src] {
+            background: none;
+            animation: none;
+            min-height: auto;
+        }
+
+        [data-theme="dark"] .screenshot-item__image {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 100%);
+            background-size: 200% 100%;
+        }
+
+        [data-theme="dark"] .screenshot-item__image[src] {
+            background: none;
+        }
+
+        .screenshot-item__image:hover {
+            transform: scale(1.005);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        [data-theme="dark"] .screenshot-item__image {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        [data-theme="dark"] .screenshot-item__image:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        }
+
+        .screenshot-item__caption {
+            font-size: var(--text-base);
+            line-height: 1.7;
+            color: var(--color-gray-700);
+        }
+
+        [data-theme="dark"] .screenshot-item__caption {
+            color: var(--color-white-text);
+        }
+
+        .screenshot-item__caption strong {
+            color: var(--color-gray-900);
+        }
+
+        [data-theme="dark"] .screenshot-item__caption strong {
+            color: var(--color-white-text);
+            font-weight: 600;
+        }
+
+        .screenshots-cta {
+            text-align: center;
+            margin-top: var(--space-16);
+            padding: var(--space-12);
+            background: linear-gradient(135deg, rgba(52, 124, 191, 0.1) 0%, rgba(96, 165, 250, 0.1) 100%);
+            border-radius: var(--radius-lg);
+        }
+
+        .screenshots-cta__title {
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-weight: 700;
+            color: var(--color-gray-900);
+            margin-bottom: var(--space-4);
+        }
+
+        [data-theme="dark"] .screenshots-cta__title {
+            color: var(--color-white-text);
+        }
+
+        .screenshots-cta__description {
+            font-size: var(--text-lg);
+            color: var(--color-gray-700);
+            margin-bottom: var(--space-6);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        [data-theme="dark"] .screenshots-cta__description {
+            color: var(--color-white-text);
+        }
+
+        .screenshots-cta__actions {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4);
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox__image {
+            max-width: 95%;
+            max-height: 95vh;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+        }
+
+        .lightbox__close {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .lightbox__close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .screenshots-page {
+                padding: var(--space-20) var(--space-4) var(--space-12);
+            }
+
+            .screenshots-cta__actions {
+                flex-direction: column;
+            }
+
+            .screenshots-cta__actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
+    <!-- Header -->
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="nav__logo-img" fetchpriority="high" width="32" height="32">
+                <span class="nav__logo-text"><span class="brand-text">Usable</span></span>
+            </a>
+            
+            <div class="nav__menu">
+                <div class="nav__dropdown" aria-expanded="false">
+                    <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Product</button>
+                    <div class="nav__dropdown-menu">
+                        <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__dropdown-item">How It Works</a>
+                        <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__dropdown-item">Use Cases</a>
+                        <a href="/demo.html" data-clean-url="/demo" class="nav__dropdown-item">Demo</a>
+                        <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__dropdown-item nav__link--active">Detailed Screenshots</a>
+                    </div>
+                </div>
+                <a href="/pricing.html" data-clean-url="/pricing" class="nav__link">Pricing</a>
+                <div class="nav__dropdown" aria-expanded="false">
+                    <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources</button>
+                    <div class="nav__dropdown-menu">
+                        <a href="/blog.html" data-clean-url="/blog" class="nav__dropdown-item">Blog</a>
+                        <a href="/news.html" data-clean-url="/news" class="nav__dropdown-item">News</a>
+                        <a href="https://usable.dev/docs" class="nav__dropdown-item" target="_blank" rel="noopener noreferrer">Docs</a>
+                        <a href="/faq.html" data-clean-url="/faq" class="nav__dropdown-item">FAQ</a>
+                    </div>
+                </div>
+                <div class="nav__dropdown" aria-expanded="false">
+                    <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">About</button>
+                    <div class="nav__dropdown-menu">
+                        <a href="/about.html" data-clean-url="/about" class="nav__dropdown-item">About</a>
+                        <a href="/team.html" data-clean-url="/team" class="nav__dropdown-item">Team</a>
+                        <a href="/contact.html" data-clean-url="/contact" class="nav__dropdown-item">Contact</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav__actions">
+                <button class="theme-toggle nav__theme-toggle--desktop" aria-label="Toggle theme" aria-pressed="false">
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="https://usable.dev/login" class="btn btn--primary nav__cta--desktop">Log in / Sign up</a>
+                <a href="https://usable.dev/docs" class="btn btn--secondary nav__cta--desktop" target="_blank" rel="noopener noreferrer">Docs</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__menu--mobile">
+        <div class="nav__menu--mobile-content">
+            <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile">How It Works</a>
+            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile">Use Cases</a>
+            <a href="/demo.html" data-clean-url="/demo" class="nav__link nav__link--mobile">Demo</a>
+            <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__link nav__link--mobile nav__link--active">Detailed Screenshots</a>
+            <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile">Pricing</a>
+            <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile">Blog</a>
+            <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile">News</a>
+            <a href="https://usable.dev/docs" class="nav__link nav__link--mobile" target="_blank" rel="noopener noreferrer">Docs</a>
+            <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile">FAQ</a>
+            <a href="/about.html" data-clean-url="/about" class="nav__link nav__link--mobile">About</a>
+            <a href="/team.html" data-clean-url="/team" class="nav__link nav__link--mobile">Team</a>
+            <a href="/contact.html" data-clean-url="/contact" class="nav__link nav__link--mobile">Contact</a>
+            
+            <div class="nav__mobile-actions">
+                <button class="theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme" aria-pressed="false">
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="https://usable.dev/login" class="btn btn--primary nav__cta--mobile">Log in / Sign up</a>
+                <a href="https://usable.dev/docs" class="btn btn--secondary nav__cta--mobile" target="_blank" rel="noopener noreferrer">Docs</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bokeh Background Circles -->
+    <div class="bokeh bokeh-1"></div>
+    <div class="bokeh bokeh-2"></div>
+    <div class="bokeh bokeh-3"></div>
+    <div class="bokeh bokeh-4"></div>
+    <div class="bokeh bokeh-5"></div>
+    <div class="bokeh bokeh-6"></div>
+    <div class="bokeh bokeh-7"></div>
+    <div class="bokeh bokeh-8"></div>
+    <div class="bokeh bokeh-9"></div>
+    <div class="bokeh bokeh-10"></div>
+    <div class="bokeh bokeh-11"></div>
+    <div class="bokeh bokeh-12"></div>
+    <div class="bokeh bokeh-13"></div>
+    <div class="bokeh bokeh-14"></div>
+    <div class="bokeh bokeh-15"></div>
+    <div class="bokeh bokeh-16"></div>
+    <div class="bokeh bokeh-17"></div>
+    <div class="bokeh bokeh-18"></div>
+    <div class="bokeh bokeh-19"></div>
+    <div class="bokeh bokeh-20"></div>
+
+    <main id="main-content" class="screenshots-page" role="main">
+        <div class="screenshots-page__container">
+            <!-- Hero -->
+            <section class="screenshots-hero">
+                <h1 class="screenshots-hero__title">A Visual Journey Through <span class="brand-text">Usable</span></h1>
+                <p class="screenshots-hero__description">
+                    Follow along as we explore every corner of Usable's interface. This comprehensive visual tour shows you exactly how workspaces, memory fragments, Usable Chat, and MCP integration work together to give your AI agents the persistent memory they need.
+                </p>
+                <p class="screenshots-hero__description screenshots-hero__hint">
+                    Click any screenshot to view it full-size.
+                </p>
+            </section>
+
+            <!-- Table of Contents -->
+            <nav class="screenshots-toc" aria-label="Table of Contents">
+                <h2 class="screenshots-toc__title">Jump to Section</h2>
+                <ol class="screenshots-toc__list">
+                    <li><a href="#section-1" class="screenshots-toc__link"><span class="screenshots-toc__number">1</span> Welcome to Usable</a></li>
+                    <li><a href="#section-2" class="screenshots-toc__link"><span class="screenshots-toc__number">2</span> Your Workspaces</a></li>
+                    <li><a href="#section-3" class="screenshots-toc__link"><span class="screenshots-toc__number">3</span> Inside a Workspace</a></li>
+                    <li><a href="#section-4" class="screenshots-toc__link"><span class="screenshots-toc__number">4</span> Memory Fragments</a></li>
+                    <li><a href="#section-5" class="screenshots-toc__link"><span class="screenshots-toc__number">5</span> Search & Discovery</a></li>
+                    <li><a href="#section-6" class="screenshots-toc__link"><span class="screenshots-toc__number">6</span> Creating Content</a></li>
+                    <li><a href="#section-7" class="screenshots-toc__link"><span class="screenshots-toc__number">7</span> Creating Workspaces</a></li>
+                    <li><a href="#section-8" class="screenshots-toc__link"><span class="screenshots-toc__number">8</span> Advanced Settings</a></li>
+                    <li><a href="#section-9" class="screenshots-toc__link"><span class="screenshots-toc__number">9</span> Usable Chat</a></li>
+                    <li><a href="#section-10" class="screenshots-toc__link"><span class="screenshots-toc__number">10</span> MCP Integration</a></li>
+                    <li><a href="#section-11" class="screenshots-toc__link"><span class="screenshots-toc__number">11</span> Account & Billing</a></li>
+                    <li><a href="#section-12" class="screenshots-toc__link"><span class="screenshots-toc__number">12</span> Files & Attachments</a></li>
+                </ol>
+            </nav>
+
+            <!-- Section 1: Welcome -->
+            <section id="section-1" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">1. Welcome to Usable</h2>
+                    <p class="screenshot-section__description">
+                        Your journey begins at <a href="https://usable.dev" target="_blank" rel="noopener noreferrer">usable.dev</a> — the home of knowledge management for AI agents. Our friendly nudibranch mascot greets you with a simple message: Your AI Agent Sucks at Knowledge Management. Usable to the rescue.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.25.33.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.25.33.png" alt="Usable landing page with mascot" class="screenshot-item__image" loading="eager" decoding="async" fetchpriority="high" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>The Usable Landing Page:</strong> A clean, modern interface introduces you to Usable's core value proposition — plug-and-play knowledge management that skips the RAG/GraphRAG complexity. You can watch a demo or sign up immediately.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 2: Your Workspaces -->
+            <section id="section-2" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">2. Your Workspaces</h2>
+                    <p class="screenshot-section__description">
+                        After logging in, you land on the Workspaces dashboard — your central hub for organizing knowledge. Each workspace can contain memory fragments, team members, and custom configurations.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.27.45.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.27.45.png" alt="Workspaces dashboard" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Your Workspaces Dashboard:</strong> The clean interface shows your existing workspaces at a glance. Notice the key actions: <strong>Connect MCP</strong> to link your IDE, <strong>Discover Public</strong> to find shared workspaces, and <strong>+ New Workspace</strong> to create your own. Every new user starts with a "Getting Started" workspace.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 3: Inside a Workspace -->
+            <section id="section-3" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">3. Inside a Workspace</h2>
+                    <p class="screenshot-section__description">
+                        Each workspace organizes your knowledge into different fragment types. The "Getting Started" workspace comes pre-populated with helpful onboarding guides.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.27.58.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.27.58.png" alt="Inside Getting Started workspace" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Workspace Overview:</strong> This is the heart of Usable. You can see your <strong>Memory Fragments</strong> organized by type — Instruction Set, Knowledge, Recipe, Solution, and Template. The sidebar shows workspace members, quick actions, and statistics. Each fragment type is color-coded for easy identification.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 4: Memory Fragments -->
+            <section id="section-4" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">4. Memory Fragments</h2>
+                    <p class="screenshot-section__description">
+                        Memory fragments are the building blocks of Usable. They store your knowledge in a structured, searchable format that your AI agents can access.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.28.15.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.28.15.png" alt="Memory fragments list" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Memory Fragments List:</strong> Browse all your fragments with filtering capabilities. Each fragment shows its type, title, description, tags, author, and creation date. The filter bar lets you narrow down by type, and you can search across all content.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.28.26.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.28.26.png" alt="Fragment detail view" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Fragment Detail:</strong> Dive deep into any fragment. This "Welcome to Usable" knowledge fragment explains what Usable is, why persistent memory matters, and key concepts. Notice the tags for organization, the "Copy Raw" button for easy sharing, and the rich markdown content.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.29.04.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.29.04.png" alt="MCP connection recipe" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Recipe Fragment:</strong> Recipes provide step-by-step guides. This one walks you through connecting to Usable via MCP, including generating API tokens, configuring your IDE, and setting up permissions. Recipes are perfect for onboarding and standardizing processes.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 5: Search & Discovery -->
+            <section id="section-5" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">5. Search & Discovery</h2>
+                    <p class="screenshot-section__description">
+                        Usable's powerful search lets you find relevant knowledge instantly — whether you're searching from the UI or through your AI agent.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.28.42.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.28.42.png" alt="Global search dialog" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Global Search:</strong> Press the search bar to open the Global Search dialog. It shows suggested fragments based on your activity and supports semantic search to find content by meaning, not just keywords.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.28.56.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.28.56.png" alt="Search results for MCP" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Search Results:</strong> Searching for "mcp" returns 5 results in 52ms. Each result shows the fragment type, title, matching content preview with highlighted keywords, relevance score, tags, and the workspace it belongs to.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.29.26.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.29.26.png" alt="Filter by tag" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Tag Filtering:</strong> Quickly filter fragments by tag. Here we've filtered by "tag:mcp" to see only MCP-related content. Tags help organize your knowledge and make discovery effortless.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 6: Creating Content -->
+            <section id="section-6" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">6. Creating Content</h2>
+                    <p class="screenshot-section__description">
+                        Adding new knowledge to Usable is simple. You can create fragments from scratch with AI assistance or import from PDFs.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.30.43.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.30.43.png" alt="Create fragment options" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Create Fragment Options:</strong> Choose how to create your fragment. <strong>Create from scratch</strong> gives you full control with AI-assisted content generation, while <strong>Import from PDF</strong> automatically extracts content, titles, summaries, and tags using AI analysis.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.30.55.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.30.55.png" alt="Create fragment form" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Fragment Editor:</strong> The creation form includes fragment type selection, title, summary (with AI generation), content area, and tags. The AI can generate summaries and tags automatically once you've added title and content.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 7: Creating Workspaces -->
+            <section id="section-7" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">7. Creating Workspaces</h2>
+                    <p class="screenshot-section__description">
+                        Create workspaces to organize knowledge by project, team, or domain. Each workspace can be private or public.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.31.28.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.31.28.png" alt="Create workspace dialog" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>New Workspace Dialog:</strong> Enter a name, description, and choose visibility. Private workspaces are only accessible to invited members, while public workspaces can be discovered and subscribed to by anyone.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.32.22.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.32.22.png" alt="Creating My CRM workspace" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Example: Creating "My CRM":</strong> Here we're creating a workspace for organizing a sales pipeline — tracking opportunities, interactions, proposals, and agreements. This demonstrates how Usable adapts to any use case.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.32.32.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.32.32.png" alt="New My CRM workspace" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Workspace Created:</strong> The new "My CRM" workspace is ready. It comes with default fragment types, and you can immediately start creating content, inviting members, or adjusting settings.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 8: Advanced Settings -->
+            <section id="section-8" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">8. Advanced Settings</h2>
+                    <p class="screenshot-section__description">
+                        Usable offers powerful configuration options including custom fragment types, webhooks, AI graph features, and search optimization.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.32.41.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.32.41.png" alt="Workspace settings" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Workspace Settings:</strong> Manage basic information, workspace ID (for API/MCP configuration), and visibility. The settings page gives you complete control over your workspace.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.32.51.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.32.51.png" alt="AI Graph Features and BYOK" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>AI Graph Features:</strong> Advanced features include automatic concept extraction and smart relationship discovery between fragments. The BYOK (Bring Your Own Key) feature lets Pro users use their own AI provider API keys.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.33.14.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.33.14.png" alt="Create webhook" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Webhooks:</strong> Set up webhooks to receive notifications when fragments are created, updated, or deleted. This enables powerful integrations with external systems.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.34.48.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.34.48.png" alt="Create fragment type" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Custom Fragment Types:</strong> Create your own fragment types to match your workflow. Here we're creating an "Opportunity" type for tracking sales opportunities, with custom icon and color. This extensibility makes Usable adaptable to any domain.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.34.59.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.34.59.png" alt="AI Search Configuration" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>AI Search Configuration:</strong> Fine-tune how the AI understands your content with Concept Evolution (defining relationships like "Usable also means Memory Mesh") and Tag Aliases for automatic search expansion.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 9: Usable Chat -->
+            <section id="section-9" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">9. Usable Chat</h2>
+                    <p class="screenshot-section__description">
+                        Usable Chat is an AI assistant with persistent memory and agentic capabilities. It can search your knowledge base, create fragments, and remember your conversations.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.35.21.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.35.21.png" alt="Usable Chat landing" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Usable Chat:</strong> Access at <a href="https://chat.usable.dev" target="_blank" rel="noopener noreferrer">chat.usable.dev</a>. It's an AI assistant with persistent conversation memory, multi-step agentic reasoning, knowledge base integration, and secure SSO authentication.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.35.33.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.35.33.png" alt="Chat sign in features" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Key Features:</strong> Persistent conversation memory across sessions, multi-step agentic reasoning for complex tasks, deep knowledge base integration, and enterprise-grade security with SSO.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.37.06.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.37.06.png" alt="Chat interface with prompt" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Starting a Conversation:</strong> Ask anything — here we're requesting a complete sales pipeline management system for the "My CRM" workspace. The chat understands context and can work with your workspaces directly.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.37.23.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.37.23.png" alt="Chat AI response with thought process" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>AI Thinking Process:</strong> Watch as the AI works through your request. It lists workspaces, gets fragment types, and then creates a comprehensive solution. The transparent thought process shows exactly what the AI is doing.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.38.52.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.38.52.png" alt="Create project dialog" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Projects:</strong> Group conversations into projects with custom system prompts. Each project can have its own context and personality, perfect for organizing work across different areas.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.39.01.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.39.01.png" alt="Add context to project" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Project Context:</strong> Add workspaces or specific fragments to your project's context. These will be available to all conversations in the project, ensuring the AI always has the right knowledge.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 10: MCP Integration -->
+            <section id="section-10" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">10. MCP Integration</h2>
+                    <p class="screenshot-section__description">
+                        Connect Usable to your favorite AI tools using the Model Context Protocol (MCP). Works with Cursor, Claude, VS Code, Windsurf, and more.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.39.28.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.39.28.png" alt="Connect MCP dialog" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>MCP Connection Guide:</strong> Step-by-step instructions for connecting your IDE. Generate an API token, then copy the configuration into your IDE's MCP settings. Supports Cursor, Claude Desktop, Windsurf, and VS Code with tabs for each.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.39.38.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.39.38.png" alt="Available MCP tools" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Available MCP Tools:</strong> Once connected, your AI assistant gains access to powerful tools: <strong>agentic-search-fragments</strong>, <strong>create-memory-fragment</strong>, <strong>search-memory-fragments</strong>, <strong>update-memory-fragment</strong>, <strong>list-workspaces</strong>, <strong>get-fragment-types</strong>, and <strong>list-memory-fragments</strong>.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.39.52.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.39.52.png" alt="Discover public workspaces" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Discover Public Workspaces:</strong> Find and subscribe to public workspaces to access shared knowledge. Here we're searching for "flow" and finding the "Flowcore Public" workspace with documentation and use cases.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 11: Account & Billing -->
+            <section id="section-11" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">11. Account & Billing</h2>
+                    <p class="screenshot-section__description">
+                        Manage your profile, API tokens, and subscription from the account settings.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.40.03.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.40.03.png" alt="Account profile" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Profile:</strong> View your account information including name, email, membership date, account status, and owned workspaces. The usage overview shows your current plan and monthly allowances for storage, generation tokens, and embedding tokens.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.40.09.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.40.09.png" alt="API tokens" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>API Tokens:</strong> Create and manage personal access tokens for API authentication. These tokens can access multiple workspaces based on your permissions and are essential for MCP connections.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.40.13.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.40.13.png" alt="Subscription tab" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Subscription:</strong> View your billing period, current plan, and charges. The Free plan includes 1 GB storage, 5.0M generation tokens, and 2.0M embedding tokens. Upgrade anytime to access more features and higher limits.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.40.42.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.40.42.png" alt="Dashboard with notifications" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Notifications:</strong> Stay informed about updates to your workspaces and fragments. The notification panel shows activity and keeps you connected to your team's work.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Section 12: Files & Attachments -->
+            <section id="section-12" class="screenshot-section">
+                <header class="screenshot-section__header">
+                    <h2 class="screenshot-section__title">12. Files & Attachments</h2>
+                    <p class="screenshot-section__description">
+                        Attach files to your fragments and manage them centrally. Files are indexed and can be linked to multiple fragments.
+                    </p>
+                </header>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.41.24.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.41.24.png" alt="Fragment types and next steps" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Fragment Types Reference:</strong> A helpful guide showing all fragment types — Knowledge, Recipe, Solution, Template, and Instruction Set — each serving a specific purpose. The "Next Steps" section guides you through your onboarding journey.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.41.42.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.41.42.png" alt="File attachments section" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>File Attachments:</strong> Upload files directly to your fragments. Attached files become part of your knowledge base and can be referenced by AI agents. Upload any file type up to the limits of your plan.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.42.31.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.42.31.png" alt="File upload success" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Upload Success:</strong> Files are uploaded and attached instantly. The notification confirms success, and the file appears in the attachments list with its type, size, and upload date.
+                    </p>
+                </article>
+
+                <article class="screenshot-item">
+                    <picture>
+                        <source srcset="assets/demo/Screenshot 2025-12-31 at 17.43.06.webp" type="image/webp">
+                        <img src="assets/demo/Screenshot 2025-12-31 at 17.43.06.png" alt="Files management page" class="screenshot-item__image" loading="lazy" decoding="async" fetchpriority="low" width="1920" height="1080">
+                    </picture>
+                    <p class="screenshot-item__caption">
+                        <strong>Files Management:</strong> View all files in your workspace from the central Files page. See which fragments reference each file, download files, or delete them. Files can be attached to multiple fragments for efficient reuse.
+                    </p>
+                </article>
+            </section>
+
+            <!-- CTA -->
+            <section class="screenshots-cta">
+                <h2 class="screenshots-cta__title">Ready to Experience <span class="brand-text">Usable</span>?</h2>
+                <p class="screenshots-cta__description">
+                    Start building AI agents with better knowledge management today. Free tier available — no credit card required.
+                </p>
+                <div class="screenshots-cta__actions">
+                    <a href="https://usable.dev/login" class="btn btn--primary btn--large">Log in / Sign up</a>
+                    <a href="/demo.html" data-clean-url="/demo" class="btn btn--secondary btn--large">Watch Demo Video</a>
+                    <a href="https://usable.dev/docs" class="btn btn--secondary btn--large" target="_blank" rel="noopener noreferrer">Read Documentation</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Full-size image viewer">
+        <button class="lightbox__close" aria-label="Close lightbox">×</button>
+        <img src="" alt="" class="lightbox__image" id="lightbox-image">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__circle-1"></div>
+        <div class="footer__circle-2"></div>
+        <div class="footer__circle-3"></div>
+        <div class="footer__circle-4"></div>
+        <div class="footer__circle-5"></div>
+        <div class="footer__container">
+            <div class="footer__main">
+                <div class="footer__brand">
+                    <a href="/" class="footer__logo">
+                        <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="footer__logo-img" loading="lazy" width="32" height="32">
+                        <span class="footer__logo-text"><span class="brand-text">Usable</span></span>
+                    </a>
+                    <p class="footer__tagline">
+                        <span class="brand-text">Usable</span> is not just adorable<br>- it is actually usable.
+                    </p>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__section">
+                        <h3 class="footer__section-title">Company</h3>
+                        <a href="/about.html" data-clean-url="/about" class="footer__link">About</a>
+                        <a href="/team.html" data-clean-url="/team" class="footer__link">Team</a>
+                        <a href="/contact.html" data-clean-url="/contact" class="footer__link">Contact</a>
+                        <a href="/news.html" data-clean-url="/news" class="footer__link">News</a>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h3 class="footer__section-title">Product</h3>
+                        <a href="/" class="footer__link">Usable</a>
+                        <a href="https://flowcore.io" class="footer__link" target="_blank" rel="noopener noreferrer">Flowcore</a>
+                        <a href="/contact.html" data-clean-url="/contact" class="footer__link">Consultancy</a>
+                        <a href="/demo.html" data-clean-url="/demo" class="footer__link">Product Demo</a>
+                        <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="footer__link">Detailed Screenshots</a>
+                        <a href="/pricing.html" data-clean-url="/pricing" class="footer__link">Pricing</a>
+                        <a href="/how-it-works.html" data-clean-url="/how-it-works" class="footer__link">How It Works</a>
+                        <a href="https://usable.dev/docs" class="footer__link" target="_blank" rel="noopener noreferrer">Documentation</a>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h3 class="footer__section-title">Resources</h3>
+                        <a href="https://usable.dev/login" class="footer__link" target="_blank" rel="noopener noreferrer">Get Started</a>
+                        <a href="https://usable.dev/docs#api" class="footer__link" target="_blank" rel="noopener noreferrer">API Reference</a>
+                        <a href="https://discord.com/invite/36AuxFNnSE" class="footer__link" target="_blank" rel="noopener noreferrer">Community</a>
+                        <a href="/blog.html" data-clean-url="/blog" class="footer__link">Blog</a>
+                        <a href="/media-kit.html" data-clean-url="/media-kit" class="footer__link">Media Kit</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__copyright-group">
+                    <p class="footer__copyright">
+                        © 2025 <a href="https://www.flowcore.com" class="brand-text" target="_blank" rel="noopener noreferrer">Usable Sp/f</a> - All rights reserved.
+                    </p>
+                    <div class="footer__legal">
+                        <a href="/privacy.html" class="footer__link">Privacy Policy</a>
+                        <a href="/terms.html" class="footer__link">Terms of Service</a>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <a href="https://discord.gg/36AuxFNnSE" class="footer__social-link" aria-label="Join our Discord" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@UsableDev" class="footer__social-link" aria-label="Subscribe to our YouTube" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="https://open.spotify.com/show/5leH0kkxczVZNKUX1S6OAk" class="footer__social-link" aria-label="Listen to our Spotify Podcast" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/usabledev" class="footer__social-link" aria-label="Follow us on LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.reddit.com/r/usabledev/" class="footer__social-link" aria-label="Join us on Reddit" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/usabledev/" class="footer__social-link" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/UsableDev" class="footer__social-link" aria-label="Follow us on X" target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div id="usable-version" class="footer__version" aria-live="polite"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script>
+        // Lightbox functionality
+        (function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const closeButton = lightbox.querySelector('.lightbox__close');
+
+            // Open lightbox when clicking on images
+            document.querySelectorAll('.screenshot-item__image').forEach(function(img) {
+                img.addEventListener('click', function() {
+                    lightboxImage.src = this.src;
+                    lightboxImage.alt = this.alt;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            closeButton.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
+
