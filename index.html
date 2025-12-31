@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usable - Smart Knowledge Management for Teams</title>
-    <meta name="description" content="Smart knowledge management for modern teams. Capture important decisions, procedures, and insights — then find them instantly when you or your team need them.">
+    <title>Usable - Knowledge Management for AI Agents</title>
+    <meta name="description" content="Plug-and-play knowledge management for AI agents. Skip the RAG/GraphRAG chaos—connect your content to Usable and get production-grade answers in minutes, without building a knowledge stack yourself.">
     
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="AI-assisted development, AI coding agents, MCP server, memory layer, development teams, shared memory, code patterns, architectural decisions, team knowledge, debugging solutions, developer tools, knowledge management, AI memory">
@@ -24,8 +24,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://usable.dev/">
-    <meta property="og:title" content="Usable - Smart Knowledge Management for Teams">
-    <meta property="og:description" content="Smart knowledge management for modern teams. Capture important decisions, procedures, and insights — then find them instantly when you or your team need them.">
+    <meta property="og:title" content="Usable - Knowledge Management for AI Agents">
+    <meta property="og:description" content="Plug-and-play knowledge management for AI agents. Skip the RAG/GraphRAG chaos—connect your content to Usable and get production-grade answers in minutes.">
     <meta property="og:image" content="https://usable.dev/assets/images/Usable - Logo.png">
     <meta property="og:site_name" content="Usable">
     <meta property="og:locale" content="en_US">
@@ -33,8 +33,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://usable.dev/">
-    <meta property="twitter:title" content="Usable - Smart Knowledge Management for Teams">
-    <meta property="twitter:description" content="Smart knowledge management for modern teams. Capture important decisions, procedures, and insights — then find them instantly when you or your team need them.">
+    <meta property="twitter:title" content="Usable - Knowledge Management for AI Agents">
+    <meta property="twitter:description" content="Plug-and-play knowledge management for AI agents. Skip the RAG/GraphRAG chaos—connect your content to Usable and get production-grade answers in minutes.">
     <meta property="twitter:image" content="https://usable.dev/assets/images/Usable - Logo.png">
     <meta name="twitter:creator" content="@UsableDev">
     <meta name="twitter:site" content="@UsableDev">
@@ -183,12 +183,32 @@
                 </a>
                 
                 <div class="nav__menu">
-                    <a href="#how-it-works" class="nav__link">How It Works</a>
-                    <a href="#use-cases" class="nav__link">Use Cases</a>
-                    <a href="/news.html" data-clean-url="/news" class="nav__link">News</a>
-                    <a href="/blog.html" data-clean-url="/blog" class="nav__link">Blog</a>
-                    <a href="#pricing" class="nav__link">Pricing</a>
-                    <a href="#faq" class="nav__link">FAQ</a>
+                    <div class="nav__dropdown" aria-expanded="false">
+                        <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Product</button>
+                        <div class="nav__dropdown-menu">
+                            <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__dropdown-item">How It Works</a>
+                            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__dropdown-item">Use Cases</a>
+                            <a href="/demo.html" data-clean-url="/demo" class="nav__dropdown-item">Demo</a>
+                        </div>
+                    </div>
+                    <a href="/pricing.html" data-clean-url="/pricing" class="nav__link">Pricing</a>
+                    <div class="nav__dropdown" aria-expanded="false">
+                        <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources</button>
+                        <div class="nav__dropdown-menu">
+                            <a href="/blog.html" data-clean-url="/blog" class="nav__dropdown-item">Blog</a>
+                            <a href="/news.html" data-clean-url="/news" class="nav__dropdown-item">News</a>
+                            <a href="https://usable.dev/docs" class="nav__dropdown-item" target="_blank" rel="noopener noreferrer">Docs</a>
+                            <a href="/faq.html" data-clean-url="/faq" class="nav__dropdown-item">FAQ</a>
+                        </div>
+                    </div>
+                    <div class="nav__dropdown" aria-expanded="false">
+                        <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">About</button>
+                        <div class="nav__dropdown-menu">
+                            <a href="/about.html" data-clean-url="/about" class="nav__dropdown-item">About</a>
+                            <a href="/team.html" data-clean-url="/team" class="nav__dropdown-item">Team</a>
+                            <a href="/contact.html" data-clean-url="/contact" class="nav__dropdown-item">Contact</a>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="nav__actions">
@@ -208,7 +228,7 @@
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                     </button>
-                    <a href="https://usable.dev/login" class="btn btn--primary nav__cta--desktop">Log in</a>
+                    <a href="https://usable.dev/login" class="btn btn--primary nav__cta--desktop">Log in / Sign up</a>
                     <a href="https://usable.dev/docs" class="btn btn--secondary nav__cta--desktop" target="_blank" rel="noopener noreferrer">Docs</a>
                     <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                         <span class="hamburger-line"></span>
@@ -222,13 +242,17 @@
     <!-- Mobile Menu -->
     <div class="nav__menu--mobile">
         <div class="nav__menu--mobile-content">
-            <a href="#how-it-works" class="nav__link nav__link--mobile">How It Works</a>
-            <a href="#features" class="nav__link nav__link--mobile">Features</a>
-            <a href="#use-cases" class="nav__link nav__link--mobile">Use Cases</a>
-            <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile">News</a>
+            <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile">How It Works</a>
+            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile">Use Cases</a>
+            <a href="/demo.html" data-clean-url="/demo" class="nav__link nav__link--mobile">Demo</a>
+            <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile">Pricing</a>
             <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile">Blog</a>
-            <a href="#pricing" class="nav__link nav__link--mobile">Pricing</a>
-            <a href="#faq" class="nav__link nav__link--mobile">FAQ</a>
+            <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile">News</a>
+            <a href="https://usable.dev/docs" class="nav__link nav__link--mobile" target="_blank" rel="noopener noreferrer">Docs</a>
+            <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile">FAQ</a>
+            <a href="/about.html" data-clean-url="/about" class="nav__link nav__link--mobile">About</a>
+            <a href="/team.html" data-clean-url="/team" class="nav__link nav__link--mobile">Team</a>
+            <a href="/contact.html" data-clean-url="/contact" class="nav__link nav__link--mobile">Contact</a>
             
             <div class="nav__mobile-actions">
                 <button class="theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme" aria-pressed="false">
@@ -247,30 +271,12 @@
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
-                <a href="https://usable.dev/login" class="btn btn--primary nav__cta--mobile">Log in</a>
+                <a href="https://usable.dev/login" class="btn btn--primary nav__cta--mobile">Log in / Sign up</a>
                 <a href="https://usable.dev/docs" class="btn btn--secondary nav__cta--mobile" target="_blank" rel="noopener noreferrer">Docs</a>
             </div>
         </div>
     </div>
 
-    <!-- Announcement Banner -->
-    <div class="announcement" role="region" aria-label="Press release announcement">
-        <div class="announcement__container">
-            <div class="announcement__content">
-                <span class="announcement__badge">News</span>
-                <p class="announcement__text">
-                    <strong>Peter Vesterbacka & Kustaa Valtonen Join Usable</strong> - Strategic advisors from Random Ventures join to accelerate global expansion. 
-                    <a href="/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors.html" data-clean-url="/news/peter-vesterbacka-kustaa-valtonen-join-usable-strategic-advisors-investors" class="announcement__link">Learn more about our strategic advisors</a>
-                </p>
-            </div>
-            <button class="announcement__close" aria-label="Close announcement" type="button">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <section id="main-content" class="hero" role="main">
@@ -293,14 +299,14 @@
                     Plug‑and‑play knowledge management for your AI agent. Skip the RAG/GraphRAG chaos—connect your content to Usable and get production‑grade answers in minutes, without building a knowledge stack yourself.
                 </p>
                 <div class="hero__actions animate-on-scroll fade-in-up stagger-delay-1">
-                    <a href="https://www.youtube.com/playlist?list=PLfhO045jHxoX4STfnP73JOtpE1VqPePIA" class="btn btn--primary btn--large" target="_blank" rel="noopener noreferrer">WATCH DEMOS</a>
-                    <a href="https://usable.dev/login" class="btn btn--secondary btn--large">LOG IN</a>
+                    <a href="/demo.html" data-clean-url="/demo" class="btn btn--primary btn--large">WATCH DEMO</a>
+                    <a href="https://usable.dev/login" class="btn btn--secondary btn--large">LOG IN / SIGN UP</a>
                 </div>
             </div>
             <div class="hero__visual">
                     <picture>
                         <source srcset="assets/images/usable-mascot.webp" type="image/webp">
-                        <img src="assets/images/usable-mascot.png" alt="Usable Nudibranch Mascot" class="hero__mascot" loading="lazy" width="400" height="400">
+                        <img src="assets/images/usable-mascot.png" alt="Usable Nudibranch Mascot" class="hero__mascot" loading="lazy">
                     </picture>
             </div>
         </div>
@@ -411,705 +417,6 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="how-it-works__container">
-            <div class="section__header animate-on-scroll fade-in-down">
-                <h2 class="section__title">How it works</h2>
-                <p class="section__description">
-                    Get started with <span class="brand-text">Usable</span> in minutes. No complex setup required.<br>
-                    <a href="https://www.youtube.com/playlist?list=PLfhO045jHxoX4STfnP73JOtpE1VqPePIA" class="brand-link" target="_blank" rel="noopener noreferrer">Watch our live demos</a> to see it in action.
-                </p>
-            </div>
-            
-            <div class="how-it-works__steps">
-                <div class="step animate-on-scroll fade-in-up stagger-delay-1">
-                    <div class="step__number">1</div>
-                    <h3 class="step__title">Connect Your Tools</h3>
-                    <p class="step__description">
-                        Connect <span class="brand-text">Usable</span> to your favorite AI assistant or workspace in minutes. One simple setup gives your entire team instant access to shared knowledge.
-                    </p>
-                    <p class="step__description" style="margin-top: 0.5rem; opacity: 0.85; font-size: 0.95em;">
-                        Works with any MCP-compatible tool — Cursor, Claude, VS Code, Windsurf, and more.
-                    </p>
-                </div>
-                
-                <div class="step animate-on-scroll fade-in-up stagger-delay-2">
-                    <div class="step__number">2</div>
-                    <h3 class="step__title">Capture Knowledge</h3>
-                    <p class="step__description">
-                        As you work, save important decisions, procedures, and insights. <span class="brand-text">Usable</span> organizes everything automatically so your team can find it later.
-                    </p>
-                    <p class="step__description" style="margin-top: 0.5rem; opacity: 0.85; font-size: 0.95em;">
-                        Ask AI agents to capture patterns, solutions, and context as searchable memory fragments.
-                    </p>
-                </div>
-                
-                <div class="step animate-on-scroll fade-in-up stagger-delay-3">
-                    <div class="step__number">3</div>
-                    <h3 class="step__title">Find It Instantly</h3>
-                    <p class="step__description">
-                        When you or your team need information, <span class="brand-text">Usable</span> surfaces the right knowledge at the right time — no digging through old documents or chat history.
-                    </p>
-                    <p class="step__description" style="margin-top: 0.5rem; opacity: 0.85; font-size: 0.95em;">
-                        Agents retrieve relevant fragments during work — architectural decisions, debugging solutions, and team standards.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="features__container">
-            <div class="section__header animate-on-scroll fade-in-down">
-                <h2 class="section__title">Capture every type of knowledge</h2>
-                <p class="section__description">
-                    Your team's knowledge, ready when you need it. Capture decisions, procedures, 
-                    and solutions once — then work with AI assistance that understands your work, 
-                    your standards, and your history.
-                </p>
-            </div>
-            
-            <div class="features__grid">
-                <div class="feature animate-on-scroll fade-in-up stagger-delay-1">
-                    <div class="feature__icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <h3 class="feature__title">Team Collaboration</h3>
-                    <p class="feature__description">
-                        Share knowledge seamlessly across your entire team.
-                        Build a collective intelligence that grows stronger with every interaction.
-                    </p>
-                </div>
-                
-                <div class="feature animate-on-scroll fade-in-up stagger-delay-2">
-                    <div class="feature__icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            <line x1="12" y1="2" x2="12" y2="22"></line>
-                            <path d="M8 12h8"></path>
-                        </svg>
-                    </div>
-                    <h3 class="feature__title">Seamless Integration</h3>
-                    <p class="feature__description">
-                        Works with your existing tools and workflows.
-                        Integrate with Cursor, Claude Code, VS Code, Cline, Windsurf, and more with just a few clicks.
-                    </p>
-                </div>
-                
-                <div class="feature animate-on-scroll fade-in-up stagger-delay-3">
-                    <div class="feature__icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="16" x2="12" y2="12"></line>
-                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                        </svg>
-                    </div>
-                    <h3 class="feature__title">Development Context</h3>
-                    <p class="feature__description">
-                        Capture the full context around projects, features, and changes.
-                        Understand not just what was done, but why and how.
-                    </p>
-                </div>
-                
-                <div class="feature animate-on-scroll fade-in-up stagger-delay-4">
-                    <div class="feature__icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M3 3h18v18H3zM9 9h6v6H9z"></path>
-                            <path d="M9 3v6M15 3v6M3 9h6M15 9h6M9 15v6M15 15v6M3 15h6M15 15h6"></path>
-                        </svg>
-                    </div>
-                    <h3 class="feature__title">Architectural Decisions</h3>
-                    <p class="feature__description">
-                        Never lose the reasoning behind critical architectural decisions. Capture why decisions were made,
-                        what alternatives were considered, and how they impact your system.
-                    </p>
-                </div>
-                
-                <div class="feature animate-on-scroll fade-in-up stagger-delay-5">
-                    <div class="feature__icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 18l6-6-6-6"></path>
-                            <path d="M8 6l-6 6 6 6"></path>
-                        </svg>
-                    </div>
-                    <h3 class="feature__title">Code Patterns</h3>
-                    <p class="feature__description">
-                        Document reusable patterns, best practices, and common solutions. Make your team's
-                        collective coding wisdom instantly searchable and accessible.
-                    </p>
-                </div>
-                
-                <div class="feature animate-on-scroll fade-in-up stagger-delay-6">
-                    <div class="feature__icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
-                            <line x1="12" y1="6" x2="12" y2="12"></line>
-                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
-                        </svg>
-                    </div>
-                    <h3 class="feature__title">Debugging Stories</h3>
-                    <p class="feature__description">
-                        Preserve the solutions to complex bugs and issues. Turn every debugging session into
-                        a learning opportunity for your entire team.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases Section -->
-    <section id="use-cases" class="section use-cases">
-        <div class="container">
-            <div class="section__header animate-on-scroll fade-in-down">
-                <h2 class="section__title">Use Cases</h2>
-                <p class="section__description">
-                    See how <span class="brand-text">Usable</span> turns team knowledge into shipped work.<br>
-                    Pick a role to follow the step-by-step flow with a preview.
-                </p>
-            </div>
-            
-            <div class="use-cases__container">
-                <!-- Tab Navigation -->
-                <div class="use-cases__tabs animate-on-scroll fade-in-up stagger-delay-1">
-                    <button class="use-cases__tab use-cases__tab--active" data-tab="engineer">
-                        Software Engineer
-                    </button>
-                    <button class="use-cases__tab" data-tab="devops">
-                        DevOps
-                    </button>
-                    <button class="use-cases__tab" data-tab="team">
-                        Team
-                    </button>
-                </div>
-                
-                <!-- Tab Content -->
-                <div class="use-cases__content">
-                    <!-- Software Engineer Tab -->
-                    <div class="use-cases__panel use-cases__panel--active" id="engineer">
-                        <div class="use-cases__grid">
-                            <div class="use-cases__card animate-on-scroll fade-in-left stagger-delay-2">
-                                <div class="use-cases__card-header">
-                                    <h3 class="use-cases__card-title">Document and Implement Internal Library</h3>
-                                </div>
-                                <div class="use-cases__card-content">
-                                    <ol class="use-cases__steps">
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">1</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Author library docs</h4>
-                                                <p class="use-cases__step-description">
-                                                    You have a private library without documentation. In the repo, ask <span class="brand-text">Usable</span> to create a documentation fragment, focusing on key feature X or Y.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">2</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Consumer asks to implement</h4>
-                                                <p class="use-cases__step-description">
-                                                    Another developer asks their agent to implement the library in their app.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">3</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Agent finds docs</h4>
-                                                <p class="use-cases__step-description">
-                                                    The agent searches <span class="brand-text">Usable</span>, finds the documentation fragment, and understands the API and examples.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">4</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">First-try implementation</h4>
-                                                <p class="use-cases__step-description">
-                                                    It implements the library without hallucinations and wires up the key feature.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">5</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Auto-linked knowledge</h4>
-                                                <p class="use-cases__step-description">
-                                                    After merge, the agent documents the integration. <span class="brand-text">Usable</span> links the docs and implementation via tags and concepts.
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </div>
-                            </div>
-                            
-                            <div class="use-cases__demo animate-on-scroll fade-in-right stagger-delay-3">
-                                <div class="use-cases__demo-header">
-                                    <div class="use-cases__demo-dots">
-                                        <span class="use-cases__demo-dot use-cases__demo-dot--red"></span>
-                                        <span class="use-cases__demo-dot use-cases__demo-dot--yellow"></span>
-                                        <span class="use-cases__demo-dot use-cases__demo-dot--green"></span>
-                                    </div>
-                                    <span class="use-cases__demo-title">.repo/usable – engineer.tsx</span>
-                                </div>
-                                <div class="use-cases__demo-content">
-                                    <div class="use-cases__demo-code">
-                                        <div class="use-cases__demo-line">
-                                            <span class="use-cases__demo-prompt">repo: internal-lib</span>
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            $ create documentation fragment focusing on feature X
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            → <span class="brand-text">Usable</span>: created "Internal Lib – Feature X" (type: knowledge)
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            $ implement internal-lib feature X
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            → Agent: found fragment, generating edits…
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            → PR ready. Linked with tags: library, feature-x
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- DevOps Tab -->
-                    <div class="use-cases__panel" id="devops">
-                        <div class="use-cases__grid">
-                            <div class="use-cases__card">
-                                <div class="use-cases__card-header">
-                                    <h3 class="use-cases__card-title">Provision Databases with Secure Crossplane CRDs</h3>
-                                </div>
-                                <div class="use-cases__card-content">
-                                    <ol class="use-cases__steps">
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">1</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Develop secure CRDs</h4>
-                                                <p class="use-cases__step-description">
-                                                    DevOps engineers build Crossplane CRDs encoding company best practices for secure Postgres/MySQL across supported clouds.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">2</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Document CRDs & spec</h4>
-                                                <p class="use-cases__step-description">
-                                                    Ask the LLM to create fragments that document the CRD itself (schema/fields, validation, examples) and also extract best practices and security constraints.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">3</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Provision database</h4>
-                                                <p class="use-cases__step-description">
-                                                    A developer asks the agent to set up a Postgres database on AWS.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">4</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Apply best-practice profile</h4>
-                                                <p class="use-cases__step-description">
-                                                    The agent finds the relevant fragments (e.g., Azure/AWS profiles), generates YAML, and runs kubectl to apply the CRD configuration.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">5</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Capture issues for reuse</h4>
-                                                <p class="use-cases__step-description">
-                                                    Any issues discovered during provisioning are captured as solution fragments for future sessions.
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </div>
-                            </div>
-                            
-                            <div class="use-cases__demo">
-                                <div class="use-cases__demo-header">
-                                    <div class="use-cases__demo-dots">
-                                        <span class="use-cases__demo-dot use-cases__demo-dot--red"></span>
-                                        <span class="use-cases__demo-dot use-cases__demo-dot--yellow"></span>
-                                        <span class="use-cases__demo-dot use-cases__demo-dot--green"></span>
-                                    </div>
-                                    <span class="use-cases__demo-title">provision.yaml</span>
-                                </div>
-                                <div class="use-cases__demo-content">
-                                    <div class="use-cases__demo-code">
-                                        <div class="use-cases__demo-line">
-                                            <span class="use-cases__demo-prompt"># Fragment: PostgresInstance CRD (excerpt)</span>
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            apiVersion: apiextensions.k8s.io/v1
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            kind: CustomResourceDefinition
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            metadata:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;name: postgresinstances.database.example
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            spec:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;group: database.example
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;names:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;kind: PostgresInstance
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;versions:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;- name: v1
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;schema:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;openAPIV3Schema:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;spec:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;properties:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;profile: enum[aws-secure, azure-secure, gcp-secure]
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storageGiB: integer
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;highAvailability: boolean
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            # Example resource
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            apiVersion: database.example/v1
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            kind: PostgresInstance
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            metadata:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;name: app-prod
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            spec:
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            &nbsp;&nbsp;profile: aws-secure
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            # $ kubectl apply -f crossplane/app-db.yaml
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            # → Applied secure profile; docs + spec linked in fragment
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Team Tab -->
-                    <div class="use-cases__panel" id="team">
-                        <div class="use-cases__grid">
-                            <div class="use-cases__card">
-                                <div class="use-cases__card-header">
-                                    <h3 class="use-cases__card-title">Onboard Teams and Scale Standards</h3>
-                                </div>
-                                <div class="use-cases__card-content">
-                                    <ol class="use-cases__steps">
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">1</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Teach the LLM</h4>
-                                                <p class="use-cases__step-description">
-                                                    Team members teach the LLM best practices, tech stack, and patterns; the LLM creates learnings as fragments.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">2</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">Onboard fast</h4>
-                                                <p class="use-cases__step-description">
-                                                    New members scaffold and ship code guided by the agent, with comparisons to team standards.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="use-cases__step">
-                                            <div class="use-cases__step-number">3</div>
-                                            <div class="use-cases__step-content">
-                                                <h4 class="use-cases__step-title">10× delivery</h4>
-                                                <p class="use-cases__step-description">
-                                                    Existing members move faster with the team's combined knowledge of services, libraries, and deployments.
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </div>
-                            </div>
-                            
-                            <div class="use-cases__demo">
-                                <div class="use-cases__demo-header">
-                                    <div class="use-cases__demo-dots">
-                                        <span class="use-cases__demo-dot use-cases__demo-dot--red"></span>
-                                        <span class="use-cases__demo-dot use-cases__demo-dot--yellow"></span>
-                                        <span class="use-cases__demo-dot use-cases__demo-dot--green"></span>
-                                    </div>
-                                    <span class="use-cases__demo-title">onboarding.md</span>
-                                </div>
-                                <div class="use-cases__demo-content">
-                                    <div class="use-cases__demo-code">
-                                        <div class="use-cases__demo-line">
-                                            <span class="use-cases__demo-prompt"># Team Onboarding Checklist</span>
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            - Install dependencies
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            - Connect IDE to <span class="brand-text">Usable</span>
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            - Read 'Frontend Standards' fragment
-                                        </div>
-                                        <div class="use-cases__demo-line use-cases__demo-line--muted">
-                                            - Ask agent: scaffold dashboard page
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="pricing__container">
-            <div class="section__header animate-on-scroll fade-in-down">
-                <h2 class="section__title">Simple, transparent pricing</h2>
-                <p class="section__description">
-                    Choose the plan that's right for your team. No hidden fees, no surprises.
-                </p>
-            </div>
-            
-            <div class="pricing__grid">
-                <div class="pricing__card animate-on-scroll fade-in-up stagger-delay-1">
-                    <div class="pricing__card-header">
-                        <h3 class="pricing__card-title">Free</h3>
-                        <div class="pricing__card-price">
-                            <span class="pricing__card-amount">$0</span>
-                            <span class="pricing__card-period">no credit card required</span>
-                        </div>
-                    </div>
-                    <a href="https://usable.dev/" class="btn btn--secondary btn--full">START FREE</a>
-                    <ul class="pricing__card-features">
-                        <li><strong>1</strong> GiB storage included</li>
-                        <li><strong>5M</strong> knowledge creation tokens/month</li>
-                        <li><strong>500K</strong> knowledge search tokens/month</li>
-                        <li>Up to <strong>5</strong> owned workspaces</li>
-                        <li>Up to <strong>5</strong> team members</li>
-                        <li>Community support</li>
-                    </ul>
-                </div>
-                
-                <div class="pricing__card pricing__card--popular animate-on-scroll scale-in stagger-delay-2">
-                    <div class="pricing__card-badge">Most Popular</div>
-                    <div class="pricing__card-header">
-                        <h3 class="pricing__card-title">Standard</h3>
-                        <div class="pricing__card-price">
-                            <span class="pricing__card-amount">$20</span>
-                        </div>
-                    </div>
-                    <a href="https://usable.dev/" class="btn btn--primary btn--full">CHOOSE STANDARD</a>
-                    <ul class="pricing__card-features">
-                        <li><strong>5</strong> GiB storage included</li>
-                        <li><strong>16M</strong> knowledge creation tokens/month</li>
-                        <li><strong>3M</strong> knowledge search tokens/month</li>
-                        <li>Advanced graph analysis</li>
-                        <li>Unlimited workspaces</li>
-                        <li>Unlimited team members</li>
-                        <li>Email support</li>
-                    </ul>
-                </div>
-                
-                <div class="pricing__card animate-on-scroll fade-in-up stagger-delay-3">
-                    <div class="pricing__card-header">
-                        <h3 class="pricing__card-title">Pro</h3>
-                        <div class="pricing__card-price">
-                            <span class="pricing__card-amount">$100</span>
-                        </div>
-                    </div>
-                    <a href="https://usable.dev/" class="btn btn--secondary btn--full">CHOOSE PRO</a>
-                    <ul class="pricing__card-features">
-                        <li><strong>80</strong> GiB storage included</li>
-                        <li><strong>40M</strong> knowledge creation tokens/month</li>
-                        <li><strong>7.5M</strong> knowledge search tokens/month</li>
-                        <li>Advanced graph analysis</li>
-                        <li>BYOK agentic search</li>
-                        <li>Unlimited workspaces</li>
-                        <li>Unlimited team members</li>
-                        <li>Dedicated Slack channel</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq">
-        <div class="faq__container">
-            <div class="section__header animate-on-scroll fade-in-down">
-                <h2 class="section__title">Frequently asked questions</h2>
-                <p class="section__description">
-                    Everything you need to know about <span class="brand-text">Usable</span>.
-                </p>
-            </div>
-            
-            <div class="faq__list">
-                <div class="faq__column">
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-1" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">How does Usable work?</div>
-                        <div class="faq__answer">
-                            <div class="faq__answer-content">
-                                <span class="brand-text">Usable</span> uses AI to capture, compress, and organize your team's knowledge. 
-                                It learns from your interactions and builds a searchable memory that grows 
-                                smarter over time.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-3" role="button" tabindex="0" aria-expanded="false">
-                    <div class="faq__question">How long does setup take?</div>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            You can get started with <span class="brand-text">Usable</span> in under 5 minutes. Simply sign up, 
-                            connect your tools, and start capturing knowledge. No complex 
-                            configuration required.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="faq__item animate-on-scroll fade-in-up stagger-delay-5" role="button" tabindex="0" aria-expanded="false">
-                    <div class="faq__question">How does Usable billing work?</div>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            Workspace owners pay for storage and knowledge creation tokens. Individual users pay for their own knowledge search tokens when they exceed free tier limits. You get 5 owned workspaces and 1 GiB storage free. Upgrade to Starter ($20/user/month) or Pro ($100/user/month) for higher limits.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="faq__item animate-on-scroll fade-in-up stagger-delay-7" role="button" tabindex="0" aria-expanded="false">
-                    <div class="faq__question">How do tokens work with multiple users?</div>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            Storage and knowledge creation tokens accumulate across your organization. For example, if you have 1 Pro user + 5 Starter users + 4 Free users, you get 140M creation tokens total (40M + 80M + 20M). Storage works the same way, giving you 105 GiB total (80 GiB + 25 GiB + 4 GiB). However, knowledge search tokens are individual per user. This makes it cost-effective for mixed teams.
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="faq__item animate-on-scroll fade-in-up stagger-delay-9" role="button" tabindex="0" aria-expanded="false">
-                    <div class="faq__question">What's the difference between pricing tiers?</div>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            The main differences are storage limits (1 GiB / 5 GiB / 80 GiB), knowledge creation token limits (5M / 16M / 40M per month), knowledge search token limits (500K / 3M / 7.5M per month), team size limits (5 members / unlimited / unlimited), and support levels (Community / Email / Email).
-                        </div>
-                    </div>
-                </div>
-                </div>
-                
-                <div class="faq__column">
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-2" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">Can I integrate with my existing tools?</div>
-                        <div class="faq__answer">
-                            <div class="faq__answer-content">
-                                Yes! <span class="brand-text">Usable</span> integrates with popular development tools like Cursor, 
-                                Claude Code, VS Code, Cline, Windsurf, and more. We're constantly adding new integrations 
-                                based on user feedback.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-4" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">What if I need to export my data?</div>
-                        <div class="faq__answer">
-                            <div class="faq__answer-content">
-                                You own your data. You can export all your knowledge fragments at any time 
-                                in multiple formats including JSON, CSV, and Markdown. No vendor lock-in.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-6" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">What about workspaces I'm invited to?</div>
-                        <div class="faq__answer">
-                            <div class="faq__answer-content">
-                                Being invited to workspaces doesn't affect workspace storage or creation costs — only the owner pays for those. However, you pay for your own knowledge search tokens when you exceed your free tier limits, regardless of workspace ownership.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-8" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">What are knowledge creation and search tokens?</div>
-                        <div class="faq__answer">
-                            <div class="faq__answer-content">
-                                Knowledge creation tokens power creating fragments, editing content, AI summarization, and keeping your memory mesh up-to-date. Knowledge search tokens power finding information, semantic search, and getting knowledge out of your memory mesh. Think of creation as "putting knowledge in" and search as "getting knowledge out."
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-10" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">What support do I get at each level?</div>
-                        <div class="faq__answer">
-                            <div class="faq__answer-content">
-                                <strong>Free:</strong> Community support via Discord.<br>
-                                <strong>Starter & Pro:</strong> Email support with priority response times.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta">
         <div class="cta__container">
@@ -1119,7 +426,7 @@
                 no credit card required, no complex setup.
             </p>
             <div class="cta__actions animate-on-scroll fade-in-up stagger-delay-2">
-                <a href="https://usable.dev/login" class="btn btn--primary btn--large">LOG IN</a>
+                <a href="https://usable.dev/login" class="btn btn--primary btn--large">LOG IN / SIGN UP</a>
             </div>
         </div>
     </section>
@@ -1206,22 +513,33 @@
                 
                 <div class="footer__links">
                     <div class="footer__section">
-                        <h3 class="footer__section-title">Resources</h3>
-                        <a href="https://usable.dev/login" class="footer__link" target="_blank" rel="noopener noreferrer">Get Started</a>
-                        <a href="https://usable.dev/docs#api" class="footer__link" target="_blank" rel="noopener noreferrer">API Reference</a>
-                        <a href="https://discord.com/invite/36AuxFNnSE" class="footer__link" target="_blank" rel="noopener noreferrer">Community</a>
+                        <h3 class="footer__section-title">Company</h3>
+                        <a href="/about.html" data-clean-url="/about" class="footer__link">About</a>
+                        <a href="/team.html" data-clean-url="/team" class="footer__link">Team</a>
+                        <a href="/contact.html" data-clean-url="/contact" class="footer__link">Contact</a>
                         <a href="/news.html" data-clean-url="/news" class="footer__link">News</a>
-                        <a href="/blog.html" data-clean-url="/blog" class="footer__link">Blog</a>
-                        <a href="/media-kit.html" data-clean-url="/media-kit" class="footer__link">Media Kit</a>
                     </div>
                     
                     <div class="footer__section">
                         <h3 class="footer__section-title">Product</h3>
-                        <a href="#use-cases" class="footer__link">Use Cases</a>
-                        <a href="#features" class="footer__link">Features</a>
-                        <a href="#pricing" class="footer__link">Pricing</a>
-                        <a href="#how-it-works" class="footer__link">How It Works</a>
+                        <a href="/" class="footer__link">Usable</a>
+                        <a href="https://flowcore.io" class="footer__link" target="_blank" rel="noopener noreferrer">Flowcore</a>
+                        <a href="/contact.html" data-clean-url="/contact" class="footer__link">Consultancy</a>
+                        <a href="/demo.html" data-clean-url="/demo" class="footer__link">Product Demo</a>
+                        <a href="/pricing.html" data-clean-url="/pricing" class="footer__link">Pricing</a>
+                        <a href="/how-it-works.html" data-clean-url="/how-it-works" class="footer__link">How It Works</a>
+                        <a href="/use-cases.html" data-clean-url="/use-cases" class="footer__link">Use Cases</a>
+                        <a href="/faq.html" data-clean-url="/faq" class="footer__link">FAQ</a>
                         <a href="https://usable.dev/docs" class="footer__link" target="_blank" rel="noopener noreferrer">Documentation</a>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h3 class="footer__section-title">Resources</h3>
+                        <a href="https://usable.dev/login" class="footer__link" target="_blank" rel="noopener noreferrer">Get Started</a>
+                        <a href="https://usable.dev/docs#api" class="footer__link" target="_blank" rel="noopener noreferrer">API Reference</a>
+                        <a href="https://discord.com/invite/36AuxFNnSE" class="footer__link" target="_blank" rel="noopener noreferrer">Community</a>
+                        <a href="/blog.html" data-clean-url="/blog" class="footer__link">Blog</a>
+                        <a href="/media-kit.html" data-clean-url="/media-kit" class="footer__link">Media Kit</a>
                     </div>
                 </div>
             </div>

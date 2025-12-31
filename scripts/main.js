@@ -24,6 +24,7 @@ class UsableApp {
    */
   init() {
     this.setupMobileMenu();
+    this.setupDropdownMenus();
     this.setupSmoothScrolling();
     this.setupFAQAccordion();
     this.setupScrollEffects();
@@ -32,6 +33,128 @@ class UsableApp {
     this.setupParallaxEffects();
     this.setupHoverEffects();
     this.setupUseCasesTabs();
+  }
+  
+  /**
+   * Setup dropdown menus
+   */
+  setupDropdownMenus() {
+    const dropdowns = document.querySelectorAll('.nav__dropdown');
+    
+    if (dropdowns.length === 0) return;
+    
+    // Helper function to close all dropdowns
+    const closeAllDropdowns = () => {
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.nav__dropdown-toggle');
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', 'false');
+          dropdown.setAttribute('aria-expanded', 'false');
+          dropdown.classList.remove('is-open');
+        }
+      });
+    };
+    
+    // Track if we're handling a dropdown item click to prevent double-handling
+    let handlingItemClick = false;
+    
+    dropdowns.forEach(dropdown => {
+      const toggle = dropdown.querySelector('.nav__dropdown-toggle');
+      if (!toggle) return;
+      
+      // Toggle dropdown on click
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const isOpen = dropdown.classList.contains('is-open');
+        
+        // Close all other dropdowns
+        dropdowns.forEach(otherDropdown => {
+          if (otherDropdown !== dropdown) {
+            const otherToggle = otherDropdown.querySelector('.nav__dropdown-toggle');
+            if (otherToggle) {
+              otherToggle.setAttribute('aria-expanded', 'false');
+              otherDropdown.setAttribute('aria-expanded', 'false');
+              otherDropdown.classList.remove('is-open');
+            }
+          }
+        });
+        
+        // Toggle current dropdown
+        if (isOpen) {
+          dropdown.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          dropdown.setAttribute('aria-expanded', 'false');
+        } else {
+          dropdown.classList.add('is-open');
+          toggle.setAttribute('aria-expanded', 'true');
+          dropdown.setAttribute('aria-expanded', 'true');
+        }
+      });
+      
+      // Handle clicks on dropdown items
+      const menu = dropdown.querySelector('.nav__dropdown-menu');
+      if (menu) {
+        const items = menu.querySelectorAll('.nav__dropdown-item');
+        items.forEach(item => {
+          item.addEventListener('click', (e) => {
+            // Prevent double-handling
+            if (handlingItemClick) {
+              return;
+            }
+            
+            handlingItemClick = true;
+            
+            // Close the dropdown when clicking on a link
+            closeAllDropdowns();
+            
+            // Reset flag after a short delay
+            setTimeout(() => {
+              handlingItemClick = false;
+            }, 300);
+            
+            // Don't prevent default or stop propagation - let the link navigate normally
+          });
+        });
+      }
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      // Skip if we're handling an item click
+      if (handlingItemClick) {
+        return;
+      }
+      
+      // Don't close if clicking on a dropdown toggle (its handler will manage it)
+      if (e.target.closest('.nav__dropdown-toggle')) {
+        return;
+      }
+      
+      // Don't close if clicking on a dropdown item (its handler will manage it)
+      if (e.target.closest('.nav__dropdown-item')) {
+        return;
+      }
+      
+      // Don't close if clicking inside a dropdown menu container
+      if (e.target.closest('.nav__dropdown-menu')) {
+        return;
+      }
+      
+      // Check if click is outside any dropdown
+      const clickedDropdown = e.target.closest('.nav__dropdown');
+      if (!clickedDropdown) {
+        closeAllDropdowns();
+      }
+    });
+    
+    // Close dropdowns on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAllDropdowns();
+      }
+    });
   }
   
   /**
@@ -476,6 +599,16 @@ function handleRouteRedirection() {
       currentPath === '/fragments-2026.html' ||
       currentPath === '/media-kit' ||
       currentPath === '/media-kit.html' ||
+      currentPath === '/about' ||
+      currentPath === '/about.html' ||
+      currentPath === '/team' ||
+      currentPath === '/team.html' ||
+      currentPath === '/contact' ||
+      currentPath === '/contact.html' ||
+      currentPath === '/pricing' ||
+      currentPath === '/pricing.html' ||
+      currentPath === '/demo' ||
+      currentPath === '/demo.html' ||
       currentPath.startsWith('/news') ||
       currentPath.startsWith('/blog') ||
       currentPath.endsWith('.html')) {

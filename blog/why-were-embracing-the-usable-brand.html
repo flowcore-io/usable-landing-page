@@ -279,12 +279,32 @@
             </a>
             
             <div class="nav__menu">
-                <a href="/#how-it-works" class="nav__link">How It Works</a>
-                <a href="/#use-cases" class="nav__link">Use Cases</a>
-                <a href="/news.html" data-clean-url="/news" class="nav__link">News</a>
-                <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--active">Blog</a>
-                <a href="/#pricing" class="nav__link">Pricing</a>
-                <a href="/#faq" class="nav__link">FAQ</a>
+                <div class="nav__dropdown" aria-expanded="false">
+                    <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Product</button>
+                    <div class="nav__dropdown-menu">
+                        <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__dropdown-item">How It Works</a>
+                        <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__dropdown-item">Use Cases</a>
+                        <a href="/demo.html" data-clean-url="/demo" class="nav__dropdown-item">Demo</a>
+                    </div>
+                </div>
+                <a href="/pricing.html" data-clean-url="/pricing" class="nav__link">Pricing</a>
+                <div class="nav__dropdown" aria-expanded="false">
+                    <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources</button>
+                    <div class="nav__dropdown-menu">
+                        <a href="/blog.html" data-clean-url="/blog" class="nav__dropdown-item">Blog</a>
+                        <a href="/news.html" data-clean-url="/news" class="nav__dropdown-item">News</a>
+                        <a href="https://usable.dev/docs" class="nav__dropdown-item" target="_blank" rel="noopener noreferrer">Docs</a>
+                        <a href="/faq.html" data-clean-url="/faq" class="nav__dropdown-item">FAQ</a>
+                    </div>
+                </div>
+                <div class="nav__dropdown" aria-expanded="false">
+                    <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">About</button>
+                    <div class="nav__dropdown-menu">
+                        <a href="/about.html" data-clean-url="/about" class="nav__dropdown-item">About</a>
+                        <a href="/team.html" data-clean-url="/team" class="nav__dropdown-item">Team</a>
+                        <a href="/contact.html" data-clean-url="/contact" class="nav__dropdown-item">Contact</a>
+                    </div>
+                </div>
             </div>
             
             <div class="nav__actions">
@@ -318,12 +338,17 @@
     <!-- Mobile Menu -->
     <div class="nav__menu--mobile">
         <div class="nav__menu--mobile-content">
-            <a href="/#how-it-works" class="nav__link nav__link--mobile">How It Works</a>
-            <a href="/#use-cases" class="nav__link nav__link--mobile">Use Cases</a>
-            <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile">News</a>
+            <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile">How It Works</a>
+            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile">Use Cases</a>
+            <a href="/demo.html" data-clean-url="/demo" class="nav__link nav__link--mobile">Demo</a>
+            <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile">Pricing</a>
             <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile nav__link--active">Blog</a>
-            <a href="/#pricing" class="nav__link nav__link--mobile">Pricing</a>
-            <a href="/#faq" class="nav__link nav__link--mobile">FAQ</a>
+            <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile">News</a>
+            <a href="https://usable.dev/docs" class="nav__link nav__link--mobile" target="_blank" rel="noopener noreferrer">Docs</a>
+            <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile">FAQ</a>
+            <a href="/about.html" data-clean-url="/about" class="nav__link nav__link--mobile">About</a>
+            <a href="/team.html" data-clean-url="/team" class="nav__link nav__link--mobile">Team</a>
+            <a href="/contact.html" data-clean-url="/contact" class="nav__link nav__link--mobile">Contact</a>
             
             <div class="nav__mobile-actions">
                 <button class="theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme" aria-pressed="false">
@@ -533,10 +558,10 @@
                     
                     <div class="footer__section">
                         <h3 class="footer__section-title">Product</h3>
-                        <a href="/#use-cases" class="footer__link">Use Cases</a>
-                        <a href="/#features" class="footer__link">Features</a>
-                        <a href="/#pricing" class="footer__link">Pricing</a>
-                        <a href="/#how-it-works" class="footer__link">How It Works</a>
+                        <a href="/use-cases.html" data-clean-url="/use-cases" class="footer__link">Use Cases</a>
+                        
+                        <a href="/pricing.html" data-clean-url="/pricing" class="footer__link">Pricing</a>
+                        <a href="/how-it-works.html" data-clean-url="/how-it-works" class="footer__link">How It Works</a>
                         <a href="https://usable.dev/docs" class="footer__link" target="_blank" rel="noopener noreferrer">Documentation</a>
                     </div>
                 </div>
