@@ -611,8 +611,18 @@ function handleRouteRedirection() {
       currentPath === '/demo.html' ||
       currentPath === '/detailed-screenshots' ||
       currentPath === '/detailed-screenshots.html' ||
-      currentPath.startsWith('/news') ||
-      currentPath.startsWith('/blog') ||
+      currentPath === '/how-it-works' ||
+      currentPath === '/how-it-works.html' ||
+      currentPath === '/use-cases' ||
+      currentPath === '/use-cases.html' ||
+      currentPath === '/faq' ||
+      currentPath === '/faq.html' ||
+      currentPath === '/blog' ||
+      currentPath === '/blog.html' ||
+      currentPath === '/news' ||
+      currentPath === '/news.html' ||
+      currentPath.startsWith('/news/') ||
+      currentPath.startsWith('/blog/') ||
       currentPath.endsWith('.html')) {
     return;
   }
