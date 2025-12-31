@@ -76,6 +76,10 @@ class RedirectingRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.path = "/media-kit.html"
             return super().do_HEAD() if method == "HEAD" else super().do_GET()
 
+        if path == "/detailed-screenshots" or path == "/detailed-screenshots.html":
+            self.path = "/detailed-screenshots.html"
+            return super().do_HEAD() if method == "HEAD" else super().do_GET()
+
         if self._should_serve_static_direct(path):
             return super().do_HEAD() if method == "HEAD" else super().do_GET()
 

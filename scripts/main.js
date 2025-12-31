@@ -609,6 +609,8 @@ function handleRouteRedirection() {
       currentPath === '/pricing.html' ||
       currentPath === '/demo' ||
       currentPath === '/demo.html' ||
+      currentPath === '/detailed-screenshots' ||
+      currentPath === '/detailed-screenshots.html' ||
       currentPath.startsWith('/news') ||
       currentPath.startsWith('/blog') ||
       currentPath.endsWith('.html')) {
