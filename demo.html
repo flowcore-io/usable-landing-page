@@ -626,7 +626,9 @@
 
             // Load video only when user clicks play
             function loadVideo() {
-                if (videoLoaded || isCleaningUp) return;
+                if (videoLoaded) return;
+                // Reset cleanup flag in case it was set during navigation
+                isCleaningUp = false;
 
                 try {
                     videoLoaded = true;
@@ -656,10 +658,8 @@
 
             // Reset video state when page becomes visible again (handles back/forward navigation)
             function resetVideoState() {
-                if (!videoLoaded) return;
-
                 try {
-                    // Reset loading state to allow video to be loaded again
+                    // Always reset loading state to allow video to be loaded again
                     videoLoaded = false;
                     isCleaningUp = false;
 
@@ -669,7 +669,7 @@
                     placeholder.innerHTML = '<svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span style="font-size: var(--text-lg); font-weight: 600;">Click to load video</span>';
 
                     // Pause video if playing
-                    if (!video.paused) {
+                    if (video && !video.paused) {
                         video.pause();
                     }
                 } catch (e) {
@@ -703,15 +703,19 @@
                 }
             });
 
-            // Click handler for placeholder
-            placeholder.addEventListener('click', loadVideo, { once: true });
+            // Click handler for placeholder (persistent - not once)
+            placeholder.addEventListener('click', function() {
+                if (!videoLoaded) {
+                    loadVideo();
+                }
+            });
 
-            // Also load on video play attempt
+            // Also load on video play attempt (persistent - not once)
             video.addEventListener('play', function() {
                 if (!videoLoaded) {
                     loadVideo();
                 }
-            }, { once: true });
+            });
 
             // Cleanup on page unload/beforeunload (less aggressive cleanup)
             window.addEventListener('beforeunload', function() {
