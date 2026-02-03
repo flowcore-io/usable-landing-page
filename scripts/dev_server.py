@@ -100,6 +100,10 @@ class RedirectingRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.path = "/news.html"
             return super().do_HEAD() if method == "HEAD" else super().do_GET()
 
+        if path == "/palette" or path == "/palette.html":
+            self.path = "/palette.html"
+            return super().do_HEAD() if method == "HEAD" else super().do_GET()
+
         if self._should_serve_static_direct(path):
             return super().do_HEAD() if method == "HEAD" else super().do_GET()
 

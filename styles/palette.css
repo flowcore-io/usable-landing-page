@@ -1,0 +1,374 @@
+/**
+ * Color Palette Documentation Page
+ * Auto-generated from project CSS variables
+ * BEM: palette, color-card, color-swatch, color-info, gradient-card
+ */
+
+/* ============================================
+   Palette Page Layout
+   ============================================ */
+
+body {
+  padding: var(--space-16) var(--space-8) !important;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.palette-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.palette-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--space-8);
+}
+
+.palette-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-4);
+  text-align: center;
+  color: var(--color-black);
+  font-weight: 800;
+}
+
+.palette-subtitle {
+  font-family: var(--font-family-body);
+  text-align: center;
+  color: var(--color-gray-600);
+  margin-bottom: var(--space-16);
+  font-size: var(--text-xl);
+  font-weight: 400;
+}
+
+/* ============================================
+   Section Styles
+   ============================================ */
+
+.palette-section {
+  margin-bottom: var(--space-16);
+}
+
+.palette-section-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-8);
+  color: var(--color-blue);
+  border-bottom: 2px solid var(--color-blue-light);
+  padding-bottom: var(--space-3);
+  font-weight: 700;
+}
+
+/* ============================================
+   Color Grid Layout
+   ============================================ */
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+/* ============================================
+   Color Cards
+   ============================================ */
+
+.color-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+  border: 1px solid var(--color-gray-200);
+}
+
+.color-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.color-swatch {
+  height: 120px;
+  width: 100%;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.color-info {
+  padding: var(--space-4);
+}
+
+.color-name {
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  color: var(--color-black);
+  font-size: var(--text-base);
+}
+
+.color-value {
+  font-family: 'Courier New', monospace;
+  font-size: var(--text-sm);
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-2);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  user-select: none;
+}
+
+.color-value:hover {
+  color: var(--color-blue);
+}
+
+.color-variable {
+  font-family: 'Courier New', monospace;
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+  font-style: italic;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  user-select: none;
+}
+
+.color-variable:hover {
+  color: var(--color-orange);
+}
+
+/* ============================================
+   Gradient Cards
+   ============================================ */
+
+.gradient-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+  border: 1px solid var(--color-gray-200);
+}
+
+.gradient-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.gradient-swatch {
+  height: 150px;
+  width: 100%;
+}
+
+.gradient-info {
+  padding: var(--space-4);
+}
+
+.gradient-name {
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  color: var(--color-black);
+}
+
+.gradient-desc {
+  font-size: var(--text-sm);
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-2);
+}
+
+.gradient-value {
+  font-family: 'Courier New', monospace;
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+  font-style: italic;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  user-select: none;
+}
+
+.gradient-value:hover {
+  color: var(--color-orange);
+}
+
+/* ============================================
+   Mobile Responsiveness
+   ============================================ */
+
+@media (max-width: 768px) {
+  body {
+    padding: var(--space-12) var(--space-4) !important;
+  }
+  
+  .color-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-4);
+  }
+  
+  .color-swatch {
+    height: 100px;
+  }
+  
+  .gradient-swatch {
+    height: 120px;
+  }
+  
+  .palette-title {
+    font-size: var(--text-4xl);
+  }
+  
+  .palette-subtitle {
+    font-size: var(--text-lg);
+  }
+  
+  .palette-section-title {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* ============================================
+   Color Swatches - DYNAMICALLY GENERATED
+   Define one class for each color found
+   ============================================ */
+
+.color-swatch--white { 
+  background: var(--color-white); 
+  border: 2px solid var(--color-gray-300);
+}
+
+.color-swatch--black { 
+  background: var(--color-black); 
+}
+
+.color-swatch--orange { 
+  background: var(--color-orange); 
+}
+
+.color-swatch--blue { 
+  background: var(--color-blue); 
+}
+
+.color-swatch--blue-light { 
+  background: var(--color-blue-light); 
+}
+
+.color-swatch--gray-50 { 
+  background: var(--color-gray-50); 
+  border: 2px solid var(--color-gray-300);
+}
+
+.color-swatch--gray-100 { 
+  background: var(--color-gray-100); 
+  border: 2px solid var(--color-gray-300);
+}
+
+.color-swatch--gray-200 { 
+  background: var(--color-gray-200); 
+  border: 2px solid var(--color-gray-300);
+}
+
+.color-swatch--gray-300 { 
+  background: var(--color-gray-300); 
+  border: 2px solid var(--color-gray-300);
+}
+
+.color-swatch--gray-400 { 
+  background: var(--color-gray-400); 
+  border: 2px solid var(--color-gray-300);
+}
+
+.color-swatch--gray-500 { 
+  background: var(--color-gray-500); 
+}
+
+.color-swatch--gray-600 { 
+  background: var(--color-gray-600); 
+}
+
+.color-swatch--gray-700 { 
+  background: var(--color-gray-700); 
+}
+
+.color-swatch--gray-800 { 
+  background: var(--color-gray-800); 
+}
+
+.color-swatch--gray-900 { 
+  background: var(--color-gray-900); 
+}
+
+/* ============================================
+   Dark Theme Support
+   ============================================ */
+
+[data-theme="dark"] body::after {
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(52, 124, 191, 0.25) 100%);
+}
+
+[data-theme="dark"] .palette-title {
+  color: #f4f3f3;
+}
+
+[data-theme="dark"] .palette-subtitle {
+  color: #8b9aa8;
+}
+
+[data-theme="dark"] .palette-section-title {
+  color: #a9cce9;
+  border-bottom-color: #347cbf;
+}
+
+[data-theme="dark"] .color-card {
+  background: #2a3f54;
+  border-color: #3d5266;
+}
+
+[data-theme="dark"] .color-name {
+  color: #f4f3f3;
+}
+
+[data-theme="dark"] .color-value {
+  color: #8b9aa8;
+}
+
+[data-theme="dark"] .color-value:hover {
+  color: #a9cce9;
+}
+
+[data-theme="dark"] .color-variable {
+  color: #6b7885;
+}
+
+[data-theme="dark"] .color-variable:hover {
+  color: #fcaf2a;
+}
+
+[data-theme="dark"] .gradient-card {
+  background: #2a3f54;
+  border-color: #3d5266;
+}
+
+[data-theme="dark"] .gradient-name {
+  color: #f4f3f3;
+}
+
+[data-theme="dark"] .gradient-desc,
+[data-theme="dark"] .gradient-value {
+  color: #8b9aa8;
+}
+
+[data-theme="dark"] .gradient-value:hover {
+  color: #fcaf2a;
+}
