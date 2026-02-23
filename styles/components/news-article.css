@@ -1,0 +1,201 @@
+.article-page {
+    padding: var(--space-24) var(--space-4) var(--space-16);
+    min-height: calc(100vh - 80px);
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
+}
+
+[data-theme="dark"] .article-page {
+    background: linear-gradient(135deg, rgba(169, 204, 233, 0.12) 0%, rgba(252, 175, 42, 0.12) 100%);
+}
+
+.article-page__container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.article-header {
+    margin-bottom: var(--space-10);
+    display: grid;
+    gap: var(--space-3);
+}
+
+.article-header__eyebrow-icon,
+.article-header__meta-icon,
+.article-back__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: var(--space-1);
+    flex-shrink: 0;
+}
+
+.article-back .article-back__icon {
+    margin-right: var(--space-2);
+}
+
+.article-header__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border-radius: 999px;
+    background: rgba(52, 124, 191, 0.1);
+    color: var(--color-blue);
+    font-weight: 600;
+    width: fit-content;
+}
+
+[data-theme="dark"] .article-header__eyebrow {
+    background: rgba(96, 165, 250, 0.12);
+    color: #93c5fd;
+}
+
+.article-header__title {
+    font-size: clamp(2.25rem, 4vw, 3rem);
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--color-gray-900);
+}
+
+[data-theme="dark"] .article-header__title {
+    color: var(--color-white-text);
+}
+
+.article-header__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    color: var(--color-gray-600);
+    font-size: var(--text-sm);
+}
+
+[data-theme="dark"] .article-header__meta {
+    color: #cbd5e1;
+}
+
+.article-header__lede {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-6);
+}
+
+[data-theme="dark"] .article-header__lede {
+    color: var(--color-white-text);
+}
+
+.article-body {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(52, 124, 191, 0.1);
+    display: grid;
+    gap: var(--space-8);
+}
+
+[data-theme="dark"] .article-body {
+    background: rgba(28, 47, 64, 0.96);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    border-color: rgba(96, 165, 250, 0.18);
+}
+
+/* -----------------------------------------------
+   Rich text zone — tag selectors are intentional here.
+   .article-section contains authored editorial content
+   where adding BEM classes to every heading and paragraph
+   is impractical. This is an accepted exception to BEM,
+   consistent with the "prose content" pattern used across
+   design systems for rich text areas.
+   ----------------------------------------------- */
+.article-section h2 {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-blue);
+}
+
+[data-theme="dark"] .article-section h2 {
+    color: #93c5fd;
+}
+
+.article-section h3 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+    color: var(--color-gray-900);
+}
+
+[data-theme="dark"] .article-section h3 {
+    color: var(--color-white-text);
+}
+
+.article-section p,
+.article-section li {
+    color: var(--color-gray-900);
+    line-height: 1.7;
+}
+
+[data-theme="dark"] .article-section p,
+[data-theme="dark"] .article-section li {
+    color: var(--color-white-text);
+}
+/* End rich text zone ----------------------------------------------- */
+
+.article-list {
+    padding-left: var(--space-6);
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+
+.article-meta-highlight {
+    background: rgba(52, 124, 191, 0.08);
+    border-left: 4px solid var(--color-blue);
+    padding: var(--space-4) var(--space-5);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    display: grid;
+    gap: var(--space-2);
+}
+
+[data-theme="dark"] .article-meta-highlight {
+    background: rgba(96, 165, 250, 0.12);
+    border-color: #60a5fa;
+}
+
+.article-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-items: center;
+}
+
+.article-back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.article-back:hover {
+    text-decoration: underline;
+}
+
+[data-theme="dark"] .article-back {
+    color: #93c5fd;
+}
+
+@media (max-width: 768px) {
+    .article-page {
+        padding: var(--space-20) var(--space-4) var(--space-12);
+    }
+
+    .article-body {
+        padding: var(--space-6);
+    }
+}

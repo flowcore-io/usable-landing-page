@@ -47,693 +47,337 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
-    <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
     
-    <!-- Policy Page Specific Styles -->
-    <style>
-        .policy-page {
-            padding: var(--space-24) var(--space-4);
-            min-height: calc(100vh - 80px);
-            background: transparent;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .policy-page__container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .policy-page__back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            color: var(--color-blue);
-            text-decoration: none;
-            font-size: var(--text-sm);
-            margin-bottom: var(--space-6);
-            transition: color var(--transition-fast);
-        }
-        
-        .policy-page__back-link:hover {
-            color: var(--color-blue-dark);
-        }
-        
-        [data-theme="dark"] .policy-page__back-link:hover {
-            color: var(--color-blue-light);
-        }
-        
-        .policy-page__title {
-            font-size: var(--text-4xl);
-            font-weight: 700;
-            color: var(--color-gray-900);
-            margin-bottom: var(--space-2);
-        }
-        
-        [data-theme="dark"] .policy-page__title {
-            color: var(--color-white-text);
-        }
-        
-        .policy-page__updated {
-            font-size: var(--text-sm);
-            color: #666666;
-            margin-bottom: var(--space-8);
-            position: relative;
-            z-index: 1;
-        }
-        
-        [data-theme="dark"] .policy-page__updated {
-            color: #b0b0b0;
-        }
-        
-        .policy-page__content {
-            color: var(--color-black);
-            line-height: 1.8;
-            background: rgba(255, 255, 255, 0.98);
-            padding: var(--space-10);
-            border-radius: var(--radius-lg);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            position: relative;
-            z-index: 1;
-        }
-        
-        [data-theme="dark"] .policy-page__content {
-            color: var(--color-white-text);
-            background: rgba(28, 47, 64, 0.98);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-        
-        .policy-page__content h2 {
-            font-size: var(--text-2xl);
-            font-weight: 600;
-            color: var(--color-blue);
-            margin-top: var(--space-10);
-            margin-bottom: var(--space-4);
-        }
-        
-        [data-theme="dark"] .policy-page__content h2 {
-            color: #60a5fa;
-        }
-        
-        .policy-page__content h3 {
-            font-size: var(--text-xl);
-            font-weight: 600;
-            color: var(--color-black);
-            margin-top: var(--space-6);
-            margin-bottom: var(--space-3);
-        }
-        
-        [data-theme="dark"] .policy-page__content h3 {
-            color: var(--color-white-text);
-        }
-        
-        .policy-page__content p {
-            margin-bottom: var(--space-4);
-            color: var(--color-black);
-        }
-        
-        [data-theme="dark"] .policy-page__content p {
-            color: var(--color-white-text);
-        }
-        
-        .policy-page__content ul,
-        .policy-page__content ol {
-            margin-bottom: var(--space-4);
-            padding-left: var(--space-6);
-        }
-        
-        .policy-page__content li {
-            margin-bottom: var(--space-2);
-            color: var(--color-black);
-        }
-        
-        [data-theme="dark"] .policy-page__content li {
-            color: var(--color-white-text);
-        }
-        
-        .policy-page__content a {
-            color: var(--color-blue);
-            text-decoration: underline;
-            transition: color var(--transition-fast);
-            font-weight: 500;
-        }
-        
-        .policy-page__content a:hover {
-            color: var(--color-blue-light);
-            text-decoration-thickness: 2px;
-        }
-        
-        [data-theme="dark"] .policy-page__content a {
-            color: #60a5fa;
-        }
-        
-        [data-theme="dark"] .policy-page__content a:hover {
-            color: #93c5fd;
-        }
-        
-        .policy-highlight {
-            background: var(--color-blue-50);
-            border-left: 4px solid var(--color-blue);
-            padding: var(--space-4) var(--space-6);
-            margin: var(--space-6) 0;
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-        }
-        
-        [data-theme="dark"] .policy-highlight {
-            background: rgba(52, 124, 191, 0.1);
-        }
-        
-        .policy-highlight p {
-            margin-bottom: 0;
-        }
-        
-        .policy-page__contact {
-            margin-top: var(--space-10);
-            padding: var(--space-6);
-            background: var(--color-gray-50);
-            border-radius: var(--radius-lg);
-        }
-        
-        [data-theme="dark"] .policy-page__contact {
-            background: var(--color-gray-800);
-        }
-        
-        @media (max-width: 768px) {
-            .policy-page {
-                padding: var(--space-20) var(--space-4) var(--space-12);
-            }
-            
-            .policy-page__title {
-                font-size: var(--text-3xl);
-            }
-            
-            .policy-page__content h2 {
-                font-size: var(--text-xl);
-            }
-            
-            .policy-page__content h3 {
-                font-size: var(--text-lg);
-            }
-        }
-    </style>
+    <!-- Common Component Styles -->
+    <link rel="stylesheet" href="styles/components/navbar.css">
+    <link rel="stylesheet" href="styles/components/footer.css">
+    <link rel="stylesheet" href="styles/components/theme-toggle.css">
+    <link rel="stylesheet" href="styles/components/bokeh.css">
+    <link rel="stylesheet" href="styles/components/scroll-animations.css">
+    
+    <!-- Page-Specific Component Styles -->
+    <link rel="stylesheet" href="styles/components/legal.css">
+    <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     
+    <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
+    <div class="bokeh bokeh--1"></div>
+    <div class="bokeh bokeh--2"></div>
+    <div class="bokeh bokeh--3"></div>
+    <div class="bokeh bokeh--4"></div>
+    <div class="bokeh bokeh--5"></div>
+    <div class="bokeh bokeh--6"></div>
+    <div class="bokeh bokeh--7"></div>
+    <div class="bokeh bokeh--8"></div>
+    <div class="bokeh bokeh--9"></div>
+    <div class="bokeh bokeh--10"></div>
+    <div class="bokeh bokeh--11"></div>
+    <div class="bokeh bokeh--12"></div>
+    <div class="bokeh bokeh--13"></div>
+    <div class="bokeh bokeh--14"></div>
+    <div class="bokeh bokeh--15"></div>
+    
     <!-- Header -->
-    <nav class="nav">
-        <div class="nav__container">
-            <a href="/" class="nav__logo">
-                <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="nav__logo-img" fetchpriority="high">
-                <span class="nav__logo-text"><span class="brand-text">Usable</span></span>
-            </a>
-            
-            <div class="nav__menu">
-                <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link">How It Works</a>
-                <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link">Use Cases</a>
-                <a href="/news.html" data-clean-url="/news" class="nav__link">News</a>
-                <a href="/blog.html" data-clean-url="/blog" class="nav__link">Blog</a>
-                <a href="/pricing.html" data-clean-url="/pricing" class="nav__link">Pricing</a>
-                <a href="/faq.html" data-clean-url="/faq" class="nav__link">FAQ</a>
-            </div>
-            
-            <div class="nav__actions">
-                <button class="theme-toggle nav__theme-toggle--desktop" aria-label="Toggle theme" aria-pressed="false">
-                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <a href="https://usable.dev/login" class="btn btn--primary nav__cta--desktop">Log in</a>
-                <a href="https://usable.dev/docs" class="btn btn--secondary nav__cta--desktop" target="_blank" rel="noopener noreferrer">Docs</a>
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="nav__menu--mobile">
-        <div class="nav__menu--mobile-content">
-            <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile">How It Works</a>
-            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile">Use Cases</a>
-            <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile">News</a>
-            <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile">Blog</a>
-            <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile">Pricing</a>
-            <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile">FAQ</a>
-            
-            <div class="nav__mobile-actions">
-                <button class="theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme" aria-pressed="false">
-                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <a href="https://usable.dev/login" class="btn btn--primary nav__cta--mobile">Log in</a>
-                <a href="https://usable.dev/docs" class="btn btn--secondary nav__cta--mobile" target="_blank" rel="noopener noreferrer">Docs</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bokeh Background Circles -->
-    <div class="bokeh bokeh-1"></div>
-    <div class="bokeh bokeh-2"></div>
-    <div class="bokeh bokeh-3"></div>
-    <div class="bokeh bokeh-4"></div>
-    <div class="bokeh bokeh-5"></div>
-    <div class="bokeh bokeh-6"></div>
-    <div class="bokeh bokeh-7"></div>
-    <div class="bokeh bokeh-8"></div>
-    <div class="bokeh bokeh-9"></div>
-    <div class="bokeh bokeh-10"></div>
-    <div class="bokeh bokeh-11"></div>
-    <div class="bokeh bokeh-12"></div>
-    <div class="bokeh bokeh-13"></div>
-    <div class="bokeh bokeh-14"></div>
-    <div class="bokeh bokeh-15"></div>
-    <div class="bokeh bokeh-16"></div>
-    <div class="bokeh bokeh-17"></div>
-    <div class="bokeh bokeh-18"></div>
-    <div class="bokeh bokeh-19"></div>
-    <div class="bokeh bokeh-20"></div>
-    <div class="bokeh bokeh-21"></div>
-    <div class="bokeh bokeh-22"></div>
-    <div class="bokeh bokeh-23"></div>
-    <div class="bokeh bokeh-24"></div>
-    <div class="bokeh bokeh-25"></div>
-    <div class="bokeh bokeh-26"></div>
-    <div class="bokeh bokeh-27"></div>
-    <div class="bokeh bokeh-28"></div>
-    <div class="bokeh bokeh-29"></div>
-    <div class="bokeh bokeh-30"></div>
+    <div id="navbar-placeholder"></div>
 
     <!-- Terms of Service Content -->
-    <main id="main-content" class="policy-page" role="main">
-        <div class="policy-page__container">
-            <a href="/" class="policy-page__back-link">
+    <main id="main-content" class="terms-page" role="main">
+        <div class="terms-page__container">
+            <a href="/" class="terms-page__back-link">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
                 </svg>
                 Back to Home
             </a>
+
+            <h1 class="terms-page__title">Terms of Service</h1>
+            <p class="terms-page__updated">Last updated: 28th October 2025</p>
             
-            <h1 class="policy-page__title">Terms of Service</h1>
-            <p class="policy-page__updated">Last updated: 28th October 2025</p>
-            
-            <div class="policy-page__content">
-                <p>By accessing or using Usable ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not use the Service.</p>
+            <div class="terms-page__content">
+                <p class="terms-page__text">By accessing or using Usable ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not use the Service.</p>
                 
-                <h3>1.1 Eligibility</h3>
-                <p>You must be at least 16 years old to use the Service. By using the Service, you represent that you meet this age requirement and have the legal capacity to enter into these Terms.</p>
+                <h3 class="terms-page__subheading">1.1 Eligibility</h3>
+                <p class="terms-page__text">You must be at least 16 years old to use the Service. By using the Service, you represent that you meet this age requirement and have the legal capacity to enter into these Terms.</p>
                 
-                <h3>1.2 Updates to Terms</h3>
-                <p>We may update these Terms from time to time. We will notify you of material changes by email or through the Service. Your continued use of the Service after such notification constitutes acceptance of the updated Terms.</p>
+                <h3 class="terms-page__subheading">1.2 Updates to Terms</h3>
+                <p class="terms-page__text">We may update these Terms from time to time. We will notify you of material changes by email or through the Service. Your continued use of the Service after such notification constitutes acceptance of the updated Terms.</p>
                 
-                <h2>2. Description of Service</h2>
-                <p>Usable is a shared memory platform for developer teams that provides:</p>
-                <ul>
-                    <li><strong>Memory Fragments:</strong> Store and organize knowledge, recipes, solutions, templates, and other information</li>
-                    <li><strong>Semantic Search:</strong> AI-powered search across your team's knowledge base</li>
-                    <li><strong>Knowledge Graphs:</strong> Visualize relationships between information</li>
-                    <li><strong>Workspaces:</strong> Collaborate with team members in shared or private workspaces</li>
-                    <li><strong>Integrations:</strong> Connect with development tools via MCP (Model Context Protocol)</li>
+                <h2 class="terms-page__heading">2. Description of Service</h2>
+                <p class="terms-page__text">Usable is a shared memory platform for developer teams that provides:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item"><strong>Memory Fragments:</strong> Store and organize knowledge, recipes, solutions, templates, and other information</li>
+                    <li class="terms-page__list-item"><strong>Semantic Search:</strong> AI-powered search across your team's knowledge base</li>
+                    <li class="terms-page__list-item"><strong>Knowledge Graphs:</strong> Visualize relationships between information</li>
+                    <li class="terms-page__list-item"><strong>Workspaces:</strong> Collaborate with team members in shared or private workspaces</li>
+                    <li class="terms-page__list-item"><strong>Integrations:</strong> Connect with development tools via MCP (Model Context Protocol)</li>
                 </ul>
                 
-                <h3>2.1 Service Availability</h3>
-                <p>We strive to provide reliable access to the Service but do not guarantee uninterrupted availability. We may:</p>
-                <ul>
-                    <li>Perform scheduled maintenance (with advance notice)</li>
-                    <li>Make updates to improve the Service</li>
-                    <li>Temporarily suspend the Service for security or technical reasons</li>
+                <h3 class="terms-page__subheading">2.1 Service Availability</h3>
+                <p class="terms-page__text">We strive to provide reliable access to the Service but do not guarantee uninterrupted availability. We may:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Perform scheduled maintenance (with advance notice)</li>
+                    <li class="terms-page__list-item">Make updates to improve the Service</li>
+                    <li class="terms-page__list-item">Temporarily suspend the Service for security or technical reasons</li>
                 </ul>
                 
-                <h3>2.2 Beta Features</h3>
-                <p>Some features may be designated as "beta" or "experimental." These features are provided "as is" and may not work as intended. We may discontinue beta features at any time without notice.</p>
+                <h3 class="terms-page__subheading">2.2 Beta Features</h3>
+                <p class="terms-page__text">Some features may be designated as "beta" or "experimental." These features are provided "as is" and may not work as intended. We may discontinue beta features at any time without notice.</p>
                 
-                <h2>3. User Accounts</h2>
+                <h2 class="terms-page__heading">3. User Accounts</h2>
                 
-                <h3>3.1 Account Creation</h3>
-                <p>To use the Service, you must create an account using our authentication provider (Keycloak). You agree to:</p>
-                <ul>
-                    <li>Provide accurate and complete information during registration</li>
-                    <li>Keep your account credentials secure</li>
-                    <li>Notify us immediately of any unauthorized access</li>
-                    <li>Be responsible for all activities under your account</li>
+                <h3 class="terms-page__subheading">3.1 Account Creation</h3>
+                <p class="terms-page__text">To use the Service, you must create an account using our authentication provider (Keycloak). You agree to:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Provide accurate and complete information during registration</li>
+                    <li class="terms-page__list-item">Keep your account credentials secure</li>
+                    <li class="terms-page__list-item">Notify us immediately of any unauthorized access</li>
+                    <li class="terms-page__list-item">Be responsible for all activities under your account</li>
                 </ul>
                 
-                <h3>3.2 Account Termination</h3>
-                <p>We reserve the right to suspend or terminate your account if:</p>
-                <ul>
-                    <li>You violate these Terms</li>
-                    <li>You engage in fraudulent or illegal activities</li>
-                    <li>Your account is inactive for more than 12 months</li>
-                    <li>Required by law</li>
+                <h3 class="terms-page__subheading">3.2 Account Termination</h3>
+                <p class="terms-page__text">We reserve the right to suspend or terminate your account if:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">You violate these Terms</li>
+                    <li class="terms-page__list-item">You engage in fraudulent or illegal activities</li>
+                    <li class="terms-page__list-item">Your account is inactive for more than 12 months</li>
+                    <li class="terms-page__list-item">Required by law</li>
                 </ul>
-                <p>You may terminate your account at any time from your account settings.</p>
+                <p class="terms-page__text">You may terminate your account at any time from your account settings.</p>
                 
-                <h2>4. User Content and Data</h2>
+                <h2 class="terms-page__heading">4. User Content and Data</h2>
                 
-                <h3>4.1 Your Content</h3>
-                <p>You retain ownership of all content you create, upload, or store in the Service ("Your Content"). By using the Service, you grant us a limited license to:</p>
-                <ul>
-                    <li>Store and process Your Content to provide the Service</li>
-                    <li>Generate embeddings and semantic relationships for search functionality</li>
-                    <li>Back up Your Content for disaster recovery</li>
-                    <li>Display Your Content to users you authorize (workspace members)</li>
-                </ul>
-                
-                <h3>4.2 Content Restrictions</h3>
-                <p>You agree not to upload, store, or share content that:</p>
-                <ul>
-                    <li>Violates any law or regulation</li>
-                    <li>Infringes intellectual property rights</li>
-                    <li>Contains malware or malicious code</li>
-                    <li>Harasses, threatens, or harms others</li>
-                    <li>Contains personal data of third parties without consent</li>
+                <h3 class="terms-page__subheading">4.1 Your Content</h3>
+                <p class="terms-page__text">You retain ownership of all content you create, upload, or store in the Service ("Your Content"). By using the Service, you grant us a limited license to:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Store and process Your Content to provide the Service</li>
+                    <li class="terms-page__list-item">Generate embeddings and semantic relationships for search functionality</li>
+                    <li class="terms-page__list-item">Back up Your Content for disaster recovery</li>
+                    <li class="terms-page__list-item">Display Your Content to users you authorize (workspace members)</li>
                 </ul>
                 
-                <h3>4.3 Content Monitoring</h3>
-                <p>We do not actively monitor Your Content but reserve the right to:</p>
-                <ul>
-                    <li>Review content if we receive complaints</li>
-                    <li>Remove content that violates these Terms</li>
-                    <li>Cooperate with law enforcement investigations</li>
+                <h3 class="terms-page__subheading">4.2 Content Restrictions</h3>
+                <p class="terms-page__text">You agree not to upload, store, or share content that:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Violates any law or regulation</li>
+                    <li class="terms-page__list-item">Infringes intellectual property rights</li>
+                    <li class="terms-page__list-item">Contains malware or malicious code</li>
+                    <li class="terms-page__list-item">Harasses, threatens, or harms others</li>
+                    <li class="terms-page__list-item">Contains personal data of third parties without consent</li>
                 </ul>
                 
-                <h3>4.4 Data Portability</h3>
-                <p>You can export Your Content at any time using our export tools. Upon account termination, we will retain Your Content for 30 days, after which it will be permanently deleted.</p>
-                
-                <h2>5. Workspaces and Collaboration</h2>
-                
-                <h3>5.1 Workspace Ownership</h3>
-                <p>The user who creates a workspace ("Workspace Owner") has full control over:</p>
-                <ul>
-                    <li>Inviting and removing members</li>
-                    <li>Setting access permissions</li>
-                    <li>Managing workspace settings</li>
-                    <li>Deleting the workspace</li>
+                <h3 class="terms-page__subheading">4.3 Content Monitoring</h3>
+                <p class="terms-page__text">We do not actively monitor Your Content but reserve the right to:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Review content if we receive complaints</li>
+                    <li class="terms-page__list-item">Remove content that violates these Terms</li>
+                    <li class="terms-page__list-item">Cooperate with law enforcement investigations</li>
                 </ul>
                 
-                <h3>5.2 Shared Workspaces</h3>
-                <p>When you join a shared workspace:</p>
-                <ul>
-                    <li>You agree to collaborate respectfully with other members</li>
-                    <li>The Workspace Owner controls access to workspace content</li>
-                    <li>You may only access content you have permission to view</li>
-                    <li>You must comply with the workspace's usage policies</li>
+                <h3 class="terms-page__subheading">4.4 Data Portability</h3>
+                <p class="terms-page__text">You can export Your Content at any time using our export tools. Upon account termination, we will retain Your Content for 30 days, after which it will be permanently deleted.</p>
+                
+                <h2 class="terms-page__heading">5. Workspaces and Collaboration</h2>
+                
+                <h3 class="terms-page__subheading">5.1 Workspace Ownership</h3>
+                <p class="terms-page__text">The user who creates a workspace ("Workspace Owner") has full control over:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Inviting and removing members</li>
+                    <li class="terms-page__list-item">Setting access permissions</li>
+                    <li class="terms-page__list-item">Managing workspace settings</li>
+                    <li class="terms-page__list-item">Deleting the workspace</li>
                 </ul>
                 
-                <h3>5.3 Leaving a Workspace</h3>
-                <p>You may leave a workspace at any time. Content you created remains in the workspace unless you delete it before leaving.</p>
-                
-                <h2>6. Subscription and Payments</h2>
-                
-                <h3>6.1 Subscription Plans</h3>
-                <p>Usable offers:</p>
-                <ul>
-                    <li><strong>Free Plan:</strong> Limited features and storage</li>
-                    <li><strong>Paid Plans:</strong> Enhanced features, increased storage, and priority support</li>
+                <h3 class="terms-page__subheading">5.2 Shared Workspaces</h3>
+                <p class="terms-page__text">When you join a shared workspace:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">You agree to collaborate respectfully with other members</li>
+                    <li class="terms-page__list-item">The Workspace Owner controls access to workspace content</li>
+                    <li class="terms-page__list-item">You may only access content you have permission to view</li>
+                    <li class="terms-page__list-item">You must comply with the workspace's usage policies</li>
                 </ul>
                 
-                <h3>6.2 Billing</h3>
-                <p>Paid subscriptions are billed:</p>
-                <ul>
-                    <li>Monthly or annually as selected</li>
-                    <li>Automatically renewed unless cancelled</li>
-                    <li>In advance at the start of each billing period</li>
+                <h3 class="terms-page__subheading">5.3 Leaving a Workspace</h3>
+                <p class="terms-page__text">You may leave a workspace at any time. Content you created remains in the workspace unless you delete it before leaving.</p>
+                
+                <h2 class="terms-page__heading">6. Subscription and Payments</h2>
+                
+                <h3 class="terms-page__subheading">6.1 Subscription Plans</h3>
+                <p class="terms-page__text">Usable offers:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item"><strong>Free Plan:</strong> Limited features and storage</li>
+                    <li class="terms-page__list-item"><strong>Paid Plans:</strong> Enhanced features, increased storage, and priority support</li>
                 </ul>
                 
-                <h3>6.3 Cancellation and Refunds</h3>
-                <ul>
-                    <li>You may cancel your subscription at any time</li>
-                    <li>Cancellation takes effect at the end of the current billing period</li>
-                    <li>No refunds for partial months or unused services</li>
-                    <li>Upon downgrade to free plan, content exceeding free plan limits may be archived</li>
+                <h3 class="terms-page__subheading">6.2 Billing</h3>
+                <p class="terms-page__text">Paid subscriptions are billed:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Monthly or annually as selected</li>
+                    <li class="terms-page__list-item">Automatically renewed unless cancelled</li>
+                    <li class="terms-page__list-item">In advance at the start of each billing period</li>
                 </ul>
                 
-                <h3>6.4 Price Changes</h3>
-                <p>We may change subscription prices with 30 days' notice. Price changes apply to renewals after the notice period.</p>
-                
-                <h2>7. Intellectual Property</h2>
-                
-                <h3>7.1 Usable IP</h3>
-                <p>The Service, including its design, code, branding, and documentation, is owned by Flowcore and protected by intellectual property laws. You may not:</p>
-                <ul>
-                    <li>Copy, modify, or reverse-engineer the Service</li>
-                    <li>Use our trademarks without permission</li>
-                    <li>Claim ownership of any part of the Service</li>
+                <h3 class="terms-page__subheading">6.3 Cancellation and Refunds</h3>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">You may cancel your subscription at any time</li>
+                    <li class="terms-page__list-item">Cancellation takes effect at the end of the current billing period</li>
+                    <li class="terms-page__list-item">No refunds for partial months or unused services</li>
+                    <li class="terms-page__list-item">Upon downgrade to free plan, content exceeding free plan limits may be archived</li>
                 </ul>
                 
-                <h3>7.2 Feedback</h3>
-                <p>If you provide feedback, suggestions, or ideas about the Service, we may use them without compensation or attribution to you.</p>
+                <h3 class="terms-page__subheading">6.4 Price Changes</h3>
+                <p class="terms-page__text">We may change subscription prices with 30 days' notice. Price changes apply to renewals after the notice period.</p>
                 
-                <h2>8. Prohibited Activities</h2>
-                <p>You agree not to:</p>
-                <ul>
-                    <li>Use the Service for illegal purposes</li>
-                    <li>Attempt to gain unauthorized access to systems or data</li>
-                    <li>Interfere with the Service's operation</li>
-                    <li>Scrape or crawl the Service without permission</li>
-                    <li>Resell or redistribute the Service</li>
-                    <li>Use the Service to spam or phish others</li>
-                    <li>Impersonate others or misrepresent your affiliation</li>
-                </ul>
-                <p>Violations may result in immediate account termination and legal action.</p>
+                <h2 class="terms-page__heading">7. Intellectual Property</h2>
                 
-                <h2>9. AI and Automated Processing</h2>
-                
-                <h3>9.1 AI-Generated Content</h3>
-                <p>The Service uses AI to:</p>
-                <ul>
-                    <li>Generate semantic embeddings for search</li>
-                    <li>Suggest related content</li>
-                    <li>Provide insights and recommendations</li>
-                </ul>
-                <p>AI-generated suggestions are not guaranteed to be accurate. You are responsible for verifying information before relying on it.</p>
-                
-                <h3>9.2 Training Data</h3>
-                <p>We do <strong>not</strong> use Your Content to train AI models for other users or third parties. Your data remains private within your workspaces.</p>
-                
-                <h2>10. Privacy and Data Protection</h2>
-                
-                <h3>10.1 Data Collection</h3>
-                <p>We collect and process data as described in our <a href="/privacy.html">Privacy Policy</a>. By using the Service, you consent to such processing.</p>
-                
-                <h3>10.2 GDPR Rights</h3>
-                <p>If you are in the EU/EEA, you have rights under GDPR including:</p>
-                <ul>
-                    <li>Access to your personal data</li>
-                    <li>Correction of inaccurate data</li>
-                    <li>Deletion of your data ("right to be forgotten")</li>
-                    <li>Data portability</li>
-                    <li>Objection to processing</li>
-                </ul>
-                <p>Contact <a href="mailto:privacy@usable.dev">privacy@usable.dev</a> to exercise these rights.</p>
-                
-                <h2>11. Third-Party Services</h2>
-                
-                <h3>11.1 Integrations</h3>
-                <p>The Service may integrate with third-party services (e.g., GitHub, Slack). Your use of those services is subject to their terms.</p>
-                
-                <h3>11.2 Links</h3>
-                <p>We are not responsible for content on external websites linked from the Service.</p>
-                
-                <h2>12. Disclaimers and Limitations of Liability</h2>
-                
-                <h3>12.1 "As Is" Disclaimer</h3>
-                <p>THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DISCLAIM ALL WARRANTIES INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
-                
-                <h3>12.2 Limitation of Liability</h3>
-                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
-                <ul>
-                    <li>WE ARE NOT LIABLE FOR INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES</li>
-                    <li>OUR TOTAL LIABILITY IS LIMITED TO THE AMOUNT YOU PAID US IN THE PAST 12 MONTHS</li>
-                    <li>WE ARE NOT LIABLE FOR DATA LOSS (YOU SHOULD MAINTAIN BACKUPS)</li>
+                <h3 class="terms-page__subheading">7.1 Usable IP</h3>
+                <p class="terms-page__text">The Service, including its design, code, branding, and documentation, is owned by Flowcore and protected by intellectual property laws. You may not:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Copy, modify, or reverse-engineer the Service</li>
+                    <li class="terms-page__list-item">Use our trademarks without permission</li>
+                    <li class="terms-page__list-item">Claim ownership of any part of the Service</li>
                 </ul>
                 
-                <h3>12.3 User Responsibility</h3>
-                <p>You are responsible for:</p>
-                <ul>
-                    <li>Maintaining backups of Your Content</li>
-                    <li>Ensuring Your Content complies with laws</li>
-                    <li>Managing access to your account</li>
+                <h3 class="terms-page__subheading">7.2 Feedback</h3>
+                <p class="terms-page__text">If you provide feedback, suggestions, or ideas about the Service, we may use them without compensation or attribution to you.</p>
+                
+                <h2 class="terms-page__heading">8. Prohibited Activities</h2>
+                <p class="terms-page__text">You agree not to:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Use the Service for illegal purposes</li>
+                    <li class="terms-page__list-item">Attempt to gain unauthorized access to systems or data</li>
+                    <li class="terms-page__list-item">Interfere with the Service's operation</li>
+                    <li class="terms-page__list-item">Scrape or crawl the Service without permission</li>
+                    <li class="terms-page__list-item">Resell or redistribute the Service</li>
+                    <li class="terms-page__list-item">Use the Service to spam or phish others</li>
+                    <li class="terms-page__list-item">Impersonate others or misrepresent your affiliation</li>
+                </ul>
+                <p class="terms-page__text">Violations may result in immediate account termination and legal action.</p>
+                
+                <h2 class="terms-page__heading">9. AI and Automated Processing</h2>
+                
+                <h3 class="terms-page__subheading">9.1 AI-Generated Content</h3>
+                <p class="terms-page__text">The Service uses AI to:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Generate semantic embeddings for search</li>
+                    <li class="terms-page__list-item">Suggest related content</li>
+                    <li class="terms-page__list-item">Provide insights and recommendations</li>
+                </ul>
+                <p class="terms-page__text">AI-generated suggestions are not guaranteed to be accurate. You are responsible for verifying information before relying on it.</p>
+                
+                <h3 class="terms-page__subheading">9.2 Training Data</h3>
+                <p class="terms-page__text">We do <strong>not</strong> use Your Content to train AI models for other users or third parties. Your data remains private within your workspaces.</p>
+                
+                <h2 class="terms-page__heading">10. Privacy and Data Protection</h2>
+                
+                <h3 class="terms-page__subheading">10.1 Data Collection</h3>
+                <p class="terms-page__text">We collect and process data as described in our <a href="/privacy.html">Privacy Policy</a>. By using the Service, you consent to such processing.</p>
+                
+                <h3 class="terms-page__subheading">10.2 GDPR Rights</h3>
+                <p class="terms-page__text">If you are in the EU/EEA, you have rights under GDPR including:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Access to your personal data</li>
+                    <li class="terms-page__list-item">Correction of inaccurate data</li>
+                    <li class="terms-page__list-item">Deletion of your data ("right to be forgotten")</li>
+                    <li class="terms-page__list-item">Data portability</li>
+                    <li class="terms-page__list-item">Objection to processing</li>
+                </ul>
+                <p class="terms-page__text">Contact <a href="mailto:privacy@usable.dev">privacy@usable.dev</a> to exercise these rights.</p>
+                
+                <h2 class="terms-page__heading">11. Third-Party Services</h2>
+                
+                <h3 class="terms-page__subheading">11.1 Integrations</h3>
+                <p class="terms-page__text">The Service may integrate with third-party services (e.g., GitHub, Slack). Your use of those services is subject to their terms.</p>
+                
+                <h3 class="terms-page__subheading">11.2 Links</h3>
+                <p class="terms-page__text">We are not responsible for content on external websites linked from the Service.</p>
+                
+                <h2 class="terms-page__heading">12. Disclaimers and Limitations of Liability</h2>
+                
+                <h3 class="terms-page__subheading">12.1 "As Is" Disclaimer</h3>
+                <p class="terms-page__text">THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DISCLAIM ALL WARRANTIES INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+                
+                <h3 class="terms-page__subheading">12.2 Limitation of Liability</h3>
+                <p class="terms-page__text">TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">WE ARE NOT LIABLE FOR INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES</li>
+                    <li class="terms-page__list-item">OUR TOTAL LIABILITY IS LIMITED TO THE AMOUNT YOU PAID US IN THE PAST 12 MONTHS</li>
+                    <li class="terms-page__list-item">WE ARE NOT LIABLE FOR DATA LOSS (YOU SHOULD MAINTAIN BACKUPS)</li>
                 </ul>
                 
-                <h2>13. Indemnification</h2>
-                <p>You agree to indemnify and hold harmless Flowcore, its affiliates, and employees from any claims, damages, or expenses arising from:</p>
-                <ul>
-                    <li>Your violation of these Terms</li>
-                    <li>Your Content</li>
-                    <li>Your use of the Service</li>
+                <h3 class="terms-page__subheading">12.3 User Responsibility</h3>
+                <p class="terms-page__text">You are responsible for:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Maintaining backups of Your Content</li>
+                    <li class="terms-page__list-item">Ensuring Your Content complies with laws</li>
+                    <li class="terms-page__list-item">Managing access to your account</li>
                 </ul>
                 
-                <h2>14. Dispute Resolution</h2>
+                <h2 class="terms-page__heading">13. Indemnification</h2>
+                <p class="terms-page__text">You agree to indemnify and hold harmless Flowcore, its affiliates, and employees from any claims, damages, or expenses arising from:</p>
+                <ul class="terms-page__list">
+                    <li class="terms-page__list-item">Your violation of these Terms</li>
+                    <li class="terms-page__list-item">Your Content</li>
+                    <li class="terms-page__list-item">Your use of the Service</li>
+                </ul>
                 
-                <h3>14.1 Governing Law</h3>
-                <p>These Terms are governed by the laws of [Jurisdiction - Faroe Islands or Denmark], without regard to conflict of law principles.</p>
+                <h2 class="terms-page__heading">14. Dispute Resolution</h2>
                 
-                <h3>14.2 Arbitration</h3>
-                <p>Disputes will be resolved through binding arbitration in [Location] under [Arbitration Rules], except where prohibited by law.</p>
+                <h3 class="terms-page__subheading">14.1 Governing Law</h3>
+                <p class="terms-page__text">These Terms are governed by the laws of [Jurisdiction - Faroe Islands or Denmark], without regard to conflict of law principles.</p>
                 
-                <h3>14.3 Class Action Waiver</h3>
-                <p>You agree to resolve disputes individually and waive participation in class actions.</p>
+                <h3 class="terms-page__subheading">14.2 Arbitration</h3>
+                <p class="terms-page__text">Disputes will be resolved through binding arbitration in [Location] under [Arbitration Rules], except where prohibited by law.</p>
                 
-                <h2>15. General Provisions</h2>
+                <h3 class="terms-page__subheading">14.3 Class Action Waiver</h3>
+                <p class="terms-page__text">You agree to resolve disputes individually and waive participation in class actions.</p>
                 
-                <h3>15.1 Entire Agreement</h3>
-                <p>These Terms constitute the entire agreement between you and Flowcore regarding the Service.</p>
+                <h2 class="terms-page__heading">15. General Provisions</h2>
                 
-                <h3>15.2 Severability</h3>
-                <p>If any provision is found unenforceable, the remaining provisions remain in effect.</p>
+                <h3 class="terms-page__subheading">15.1 Entire Agreement</h3>
+                <p class="terms-page__text">These Terms constitute the entire agreement between you and Flowcore regarding the Service.</p>
                 
-                <h3>15.3 Waiver</h3>
-                <p>Failure to enforce any provision does not waive our right to enforce it later.</p>
+                <h3 class="terms-page__subheading">15.2 Severability</h3>
+                <p class="terms-page__text">If any provision is found unenforceable, the remaining provisions remain in effect.</p>
                 
-                <h3>15.4 Assignment</h3>
-                <p>You may not assign these Terms. We may assign them to affiliates or in connection with a merger or sale.</p>
+                <h3 class="terms-page__subheading">15.3 Waiver</h3>
+                <p class="terms-page__text">Failure to enforce any provision does not waive our right to enforce it later.</p>
                 
-                <h3>15.5 Force Majeure</h3>
-                <p>We are not liable for delays or failures due to events beyond our reasonable control (natural disasters, war, pandemics, etc.).</p>
+                <h3 class="terms-page__subheading">15.4 Assignment</h3>
+                <p class="terms-page__text">You may not assign these Terms. We may assign them to affiliates or in connection with a merger or sale.</p>
                 
-                <h2>16. Contact Information</h2>
-                <p>For questions about these Terms:</p>
-                <p><strong>Email:</strong> <a href="mailto:legal@usable.dev">legal@usable.dev</a><br>
+                <h3 class="terms-page__subheading">15.5 Force Majeure</h3>
+                <p class="terms-page__text">We are not liable for delays or failures due to events beyond our reasonable control (natural disasters, war, pandemics, etc.).</p>
+                
+                <h2 class="terms-page__heading">16. Contact Information</h2>
+                <p class="terms-page__text">For questions about these Terms:</p>
+                <p class="terms-page__text"><strong>Email:</strong> <a href="mailto:legal@usable.dev">legal@usable.dev</a><br>
                 <strong>Website:</strong> <a href="https://usable.dev" target="_blank" rel="noopener noreferrer">https://usable.dev</a><br>
                 <strong>Mailing Address:</strong><br>
                 Flowcore<br>
                 Vestara Bryggja 15<br>
                 Tórshavn 100, Faroe Islands</p>
                 
-                <h2>17. Acknowledgment</h2>
-                <p>By clicking "Accept" or using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+                <h2 class="terms-page__heading">17. Acknowledgment</h2>
+                <p class="terms-page__text">By clicking "Accept" or using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__circle-1"></div>
-        <div class="footer__circle-2"></div>
-        <div class="footer__circle-3"></div>
-        <div class="footer__circle-4"></div>
-        <div class="footer__circle-5"></div>
-        <div class="footer__container">
-            <div class="footer__main">
-                <div class="footer__brand">
-                    <a href="/" class="footer__logo">
-                        <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="footer__logo-img" loading="lazy">
-                        <span class="footer__logo-text"><span class="brand-text">Usable</span></span>
-                    </a>
-                    <p class="footer__tagline">
-                        <span class="brand-text">Usable</span> is not just adorable<br>- it is actually usable.
-                    </p>
-                </div>
-                
-                <div class="footer__links">
-                    <div class="footer__section">
-                        <h3 class="footer__section-title">Resources</h3>
-                        <a href="https://usable.dev/login" class="footer__link" target="_blank" rel="noopener noreferrer">Get Started</a>
-                        <a href="https://usable.dev/docs#api" class="footer__link" target="_blank" rel="noopener noreferrer">API Reference</a>
-                        <a href="https://discord.com/invite/36AuxFNnSE" class="footer__link" target="_blank" rel="noopener noreferrer">Community</a>
-                        <a href="/media-kit.html" data-clean-url="/media-kit" class="footer__link">Media Kit</a>
-                    </div>
-                    
-                    <div class="footer__section">
-                        <h3 class="footer__section-title">Product</h3>
-                        <a href="/use-cases.html" data-clean-url="/use-cases" class="footer__link">Use Cases</a>
-                        
-                        <a href="/pricing.html" data-clean-url="/pricing" class="footer__link">Pricing</a>
-                        <a href="/how-it-works.html" data-clean-url="/how-it-works" class="footer__link">How It Works</a>
-                        <a href="https://usable.dev/docs" class="footer__link" target="_blank" rel="noopener noreferrer">Documentation</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer__bottom">
-                <div class="footer__copyright-group">
-                    <p class="footer__copyright">
-                        © 2025 <a href="https://www.flowcore.com" class="brand-text" target="_blank" rel="noopener noreferrer">Usable Sp/f</a> - All rights reserved.
-                    </p>
-                    <div class="footer__legal">
-                        <a href="/privacy.html" class="footer__link">Privacy Policy</a>
-                        <a href="/terms.html" class="footer__link">Terms of Service</a>
-                    </div>
-                </div>
-                <div class="footer__social">
-                    <a href="https://discord.gg/36AuxFNnSE" class="footer__social-link" aria-label="Join our Discord" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.youtube.com/@UsableDev" class="footer__social-link" aria-label="Subscribe to our YouTube" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                    </a>
-                    <a href="https://open.spotify.com/show/5leH0kkxczVZNKUX1S6OAk" class="footer__social-link" aria-label="Listen to our Spotify Podcast" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/usabledev" class="footer__social-link" aria-label="Follow us on LinkedIn" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.reddit.com/r/usabledev/" class="footer__social-link" aria-label="Join us on Reddit" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/usabledev/" class="footer__social-link" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </a>
-                    <a href="https://x.com/UsableDev" class="footer__social-link" aria-label="Follow us on X" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
+    <script src="scripts/components.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/theme.js"></script>
 </body>
 </html>
-

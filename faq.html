@@ -46,232 +46,134 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=block" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Common Component Styles -->
+    <link rel="stylesheet" href="styles/components/navbar.css">
+    <link rel="stylesheet" href="styles/components/footer.css">
+    <link rel="stylesheet" href="styles/components/theme-toggle.css">
+    <link rel="stylesheet" href="styles/components/bokeh.css">
+    <link rel="stylesheet" href="styles/components/scroll-animations.css">
+    <link rel="stylesheet" href="styles/components/sections.css">
+    <link rel="stylesheet" href="styles/components/cta.css">
+    
+    <!-- Page-Specific Component Styles -->
+    <link rel="stylesheet" href="styles/components/faq.css">
+    
     <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     
-    <!-- Bokeh Background Circles -->
-    <div class="bokeh bokeh-1"></div>
-    <div class="bokeh bokeh-2"></div>
-    <div class="bokeh bokeh-3"></div>
-    <div class="bokeh bokeh-4"></div>
-    <div class="bokeh bokeh-5"></div>
-    <div class="bokeh bokeh-6"></div>
-    <div class="bokeh bokeh-7"></div>
-    <div class="bokeh bokeh-8"></div>
-    <div class="bokeh bokeh-9"></div>
-    <div class="bokeh bokeh-10"></div>
-    <div class="bokeh bokeh-11"></div>
-    <div class="bokeh bokeh-12"></div>
-    <div class="bokeh bokeh-13"></div>
-    <div class="bokeh bokeh-14"></div>
-    <div class="bokeh bokeh-15"></div>
-    <div class="bokeh bokeh-16"></div>
-    <div class="bokeh bokeh-17"></div>
-    <div class="bokeh bokeh-18"></div>
-    <div class="bokeh bokeh-19"></div>
-    <div class="bokeh bokeh-20"></div>
-    <div class="bokeh bokeh-21"></div>
-    <div class="bokeh bokeh-22"></div>
-    <div class="bokeh bokeh-23"></div>
-    <div class="bokeh bokeh-24"></div>
-    <div class="bokeh bokeh-25"></div>
-    <div class="bokeh bokeh-26"></div>
-    <div class="bokeh bokeh-27"></div>
-    <div class="bokeh bokeh-28"></div>
-    <div class="bokeh bokeh-29"></div>
-    <div class="bokeh bokeh-30"></div>
+    <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
+    <div class="bokeh bokeh--1"></div>
+    <div class="bokeh bokeh--2"></div>
+    <div class="bokeh bokeh--3"></div>
+    <div class="bokeh bokeh--4"></div>
+    <div class="bokeh bokeh--5"></div>
+    <div class="bokeh bokeh--6"></div>
+    <div class="bokeh bokeh--7"></div>
+    <div class="bokeh bokeh--8"></div>
+    <div class="bokeh bokeh--9"></div>
+    <div class="bokeh bokeh--10"></div>
+    <div class="bokeh bokeh--11"></div>
+    <div class="bokeh bokeh--12"></div>
+    <div class="bokeh bokeh--13"></div>
+    <div class="bokeh bokeh--14"></div>
+    <div class="bokeh bokeh--15"></div>
     
     <!-- Header -->
-    <nav class="nav">
-            <div class="nav__container">
-                <a href="/" class="nav__logo">
-                    <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="nav__logo-img" fetchpriority="high" width="32" height="32">
-                    <span class="nav__logo-text"><span class="brand-text">Usable</span></span>
-                </a>
-                
-                <div class="nav__menu">
-                    <div class="nav__dropdown" aria-expanded="false">
-                        <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Product</button>
-                        <div class="nav__dropdown-menu">
-                            <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__dropdown-item">How It Works</a>
-                            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__dropdown-item">Use Cases</a>
-                            <a href="/demo.html" data-clean-url="/demo" class="nav__dropdown-item">Demo</a>
-                        <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__dropdown-item">Detailed Screenshots</a>
-                        </div>
-                    </div>
-                    <a href="/pricing.html" data-clean-url="/pricing" class="nav__link">Pricing</a>
-                    <div class="nav__dropdown" aria-expanded="false">
-                        <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources</button>
-                        <div class="nav__dropdown-menu">
-                            <a href="/blog.html" data-clean-url="/blog" class="nav__dropdown-item">Blog</a>
-                            <a href="/news.html" data-clean-url="/news" class="nav__dropdown-item">News</a>
-                            <a href="https://usable.dev/docs" class="nav__dropdown-item" target="_blank" rel="noopener noreferrer">Docs</a>
-                            <a href="/faq.html" data-clean-url="/faq" class="nav__dropdown-item">FAQ</a>
-                        </div>
-                    </div>
-                    <div class="nav__dropdown" aria-expanded="false">
-                        <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">About</button>
-                        <div class="nav__dropdown-menu">
-                            <a href="/about.html" data-clean-url="/about" class="nav__dropdown-item">About</a>
-                            <a href="/team.html" data-clean-url="/team" class="nav__dropdown-item">Team</a>
-                            <a href="/contact.html" data-clean-url="/contact" class="nav__dropdown-item">Contact</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="nav__actions">
-                    <button class="theme-toggle nav__theme-toggle--desktop" aria-label="Toggle theme" aria-pressed="false">
-                        <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                        <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                    </button>
-                    <a href="https://usable.dev/login" class="btn btn--primary nav__cta--desktop">Log in / Sign up</a>
-                    <a href="https://usable.dev/docs" class="btn btn--secondary nav__cta--desktop" target="_blank" rel="noopener noreferrer">Docs</a>
-                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
-                </div>
-            </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
-    <!-- Mobile Menu -->
-    <div class="nav__menu--mobile">
-        <div class="nav__menu--mobile-content">
-            <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile">How It Works</a>
-            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile">Use Cases</a>
-            <a href="/demo.html" data-clean-url="/demo" class="nav__link nav__link--mobile">Demo</a>
-            <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__link nav__link--mobile">Detailed Screenshots</a>
-            <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile">Pricing</a>
-            <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile">Blog</a>
-            <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile">News</a>
-            <a href="https://usable.dev/docs" class="nav__link nav__link--mobile" target="_blank" rel="noopener noreferrer">Docs</a>
-            <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile">FAQ</a>
-            <a href="/about.html" data-clean-url="/about" class="nav__link nav__link--mobile">About</a>
-            <a href="/team.html" data-clean-url="/team" class="nav__link nav__link--mobile">Team</a>
-            <a href="/contact.html" data-clean-url="/contact" class="nav__link nav__link--mobile">Contact</a>
-            
-            <div class="nav__mobile-actions">
-                <button class="theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme" aria-pressed="false">
-                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <a href="https://usable.dev/login" class="btn btn--primary btn--full">Log in / Sign up</a>
-                <a href="https://usable.dev/docs" class="btn btn--secondary btn--full" target="_blank" rel="noopener noreferrer">Docs</a>
-            </div>
-        </div>
-    </div>
+
+    <main id="main-content">
 
     <!-- FAQ Section -->
-    <section id="main-content" class="faq">
+    <section class="page-section page-section--large-padding page-section--gradient-blue-orange faq">
         <div class="faq__container">
-            <div class="section__header animate-on-scroll fade-in-down">
-                <h1 class="section__title">Frequently asked questions</h1>
-                <p class="section__description">
-                    Everything you need to know about <span class="brand-text">Usable</span>.
+            <div class="faq-page__header animate-on-scroll fade-in-down">
+                <h1 class="faq-page__title">Frequently asked questions</h1>
+                <p class="faq-page__description">
+                    Everything you need to know about <span class="u-brand-text">Usable</span>.
                 </p>
             </div>
             
-            <div class="faq__list">
+            <div class="faq__list animate-on-scroll fade-in-up">
                 <div class="faq__column">
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-1" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">How does Usable work?</div>
-                        <div class="faq__answer">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-1">How does Usable work?</button>
+                        <div class="faq__answer" id="faq-answer-1" role="region">
                             <div class="faq__answer-content">
-                                <span class="brand-text">Usable</span> uses AI to capture, compress, and organize your team's knowledge. 
-                                It learns from your interactions and builds a searchable memory that grows 
-                                smarter over time.
+                                <p class="faq__answer-text">
+                                    <span class="u-brand-text">Usable</span> uses AI to capture, compress, and organize your team's knowledge. 
+                                    It learns from your interactions and builds a searchable memory that grows 
+                                    smarter over time.
+                                </p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-3" role="button" tabindex="0" aria-expanded="false">
-                    <div class="faq__question">How long does setup take?</div>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            You can get started with <span class="brand-text">Usable</span> in under 5 minutes. Simply sign up, 
-                            connect your tools, and start capturing knowledge. No complex 
-                            configuration required.
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-3">How long does setup take?</button>
+                        <div class="faq__answer" id="faq-answer-3" role="region">
+                            <div class="faq__answer-content">
+                                <p class="faq__answer-text">
+                                    You can get started with <span class="u-brand-text">Usable</span> in under 5 minutes. Simply sign up, 
+                                    connect your tools, and start capturing knowledge. No complex 
+                                    configuration required.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 
-                <div class="faq__item animate-on-scroll fade-in-up stagger-delay-5" role="button" tabindex="0" aria-expanded="false">
-                    <div class="faq__question">How does Usable billing work?</div>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            Workspace owners pay for storage and knowledge creation tokens. Individual users pay for their own knowledge search tokens when they exceed free tier limits. You get 5 owned workspaces and 1 GiB storage free. Upgrade to Starter ($20/user/month) or Pro ($100/user/month) for higher limits.
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-5">How does Usable billing work?</button>
+                        <div class="faq__answer" id="faq-answer-5" role="region">
+                            <div class="faq__answer-content">
+                                Workspace owners pay for storage and knowledge creation tokens. Individual users pay for their own knowledge search tokens when they exceed free tier limits. You get 5 owned workspaces and 1 GiB storage free. Upgrade to Starter ($20/user/month) or Pro ($100/user/month) for higher limits.
+                            </div>
                         </div>
                     </div>
-                </div>
                 
-                <div class="faq__item animate-on-scroll fade-in-up stagger-delay-7" role="button" tabindex="0" aria-expanded="false">
-                    <div class="faq__question">How do tokens work with multiple users?</div>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            Storage and knowledge creation tokens accumulate across your organization. For example, if you have 1 Pro user + 5 Starter users + 4 Free users, you get 140M creation tokens total (40M + 80M + 20M). Storage works the same way, giving you 105 GiB total (80 GiB + 25 GiB + 4 GiB). However, knowledge search tokens are individual per user. This makes it cost-effective for mixed teams.
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-7">How do tokens work with multiple users?</button>
+                        <div class="faq__answer" id="faq-answer-7" role="region">
+                            <div class="faq__answer-content">
+                                Storage and knowledge creation tokens accumulate across your organization. For example, if you have 1 Pro user + 5 Starter users + 4 Free users, you get 140M creation tokens total (40M + 80M + 20M). Storage works the same way, giving you 105 GiB total (80 GiB + 25 GiB + 4 GiB). However, knowledge search tokens are individual per user. This makes it cost-effective for mixed teams.
+                            </div>
                         </div>
                     </div>
-                </div>
                 
-                <div class="faq__item animate-on-scroll fade-in-up stagger-delay-9" role="button" tabindex="0" aria-expanded="false">
-                    <div class="faq__question">What's the difference between pricing tiers?</div>
-                    <div class="faq__answer">
-                        <div class="faq__answer-content">
-                            The main differences are storage limits (1 GiB / 5 GiB / 80 GiB), knowledge creation token limits (5M / 16M / 40M per month), knowledge search token limits (500K / 3M / 7.5M per month), team size limits (5 members / unlimited / unlimited), and support levels (Community / Email / Email).
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-9">What's the difference between pricing tiers?</button>
+                        <div class="faq__answer" id="faq-answer-9" role="region">
+                            <div class="faq__answer-content">
+                                The main differences are storage limits (1 GiB / 5 GiB / 80 GiB), knowledge creation token limits (5M / 16M / 40M per month), knowledge search token limits (500K / 3M / 7.5M per month), team size limits (5 members / unlimited / unlimited), and support levels (Community / Email / Email).
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
                 
                 <div class="faq__column">
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-2" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">Can I integrate with my existing tools?</div>
-                        <div class="faq__answer">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-2">Can I integrate with my existing tools?</button>
+                        <div class="faq__answer" id="faq-answer-2" role="region">
                             <div class="faq__answer-content">
-                                Yes! <span class="brand-text">Usable</span> integrates with popular development tools like Cursor, 
+                                Yes! <span class="u-brand-text">Usable</span> integrates with popular development tools like Cursor, 
                                 Claude Code, VS Code, Cline, Windsurf, and more. We're constantly adding new integrations 
                                 based on user feedback.
                             </div>
                         </div>
                     </div>
                     
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-4" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">What if I need to export my data?</div>
-                        <div class="faq__answer">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-4">What if I need to export my data?</button>
+                        <div class="faq__answer" id="faq-answer-4" role="region">
                             <div class="faq__answer-content">
                                 You own your data. You can export all your knowledge fragments at any time 
                                 in multiple formats including JSON, CSV, and Markdown. No vendor lock-in.
@@ -279,30 +181,34 @@
                         </div>
                     </div>
                     
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-6" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">What about workspaces I'm invited to?</div>
-                        <div class="faq__answer">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-6">What about workspaces I'm invited to?</button>
+                        <div class="faq__answer" id="faq-answer-6" role="region">
                             <div class="faq__answer-content">
                                 Being invited to workspaces doesn't affect workspace storage or creation costs — only the owner pays for those. However, you pay for your own knowledge search tokens when you exceed your free tier limits, regardless of workspace ownership.
                             </div>
                         </div>
                     </div>
                     
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-8" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">What are knowledge creation and search tokens?</div>
-                        <div class="faq__answer">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-8">What are knowledge creation and search tokens?</button>
+                        <div class="faq__answer" id="faq-answer-8" role="region">
                             <div class="faq__answer-content">
-                                Knowledge creation tokens power creating fragments, editing content, AI summarization, and keeping your memory mesh up-to-date. Knowledge search tokens power finding information, semantic search, and getting knowledge out of your memory mesh. Think of creation as "putting knowledge in" and search as "getting knowledge out."
+                                <p class="faq__answer-text">
+                                    Knowledge creation tokens power creating fragments, editing content, AI summarization, and keeping your memory mesh up-to-date. Knowledge search tokens power finding information, semantic search, and getting knowledge out of your memory mesh. Think of creation as "putting knowledge in" and search as "getting knowledge out."
+                                </p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="faq__item animate-on-scroll fade-in-up stagger-delay-10" role="button" tabindex="0" aria-expanded="false">
-                        <div class="faq__question">What support do I get at each level?</div>
-                        <div class="faq__answer">
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-10">What support do I get at each level?</button>
+                        <div class="faq__answer" id="faq-answer-10" role="region">
                             <div class="faq__answer-content">
-                                <strong>Free:</strong> Community support via Discord.<br>
-                                <strong>Starter & Pro:</strong> Email support with priority response times.
+                                <p class="faq__answer-text">
+                                    <strong>Free:</strong> Community support via Discord.<br>
+                                    <strong>Starter &amp; Pro:</strong> Email support with priority response times.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -311,98 +217,16 @@
         </div>
     </section>
 
+    </main>
+
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta__container">
-            <h2 class="cta__title animate-on-scroll fade-in-down">Ready to give your team shared memory?</h2>
-            <p class="cta__description animate-on-scroll fade-in-up stagger-delay-1">
-                Start building with AI agents that remember everything. Free tier available — 
-                no credit card required, no complex setup.
-            </p>
-            <div class="cta__actions animate-on-scroll fade-in-up stagger-delay-2">
-                <a href="https://usable.dev/login" class="btn btn--primary btn--large">LOG IN / SIGN UP</a>
-            </div>
-        </div>
-    </section>
+    <div id="cta-placeholder"></div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__main">
-                <div class="footer__section">
-                    <h3 class="footer__section-title">Product</h3>
-                    <a href="/how-it-works.html" data-clean-url="/how-it-works" class="footer__link">How It Works</a>
-                    <a href="/use-cases.html" data-clean-url="/use-cases" class="footer__link">Use Cases</a>
-                    <a href="/demo.html" data-clean-url="/demo" class="footer__link">Demo</a>
-                    <a href="/pricing.html" data-clean-url="/pricing" class="footer__link">Pricing</a>
-                </div>
-                
-                <div class="footer__section">
-                    <h3 class="footer__section-title">Resources</h3>
-                    <a href="/blog.html" data-clean-url="/blog" class="footer__link">Blog</a>
-                    <a href="/news.html" data-clean-url="/news" class="footer__link">News</a>
-                    <a href="https://usable.dev/docs" class="footer__link" target="_blank" rel="noopener noreferrer">Docs</a>
-                    <a href="/faq.html" data-clean-url="/faq" class="footer__link">FAQ</a>
-                </div>
-                
-                <div class="footer__section">
-                    <h3 class="footer__section-title">Company</h3>
-                    <a href="/about.html" data-clean-url="/about" class="footer__link">About</a>
-                    <a href="/team.html" data-clean-url="/team" class="footer__link">Team</a>
-                    <a href="/contact.html" data-clean-url="/contact" class="footer__link">Contact</a>
-                </div>
-                
-                <div class="footer__section">
-                    <h3 class="footer__section-title">Legal</h3>
-                    <a href="/privacy.html" data-clean-url="/privacy" class="footer__link">Privacy Policy</a>
-                    <a href="/terms.html" data-clean-url="/terms" class="footer__link">Terms of Service</a>
-                </div>
-            </div>
-            
-            <div class="footer__bottom">
-                <div class="footer__copyright">
-                    <p>&copy; 2024 Usable Sp/f. All rights reserved.</p>
-                </div>
-                <div class="footer__social">
-                    <a href="https://twitter.com/UsableDev" class="footer__social-link" aria-label="Follow us on Twitter" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/usabledev" class="footer__social-link" aria-label="Follow us on LinkedIn" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-                            <circle cx="4" cy="4" r="2"/>
-                        </svg>
-                    </a>
-                    <a href="https://discord.gg/36AuxFNnSE" class="footer__social-link" aria-label="Join our Discord" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C2.533 6.461 2.066 8.638 1.98 10.816a18.817 18.817 0 005.487 2.718.078.078 0 00.084-.028 13.09 13.09 0 001.226-1.994.076.076 0 00-.041-.106 13.101 13.101 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.717 12.717 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 18.9 18.9 0 005.487-2.718c-.15-2.538-.74-4.694-1.56-6.418a.06.06 0 00-.031-.03zM8.02 13.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.youtube.com/@UsableDev" class="footer__social-link" aria-label="Subscribe to our YouTube channel" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                    </a>
-                    <a href="https://open.spotify.com/show/5leH0kkxczVZNKUX1S6OAk" class="footer__social-link" aria-label="Listen to our Spotify Podcast" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/usabledev" class="footer__social-link" aria-label="Follow us on LinkedIn" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-                            <circle cx="4" cy="4" r="2"/>
-                        </svg>
-                    </a>
-                </div>
-                <div id="usable-version" class="footer__version" aria-live="polite"></div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
+    <script src="scripts/components.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/theme.js"></script>
 </body>

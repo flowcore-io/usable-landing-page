@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sandbox – Visual Experiments</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Base variables & resets (read-only — do not edit for sandbox experiments) -->
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- Common shell components -->
+  <link rel="stylesheet" href="styles/components/navbar.css">
+  <link rel="stylesheet" href="styles/components/footer.css">
+  <link rel="stylesheet" href="styles/components/theme-toggle.css">
+  <!-- Temporary: hero preview for visual development -->
+  <link rel="stylesheet" href="styles/components/bokeh.css">
+  <link rel="stylesheet" href="styles/components/scroll-animations.css">
+  <link rel="stylesheet" href="styles/components/animations.css">
+  <link rel="stylesheet" href="styles/components/hero.css">
+  <!-- ✏️  SANDBOX STYLES — safe to edit freely, affects only this page -->
+  <link rel="stylesheet" href="styles/sandbox.css">
+</head>
+<body>
+
+  <!-- Skip to Content Link for Accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <main id="main-content" class="sandbox">
+
+    <!-- ============================================================
+         TEMPORARY: HERO PREVIEW — remove when done
+         ============================================================ -->
+
+    <!-- Bokeh Background Circles -->
+    <div class="bokeh bokeh--1"></div>
+    <div class="bokeh bokeh--2"></div>
+    <div class="bokeh bokeh--3"></div>
+    <div class="bokeh bokeh--4"></div>
+    <div class="bokeh bokeh--5"></div>
+    <div class="bokeh bokeh--6"></div>
+    <div class="bokeh bokeh--7"></div>
+    <div class="bokeh bokeh--8"></div>
+    <div class="bokeh bokeh--9"></div>
+    <div class="bokeh bokeh--10"></div>
+    <div class="bokeh bokeh--11"></div>
+    <div class="bokeh bokeh--12"></div>
+    <div class="bokeh bokeh--13"></div>
+    <div class="bokeh bokeh--14"></div>
+    <div class="bokeh bokeh--15"></div>
+
+    <section class="hero">
+        <div class="hero__container">
+            <a href="#built-with-usable" class="hero__badge">
+                <svg class="hero__badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                This site was built with Usable
+                <svg class="hero__badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+            </a>
+            <h1 class="hero__title" role="heading" aria-level="1">
+                Your own knowledge base.<br>
+                Your organisation's memory.<br>
+                <span class="hero__title-accent">Under your control.</span>
+            </h1>
+            <div class="hero__body">
+                <p class="hero__description">
+                    Right now, your team's knowledge is scattered across personal AI accounts, email threads, and people's heads. Usable is the simple alternative — a place where your organisation's knowledge lives, so your AI works from your knowledge, not the internet.
+                </p>
+                <div class="hero__actions">
+                    <a href="https://usable.dev/login" class="btn hero__btn btn--primary btn--large">Start for free</a>
+                    <a href="/how-it-works.html" data-clean-url="/how-it-works" class="btn hero__btn btn--secondary btn--large">How it works</a>
+                </div>
+            </div>
+            <div class="hero__visual">
+                <picture>
+                    <source srcset="assets/images/usable-mascot.webp" type="image/webp">
+                    <img src="assets/images/usable-mascot.png" alt="Usable Nudibranch Mascot" class="hero__mascot" loading="lazy">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         END HERO PREVIEW
+         ============================================================ -->
+
+    <!-- ============================================================
+         SANDBOX HEADER
+         ============================================================ -->
+    <section class="sandbox__header">
+      <div class="sandbox__container">
+        <span class="sandbox__label">Sandbox</span>
+        <h1 class="sandbox__title">Visual Experiments</h1>
+        <p class="sandbox__subtitle">
+          Edit <code>styles/sandbox.css</code> freely — nothing here affects any other page.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COLOURS
+         ============================================================ -->
+    <section class="sandbox__section">
+      <div class="sandbox__container">
+        <h2 class="sandbox__section-title">Brand Colours</h2>
+
+        <h3 class="sandbox__group-title">Primary</h3>
+        <div class="color-grid">
+
+          <div class="color-card">
+            <div class="color-swatch color-swatch--white" aria-hidden="true"></div>
+            <div class="color-card__info">
+              <div class="color-card__name">White</div>
+              <div class="color-card__value">#f4f3f3</div>
+              <div class="color-card__variable">--color-white</div>
+            </div>
+          </div>
+
+          <div class="color-card">
+            <div class="color-swatch color-swatch--black" aria-hidden="true"></div>
+            <div class="color-card__info">
+              <div class="color-card__name">Black</div>
+              <div class="color-card__value">#1c2f40</div>
+              <div class="color-card__variable">--color-black</div>
+            </div>
+          </div>
+
+          <div class="color-card">
+            <div class="color-swatch color-swatch--orange" aria-hidden="true"></div>
+            <div class="color-card__info">
+              <div class="color-card__name">Orange</div>
+              <div class="color-card__value">#fcaf2a</div>
+              <div class="color-card__variable">--color-orange</div>
+            </div>
+          </div>
+
+          <div class="color-card">
+            <div class="color-swatch color-swatch--blue" aria-hidden="true"></div>
+            <div class="color-card__info">
+              <div class="color-card__name">Blue</div>
+              <div class="color-card__value">#347cbf</div>
+              <div class="color-card__variable">--color-blue</div>
+            </div>
+          </div>
+
+        </div>
+
+        <h3 class="sandbox__group-title sandbox__group-title--spaced">Gray Scale</h3>
+        <div class="color-grid">
+
+          <div class="color-card">
+            <div class="color-swatch color-swatch--gray-200" aria-hidden="true"></div>
+            <div class="color-card__info">
+              <div class="color-card__name">Gray 200</div>
+              <div class="color-card__value">#c4c7cb</div>
+              <div class="color-card__variable">--color-gray-200</div>
+            </div>
+          </div>
+
+          <div class="color-card">
+            <div class="color-swatch color-swatch--gray-400" aria-hidden="true"></div>
+            <div class="color-card__info">
+              <div class="color-card__name">Gray 400</div>
+              <div class="color-card__value">#949ba3</div>
+              <div class="color-card__variable">--color-gray-400</div>
+            </div>
+          </div>
+
+          <div class="color-card">
+            <div class="color-swatch color-swatch--gray-600" aria-hidden="true"></div>
+            <div class="color-card__info">
+              <div class="color-card__name">Gray 600</div>
+              <div class="color-card__value">#646f7b</div>
+              <div class="color-card__variable">--color-gray-600</div>
+            </div>
+          </div>
+
+          <div class="color-card">
+            <div class="color-swatch color-swatch--gray-700" aria-hidden="true"></div>
+            <div class="color-card__info">
+              <div class="color-card__name">Gray 700</div>
+              <div class="color-card__value">#4c5967</div>
+              <div class="color-card__variable">--color-gray-700</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TYPOGRAPHY
+         ============================================================ -->
+    <section class="sandbox__section">
+      <div class="sandbox__container">
+        <h2 class="sandbox__section-title">Typography</h2>
+
+        <div class="sandbox__card">
+          <p class="sandbox__type-sample sandbox__type-sample--7xl">7xl · 72px</p>
+          <p class="sandbox__type-sample sandbox__type-sample--6xl">6xl · 60px</p>
+          <p class="sandbox__type-sample sandbox__type-sample--5xl">5xl · 48px</p>
+          <p class="sandbox__type-sample sandbox__type-sample--4xl">4xl · 36px</p>
+          <p class="sandbox__type-sample sandbox__type-sample--3xl">3xl · 30px</p>
+          <p class="sandbox__type-sample sandbox__type-sample--2xl">2xl · 24px</p>
+          <p class="sandbox__type-sample sandbox__type-sample--xl">xl · 20px</p>
+          <p class="sandbox__type-sample sandbox__type-sample--lg">lg · 18px — Body lead text, readable paragraph intro</p>
+          <p class="sandbox__type-sample sandbox__type-sample--base">base · 16px — Standard body text, comfortable reading size</p>
+          <p class="sandbox__type-sample sandbox__type-sample--sm">sm · 14px — Labels, captions, supporting information</p>
+          <p class="sandbox__type-sample sandbox__type-sample--xs">xs · 12px — Fine print, metadata, timestamps</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CARDS
+         ============================================================ -->
+    <section class="sandbox__section">
+      <div class="sandbox__container">
+        <h2 class="sandbox__section-title">Cards</h2>
+
+        <div class="sandbox__token-grid sandbox__token-grid--3">
+
+          <div class="sandbox__card">
+            <h3 class="sandbox__card-title">Default Card</h3>
+            <p class="sandbox__card-text">White background, subtle border and light shadow. Used for most content blocks.</p>
+          </div>
+
+          <div class="sandbox__card sandbox__card--highlight">
+            <h3 class="sandbox__card-title">Highlighted Card</h3>
+            <p class="sandbox__card-text">Blue-tinted background for featured content or callouts.</p>
+          </div>
+
+          <div class="sandbox__card sandbox__card--accent">
+            <h3 class="sandbox__card-title">Accent Card</h3>
+            <p class="sandbox__card-text">Orange accent border. Use sparingly for high-priority items.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BUTTONS
+         ============================================================ -->
+    <section class="sandbox__section">
+      <div class="sandbox__container">
+        <h2 class="sandbox__section-title">Buttons</h2>
+
+        <div class="sandbox__card">
+          <div class="sandbox__row">
+            <button class="btn btn--primary">Primary</button>
+            <button class="btn btn--secondary">Secondary</button>
+            <button class="btn btn--orange">Orange</button>
+          </div>
+          <div class="sandbox__row sandbox__row--spaced">
+            <button class="btn btn--primary sandbox__btn--sm">Small</button>
+            <button class="btn btn--primary">Default</button>
+            <button class="btn btn--primary sandbox__btn--lg">Large</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RADIUS & SHADOWS
+         ============================================================ -->
+    <section class="sandbox__section">
+      <div class="sandbox__container">
+        <h2 class="sandbox__section-title">Radius &amp; Shadows</h2>
+
+        <div class="sandbox__token-grid sandbox__token-grid--3 sandbox__token-grid--wide-rows">
+
+          <div class="sandbox__token-item">
+            <div class="sandbox__radius-box sandbox__radius-box--sm"></div>
+            <span class="sandbox__token-label">radius-sm · 6px</span>
+          </div>
+          <div class="sandbox__token-item">
+            <div class="sandbox__radius-box sandbox__radius-box--md"></div>
+            <span class="sandbox__token-label">radius-md · 8px</span>
+          </div>
+          <div class="sandbox__token-item">
+            <div class="sandbox__radius-box sandbox__radius-box--lg"></div>
+            <span class="sandbox__token-label">radius-lg · 12px</span>
+          </div>
+          <div class="sandbox__token-item">
+            <div class="sandbox__radius-box sandbox__radius-box--xl"></div>
+            <span class="sandbox__token-label">radius-xl · 16px</span>
+          </div>
+          <div class="sandbox__token-item">
+            <div class="sandbox__radius-box sandbox__radius-box--2xl"></div>
+            <span class="sandbox__token-label">radius-2xl · 24px</span>
+          </div>
+          <div class="sandbox__token-item">
+            <div class="sandbox__radius-box sandbox__radius-box--full"></div>
+            <span class="sandbox__token-label">radius-full · pill</span>
+          </div>
+
+          <div class="sandbox__token-item">
+            <div class="sandbox__shadow-box sandbox__shadow-box--sm"></div>
+            <span class="sandbox__token-label">shadow-sm</span>
+          </div>
+          <div class="sandbox__token-item">
+            <div class="sandbox__shadow-box sandbox__shadow-box--md"></div>
+            <span class="sandbox__token-label">shadow-md</span>
+          </div>
+          <div class="sandbox__token-item">
+            <div class="sandbox__shadow-box sandbox__shadow-box--lg"></div>
+            <span class="sandbox__token-label">shadow-lg</span>
+          </div>
+          <div class="sandbox__token-item">
+            <div class="sandbox__shadow-box sandbox__shadow-box--xl"></div>
+            <span class="sandbox__token-label">shadow-xl</span>
+          </div>
+          <div class="sandbox__token-item">
+            <div class="sandbox__shadow-box sandbox__shadow-box--2xl"></div>
+            <span class="sandbox__token-label">shadow-2xl</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SPACING
+         ============================================================ -->
+    <section class="sandbox__section">
+      <div class="sandbox__container">
+        <h2 class="sandbox__section-title">Spacing</h2>
+
+        <div class="sandbox__card">
+          <div class="sandbox__spacing-list">
+            <div class="sandbox__spacing-item">
+              <div class="sandbox__spacing-bar sandbox__spacing-bar--1"></div>
+              <span class="sandbox__spacing-label">space-1 · 4px</span>
+            </div>
+            <div class="sandbox__spacing-item">
+              <div class="sandbox__spacing-bar sandbox__spacing-bar--2"></div>
+              <span class="sandbox__spacing-label">space-2 · 8px</span>
+            </div>
+            <div class="sandbox__spacing-item">
+              <div class="sandbox__spacing-bar sandbox__spacing-bar--3"></div>
+              <span class="sandbox__spacing-label">space-3 · 12px</span>
+            </div>
+            <div class="sandbox__spacing-item">
+              <div class="sandbox__spacing-bar sandbox__spacing-bar--4"></div>
+              <span class="sandbox__spacing-label">space-4 · 16px</span>
+            </div>
+            <div class="sandbox__spacing-item">
+              <div class="sandbox__spacing-bar sandbox__spacing-bar--6"></div>
+              <span class="sandbox__spacing-label">space-6 · 24px</span>
+            </div>
+            <div class="sandbox__spacing-item">
+              <div class="sandbox__spacing-bar sandbox__spacing-bar--8"></div>
+              <span class="sandbox__spacing-label">space-8 · 32px</span>
+            </div>
+            <div class="sandbox__spacing-item">
+              <div class="sandbox__spacing-bar sandbox__spacing-bar--10"></div>
+              <span class="sandbox__spacing-label">space-10 · 40px</span>
+            </div>
+            <div class="sandbox__spacing-item">
+              <div class="sandbox__spacing-bar sandbox__spacing-bar--12"></div>
+              <span class="sandbox__spacing-label">space-12 · 48px</span>
+            </div>
+            <div class="sandbox__spacing-item">
+              <div class="sandbox__spacing-bar sandbox__spacing-bar--16"></div>
+              <span class="sandbox__spacing-label">space-16 · 64px</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FREE CANVAS — put any experiments below this comment
+         ============================================================ -->
+    <section class="sandbox__section sandbox__section--canvas">
+      <div class="sandbox__container">
+        <h2 class="sandbox__section-title">Free Canvas</h2>
+        <p class="sandbox__subtitle">Add experimental components, layouts, or anything else here.</p>
+
+        <!-- ✏️  START experimenting below -->
+
+        <!-- ✏️  END of experiments -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Theme toggle -->
+  <div id="theme-toggle-placeholder"></div>
+
+  <!-- Scripts -->
+  <!-- Sandbox: always dark — no ThemeManager needed -->
+  <script>
+    document.documentElement.setAttribute('data-theme', 'dark');
+    window.ThemeManager = function() {};
+  </script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/components.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.ComponentLoader) {
+        const loader = new ComponentLoader();
+        loader.init();
+      }
+
+      // Click-to-copy for colour card values and variable names
+      document.querySelectorAll('.color-card__value, .color-card__variable').forEach(el => {
+        el.title = 'Click to copy';
+        el.addEventListener('click', () => {
+          const text = el.textContent.trim();
+          navigator.clipboard.writeText(text).then(() => {
+            const original = el.textContent;
+            el.textContent = '✓ Copied!';
+            el.classList.add('is-copied');
+            setTimeout(() => {
+              el.textContent = original;
+              el.classList.remove('is-copied');
+            }, 1000);
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+/* ===================================
+   COMPONENT: Theme Toggle
+   BEM Block: theme-toggle
+   Purpose: Light/dark mode switcher (shared component)
+   Dependencies: main.css for CSS variables and theme system
+   =================================== */
+
+/* ===================================
+   THEME TOGGLE - Base Styles
+   =================================== */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  padding: 0;
+  position: relative;
+}
+
+.theme-toggle:hover {
+  background: rgba(52, 124, 191, 0.1);
+}
+
+.theme-toggle:focus,
+.theme-toggle:active,
+.theme-toggle:focus-visible {
+  outline: none;
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(52, 124, 191, 0.2);
+}
+
+/* ===================================
+   THEME TOGGLE ICONS
+   =================================== */
+.theme-toggle__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-black);
+  transition: all var(--transition-normal);
+  position: absolute;
+}
+
+[data-theme="dark"] .theme-toggle__icon {
+  color: #f8fafc;
+}
+
+/* Icon Visibility - Sun visible in light mode, Moon in dark mode */
+.theme-toggle__icon--sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.theme-toggle__icon--moon {
+  opacity: 0;
+  transform: rotate(180deg) scale(0);
+}
+
+/* Dark mode - swap visibility */
+[data-theme="dark"] .theme-toggle__icon--sun {
+  opacity: 0;
+  transform: rotate(180deg) scale(0);
+}
+
+[data-theme="dark"] .theme-toggle__icon--moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* ===================================
+   THEME TOGGLE VARIANTS
+   =================================== */
+
+/* Desktop Variant - Used in navbar desktop view */
+.theme-toggle--desktop {
+  /* Specific desktop styling if needed */
+}
+
+/* Mobile Variant - Used in mobile menu */
+.theme-toggle--mobile {
+  width: 100%;
+  height: 56px;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  border: 2px solid var(--color-gray-200);
+}
+
+.theme-toggle--mobile:hover {
+  background: rgba(52, 124, 191, 0.1);
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+}
+
+.theme-toggle--mobile:focus,
+.theme-toggle--mobile:active,
+.theme-toggle--mobile:focus-visible {
+  background: transparent !important;
+  border-color: var(--color-gray-200) !important;
+  color: var(--color-black) !important;
+  outline: none !important;
+}
+
+[data-theme="dark"] .theme-toggle--mobile {
+  border-color: var(--color-gray-200);
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .theme-toggle--mobile:hover {
+  background: rgba(52, 124, 191, 0.2);
+  border-color: #7db8e8;
+  color: #7db8e8;
+}
+
+[data-theme="dark"] .theme-toggle--mobile:focus,
+[data-theme="dark"] .theme-toggle--mobile:active,
+[data-theme="dark"] .theme-toggle--mobile:focus-visible {
+  background: transparent !important;
+  border-color: var(--color-gray-200) !important;
+  color: #f8fafc !important;
+  outline: none !important;
+}

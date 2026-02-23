@@ -1,0 +1,332 @@
+/* ===================================
+   COMPONENT: Detailed Screenshots Page
+   Purpose: Screenshot gallery with accordion sections and lightbox
+   Dependencies: main.css, sections.css
+   =================================== */
+
+/* Italic hint line in hero */
+.screenshots-hero__hint {
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* -----------------------------------------------
+   Content wrapper (below hero section)
+----------------------------------------------- */
+.screenshots-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+/* -----------------------------------------------
+   Table of Contents
+----------------------------------------------- */
+.screenshots-toc {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(52, 124, 191, 0.1);
+    margin-bottom: var(--space-10);
+}
+
+[data-theme="dark"] .screenshots-toc {
+    background: rgba(28, 47, 64, 0.96);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    border-color: rgba(96, 165, 250, 0.18);
+}
+
+.screenshots-toc__title {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-4);
+}
+
+[data-theme="dark"] .screenshots-toc__title {
+    color: var(--color-white-text);
+}
+
+.screenshots-toc__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-2);
+}
+
+.screenshots-toc__link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    color: var(--color-gray-700);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.screenshots-toc__link:hover {
+    background-color: rgba(52, 124, 191, 0.1);
+    color: var(--color-blue);
+}
+
+[data-theme="dark"] .screenshots-toc__link {
+    color: var(--color-white-text);
+}
+
+[data-theme="dark"] .screenshots-toc__link:hover {
+    background-color: rgba(96, 165, 250, 0.15);
+}
+
+.screenshots-toc__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-blue);
+    color: white;
+    border-radius: 50%;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* -----------------------------------------------
+   Accordion layout
+----------------------------------------------- */
+.screenshots-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+/* Each accordion card */
+.screenshot-section {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(52, 124, 191, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+[data-theme="dark"] .screenshot-section {
+    background: rgba(28, 47, 64, 0.96);
+    border-color: rgba(96, 165, 250, 0.18);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* -----------------------------------------------
+   Toggle button (section header)
+----------------------------------------------- */
+.screenshot-section__toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-8);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.screenshot-section__title {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin: 0;
+    flex: 1;
+}
+
+[data-theme="dark"] .screenshot-section__title {
+    color: var(--color-white-text);
+}
+
+/* Chevron icon — CSS-drawn, no SVG needed */
+.screenshot-section__toggle-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    color: var(--color-blue);
+}
+
+.screenshot-section__toggle-icon::before {
+    content: '';
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-3px);
+    transition: transform 0.3s ease;
+}
+
+.screenshot-section--open .screenshot-section__toggle-icon::before {
+    transform: rotate(-135deg) translateY(-3px);
+}
+
+/* -----------------------------------------------
+   Collapsible body — CSS grid animation trick
+   Smooth height transition without JS measurements
+----------------------------------------------- */
+.screenshot-section__body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+}
+
+.screenshot-section--open .screenshot-section__body {
+    grid-template-rows: 1fr;
+}
+
+.screenshot-section__body-inner {
+    overflow: hidden;
+    padding: 0 var(--space-8);
+}
+
+.screenshot-section--open .screenshot-section__body-inner {
+    padding-bottom: var(--space-8);
+}
+
+/* -----------------------------------------------
+   Section description (inside accordion body)
+----------------------------------------------- */
+.screenshot-section__description {
+    font-size: var(--text-lg);
+    color: var(--color-gray-700);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+}
+
+[data-theme="dark"] .screenshot-section__description {
+    color: var(--color-white-text);
+}
+
+/* -----------------------------------------------
+   Individual screenshot items
+----------------------------------------------- */
+.screenshot-item {
+    margin-bottom: var(--space-10);
+}
+
+.screenshot-item:last-child {
+    margin-bottom: 0;
+}
+
+.screenshot-item__image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: block;
+}
+
+.screenshot-item__image:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.screenshot-item__caption {
+    margin-top: var(--space-4);
+    font-size: var(--text-base);
+    color: var(--color-gray-700);
+    line-height: 1.7;
+}
+
+[data-theme="dark"] .screenshot-item__caption {
+    color: var(--color-white-text);
+}
+
+/* -----------------------------------------------
+   Lightbox
+----------------------------------------------- */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox__close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    z-index: 10001;
+}
+
+.lightbox__close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+}
+
+/* -----------------------------------------------
+   Responsive
+----------------------------------------------- */
+@media (max-width: 768px) {
+    .screenshots-content {
+        padding: 0 var(--space-4);
+    }
+
+    .screenshots-toc__list {
+        grid-template-columns: 1fr;
+    }
+
+    .screenshot-section__toggle {
+        padding: var(--space-4) var(--space-5);
+    }
+
+    .screenshot-section__body-inner {
+        padding: 0 var(--space-5);
+    }
+
+    .screenshot-section--open .screenshot-section__body-inner {
+        padding-bottom: var(--space-6);
+    }
+
+    .lightbox__close {
+        top: var(--space-2);
+        right: var(--space-2);
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}

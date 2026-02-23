@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp add:*)",
+      "Bash(claude mcp remove:*)",
+      "Bash(claude mcp list:*)",
+      "Bash(echo:*)",
+      "Bash(# Check if there''s a global MCP config location on Windows ls \"\"/c/Users/HannaSundsteinØsterø/.claude/\"\")",
+      "Bash(claude mcp:*)",
+      "Bash(python3:*)",
+      "mcp__usable__get-memory-fragment-content",
+      "mcp__usable__list-workspaces",
+      "mcp__usable__agentic-search-fragments",
+      "Bash(cmd /c \"taskkill /PID 16760 /F\")",
+      "Bash(cmd /c \"taskkill /PID 16760 /F 2>&1\")",
+      "Bash(powershell -Command \"Stop-Process -Id 16760 -Force; Write-Host ''Done''\")",
+      "Bash(node -e:*)"
+    ]
+  }
+}

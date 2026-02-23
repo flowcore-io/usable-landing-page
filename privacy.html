@@ -47,311 +47,51 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
-    <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
     
-    <!-- Policy Page Specific Styles -->
-    <style>
-        .policy-page {
-            padding: var(--space-24) var(--space-4);
-            min-height: calc(100vh - 80px);
-        }
-        
-        .policy-page__container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .policy-page__back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-            color: var(--color-blue);
-            text-decoration: none;
-            font-size: var(--text-sm);
-            margin-bottom: var(--space-6);
-            transition: color var(--transition-fast);
-        }
-        
-        .policy-page__back-link:hover {
-            color: var(--color-blue-dark);
-        }
-        
-        [data-theme="dark"] .policy-page__back-link:hover {
-            color: var(--color-blue-light);
-        }
-        
-        .policy-page__title {
-            font-size: var(--text-4xl);
-            font-weight: 700;
-            color: var(--color-gray-900);
-            margin-bottom: var(--space-2);
-        }
-        
-        [data-theme="dark"] .policy-page__title {
-            color: var(--color-white-text);
-        }
-        
-        .policy-page__updated {
-            font-size: var(--text-sm);
-            color: #666666;
-            margin-bottom: var(--space-8);
-            position: relative;
-            z-index: 1;
-        }
-        
-        [data-theme="dark"] .policy-page__updated {
-            color: #b0b0b0;
-        }
-        
-        .policy-page__content {
-            color: var(--color-black);
-            line-height: 1.8;
-            background: rgba(255, 255, 255, 0.98);
-            padding: var(--space-10);
-            border-radius: var(--radius-lg);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            position: relative;
-            z-index: 1;
-        }
-        
-        [data-theme="dark"] .policy-page__content {
-            color: var(--color-white-text);
-            background: rgba(28, 47, 64, 0.98);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-        
-        .policy-page__content h2 {
-            font-size: var(--text-2xl);
-            font-weight: 600;
-            color: var(--color-blue);
-            margin-top: var(--space-10);
-            margin-bottom: var(--space-4);
-        }
-        
-        [data-theme="dark"] .policy-page__content h2 {
-            color: #60a5fa;
-        }
-        
-        .policy-page__content h3 {
-            font-size: var(--text-xl);
-            font-weight: 600;
-            color: var(--color-black);
-            margin-top: var(--space-6);
-            margin-bottom: var(--space-3);
-        }
-        
-        [data-theme="dark"] .policy-page__content h3 {
-            color: var(--color-white-text);
-        }
-        
-        .policy-page__content p {
-            margin-bottom: var(--space-4);
-            color: var(--color-black);
-        }
-        
-        [data-theme="dark"] .policy-page__content p {
-            color: var(--color-white-text);
-        }
-        
-        .policy-page__content ul,
-        .policy-page__content ol {
-            margin-bottom: var(--space-4);
-            padding-left: var(--space-6);
-        }
-        
-        .policy-page__content li {
-            margin-bottom: var(--space-2);
-            color: var(--color-black);
-        }
-        
-        [data-theme="dark"] .policy-page__content li {
-            color: var(--color-white-text);
-        }
-        
-        .policy-page__content a {
-            color: var(--color-blue);
-            text-decoration: underline;
-            transition: color var(--transition-fast);
-        }
-        
-        .policy-page__content a:hover {
-            color: var(--color-blue-dark);
-        }
-        
-        [data-theme="dark"] .policy-page__content a:hover {
-            color: var(--color-blue-light);
-        }
-        
-        .policy-highlight {
-            background: var(--color-blue-50);
-            border-left: 4px solid var(--color-blue);
-            padding: var(--space-4) var(--space-6);
-            margin: var(--space-6) 0;
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-        }
-        
-        [data-theme="dark"] .policy-highlight {
-            background: rgba(52, 124, 191, 0.1);
-        }
-        
-        .policy-highlight p {
-            margin-bottom: 0;
-        }
-        
-        .policy-page__contact {
-            margin-top: var(--space-10);
-            padding: var(--space-6);
-            background: var(--color-gray-50);
-            border-radius: var(--radius-lg);
-        }
-        
-        [data-theme="dark"] .policy-page__contact {
-            background: var(--color-gray-800);
-        }
-        
-        @media (max-width: 768px) {
-            .policy-page {
-                padding: var(--space-20) var(--space-4) var(--space-12);
-            }
-            
-            .policy-page__title {
-                font-size: var(--text-3xl);
-            }
-            
-            .policy-page__content h2 {
-                font-size: var(--text-xl);
-            }
-            
-            .policy-page__content h3 {
-                font-size: var(--text-lg);
-            }
-        }
-    </style>
+    <!-- Common Component Styles -->
+    <link rel="stylesheet" href="styles/components/navbar.css">
+    <link rel="stylesheet" href="styles/components/footer.css">
+    <link rel="stylesheet" href="styles/components/theme-toggle.css">
+    <link rel="stylesheet" href="styles/components/bokeh.css">
+    <link rel="stylesheet" href="styles/components/scroll-animations.css">
+    
+    <!-- Page-Specific Component Styles -->
+    <link rel="stylesheet" href="styles/components/legal.css">
+    <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     
+    <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
+    <div class="bokeh bokeh--1"></div>
+    <div class="bokeh bokeh--2"></div>
+    <div class="bokeh bokeh--3"></div>
+    <div class="bokeh bokeh--4"></div>
+    <div class="bokeh bokeh--5"></div>
+    <div class="bokeh bokeh--6"></div>
+    <div class="bokeh bokeh--7"></div>
+    <div class="bokeh bokeh--8"></div>
+    <div class="bokeh bokeh--9"></div>
+    <div class="bokeh bokeh--10"></div>
+    <div class="bokeh bokeh--11"></div>
+    <div class="bokeh bokeh--12"></div>
+    <div class="bokeh bokeh--13"></div>
+    <div class="bokeh bokeh--14"></div>
+    <div class="bokeh bokeh--15"></div>
+    
     <!-- Header -->
-    <nav class="nav">
-        <div class="nav__container">
-            <a href="/" class="nav__logo">
-                <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="nav__logo-img" fetchpriority="high">
-                <span class="nav__logo-text"><span class="brand-text">Usable</span></span>
-            </a>
-            
-            <div class="nav__menu">
-                <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link">How It Works</a>
-                <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link">Use Cases</a>
-                <a href="/news.html" data-clean-url="/news" class="nav__link">News</a>
-                <a href="/blog.html" data-clean-url="/blog" class="nav__link">Blog</a>
-                <a href="/pricing.html" data-clean-url="/pricing" class="nav__link">Pricing</a>
-                <a href="/faq.html" data-clean-url="/faq" class="nav__link">FAQ</a>
-            </div>
-            
-            <div class="nav__actions">
-                <button class="theme-toggle nav__theme-toggle--desktop" aria-label="Toggle theme" aria-pressed="false">
-                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <a href="https://usable.dev/login" class="btn btn--primary nav__cta--desktop">Log in</a>
-                <a href="https://usable.dev/docs" class="btn btn--secondary nav__cta--desktop" target="_blank" rel="noopener noreferrer">Docs</a>
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="nav__menu--mobile">
-        <div class="nav__menu--mobile-content">
-            <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile">How It Works</a>
-            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile">Use Cases</a>
-            <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile">News</a>
-            <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile">Blog</a>
-            <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile">Pricing</a>
-            <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile">FAQ</a>
-            
-            <div class="nav__mobile-actions">
-                <button class="theme-toggle nav__theme-toggle--mobile" aria-label="Toggle theme" aria-pressed="false">
-                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <a href="https://usable.dev/login" class="btn btn--primary nav__cta--mobile">Log in</a>
-                <a href="https://usable.dev/docs" class="btn btn--secondary nav__cta--mobile" target="_blank" rel="noopener noreferrer">Docs</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bokeh Background Circles -->
-    <div class="bokeh bokeh-1"></div>
-    <div class="bokeh bokeh-2"></div>
-    <div class="bokeh bokeh-3"></div>
-    <div class="bokeh bokeh-4"></div>
-    <div class="bokeh bokeh-5"></div>
-    <div class="bokeh bokeh-6"></div>
-    <div class="bokeh bokeh-7"></div>
-    <div class="bokeh bokeh-8"></div>
-    <div class="bokeh bokeh-9"></div>
-    <div class="bokeh bokeh-10"></div>
-    <div class="bokeh bokeh-11"></div>
-    <div class="bokeh bokeh-12"></div>
-    <div class="bokeh bokeh-13"></div>
-    <div class="bokeh bokeh-14"></div>
-    <div class="bokeh bokeh-15"></div>
-    <div class="bokeh bokeh-16"></div>
-    <div class="bokeh bokeh-17"></div>
-    <div class="bokeh bokeh-18"></div>
-    <div class="bokeh bokeh-19"></div>
-    <div class="bokeh bokeh-20"></div>
-    <div class="bokeh bokeh-21"></div>
-    <div class="bokeh bokeh-22"></div>
-    <div class="bokeh bokeh-23"></div>
-    <div class="bokeh bokeh-24"></div>
-    <div class="bokeh bokeh-25"></div>
-    <div class="bokeh bokeh-26"></div>
-    <div class="bokeh bokeh-27"></div>
-    <div class="bokeh bokeh-28"></div>
-    <div class="bokeh bokeh-29"></div>
-    <div class="bokeh bokeh-30"></div>
+    <div id="navbar-placeholder"></div>
 
     <!-- Privacy Policy Content -->
-    <main id="main-content" class="policy-page" role="main">
-        <div class="policy-page__container">
-            <a href="/" class="policy-page__back-link">
+    <main id="main-content" class="privacy-page" role="main">
+        <div class="privacy-page__container">
+            <a href="/" class="privacy-page__back-link">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="19" y1="12" x2="5" y2="12"></line>
                     <polyline points="12 19 5 12 12 5"></polyline>
@@ -359,555 +99,555 @@
                 Back to Home
             </a>
             
-            <h1 class="policy-page__title">Privacy Policy</h1>
-            <p class="policy-page__updated">Last updated: 28th October 2025</p>
-            
-            <div class="policy-page__content">
-                <h2>Introduction</h2>
-                <p>At Usable (operated by Flowcore), we are committed to protecting your privacy and being transparent about how we collect, use, and protect your personal data. This Privacy Policy explains our data practices in accordance with the General Data Protection Regulation (GDPR) and other applicable privacy laws.</p>
+            <h1 class="privacy-page__title">Privacy Policy</h1>
+            <p class="privacy-page__updated">Last updated: 28th October 2025</p>
+
+            <div class="privacy-page__content">
+                <h2 class="privacy-page__heading">Introduction</h2>
+                <p class="privacy-page__text">At Usable (operated by Flowcore), we are committed to protecting your privacy and being transparent about how we collect, use, and protect your personal data. This Privacy Policy explains our data practices in accordance with the General Data Protection Regulation (GDPR) and other applicable privacy laws.</p>
                 
-                <h3>Who We Are</h3>
-                <p><strong>Data Controller:</strong><br>
+                <h3 class="privacy-page__subheading">Who We Are</h3>
+                <p class="privacy-page__text"><strong>Data Controller:</strong><br>
                 Flowcore<br>
                 Vestara Bryggja 15<br>
                 Tórshavn 100, Faroe Islands<br>
                 Email: privacy@usable.dev</p>
                 
-                <h2>1. Information We Collect</h2>
+                <h2 class="privacy-page__heading">1. Information We Collect</h2>
                 
-                <h3>1.1 Account Information</h3>
-                <p>When you create an account, we collect:</p>
-                <ul>
-                    <li><strong>Identity Data:</strong> Name, username, email address</li>
-                    <li><strong>Authentication Data:</strong> Password (encrypted), authentication tokens</li>
-                    <li><strong>Profile Data:</strong> Optional profile picture, bio, preferences</li>
-                    <li><strong>Organization Data:</strong> Company name, team size (if provided)</li>
+                <h3 class="privacy-page__subheading">1.1 Account Information</h3>
+                <p class="privacy-page__text">When you create an account, we collect:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Identity Data:</strong> Name, username, email address</li>
+                    <li class="privacy-page__list-item"><strong>Authentication Data:</strong> Password (encrypted), authentication tokens</li>
+                    <li class="privacy-page__list-item"><strong>Profile Data:</strong> Optional profile picture, bio, preferences</li>
+                    <li class="privacy-page__list-item"><strong>Organization Data:</strong> Company name, team size (if provided)</li>
                 </ul>
                 
-                <h3>1.2 Content You Create</h3>
-                <p>When you use the Service, we store:</p>
-                <ul>
-                    <li><strong>Memory Fragments:</strong> Knowledge, recipes, solutions, templates, and other content you create</li>
-                    <li><strong>Metadata:</strong> Titles, tags, timestamps, fragment types</li>
-                    <li><strong>Workspace Data:</strong> Workspace names, descriptions, member lists</li>
-                    <li><strong>Collaboration Data:</strong> Comments, edits, version history</li>
+                <h3 class="privacy-page__subheading">1.2 Content You Create</h3>
+                <p class="privacy-page__text">When you use the Service, we store:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Memory Fragments:</strong> Knowledge, recipes, solutions, templates, and other content you create</li>
+                    <li class="privacy-page__list-item"><strong>Metadata:</strong> Titles, tags, timestamps, fragment types</li>
+                    <li class="privacy-page__list-item"><strong>Workspace Data:</strong> Workspace names, descriptions, member lists</li>
+                    <li class="privacy-page__list-item"><strong>Collaboration Data:</strong> Comments, edits, version history</li>
                 </ul>
                 
-                <h3>1.3 Usage Data</h3>
-                <p>We automatically collect:</p>
-                <ul>
-                    <li><strong>Log Data:</strong> IP address, browser type, device information, operating system</li>
-                    <li><strong>Usage Analytics:</strong> Pages visited, features used, time spent, search queries</li>
-                    <li><strong>Performance Data:</strong> Error logs, load times, API response times</li>
-                    <li><strong>Session Data:</strong> Login times, session duration, authentication events</li>
+                <h3 class="privacy-page__subheading">1.3 Usage Data</h3>
+                <p class="privacy-page__text">We automatically collect:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Log Data:</strong> IP address, browser type, device information, operating system</li>
+                    <li class="privacy-page__list-item"><strong>Usage Analytics:</strong> Pages visited, features used, time spent, search queries</li>
+                    <li class="privacy-page__list-item"><strong>Performance Data:</strong> Error logs, load times, API response times</li>
+                    <li class="privacy-page__list-item"><strong>Session Data:</strong> Login times, session duration, authentication events</li>
                 </ul>
                 
-                <h3>1.4 AI Processing Data</h3>
-                <p>To provide AI-powered features, we generate:</p>
-                <ul>
-                    <li><strong>Semantic Embeddings:</strong> Vector representations of your content for search</li>
-                    <li><strong>Relationship Graphs:</strong> Connections between fragments based on similarity and tags</li>
-                    <li><strong>Search Analytics:</strong> Query patterns to improve search relevance</li>
+                <h3 class="privacy-page__subheading">1.4 AI Processing Data</h3>
+                <p class="privacy-page__text">To provide AI-powered features, we generate:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Semantic Embeddings:</strong> Vector representations of your content for search</li>
+                    <li class="privacy-page__list-item"><strong>Relationship Graphs:</strong> Connections between fragments based on similarity and tags</li>
+                    <li class="privacy-page__list-item"><strong>Search Analytics:</strong> Query patterns to improve search relevance</li>
                 </ul>
                 
-                <h3>1.5 Cookies and Tracking</h3>
-                <p>We use:</p>
-                <ul>
-                    <li><strong>Essential Cookies:</strong> Session management, authentication (necessary for service operation)</li>
-                    <li><strong>Analytics Cookies:</strong> Usage tracking to improve the Service (with consent)</li>
-                    <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+                <h3 class="privacy-page__subheading">1.5 Cookies and Tracking</h3>
+                <p class="privacy-page__text">We use:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Essential Cookies:</strong> Session management, authentication (necessary for service operation)</li>
+                    <li class="privacy-page__list-item"><strong>Analytics Cookies:</strong> Usage tracking to improve the Service (with consent)</li>
+                    <li class="privacy-page__list-item"><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
                 </ul>
-                <p>You can manage cookie preferences in your browser settings.</p>
+                <p class="privacy-page__text">You can manage cookie preferences in your browser settings.</p>
                 
-                <h3>1.6 Information from Third Parties</h3>
-                <p>We may receive data from:</p>
-                <ul>
-                    <li><strong>Authentication Providers:</strong> Keycloak (email, name, authentication status)</li>
-                    <li><strong>Payment Processors:</strong> Stripe (payment status, subscription tier)</li>
-                    <li><strong>Integration Partners:</strong> Data you authorize us to access (e.g., GitHub repositories)</li>
-                </ul>
-                
-                <h2>2. How We Use Your Information</h2>
-                
-                <h3>2.1 Service Provision</h3>
-                <p>We use your data to:</p>
-                <ul>
-                    <li>Provide and maintain the Usable platform</li>
-                    <li>Process your authentication and access control</li>
-                    <li>Store and organize your memory fragments</li>
-                    <li>Enable semantic search and knowledge graphs</li>
-                    <li>Facilitate workspace collaboration</li>
-                    <li>Provide customer support</li>
-                </ul>
-                <p><strong>Legal Basis (GDPR):</strong> Contract performance (Art. 6(1)(b))</p>
-                
-                <h3>2.2 Service Improvement</h3>
-                <p>We use aggregated and anonymized data to:</p>
-                <ul>
-                    <li>Analyze usage patterns and feature adoption</li>
-                    <li>Improve search algorithms and AI models</li>
-                    <li>Identify and fix bugs and performance issues</li>
-                    <li>Develop new features based on user needs</li>
-                </ul>
-                <p><strong>Legal Basis (GDPR):</strong> Legitimate interests (Art. 6(1)(f))</p>
-                
-                <h3>2.3 Communication</h3>
-                <p>We may contact you for:</p>
-                <ul>
-                    <li>Service announcements and updates</li>
-                    <li>Security alerts and policy changes</li>
-                    <li>Subscription and billing notifications</li>
-                    <li>Customer support responses</li>
-                    <li>Marketing (with your consent)</li>
-                </ul>
-                <p><strong>Legal Basis (GDPR):</strong> Contract performance (transactional), Consent (marketing)</p>
-                
-                <h3>2.4 Security and Fraud Prevention</h3>
-                <p>We process data to:</p>
-                <ul>
-                    <li>Detect and prevent unauthorized access</li>
-                    <li>Identify suspicious activity and abuse</li>
-                    <li>Enforce our Terms of Service</li>
-                    <li>Comply with legal obligations</li>
-                </ul>
-                <p><strong>Legal Basis (GDPR):</strong> Legitimate interests, Legal obligation (Art. 6(1)(c))</p>
-                
-                <h3>2.5 Legal Compliance</h3>
-                <p>We may process data to:</p>
-                <ul>
-                    <li>Respond to legal requests (subpoenas, court orders)</li>
-                    <li>Comply with data protection regulations</li>
-                    <li>Protect our legal rights and property</li>
-                    <li>Prevent illegal activities</li>
-                </ul>
-                <p><strong>Legal Basis (GDPR):</strong> Legal obligation, Legitimate interests</p>
-                
-                <h2>3. Data Storage and Security</h2>
-                
-                <h3>3.1 Where We Store Data</h3>
-                <p>Your data is stored:</p>
-                <ul>
-                    <li><strong>Primary Servers:</strong> [Cloud Provider - e.g., AWS, Google Cloud] in [Region - e.g., EU]</li>
-                    <li><strong>Event Storage:</strong> Flowcore event sourcing system (immutable audit trail)</li>
-                    <li><strong>Backups:</strong> Encrypted backups in multiple geographic locations</li>
-                </ul>
-                <p><strong>International Transfers:</strong> If data is transferred outside the EU/EEA, we use:</p>
-                <ul>
-                    <li>Standard Contractual Clauses (SCCs)</li>
-                    <li>Adequacy decisions by the European Commission</li>
-                    <li>Other approved transfer mechanisms</li>
+                <h3 class="privacy-page__subheading">1.6 Information from Third Parties</h3>
+                <p class="privacy-page__text">We may receive data from:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Authentication Providers:</strong> Keycloak (email, name, authentication status)</li>
+                    <li class="privacy-page__list-item"><strong>Payment Processors:</strong> Stripe (payment status, subscription tier)</li>
+                    <li class="privacy-page__list-item"><strong>Integration Partners:</strong> Data you authorize us to access (e.g., GitHub repositories)</li>
                 </ul>
                 
-                <h3>3.2 Security Measures</h3>
-                <p>We implement:</p>
-                <ul>
-                    <li><strong>Encryption in Transit:</strong> TLS 1.3 for all data transmission</li>
-                    <li><strong>Encryption at Rest:</strong> AES-256 encryption for stored data</li>
-                    <li><strong>Access Controls:</strong> Role-based access control (RBAC), least privilege principle</li>
-                    <li><strong>Authentication:</strong> Multi-factor authentication (MFA) support</li>
-                    <li><strong>Monitoring:</strong> 24/7 security monitoring and intrusion detection</li>
-                    <li><strong>Auditing:</strong> Comprehensive audit logs for all data access</li>
+                <h2 class="privacy-page__heading">2. How We Use Your Information</h2>
+                
+                <h3 class="privacy-page__subheading">2.1 Service Provision</h3>
+                <p class="privacy-page__text">We use your data to:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Provide and maintain the Usable platform</li>
+                    <li class="privacy-page__list-item">Process your authentication and access control</li>
+                    <li class="privacy-page__list-item">Store and organize your memory fragments</li>
+                    <li class="privacy-page__list-item">Enable semantic search and knowledge graphs</li>
+                    <li class="privacy-page__list-item">Facilitate workspace collaboration</li>
+                    <li class="privacy-page__list-item">Provide customer support</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Legal Basis (GDPR):</strong> Contract performance (Art. 6(1)(b))</p>
+                
+                <h3 class="privacy-page__subheading">2.2 Service Improvement</h3>
+                <p class="privacy-page__text">We use aggregated and anonymized data to:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Analyze usage patterns and feature adoption</li>
+                    <li class="privacy-page__list-item">Improve search algorithms and AI models</li>
+                    <li class="privacy-page__list-item">Identify and fix bugs and performance issues</li>
+                    <li class="privacy-page__list-item">Develop new features based on user needs</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Legal Basis (GDPR):</strong> Legitimate interests (Art. 6(1)(f))</p>
+                
+                <h3 class="privacy-page__subheading">2.3 Communication</h3>
+                <p class="privacy-page__text">We may contact you for:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Service announcements and updates</li>
+                    <li class="privacy-page__list-item">Security alerts and policy changes</li>
+                    <li class="privacy-page__list-item">Subscription and billing notifications</li>
+                    <li class="privacy-page__list-item">Customer support responses</li>
+                    <li class="privacy-page__list-item">Marketing (with your consent)</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Legal Basis (GDPR):</strong> Contract performance (transactional), Consent (marketing)</p>
+                
+                <h3 class="privacy-page__subheading">2.4 Security and Fraud Prevention</h3>
+                <p class="privacy-page__text">We process data to:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Detect and prevent unauthorized access</li>
+                    <li class="privacy-page__list-item">Identify suspicious activity and abuse</li>
+                    <li class="privacy-page__list-item">Enforce our Terms of Service</li>
+                    <li class="privacy-page__list-item">Comply with legal obligations</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Legal Basis (GDPR):</strong> Legitimate interests, Legal obligation (Art. 6(1)(c))</p>
+                
+                <h3 class="privacy-page__subheading">2.5 Legal Compliance</h3>
+                <p class="privacy-page__text">We may process data to:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Respond to legal requests (subpoenas, court orders)</li>
+                    <li class="privacy-page__list-item">Comply with data protection regulations</li>
+                    <li class="privacy-page__list-item">Protect our legal rights and property</li>
+                    <li class="privacy-page__list-item">Prevent illegal activities</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Legal Basis (GDPR):</strong> Legal obligation, Legitimate interests</p>
+                
+                <h2 class="privacy-page__heading">3. Data Storage and Security</h2>
+                
+                <h3 class="privacy-page__subheading">3.1 Where We Store Data</h3>
+                <p class="privacy-page__text">Your data is stored:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Primary Servers:</strong> [Cloud Provider - e.g., AWS, Google Cloud] in [Region - e.g., EU]</li>
+                    <li class="privacy-page__list-item"><strong>Event Storage:</strong> Flowcore event sourcing system (immutable audit trail)</li>
+                    <li class="privacy-page__list-item"><strong>Backups:</strong> Encrypted backups in multiple geographic locations</li>
+                </ul>
+                <p class="privacy-page__text"><strong>International Transfers:</strong> If data is transferred outside the EU/EEA, we use:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Standard Contractual Clauses (SCCs)</li>
+                    <li class="privacy-page__list-item">Adequacy decisions by the European Commission</li>
+                    <li class="privacy-page__list-item">Other approved transfer mechanisms</li>
                 </ul>
                 
-                <h3>3.3 Data Retention</h3>
-                <p>We retain your data:</p>
-                <ul>
-                    <li><strong>Active Accounts:</strong> As long as your account is active</li>
-                    <li><strong>Deleted Content:</strong> 30 days in backups after deletion (for recovery)</li>
-                    <li><strong>Closed Accounts:</strong> 30 days after account closure</li>
-                    <li><strong>Legal Obligations:</strong> Longer if required by law (e.g., financial records)</li>
-                </ul>
-                <p>After retention periods, data is permanently deleted using secure erasure methods.</p>
-                
-                <h3>3.4 Event Sourcing Architecture</h3>
-                <p>Usable uses event sourcing, meaning:</p>
-                <ul>
-                    <li>All changes are recorded as immutable events</li>
-                    <li>Events contain metadata (who, what, when) for audit trails</li>
-                    <li>Events are stored in Flowcore (separate from the main database)</li>
-                    <li>Read models (database) can be rebuilt from events</li>
-                </ul>
-                <p><strong>Implication:</strong> Some audit data may be retained longer for compliance and system integrity.</p>
-                
-                <h2>4. Data Sharing and Disclosure</h2>
-                
-                <h3>4.1 Within Workspaces</h3>
-                <p>Your content is shared with:</p>
-                <ul>
-                    <li><strong>Workspace Members:</strong> Users you invite to your workspaces</li>
-                    <li><strong>Workspace Owners:</strong> Users who create and manage workspaces you join</li>
-                </ul>
-                <p>You control sharing by managing workspace membership and permissions.</p>
-                
-                <h3>4.2 Service Providers</h3>
-                <p>We share data with third-party processors who help us operate the Service:</p>
-                <ul>
-                    <li><strong>Hosting Providers:</strong> [AWS, Google Cloud] - infrastructure</li>
-                    <li><strong>Authentication:</strong> Keycloak - identity management</li>
-                    <li><strong>Payment Processing:</strong> Stripe - subscription billing</li>
-                    <li><strong>Email Services:</strong> [Provider] - transactional emails</li>
-                    <li><strong>Analytics:</strong> [Provider] - usage analytics (anonymized)</li>
-                </ul>
-                <p>All processors are bound by data processing agreements (DPAs) and GDPR requirements.</p>
-                
-                <h3>4.3 Legal Requirements</h3>
-                <p>We may disclose data when required by:</p>
-                <ul>
-                    <li>Court orders, subpoenas, or legal processes</li>
-                    <li>Law enforcement requests (with proper legal basis)</li>
-                    <li>National security requirements</li>
-                    <li>Protection of our rights or safety of others</li>
-                </ul>
-                <p>We will notify you of such requests unless prohibited by law.</p>
-                
-                <h3>4.4 Business Transfers</h3>
-                <p>If Flowcore is involved in a merger, acquisition, or sale of assets:</p>
-                <ul>
-                    <li>Your data may be transferred to the acquiring entity</li>
-                    <li>We will notify you before your data is subject to a different Privacy Policy</li>
-                    <li>You may delete your account before the transfer</li>
+                <h3 class="privacy-page__subheading">3.2 Security Measures</h3>
+                <p class="privacy-page__text">We implement:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Encryption in Transit:</strong> TLS 1.3 for all data transmission</li>
+                    <li class="privacy-page__list-item"><strong>Encryption at Rest:</strong> AES-256 encryption for stored data</li>
+                    <li class="privacy-page__list-item"><strong>Access Controls:</strong> Role-based access control (RBAC), least privilege principle</li>
+                    <li class="privacy-page__list-item"><strong>Authentication:</strong> Multi-factor authentication (MFA) support</li>
+                    <li class="privacy-page__list-item"><strong>Monitoring:</strong> 24/7 security monitoring and intrusion detection</li>
+                    <li class="privacy-page__list-item"><strong>Auditing:</strong> Comprehensive audit logs for all data access</li>
                 </ul>
                 
-                <h3>4.5 What We Don't Share</h3>
-                <p>We <strong>never</strong> sell your personal data to third parties for marketing purposes.</p>
-                <p>We <strong>never</strong> use your content to train AI models for other users or external purposes.</p>
+                <h3 class="privacy-page__subheading">3.3 Data Retention</h3>
+                <p class="privacy-page__text">We retain your data:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Active Accounts:</strong> As long as your account is active</li>
+                    <li class="privacy-page__list-item"><strong>Deleted Content:</strong> 30 days in backups after deletion (for recovery)</li>
+                    <li class="privacy-page__list-item"><strong>Closed Accounts:</strong> 30 days after account closure</li>
+                    <li class="privacy-page__list-item"><strong>Legal Obligations:</strong> Longer if required by law (e.g., financial records)</li>
+                </ul>
+                <p class="privacy-page__text">After retention periods, data is permanently deleted using secure erasure methods.</p>
                 
-                <h2>5. Your Privacy Rights (GDPR)</h2>
-                <p>If you are in the EU/EEA, you have the following rights:</p>
+                <h3 class="privacy-page__subheading">3.4 Event Sourcing Architecture</h3>
+                <p class="privacy-page__text">Usable uses event sourcing, meaning:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">All changes are recorded as immutable events</li>
+                    <li class="privacy-page__list-item">Events contain metadata (who, what, when) for audit trails</li>
+                    <li class="privacy-page__list-item">Events are stored in Flowcore (separate from the main database)</li>
+                    <li class="privacy-page__list-item">Read models (database) can be rebuilt from events</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Implication:</strong> Some audit data may be retained longer for compliance and system integrity.</p>
                 
-                <h3>5.1 Right of Access (Art. 15)</h3>
-                <p>You can request a copy of all personal data we hold about you.</p>
+                <h2 class="privacy-page__heading">4. Data Sharing and Disclosure</h2>
                 
-                <h3>5.2 Right to Rectification (Art. 16)</h3>
-                <p>You can correct inaccurate or incomplete personal data.</p>
+                <h3 class="privacy-page__subheading">4.1 Within Workspaces</h3>
+                <p class="privacy-page__text">Your content is shared with:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Workspace Members:</strong> Users you invite to your workspaces</li>
+                    <li class="privacy-page__list-item"><strong>Workspace Owners:</strong> Users who create and manage workspaces you join</li>
+                </ul>
+                <p class="privacy-page__text">You control sharing by managing workspace membership and permissions.</p>
                 
-                <h3>5.3 Right to Erasure (Art. 17)</h3>
-                <p>You can request deletion of your personal data ("right to be forgotten") unless:</p>
-                <ul>
-                    <li>We need it to comply with legal obligations</li>
-                    <li>It's necessary for establishing or defending legal claims</li>
+                <h3 class="privacy-page__subheading">4.2 Service Providers</h3>
+                <p class="privacy-page__text">We share data with third-party processors who help us operate the Service:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Hosting Providers:</strong> [AWS, Google Cloud] - infrastructure</li>
+                    <li class="privacy-page__list-item"><strong>Authentication:</strong> Keycloak - identity management</li>
+                    <li class="privacy-page__list-item"><strong>Payment Processing:</strong> Stripe - subscription billing</li>
+                    <li class="privacy-page__list-item"><strong>Email Services:</strong> [Provider] - transactional emails</li>
+                    <li class="privacy-page__list-item"><strong>Analytics:</strong> [Provider] - usage analytics (anonymized)</li>
+                </ul>
+                <p class="privacy-page__text">All processors are bound by data processing agreements (DPAs) and GDPR requirements.</p>
+                
+                <h3 class="privacy-page__subheading">4.3 Legal Requirements</h3>
+                <p class="privacy-page__text">We may disclose data when required by:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Court orders, subpoenas, or legal processes</li>
+                    <li class="privacy-page__list-item">Law enforcement requests (with proper legal basis)</li>
+                    <li class="privacy-page__list-item">National security requirements</li>
+                    <li class="privacy-page__list-item">Protection of our rights or safety of others</li>
+                </ul>
+                <p class="privacy-page__text">We will notify you of such requests unless prohibited by law.</p>
+                
+                <h3 class="privacy-page__subheading">4.4 Business Transfers</h3>
+                <p class="privacy-page__text">If Flowcore is involved in a merger, acquisition, or sale of assets:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Your data may be transferred to the acquiring entity</li>
+                    <li class="privacy-page__list-item">We will notify you before your data is subject to a different Privacy Policy</li>
+                    <li class="privacy-page__list-item">You may delete your account before the transfer</li>
                 </ul>
                 
-                <h3>5.4 Right to Restriction (Art. 18)</h3>
-                <p>You can request we limit processing of your data in certain circumstances.</p>
+                <h3 class="privacy-page__subheading">4.5 What We Don't Share</h3>
+                <p class="privacy-page__text">We <strong>never</strong> sell your personal data to third parties for marketing purposes.</p>
+                <p class="privacy-page__text">We <strong>never</strong> use your content to train AI models for other users or external purposes.</p>
                 
-                <h3>5.5 Right to Data Portability (Art. 20)</h3>
-                <p>You can receive your data in a structured, machine-readable format and transfer it to another service.</p>
-                <p><strong>Export Formats:</strong> JSON, CSV, Markdown</p>
+                <h2 class="privacy-page__heading">5. Your Privacy Rights (GDPR)</h2>
+                <p class="privacy-page__text">If you are in the EU/EEA, you have the following rights:</p>
                 
-                <h3>5.6 Right to Object (Art. 21)</h3>
-                <p>You can object to processing based on legitimate interests. We will stop processing unless we have compelling legitimate grounds.</p>
+                <h3 class="privacy-page__subheading">5.1 Right of Access (Art. 15)</h3>
+                <p class="privacy-page__text">You can request a copy of all personal data we hold about you.</p>
                 
-                <h3>5.7 Right to Withdraw Consent (Art. 7(3))</h3>
-                <p>You can withdraw consent for marketing communications or optional data processing at any time.</p>
+                <h3 class="privacy-page__subheading">5.2 Right to Rectification (Art. 16)</h3>
+                <p class="privacy-page__text">You can correct inaccurate or incomplete personal data.</p>
                 
-                <h3>5.8 Right to Lodge a Complaint</h3>
-                <p>You can file a complaint with your national data protection authority:</p>
-                <ul>
-                    <li><strong>Faroe Islands:</strong> Dátueftirlitið (<a href="https://www.dat.fo" target="_blank" rel="noopener noreferrer">www.dat.fo</a>)</li>
-                    <li><strong>Denmark:</strong> Datatilsynet (<a href="https://www.datatilsynet.dk" target="_blank" rel="noopener noreferrer">www.datatilsynet.dk</a>)</li>
+                <h3 class="privacy-page__subheading">5.3 Right to Erasure (Art. 17)</h3>
+                <p class="privacy-page__text">You can request deletion of your personal data ("right to be forgotten") unless:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">We need it to comply with legal obligations</li>
+                    <li class="privacy-page__list-item">It's necessary for establishing or defending legal claims</li>
                 </ul>
                 
-                <h3>How to Exercise Your Rights</h3>
-                <p>Email: <a href="mailto:privacy@usable.dev">privacy@usable.dev</a><br>
+                <h3 class="privacy-page__subheading">5.4 Right to Restriction (Art. 18)</h3>
+                <p class="privacy-page__text">You can request we limit processing of your data in certain circumstances.</p>
+                
+                <h3 class="privacy-page__subheading">5.5 Right to Data Portability (Art. 20)</h3>
+                <p class="privacy-page__text">You can receive your data in a structured, machine-readable format and transfer it to another service.</p>
+                <p class="privacy-page__text"><strong>Export Formats:</strong> JSON, CSV, Markdown</p>
+                
+                <h3 class="privacy-page__subheading">5.6 Right to Object (Art. 21)</h3>
+                <p class="privacy-page__text">You can object to processing based on legitimate interests. We will stop processing unless we have compelling legitimate grounds.</p>
+                
+                <h3 class="privacy-page__subheading">5.7 Right to Withdraw Consent (Art. 7(3))</h3>
+                <p class="privacy-page__text">You can withdraw consent for marketing communications or optional data processing at any time.</p>
+                
+                <h3 class="privacy-page__subheading">5.8 Right to Lodge a Complaint</h3>
+                <p class="privacy-page__text">You can file a complaint with your national data protection authority:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Faroe Islands:</strong> Dátueftirlitið (<a href="https://www.dat.fo" target="_blank" rel="noopener noreferrer" class="privacy-page__link">www.dat.fo</a>)</li>
+                    <li class="privacy-page__list-item"><strong>Denmark:</strong> Datatilsynet (<a href="https://www.datatilsynet.dk" target="_blank" rel="noopener noreferrer" class="privacy-page__link">www.datatilsynet.dk</a>)</li>
+                </ul>
+                
+                <h3 class="privacy-page__subheading">How to Exercise Your Rights</h3>
+                <p class="privacy-page__text">Email: <a href="mailto:privacy@usable.dev" class="privacy-page__link">privacy@usable.dev</a><br>
                 Subject: "GDPR Request - [Your Name]"</p>
-                <p>We will respond within 30 days.</p>
+                <p class="privacy-page__text">We will respond within 30 days.</p>
                 
-                <h2>6. Children's Privacy</h2>
-                <p>Usable is not intended for children under 16. We do not knowingly collect data from children. If we learn we have collected data from a child under 16, we will delete it immediately.</p>
-                <p>Parents: If you believe your child has provided data to us, contact <a href="mailto:privacy@usable.dev">privacy@usable.dev</a>.</p>
+                <h2 class="privacy-page__heading">6. Children's Privacy</h2>
+                <p class="privacy-page__text">Usable is not intended for children under 16. We do not knowingly collect data from children. If we learn we have collected data from a child under 16, we will delete it immediately.</p>
+                <p class="privacy-page__text">Parents: If you believe your child has provided data to us, contact <a href="mailto:privacy@usable.dev" class="privacy-page__link">privacy@usable.dev</a>.</p>
                 
-                <h2>7. Marketing Communications</h2>
+                <h2 class="privacy-page__heading">7. Marketing Communications</h2>
                 
-                <h3>7.1 Transactional Emails</h3>
-                <p>We send essential emails (account verification, password resets, billing) as part of the Service. You cannot opt out of these.</p>
+                <h3 class="privacy-page__subheading">7.1 Transactional Emails</h3>
+                <p class="privacy-page__text">We send essential emails (account verification, password resets, billing) as part of the Service. You cannot opt out of these.</p>
                 
-                <h3>7.2 Marketing Emails</h3>
-                <p>We may send promotional emails with your explicit consent:</p>
-                <ul>
-                    <li>Product updates and new features</li>
-                    <li>Tips and best practices</li>
-                    <li>Community events and webinars</li>
+                <h3 class="privacy-page__subheading">7.2 Marketing Emails</h3>
+                <p class="privacy-page__text">We may send promotional emails with your explicit consent:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Product updates and new features</li>
+                    <li class="privacy-page__list-item">Tips and best practices</li>
+                    <li class="privacy-page__list-item">Community events and webinars</li>
                 </ul>
-                <p><strong>Opt-Out:</strong> Click "Unsubscribe" in any marketing email or manage preferences in your account settings.</p>
+                <p class="privacy-page__text"><strong>Opt-Out:</strong> Click "Unsubscribe" in any marketing email or manage preferences in your account settings.</p>
                 
-                <h2>8. Third-Party Links and Integrations</h2>
+                <h2 class="privacy-page__heading">8. Third-Party Links and Integrations</h2>
                 
-                <h3>8.1 External Links</h3>
-                <p>The Service may contain links to third-party websites. We are not responsible for their privacy practices. Review their privacy policies before providing data.</p>
+                <h3 class="privacy-page__subheading">8.1 External Links</h3>
+                <p class="privacy-page__text">The Service may contain links to third-party websites. We are not responsible for their privacy practices. Review their privacy policies before providing data.</p>
                 
-                <h3>8.2 Integrations</h3>
-                <p>When you connect third-party services (GitHub, Slack):</p>
-                <ul>
-                    <li>You authorize us to access data as specified in the integration</li>
-                    <li>We only access data necessary to provide the integration</li>
-                    <li>You can disconnect integrations at any time</li>
-                </ul>
-                
-                <h2>9. Cookies Policy</h2>
-                
-                <h3>9.1 Essential Cookies</h3>
-                <p>Required for the Service to function:</p>
-                <ul>
-                    <li><code>session_token</code> - Authentication (expires: session)</li>
-                    <li><code>csrf_token</code> - Security (expires: session)</li>
-                </ul>
-                <p><strong>Legal Basis:</strong> Legitimate interests (necessary for service operation)</p>
-                
-                <h3>9.2 Analytics Cookies (Optional)</h3>
-                <p>Help us understand usage patterns:</p>
-                <ul>
-                    <li><code>_ga</code>, <code>_gid</code> - Google Analytics (expires: 2 years)</li>
-                    <li><code>usage_tracking</code> - Internal analytics (expires: 1 year)</li>
-                </ul>
-                <p><strong>Legal Basis:</strong> Consent</p>
-                
-                <h3>9.3 Preference Cookies (Optional)</h3>
-                <p>Remember your settings:</p>
-                <ul>
-                    <li><code>theme</code> - UI theme preference (expires: 1 year)</li>
-                    <li><code>language</code> - Language preference (expires: 1 year)</li>
-                </ul>
-                <p><strong>Legal Basis:</strong> Consent</p>
-                
-                <h3>9.4 Managing Cookies</h3>
-                <p>You can:</p>
-                <ul>
-                    <li>Manage preferences in your account settings</li>
-                    <li>Block cookies in your browser (may affect functionality)</li>
-                    <li>Use browser extensions to control tracking</li>
+                <h3 class="privacy-page__subheading">8.2 Integrations</h3>
+                <p class="privacy-page__text">When you connect third-party services (GitHub, Slack):</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">You authorize us to access data as specified in the integration</li>
+                    <li class="privacy-page__list-item">We only access data necessary to provide the integration</li>
+                    <li class="privacy-page__list-item">You can disconnect integrations at any time</li>
                 </ul>
                 
-                <h2>10. Data Breach Notification</h2>
-                <p>In the event of a data breach affecting your personal data:</p>
-                <ul>
-                    <li>We will notify you within 72 hours (as required by GDPR Art. 33-34)</li>
-                    <li>Notification includes: nature of breach, data affected, mitigation steps</li>
-                    <li>We will notify relevant data protection authorities</li>
-                    <li>We maintain an incident response plan to minimize impact</li>
+                <h2 class="privacy-page__heading">9. Cookies Policy</h2>
+                
+                <h3 class="privacy-page__subheading">9.1 Essential Cookies</h3>
+                <p class="privacy-page__text">Required for the Service to function:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><code>session_token</code> - Authentication (expires: session)</li>
+                    <li class="privacy-page__list-item"><code>csrf_token</code> - Security (expires: session)</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Legal Basis:</strong> Legitimate interests (necessary for service operation)</p>
+                
+                <h3 class="privacy-page__subheading">9.2 Analytics Cookies (Optional)</h3>
+                <p class="privacy-page__text">Help us understand usage patterns:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><code>_ga</code>, <code>_gid</code> - Google Analytics (expires: 2 years)</li>
+                    <li class="privacy-page__list-item"><code>usage_tracking</code> - Internal analytics (expires: 1 year)</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Legal Basis:</strong> Consent</p>
+                
+                <h3 class="privacy-page__subheading">9.3 Preference Cookies (Optional)</h3>
+                <p class="privacy-page__text">Remember your settings:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><code>theme</code> - UI theme preference (expires: 1 year)</li>
+                    <li class="privacy-page__list-item"><code>language</code> - Language preference (expires: 1 year)</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Legal Basis:</strong> Consent</p>
+                
+                <h3 class="privacy-page__subheading">9.4 Managing Cookies</h3>
+                <p class="privacy-page__text">You can:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Manage preferences in your account settings</li>
+                    <li class="privacy-page__list-item">Block cookies in your browser (may affect functionality)</li>
+                    <li class="privacy-page__list-item">Use browser extensions to control tracking</li>
                 </ul>
                 
-                <h2>11. Automated Decision-Making</h2>
-                <p>We do <strong>not</strong> use automated decision-making or profiling that produces legal or similarly significant effects.</p>
-                <p>AI features (semantic search, recommendations) are advisory only and do not make decisions about you.</p>
-                
-                <h2>12. International Users</h2>
-                
-                <h3>12.1 EU/EEA Users</h3>
-                <p>This Privacy Policy complies with GDPR. Your data is processed in accordance with EU data protection standards.</p>
-                
-                <h3>12.2 UK Users</h3>
-                <p>We comply with the UK GDPR and Data Protection Act 2018.</p>
-                
-                <h3>12.3 US Users</h3>
-                <p>We do not participate in the EU-US Data Privacy Framework (if applicable) but use SCCs for transfers.</p>
-                
-                <h3>12.4 Other Countries</h3>
-                <p>We comply with local data protection laws where applicable. If your country has stricter requirements, those apply.</p>
-                
-                <h2>13. Changes to This Privacy Policy</h2>
-                <p>We may update this Privacy Policy to reflect:</p>
-                <ul>
-                    <li>Changes in data practices</li>
-                    <li>New legal requirements</li>
-                    <li>Service improvements</li>
-                </ul>
-                <p><strong>Notification:</strong></p>
-                <ul>
-                    <li>Email notification for material changes</li>
-                    <li>In-app notification when you next log in</li>
-                    <li>Effective date displayed at the top of the policy</li>
-                </ul>
-                <p><strong>Your Options:</strong></p>
-                <ul>
-                    <li>Continue using the Service (acceptance of updated policy)</li>
-                    <li>Delete your account if you disagree with changes</li>
+                <h2 class="privacy-page__heading">10. Data Breach Notification</h2>
+                <p class="privacy-page__text">In the event of a data breach affecting your personal data:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">We will notify you within 72 hours (as required by GDPR Art. 33-34)</li>
+                    <li class="privacy-page__list-item">Notification includes: nature of breach, data affected, mitigation steps</li>
+                    <li class="privacy-page__list-item">We will notify relevant data protection authorities</li>
+                    <li class="privacy-page__list-item">We maintain an incident response plan to minimize impact</li>
                 </ul>
                 
-                <h2>14. Contact Us</h2>
-                <p>For privacy-related questions or requests:</p>
-                <p><strong>Email:</strong> <a href="mailto:privacy@usable.dev">privacy@usable.dev</a><br>
+                <h2 class="privacy-page__heading">11. Automated Decision-Making</h2>
+                <p class="privacy-page__text">We do <strong>not</strong> use automated decision-making or profiling that produces legal or similarly significant effects.</p>
+                <p class="privacy-page__text">AI features (semantic search, recommendations) are advisory only and do not make decisions about you.</p>
+                
+                <h2 class="privacy-page__heading">12. International Users</h2>
+                
+                <h3 class="privacy-page__subheading">12.1 EU/EEA Users</h3>
+                <p class="privacy-page__text">This Privacy Policy complies with GDPR. Your data is processed in accordance with EU data protection standards.</p>
+                
+                <h3 class="privacy-page__subheading">12.2 UK Users</h3>
+                <p class="privacy-page__text">We comply with the UK GDPR and Data Protection Act 2018.</p>
+                
+                <h3 class="privacy-page__subheading">12.3 US Users</h3>
+                <p class="privacy-page__text">We do not participate in the EU-US Data Privacy Framework (if applicable) but use SCCs for transfers.</p>
+                
+                <h3 class="privacy-page__subheading">12.4 Other Countries</h3>
+                <p class="privacy-page__text">We comply with local data protection laws where applicable. If your country has stricter requirements, those apply.</p>
+                
+                <h2 class="privacy-page__heading">13. Changes to This Privacy Policy</h2>
+                <p class="privacy-page__text">We may update this Privacy Policy to reflect:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Changes in data practices</li>
+                    <li class="privacy-page__list-item">New legal requirements</li>
+                    <li class="privacy-page__list-item">Service improvements</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Notification:</strong></p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Email notification for material changes</li>
+                    <li class="privacy-page__list-item">In-app notification when you next log in</li>
+                    <li class="privacy-page__list-item">Effective date displayed at the top of the policy</li>
+                </ul>
+                <p class="privacy-page__text"><strong>Your Options:</strong></p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Continue using the Service (acceptance of updated policy)</li>
+                    <li class="privacy-page__list-item">Delete your account if you disagree with changes</li>
+                </ul>
+                
+                <h2 class="privacy-page__heading">14. Contact Us</h2>
+                <p class="privacy-page__text">For privacy-related questions or requests:</p>
+                <p class="privacy-page__text"><strong>Email:</strong> <a href="mailto:privacy@usable.dev" class="privacy-page__link">privacy@usable.dev</a><br>
                 <strong>Mailing Address:</strong><br>
                 Flowcore<br>
                 Vestara Bryggja 15<br>
                 Tórshavn 100, Faroe Islands</p>
-                <p><strong>Response Time:</strong> We aim to respond within 3 business days.</p>
+                <p class="privacy-page__text"><strong>Response Time:</strong> We aim to respond within 3 business days.</p>
                 
-                <h2>15. Definitions</h2>
-                <ul>
-                    <li><strong>Personal Data:</strong> Any information relating to an identified or identifiable person</li>
-                    <li><strong>Processing:</strong> Any operation performed on personal data (collection, storage, use, disclosure, deletion)</li>
-                    <li><strong>Data Controller:</strong> Flowcore (determines purposes and means of processing)</li>
-                    <li><strong>Data Processor:</strong> Third parties processing data on our behalf</li>
-                    <li><strong>Data Subject:</strong> You (the individual whose data is processed)</li>
+                <h2 class="privacy-page__heading">15. Definitions</h2>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Personal Data:</strong> Any information relating to an identified or identifiable person</li>
+                    <li class="privacy-page__list-item"><strong>Processing:</strong> Any operation performed on personal data (collection, storage, use, disclosure, deletion)</li>
+                    <li class="privacy-page__list-item"><strong>Data Controller:</strong> Flowcore (determines purposes and means of processing)</li>
+                    <li class="privacy-page__list-item"><strong>Data Processor:</strong> Third parties processing data on our behalf</li>
+                    <li class="privacy-page__list-item"><strong>Data Subject:</strong> You (the individual whose data is processed)</li>
                 </ul>
                 
-                <h2>Acknowledgment</h2>
-                <p>By clicking "Accept" or using the Service, you acknowledge that you have read and understood this Privacy Policy and consent to the data practices described herein.</p>
+                <h2 class="privacy-page__heading">Acknowledgment</h2>
+                <p class="privacy-page__text">By clicking "Accept" or using the Service, you acknowledge that you have read and understood this Privacy Policy and consent to the data practices described herein.</p>
                 
-                <p class="legal-page__compliance"><strong>Compliance Framework:</strong> GDPR, ePrivacy Directive, Data Protection Act</p>
-                <p>
-                    <span class="brand-text">Usable</span>, operated by Usable Sp/f ("we," "our," or "us"), is committed to protecting your privacy. 
+                <p class="legal-page__compliance privacy-page__text"><strong>Compliance Framework:</strong> GDPR, ePrivacy Directive, Data Protection Act</p>
+                <p class="privacy-page__text">
+                    <span class="u-brand-text">Usable</span>, operated by Usable Sp/f ("we," "our," or "us"), is committed to protecting your privacy. 
                     This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website 
-                    <a href="https://usable.dev">usable.dev</a> and use our services.
+                    <a href="https://usable.dev" class="privacy-page__link">usable.dev</a> and use our services.
                 </p>
 
-                <h2>1. Information We Collect</h2>
+                <h2 class="privacy-page__heading">1. Information We Collect</h2>
                 
-                <h3>1.1 Information You Provide</h3>
-                <p>We collect information you voluntarily provide when you:</p>
-                <ul>
-                    <li>Create an account or register for our services</li>
-                    <li>Subscribe to our newsletter or marketing communications</li>
-                    <li>Contact us with inquiries or feedback</li>
-                    <li>Participate in surveys, promotions, or events</li>
+                <h3 class="privacy-page__subheading">1.1 Information You Provide</h3>
+                <p class="privacy-page__text">We collect information you voluntarily provide when you:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Create an account or register for our services</li>
+                    <li class="privacy-page__list-item">Subscribe to our newsletter or marketing communications</li>
+                    <li class="privacy-page__list-item">Contact us with inquiries or feedback</li>
+                    <li class="privacy-page__list-item">Participate in surveys, promotions, or events</li>
                 </ul>
-                <p>This information may include your name, email address, company name, and any other information you choose to provide.</p>
+                <p class="privacy-page__text">This information may include your name, email address, company name, and any other information you choose to provide.</p>
                 
-                <h3>1.2 Information Collected Automatically</h3>
-                <p>When you visit our website, we automatically collect certain information, including:</p>
-                <ul>
-                    <li>Device information (browser type, operating system, device type)</li>
-                    <li>IP address and approximate location</li>
-                    <li>Pages visited and time spent on our website</li>
-                    <li>Referring website or source</li>
+                <h3 class="privacy-page__subheading">1.2 Information Collected Automatically</h3>
+                <p class="privacy-page__text">When you visit our website, we automatically collect certain information, including:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Device information (browser type, operating system, device type)</li>
+                    <li class="privacy-page__list-item">IP address and approximate location</li>
+                    <li class="privacy-page__list-item">Pages visited and time spent on our website</li>
+                    <li class="privacy-page__list-item">Referring website or source</li>
                 </ul>
 
-                <h2>2. Cookies and Tracking Technologies</h2>
+                <h2 class="privacy-page__heading">2. Cookies and Tracking Technologies</h2>
                 
                 <div class="policy-highlight">
-                    <p>
+                    <p class="privacy-page__text">
                         <strong>Important Notice:</strong> When you visit or log in to our website, cookies and similar technologies may be used by our 
                         online data partners or vendors to associate these activities with other personal information they or others have about you, 
                         including by association with your email. We (or service providers on our behalf) may then send communications and marketing 
                         to these email addresses. You may opt out of receiving this advertising by visiting 
-                        <a href="https://app.retention.com/optout" target="_blank" rel="noopener noreferrer">https://app.retention.com/optout</a>.
+                        <a href="https://app.retention.com/optout" target="_blank" rel="noopener noreferrer" class="privacy-page__link">https://app.retention.com/optout</a>.
                     </p>
                 </div>
 
-                <h3>2.1 Types of Cookies We Use</h3>
-                <ul>
-                    <li><strong>Essential Cookies:</strong> Required for the website to function properly</li>
-                    <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website (we use Plausible Analytics, a privacy-friendly alternative)</li>
-                    <li><strong>Marketing Cookies:</strong> Used to deliver relevant advertisements and track campaign effectiveness</li>
+                <h3 class="privacy-page__subheading">2.1 Types of Cookies We Use</h3>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Essential Cookies:</strong> Required for the website to function properly</li>
+                    <li class="privacy-page__list-item"><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website (we use Plausible Analytics, a privacy-friendly alternative)</li>
+                    <li class="privacy-page__list-item"><strong>Marketing Cookies:</strong> Used to deliver relevant advertisements and track campaign effectiveness</li>
                 </ul>
 
-                <h3>2.2 Third-Party Tracking</h3>
-                <p>
+                <h3 class="privacy-page__subheading">2.2 Third-Party Tracking</h3>
+                <p class="privacy-page__text">
                     We work with third-party service providers who may use cookies and similar tracking technologies to collect information about 
                     your online activities across different websites and services. This information may be used to provide you with interest-based 
                     advertising and to analyze the effectiveness of our marketing campaigns.
                 </p>
 
-                <h2>3. How We Use Your Information</h2>
-                <p>We use the information we collect to:</p>
-                <ul>
-                    <li>Provide, maintain, and improve our services</li>
-                    <li>Process transactions and send related information</li>
-                    <li>Send promotional communications (with your consent)</li>
-                    <li>Respond to your comments, questions, and requests</li>
-                    <li>Monitor and analyze trends, usage, and activities</li>
-                    <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
-                    <li>Personalize and improve your experience</li>
+                <h2 class="privacy-page__heading">3. How We Use Your Information</h2>
+                <p class="privacy-page__text">We use the information we collect to:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Provide, maintain, and improve our services</li>
+                    <li class="privacy-page__list-item">Process transactions and send related information</li>
+                    <li class="privacy-page__list-item">Send promotional communications (with your consent)</li>
+                    <li class="privacy-page__list-item">Respond to your comments, questions, and requests</li>
+                    <li class="privacy-page__list-item">Monitor and analyze trends, usage, and activities</li>
+                    <li class="privacy-page__list-item">Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
+                    <li class="privacy-page__list-item">Personalize and improve your experience</li>
                 </ul>
 
-                <h2>4. How We Share Your Information</h2>
-                <p>We may share your information in the following circumstances:</p>
-                <ul>
-                    <li><strong>Service Providers:</strong> With third-party vendors who perform services on our behalf</li>
-                    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
-                    <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
-                    <li><strong>With Your Consent:</strong> When you have given us permission to share your information</li>
+                <h2 class="privacy-page__heading">4. How We Share Your Information</h2>
+                <p class="privacy-page__text">We may share your information in the following circumstances:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Service Providers:</strong> With third-party vendors who perform services on our behalf</li>
+                    <li class="privacy-page__list-item"><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+                    <li class="privacy-page__list-item"><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
+                    <li class="privacy-page__list-item"><strong>With Your Consent:</strong> When you have given us permission to share your information</li>
                 </ul>
 
-                <h2>5. Your Privacy Rights</h2>
+                <h2 class="privacy-page__heading">5. Your Privacy Rights</h2>
                 
-                <h3>5.1 General Rights</h3>
-                <p>Depending on your location, you may have the right to:</p>
-                <ul>
-                    <li>Access the personal information we hold about you</li>
-                    <li>Request correction of inaccurate information</li>
-                    <li>Request deletion of your personal information</li>
-                    <li>Object to or restrict certain processing activities</li>
-                    <li>Data portability</li>
-                    <li>Withdraw consent at any time</li>
+                <h3 class="privacy-page__subheading">5.1 General Rights</h3>
+                <p class="privacy-page__text">Depending on your location, you may have the right to:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item">Access the personal information we hold about you</li>
+                    <li class="privacy-page__list-item">Request correction of inaccurate information</li>
+                    <li class="privacy-page__list-item">Request deletion of your personal information</li>
+                    <li class="privacy-page__list-item">Object to or restrict certain processing activities</li>
+                    <li class="privacy-page__list-item">Data portability</li>
+                    <li class="privacy-page__list-item">Withdraw consent at any time</li>
                 </ul>
 
-                <h3>5.2 Opt-Out Options</h3>
-                <p>You have several options to control your privacy:</p>
-                <ul>
-                    <li><strong>Marketing Communications:</strong> Unsubscribe using the link in any marketing email</li>
-                    <li><strong>Interest-Based Advertising:</strong> Opt out at <a href="https://app.retention.com/optout" target="_blank" rel="noopener noreferrer">https://app.retention.com/optout</a></li>
-                    <li><strong>Cookies:</strong> Adjust your browser settings to refuse or delete cookies</li>
+                <h3 class="privacy-page__subheading">5.2 Opt-Out Options</h3>
+                <p class="privacy-page__text">You have several options to control your privacy:</p>
+                <ul class="privacy-page__list">
+                    <li class="privacy-page__list-item"><strong>Marketing Communications:</strong> Unsubscribe using the link in any marketing email</li>
+                    <li class="privacy-page__list-item"><strong>Interest-Based Advertising:</strong> Opt out at <a href="https://app.retention.com/optout" target="_blank" rel="noopener noreferrer" class="privacy-page__link">https://app.retention.com/optout</a></li>
+                    <li class="privacy-page__list-item"><strong>Cookies:</strong> Adjust your browser settings to refuse or delete cookies</li>
                 </ul>
 
-                <h2>6. GDPR Compliance (European Users)</h2>
-                <p>
+                <h2 class="privacy-page__heading">6. GDPR Compliance (European Users)</h2>
+                <p class="privacy-page__text">
                     If you are located in the European Economic Area (EEA), you have additional rights under the General Data Protection 
                     Regulation (GDPR). We process your personal data based on legitimate interests, contractual necessity, legal obligations, 
                     or your consent.
                 </p>
                 
                 <div class="policy-highlight">
-                    <p>
+                    <p class="privacy-page__text">
                         <strong>GDPR Opt-Out:</strong> If you are located in the EEA, you have the option to opt out of the collection of your 
                         personal data in compliance with GDPR. To exercise this option, please visit 
-                        <a href="https://www.rb2b.com/rb2b-gdpr-opt-out" target="_blank" rel="noopener noreferrer">https://www.rb2b.com/rb2b-gdpr-opt-out</a>.
+                        <a href="https://www.rb2b.com/rb2b-gdpr-opt-out" target="_blank" rel="noopener noreferrer" class="privacy-page__link">https://www.rb2b.com/rb2b-gdpr-opt-out</a>.
                     </p>
                 </div>
 
-                <h2>7. Data Retention</h2>
-                <p>
+                <h2 class="privacy-page__heading">7. Data Retention</h2>
+                <p class="privacy-page__text">
                     We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, 
                     unless a longer retention period is required or permitted by law. When we no longer need your information, we will 
                     securely delete or anonymize it.
                 </p>
 
-                <h2>8. Data Security</h2>
-                <p>
+                <h2 class="privacy-page__heading">8. Data Security</h2>
+                <p class="privacy-page__text">
                     We implement appropriate technical and organizational measures to protect your personal information against unauthorized 
                     access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic 
                     storage is 100% secure, and we cannot guarantee absolute security.
                 </p>
 
-                <h2>9. International Data Transfers</h2>
-                <p>
+                <h2 class="privacy-page__heading">9. International Data Transfers</h2>
+                <p class="privacy-page__text">
                     Your information may be transferred to and processed in countries other than your country of residence. These countries 
                     may have data protection laws that are different from the laws of your country. We take appropriate safeguards to ensure 
                     that your personal information remains protected in accordance with this Privacy Policy.
                 </p>
 
-                <h2>10. Children's Privacy</h2>
-                <p>
+                <h2 class="privacy-page__heading">10. Children's Privacy</h2>
+                <p class="privacy-page__text">
                     Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from 
                     children. If we become aware that we have collected personal information from a child without parental consent, we will 
                     take steps to delete that information.
                 </p>
 
-                <h2>11. Third-Party Links</h2>
-                <p>
+                <h2 class="privacy-page__heading">11. Third-Party Links</h2>
+                <p class="privacy-page__text">
                     Our website may contain links to third-party websites and services. We are not responsible for the privacy practices 
                     or content of these third parties. We encourage you to review the privacy policies of any third-party sites you visit.
                 </p>
 
-                <h2>12. Changes to This Privacy Policy</h2>
-                <p>
+                <h2 class="privacy-page__heading">12. Changes to This Privacy Policy</h2>
+                <p class="privacy-page__text">
                     We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, 
                     or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on this page and 
                     updating the "Last updated" date.
                 </p>
 
                 <div class="policy-page__contact">
-                    <h2 style="margin-top: 0;">13. Contact Us</h2>
-                    <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us:</p>
-                    <p>
+                    <h2 class="privacy-page__heading privacy-page__heading--no-margin-top">13. Contact Us</h2>
+                    <p class="privacy-page__text">If you have any questions about this Privacy Policy or our privacy practices, please contact us:</p>
+                    <p class="privacy-page__text">
                         <strong>Usable Sp/f</strong><br>
                         Vestara Bryggja 15<br>
                         100 Tórshavn<br>
                         Faroe Islands
                     </p>
-                    <p>
-                        Email: <a href="mailto:privacy@flowcore.com">privacy@flowcore.com</a>
+                    <p class="privacy-page__text">
+                        Email: <a href="mailto:privacy@flowcore.com" class="privacy-page__link">privacy@flowcore.com</a>
                     </p>
                 </div>
             </div>
@@ -915,146 +655,11 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__circle-1"></div>
-        <div class="footer__circle-2"></div>
-        <div class="footer__circle-3"></div>
-        <div class="footer__circle-4"></div>
-        <div class="footer__circle-5"></div>
-        <div class="footer__container">
-            <div class="footer__main">
-                <div class="footer__brand">
-                    <a href="/" class="footer__logo">
-                        <img src="assets/images/Usable - Logo - transparent.png" alt="Usable" class="footer__logo-img" loading="lazy">
-                        <span class="footer__logo-text"><span class="brand-text">Usable</span></span>
-                    </a>
-                    <p class="footer__tagline">
-                        <span class="brand-text">Usable</span> is not just adorable<br>- it is actually usable.
-                    </p>
-                </div>
-                
-                <div class="footer__links">
-                    <div class="footer__section">
-                        <h3 class="footer__section-title">Resources</h3>
-                        <a href="https://usable.dev/login" class="footer__link" target="_blank" rel="noopener noreferrer">Get Started</a>
-                        <a href="https://usable.dev/docs#api" class="footer__link" target="_blank" rel="noopener noreferrer">API Reference</a>
-                        <a href="https://discord.com/invite/36AuxFNnSE" class="footer__link" target="_blank" rel="noopener noreferrer">Community</a>
-                        <a href="/media-kit.html" data-clean-url="/media-kit" class="footer__link">Media Kit</a>
-                    </div>
-                    
-                    <div class="footer__section">
-                        <h3 class="footer__section-title">Product</h3>
-                        <a href="/use-cases.html" data-clean-url="/use-cases" class="footer__link">Use Cases</a>
-                        
-                        <a href="/pricing.html" data-clean-url="/pricing" class="footer__link">Pricing</a>
-                        <a href="/how-it-works.html" data-clean-url="/how-it-works" class="footer__link">How It Works</a>
-                        <a href="https://usable.dev/docs" class="footer__link" target="_blank" rel="noopener noreferrer">Documentation</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer__bottom">
-                <div class="footer__copyright-group">
-                    <p class="footer__copyright">
-                        © 2025 <a href="https://www.flowcore.com" class="brand-text" target="_blank" rel="noopener noreferrer">Usable Sp/f</a> - All rights reserved.
-                    </p>
-                    <div class="footer__legal">
-                        <a href="/privacy.html" class="footer__link">Privacy Policy</a>
-                        <a href="/terms.html" class="footer__link">Terms of Service</a>
-                    </div>
-                </div>
-                <div class="footer__social">
-                    <a href="https://discord.gg/36AuxFNnSE" class="footer__social-link" aria-label="Join our Discord" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.youtube.com/@UsableDev" class="footer__social-link" aria-label="Subscribe to our YouTube" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                    </a>
-                    <a href="https://open.spotify.com/show/5leH0kkxczVZNKUX1S6OAk" class="footer__social-link" aria-label="Listen to our Spotify Podcast" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/usabledev" class="footer__social-link" aria-label="Follow us on LinkedIn" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.reddit.com/r/usabledev/" class="footer__social-link" aria-label="Join us on Reddit" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/usabledev/" class="footer__social-link" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </a>
-                    <a href="https://x.com/UsableDev" class="footer__social-link" aria-label="Follow us on X" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="footer__copyright-group">
-                    <p class="footer__copyright">
-                        © 2025 <a href="https://www.flowcore.com" class="brand-text" target="_blank" rel="noopener noreferrer">Usable Sp/f</a> - All rights reserved.
-                    </p>
-                    <div class="footer__legal">
-                        <a href="/privacy.html" class="footer__link">Privacy Policy</a>
-                        <a href="/terms.html" class="footer__link">Terms of Service</a>
-                    </div>
-                </div>
-                <div class="footer__social">
-                    <a href="https://discord.gg/36AuxFNnSE" class="footer__social-link" aria-label="Join our Discord" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.youtube.com/@UsableDev" class="footer__social-link" aria-label="Subscribe to our YouTube" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                    </a>
-                    <a href="https://open.spotify.com/show/5leH0kkxczVZNKUX1S6OAk" class="footer__social-link" aria-label="Listen to our Spotify Podcast" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/usabledev" class="footer__social-link" aria-label="Follow us on LinkedIn" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.reddit.com/r/usabledev/" class="footer__social-link" aria-label="Join us on Reddit" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/usabledev/" class="footer__social-link" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                    <a href="https://x.com/UsableDev" class="footer__social-link" aria-label="Follow us on X" target="_blank" rel="noopener noreferrer">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
+    <script src="scripts/components.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/theme.js"></script>
 </body>
 </html>
-

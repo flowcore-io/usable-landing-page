@@ -6,10 +6,7 @@
 
 class ThemeManager {
   constructor() {
-    this.themeToggles = document.querySelectorAll('.theme-toggle');
-    this.htmlElement = document.documentElement;
-    this.currentTheme = this.getStoredTheme() || this.getSystemPreference();
-    
+    // Wait for navbar to be loaded before selecting theme toggles
     this.init();
   }
   
@@ -17,16 +14,40 @@ class ThemeManager {
    * Initialize theme manager
    */
   init() {
+    // Get theme toggles (might not exist yet if navbar not loaded)
+    this.themeToggles = document.querySelectorAll('.theme-toggle');
+    this.htmlElement = document.documentElement;
+    this.currentTheme = this.getStoredTheme() || this.getSystemPreference();
+    
     // Set initial theme
     this.setTheme(this.currentTheme);
     
     // Add event listeners to all theme toggles
-    this.themeToggles.forEach(toggle => {
-      toggle.addEventListener('click', () => this.toggleTheme());
-    });
+    this.setupThemeToggles();
     
     // Listen for system preference changes
     this.watchSystemPreference();
+    
+    // Re-initialize when components load (in case navbar wasn't ready)
+    document.addEventListener('all-components-loaded', () => {
+      this.themeToggles = document.querySelectorAll('.theme-toggle');
+      this.setupThemeToggles();
+      this.updateToggleState();
+    });
+  }
+  
+  /**
+   * Setup event listeners for theme toggles
+   */
+  setupThemeToggles() {
+    this.themeToggles.forEach(toggle => {
+      // Remove old listeners by cloning the node
+      const newToggle = toggle.cloneNode(true);
+      toggle.parentNode.replaceChild(newToggle, toggle);
+      
+      // Add new listener
+      newToggle.addEventListener('click', () => this.toggleTheme());
+    });
   }
   
   /**
@@ -72,6 +93,9 @@ class ThemeManager {
    * Update toggle button state
    */
   updateToggleState() {
+    // Re-query toggles to ensure we have fresh references
+    this.themeToggles = document.querySelectorAll('.theme-toggle');
+    
     if (!this.themeToggles.length) return;
     
     const isDark = this.currentTheme === 'dark';
@@ -85,19 +109,8 @@ class ThemeManager {
         isDark ? 'Switch to light theme' : 'Switch to dark theme'
       );
       
-      // Update icon visibility
-      const sunIcon = toggle.querySelector('.theme-toggle__icon--sun');
-      const moonIcon = toggle.querySelector('.theme-toggle__icon--moon');
-      
-      if (sunIcon && moonIcon) {
-        if (isDark) {
-          sunIcon.style.display = 'none';
-          moonIcon.style.display = 'block';
-        } else {
-          sunIcon.style.display = 'block';
-          moonIcon.style.display = 'none';
-        }
-      }
+      // Update icon visibility - no longer needed as CSS handles this
+      // CSS now uses [data-theme="dark"] to show/hide icons
     });
   }
   

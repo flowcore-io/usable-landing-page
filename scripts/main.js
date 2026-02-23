@@ -8,6 +8,7 @@ class UsableApp {
     this.mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     this.nav = document.querySelector('.nav');
     this.mobileMenu = document.querySelector('.nav__menu--mobile');
+    this.backdrop = document.querySelector('.nav__backdrop');
     this.navLinks = document.querySelectorAll('.nav__link');
     this.mobileNavLinks = document.querySelectorAll('.nav__link--mobile');
     this.faqItems = document.querySelectorAll('.faq__item');
@@ -24,6 +25,7 @@ class UsableApp {
    */
   init() {
     this.setupMobileMenu();
+    this.setupThemeTogglePosition();
     this.setupDropdownMenus();
     this.setupSmoothScrolling();
     this.setupFAQAccordion();
@@ -162,42 +164,100 @@ class UsableApp {
    */
   setupMobileMenu() {
     if (!this.mobileMenuToggle || !this.mobileMenu) return;
-    
+
+    // Hamburger click: toggle open/close
     this.mobileMenuToggle.addEventListener('click', () => {
       const isExpanded = this.mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-      this.mobileMenuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
-      
-      // Toggle mobile menu visibility
-      this.mobileMenu.classList.toggle('active');
-      
-      // Animate hamburger to X
-      this.mobileMenuToggle.classList.toggle('mobile-menu-toggle--active');
-      
-      // Prevent body scroll when menu is open (from memory fragment solution)
-      if (!isExpanded) {
-        document.body.style.overflow = 'hidden';
+      if (isExpanded) {
+        this.closeMobileMenu();
       } else {
-        document.body.style.overflow = '';
+        this.openMobileMenu();
       }
     });
-    
-    // Close mobile menu when clicking on mobile nav links
+
+    // Close when any mobile nav link is clicked
     this.mobileNavLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        this.closeMobileMenu();
-      });
+      link.addEventListener('click', () => this.closeMobileMenu());
     });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!this.nav.contains(e.target) && !this.mobileMenu.contains(e.target)) {
+
+    // Also close when the mobile LOG IN CTA is clicked
+    const mobileCta = this.mobileMenu.querySelector('.nav__cta--mobile');
+    if (mobileCta) mobileCta.addEventListener('click', () => this.closeMobileMenu());
+
+    // Close on backdrop click (WCAG backdrop pattern)
+    if (this.backdrop) {
+      this.backdrop.addEventListener('click', () => this.closeMobileMenu());
+    }
+
+    // Close on Escape key (WCAG 2.1.1 keyboard accessibility)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.mobileMenuToggle.getAttribute('aria-expanded') === 'true') {
         this.closeMobileMenu();
+        this.mobileMenuToggle.focus();
       }
     });
-    
-    // Theme toggle is now handled by ThemeManager class
+
+    // Close if viewport is resized to desktop width while menu is open
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (window.innerWidth >= 1024 && this.mobileMenuToggle.getAttribute('aria-expanded') === 'true') {
+          this.closeMobileMenu();
+        }
+      }, 150);
+    });
   }
-  
+
+  /**
+   * Open mobile menu — shows backdrop, shifts focus to first item
+   */
+  openMobileMenu() {
+    this.mobileMenu.classList.add('active');
+    this.mobileMenuToggle.classList.add('mobile-menu-toggle--active');
+    this.mobileMenuToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+
+    if (this.backdrop) this.backdrop.classList.add('active');
+
+    // Move focus to first focusable element inside the menu (WCAG 2.4.3)
+    const firstFocusable = this.mobileMenu.querySelector('a[href], button');
+    if (firstFocusable) firstFocusable.focus();
+  }
+
+  /**
+   * The theme toggle lives in the mobile dropdown in HTML.
+   * At desktop (≥1024px) it is moved into nav__actions so it appears in the navbar.
+   * At mobile (<1024px) it stays in the dropdown where it belongs.
+   */
+  setupThemeTogglePosition() {
+    const mq = window.matchMedia('(min-width: 1024px)');
+
+    const reposition = () => {
+      const toggle = document.querySelector('.theme-toggle');
+      const navActions = document.querySelector('.nav__actions');
+      const themeRow = document.querySelector('.nav__mobile-theme-row');
+      const hamburger = navActions?.querySelector('.mobile-menu-toggle');
+
+      if (!toggle || !navActions || !themeRow) return;
+
+      if (mq.matches) {
+        // Desktop: move toggle into nav__actions before the hamburger button
+        if (!navActions.contains(toggle)) {
+          navActions.insertBefore(toggle, hamburger);
+        }
+      } else {
+        // Mobile: return toggle to the dropdown theme row
+        if (!themeRow.contains(toggle)) {
+          themeRow.appendChild(toggle);
+        }
+      }
+    };
+
+    mq.addEventListener('change', reposition);
+    reposition();
+  }
+
   /**
    * Close mobile menu
    */
@@ -209,6 +269,7 @@ class UsableApp {
       this.mobileMenuToggle.classList.remove('mobile-menu-toggle--active');
       this.mobileMenuToggle.setAttribute('aria-expanded', 'false');
     }
+    if (this.backdrop) this.backdrop.classList.remove('active');
     // Restore body scroll when menu is closed (from memory fragment solution)
     document.body.style.overflow = '';
   }
@@ -263,11 +324,8 @@ class UsableApp {
       // Add unique ID to each item
       item.dataset.faqId = `faq-${index}`;
       
-      // Click handler for the FAQ question only (not the entire item)
+      // Click handler on the question button
       const handleClick = (e) => {
-        // Only trigger if clicking the question area
-        if (!e.target.closest('.faq__question')) return;
-        
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -278,12 +336,13 @@ class UsableApp {
         // Get the exact clicked item by ID
         const clickedId = item.dataset.faqId;
         
-        // Get current state
-        const isExpanded = item.getAttribute('aria-expanded') === 'true';
+        // Get current state from the button's aria-expanded
+        const isExpanded = question.getAttribute('aria-expanded') === 'true';
         
         // Close all other FAQ items explicitly
         document.querySelectorAll('.faq__item').forEach((otherItem) => {
-          if (otherItem.dataset.faqId !== clickedId && otherItem.getAttribute('aria-expanded') === 'true') {
+          const otherQuestion = otherItem.querySelector('.faq__question');
+          if (otherItem.dataset.faqId !== clickedId && otherQuestion?.getAttribute('aria-expanded') === 'true') {
             this.closeFAQItem(otherItem);
           }
         });
@@ -296,22 +355,8 @@ class UsableApp {
         }
       };
       
-      // Add click event only to the question
+      // Attach click directly to the button
       question.addEventListener('click', handleClick, { once: false, capture: true });
-      
-      // Keyboard support
-      item.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          // Simulate click on question
-          const clickEvent = new MouseEvent('click', {
-            bubbles: true,
-            cancelable: true,
-            view: window
-          });
-          question.dispatchEvent(clickEvent);
-        }
-      });
     });
   }
   
@@ -319,19 +364,21 @@ class UsableApp {
    * Open FAQ item with smooth animation
    */
   openFAQItem(item) {
+    const question = item.querySelector('.faq__question');
     const answer = item.querySelector('.faq__answer');
     const answerContent = item.querySelector('.faq__answer-content');
     
-    if (!answer || !answerContent) return;
+    if (!question || !answer || !answerContent) return;
     
     // Double check this item isn't already open
-    if (item.getAttribute('aria-expanded') === 'true') return;
+    if (question.getAttribute('aria-expanded') === 'true') return;
     
     // Mark as animating
     item.classList.add('faq-animating');
     
-    // Set aria-expanded to true
-    item.setAttribute('aria-expanded', 'true');
+    // Update ARIA state on the button and apply open class for CSS
+    question.setAttribute('aria-expanded', 'true');
+    item.classList.add('faq__item--open');
     
     // Force a reflow
     void item.offsetHeight;
@@ -356,12 +403,13 @@ class UsableApp {
    * Close FAQ item with smooth animation
    */
   closeFAQItem(item) {
+    const question = item.querySelector('.faq__question');
     const answer = item.querySelector('.faq__answer');
     
-    if (!answer) return;
+    if (!question || !answer) return;
     
     // Check if already closed
-    if (item.getAttribute('aria-expanded') !== 'true') return;
+    if (question.getAttribute('aria-expanded') !== 'true') return;
     
     // Mark as animating
     item.classList.add('faq-animating');
@@ -373,9 +421,10 @@ class UsableApp {
       answer.style.paddingBottom = '0px';
     });
     
-    // Set aria-expanded to false after animation
+    // Update ARIA state on the button and remove open class after animation
     setTimeout(() => {
-      item.setAttribute('aria-expanded', 'false');
+      question.setAttribute('aria-expanded', 'false');
+      item.classList.remove('faq__item--open');
       item.classList.remove('faq-animating');
     }, 450);
   }
@@ -547,11 +596,15 @@ class UsableApp {
         const currentHeight = content.scrollHeight;
         
         // Remove active class from all tabs and panels
-        tabs.forEach(t => t.classList.remove('use-cases__tab--active'));
+        tabs.forEach(t => {
+          t.classList.remove('use-cases__tab--active');
+          t.setAttribute('aria-selected', 'false');
+        });
         panels.forEach(panel => panel.classList.remove('use-cases__panel--active'));
         
         // Add active class to clicked tab
         tab.classList.add('use-cases__tab--active');
+        tab.setAttribute('aria-selected', 'true');
         
         // Show the target panel
         targetPanel.classList.add('use-cases__panel--active');
@@ -641,7 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a[data-clean-url]').forEach(link => {
     const cleanUrl = link.getAttribute('data-clean-url');
     // Only use clean URL if we're not on a simple file server
-    if (window.location.protocol !== 'file:' && !window.location.hostname.includes('localhost')) {
+    if (window.location.protocol !== 'file:' && !window.location.hostname.includes('localhost') && window.location.hostname !== '127.0.0.1') {
       link.href = cleanUrl;
     }
   });
@@ -649,10 +702,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle route redirection first
   handleRouteRedirection();
   
-  const app = new UsableApp();
-  
-  // Add scroll progress indicator
-  app.addScrollProgress();
+  // CRITICAL: Wait for components to load before initializing the app
+  // Components are loaded asynchronously, so navbar/footer might not exist yet
+  document.addEventListener('all-components-loaded', () => {
+    const app = new UsableApp();
+    
+    // Add scroll progress indicator
+    app.addScrollProgress();
+  });
 
   // Fetch and render Usable version in footer
   (async () => {

@@ -1,0 +1,163 @@
+/* ===================================
+   SHARED SECTION PATTERNS
+   Purpose: Reusable section layouts with transparent gradient backgrounds
+   Dependencies: main.css for CSS variables
+   Usage: Apply to any full-width section for consistent visual depth
+   =================================== */
+
+/* Base section with gradient background variants */
+.page-section {
+  padding: var(--space-32) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient variants - alternate these for visual depth */
+.page-section--gradient-blue-orange {
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
+}
+
+[data-theme="dark"] .page-section--gradient-blue-orange {
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.12) 0%, rgba(252, 175, 42, 0.12) 100%);
+}
+
+.page-section--gradient-orange-blue {
+  background: linear-gradient(135deg, rgba(252, 175, 42, 0.25) 0%, rgba(169, 204, 233, 0.25) 100%);
+}
+
+[data-theme="dark"] .page-section--gradient-orange-blue {
+  background: linear-gradient(135deg, rgba(252, 175, 42, 0.12) 0%, rgba(169, 204, 233, 0.12) 100%);
+}
+
+.page-section--gradient-blue {
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(52, 124, 191, 0.25) 100%);
+}
+
+[data-theme="dark"] .page-section--gradient-blue {
+  background: linear-gradient(135deg, rgba(52, 124, 191, 0.25) 0%, rgba(169, 204, 233, 0.25) 100%);
+}
+
+/* No background - for alternating pattern */
+.page-section--transparent {
+  background: transparent;
+}
+
+/* Spacing modifiers */
+.page-section--small-padding {
+  padding: var(--space-20) 0;
+}
+
+.page-section--large-padding {
+  padding: var(--space-48) 0;
+}
+
+.page-section--hero {
+  padding: var(--space-32) 0 var(--space-20);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Section container - constrains content width */
+.page-section__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 1;
+}
+
+/* Section header - centered title/description pattern */
+.page-section__header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.page-section__title {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--color-black);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.page-section--hero .page-section__title,
+.page-section--large-padding .page-section__title {
+  font-size: var(--text-6xl);
+}
+
+[data-theme="dark"] .page-section__title {
+  color: var(--color-white-text);
+}
+
+.page-section__description {
+  font-size: var(--text-xl);
+  color: var(--color-black);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+[data-theme="dark"] .page-section__description {
+  color: var(--color-white-text);
+}
+
+/* Content grid for cards/items within sections */
+.page-section__grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.page-section__grid--2col {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.page-section__grid--3col {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.page-section__grid--4col {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-section {
+    padding: var(--space-20) 0;
+  }
+  
+  .page-section--large-padding {
+    padding: var(--space-32) 0;
+  }
+  
+  .page-section--hero {
+    padding: var(--space-24) 0 var(--space-16);
+    min-height: 50vh;
+  }
+  
+  .page-section__header {
+    margin-bottom: var(--space-10);
+  }
+  
+  .page-section--hero .page-section__title,
+  .page-section--large-padding .page-section__title {
+    font-size: var(--text-4xl);
+  }
+
+  .page-section__title {
+    font-size: var(--text-3xl);
+  }
+  
+  .page-section__description {
+    font-size: var(--text-lg);
+  }
+  
+  .page-section__grid--2col,
+  .page-section__grid--3col,
+  .page-section__grid--4col {
+    grid-template-columns: 1fr;
+  }
+}

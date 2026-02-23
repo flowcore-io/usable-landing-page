@@ -1,0 +1,235 @@
+/* ===================================
+   COMPONENT: CTA Section
+   BEM Block: cta
+   Purpose: Call-to-action conversion section
+   Dependencies: main.css for CSS variables
+   =================================== */
+
+.cta {
+  padding: var(--space-48) 0;
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(52, 124, 191, 0.25) 100%);
+  color: var(--color-white);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .cta {
+  background: linear-gradient(135deg, rgba(52, 124, 191, 0.25) 0%, rgba(169, 204, 233, 0.25) 100%) !important;
+  color: var(--color-gray-600);
+}
+
+@keyframes ctaGlow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes ctaShine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.cta__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  position: relative;
+  z-index: 1;
+}
+
+.cta__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-orange);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  margin-bottom: var(--space-8);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(244, 243, 243, 0.2);
+}
+
+.cta__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  margin-bottom: var(--space-8);
+  color: var(--color-black);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+[data-theme="dark"] .cta__title {
+  color: var(--color-gray-700);
+}
+
+.cta__description {
+  font-size: var(--text-xl);
+  line-height: 1.6;
+  margin-bottom: var(--space-12);
+  color: var(--color-black);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+[data-theme="dark"] .cta__description {
+  color: var(--color-gray-600);
+}
+
+/* ===================================
+   BUTTON SPACING DECISIONS
+   =================================== */
+/* 
+ * Mobile-First Approach: Column layout for narrow screens
+ * Rationale: Stacked buttons are easier to tap on mobile devices
+ * Gap: var(--space-4) provides comfortable spacing between buttons
+ * 
+ * Tablet (640px-767px):
+ * - Row layout: Side-by-side buttons maximize horizontal space
+ * - Flex: 1 ensures equal button widths for visual balance
+ * - Min-height: 48px meets WCAG touch target requirements
+ * 
+ * Desktop (768px+):
+ * - Gap increases to var(--space-6) for better visual separation
+ * - Flex: none allows natural button widths based on content
+ * - Min-height: 52px provides more prominent call-to-action presence
+ */
+.cta__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===================================
+   RESPONSIVE ADJUSTMENTS
+   =================================== */
+/* 
+ * Breakpoint Strategy:
+ * - Mobile (<640px): Column layout, compact spacing
+ * - Tablet (640px-767px): Row layout with equal-width buttons
+ * - Desktop (768px+): Row layout with natural button widths
+ * 
+ * Rationale: Progressive enhancement ensures optimal UX at each breakpoint
+ * Touch targets: Minimum 48px height meets accessibility standards
+ * Spacing: Increases with screen size for better visual hierarchy
+ */
+/* CTA Actions Responsive */
+@media (min-width: 640px) and (max-width: 767px) {
+  .cta__actions {
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+  
+  .cta__actions .btn,
+  .cta__btn {
+    flex: 1;
+    min-height: 48px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta__actions {
+    flex-direction: row;
+    gap: var(--space-6);
+  }
+  
+  .cta__actions .btn,
+  .cta__btn {
+    flex: none;
+    min-height: 52px;
+  }
+}
+
+.cta .btn--primary {
+  background: var(--color-orange);
+  color: var(--color-white) !important;
+  border-color: var(--color-orange);
+  font-size: var(--text-lg);
+  padding: var(--space-5) var(--space-12);
+  min-width: 200px;
+}
+
+.cta .btn--primary:hover {
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+  color: var(--color-white) !important;
+  box-shadow: none;
+}
+
+.cta .btn--secondary {
+  background: var(--color-white);
+  color: var(--color-orange);
+  border-color: var(--color-orange);
+  font-size: var(--text-lg);
+  padding: var(--space-5) var(--space-12);
+  min-width: 200px;
+}
+
+[data-theme="dark"] .cta .btn--secondary {
+  background: var(--color-white);
+  color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.cta .btn--secondary:hover {
+  background: var(--color-white);
+  color: var(--color-orange);
+  box-shadow: none;
+}
+
+.cta__trust {
+  margin-top: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.cta__trust-text {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+[data-theme="dark"] .cta__trust-text {
+  color: var(--color-gray-600);
+}
+
+.cta__trust-logos {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta__trust-logo {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-blue-light);
+  opacity: 0.8;
+  transition: all var(--transition-fast);
+}
+
+.cta__trust-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+[data-theme="dark"] .cta__trust-logo {
+  color: var(--color-blue-light);
+}
+
+[data-theme="dark"] .cta__trust-logo:hover {
+  color: var(--color-blue-light-2);
+}

@@ -1,0 +1,83 @@
+/* ===================================
+   ANIMATIONS - SUBTLE & PROFESSIONAL
+   =================================== */
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-light) 100%);
+  z-index: 9999;
+  transition: width 0.1s ease;
+  box-shadow: 0 2px 8px rgba(52, 124, 191, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}

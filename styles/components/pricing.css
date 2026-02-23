@@ -1,0 +1,482 @@
+/* ===================================
+   COMPONENT: Pricing Page
+   Purpose: Pricing page layout and pricing card styles
+   Dependencies: main.css for CSS variables
+   =================================== */
+
+.pricing-page {
+    padding: var(--space-24) var(--space-4) var(--space-16);
+    min-height: calc(100vh - 80px);
+    position: relative;
+    z-index: 1;
+}
+
+.pricing-page__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-hero {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.pricing-hero__title {
+    font-size: var(--text-6xl);
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-4);
+}
+
+[data-theme="dark"] .pricing-hero__title {
+    color: #f8fafc; /* Near-white for headings */
+}
+
+.pricing-hero__description {
+    max-width: 700px;
+    font-size: var(--text-lg);
+    color: var(--color-gray-700);
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+[data-theme="dark"] .pricing-hero__description {
+    color: #e2e8f0; /* Light gray for body text */
+}
+
+/* Trust badges row */
+.pricing-hero__badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+    margin-top: var(--space-6);
+}
+
+.pricing-hero__badge {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-gray-700);
+}
+
+.pricing-hero__badge:not(:last-child)::after {
+    content: " · ";
+    padding: 0 var(--space-2);
+    color: var(--color-gray-600);
+}
+
+[data-theme="dark"] .pricing-hero__badge {
+    color: var(--color-gray-700);
+}
+
+/* Quick-jump section nav */
+.pricing-hero__nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.pricing-hero__nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-full);
+    font-size: var(--text-base);
+    font-weight: 600;
+    text-decoration: none;
+    background: rgba(252, 175, 42, 0.15);
+    color: var(--color-gray-900);
+    border: 1px solid var(--color-orange);
+    transition: background var(--transition-fast);
+}
+
+.pricing-hero__nav-link:hover {
+    background: rgba(252, 175, 42, 0.3);
+}
+
+[data-theme="dark"] .pricing-hero__nav-link {
+    background: rgba(255, 193, 69, 0.2);
+    color: var(--color-gray-900);
+    border-color: var(--color-orange);
+}
+
+[data-theme="dark"] .pricing-hero__nav-link:hover {
+    background: rgba(255, 193, 69, 0.35);
+}
+
+.pricing-section {
+    margin-bottom: var(--space-16);
+}
+
+.pricing-section__header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.pricing-section__title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-2);
+}
+
+[data-theme="dark"] .pricing-section__title {
+    color: #f8fafc; /* Near-white for headings */
+}
+
+.pricing-section__description {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--color-gray-700);
+}
+
+[data-theme="dark"] .pricing-section__description {
+    color: #e2e8f0; /* Light gray for body text */
+}
+
+/* ===================================
+   CARD GRID LAYOUT
+   =================================== */
+/* 
+ * Grid Strategy: Responsive auto-fit with minimum column widths
+ * Rationale: Cards maintain readable width while adapting to container
+ * 
+ * 3-Column Variant:
+ * - Minmax(280px, 1fr): Minimum 280px ensures card readability
+ * - Auto-fit: Creates as many columns as fit in available space
+ * - Rationale: Optimal for 3 pricing tiers on desktop
+ * 
+ * 4-Column Variant:
+ * - Minmax(250px, 1fr): Smaller minimum for more columns
+ * - Rationale: Accommodates additional pricing options
+ * 
+ * 1-Column Variant:
+ * - Single column with max-width constraint
+ * - Centered: Auto margins create visual balance
+ * - Rationale: Focused presentation for single pricing option
+ */
+.pricing-grid {
+    display: grid;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+}
+
+.pricing-grid--3col {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.pricing-grid--4col {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.pricing-grid--1col {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-note {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+    margin-top: var(--space-6);
+}
+
+[data-theme="dark"] .pricing-note {
+    color: var(--color-gray-400);
+}
+
+/* Pricing Card Component */
+/* ===================================
+   HOVER EFFECT RATIONALE
+   =================================== */
+/* 
+ * Base Card Styles:
+ * Background: Semi-transparent white (0.96) allows subtle backdrop blending
+ * Border: Light blue border maintains brand consistency
+ * Box-shadow: Soft shadow creates depth without being overwhelming
+ * Position: Relative enables absolute positioning of badge
+ * 
+ * Hover State:
+ * Transform: translateY(-4px) lifts card for interactive feedback
+ * Rationale: Indicates clickability and creates engaging micro-interaction
+ * Box-shadow: Increases intensity (0.08 → 0.12) enhances lift effect
+ * Shadow size: Larger spread (32px → 40px) reinforces elevation
+ * 
+ * Transition: Normal timing provides smooth, professional animation
+ * Both properties transition together for cohesive effect
+ */
+.pricing-card {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(52, 124, 191, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+
+[data-theme="dark"] .pricing-card {
+    background: rgba(28, 47, 64, 0.96);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    border-color: rgba(96, 165, 250, 0.18);
+}
+
+
+.pricing-card--popular {}
+
+/* ===================================
+   POPULAR BADGE POSITIONING
+   =================================== */
+/* 
+ * Positioning Strategy: Absolute positioning with centered alignment
+ * Top: -12px places badge partially outside card for visual prominence
+ * Left: 50% + translateX(-50%) centers badge horizontally
+ * Rationale: Creates floating effect that draws attention
+ * 
+ * Visual Design:
+ * - Full border-radius creates pill shape
+ * - Blue background matches brand color
+ * - White-space: nowrap prevents text wrapping
+ * - Padding: Generous spacing for readability
+ * 
+ * Z-index: Inherits from card's stacking context
+ * Note: Card must have position: relative for proper positioning
+ */
+.pricing-card__badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-blue);
+    color: white;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.pricing-card__header {
+    margin-bottom: var(--space-6);
+}
+
+.pricing-card__title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-4);
+}
+
+[data-theme="dark"] .pricing-card__title {
+    color: #f8fafc; /* Near-white for headings */
+}
+
+.pricing-card__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    margin-bottom: var(--space-6);
+}
+
+.pricing-card__amount {
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    color: var(--color-blue);
+    line-height: 1;
+}
+
+.pricing-card__period {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+[data-theme="dark"] .pricing-card__period {
+    color: var(--color-gray-400);
+}
+
+.pricing-card__features {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-6) 0 0;
+    text-align: left;
+}
+
+.pricing-card__features li {
+    padding: var(--space-2) 0;
+    padding-left: var(--space-6);
+    position: relative;
+    color: var(--color-gray-700);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.pricing-card__features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-blue);
+    font-weight: 700;
+}
+
+[data-theme="dark"] .pricing-card__features li {
+    color: #e2e8f0; /* Light gray for feature items */
+}
+
+.consultancy-card {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(52, 124, 191, 0.1);
+    text-align: center;
+}
+
+[data-theme="dark"] .consultancy-card {
+    background: rgba(28, 47, 64, 0.96);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    border-color: rgba(96, 165, 250, 0.18);
+}
+
+.consultancy-card__title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-4);
+}
+
+[data-theme="dark"] .consultancy-card__title {
+    color: #f8fafc; /* Near-white for headings */
+}
+
+.consultancy-card__price {
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    color: var(--color-blue);
+    margin-bottom: var(--space-6);
+}
+
+.consultancy-card__services {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.consultancy-card__services li {
+    padding: var(--space-2) 0;
+    padding-left: var(--space-6);
+    position: relative;
+    color: var(--color-gray-700);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.consultancy-card__services li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-blue);
+    font-weight: 700;
+}
+
+[data-theme="dark"] .consultancy-card__services li {
+    color: #e2e8f0;
+}
+
+.consultancy-card__description {
+    font-size: var(--text-lg);
+    color: var(--color-gray-700);
+    margin-bottom: var(--space-6);
+}
+
+[data-theme="dark"] .consultancy-card__description {
+    color: #e2e8f0; /* Light gray for body text */
+}
+
+.consultancy-card__actions {
+    margin-top: var(--space-6);
+}
+
+/* ===================================
+   FAQ SECTION
+   =================================== */
+.pricing-section--faq {
+    margin-top: var(--space-16);
+}
+
+.pricing-faq__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pricing-faq__item {
+    margin-bottom: var(--space-6);
+}
+
+.pricing-faq__question {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin-bottom: var(--space-2);
+}
+
+[data-theme="dark"] .pricing-faq__question {
+    color: #f8fafc; /* Near-white for headings */
+}
+
+.pricing-faq__answer {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-gray-700);
+}
+
+[data-theme="dark"] .pricing-faq__answer {
+    color: #e2e8f0; /* Light gray for body text */
+}
+
+@media (max-width: 768px) {
+    .pricing-page {
+        padding: var(--space-20) var(--space-4) var(--space-12);
+    }
+
+    .pricing-hero__title {
+        font-size: var(--text-4xl);
+    }
+
+    .pricing-grid--3col,
+    .pricing-grid--4col {
+        grid-template-columns: 1fr;
+    }
+
+    .consultancy-card {
+        padding: var(--space-6);
+    }
+
+    .pricing-faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* FAQ 2-column grid for pricing page */
+.pricing-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    align-items: start;
+}

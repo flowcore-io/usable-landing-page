@@ -1,0 +1,198 @@
+/* ===================================
+   COMPONENT: Integrations Section
+   BEM Block: integrations
+   Purpose: Tool/platform integration showcase
+   Dependencies: main.css for CSS variables
+   =================================== */
+
+.integrations {
+  padding: var(--space-32) 0;
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .integrations {
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
+}
+
+.integrations__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.integrations__header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.integrations__title {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--color-black);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.integrations__description {
+  font-size: var(--text-xl);
+  color: var(--color-black);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.integrations__grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+  margin-top: var(--space-10);
+}
+
+.integrations__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 60px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition-normal);
+}
+
+.integrations__logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: all var(--transition-normal);
+  pointer-events: none;
+}
+
+/* Logo theme switching - Default light mode, then dark mode overrides */
+.integrations__logo--light {
+  display: block;
+}
+
+.integrations__logo--dark {
+  display: none;
+}
+
+[data-theme="dark"] .integrations__logo--light {
+  display: none;
+}
+
+[data-theme="dark"] .integrations__logo--dark {
+  display: block;
+}
+
+/* Kiro logo + wordmark layout */
+.integrations__item--kiro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.integrations__logo--kiro-icon {
+  max-width: 30%;
+  flex-shrink: 0;
+}
+
+/* Kiro wordmark - black in light mode (default), white in dark mode */
+.integrations__logo--kiro-wordmark {
+  max-width: 65%;
+  flex-shrink: 0;
+  transition: none;
+  filter: brightness(0); /* Default: black for light mode */
+}
+
+[data-theme="dark"] .integrations__logo--kiro-wordmark {
+  filter: brightness(1); /* White/original in dark mode */
+}
+
+.integrations__item:hover {
+  transform: translateY(-4px);
+}
+
+.integrations__item:focus,
+.integrations__item:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.integrations__divider {
+  width: 60px;
+  height: 3px;
+  background: var(--color-orange);
+  margin: var(--space-16) auto var(--space-12) auto;
+  border-radius: var(--radius-full);
+  opacity: 0.6;
+}
+
+.integrations__chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.integrations__chat-text {
+  font-size: var(--text-lg);
+  color: var(--color-black);
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.integrations__chat .btn:focus,
+.integrations__chat .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .integrations {
+    padding: var(--space-20) 0;
+  }
+  
+  .integrations__title {
+    font-size: var(--text-3xl);
+  }
+  
+  .integrations__description {
+    font-size: var(--text-lg);
+  }
+  
+  .integrations__grid {
+    gap: var(--space-8);
+  }
+  
+  .integrations__item {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .integrations__grid {
+    gap: var(--space-6);
+  }
+  
+  .integrations__item {
+    width: 80px;
+    height: 40px;
+  }
+}
+
+/* Button scoped to integrations block */
+.integrations__btn {
+  /* Inherits all .btn styles from main.css */
+}

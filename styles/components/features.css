@@ -1,0 +1,233 @@
+/* ===================================
+   COMPONENT: Features Section
+   BEM Block: features
+   Purpose: Value proposition feature grid
+   Dependencies: main.css for CSS variables
+   =================================== */
+
+.features {
+  padding: var(--space-40) 0;
+  background: linear-gradient(135deg, rgba(252, 175, 42, 0.25) 0%, rgba(169, 204, 233, 0.25) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .features {
+  background: linear-gradient(135deg, rgba(252, 175, 42, 0.12) 0%, rgba(169, 204, 233, 0.12) 100%);
+}
+
+.features__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.features__grid {
+  display: grid;
+  /* auto-fit with minmax(380px, 1fr) creates responsive grid that adapts to container width.
+     Cards maintain minimum 380px width for readability, automatically wrapping to new rows as needed.
+     auto-fit (vs auto-fill) collapses empty columns, ensuring cards always fill available space.
+     This pattern eliminates need for multiple media query breakpoints while maintaining consistent card sizing. */
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: var(--space-10);
+}
+
+.feature {
+  padding: var(--space-12);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(52, 124, 191, 0.1);
+  text-align: left;
+  /* Merged transition: width for hover/resize, plus opacity+transform so animate-on-scroll
+     fade-in works correctly (individual component transitions override the utility class otherwise). */
+  transition: width var(--transition-normal), opacity 0.6s ease-out, transform 0.6s ease-out;
+  position: relative;
+  /* overflow: hidden clips decorative ::after pseudo-element, creating contained visual effect. */
+  overflow: hidden;
+  /* min-height ensures consistent card heights, preventing layout shifts when content varies.
+     280px provides sufficient space for icon, title, description, and CTA while maintaining compact design. */
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme="dark"] .feature {
+  background: rgba(28, 47, 64, 0.96);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  border-color: rgba(96, 165, 250, 0.18);
+}
+
+.feature::before {
+  display: none;
+}
+
+.feature::after {
+  /* Decorative pseudo-element creates subtle visual interest without additional DOM elements.
+     Positioned top-right with translate offset creates "peeking" effect that adds depth.
+     Circular gradient provides brand color accent while maintaining low visual weight. */
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.1) 0%, rgba(169, 204, 233, 0.05) 100%);
+  border-radius: var(--radius-full);
+  /* translate(30px, -30px) partially hides circle behind card edge, creating subtle peek effect.
+     This technique adds visual interest without overwhelming content or requiring hover states. */
+  transform: translate(30px, -30px);
+  /* Transition enables potential hover animations (e.g., expanding decorative element).
+     Width transition allows smooth size changes if interactive states are added later. */
+  transition: width var(--transition-normal);
+}
+
+/* Feature card variations - different sizes and colors */
+/* nth-child selectors create visual variety across feature cards without individual classes.
+     Varying sizes and brand color gradients (blue, orange) prevent monotony while maintaining design consistency.
+     Each card receives unique decorative element that reinforces brand identity through color variation. */
+.feature:nth-child(1)::after {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, rgba(52, 124, 191, 0.15) 0%, rgba(52, 124, 191, 0.08) 100%);
+  transform: translate(40px, -40px);
+}
+
+.feature:nth-child(2)::after {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.2) 0%, rgba(169, 204, 233, 0.1) 100%);
+  transform: translate(20px, -20px);
+}
+
+.feature:nth-child(3)::after {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(252, 175, 42, 0.15) 0%, rgba(252, 175, 42, 0.08) 100%);
+  transform: translate(30px, -30px);
+}
+
+.feature:nth-child(4)::after {
+  width: 130px;
+  height: 130px;
+  background: linear-gradient(135deg, rgba(52, 124, 191, 0.12) 0%, rgba(52, 124, 191, 0.06) 100%);
+  transform: translate(38px, -38px);
+}
+
+.feature:nth-child(5)::after {
+  width: 85px;
+  height: 85px;
+  background: linear-gradient(135deg, rgba(169, 204, 233, 0.18) 0%, rgba(169, 204, 233, 0.09) 100%);
+  transform: translate(25px, -25px);
+}
+
+.feature:nth-child(6)::after {
+  width: 115px;
+  height: 115px;
+  background: linear-gradient(135deg, rgba(252, 175, 42, 0.2) 0%, rgba(252, 175, 42, 0.1) 100%);
+  transform: translate(35px, -35px);
+}
+
+
+.feature__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Fixed dimensions (72px) create consistent icon container size across all feature cards.
+     Square aspect ratio maintains visual balance and provides adequate space for icon content. */
+  width: 72px;
+  height: 72px;
+  /* Orange background uses brand color to create visual hierarchy and draw attention to feature icon.
+     High contrast against white icon ensures accessibility and clear visual communication. */
+  background: var(--color-orange);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--space-6);
+  box-shadow: none;
+  position: relative;
+  /* z-index: 1 ensures icon appears above decorative ::after pseudo-element, maintaining visual hierarchy. */
+  z-index: 1;
+}
+
+.feature__icon-i {
+  font-size: var(--text-2xl);
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.feature__icon-svg {
+  color: var(--color-white);
+  width: 36px;
+  height: 36px;
+}
+
+.feature__title {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+  color: var(--color-black);
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="dark"] .feature__title {
+  color: #f8fafc; /* Near-white for headings */
+}
+
+.feature__description {
+  color: var(--color-black);
+  /* Generous line-height (1.6) improves readability for multi-line feature descriptions.
+     Standard body text line-height accommodates longer sentences and technical content. */
+  line-height: 1.6;
+  font-size: var(--text-lg);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  /* flex-grow: 1 pushes CTA to bottom of card, creating consistent card layout regardless of description length.
+     This ensures visual alignment across feature grid when descriptions vary in length. */
+  flex-grow: 1;
+}
+
+[data-theme="dark"] .feature__description {
+  color: #e2e8f0; /* Light gray for body text */
+}
+
+.feature__cta {
+  margin-top: var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+
+.feature__cta-link {
+  color: var(--color-blue);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  /* Fast transition (all properties) enables smooth color/transform changes on hover/focus.
+     Fast duration (typically 150-200ms) provides responsive feel without jarring instant changes. */
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+[data-theme="dark"] .feature__cta-link {
+  color: #7db8e8; /* Bright blue for links */
+}
+
+[data-theme="dark"] .feature__cta-link:hover {
+  color: #a3cff2; /* Even brighter blue on hover */
+}
+
+.feature__cta-link::after {
+  /* Arrow character (→) provides clear visual indicator of link action without icon dependency.
+     Pseudo-element approach keeps markup semantic while adding decorative/interactive element. */
+  content: '→';
+  font-weight: 700;
+  /* Transform transition enables arrow slide animation on hover (e.g., translateX for "slide right" effect).
+     Fast duration ensures arrow movement feels snappy and responsive to user interaction. */
+  transition: transform var(--transition-fast);
+}

@@ -1,0 +1,209 @@
+/* ===================================
+   COMPONENT: About Page
+   Purpose: About page layout and company information
+   Dependencies: main.css for CSS variables, sections.css for layout
+   =================================== */
+
+/* About-specific hero styling */
+.about-hero {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-hero__title {
+    font-size: var(--text-6xl);
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--color-black);
+    margin-bottom: var(--space-6);
+    letter-spacing: -0.02em;
+}
+
+[data-theme="dark"] .about-hero__title {
+    color: var(--color-white);
+}
+
+.about-hero__description {
+    font-size: var(--text-xl);
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--color-black);
+}
+
+[data-theme="dark"] .about-hero__description {
+    color: var(--color-white-text);
+}
+
+/* About section content styling */
+.about-section__content {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    font-weight: 400;
+    color: var(--color-black);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+[data-theme="dark"] .about-section__content {
+    color: var(--color-white-text);
+}
+
+.about-section__content--centered {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.about-section__content p {
+    margin-bottom: var(--space-6);
+}
+
+.about-section__content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-section__list {
+    list-style: none;
+    padding-left: 0;
+    margin: var(--space-6) 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.about-section__list li {
+    padding: var(--space-2) 0 var(--space-2) var(--space-6);
+    position: relative;
+    line-height: 1.8;
+}
+
+.about-section__list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-blue);
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.about-section__content--spaced {
+    margin-top: var(--space-8);
+}
+
+/* Offerings grid */
+.about-offerings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+}
+
+.offering-card {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(52, 124, 191, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+[data-theme="dark"] .offering-card {
+    background: rgba(28, 47, 64, 0.96);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    border-color: rgba(96, 165, 250, 0.18);
+}
+
+.offering-card__title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-black);
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+[data-theme="dark"] .offering-card__title {
+    color: var(--color-white);
+}
+
+.offering-card__description {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--color-black);
+    margin-bottom: var(--space-5);
+    text-align: center;
+}
+
+[data-theme="dark"] .offering-card__description {
+    color: var(--color-white-text);
+}
+
+.offering-card__description--note {
+    margin-top: var(--space-4);
+    font-style: italic;
+    opacity: 0.85;
+    font-size: var(--text-sm);
+    text-align: center;
+}
+
+.offering-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-5);
+    flex: 1;
+}
+
+.offering-card__feature-item {
+    padding: var(--space-2) 0 var(--space-2) var(--space-6);
+    color: var(--color-black);
+    position: relative;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: var(--text-sm);
+}
+
+[data-theme="dark"] .offering-card__feature-item {
+    color: var(--color-white-text);
+}
+
+.offering-card__feature-item::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-blue);
+    font-weight: 700;
+}
+
+.offering-card__actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.offering-card__actions .btn {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .about-offerings {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero__title {
+        font-size: var(--text-4xl);
+    }
+
+    .offering-card {
+        padding: var(--space-6);
+    }
+}
+
