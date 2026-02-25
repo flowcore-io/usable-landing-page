@@ -69,7 +69,7 @@
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <a href="#main-content" class="skip-to-content" data-i18n="common.skip-to-content">Skip to main content</a>
     
     <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
     <div class="bokeh bokeh--1"></div>
@@ -97,8 +97,8 @@
         <section class="page-section page-section--hero page-section--gradient-blue-orange">
             <div class="page-section__container">
                 <div class="page-section__header animate-on-scroll fade-in-down">
-                    <h1 class="page-section__title">Use Cases</h1>
-                    <p class="page-section__description">
+                    <h1 class="page-section__title" data-i18n="use-cases.hero.title">Use Cases</h1>
+                    <p class="page-section__description" data-i18n-html="use-cases.hero.description">
                         See how <span class="brand-text">Usable</span> turns team knowledge into shipped work.<br>
                         Pick a role to follow the step-by-step flow with a preview.
                     </p>
@@ -106,13 +106,13 @@
 
                 <!-- Tab Navigation -->
                 <div class="use-cases__tabs animate-on-scroll fade-in-up stagger-delay-1" role="tablist" aria-label="Use case categories">
-                    <button class="use-cases__tab use-cases__tab--active" role="tab" id="tab-engineer" aria-selected="true" aria-controls="engineer" data-tab="engineer">
+                    <button class="use-cases__tab use-cases__tab--active" role="tab" id="tab-engineer" aria-selected="true" aria-controls="engineer" data-tab="engineer" data-i18n="use-cases.tab.engineer">
                         Software Engineer
                     </button>
-                    <button class="use-cases__tab" role="tab" id="tab-devops" aria-selected="false" aria-controls="devops" data-tab="devops">
+                    <button class="use-cases__tab" role="tab" id="tab-devops" aria-selected="false" aria-controls="devops" data-tab="devops" data-i18n="use-cases.tab.devops">
                         DevOps
                     </button>
-                    <button class="use-cases__tab" role="tab" id="tab-team" aria-selected="false" aria-controls="team" data-tab="team">
+                    <button class="use-cases__tab" role="tab" id="tab-team" aria-selected="false" aria-controls="team" data-tab="team" data-i18n="use-cases.tab.team">
                         Team
                     </button>
                 </div>
@@ -124,15 +124,15 @@
                         <div class="use-cases__grid">
                             <div class="use-cases__card animate-on-scroll fade-in-left stagger-delay-2">
                                 <div class="use-cases__card-header">
-                                    <h2 class="use-cases__card-title">Document and Implement Internal Library</h2>
+                                    <h2 class="use-cases__card-title" data-i18n="use-cases.engineer.title">Document and Implement Internal Library</h2>
                                 </div>
                                 <div class="use-cases__card-content">
                                     <ol class="use-cases__steps">
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">1</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Author library docs</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.engineer.step1.title">Author library docs</h3>
+                                                <p class="use-cases__step-description" data-i18n-html="use-cases.engineer.step1.description">
                                                     You have a private library without documentation. In the repo, ask <span class="brand-text">Usable</span> to create a documentation fragment, focusing on key feature X or Y.
                                                 </p>
                                             </div>
@@ -140,8 +140,8 @@
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">2</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Consumer asks to implement</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.engineer.step2.title">Consumer asks to implement</h3>
+                                                <p class="use-cases__step-description" data-i18n="use-cases.engineer.step2.description">
                                                     Another developer asks their agent to implement the library in their app.
                                                 </p>
                                             </div>
@@ -149,8 +149,8 @@
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">3</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Agent finds docs</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.engineer.step3.title">Agent finds docs</h3>
+                                                <p class="use-cases__step-description" data-i18n-html="use-cases.engineer.step3.description">
                                                     The agent searches <span class="brand-text">Usable</span>, finds the documentation fragment, and understands the API and examples.
                                                 </p>
                                             </div>
@@ -158,8 +158,8 @@
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">4</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">First-try implementation</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.engineer.step4.title">First-try implementation</h3>
+                                                <p class="use-cases__step-description" data-i18n="use-cases.engineer.step4.description">
                                                     It implements the library without hallucinations and wires up the key feature.
                                                 </p>
                                             </div>
@@ -167,8 +167,8 @@
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">5</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Auto-linked knowledge</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.engineer.step5.title">Auto-linked knowledge</h3>
+                                                <p class="use-cases__step-description" data-i18n-html="use-cases.engineer.step5.description">
                                                     After merge, the agent documents the integration. <span class="brand-text">Usable</span> links the docs and implementation via tags and concepts.
                                                 </p>
                                             </div>
@@ -217,15 +217,15 @@
                         <div class="use-cases__grid">
                             <div class="use-cases__card">
                                 <div class="use-cases__card-header">
-                                    <h2 class="use-cases__card-title">Provision Databases with Secure Crossplane CRDs</h2>
+                                    <h2 class="use-cases__card-title" data-i18n="use-cases.devops.title">Provision Databases with Secure Crossplane CRDs</h2>
                                 </div>
                                 <div class="use-cases__card-content">
                                     <ol class="use-cases__steps">
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">1</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Develop secure CRDs</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.devops.step1.title">Develop secure CRDs</h3>
+                                                <p class="use-cases__step-description" data-i18n="use-cases.devops.step1.description">
                                                     DevOps engineers build Crossplane CRDs encoding company best practices for secure Postgres/MySQL across supported clouds.
                                                 </p>
                                             </div>
@@ -233,8 +233,8 @@
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">2</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Document CRDs & spec</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.devops.step2.title">Document CRDs & spec</h3>
+                                                <p class="use-cases__step-description" data-i18n="use-cases.devops.step2.description">
                                                     Ask the LLM to create fragments that document the CRD itself (schema/fields, validation, examples) and also extract best practices and security constraints.
                                                 </p>
                                             </div>
@@ -242,8 +242,8 @@
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">3</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Provision database</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.devops.step3.title">Provision database</h3>
+                                                <p class="use-cases__step-description" data-i18n="use-cases.devops.step3.description">
                                                     A developer asks the agent to set up a Postgres database on AWS.
                                                 </p>
                                             </div>
@@ -251,8 +251,8 @@
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">4</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Apply best-practice profile</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.devops.step4.title">Apply best-practice profile</h3>
+                                                <p class="use-cases__step-description" data-i18n="use-cases.devops.step4.description">
                                                     The agent finds the relevant fragments (e.g., Azure/AWS profiles), generates YAML, and runs kubectl to apply the CRD configuration.
                                                 </p>
                                             </div>
@@ -260,8 +260,8 @@
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">5</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Capture issues for reuse</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.devops.step5.title">Capture issues for reuse</h3>
+                                                <p class="use-cases__step-description" data-i18n="use-cases.devops.step5.description">
                                                     Any issues discovered during provisioning are captured as solution fragments for future sessions.
                                                 </p>
                                             </div>
@@ -376,15 +376,15 @@
                         <div class="use-cases__grid">
                             <div class="use-cases__card">
                                 <div class="use-cases__card-header">
-                                    <h2 class="use-cases__card-title">Onboard Teams and Scale Standards</h2>
+                                    <h2 class="use-cases__card-title" data-i18n="use-cases.team.title">Onboard Teams and Scale Standards</h2>
                                 </div>
                                 <div class="use-cases__card-content">
                                     <ol class="use-cases__steps">
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">1</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Teach the LLM</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.team.step1.title">Teach the LLM</h3>
+                                                <p class="use-cases__step-description" data-i18n="use-cases.team.step1.description">
                                                     Team members teach the LLM best practices, tech stack, and patterns; the LLM creates learnings as fragments.
                                                 </p>
                                             </div>
@@ -392,8 +392,8 @@
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">2</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">Onboard fast</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.team.step2.title">Onboard fast</h3>
+                                                <p class="use-cases__step-description" data-i18n="use-cases.team.step2.description">
                                                     New members scaffold and ship code guided by the agent, with comparisons to team standards.
                                                 </p>
                                             </div>
@@ -401,8 +401,8 @@
                                         <li class="use-cases__step">
                                             <div class="use-cases__step-number">3</div>
                                             <div class="use-cases__step-content">
-                                                <h3 class="use-cases__step-title">10× delivery</h3>
-                                                <p class="use-cases__step-description">
+                                                <h3 class="use-cases__step-title" data-i18n="use-cases.team.step3.title">10× delivery</h3>
+                                                <p class="use-cases__step-description" data-i18n="use-cases.team.step3.description">
                                                     Existing members move faster with the team's combined knowledge of services, libraries, and deployments.
                                                 </p>
                                             </div>
@@ -454,6 +454,7 @@
     <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
+    <script src="scripts/i18n.js"></script>
     <script src="scripts/components.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/theme.js"></script>

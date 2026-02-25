@@ -67,7 +67,7 @@
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <a href="#main-content" class="skip-to-content" data-i18n="common.skip-to-content">Skip to main content</a>
     
     <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
     <div class="bokeh bokeh--1"></div>
@@ -95,8 +95,8 @@
         <section class="page-section page-section--large-padding page-section--gradient-blue-orange">
             <div class="page-section__container">
                 <div class="page-section__header animate-on-scroll fade-in-down">
-                    <h1 class="page-section__title">See Usable in Action</h1>
-                    <p class="page-section__description">
+                    <h1 class="page-section__title" data-i18n="demo.hero.title">See Usable in Action</h1>
+                    <p class="page-section__description" data-i18n="demo.hero.description">
                         Watch how Usable makes knowledge management for AI agents simple and powerful. Learn how to upload knowledge, connect your AI agents, and retrieve information instantly.
                     </p>
                 </div>
@@ -108,7 +108,7 @@
                         controls 
                         preload="metadata"
                         playsinline
-                        aria-label="Usable 101: Product Overview"
+                        aria-label="Usable 101: Product Overview" data-i18n-aria-label="demo.video-label"
                     >
                         <source src="assets/videos/usable-101.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -123,7 +123,7 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="demo-action-btn__icon">
                             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                         </svg>
-                        Watch on YouTube
+                        <span data-i18n="demo.btn-youtube">Watch on YouTube</span>
                     </a>
                     <a href="detailed-screenshots.html"
                        data-clean-url="/detailed-screenshots"
@@ -133,7 +133,7 @@
                             <circle cx="9" cy="9" r="2"/>
                             <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
                         </svg>
-                        View Screenshots
+                        <span data-i18n="demo.btn-screenshots">View Screenshots</span>
                     </a>
                 </div>
             </div>
@@ -143,8 +143,8 @@
         <section class="page-section page-section--gradient-orange-blue">
             <div class="page-section__container">
                 <div class="page-section__header animate-on-scroll fade-in-down">
-                    <h2 class="page-section__title">Usable 101: Product Overview</h2>
-                    <p class="page-section__description">
+                    <h2 class="page-section__title" data-i18n="demo.features.title">Usable 101: Product Overview</h2>
+                    <p class="page-section__description" data-i18n="demo.features.description">
                         This demo covers the core features of Usable, showing you how to get started with knowledge management for your AI agents. You'll see how to upload documents, create knowledge fragments, connect AI agents via MCP, and search for information across your workspace.
                     </p>
                 </div>
@@ -157,8 +157,8 @@
                                 <line x1="12" y1="3" x2="12" y2="15"/>
                             </svg>
                         </div>
-                        <h3 class="demo-feature__title">Upload Knowledge</h3>
-                        <p class="demo-feature__description">
+                        <h3 class="demo-feature__title" data-i18n="demo.feature1.title">Upload Knowledge</h3>
+                        <p class="demo-feature__description" data-i18n="demo.feature1.description">
                             See how easy it is to upload documents and create knowledge fragments. Usable automatically organizes and structures your content for optimal retrieval.
                         </p>
                     </div>
@@ -169,8 +169,8 @@
                                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
                             </svg>
                         </div>
-                        <h3 class="demo-feature__title">Connect AI Agents</h3>
-                        <p class="demo-feature__description">
+                        <h3 class="demo-feature__title" data-i18n="demo.feature2.title">Connect AI Agents</h3>
+                        <p class="demo-feature__description" data-i18n="demo.feature2.description">
                             Learn how to connect your AI agents via MCP integration or REST API. Works seamlessly with Cursor, Claude, VS Code, and more.
                         </p>
                     </div>
@@ -181,8 +181,8 @@
                                 <line x1="21" y1="21" x2="16.65" y2="16.65"/>
                             </svg>
                         </div>
-                        <h3 class="demo-feature__title">Search &amp; Retrieve</h3>
-                        <p class="demo-feature__description">
+                        <h3 class="demo-feature__title" data-i18n="demo.feature3.title">Search &amp; Retrieve</h3>
+                        <p class="demo-feature__description" data-i18n="demo.feature3.description">
                             Watch how agents search and retrieve relevant knowledge fragments using agentic search with re-ranking for high accuracy.
                         </p>
                     </div>
@@ -195,8 +195,8 @@
                                 <rect x="3" y="14" width="7" height="7"/>
                             </svg>
                         </div>
-                        <h3 class="demo-feature__title">Workspace Management</h3>
-                        <p class="demo-feature__description">
+                        <h3 class="demo-feature__title" data-i18n="demo.feature4.title">Workspace Management</h3>
+                        <p class="demo-feature__description" data-i18n="demo.feature4.description">
                             See how workspaces help organize knowledge by project, team, or domain. Manage permissions and collaborate effectively.
                         </p>
                     </div>
@@ -214,6 +214,7 @@
 
 
     <!-- Scripts -->
+    <script src="scripts/i18n.js"></script>
     <script src="scripts/components.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/theme.js"></script>

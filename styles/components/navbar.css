@@ -544,6 +544,51 @@ a.nav__cta--mobile.btn.btn--primary {
 }
 
 /* ===================================
+   LANGUAGE SWITCHER
+   =================================== */
+
+.nav__lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-1) var(--space-2);
+  font-family: var(--font-family-heading);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-black);
+  border: 1.5px solid var(--color-gray-400);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-width: 36px;
+  min-height: 28px;
+  letter-spacing: 0.05em;
+}
+
+.nav__lang-switch:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+[data-theme="dark"] .nav__lang-switch {
+  color: #f4f3f3;
+  border-color: var(--color-gray-600);
+}
+
+[data-theme="dark"] .nav__lang-switch:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+.nav__lang-switch--mobile {
+  width: 100%;
+  min-height: 48px;
+  font-size: var(--text-base);
+  margin-bottom: var(--space-2);
+}
+
+/* ===================================
    MOBILE NAVIGATION MENU
    =================================== */
 

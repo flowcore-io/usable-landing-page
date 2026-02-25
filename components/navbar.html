@@ -16,37 +16,40 @@
 
         <div class="nav__menu">
             <div class="nav__dropdown" aria-expanded="false">
-                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Product</button>
+                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-i18n="nav.product">Product</button>
                 <div class="nav__dropdown-menu">
-                    <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__dropdown-item">How It Works</a>
-                    <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__dropdown-item">Use Cases</a>
-                    <a href="/demo.html" data-clean-url="/demo" class="nav__dropdown-item">Demo</a>
-                    <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__dropdown-item">Detailed Screenshots</a>
+                    <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__dropdown-item" data-i18n="nav.how-it-works">How It Works</a>
+                    <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__dropdown-item" data-i18n="nav.use-cases">Use Cases</a>
+                    <a href="/demo.html" data-clean-url="/demo" class="nav__dropdown-item" data-i18n="nav.demo">Demo</a>
+                    <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__dropdown-item" data-i18n="nav.detailed-screenshots">Detailed Screenshots</a>
                 </div>
             </div>
-            <a href="/pricing.html" data-clean-url="/pricing" class="nav__link">Pricing</a>
+            <a href="/pricing.html" data-clean-url="/pricing" class="nav__link" data-i18n="nav.pricing">Pricing</a>
             <div class="nav__dropdown" aria-expanded="false">
-                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Resources</button>
+                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-i18n="nav.resources">Resources</button>
                 <div class="nav__dropdown-menu">
-                    <a href="/blog.html" data-clean-url="/blog" class="nav__dropdown-item">Blog</a>
-                    <a href="/news.html" data-clean-url="/news" class="nav__dropdown-item">News</a>
-                    <a href="https://usable.dev/docs" class="nav__dropdown-item" target="_blank" rel="noopener noreferrer">Docs</a>
-                    <a href="/faq.html" data-clean-url="/faq" class="nav__dropdown-item">FAQ</a>
+                    <a href="/blog.html" data-clean-url="/blog" class="nav__dropdown-item" data-i18n="nav.blog">Blog</a>
+                    <a href="/news.html" data-clean-url="/news" class="nav__dropdown-item" data-i18n="nav.news">News</a>
+                    <a href="https://usable.dev/docs" class="nav__dropdown-item" target="_blank" rel="noopener noreferrer" data-i18n="nav.docs">Docs</a>
+                    <a href="/faq.html" data-clean-url="/faq" class="nav__dropdown-item" data-i18n="nav.faq">FAQ</a>
                 </div>
             </div>
             <div class="nav__dropdown" aria-expanded="false">
-                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false">About</button>
+                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-i18n="nav.about">About</button>
                 <div class="nav__dropdown-menu">
-                    <a href="/about.html" data-clean-url="/about" class="nav__dropdown-item">About</a>
-                    <a href="/team.html" data-clean-url="/team" class="nav__dropdown-item">Team</a>
-                    <a href="/contact.html" data-clean-url="/contact" class="nav__dropdown-item">Contact</a>
+                    <a href="/about.html" data-clean-url="/about" class="nav__dropdown-item" data-i18n="nav.about">About</a>
+                    <a href="/team.html" data-clean-url="/team" class="nav__dropdown-item" data-i18n="nav.team">Team</a>
+                    <a href="/contact.html" data-clean-url="/contact" class="nav__dropdown-item" data-i18n="nav.contact">Contact</a>
                 </div>
             </div>
         </div>
 
         <div class="nav__actions">
-            <a href="https://usable.dev/login" class="btn btn--primary nav__cta--desktop">LOG IN</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <a href="#" class="nav__lang-switch" aria-label="Switch to Faroese">
+                <span class="nav__lang-switch-label">FO</span>
+            </a>
+            <a href="https://usable.dev/login" class="btn btn--primary nav__cta--desktop" data-i18n="nav.login">LOG IN</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" data-i18n-aria-label="nav.toggle-menu" aria-expanded="false">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -59,29 +62,32 @@
 <div class="nav__menu--mobile">
     <div class="nav__menu--mobile-content">
 
-        <p class="nav__mobile-section">Product</p>
-        <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile">How It Works</a>
-        <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile">Use Cases</a>
-        <a href="/demo.html" data-clean-url="/demo" class="nav__link nav__link--mobile">Demo</a>
-        <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__link nav__link--mobile">Detailed Screenshots</a>
+        <p class="nav__mobile-section" data-i18n="nav.product">Product</p>
+        <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile" data-i18n="nav.how-it-works">How It Works</a>
+        <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile" data-i18n="nav.use-cases">Use Cases</a>
+        <a href="/demo.html" data-clean-url="/demo" class="nav__link nav__link--mobile" data-i18n="nav.demo">Demo</a>
+        <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__link nav__link--mobile" data-i18n="nav.detailed-screenshots">Detailed Screenshots</a>
 
-        <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile nav__link--mobile-standalone">Pricing</a>
+        <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile nav__link--mobile-standalone" data-i18n="nav.pricing">Pricing</a>
 
-        <p class="nav__mobile-section">Resources</p>
-        <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile">Blog</a>
-        <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile">News</a>
-        <a href="https://usable.dev/docs" class="nav__link nav__link--mobile" target="_blank" rel="noopener noreferrer">Docs</a>
-        <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile">FAQ</a>
+        <p class="nav__mobile-section" data-i18n="nav.resources">Resources</p>
+        <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile" data-i18n="nav.blog">Blog</a>
+        <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile" data-i18n="nav.news">News</a>
+        <a href="https://usable.dev/docs" class="nav__link nav__link--mobile" target="_blank" rel="noopener noreferrer" data-i18n="nav.docs">Docs</a>
+        <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile" data-i18n="nav.faq">FAQ</a>
 
-        <p class="nav__mobile-section">About</p>
-        <a href="/about.html" data-clean-url="/about" class="nav__link nav__link--mobile">About Us</a>
-        <a href="/team.html" data-clean-url="/team" class="nav__link nav__link--mobile">Team</a>
-        <a href="/contact.html" data-clean-url="/contact" class="nav__link nav__link--mobile">Contact</a>
+        <p class="nav__mobile-section" data-i18n="nav.about">About</p>
+        <a href="/about.html" data-clean-url="/about" class="nav__link nav__link--mobile" data-i18n="nav.about-us">About Us</a>
+        <a href="/team.html" data-clean-url="/team" class="nav__link nav__link--mobile" data-i18n="nav.team">Team</a>
+        <a href="/contact.html" data-clean-url="/contact" class="nav__link nav__link--mobile" data-i18n="nav.contact">Contact</a>
 
         <div class="nav__mobile-actions">
-            <a href="https://usable.dev/login" class="btn btn--primary nav__cta--mobile">LOG IN</a>
+            <a href="#" class="nav__lang-switch nav__lang-switch--mobile" aria-label="Switch to Faroese">
+                <span class="nav__lang-switch-label">FO</span>
+            </a>
+            <a href="https://usable.dev/login" class="btn btn--primary nav__cta--mobile" data-i18n="nav.login">LOG IN</a>
             <div class="nav__mobile-theme-row">
-                <button class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+                <button class="theme-toggle" aria-label="Toggle theme" data-i18n-aria-label="nav.toggle-theme" aria-pressed="false">
                     <svg class="theme-toggle__icon theme-toggle__icon--sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>

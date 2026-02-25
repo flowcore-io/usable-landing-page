@@ -24,7 +24,10 @@ class ComponentLoader {
    * @returns {number} Depth level (0 for root, 1 for /blog/, etc.)
    */
   calculatePathDepth() {
-    const path = window.location.pathname;
+    let path = window.location.pathname;
+    // Strip /fo/ language prefix before calculating depth
+    if (path.startsWith('/fo/')) path = path.slice(3);
+    else if (path === '/fo') path = '/';
     const segments = path.split('/').filter(seg => seg && !seg.endsWith('.html'));
     return segments.length;
   }
@@ -65,9 +68,9 @@ class ComponentLoader {
       
       if (!href) return;
       
-      // Normalize paths for comparison
+      // Normalize paths for comparison (strip /fo/ prefix)
       const linkPath = href.replace(/^\//, '').replace(/\.html$/, '');
-      const currentPage = this.currentPath.replace(/^\//, '').replace(/\.html$/, '');
+      const currentPage = this.currentPath.replace(/^\/fo\//, '/').replace(/^\/fo$/, '/').replace(/^\//, '').replace(/\.html$/, '');
       
       // Check if this link matches the current page
       if (linkPath === currentPage || 

@@ -67,7 +67,7 @@
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <a href="#main-content" class="skip-to-content" data-i18n="common.skip-to-content">Skip to main content</a>
     
     <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
     <div class="bokeh bokeh--1"></div>
@@ -94,8 +94,8 @@
     <section class="page-section page-section--hero page-section--gradient-blue-orange">
         <div class="page-section__container">
             <div class="about-hero animate-on-scroll fade-in-down">
-                <h1 class="about-hero__title">Knowledge Management for AI Agents</h1>
-                <p class="about-hero__description">
+                <h1 class="about-hero__title" data-i18n="about.hero.title">Knowledge Management for AI Agents</h1>
+                <p class="about-hero__description" data-i18n="about.hero.description">
                     Usable Sp/f provides plug-and-play knowledge management that makes AI agents actually useful. We're building the shared memory layer that enables agents to access structured, persistent knowledge across systems and sessions.
                 </p>
             </div>
@@ -105,17 +105,17 @@
     <!-- Our Story Section -->
     <section class="page-section page-section--gradient-orange-blue">
         <div class="page-section__container">
-            <h2 class="page-section__title animate-on-scroll fade-in-down">Our Story</h2>
+            <h2 class="page-section__title animate-on-scroll fade-in-down" data-i18n="about.story.title">Our Story</h2>
             <div class="about-section__content animate-on-scroll fade-in-up">
-                <p>When we founded Flowcore, we were solving a specific technical problem: how to build event-driven data infrastructure that could handle enterprise-scale requirements. We succeeded. Our platform powers real-world systems managing critical data flows for customers across sectors.</p>
-                
-                <p>But over the past year, something profound shifted in how we think about the problem we're solving. We started noticing a pattern as organizations began deploying AI agents: <strong>AI agents are terrible at knowledge management</strong>.</p>
-                
-                <p>Teams building AI agents face a fundamental choice: build their own RAG infrastructure—requiring decisions on vector databases, embedding models, chunking strategies, re-rankers, and multi-agent orchestration—or settle for agents with no long-term memory at all.</p>
-                
-                <p>This isn't a technical limitation of the AI models themselves. It's a knowledge infrastructure problem. Every agent conversation starts from zero because there's no shared memory layer.</p>
-                
-                <p>We realized that the most valuable thing we could build wasn't just a data infrastructure platform—it was a dedicated knowledge base for AI agents. We built <span class="u-brand-text">Usable</span> on top of our Flowcore infrastructure to solve exactly this: providing AI agents with structured, long-term memory that persists across conversations and sessions.</p>
+                <p data-i18n="about.story.p1">When we founded Flowcore, we were solving a specific technical problem: how to build event-driven data infrastructure that could handle enterprise-scale requirements. We succeeded. Our platform powers real-world systems managing critical data flows for customers across sectors.</p>
+
+                <p data-i18n-html="about.story.p2">But over the past year, something profound shifted in how we think about the problem we're solving. We started noticing a pattern as organizations began deploying AI agents: <strong>AI agents are terrible at knowledge management</strong>.</p>
+
+                <p data-i18n="about.story.p3">Teams building AI agents face a fundamental choice: build their own RAG infrastructure—requiring decisions on vector databases, embedding models, chunking strategies, re-rankers, and multi-agent orchestration—or settle for agents with no long-term memory at all.</p>
+
+                <p data-i18n="about.story.p4">This isn't a technical limitation of the AI models themselves. It's a knowledge infrastructure problem. Every agent conversation starts from zero because there's no shared memory layer.</p>
+
+                <p data-i18n-html="about.story.p5">We realized that the most valuable thing we could build wasn't just a data infrastructure platform—it was a dedicated knowledge base for AI agents. We built <span class="u-brand-text">Usable</span> on top of our Flowcore infrastructure to solve exactly this: providing AI agents with structured, long-term memory that persists across conversations and sessions.</p>
             </div>
         </div>
     </section>
@@ -123,16 +123,16 @@
     <!-- What We Do Section -->
     <section class="page-section page-section--gradient-blue-orange">
         <div class="page-section__container">
-            <h2 class="page-section__title animate-on-scroll fade-in-down">What We Do</h2>
-            <p class="about-section__content about-section__content--centered animate-on-scroll fade-in-up">Usable Sp/f comprises three complementary offerings, each serving different needs in the AI and data ecosystem:</p>
+            <h2 class="page-section__title animate-on-scroll fade-in-down" data-i18n="about.what-we-do.title">What We Do</h2>
+            <p class="about-section__content about-section__content--centered animate-on-scroll fade-in-up" data-i18n="about.what-we-do.intro">Usable Sp/f comprises three complementary offerings, each serving different needs in the AI and data ecosystem:</p>
             
             <div class="about-offerings">
                 <div class="offering-card">
-                    <h3 class="offering-card__title">Usable</h3>
-                    <p class="offering-card__description">
+                    <h3 class="offering-card__title" data-i18n="about.offering.usable.title">Usable</h3>
+                    <p class="offering-card__description" data-i18n="about.offering.usable.description">
                         Knowledge management for AI agents. A plug-and-play service for those building their own AI agents who need a knowledge management solution that just works.
                     </p>
-                    <ul class="offering-card__features">
+                    <ul class="offering-card__features" data-i18n-list="about.offering.usable.features">
                         <li class="offering-card__feature-item">MCP integration for seamless agent connectivity</li>
                         <li class="offering-card__feature-item">REST API for custom integrations</li>
                         <li class="offering-card__feature-item">Workspace and fragment model for organized knowledge</li>
@@ -142,18 +142,18 @@
                         <li class="offering-card__feature-item">No infrastructure management required</li>
                     </ul>
                     <div class="offering-card__actions">
-                        <a href="/" class="btn btn--primary">Learn More</a>
-                        <a href="/demo.html" data-clean-url="/demo" class="btn btn--secondary">Watch Demo</a>
-                        <a href="/pricing.html#usable" data-clean-url="/pricing" class="btn btn--secondary">See Pricing</a>
+                        <a href="/" class="btn btn--primary" data-i18n="about.offering.usable.btn-learn">Learn More</a>
+                        <a href="/demo.html" data-clean-url="/demo" class="btn btn--secondary" data-i18n="about.offering.usable.btn-demo">Watch Demo</a>
+                        <a href="/pricing.html#usable" data-clean-url="/pricing" class="btn btn--secondary" data-i18n="about.offering.usable.btn-pricing">See Pricing</a>
                     </div>
                 </div>
 
                 <div class="offering-card">
-                    <h3 class="offering-card__title">Flowcore</h3>
-                    <p class="offering-card__description">
+                    <h3 class="offering-card__title" data-i18n="about.offering.flowcore.title">Flowcore</h3>
+                    <p class="offering-card__description" data-i18n="about.offering.flowcore.description">
                         Event storage and processing platform. A flexible and scalable event-first data platform for those building applications that enables rapid iterations.
                     </p>
-                    <ul class="offering-card__features">
+                    <ul class="offering-card__features" data-i18n-list="about.offering.flowcore.features">
                         <li class="offering-card__feature-item">Event-first architecture with infinite replay</li>
                         <li class="offering-card__feature-item">Scale to 10M+ events per second</li>
                         <li class="offering-card__feature-item">Universal database support</li>
@@ -161,22 +161,22 @@
                         <li class="offering-card__feature-item">Fully managed or self-hosted deployment</li>
                         <li class="offering-card__feature-item">Built for modern developers</li>
                     </ul>
-                    <p class="offering-card__description offering-card__description--note">
+                    <p class="offering-card__description offering-card__description--note" data-i18n-html="about.offering.flowcore.note">
                         <strong>Note:</strong> The Usable platform is built on Flowcore infrastructure, leveraging its powerful event storage and processing capabilities.
                     </p>
                     <div class="offering-card__actions">
-                        <a href="https://flowcore.io" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Visit Flowcore.io</a>
-                        <a href="https://flowcore.com" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Visit Flowcore.com</a>
-                        <a href="/pricing.html#flowcore" data-clean-url="/pricing" class="btn btn--secondary">See Pricing</a>
+                        <a href="https://flowcore.io" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-i18n="about.offering.flowcore.btn-io">Visit Flowcore.io</a>
+                        <a href="https://flowcore.com" class="btn btn--secondary" target="_blank" rel="noopener noreferrer" data-i18n="about.offering.flowcore.btn-com">Visit Flowcore.com</a>
+                        <a href="/pricing.html#flowcore" data-clean-url="/pricing" class="btn btn--secondary" data-i18n="about.offering.flowcore.btn-pricing">See Pricing</a>
                     </div>
                 </div>
 
                 <div class="offering-card">
-                    <h3 class="offering-card__title">Consultancy</h3>
-                    <p class="offering-card__description">
+                    <h3 class="offering-card__title" data-i18n="about.offering.consultancy.title">Consultancy</h3>
+                    <p class="offering-card__description" data-i18n="about.offering.consultancy.description">
                         AI and data consultancy services. Helping small and large organizations build AI agents, migrate data, set up dashboards, create mobile applications, and implement systems with AI and/or data components.
                     </p>
-                    <ul class="offering-card__features">
+                    <ul class="offering-card__features" data-i18n-list="about.offering.consultancy.features">
                         <li class="offering-card__feature-item">Building AI agents</li>
                         <li class="offering-card__feature-item">Data migration work</li>
                         <li class="offering-card__feature-item">Setup data dashboards</li>
@@ -185,8 +185,8 @@
                         <li class="offering-card__feature-item">Custom solutions tailored to your needs</li>
                     </ul>
                     <div class="offering-card__actions">
-                        <a href="/contact.html" data-clean-url="/contact" class="btn btn--primary">Get a Quote</a>
-                        <a href="/pricing.html#consultancy" data-clean-url="/pricing" class="btn btn--secondary">See Pricing</a>
+                        <a href="/contact.html" data-clean-url="/contact" class="btn btn--primary" data-i18n="about.offering.consultancy.btn-quote">Get a Quote</a>
+                        <a href="/pricing.html#consultancy" data-clean-url="/pricing" class="btn btn--secondary" data-i18n="about.offering.consultancy.btn-pricing">See Pricing</a>
                     </div>
                 </div>
             </div>
@@ -196,11 +196,11 @@
     <!-- Our Mission Section -->
     <section class="page-section page-section--gradient-orange-blue">
         <div class="page-section__container">
-            <h2 class="page-section__title animate-on-scroll fade-in-down">Our Mission</h2>
+            <h2 class="page-section__title animate-on-scroll fade-in-down" data-i18n="about.mission.title">Our Mission</h2>
             <div class="about-section__content animate-on-scroll fade-in-up">
-                <p>Making AI agents actually useful through better knowledge management. We're democratizing access to production-grade knowledge infrastructure, enabling rapid AI agent development without the complexity of building custom RAG systems.</p>
-                
-                <p>Every AI agent should have access to shared, persistent knowledge. Every team building agents should be able to focus on their core product, not on building and maintaining knowledge infrastructure.</p>
+                <p data-i18n="about.mission.p1">Making AI agents actually useful through better knowledge management. We're democratizing access to production-grade knowledge infrastructure, enabling rapid AI agent development without the complexity of building custom RAG systems.</p>
+
+                <p data-i18n="about.mission.p2">Every AI agent should have access to shared, persistent knowledge. Every team building agents should be able to focus on their core product, not on building and maintaining knowledge infrastructure.</p>
             </div>
         </div>
     </section>
@@ -208,15 +208,15 @@
     <!-- Why Section -->
     <section class="page-section page-section--gradient-blue-orange">
         <div class="page-section__container">
-            <h2 class="page-section__title animate-on-scroll fade-in-down">Why Usable Sp/f</h2>
+            <h2 class="page-section__title animate-on-scroll fade-in-down" data-i18n="about.why.title">Why Usable Sp/f</h2>
             <div class="about-section__content animate-on-scroll fade-in-up">
-                <p>Our three offerings work together to provide a complete solution:</p>
-                <ul class="about-section__list">
+                <p data-i18n="about.why.intro">Our three offerings work together to provide a complete solution:</p>
+                <ul class="about-section__list" data-i18n-list="about.why.list">
                     <li><strong>Flowcore</strong> provides the underlying event storage and processing infrastructure</li>
                     <li><strong>Usable</strong> provides the knowledge management layer built on Flowcore, optimized for AI agents</li>
                     <li><strong>Consultancy</strong> helps organizations implement solutions, migrate data, and build custom AI and data systems</li>
                 </ul>
-                <p class="about-section__content--spaced">Together, we're building the infrastructure that makes AI agents truly useful—not just impressive demos, but production-ready tools that teams can rely on.</p>
+                <p class="about-section__content--spaced" data-i18n="about.why.closing">Together, we're building the infrastructure that makes AI agents truly useful—not just impressive demos, but production-ready tools that teams can rely on.</p>
             </div>
         </div>
     </section>
@@ -229,6 +229,7 @@
     <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
+    <script src="scripts/i18n.js"></script>
     <script src="scripts/components.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/theme.js"></script>

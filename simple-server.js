@@ -74,7 +74,15 @@ http.createServer((req, res) => {
   }
 
   // Decode URL to handle spaces and special characters in filenames
-  const decodedUrl = decodeURIComponent(req.url === '/' ? '/index.html' : req.url.split('?')[0]);
+  let decodedUrl = decodeURIComponent(req.url === '/' ? '/index.html' : req.url.split('?')[0]);
+
+  // Strip /fo/ language prefix — serve same HTML files for both languages
+  if (decodedUrl === '/fo' || decodedUrl === '/fo/') {
+    decodedUrl = '/index.html';
+  } else if (decodedUrl.startsWith('/fo/')) {
+    decodedUrl = decodedUrl.slice(3); // '/fo/pricing' → '/pricing'
+  }
+
   let filePath = '.' + decodedUrl;
   const ext = path.extname(filePath);
   const contentType = mimeTypes[ext] || 'text/plain';
