@@ -560,6 +560,8 @@ a.nav__cta--mobile.btn.btn--primary {
   padding: var(--space-6);
   transform: translateX(100%);
   opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   transition: all var(--transition-normal);
   z-index: 1000;
   overflow-y: auto;
@@ -569,6 +571,8 @@ a.nav__cta--mobile.btn.btn--primary {
 .nav__menu--mobile.active {
   transform: translateX(0);
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Backdrop overlay — sits behind the open mobile menu, above page content */
