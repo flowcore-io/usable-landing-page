@@ -586,11 +586,15 @@ a.nav__cta--mobile.btn.btn--primary {
   background: rgba(0, 0, 0, 0.4);
   z-index: 999; /* below nav__menu--mobile (1000) */
   opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
   transition: opacity var(--transition-normal);
 }
 
 .nav__backdrop.active {
   opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 
 @media (max-width: 1023px) {
