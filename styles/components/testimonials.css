@@ -4,11 +4,11 @@
 
 .testimonials {
   padding: var(--space-40) 0;
-  background: #f4f3f3;
+  background: var(--color-background);
 }
 
 [data-theme="dark"] .testimonials {
-  background: var(--color-gray-100);
+  background: var(--color-surface);
 }
 
 .testimonials__container {
@@ -26,17 +26,17 @@
 
 .testimonial {
   padding: var(--space-10);
-  background: #f4f3f3;
+  background: var(--color-background);
   border-radius: var(--radius-2xl);
   box-shadow: none;
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid var(--color-border);
   position: relative;
   overflow: hidden;
 }
 
 [data-theme="dark"] .testimonial {
-  background: var(--color-gray-100);
-  border-color: var(--color-gray-200);
+  background: var(--color-surface);
+  border-color: var(--color-border);
 }
 
 .testimonial::before {
@@ -55,19 +55,19 @@
 .testimonial__content {
   margin-bottom: var(--space-8);
   position: relative;
-  z-index: 1;
+  z-index: var(--z-base);
 }
 
 .testimonial__text {
   font-size: var(--text-lg);
   line-height: 1.7;
-  color: var(--color-gray-700);
+  color: var(--color-text-secondary);
   font-style: italic;
   margin-bottom: 0;
 }
 
 [data-theme="dark"] .testimonial__text {
-  color: var(--color-gray-600);
+  color: var(--color-text-muted);
 }
 
 .testimonial__author {
@@ -75,14 +75,14 @@
   align-items: center;
   gap: var(--space-4);
   position: relative;
-  z-index: 1;
+  z-index: var(--z-base);
 }
 
 .testimonial__avatar {
   width: 56px;
   height: 56px;
   background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-light) 100%);
-  color: #f4f3f3;
+  color: var(--color-background);
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -99,22 +99,22 @@
 .testimonial__name {
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-background);
   margin-bottom: var(--space-1);
 }
 
 [data-theme="dark"] .testimonial__name {
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
 }
 
 .testimonial__role {
   font-size: var(--text-sm);
-  color: var(--color-gray-600);
+  color: var(--color-text-muted);
   font-weight: 500;
 }
 
 [data-theme="dark"] .testimonial__role {
-  color: var(--color-gray-600);
+  color: var(--color-text-muted);
 }
 
 .testimonial__company {

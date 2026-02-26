@@ -14,22 +14,6 @@
   color: var(--color-orange);
 }
 
-/* Brand Text without prefix - for reference implementation compatibility */
-.brand-text {
-  color: var(--color-orange);
-  font-weight: 700;
-  text-decoration: none;
-  /* NO TRANSITION - HOVER REMOVED */
-}
-
-/* HOVER REMOVED - NO COLOR CHANGE */
-
-[data-theme="dark"] .brand-text {
-  color: var(--color-orange);
-}
-
-/* HOVER REMOVED - NO COLOR CHANGE */
-
 /* Screen Reader Only Utility */
 .u-sr-only {
   position: absolute;
@@ -43,63 +27,3 @@
   border-width: 0;
 }
 
-/* Legacy utilities (to be migrated to BEM pattern) */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-
-.mb-0 { margin-bottom: 0; }
-.mb-4 { margin-bottom: var(--space-4); }
-.mb-8 { margin-bottom: var(--space-8); }
-.mb-12 { margin-bottom: var(--space-12); }
-.mb-16 { margin-bottom: var(--space-16); }
-
-.mt-0 { margin-top: 0; }
-.mt-4 { margin-top: var(--space-4); }
-.mt-8 { margin-top: var(--space-8); }
-.mt-12 { margin-top: var(--space-12); }
-.mt-16 { margin-top: var(--space-16); }
-
-.p-0 { padding: 0; }
-.p-4 { padding: var(--space-4); }
-.p-8 { padding: var(--space-8); }
-.p-12 { padding: var(--space-12); }
-.p-16 { padding: var(--space-16); }
-
-.px-0 { padding-left: 0; padding-right: 0; }
-.px-4 { padding-left: var(--space-4); padding-right: var(--space-4); }
-.px-8 { padding-left: var(--space-8); padding-right: var(--space-8); }
-
-.py-0 { padding-top: 0; padding-bottom: 0; }
-.py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
-.py-8 { padding-top: var(--space-8); padding-bottom: var(--space-8); }
-
-.hidden { display: none; }
-.block { display: block; }
-.inline { display: inline; }
-.inline-block { display: inline-block; }
-.flex { display: flex; }
-.grid { display: grid; }
-
-.items-center { align-items: center; }
-.items-start { align-items: flex-start; }
-.items-end { align-items: flex-end; }
-
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.justify-start { justify-content: flex-start; }
-.justify-end { justify-content: flex-end; }
-
-.w-full { width: 100%; }
-.h-full { height: 100%; }
-.w-auto { width: auto; }
-.h-auto { height: auto; }
-
-.rounded { border-radius: var(--radius-md); }
-.rounded-lg { border-radius: var(--radius-lg); }
-.rounded-xl { border-radius: var(--radius-xl); }
-.rounded-full { border-radius: var(--radius-full); }
-
-.shadow { box-shadow: var(--shadow-md); }
-.shadow-lg { box-shadow: var(--shadow-lg); }
-.shadow-xl { box-shadow: var(--shadow-xl); }

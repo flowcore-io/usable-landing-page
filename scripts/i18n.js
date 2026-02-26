@@ -162,29 +162,32 @@ if (i18n.lang === 'fo') {
   // Add a loading attribute so CSS can hide untranslated text briefly
   document.documentElement.setAttribute('data-i18n-loading', '');
 
-  i18n.loadTranslations().then(() => {
-    // Apply to static page content immediately
+  // Register component event listeners BEFORE the async translation fetch
+  // to avoid a race condition where components load before translations finish.
+  let translationsReady = false;
+
+  function applyIfReady() {
+    if (!translationsReady) return;
     i18n.apply();
     i18n.prefixLinks();
+    i18n.setupLanguageSwitcher();
+  }
+
+  document.addEventListener('all-components-loaded', applyIfReady);
+  ['navbar', 'footer', 'cta'].forEach(name => {
+    document.addEventListener(`component-loaded:${name}`, applyIfReady);
+  });
+
+  i18n.loadTranslations().then(() => {
+    translationsReady = true;
+
+    // Apply to whatever DOM is available right now
+    i18n.apply();
+    i18n.prefixLinks();
+    i18n.setupLanguageSwitcher();
 
     // Remove loading state
     document.documentElement.removeAttribute('data-i18n-loading');
-
-    // Re-apply after components load (navbar, footer, cta are async)
-    document.addEventListener('all-components-loaded', () => {
-      i18n.apply();
-      i18n.prefixLinks();
-      i18n.setupLanguageSwitcher();
-    });
-
-    // Safety net: also apply per-component
-    ['navbar', 'footer', 'cta'].forEach(name => {
-      document.addEventListener(`component-loaded:${name}`, () => {
-        i18n.apply();
-        i18n.prefixLinks();
-        if (name === 'navbar') i18n.setupLanguageSwitcher();
-      });
-    });
   });
 } else {
   // English: just wire up the language switcher after components load

@@ -14,27 +14,27 @@
 
 /* Gradient variants - alternate these for visual depth */
 .page-section--gradient-blue-orange {
-  background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
+  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
 }
 
 [data-theme="dark"] .page-section--gradient-blue-orange {
-  background: linear-gradient(135deg, rgba(169, 204, 233, 0.12) 0%, rgba(252, 175, 42, 0.12) 100%);
+  background: linear-gradient(135deg, var(--color-blue-light-12) 0%, var(--color-orange-10) 100%);
 }
 
 .page-section--gradient-orange-blue {
-  background: linear-gradient(135deg, rgba(252, 175, 42, 0.25) 0%, rgba(169, 204, 233, 0.25) 100%);
+  background: linear-gradient(135deg, var(--color-orange-25) 0%, var(--color-blue-25) 100%);
 }
 
 [data-theme="dark"] .page-section--gradient-orange-blue {
-  background: linear-gradient(135deg, rgba(252, 175, 42, 0.12) 0%, rgba(169, 204, 233, 0.12) 100%);
+  background: linear-gradient(135deg, var(--color-orange-10) 0%, var(--color-blue-light-12) 100%);
 }
 
 .page-section--gradient-blue {
-  background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(52, 124, 191, 0.25) 100%);
+  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-blue-25) 100%);
 }
 
 [data-theme="dark"] .page-section--gradient-blue {
-  background: linear-gradient(135deg, rgba(52, 124, 191, 0.25) 0%, rgba(169, 204, 233, 0.25) 100%);
+  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-blue-25) 100%);
 }
 
 /* No background - for alternating pattern */
@@ -65,7 +65,7 @@
   margin: 0 auto;
   padding: 0 var(--container-padding);
   position: relative;
-  z-index: 1;
+  z-index: var(--z-base);
 }
 
 /* Section header - centered title/description pattern */
@@ -77,7 +77,7 @@
 .page-section__title {
   font-size: var(--text-4xl);
   font-weight: 800;
-  color: var(--color-black);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-4);
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -90,19 +90,19 @@
 }
 
 [data-theme="dark"] .page-section__title {
-  color: var(--color-white-text);
+  color: var(--color-text-on-dark);
 }
 
 .page-section__description {
   font-size: var(--text-xl);
-  color: var(--color-black);
+  color: var(--color-text-primary);
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
 }
 
 [data-theme="dark"] .page-section__description {
-  color: var(--color-white-text);
+  color: var(--color-text-on-dark);
 }
 
 /* Content grid for cards/items within sections */

@@ -94,7 +94,7 @@
     <!-- Hero Section -->
     <section class="page-section page-section--hero page-section--gradient-blue-orange">
         <div class="page-section__container">
-            <div class="media-kit-hero animate-on-scroll fade-in-down">
+            <div class="media-kit-hero u-animate-on-scroll u-fade-in-down">
                 <span class="media-kit-hero__eyebrow" data-i18n-html="media-kit.hero.eyebrow">
                     <svg class="media-kit-hero__eyebrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                     Press Assets
@@ -111,14 +111,70 @@
     <!-- Content Sections -->
     <section class="page-section page-section--gradient-orange-blue">
         <div class="page-section__container">
+            <!-- Brand Colors Section -->
+            <section class="media-kit-section u-animate-on-scroll u-fade-in-up" aria-label="Brand colors">
+                <h2 class="media-kit-section__title" data-i18n="media-kit.brand-colors.title">Brand Colors</h2>
+                <p class="media-kit-section__description" data-i18n-html="media-kit.brand-colors.description">
+                    The official <span class="u-brand-text">Usable</span> color palette.
+                    Click any value to copy it to your clipboard.
+                </p>
+
+                <div class="media-kit-section__grid media-kit-section__grid--colors">
+                    <div class="media-kit-card media-kit-card--color">
+                        <div class="media-kit-color-swatch" style="background: #fcaf2a;" aria-hidden="true"></div>
+                        <div class="media-kit-card__info">
+                            <h3 class="media-kit-card__name">Orange</h3>
+                            <p class="media-kit-card__color-value" data-copy>#fcaf2a</p>
+                            <p class="media-kit-card__color-var" data-copy>--color-orange</p>
+                        </div>
+                    </div>
+
+                    <div class="media-kit-card media-kit-card--color">
+                        <div class="media-kit-color-swatch" style="background: #347cbf;" aria-hidden="true"></div>
+                        <div class="media-kit-card__info">
+                            <h3 class="media-kit-card__name">Blue</h3>
+                            <p class="media-kit-card__color-value" data-copy>#347cbf</p>
+                            <p class="media-kit-card__color-var" data-copy>--color-blue</p>
+                        </div>
+                    </div>
+
+                    <div class="media-kit-card media-kit-card--color">
+                        <div class="media-kit-color-swatch" style="background: #93c5fd;" aria-hidden="true"></div>
+                        <div class="media-kit-card__info">
+                            <h3 class="media-kit-card__name">Blue Light</h3>
+                            <p class="media-kit-card__color-value" data-copy>#93c5fd</p>
+                            <p class="media-kit-card__color-var" data-copy>--color-blue-light</p>
+                        </div>
+                    </div>
+
+                    <div class="media-kit-card media-kit-card--color">
+                        <div class="media-kit-color-swatch media-kit-color-swatch--themed" style="background: var(--color-background);" aria-hidden="true"></div>
+                        <div class="media-kit-card__info">
+                            <h3 class="media-kit-card__name">Background</h3>
+                            <p class="media-kit-card__color-value" data-copy data-semantic="--color-background"></p>
+                            <p class="media-kit-card__color-var" data-copy>--color-background</p>
+                        </div>
+                    </div>
+
+                    <div class="media-kit-card media-kit-card--color">
+                        <div class="media-kit-color-swatch media-kit-color-swatch--themed" style="background: var(--color-text-primary);" aria-hidden="true"></div>
+                        <div class="media-kit-card__info">
+                            <h3 class="media-kit-card__name">Text</h3>
+                            <p class="media-kit-card__color-value" data-copy data-semantic="--color-text-primary"></p>
+                            <p class="media-kit-card__color-var" data-copy>--color-text-primary</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Logos Section -->
-            <section class="media-kit-section animate-on-scroll fade-in-up" aria-label="Logo assets">
+            <section class="media-kit-section u-animate-on-scroll u-fade-in-up" aria-label="Logo assets">
                 <h2 class="media-kit-section__title" data-i18n="media-kit.logos.title">Logos</h2>
                 <p class="media-kit-section__description" data-i18n-html="media-kit.logos.description">
                     Official <span class="u-brand-text">Usable</span> logos in various formats. Use the transparent version on colored backgrounds,
                     and the solid version on light backgrounds.
                 </p>
-                
+
                 <div class="media-kit-section__grid">
                     <div class="media-kit-card">
                         <div class="media-kit-card__preview">
@@ -168,7 +224,7 @@
             </section>
 
             <!-- Mascot Section -->
-            <section class="media-kit-section animate-on-scroll fade-in-up" aria-label="Mascot assets">
+            <section class="media-kit-section u-animate-on-scroll u-fade-in-up" aria-label="Mascot assets">
                 <h2 class="media-kit-section__title" data-i18n="media-kit.mascot.title">Mascot</h2>
                 <p class="media-kit-section__description" data-i18n-html="media-kit.mascot.description">
                     The <span class="u-brand-text">Usable</span> mascot - a friendly nudibranch representing our brand personality.
@@ -215,7 +271,7 @@
             </section>
 
             <!-- Founders Section -->
-            <section class="media-kit-section animate-on-scroll fade-in-up" aria-label="Founder photos">
+            <section class="media-kit-section u-animate-on-scroll u-fade-in-up" aria-label="Founder photos">
                 <h2 class="media-kit-section__title" data-i18n="media-kit.founders.title">Founders</h2>
                 <p class="media-kit-section__description" data-i18n-html="media-kit.founders.description">
                     Official photos of the <span class="u-brand-text">Usable</span> co-founders for press and media use.
@@ -270,7 +326,7 @@
             </section>
 
             <!-- Other Photos Section -->
-            <section class="media-kit-section animate-on-scroll fade-in-up" aria-label="Other photos">
+            <section class="media-kit-section u-animate-on-scroll u-fade-in-up" aria-label="Other photos">
                 <h2 class="media-kit-section__title" data-i18n="media-kit.other-photos.title">Other Photos</h2>
                 
                 <div class="media-kit-section__grid">
@@ -292,7 +348,7 @@
             </section>
 
             <!-- Contact Section -->
-            <section class="media-kit-page__contact animate-on-scroll fade-in-up" aria-label="Press contact information">
+            <section class="media-kit-page__contact u-animate-on-scroll u-fade-in-up" aria-label="Press contact information">
                 <h2 class="media-kit-page__contact-title" data-i18n="media-kit.press-contact.title">Press Contact</h2>
                 <div class="media-kit-page__contact-info">
                     <p><strong>Ólavur Ellefsen</strong><br>
@@ -320,5 +376,55 @@
     <script src="scripts/components.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/theme.js"></script>
+
+    <!-- Dynamic hex labels for theme-aware color swatches -->
+    <script>
+      function rgbToHex(rgb) {
+        if (!rgb || rgb === 'transparent') return 'transparent';
+        const match = rgb.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+        if (!match) return rgb;
+        return '#' + [match[1], match[2], match[3]]
+          .map(n => parseInt(n).toString(16).padStart(2, '0'))
+          .join('');
+      }
+
+      function updateSemanticHexLabels() {
+        document.querySelectorAll('[data-semantic]').forEach(el => {
+          const varName = el.getAttribute('data-semantic');
+          const computed = getComputedStyle(document.documentElement);
+          const value = computed.getPropertyValue(varName).trim();
+          if (value) {
+            el.textContent = rgbToHex(value);
+          }
+        });
+      }
+
+      updateSemanticHexLabels();
+
+      new MutationObserver(() => {
+        requestAnimationFrame(updateSemanticHexLabels);
+      }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    </script>
+
+    <!-- Click-to-Copy for color values -->
+    <script>
+      document.querySelectorAll('[data-copy]').forEach(el => {
+        el.title = 'Click to copy';
+
+        el.addEventListener('click', () => {
+          const text = el.textContent.trim();
+          navigator.clipboard.writeText(text).then(() => {
+            const originalText = el.textContent;
+            el.textContent = 'Copied!';
+            el.classList.add('is-copied');
+
+            setTimeout(() => {
+              el.textContent = originalText;
+              el.classList.remove('is-copied');
+            }, 1000);
+          });
+        });
+      });
+    </script>
 </body>
 </html>

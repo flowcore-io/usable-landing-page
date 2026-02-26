@@ -21,7 +21,7 @@
 h1.how-it-works__title {
   font-size: var(--text-6xl);
   font-weight: 800;
-  color: var(--color-black);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-4);
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -31,26 +31,26 @@ h2.how-it-works__title,
 .how-it-works__title {
   font-size: var(--text-4xl);
   font-weight: 800;
-  color: var(--color-black);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-4);
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 [data-theme="dark"] .how-it-works__title {
-  color: var(--color-white-text);
+  color: var(--color-text-on-dark);
 }
 
 .how-it-works__description {
   font-size: var(--text-xl);
-  color: var(--color-black);
+  color: var(--color-text-primary);
   line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
 }
 
 [data-theme="dark"] .how-it-works__description {
-  color: var(--color-white-text);
+  color: var(--color-text-on-dark);
 }
 
 /* Inline style replacements */
@@ -77,10 +77,10 @@ h2.how-it-works__title,
 /* Step Card */
 .step {
   padding: var(--space-12);
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--white-60);
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(52, 124, 191, 0.1);
+  box-shadow: 0 4px 16px var(--black-06);
+  border: 1px solid var(--color-blue-10);
   position: relative;
   overflow: hidden;
   min-height: 320px;
@@ -90,9 +90,9 @@ h2.how-it-works__title,
 }
 
 [data-theme="dark"] .step {
-  background: rgba(28, 47, 64, 0.96);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-  border-color: rgba(96, 165, 250, 0.18);
+  background: var(--color-neutral-900-96);
+  box-shadow: 0 12px 32px var(--black-30);
+  border-color: var(--color-blue-light-18);
 }
 
 .step::after {
@@ -102,22 +102,22 @@ h2.how-it-works__title,
   right: 0;
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, rgba(169, 204, 233, 0.1) 0%, rgba(169, 204, 233, 0.05) 100%);
+  background: linear-gradient(135deg, var(--color-blue-10) 0%, var(--color-blue-light-08) 100%);
   border-radius: var(--radius-full);
   transform: translate(30px, -30px);
   transition: width var(--transition-normal);
 }
 
 .step:nth-child(1)::after {
-  background: linear-gradient(135deg, rgba(52, 124, 191, 0.15) 0%, rgba(52, 124, 191, 0.08) 100%);
+  background: linear-gradient(135deg, var(--color-blue-15) 0%, var(--color-blue-08) 100%);
 }
 
 .step:nth-child(2)::after {
-  background: linear-gradient(135deg, rgba(252, 175, 42, 0.15) 0%, rgba(252, 175, 42, 0.08) 100%);
+  background: linear-gradient(135deg, var(--color-orange-15) 0%, var(--color-orange-08) 100%);
 }
 
 .step:nth-child(3)::after {
-  background: linear-gradient(135deg, rgba(169, 204, 233, 0.18) 0%, rgba(169, 204, 233, 0.09) 100%);
+  background: linear-gradient(135deg, var(--color-blue-light-18) 0%, var(--color-blue-light-10) 100%);
 }
 
 /* Step Number Badge */
@@ -131,10 +131,10 @@ h2.how-it-works__title,
   border-radius: var(--radius-xl);
   font-size: var(--text-3xl);
   font-weight: 800;
-  color: var(--color-white);
+  color: var(--color-background);
   margin-bottom: var(--space-6);
   position: relative;
-  z-index: 1;
+  z-index: var(--z-base);
 }
 
 /* Step Title */
@@ -143,29 +143,29 @@ h2.how-it-works__title,
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: var(--space-4);
-  color: var(--color-black);
+  color: var(--color-text-primary);
   letter-spacing: -0.01em;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-base);
 }
 
 [data-theme="dark"] .step__title {
-  color: #f8fafc;
+  color: var(--color-neutral-50);
 }
 
 /* Step Description */
 .step__description {
-  color: var(--color-black);
+  color: var(--color-text-primary);
   line-height: 1.6;
   font-size: var(--text-lg);
   font-weight: 400;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-base);
   margin-bottom: var(--space-4);
 }
 
 [data-theme="dark"] .step__description {
-  color: #e2e8f0;
+  color: var(--color-text-primary);
 }
 
 /* Inline style replacements */

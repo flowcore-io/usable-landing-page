@@ -8,7 +8,7 @@
     padding: var(--space-24) var(--space-4) var(--space-16);
     min-height: calc(100vh - 80px);
     position: relative;
-    z-index: 1;
+    z-index: var(--z-base);
 }
 
 .pricing-page__container {
@@ -25,25 +25,25 @@
     font-size: var(--text-6xl);
     line-height: 1.1;
     font-weight: 800;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-4);
 }
 
 [data-theme="dark"] .pricing-hero__title {
-    color: #f8fafc; /* Near-white for headings */
+    color: var(--color-neutral-50); /* Near-white for headings */
 }
 
 .pricing-hero__description {
     max-width: 700px;
     font-size: var(--text-lg);
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     margin: 0 auto;
     line-height: 1.6;
     font-weight: 400;
 }
 
 [data-theme="dark"] .pricing-hero__description {
-    color: #e2e8f0; /* Light gray for body text */
+    color: var(--color-text-primary);
 }
 
 /* Trust badges row */
@@ -58,17 +58,17 @@
 .pricing-hero__badge {
     font-size: var(--text-sm);
     font-weight: 500;
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
 }
 
 .pricing-hero__badge:not(:last-child)::after {
     content: " · ";
     padding: 0 var(--space-2);
-    color: var(--color-gray-600);
+    color: var(--color-text-muted);
 }
 
 [data-theme="dark"] .pricing-hero__badge {
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
 }
 
 /* Quick-jump section nav */
@@ -88,24 +88,24 @@
     font-size: var(--text-base);
     font-weight: 600;
     text-decoration: none;
-    background: rgba(252, 175, 42, 0.15);
-    color: var(--color-gray-900);
+    background: var(--color-orange-15);
+    color: var(--color-text-primary);
     border: 1px solid var(--color-orange);
     transition: background var(--transition-fast);
 }
 
 .pricing-hero__nav-link:hover {
-    background: rgba(252, 175, 42, 0.3);
+    background: var(--color-orange-30);
 }
 
 [data-theme="dark"] .pricing-hero__nav-link {
-    background: rgba(255, 193, 69, 0.2);
-    color: var(--color-gray-900);
+    background: var(--color-orange-20);
+    color: var(--color-text-primary);
     border-color: var(--color-orange);
 }
 
 [data-theme="dark"] .pricing-hero__nav-link:hover {
-    background: rgba(255, 193, 69, 0.35);
+    background: var(--color-orange-30);
 }
 
 .pricing-section {
@@ -121,23 +121,23 @@
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 800;
     line-height: 1.2;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-2);
 }
 
 [data-theme="dark"] .pricing-section__title {
-    color: #f8fafc; /* Near-white for headings */
+    color: var(--color-neutral-50); /* Near-white for headings */
 }
 
 .pricing-section__description {
     font-size: var(--text-lg);
     line-height: 1.6;
     font-weight: 400;
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
 }
 
 [data-theme="dark"] .pricing-section__description {
-    color: #e2e8f0; /* Light gray for body text */
+    color: var(--color-text-primary);
 }
 
 /* ===================================
@@ -185,12 +185,12 @@
 .pricing-note {
     text-align: center;
     font-size: var(--text-sm);
-    color: var(--color-gray-600);
+    color: var(--color-text-muted);
     margin-top: var(--space-6);
 }
 
 [data-theme="dark"] .pricing-note {
-    color: var(--color-gray-400);
+    color: var(--color-text-muted);
 }
 
 /* Pricing Card Component */
@@ -214,20 +214,20 @@
  * Both properties transition together for cohesive effect
  */
 .pricing-card {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--white-60);
     border-radius: var(--radius-lg);
     padding: var(--space-8);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(52, 124, 191, 0.1);
+    box-shadow: 0 4px 16px var(--black-06);
+    border: 1px solid var(--color-blue-10);
     text-align: center;
     position: relative;
 }
 
 
 [data-theme="dark"] .pricing-card {
-    background: rgba(28, 47, 64, 0.96);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    border-color: rgba(96, 165, 250, 0.18);
+    background: var(--color-neutral-900-96);
+    box-shadow: 0 12px 32px var(--black-30);
+    border-color: var(--color-blue-light-18);
 }
 
 
@@ -257,7 +257,7 @@
     left: 50%;
     transform: translateX(-50%);
     background: var(--color-blue);
-    color: white;
+    color: var(--color-neutral-50);
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
@@ -273,12 +273,12 @@
     font-size: var(--text-2xl);
     font-weight: 800;
     line-height: 1.2;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-4);
 }
 
 [data-theme="dark"] .pricing-card__title {
-    color: #f8fafc; /* Near-white for headings */
+    color: var(--color-neutral-50); /* Near-white for headings */
 }
 
 .pricing-card__price {
@@ -298,13 +298,13 @@
 
 .pricing-card__period {
     font-size: var(--text-sm);
-    color: var(--color-gray-600);
+    color: var(--color-text-muted);
     font-weight: 400;
     line-height: 1.5;
 }
 
 [data-theme="dark"] .pricing-card__period {
-    color: var(--color-gray-400);
+    color: var(--color-text-muted);
 }
 
 .pricing-card__features {
@@ -318,7 +318,7 @@
     padding: var(--space-2) 0;
     padding-left: var(--space-6);
     position: relative;
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     font-size: var(--text-base);
     line-height: 1.6;
     font-weight: 400;
@@ -333,34 +333,34 @@
 }
 
 [data-theme="dark"] .pricing-card__features li {
-    color: #e2e8f0; /* Light gray for feature items */
+    color: var(--color-text-primary);
 }
 
 .consultancy-card {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--white-60);
     border-radius: var(--radius-lg);
     padding: var(--space-8);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(52, 124, 191, 0.1);
+    box-shadow: 0 4px 16px var(--black-06);
+    border: 1px solid var(--color-blue-10);
     text-align: center;
 }
 
 [data-theme="dark"] .consultancy-card {
-    background: rgba(28, 47, 64, 0.96);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    border-color: rgba(96, 165, 250, 0.18);
+    background: var(--color-neutral-900-96);
+    box-shadow: 0 12px 32px var(--black-30);
+    border-color: var(--color-blue-light-18);
 }
 
 .consultancy-card__title {
     font-size: var(--text-2xl);
     font-weight: 800;
     line-height: 1.2;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-4);
 }
 
 [data-theme="dark"] .consultancy-card__title {
-    color: #f8fafc; /* Near-white for headings */
+    color: var(--color-neutral-50); /* Near-white for headings */
 }
 
 .consultancy-card__price {
@@ -381,7 +381,7 @@
     padding: var(--space-2) 0;
     padding-left: var(--space-6);
     position: relative;
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     font-size: var(--text-base);
     line-height: 1.6;
     font-weight: 400;
@@ -396,17 +396,17 @@
 }
 
 [data-theme="dark"] .consultancy-card__services li {
-    color: #e2e8f0;
+    color: var(--color-text-primary);
 }
 
 .consultancy-card__description {
     font-size: var(--text-lg);
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     margin-bottom: var(--space-6);
 }
 
 [data-theme="dark"] .consultancy-card__description {
-    color: #e2e8f0; /* Light gray for body text */
+    color: var(--color-text-primary);
 }
 
 .consultancy-card__actions {
@@ -432,22 +432,22 @@
 .pricing-faq__question {
     font-size: var(--text-xl);
     font-weight: 700;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-2);
 }
 
 [data-theme="dark"] .pricing-faq__question {
-    color: #f8fafc; /* Near-white for headings */
+    color: var(--color-neutral-50); /* Near-white for headings */
 }
 
 .pricing-faq__answer {
     font-size: var(--text-base);
     line-height: 1.7;
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
 }
 
 [data-theme="dark"] .pricing-faq__answer {
-    color: #e2e8f0; /* Light gray for body text */
+    color: var(--color-text-primary);
 }
 
 @media (max-width: 768px) {

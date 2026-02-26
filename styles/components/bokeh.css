@@ -51,18 +51,23 @@ body {
 }
 
 /* Individual bokeh circles - Optimized for 15 elements (50% reduction) */
-.bokeh--1 { width: 80px; height: 80px; background: rgba(169, 204, 233, 0.25); top: 15%; left: 8%; animation-delay: -1s; }
-.bokeh--2 { width: 120px; height: 120px; background: rgba(252, 175, 42, 0.20); top: 25%; right: 12%; animation-delay: -3s; }
-.bokeh--3 { width: 60px; height: 60px; background: rgba(52, 124, 191, 0.30); top: 35%; left: 20%; animation-delay: -5s; }
-.bokeh--4 { width: 150px; height: 150px; background: rgba(169, 204, 233, 0.18); top: 45%; right: 25%; animation-delay: -2s; }
-.bokeh--5 { width: 90px; height: 90px; background: rgba(252, 175, 42, 0.22); top: 55%; left: 15%; animation-delay: -4s; }
-.bokeh--6 { width: 200px; height: 200px; background: rgba(52, 124, 191, 0.15); bottom: 30%; left: 10%; animation-delay: -6s; }
-.bokeh--7 { width: 70px; height: 70px; background: rgba(169, 204, 233, 0.28); top: 65%; right: 18%; animation-delay: -1.5s; }
-.bokeh--8 { width: 110px; height: 110px; background: rgba(252, 175, 42, 0.19); bottom: 40%; right: 8%; animation-delay: -3.5s; }
-.bokeh--9 { width: 50px; height: 50px; background: rgba(52, 124, 191, 0.35); top: 75%; left: 30%; animation-delay: -5.5s; }
-.bokeh--10 { width: 180px; height: 180px; background: rgba(169, 204, 233, 0.16); bottom: 20%; right: 20%; animation-delay: -2.5s; }
-.bokeh--11 { width: 85px; height: 85px; background: rgba(252, 175, 42, 0.24); top: 10%; left: 40%; animation-delay: -4.5s; }
-.bokeh--12 { width: 130px; height: 130px; background: rgba(52, 124, 191, 0.17); top: 40%; left: 5%; animation-delay: -1.2s; }
-.bokeh--13 { width: 65px; height: 65px; background: rgba(169, 204, 233, 0.26); top: 50%; right: 35%; animation-delay: -3.2s; }
-.bokeh--14 { width: 160px; height: 160px; background: rgba(252, 175, 42, 0.16); bottom: 50%; left: 25%; animation-delay: -5.2s; }
-.bokeh--15 { width: 75px; height: 75px; background: rgba(52, 124, 191, 0.29); top: 20%; right: 40%; animation-delay: -2.2s; }
+.bokeh--1 { width: 80px; height: 80px; background: var(--color-blue-25); top: 15%; left: 8%; animation-delay: -1s; }
+.bokeh--2 { width: 120px; height: 120px; background: var(--color-orange-20); top: 25%; right: 12%; animation-delay: -3s; }
+.bokeh--3 { width: 60px; height: 60px; background: var(--color-blue-30); top: 35%; left: 20%; animation-delay: -5s; }
+.bokeh--4 { width: 150px; height: 150px; background: var(--color-blue-light-18); top: 45%; right: 25%; animation-delay: -2s; }
+.bokeh--5 { width: 90px; height: 90px; background: var(--color-orange-20); top: 55%; left: 15%; animation-delay: -4s; }
+.bokeh--6 { width: 200px; height: 200px; background: var(--color-blue-15); bottom: 30%; left: 10%; animation-delay: -6s; }
+.bokeh--7 { width: 70px; height: 70px; background: var(--color-blue-light-28); top: 65%; right: 18%; animation-delay: -1.5s; }
+.bokeh--8 { width: 110px; height: 110px; background: var(--color-orange-20); bottom: 40%; right: 8%; animation-delay: -3.5s; }
+.bokeh--9 { width: 50px; height: 50px; background: var(--color-blue-30); top: 75%; left: 30%; animation-delay: -5.5s; }
+.bokeh--10 { width: 180px; height: 180px; background: var(--color-blue-light-16); bottom: 20%; right: 20%; animation-delay: -2.5s; }
+.bokeh--11 { width: 85px; height: 85px; background: var(--color-orange-25); top: 10%; left: 40%; animation-delay: -4.5s; }
+.bokeh--12 { width: 130px; height: 130px; background: var(--color-blue-15); top: 40%; left: 5%; animation-delay: -1.2s; }
+.bokeh--13 { width: 65px; height: 65px; background: var(--color-blue-light-26); top: 50%; right: 35%; animation-delay: -3.2s; }
+.bokeh--14 { width: 160px; height: 160px; background: var(--color-orange-15); bottom: 50%; left: 25%; animation-delay: -5.2s; }
+.bokeh--15 { width: 75px; height: 75px; background: var(--color-blue-30); top: 20%; right: 40%; animation-delay: -2.2s; }
+
+/* Dark mode: reduce opacity so bokeh doesn't overpower dark backgrounds */
+[data-theme="dark"] .bokeh {
+  opacity: 0.5;
+}

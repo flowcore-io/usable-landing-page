@@ -2,12 +2,12 @@
     padding: var(--space-24) var(--space-4) var(--space-16);
     min-height: calc(100vh - 80px);
     position: relative;
-    z-index: 1;
-    background: linear-gradient(135deg, rgba(169, 204, 233, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
+    z-index: var(--z-base);
+    background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
 }
 
 [data-theme="dark"] .article-page {
-    background: linear-gradient(135deg, rgba(169, 204, 233, 0.12) 0%, rgba(252, 175, 42, 0.12) 100%);
+    background: linear-gradient(135deg, var(--color-blue-light-12) 0%, var(--color-orange-10) 100%);
 }
 
 .article-page__container {
@@ -39,66 +39,66 @@
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-3);
-    border-radius: 999px;
-    background: rgba(52, 124, 191, 0.1);
+    border-radius: var(--radius-full);
+    background: var(--color-blue-10);
     color: var(--color-blue);
     font-weight: 600;
     width: fit-content;
 }
 
 [data-theme="dark"] .article-header__eyebrow {
-    background: rgba(96, 165, 250, 0.12);
-    color: #93c5fd;
+    background: var(--color-blue-light-12);
+    color: var(--color-link-on-dark);
 }
 
 .article-header__title {
     font-size: clamp(2.25rem, 4vw, 3rem);
     line-height: 1.1;
     font-weight: 800;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
 }
 
 [data-theme="dark"] .article-header__title {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .article-header__meta {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-4);
-    color: var(--color-gray-600);
+    color: var(--color-text-muted);
     font-size: var(--text-sm);
 }
 
 [data-theme="dark"] .article-header__meta {
-    color: #cbd5e1;
+    color: var(--color-text-primary);
 }
 
 .article-header__lede {
     font-size: var(--text-lg);
     line-height: 1.7;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-6);
 }
 
 [data-theme="dark"] .article-header__lede {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .article-body {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--white-60);
     border-radius: var(--radius-lg);
     padding: var(--space-8);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(52, 124, 191, 0.1);
+    box-shadow: 0 12px 32px var(--black-08);
+    border: 1px solid var(--color-blue-10);
     display: grid;
     gap: var(--space-8);
 }
 
 [data-theme="dark"] .article-body {
-    background: rgba(28, 47, 64, 0.96);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    border-color: rgba(96, 165, 250, 0.18);
+    background: var(--color-neutral-900-96);
+    box-shadow: 0 12px 32px var(--black-30);
+    border-color: var(--color-blue-light-18);
 }
 
 /* -----------------------------------------------
@@ -117,7 +117,7 @@
 }
 
 [data-theme="dark"] .article-section h2 {
-    color: #93c5fd;
+    color: var(--color-link-on-dark);
 }
 
 .article-section h3 {
@@ -125,22 +125,22 @@
     font-weight: 700;
     margin-top: var(--space-4);
     margin-bottom: var(--space-2);
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
 }
 
 [data-theme="dark"] .article-section h3 {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .article-section p,
 .article-section li {
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     line-height: 1.7;
 }
 
 [data-theme="dark"] .article-section p,
 [data-theme="dark"] .article-section li {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 /* End rich text zone ----------------------------------------------- */
 
@@ -153,7 +153,7 @@
 }
 
 .article-meta-highlight {
-    background: rgba(52, 124, 191, 0.08);
+    background: var(--color-blue-08);
     border-left: 4px solid var(--color-blue);
     padding: var(--space-4) var(--space-5);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
@@ -162,8 +162,8 @@
 }
 
 [data-theme="dark"] .article-meta-highlight {
-    background: rgba(96, 165, 250, 0.12);
-    border-color: #60a5fa;
+    background: var(--color-blue-light-12);
+    border-color: var(--color-blue-light);
 }
 
 .article-actions {
@@ -187,7 +187,7 @@
 }
 
 [data-theme="dark"] .article-back {
-    color: #93c5fd;
+    color: var(--color-link-on-dark);
 }
 
 @media (max-width: 768px) {

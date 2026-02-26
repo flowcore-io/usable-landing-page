@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Sandbox – Visual Experiments</title>
+  <title>Sandbox – Brand &amp; Style Reference</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
   <!-- Common shell components -->
   <link rel="stylesheet" href="styles/components/navbar.css">
   <link rel="stylesheet" href="styles/components/footer.css">
-  <link rel="stylesheet" href="styles/components/theme-toggle.css">
+  <!-- Theme toggle hidden — sandbox is always dark -->
   <!-- Temporary: hero preview for visual development -->
   <link rel="stylesheet" href="styles/components/bokeh.css">
   <link rel="stylesheet" href="styles/components/scroll-animations.css">
@@ -101,47 +101,248 @@
     <section class="sandbox__header">
       <div class="sandbox__container">
         <span class="sandbox__label">Sandbox</span>
-        <h1 class="sandbox__title">Visual Experiments</h1>
+        <h1 class="sandbox__title">Brand &amp; Style Reference</h1>
         <p class="sandbox__subtitle">
-          Edit <code>styles/sandbox.css</code> freely — nothing here affects any other page.
+          Brand colours, typography, logos, and UI tokens — all in one place.
+          Edit <code>styles/sandbox.css</code> freely; nothing here affects production.
         </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BRAND ASSETS
+         ============================================================ -->
+    <section class="sandbox__section">
+      <div class="sandbox__container">
+        <h2 class="sandbox__section-title">Brand Assets</h2>
+
+        <!-- Logos -->
+        <h3 class="sandbox__group-title">Logos</h3>
+        <div class="sandbox__asset-grid">
+
+          <!-- SVG Vector -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--dark-bg">
+              <img src="assets/images/usable-logo.svg" alt="Usable Logo — Vector" class="sandbox-asset-card__image" loading="lazy">
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Logo — Vector</p>
+              <span class="sandbox-asset-card__format">SVG</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/usable-logo.svg" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download SVG
+              </a>
+            </div>
+          </div>
+
+          <!-- Standard PNG -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--light-bg">
+              <img src="assets/images/Usable - Logo.png" alt="Usable Logo — Standard" class="sandbox-asset-card__image" loading="lazy">
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Logo — Standard</p>
+              <span class="sandbox-asset-card__format">PNG</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/Usable - Logo.png" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- Transparent PNG -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--checker">
+              <img src="assets/images/Usable - Logo - transparent.png" alt="Usable Logo — Transparent" class="sandbox-asset-card__image" loading="lazy">
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Logo — Transparent</p>
+              <span class="sandbox-asset-card__format">PNG</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/Usable - Logo - transparent.png" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- Solid PNG -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--light-bg">
+              <img src="assets/images/Usable - Logo - Solid.png" alt="Usable Logo — Solid" class="sandbox-asset-card__image" loading="lazy">
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Logo — Solid</p>
+              <span class="sandbox-asset-card__format">PNG</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/Usable - Logo - Solid.png" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- With Text — Dark Mode -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--dark-bg">
+              <img src="assets/images/Usable - Logo - With Text (for dark mode).png" alt="Usable Logo with Text — Dark Mode" class="sandbox-asset-card__image" loading="lazy">
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Logo with Text — Dark</p>
+              <span class="sandbox-asset-card__format">PNG</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/Usable - Logo - With Text (for dark mode).png" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- With Text — Light Mode -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--light-bg">
+              <img src="assets/images/Usable - Logo - With Text (for light mode).png" alt="Usable Logo with Text — Light Mode" class="sandbox-asset-card__image" loading="lazy">
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Logo with Text — Light</p>
+              <span class="sandbox-asset-card__format">PNG</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/Usable - Logo - With Text (for light mode).png" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- Dark variant -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--light-bg">
+              <img src="assets/images/usable-logo-dark.png" alt="Usable Logo — Dark" class="sandbox-asset-card__image" loading="lazy">
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Logo — Dark</p>
+              <span class="sandbox-asset-card__format">PNG</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/usable-logo-dark.png" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- Light variant -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--dark-bg">
+              <img src="assets/images/usable-logo-light.png" alt="Usable Logo — Light" class="sandbox-asset-card__image" loading="lazy">
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Logo — Light</p>
+              <span class="sandbox-asset-card__format">PNG</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/usable-logo-light.png" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PNG
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mascot -->
+        <h3 class="sandbox__group-title sandbox__group-title--spaced">Mascot</h3>
+        <div class="sandbox__asset-grid sandbox__asset-grid--narrow">
+
+          <!-- Mascot Standard -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--dark-bg">
+              <picture>
+                <source srcset="assets/images/usable-mascot.webp" type="image/webp">
+                <img src="assets/images/usable-mascot.png" alt="Usable Mascot — Nudibranch" class="sandbox-asset-card__image sandbox-asset-card__image--mascot" loading="lazy">
+              </picture>
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Mascot — Standard</p>
+              <span class="sandbox-asset-card__format">WebP / PNG</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/usable-mascot.webp" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                WebP
+              </a>
+              <a href="assets/images/usable-mascot.png" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- Mascot White BG -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--light-bg">
+              <img src="assets/images/usable-mascot-white-bg.png" alt="Usable Mascot — White Background" class="sandbox-asset-card__image sandbox-asset-card__image--mascot" loading="lazy">
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Mascot — White BG</p>
+              <span class="sandbox-asset-card__format">PNG / WebP</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/usable-mascot-white-bg.webp" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                WebP
+              </a>
+              <a href="assets/images/usable-mascot-white-bg.png" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PNG
+              </a>
+            </div>
+          </div>
+
+          <!-- Mascot High-Res -->
+          <div class="sandbox-asset-card">
+            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--checker">
+              <img src="assets/images/Usable Mascot.png" alt="Usable Mascot — High Resolution" class="sandbox-asset-card__image sandbox-asset-card__image--mascot" loading="lazy">
+            </div>
+            <div class="sandbox-asset-card__body">
+              <p class="sandbox-asset-card__name">Mascot — High-Res</p>
+              <span class="sandbox-asset-card__format">PNG</span>
+            </div>
+            <div class="sandbox-asset-card__actions">
+              <a href="assets/images/Usable Mascot.png" download class="sandbox-asset-card__download">
+                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PNG
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
     <!-- ============================================================
          COLOURS
          ============================================================ -->
-    <section class="sandbox__section">
+    <section class="sandbox__section sandbox__section--glass">
       <div class="sandbox__container">
         <h2 class="sandbox__section-title">Brand Colours</h2>
 
-        <h3 class="sandbox__group-title">Primary</h3>
         <div class="color-grid">
-
-          <div class="color-card">
-            <div class="color-swatch color-swatch--white" aria-hidden="true"></div>
-            <div class="color-card__info">
-              <div class="color-card__name">White</div>
-              <div class="color-card__value">#f4f3f3</div>
-              <div class="color-card__variable">--color-white</div>
-            </div>
-          </div>
-
-          <div class="color-card">
-            <div class="color-swatch color-swatch--black" aria-hidden="true"></div>
-            <div class="color-card__info">
-              <div class="color-card__name">Black</div>
-              <div class="color-card__value">#1c2f40</div>
-              <div class="color-card__variable">--color-black</div>
-            </div>
-          </div>
 
           <div class="color-card">
             <div class="color-swatch color-swatch--orange" aria-hidden="true"></div>
             <div class="color-card__info">
               <div class="color-card__name">Orange</div>
-              <div class="color-card__value">#fcaf2a</div>
-              <div class="color-card__variable">--color-orange</div>
+              <div class="color-card__value" tabindex="0" role="button">#fcaf2a</div>
+              <div class="color-card__variable" tabindex="0" role="button">--color-orange</div>
             </div>
           </div>
 
@@ -149,49 +350,35 @@
             <div class="color-swatch color-swatch--blue" aria-hidden="true"></div>
             <div class="color-card__info">
               <div class="color-card__name">Blue</div>
-              <div class="color-card__value">#347cbf</div>
-              <div class="color-card__variable">--color-blue</div>
-            </div>
-          </div>
-
-        </div>
-
-        <h3 class="sandbox__group-title sandbox__group-title--spaced">Gray Scale</h3>
-        <div class="color-grid">
-
-          <div class="color-card">
-            <div class="color-swatch color-swatch--gray-200" aria-hidden="true"></div>
-            <div class="color-card__info">
-              <div class="color-card__name">Gray 200</div>
-              <div class="color-card__value">#c4c7cb</div>
-              <div class="color-card__variable">--color-gray-200</div>
+              <div class="color-card__value" tabindex="0" role="button">#347cbf</div>
+              <div class="color-card__variable" tabindex="0" role="button">--color-blue</div>
             </div>
           </div>
 
           <div class="color-card">
-            <div class="color-swatch color-swatch--gray-400" aria-hidden="true"></div>
+            <div class="color-swatch color-swatch--blue-light" aria-hidden="true"></div>
             <div class="color-card__info">
-              <div class="color-card__name">Gray 400</div>
-              <div class="color-card__value">#949ba3</div>
-              <div class="color-card__variable">--color-gray-400</div>
+              <div class="color-card__name">Blue Light</div>
+              <div class="color-card__value" tabindex="0" role="button">#93c5fd</div>
+              <div class="color-card__variable" tabindex="0" role="button">--color-blue-light</div>
             </div>
           </div>
 
           <div class="color-card">
-            <div class="color-swatch color-swatch--gray-600" aria-hidden="true"></div>
+            <div class="color-swatch color-swatch--neutral-50" aria-hidden="true"></div>
             <div class="color-card__info">
-              <div class="color-card__name">Gray 600</div>
-              <div class="color-card__value">#646f7b</div>
-              <div class="color-card__variable">--color-gray-600</div>
+              <div class="color-card__name">Background</div>
+              <div class="color-card__value" tabindex="0" role="button">#f8fafc</div>
+              <div class="color-card__variable" tabindex="0" role="button">--color-background</div>
             </div>
           </div>
 
           <div class="color-card">
-            <div class="color-swatch color-swatch--gray-700" aria-hidden="true"></div>
+            <div class="color-swatch color-swatch--neutral-900" aria-hidden="true"></div>
             <div class="color-card__info">
-              <div class="color-card__name">Gray 700</div>
-              <div class="color-card__value">#4c5967</div>
-              <div class="color-card__variable">--color-gray-700</div>
+              <div class="color-card__name">Text</div>
+              <div class="color-card__value" tabindex="0" role="button">#1c2f40</div>
+              <div class="color-card__variable" tabindex="0" role="button">--color-text-primary</div>
             </div>
           </div>
 
@@ -225,7 +412,7 @@
     <!-- ============================================================
          CARDS
          ============================================================ -->
-    <section class="sandbox__section">
+    <section class="sandbox__section sandbox__section--glass">
       <div class="sandbox__container">
         <h2 class="sandbox__section-title">Cards</h2>
 
@@ -275,7 +462,7 @@
     <!-- ============================================================
          RADIUS & SHADOWS
          ============================================================ -->
-    <section class="sandbox__section">
+    <section class="sandbox__section sandbox__section--glass">
       <div class="sandbox__container">
         <h2 class="sandbox__section-title">Radius &amp; Shadows</h2>
 
@@ -401,9 +588,6 @@
   <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Theme toggle -->
-  <div id="theme-toggle-placeholder"></div>
-
   <!-- Scripts -->
   <!-- Sandbox: always dark — no ThemeManager needed -->
   <script>
@@ -420,19 +604,27 @@
       }
 
       // Click-to-copy for colour card values and variable names
+      function copyToClipboard(el) {
+        const text = el.textContent.trim();
+        navigator.clipboard.writeText(text).then(() => {
+          const original = el.textContent;
+          el.textContent = '✓ Copied!';
+          el.classList.add('is-copied');
+          setTimeout(() => {
+            el.textContent = original;
+            el.classList.remove('is-copied');
+          }, 1000);
+        });
+      }
+
       document.querySelectorAll('.color-card__value, .color-card__variable').forEach(el => {
         el.title = 'Click to copy';
-        el.addEventListener('click', () => {
-          const text = el.textContent.trim();
-          navigator.clipboard.writeText(text).then(() => {
-            const original = el.textContent;
-            el.textContent = '✓ Copied!';
-            el.classList.add('is-copied');
-            setTimeout(() => {
-              el.textContent = original;
-              el.classList.remove('is-copied');
-            }, 1000);
-          });
+        el.addEventListener('click', () => copyToClipboard(el));
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            copyToClipboard(el);
+          }
         });
       });
     });

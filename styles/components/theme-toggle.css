@@ -24,7 +24,7 @@
 }
 
 .theme-toggle:hover {
-  background: rgba(52, 124, 191, 0.1);
+  background: var(--color-blue-10);
 }
 
 .theme-toggle:focus,
@@ -35,7 +35,7 @@
 
 /* Dark Mode Adjustments */
 [data-theme="dark"] .theme-toggle:hover {
-  background: rgba(52, 124, 191, 0.2);
+  background: var(--color-blue-20);
 }
 
 /* ===================================
@@ -44,13 +44,13 @@
 .theme-toggle__icon {
   width: 20px;
   height: 20px;
-  color: var(--color-black);
+  color: var(--color-text-primary);
   transition: all var(--transition-normal);
   position: absolute;
 }
 
 [data-theme="dark"] .theme-toggle__icon {
-  color: #f8fafc;
+  color: var(--color-neutral-50);
 }
 
 /* Icon Visibility - Sun visible in light mode, Moon in dark mode */
@@ -91,40 +91,38 @@
   justify-content: center;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-6);
-  border: 2px solid var(--color-gray-200);
+  border: 2px solid var(--color-border);
 }
 
 .theme-toggle--mobile:hover {
-  background: rgba(52, 124, 191, 0.1);
+  background: var(--color-blue-10);
   border-color: var(--color-blue);
   color: var(--color-blue);
 }
 
-.theme-toggle--mobile:focus,
-.theme-toggle--mobile:active,
-.theme-toggle--mobile:focus-visible {
-  background: transparent !important;
-  border-color: var(--color-gray-200) !important;
-  color: var(--color-black) !important;
-  outline: none !important;
+.theme-toggle--mobile:focus:not(:focus-visible),
+.theme-toggle--mobile:active {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+  outline: none;
 }
 
 [data-theme="dark"] .theme-toggle--mobile {
-  border-color: var(--color-gray-200);
-  color: #f8fafc;
+  border-color: var(--color-border);
+  color: var(--color-neutral-50);
 }
 
 [data-theme="dark"] .theme-toggle--mobile:hover {
-  background: rgba(52, 124, 191, 0.2);
-  border-color: #7db8e8;
-  color: #7db8e8;
+  background: var(--color-blue-20);
+  border-color: var(--color-blue-light);
+  color: var(--color-blue-light);
 }
 
-[data-theme="dark"] .theme-toggle--mobile:focus,
-[data-theme="dark"] .theme-toggle--mobile:active,
-[data-theme="dark"] .theme-toggle--mobile:focus-visible {
-  background: transparent !important;
-  border-color: var(--color-gray-200) !important;
-  color: #f8fafc !important;
-  outline: none !important;
+[data-theme="dark"] .theme-toggle--mobile:focus:not(:focus-visible),
+[data-theme="dark"] .theme-toggle--mobile:active {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-neutral-50);
+  outline: none;
 }

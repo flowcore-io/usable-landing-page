@@ -16,22 +16,22 @@
     font-size: var(--text-6xl);
     line-height: 1.1;
     font-weight: 800;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
 }
 
 [data-theme="dark"] .contact-hero__title {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .contact-hero__description {
     max-width: 780px;
     font-size: var(--text-lg);
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     margin: 0 auto;
 }
 
 [data-theme="dark"] .contact-hero__description {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .contact-hero__channels {
@@ -47,13 +47,13 @@
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-5);
-    background: rgba(255, 255, 255, 0.4);
+    background: var(--white-40);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--white-60);
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
 }
 
 .contact-hero__channel svg {
@@ -64,9 +64,9 @@
 }
 
 [data-theme="dark"] .contact-hero__channel {
-    background: rgba(28, 47, 64, 0.5);
-    border-color: rgba(251, 146, 60, 0.3);
-    color: var(--color-white-text);
+    background: var(--color-neutral-900-50);
+    border-color: var(--color-orange-30);
+    color: var(--color-text-on-dark);
 }
 
 [data-theme="dark"] .contact-hero__channel svg {
@@ -81,23 +81,23 @@
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--white-60);
     border-radius: var(--radius-lg);
     padding: var(--space-6);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(52, 124, 191, 0.1);
+    box-shadow: 0 4px 16px var(--black-06);
+    border: 1px solid var(--color-blue-10);
 }
 
 [data-theme="dark"] .contact-card {
-    background: rgba(28, 47, 64, 0.96);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    border-color: rgba(96, 165, 250, 0.18);
+    background: var(--color-neutral-900-96);
+    box-shadow: 0 12px 32px var(--black-30);
+    border-color: var(--color-blue-light-18);
 }
 
 .contact-card__title {
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     font-weight: 800;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-4);
     display: flex;
     align-items: center;
@@ -105,7 +105,7 @@
 }
 
 [data-theme="dark"] .contact-card__title {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .contact-card__title svg {
@@ -115,18 +115,18 @@
 }
 
 [data-theme="dark"] .contact-card__title svg {
-    color: var(--color-blue-light-2);
+    color: var(--color-link-on-dark);
 }
 
 .contact-card__description {
     font-size: var(--text-base);
     line-height: 1.6;
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     margin-bottom: var(--space-4);
 }
 
 [data-theme="dark"] .contact-card__description {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .contact-card__methods {
@@ -140,20 +140,20 @@
     gap: var(--space-3);
     padding: var(--space-3);
     border-radius: var(--radius-md);
-    background: rgba(52, 124, 191, 0.05);
-    transition: background 0.3s ease;
+    background: var(--color-blue-05);
+    transition: background var(--transition-normal);
 }
 
 [data-theme="dark"] .contact-card__method {
-    background: rgba(96, 165, 250, 0.1);
+    background: var(--color-blue-light-10);
 }
 
 .contact-card__method:hover {
-    background: rgba(52, 124, 191, 0.1);
+    background: var(--color-blue-10);
 }
 
 [data-theme="dark"] .contact-card__method:hover {
-    background: rgba(96, 165, 250, 0.15);
+    background: var(--color-blue-light-15);
 }
 
 .contact-card__method-icon {
@@ -165,7 +165,7 @@
 }
 
 [data-theme="dark"] .contact-card__method-icon {
-    color: var(--color-blue-light-2);
+    color: var(--color-link-on-dark);
 }
 
 .contact-card__method-content {
@@ -174,20 +174,20 @@
 
 .contact-card__method-label {
     font-weight: 600;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-1);
 }
 
 [data-theme="dark"] .contact-card__method-label {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .contact-card__method-value {
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
 }
 
 [data-theme="dark"] .contact-card__method-value {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .contact-card__method-value a {
@@ -196,7 +196,7 @@
 }
 
 [data-theme="dark"] .contact-card__method-value a {
-    color: var(--color-blue-light-2);
+    color: var(--color-link-on-dark);
 }
 
 .contact-card__method-value a:hover {

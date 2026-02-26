@@ -11,19 +11,19 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background: #f8fafc;
+    background: var(--color-neutral-50);
 }
 
 .redirect-message {
     text-align: center;
-    color: #64748b;
+    color: var(--color-text-secondary);
 }
 
 .spinner {
     width: 32px;
     height: 32px;
-    border: 3px solid #e2e8f0;
-    border-top: 3px solid #3b82f6;
+    border: 3px solid var(--color-border);
+    border-top: 3px solid var(--color-blue);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto 16px;
@@ -32,4 +32,21 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* ===================================
+   DARK MODE
+   =================================== */
+
+[data-theme="dark"] body {
+    background: var(--color-background);
+}
+
+[data-theme="dark"] .redirect-message {
+    color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .spinner {
+    border-color: var(--color-blue-30);
+    border-top-color: var(--color-blue-light);
 }

@@ -4,13 +4,13 @@
 
 .how-it-works {
   padding: var(--space-40) 0;
-  background: linear-gradient(135deg, rgba(52, 124, 191, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
+  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
   position: relative;
   overflow: hidden;
 }
 
 [data-theme="dark"] .how-it-works {
-  background: linear-gradient(135deg, rgba(52, 124, 191, 0.25) 0%, rgba(252, 175, 42, 0.25) 100%);
+  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
 }
 
 .how-it-works__container {
@@ -28,10 +28,10 @@
 .step {
   text-align: center;
   padding: var(--space-10);
-  background: #f4f3f3;
+  background: var(--color-background);
   border-radius: var(--radius-xl);
   box-shadow: none;
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid var(--color-border);
   transition: width var(--transition-normal);
   position: relative;
   overflow: hidden;
@@ -48,7 +48,7 @@
   width: 80px;
   height: 80px;
   background: linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange) 100%);
-  color: #f4f3f3;
+  color: var(--color-background);
   font-family: var(--font-family-heading);
   font-size: var(--text-3xl);
   font-weight: 800;
@@ -61,11 +61,25 @@
   font-size: var(--text-xl);
   font-weight: 800;
   margin-bottom: var(--space-4);
-  color: var(--color-black);
+  color: var(--color-text-primary);
 }
 
 .step__description {
-  color: var(--color-black);
+  color: var(--color-text-primary);
   line-height: 1.6;
   font-size: var(--text-lg);
+}
+
+/* Dark Mode */
+[data-theme="dark"] .step {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .step__title {
+  color: var(--color-text-on-dark);
+}
+
+[data-theme="dark"] .step__number {
+  color: var(--color-text-primary);
 }

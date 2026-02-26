@@ -8,7 +8,7 @@
     padding: var(--space-24) var(--space-4) var(--space-16);
     min-height: calc(100vh - 80px);
     position: relative;
-    z-index: 1;
+    z-index: var(--z-base);
 }
 
 .media-kit-page__container {
@@ -35,37 +35,37 @@
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-3);
-    border-radius: 999px;
-    background: rgba(52, 124, 191, 0.1);
+    border-radius: var(--radius-full);
+    background: var(--color-blue-10);
     color: var(--color-blue);
     font-weight: 600;
     width: fit-content;
 }
 
 [data-theme="dark"] .media-kit-hero__eyebrow {
-    background: rgba(96, 165, 250, 0.12);
-    color: #93c5fd;
+    background: var(--color-blue-light-12);
+    color: var(--color-link-on-dark);
 }
 
 .media-kit-hero__title {
     font-size: var(--text-6xl);
     line-height: 1.1;
     font-weight: 800;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
 }
 
 [data-theme="dark"] .media-kit-hero__title {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .media-kit-hero__description {
     max-width: 780px;
     font-size: var(--text-lg);
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
 }
 
 [data-theme="dark"] .media-kit-hero__description {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .media-kit-section {
@@ -80,17 +80,17 @@
 }
 
 [data-theme="dark"] .media-kit-section__title {
-    color: #93c5fd;
+    color: var(--color-link-on-dark);
 }
 
 .media-kit-section__description {
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     margin-bottom: var(--space-6);
     line-height: 1.7;
 }
 
 [data-theme="dark"] .media-kit-section__description {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .media-kit-section__grid {
@@ -100,36 +100,36 @@
 }
 
 .media-kit-card {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--white-60);
     border-radius: var(--radius-lg);
     padding: var(--space-6);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(52, 124, 191, 0.1);
+    box-shadow: 0 4px 16px var(--black-06);
+    border: 1px solid var(--color-blue-10);
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
 }
 
 [data-theme="dark"] .media-kit-card {
-    background: rgba(28, 47, 64, 0.96);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    border-color: rgba(96, 165, 250, 0.18);
+    background: var(--color-neutral-900-96);
+    box-shadow: 0 12px 32px var(--black-30);
+    border-color: var(--color-blue-light-18);
 }
 
 .media-kit-card__preview {
-    background: var(--color-gray-100);
+    background: var(--color-surface);
     border-radius: var(--radius-md);
     padding: var(--space-6);
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 300px;
-    border: 1px solid rgba(52, 124, 191, 0.1);
+    border: 1px solid var(--color-blue-10);
 }
 
 [data-theme="dark"] .media-kit-card__preview {
-    background: rgba(28, 47, 64, 0.5);
-    border-color: rgba(96, 165, 250, 0.2);
+    background: var(--color-neutral-900-50);
+    border-color: var(--color-blue-light-20);
 }
 
 .media-kit-card__preview-image {
@@ -147,20 +147,20 @@
 .media-kit-card__name {
     font-size: var(--text-lg);
     font-weight: 600;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
 }
 
 [data-theme="dark"] .media-kit-card__name {
-    color: var(--color-white);
+    color: var(--color-text-on-dark);
 }
 
 .media-kit-card__details {
     font-size: var(--text-sm);
-    color: var(--color-gray-600);
+    color: var(--color-text-muted);
 }
 
 [data-theme="dark"] .media-kit-card__details {
-    color: #cbd5e1;
+    color: var(--color-text-primary);
 }
 
 .media-kit-card__actions {
@@ -177,7 +177,7 @@
     gap: var(--space-2);
     padding: var(--space-2) var(--space-4);
     background: var(--color-blue);
-    color: white;
+    color: var(--color-neutral-50);
     text-decoration: none;
     border-radius: var(--radius-md);
     font-weight: 600;
@@ -186,58 +186,124 @@
 }
 
 .media-kit-card__download:hover {
-    background: #2a6ba0;
+    background: var(--color-blue);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(52, 124, 191, 0.3);
+    box-shadow: 0 4px 12px var(--color-blue-30);
 }
 
 [data-theme="dark"] .media-kit-card__download {
-    background: #60a5fa;
+    background: var(--color-blue-light);
 }
 
 [data-theme="dark"] .media-kit-card__download:hover {
-    background: #3b82f6;
+    background: var(--color-blue);
 }
 
 .media-kit-card__download + .media-kit-card__download {
     margin-left: 0.5rem;
 }
 
+/* ===================================
+   Brand Colors Cards
+   =================================== */
+
+.media-kit-section__grid--colors {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.media-kit-card--color {
+    padding: 0;
+    overflow: hidden;
+    gap: 0;
+    transition: transform var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+.media-kit-card--color:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.media-kit-color-swatch {
+    height: 120px;
+    width: 100%;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.media-kit-card--color .media-kit-card__info {
+    padding: var(--space-4);
+}
+
+[data-theme="dark"] .media-kit-card--color .media-kit-card__name {
+    color: var(--color-text-on-dark);
+}
+
+.media-kit-card__color-value {
+    font-family: var(--font-family-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    user-select: none;
+}
+
+.media-kit-card__color-value:hover,
+.media-kit-card__color-value.is-copied {
+    color: var(--color-blue);
+}
+
+.media-kit-card__color-var {
+    font-family: var(--font-family-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin: 0;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    user-select: none;
+}
+
+.media-kit-card__color-var:hover,
+.media-kit-card__color-var.is-copied {
+    color: var(--color-orange);
+}
+
 .media-kit-page__contact {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--white-60);
     border-radius: var(--radius-lg);
     padding: var(--space-8);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(52, 124, 191, 0.1);
+    box-shadow: 0 4px 16px var(--black-06);
+    border: 1px solid var(--color-blue-10);
     margin-top: var(--space-12);
 }
 
 [data-theme="dark"] .media-kit-page__contact {
-    background: rgba(28, 47, 64, 0.96);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    border-color: rgba(96, 165, 250, 0.18);
+    background: var(--color-neutral-900-96);
+    box-shadow: 0 12px 32px var(--black-30);
+    border-color: var(--color-blue-light-18);
 }
 
 .media-kit-page__contact-title {
     font-size: var(--text-xl);
     font-weight: 700;
     margin-bottom: var(--space-4);
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
 }
 
 [data-theme="dark"] .media-kit-page__contact-title {
-    color: var(--color-white);
+    color: var(--color-text-on-dark);
 }
 
 .media-kit-page__contact-info {
     display: grid;
     gap: var(--space-2);
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     line-height: 1.7;
 }
 
 [data-theme="dark"] .media-kit-page__contact-info {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .media-kit-page__contact-info a {
@@ -250,7 +316,7 @@
 }
 
 [data-theme="dark"] .media-kit-page__contact-info a {
-    color: #93c5fd;
+    color: var(--color-link-on-dark);
 }
 
 @media (max-width: 768px) {
@@ -268,5 +334,13 @@
 
     .media-kit-section__grid {
         grid-template-columns: 1fr;
+    }
+
+    .media-kit-section__grid--colors {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .media-kit-color-swatch {
+        height: 100px;
     }
 }

@@ -10,9 +10,9 @@
   width: 0%;
   height: 4px;
   background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-light) 100%);
-  z-index: 9999;
+  z-index: var(--z-overlay);
   transition: width 0.1s ease;
-  box-shadow: 0 2px 8px rgba(52, 124, 191, 0.3);
+  box-shadow: 0 2px 8px var(--color-blue-30);
 }
 
 @keyframes fadeInUp {
@@ -70,14 +70,14 @@
   }
 }
 
-.animate-in {
+.u-animate-in {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.animate-in-left {
+.u-animate-in-left {
   animation: slideInLeft 0.8s ease-out forwards;
 }
 
-.animate-in-right {
+.u-animate-in-right {
   animation: slideInRight 0.8s ease-out forwards;
 }

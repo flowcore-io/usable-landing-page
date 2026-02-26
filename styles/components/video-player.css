@@ -10,13 +10,13 @@
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--black-05);
   border-radius: var(--radius-lg);
 }
 
 [data-theme="dark"] .video-container,
 [data-theme="dark"] .demo-video-container {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--black-30);
 }
 
 .video-container__player,

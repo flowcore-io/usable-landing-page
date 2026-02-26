@@ -5,15 +5,7 @@
    Changes here do NOT affect any other page.
    =================================== */
 
-/* ===================================
-   SANDBOX-SCOPED TOKENS
-   Sandbox is always dark. --color-black inverts to the light value in dark
-   mode, so we define the true dark navy once here as a local variable.
-   =================================== */
-:root {
-  --sandbox-dark: #1c2f40;
-  --color-blue: #347cbf; /* Pin to brand blue — sandbox is always dark but should show canonical palette */
-}
+/* Sandbox is always dark — uses Layer 1 base token --color-neutral-900 directly */
 
 /* ===================================
    SANDBOX LAYOUT
@@ -34,7 +26,7 @@
   background-repeat: repeat;
   background-size: auto;
   pointer-events: none;
-  z-index: 1;
+  z-index: var(--z-base);
 }
 
 /* Layer 2: dark overlay + vignette */
@@ -43,10 +35,10 @@
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, transparent 25%, color-mix(in srgb, var(--sandbox-dark) 90%, transparent) 100%),
-    color-mix(in srgb, var(--sandbox-dark) 80%, transparent);
+    radial-gradient(ellipse at center, transparent 25%, color-mix(in srgb, var(--color-neutral-900) 90%, transparent) 100%),
+    color-mix(in srgb, var(--color-neutral-900) 80%, transparent);
   pointer-events: none;
-  z-index: 2;
+  z-index: calc(var(--z-base) + 1);
 }
 
 /* Layer 3: page content and footer — above fixed overlay */
@@ -54,7 +46,7 @@
 .sandbox .hero,
 #footer-placeholder {
   position: relative;
-  z-index: 3;
+  z-index: calc(var(--z-base) + 2);
 }
 
 /* Hero sits at the very top — negate the sandbox wrapper's padding-top */
@@ -72,10 +64,27 @@
 /* Alternating frosted glass sections — even sections get a tinted, blurred background */
 .sandbox section:nth-of-type(even) {
   position: relative;
-  z-index: 3;
-  background: rgba(28, 47, 64, 0.45);
+  z-index: calc(var(--z-base) + 2);
+  background: var(--color-neutral-900-45);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+}
+
+/* Explicit glass modifier — safer than nth-of-type when sections are inserted/removed */
+.sandbox__section--glass {
+  position: relative;
+  z-index: calc(var(--z-base) + 2);
+  background: var(--color-neutral-900-45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Sandbox is always dark — hide the theme toggle injected by the navbar.
+   The navbar sits outside <main class="sandbox">, so we use :has() to
+   scope to pages that contain the sandbox. */
+body:has(.sandbox) .theme-toggle,
+body:has(.sandbox) .nav__mobile-theme-row {
+  display: none;
 }
 
 /* ===================================
@@ -91,7 +100,7 @@
   display: inline-block;
   padding: var(--space-1) var(--space-4);
   background: var(--color-orange);
-  color: var(--sandbox-dark);
+  color: var(--color-neutral-900);
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -103,18 +112,18 @@
 .sandbox__title {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-4);
 }
 
 .sandbox__subtitle {
   font-size: var(--text-lg);
-  color: var(--color-gray-600);
+  color: var(--color-text-muted);
   margin: 0;
 }
 
 .sandbox__subtitle code {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: var(--font-family-mono);
   background: color-mix(in srgb, var(--color-blue) 15%, transparent);
   padding: 0.1em 0.4em;
   border-radius: var(--radius-sm);
@@ -137,14 +146,14 @@
 .sandbox__section-title {
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-8);
 }
 
 .sandbox__group-title {
   font-size: var(--text-base);
   font-weight: 600;
-  color: var(--color-gray-600);
+  color: var(--color-text-muted);
   margin-bottom: var(--space-4);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -206,7 +215,7 @@
 }
 
 .color-card {
-  background: var(--color-gray-100);
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -220,14 +229,14 @@
 .color-card__name {
   font-weight: 600;
   margin-bottom: var(--space-2);
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   font-size: var(--text-base);
 }
 
 .color-card__value {
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-family-mono);
   font-size: var(--text-sm);
-  color: var(--color-gray-700);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-2);
   cursor: pointer;
   transition: color var(--transition-fast);
@@ -240,9 +249,9 @@
 }
 
 .color-card__variable {
-  font-family: 'Courier New', monospace;
+  font-family: var(--font-family-mono);
   font-size: var(--text-xs);
-  color: var(--color-gray-600);
+  color: var(--color-text-muted);
   font-style: italic;
   cursor: pointer;
   transition: color var(--transition-fast);
@@ -254,20 +263,17 @@
   color: var(--color-orange);
 }
 
-/* All swatches: hardcoded canonical hex so they always match labels regardless of theme */
-.color-swatch--white      { background: #f4f3f3; }
-.color-swatch--black      { background: #1c2f40; }
-.color-swatch--orange     { background: #fcaf2a; }
-.color-swatch--blue       { background: #347cbf; }
-.color-swatch--gray-200   { background: #c4c7cb; }
-.color-swatch--gray-400   { background: #949ba3; }
-.color-swatch--gray-600   { background: #646f7b; }
-.color-swatch--gray-700   { background: #4c5967; }
+/* Swatches use base-layer tokens — they resolve to the canonical hex regardless of theme */
+.color-swatch--orange       { background: var(--color-orange); }
+.color-swatch--blue         { background: var(--color-blue); }
+.color-swatch--blue-light   { background: var(--color-blue-light); }
+.color-swatch--neutral-50   { background: var(--color-neutral-50); }
+.color-swatch--neutral-900  { background: var(--color-neutral-900); }
 
 .color-swatch {
   height: 120px;
   width: 100%;
-  border-bottom: 2px solid var(--color-gray-200);
+  border-bottom: 2px solid var(--color-border);
 }
 
 @media (max-width: 768px) {
@@ -290,8 +296,8 @@
    =================================== */
 
 .sandbox__card {
-  background: var(--color-gray-100);
-  border: 1px solid var(--color-gray-200);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   padding: var(--space-8);
   box-shadow: var(--shadow-sm);
@@ -309,14 +315,14 @@
 .sandbox__card-title {
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-2);
   margin-top: 0;
 }
 
 .sandbox__card-text {
   margin: 0;
-  color: var(--color-gray-600);
+  color: var(--color-text-muted);
 }
 
 /* ===================================
@@ -325,7 +331,7 @@
 
 .sandbox__type-sample {
   margin: 0 0 var(--space-3);
-  color: var(--color-gray-900);
+  color: var(--color-text-primary);
   line-height: 1.2;
   font-family: var(--font-family-heading);
 }
@@ -402,8 +408,8 @@
 
 .sandbox__spacing-label {
   font-size: var(--text-sm);
-  color: var(--color-gray-600);
-  font-family: 'Courier New', Courier, monospace;
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
 }
 
 /* ===================================
@@ -419,8 +425,8 @@
 
 .sandbox__token-label {
   font-size: var(--text-xs);
-  color: var(--color-gray-600);
-  font-family: 'Courier New', Courier, monospace;
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
 }
 
 .sandbox__radius-box {
@@ -440,9 +446,9 @@
 .sandbox__shadow-box {
   width: 72px;
   height: 72px;
-  background: var(--color-gray-100);
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid var(--color-border);
 }
 
 .sandbox__shadow-box--sm  { box-shadow: var(--shadow-sm); }
@@ -450,3 +456,148 @@
 .sandbox__shadow-box--lg  { box-shadow: var(--shadow-lg); }
 .sandbox__shadow-box--xl  { box-shadow: var(--shadow-xl); }
 .sandbox__shadow-box--2xl { box-shadow: var(--shadow-2xl); }
+
+/* ===================================
+   BRAND ASSET GRID
+   =================================== */
+
+.sandbox__asset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+/* Mascot group: slightly wider cards */
+.sandbox__asset-grid--narrow {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  max-width: 880px;
+}
+
+@media (max-width: 720px) {
+  .sandbox__asset-grid,
+  .sandbox__asset-grid--narrow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .sandbox__asset-grid,
+  .sandbox__asset-grid--narrow {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================
+   BRAND ASSET CARD
+   =================================== */
+
+.sandbox-asset-card {
+  background: var(--color-neutral-900-60);
+  border: 1px solid var(--color-blue-20);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-md);
+}
+
+/* Preview area — three background variants */
+.sandbox-asset-card__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  min-height: 160px;
+}
+
+.sandbox-asset-card__preview--dark-bg {
+  background: var(--color-neutral-900-85);
+}
+
+.sandbox-asset-card__preview--light-bg {
+  background: var(--color-neutral-50-12);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-neutral-300) 15%, transparent);
+}
+
+/* Checkerboard to indicate transparency */
+.sandbox-asset-card__preview--checker {
+  background-image:
+    linear-gradient(45deg, color-mix(in srgb, var(--color-neutral-600) 30%, transparent) 25%, transparent 25%),
+    linear-gradient(-45deg, color-mix(in srgb, var(--color-neutral-600) 30%, transparent) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, color-mix(in srgb, var(--color-neutral-600) 30%, transparent) 75%),
+    linear-gradient(-45deg, transparent 75%, color-mix(in srgb, var(--color-neutral-600) 30%, transparent) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  background-color: var(--color-neutral-900-45);
+}
+
+.sandbox-asset-card__image {
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.sandbox-asset-card__image--mascot {
+  max-height: 160px;
+}
+
+.sandbox-asset-card__body {
+  padding: var(--space-4) var(--space-5) 0;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.sandbox-asset-card__name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  flex: 1;
+}
+
+.sandbox-asset-card__format {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  font-family: var(--font-family-mono);
+}
+
+.sandbox-asset-card__actions {
+  padding: var(--space-3) var(--space-5) var(--space-5);
+  display: flex;
+  gap: var(--space-2);
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.sandbox-asset-card__download {
+  flex: 1;
+  min-width: 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: color-mix(in srgb, var(--color-blue) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-blue) 55%, transparent);
+  color: var(--color-blue-light);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.sandbox-asset-card__download:hover {
+  background: color-mix(in srgb, var(--color-blue) 50%, transparent);
+  border-color: var(--color-blue);
+  color: var(--color-text-on-dark);
+}
+
+.sandbox-asset-card__download-icon {
+  flex-shrink: 0;
+}

@@ -23,29 +23,29 @@
    Table of Contents
 ----------------------------------------------- */
 .screenshots-toc {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--white-60);
     border-radius: var(--radius-lg);
     padding: var(--space-8);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(52, 124, 191, 0.1);
+    box-shadow: 0 4px 16px var(--black-06);
+    border: 1px solid var(--color-blue-10);
     margin-bottom: var(--space-10);
 }
 
 [data-theme="dark"] .screenshots-toc {
-    background: rgba(28, 47, 64, 0.96);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    border-color: rgba(96, 165, 250, 0.18);
+    background: var(--color-neutral-900-96);
+    box-shadow: 0 12px 32px var(--black-30);
+    border-color: var(--color-blue-light-18);
 }
 
 .screenshots-toc__title {
     font-size: var(--text-xl);
     font-weight: 800;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-4);
 }
 
 [data-theme="dark"] .screenshots-toc__title {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 .screenshots-toc__list {
@@ -63,22 +63,22 @@
     gap: var(--space-3);
     padding: var(--space-3);
     border-radius: var(--radius-md);
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .screenshots-toc__link:hover {
-    background-color: rgba(52, 124, 191, 0.1);
+    background-color: var(--color-blue-10);
     color: var(--color-blue);
 }
 
 [data-theme="dark"] .screenshots-toc__link {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 [data-theme="dark"] .screenshots-toc__link:hover {
-    background-color: rgba(96, 165, 250, 0.15);
+    background-color: var(--color-blue-light-15);
 }
 
 .screenshots-toc__number {
@@ -88,7 +88,7 @@
     width: 24px;
     height: 24px;
     background-color: var(--color-blue);
-    color: white;
+    color: var(--color-neutral-50);
     border-radius: 50%;
     font-size: var(--text-sm);
     font-weight: 600;
@@ -106,17 +106,17 @@
 
 /* Each accordion card */
 .screenshot-section {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--white-60);
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(52, 124, 191, 0.1);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--color-blue-10);
+    box-shadow: 0 4px 16px var(--black-06);
     overflow: hidden;
 }
 
 [data-theme="dark"] .screenshot-section {
-    background: rgba(28, 47, 64, 0.96);
-    border-color: rgba(96, 165, 250, 0.18);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    background: var(--color-neutral-900-96);
+    border-color: var(--color-blue-light-18);
+    box-shadow: 0 12px 32px var(--black-30);
 }
 
 /* -----------------------------------------------
@@ -138,13 +138,13 @@
 .screenshot-section__title {
     font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 700;
-    color: var(--color-gray-900);
+    color: var(--color-text-primary);
     margin: 0;
     flex: 1;
 }
 
 [data-theme="dark"] .screenshot-section__title {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 /* Chevron icon — CSS-drawn, no SVG needed */
@@ -166,7 +166,7 @@
     border-right: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
     transform: rotate(45deg) translateY(-3px);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-normal);
 }
 
 .screenshot-section--open .screenshot-section__toggle-icon::before {
@@ -180,7 +180,7 @@
 .screenshot-section__body {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 0.35s ease;
+    transition: grid-template-rows var(--transition-normal);
 }
 
 .screenshot-section--open .screenshot-section__body {
@@ -201,13 +201,13 @@
 ----------------------------------------------- */
 .screenshot-section__description {
     font-size: var(--text-lg);
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     line-height: 1.7;
     margin-bottom: var(--space-6);
 }
 
 [data-theme="dark"] .screenshot-section__description {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 /* -----------------------------------------------
@@ -225,26 +225,26 @@
     width: 100%;
     height: auto;
     border-radius: var(--radius-lg);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 32px var(--black-15);
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     display: block;
 }
 
 .screenshot-item__image:hover {
     transform: translateY(-2px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 40px var(--black-20);
 }
 
 .screenshot-item__caption {
     margin-top: var(--space-4);
     font-size: var(--text-base);
-    color: var(--color-gray-700);
+    color: var(--color-text-secondary);
     line-height: 1.7;
 }
 
 [data-theme="dark"] .screenshot-item__caption {
-    color: var(--color-white-text);
+    color: var(--color-text-on-dark);
 }
 
 /* -----------------------------------------------
@@ -257,14 +257,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    z-index: 10000;
+    background-color: var(--black-95);
+    z-index: var(--z-modal);
     align-items: center;
     justify-content: center;
     padding: var(--space-4);
 }
 
-.lightbox.active {
+.lightbox.is-active {
     display: flex;
 }
 
@@ -272,9 +272,9 @@
     position: absolute;
     top: var(--space-4);
     right: var(--space-4);
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--white-10);
     border: none;
-    color: white;
+    color: var(--color-neutral-50);
     font-size: 2rem;
     width: 48px;
     height: 48px;
@@ -283,12 +283,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s ease;
-    z-index: 10001;
+    transition: background-color var(--transition-fast);
+    z-index: calc(var(--z-modal) + 1);
 }
 
 .lightbox__close:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--white-20);
 }
 
 .lightbox__image {
@@ -327,6 +327,6 @@
         right: var(--space-2);
         width: 40px;
         height: 40px;
-        font-size: 1.5rem;
+        font-size: var(--text-2xl);
     }
 }

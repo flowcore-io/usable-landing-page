@@ -138,7 +138,7 @@ BEM (Block Element Modifier) is a naming methodology for CSS classes that makes 
 **DON'T: Use generic class names**
 ```html
 <!-- Wrong: not BEM-compliant -->
-<span class="brand-text">Usable</span>
+<span class="u-brand-text">Usable</span>
 ```
 ```html
 <!-- Correct: utility prefix or BEM block -->
@@ -318,7 +318,7 @@ Before committing CSS:
 
 **Before:**
 ```html
-<div class="brand-text">Usable</div>
+<div class="u-brand-text">Usable</div>
 ```
 
 **After:**

@@ -5,7 +5,7 @@
 
 class UsableApp {
   constructor() {
-    this.mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    this.mobileMenuToggle = document.querySelector('.nav__mobile-toggle');
     this.nav = document.querySelector('.nav');
     this.mobileMenu = document.querySelector('.nav__menu--mobile');
     this.backdrop = document.querySelector('.nav__backdrop');
@@ -213,12 +213,12 @@ class UsableApp {
    * Open mobile menu — shows backdrop, shifts focus to first item
    */
   openMobileMenu() {
-    this.mobileMenu.classList.add('active');
-    this.mobileMenuToggle.classList.add('mobile-menu-toggle--active');
+    this.mobileMenu.classList.add('is-active');
+    this.mobileMenuToggle.classList.add('nav__mobile-toggle--active');
     this.mobileMenuToggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
 
-    if (this.backdrop) this.backdrop.classList.add('active');
+    if (this.backdrop) this.backdrop.classList.add('is-active');
 
     // Move focus to first focusable element inside the menu (WCAG 2.4.3)
     const firstFocusable = this.mobileMenu.querySelector('a[href], button');
@@ -237,14 +237,13 @@ class UsableApp {
       const toggle = document.querySelector('.theme-toggle');
       const navActions = document.querySelector('.nav__actions');
       const themeRow = document.querySelector('.nav__mobile-theme-row');
-      const hamburger = navActions?.querySelector('.mobile-menu-toggle');
-
       if (!toggle || !navActions || !themeRow) return;
 
       if (mq.matches) {
-        // Desktop: move toggle into nav__actions before the hamburger button
+        // Desktop: move toggle into nav__actions before the LOG IN button
+        const cta = navActions.querySelector('.nav__cta--desktop');
         if (!navActions.contains(toggle)) {
-          navActions.insertBefore(toggle, hamburger);
+          navActions.insertBefore(toggle, cta);
         }
       } else {
         // Mobile: return toggle to the dropdown theme row
@@ -263,13 +262,13 @@ class UsableApp {
    */
   closeMobileMenu() {
     if (this.mobileMenu) {
-      this.mobileMenu.classList.remove('active');
+      this.mobileMenu.classList.remove('is-active');
     }
     if (this.mobileMenuToggle) {
-      this.mobileMenuToggle.classList.remove('mobile-menu-toggle--active');
+      this.mobileMenuToggle.classList.remove('nav__mobile-toggle--active');
       this.mobileMenuToggle.setAttribute('aria-expanded', 'false');
     }
-    if (this.backdrop) this.backdrop.classList.remove('active');
+    if (this.backdrop) this.backdrop.classList.remove('is-active');
     // Restore body scroll when menu is closed (from memory fragment solution)
     document.body.style.overflow = '';
   }
@@ -451,17 +450,18 @@ class UsableApp {
    * Setup intersection observer for scroll animations
    */
   setupIntersectionObserver() {
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    
+    const animatedElements = document.querySelectorAll('.u-animate-on-scroll');
+
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
+          entry.target.classList.add('is-animated');
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);

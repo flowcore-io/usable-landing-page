@@ -40,13 +40,16 @@ class ThemeManager {
    * Setup event listeners for theme toggles
    */
   setupThemeToggles() {
+    // Store bound handler so we can remove it later
+    if (!this._toggleHandler) {
+      this._toggleHandler = () => this.toggleTheme();
+    }
+
     this.themeToggles.forEach(toggle => {
-      // Remove old listeners by cloning the node
-      const newToggle = toggle.cloneNode(true);
-      toggle.parentNode.replaceChild(newToggle, toggle);
-      
-      // Add new listener
-      newToggle.addEventListener('click', () => this.toggleTheme());
+      // Remove previous listener (safe even if never added)
+      toggle.removeEventListener('click', this._toggleHandler);
+      // Add fresh listener
+      toggle.addEventListener('click', this._toggleHandler);
     });
   }
   
