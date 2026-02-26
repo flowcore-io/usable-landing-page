@@ -24,6 +24,14 @@
 				window.location.replace('https://usable.dev/login');
 				return;
 			}
+			// Legacy /fo/ URLs: set Faroese preference and redirect to the real page.
+			// The i18n system now uses localStorage instead of URL prefixes.
+			if (path === '/fo' || path.startsWith('/fo/')) {
+				localStorage.setItem('usable-lang', 'fo');
+				var realPath = path.replace(/^\/fo/, '') || '/';
+				window.location.replace(realPath);
+				return;
+			}
 			// Fallback: redirect SPA-style unknown routes to the site root
 			// Preserve hash fragments for internal navigation
 			var redirectUrl = '/' + window.location.hash;

@@ -640,9 +640,6 @@ function handleRouteRedirection() {
   const currentPath = window.location.pathname;
   const currentHash = window.location.hash;
 
-  // Allow all /fo/ prefixed paths (Faroese translation)
-  if (currentPath === '/fo' || currentPath.startsWith('/fo/')) return;
-
   // Allow root path, index.html, legal pages, and other static pages (both clean URLs and .html)
   if (currentPath === '/' ||
       currentPath === '/index.html' ||

@@ -1,7 +1,7 @@
 /**
  * Internationalisation (i18n) for Usable Landing Page
- * Detects language from URL prefix (/fo/) and applies translations
- * from /translations/fo.json via data-i18n attributes.
+ * Uses localStorage to persist language preference and applies
+ * translations from /translations/fo.json via data-i18n attributes.
  *
  * Attribute reference:
  *   data-i18n="key"              → replaces textContent
@@ -20,19 +20,14 @@ class I18n {
     this.translations = null;
   }
 
-  /** Detect language from URL path */
+  /** Detect language from localStorage preference */
   detectLanguage() {
-    const p = window.location.pathname;
-    return (p === '/fo' || p.startsWith('/fo/') || p.startsWith('/fo.')) ? 'fo' : 'en';
+    return localStorage.getItem('usable-lang') || 'en';
   }
 
-  /** Map the current pathname (without /fo prefix) to a page key */
+  /** Map the current pathname to a page key for meta-tag lookups */
   getPageKey() {
     let p = window.location.pathname;
-    // Strip language prefix
-    if (p.startsWith('/fo/')) p = p.slice(3);
-    else if (p === '/fo') p = '/';
-    // Normalise
     p = p.replace(/^\//, '').replace(/\.html$/, '').replace(/\/$/, '');
     return p || 'home';
   }
@@ -109,25 +104,7 @@ class I18n {
     if (ogLocale) ogLocale.setAttribute('content', 'fo_FO');
   }
 
-  /** Prefix internal links with /fo so navigation stays in Faroese */
-  prefixLinks() {
-    if (this.lang !== 'fo') return;
-
-    document.querySelectorAll('a[href]').forEach(a => {
-      const href = a.getAttribute('href');
-      // Only prefix internal absolute paths; skip external, anchors, already-prefixed
-      if (href && href.startsWith('/') && !href.startsWith('/fo/') && !href.startsWith('/fo') && !href.startsWith('//')) {
-        a.setAttribute('href', '/fo' + href);
-      }
-      // Also update data-clean-url
-      const clean = a.getAttribute('data-clean-url');
-      if (clean && clean.startsWith('/') && !clean.startsWith('/fo/') && !clean.startsWith('/fo')) {
-        a.setAttribute('data-clean-url', '/fo' + clean);
-      }
-    });
-  }
-
-  /** Set up the language switcher buttons added in the navbar */
+  /** Set up the language switcher buttons in the navbar */
   setupLanguageSwitcher() {
     document.querySelectorAll('.nav__lang-switch').forEach(btn => {
       const label = btn.querySelector('.nav__lang-switch-label');
@@ -141,15 +118,12 @@ class I18n {
 
       btn.addEventListener('click', e => {
         e.preventDefault();
-        const path = window.location.pathname;
         if (this.lang === 'fo') {
-          // Remove /fo prefix
-          const enPath = path.replace(/^\/fo/, '') || '/';
-          window.location.href = enPath;
+          localStorage.removeItem('usable-lang');
         } else {
-          // Add /fo prefix
-          window.location.href = '/fo' + (path === '/' ? '/' : path);
+          localStorage.setItem('usable-lang', 'fo');
         }
+        window.location.reload();
       });
     });
   }
@@ -169,7 +143,6 @@ if (i18n.lang === 'fo') {
   function applyIfReady() {
     if (!translationsReady) return;
     i18n.apply();
-    i18n.prefixLinks();
     i18n.setupLanguageSwitcher();
   }
 
@@ -183,7 +156,6 @@ if (i18n.lang === 'fo') {
 
     // Apply to whatever DOM is available right now
     i18n.apply();
-    i18n.prefixLinks();
     i18n.setupLanguageSwitcher();
 
     // Remove loading state
