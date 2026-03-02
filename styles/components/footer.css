@@ -583,48 +583,53 @@
     padding-top: var(--space-4);
     align-items: center;
   }
-  
+
+  /* Single-column layout on mobile — the desktop minmax(400px,1fr) overflows */
+  .footer__bottom-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .footer__social-legal-group {
+    align-items: center;
+    width: 100%;
+  }
+
   .footer__info-group {
     align-items: center;
     order: 2;
   }
-  
+
   .footer__copyright {
     font-size: var(--text-xs);
     line-height: 1.4;
     text-align: center;
   }
-  
+
   .footer__social-group {
     justify-content: center;
     margin: var(--space-2) 0;
     gap: var(--space-2);
     order: 1;
   }
-  
+
   .footer__social-button {
     width: 44px;
     height: 44px;
     min-width: 44px;
     min-height: 44px;
   }
-  
+
   .footer__version {
     order: 3;
   }
-  
+
   .footer__bokeh--1,
   .footer__bokeh--2,
+  .footer__bokeh--3,
   .footer__bokeh--4,
   .footer__bokeh--5 {
     display: none;
-  }
-  
-  .footer__bokeh--3 {
-    right: 3%;
-    top: 40%;
-    width: 50px;
-    height: 50px;
   }
 }
 

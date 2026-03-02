@@ -1,13 +1,13 @@
-<!-- Navigation Component -->
+﻿<!-- Navigation Component -->
 <nav class="nav">
     <div class="nav__container">
         <a href="/" class="nav__logo">
-            <img src="assets/images/usable-logo-light.png"
+            <img src="assets/images/Brand/Usable_side_text_black_transparent.png"
                  alt="Usable"
                  class="nav__logo-img nav__logo-img--light"
                  fetchpriority="high"
                  height="32">
-            <img src="assets/images/usable-logo-dark.png"
+            <img src="assets/images/Brand/Usable_side_text_white_transparent.png"
                  alt="Usable"
                  class="nav__logo-img nav__logo-img--dark"
                  fetchpriority="high"
@@ -48,7 +48,7 @@
             <a href="#" class="nav__lang-switch" aria-label="Switch to Faroese">
                 <span class="nav__lang-switch-label">FO</span>
             </a>
-            <a href="https://usable.dev/login" class="btn btn--primary nav__cta--desktop" data-i18n="nav.login">LOG IN</a>
+            <a href="https://usable.dev/login" class="btn btn--primary btn--small nav__cta--desktop" data-i18n="nav.login">LOG IN</a>
             <button class="nav__mobile-toggle" aria-label="Toggle mobile menu" data-i18n-aria-label="nav.toggle-menu" aria-expanded="false">
                 <span class="nav__hamburger-line"></span>
                 <span class="nav__hamburger-line"></span>
@@ -62,30 +62,42 @@
 <div class="nav__menu--mobile">
     <div class="nav__menu--mobile-content">
 
-        <p class="nav__mobile-section" data-i18n="nav.product">Product</p>
-        <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile" data-i18n="nav.how-it-works">How It Works</a>
-        <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile" data-i18n="nav.use-cases">Use Cases</a>
-        <a href="/demo.html" data-clean-url="/demo" class="nav__link nav__link--mobile" data-i18n="nav.demo">Demo</a>
-        <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__link nav__link--mobile" data-i18n="nav.detailed-screenshots">Detailed Screenshots</a>
+        <button class="nav__mobile-accordion-toggle" aria-expanded="false" data-i18n="nav.product">Product</button>
+        <div class="nav__mobile-accordion-panel" aria-hidden="true">
+            <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile" data-i18n="nav.how-it-works">How It Works</a>
+            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile" data-i18n="nav.use-cases">Use Cases</a>
+            <a href="/demo.html" data-clean-url="/demo" class="nav__link nav__link--mobile" data-i18n="nav.demo">Demo</a>
+            <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__link nav__link--mobile" data-i18n="nav.detailed-screenshots">Detailed Screenshots</a>
+        </div>
 
         <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile nav__link--mobile-standalone" data-i18n="nav.pricing">Pricing</a>
 
-        <p class="nav__mobile-section" data-i18n="nav.resources">Resources</p>
-        <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile" data-i18n="nav.blog">Blog</a>
-        <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile" data-i18n="nav.news">News</a>
-        <a href="https://usable.dev/docs" class="nav__link nav__link--mobile" target="_blank" rel="noopener noreferrer" data-i18n="nav.docs">Docs</a>
-        <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile" data-i18n="nav.faq">FAQ</a>
+        <button class="nav__mobile-accordion-toggle" aria-expanded="false" data-i18n="nav.resources">Resources</button>
+        <div class="nav__mobile-accordion-panel" aria-hidden="true">
+            <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile" data-i18n="nav.blog">Blog</a>
+            <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile" data-i18n="nav.news">News</a>
+            <a href="https://usable.dev/docs" class="nav__link nav__link--mobile" target="_blank" rel="noopener noreferrer" data-i18n="nav.docs">Docs</a>
+            <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile" data-i18n="nav.faq">FAQ</a>
+        </div>
 
-        <p class="nav__mobile-section" data-i18n="nav.about">About</p>
-        <a href="/about.html" data-clean-url="/about" class="nav__link nav__link--mobile" data-i18n="nav.about-us">About Us</a>
-        <a href="/team.html" data-clean-url="/team" class="nav__link nav__link--mobile" data-i18n="nav.team">Team</a>
-        <a href="/contact.html" data-clean-url="/contact" class="nav__link nav__link--mobile" data-i18n="nav.contact">Contact</a>
+        <button class="nav__mobile-accordion-toggle" aria-expanded="false" data-i18n="nav.about">About</button>
+        <div class="nav__mobile-accordion-panel" aria-hidden="true">
+            <a href="/about.html" data-clean-url="/about" class="nav__link nav__link--mobile" data-i18n="nav.about-us">About Us</a>
+            <a href="/team.html" data-clean-url="/team" class="nav__link nav__link--mobile" data-i18n="nav.team">Team</a>
+            <a href="/contact.html" data-clean-url="/contact" class="nav__link nav__link--mobile" data-i18n="nav.contact">Contact</a>
+        </div>
 
-        <div class="nav__mobile-actions">
+    </div>
+
+    <!-- Always-visible bottom bar: LOG IN + lang switch + theme toggle -->
+    <div class="nav__mobile-actions">
+        <!-- Full-width LOG IN button -->
+        <a href="https://usable.dev/login" class="nav__cta--mobile" data-i18n="nav.login">LOG IN</a>
+        <!-- Row: lang switch + theme toggle (right-aligned) -->
+        <div class="nav__mobile-icons-row">
             <a href="#" class="nav__lang-switch nav__lang-switch--mobile" aria-label="Switch to Faroese">
                 <span class="nav__lang-switch-label">FO</span>
             </a>
-            <a href="https://usable.dev/login" class="btn btn--primary nav__cta--mobile" data-i18n="nav.login">LOG IN</a>
             <div class="nav__mobile-theme-row">
                 <button class="theme-toggle" aria-label="Toggle theme" data-i18n-aria-label="nav.toggle-theme" aria-pressed="false">
                     <svg class="theme-toggle__icon theme-toggle__icon--sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

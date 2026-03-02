@@ -453,6 +453,8 @@ a:hover {
   color: var(--color-accent);
   border-color: var(--color-accent);
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   position: relative;
   overflow: hidden;
 }
@@ -478,38 +480,15 @@ a:hover {
   box-shadow: none;
 }
 
-.btn--orange {
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent) 100%);
-  color: var(--color-neutral-50);
-  border-color: var(--color-accent);
-  box-shadow: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  position: relative;
-  overflow: hidden;
-}
 
-.btn--orange::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, var(--white-20), transparent);
-  transition: left var(--transition-slow);
-}
-
-.btn--orange:hover::before {
-  left: 100%;
-}
-
-.btn--orange:hover {
-  background: linear-gradient(135deg, var(--color-accent-hover) 0%, var(--color-accent-hover) 100%);
-  border-color: var(--color-accent-hover);
-  color: var(--color-neutral-50);
-  box-shadow: none;
+.btn--small {
+  padding: 6px 18px;
+  font-size: var(--text-xs);
+  height: 32px;
+  min-height: 32px;
+  line-height: 1;
+  border-width: 1px;
+  border-radius: var(--radius-md);
 }
 
 .btn--large {
@@ -566,6 +545,44 @@ a:hover {
   border-color: var(--color-accent);
   color: var(--color-neutral-900);
   box-shadow: none;
+}
+
+/* ===================================
+   BADGES
+   =================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+/* Solid badge — feature labels, CTAs, status callouts (hero, cta section, sandbox label) */
+.badge--orange {
+  padding: var(--space-1) var(--space-4);
+  background: var(--color-orange);
+  color: var(--color-neutral-900);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Tag badge — content categorisation (blog cards, news cards, eyebrows) */
+.badge--tag {
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-blue-12);
+  color: var(--color-blue);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .badge--tag {
+  background: var(--color-blue-20);
+  color: var(--color-blue-light);
 }
 
 /* ===================================

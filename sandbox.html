@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>Sandbox – Brand &amp; Style Reference</title>
+  <title>Brand Kit – Usable</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Base variables & resets (read-only — do not edit for sandbox experiments) -->
   <link rel="stylesheet" href="styles/main.css">
@@ -17,12 +17,17 @@
   <!-- Common shell components -->
   <link rel="stylesheet" href="styles/components/navbar.css">
   <link rel="stylesheet" href="styles/components/footer.css">
-  <!-- Theme toggle hidden — sandbox is always dark -->
-  <!-- Temporary: hero preview for visual development -->
-  <link rel="stylesheet" href="styles/components/bokeh.css">
-  <link rel="stylesheet" href="styles/components/scroll-animations.css">
-  <link rel="stylesheet" href="styles/components/animations.css">
+  <!-- hero.css needed for hero__badge styles used in the Buttons & Badges section -->
   <link rel="stylesheet" href="styles/components/hero.css">
+  <!-- Component styles for the Components showcase section -->
+  <link rel="stylesheet" href="styles/components/blog.css">
+  <link rel="stylesheet" href="styles/components/news.css">
+  <link rel="stylesheet" href="styles/components/features.css">
+  <link rel="stylesheet" href="styles/components/pricing.css">
+  <link rel="stylesheet" href="styles/components/contact.css">
+  <link rel="stylesheet" href="styles/components/about.css">
+  <link rel="stylesheet" href="styles/components/team.css">
+  <!-- Theme toggle hidden — sandbox is always dark -->
   <!-- ✏️  SANDBOX STYLES — safe to edit freely, affects only this page -->
   <link rel="stylesheet" href="styles/sandbox.css">
 </head>
@@ -37,74 +42,19 @@
   <main id="main-content" class="sandbox">
 
     <!-- ============================================================
-         TEMPORARY: HERO PREVIEW — remove when done
-         ============================================================ -->
-
-    <!-- Bokeh Background Circles -->
-    <div class="bokeh bokeh--1"></div>
-    <div class="bokeh bokeh--2"></div>
-    <div class="bokeh bokeh--3"></div>
-    <div class="bokeh bokeh--4"></div>
-    <div class="bokeh bokeh--5"></div>
-    <div class="bokeh bokeh--6"></div>
-    <div class="bokeh bokeh--7"></div>
-    <div class="bokeh bokeh--8"></div>
-    <div class="bokeh bokeh--9"></div>
-    <div class="bokeh bokeh--10"></div>
-    <div class="bokeh bokeh--11"></div>
-    <div class="bokeh bokeh--12"></div>
-    <div class="bokeh bokeh--13"></div>
-    <div class="bokeh bokeh--14"></div>
-    <div class="bokeh bokeh--15"></div>
-
-    <section class="hero">
-        <div class="hero__container">
-            <a href="#built-with-usable" class="hero__badge">
-                <svg class="hero__badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                This site was built with Usable
-                <svg class="hero__badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-            </a>
-            <h1 class="hero__title" role="heading" aria-level="1">
-                Your own knowledge base.<br>
-                Your organisation's memory.<br>
-                <span class="hero__title-accent">Under your control.</span>
-            </h1>
-            <div class="hero__body">
-                <p class="hero__description">
-                    Right now, your team's knowledge is scattered across personal AI accounts, email threads, and people's heads. Usable is the simple alternative — a place where your organisation's knowledge lives, so your AI works from your knowledge, not the internet.
-                </p>
-                <div class="hero__actions">
-                    <a href="https://usable.dev/login" class="btn hero__btn btn--primary btn--large">Start for free</a>
-                    <a href="/how-it-works.html" data-clean-url="/how-it-works" class="btn hero__btn btn--secondary btn--large">How it works</a>
-                </div>
-            </div>
-            <div class="hero__visual">
-                <picture>
-                    <source srcset="assets/images/usable-mascot.webp" type="image/webp">
-                    <img src="assets/images/usable-mascot.png" alt="Usable Nudibranch Mascot" class="hero__mascot" loading="lazy">
-                </picture>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-         END HERO PREVIEW
-         ============================================================ -->
-
-    <!-- ============================================================
          SANDBOX HEADER
          ============================================================ -->
     <section class="sandbox__header">
       <div class="sandbox__container">
-        <span class="sandbox__label">Sandbox</span>
-        <h1 class="sandbox__title">Brand &amp; Style Reference</h1>
+        <span class="sandbox__label">Style Guide</span>
+        <h1 class="sandbox__title">Brand Kit</h1>
         <p class="sandbox__subtitle">
-          Brand colours, typography, logos, and UI tokens — all in one place.
-          Edit <code>styles/sandbox.css</code> freely; nothing here affects production.
+          Everything you need to represent Usable correctly — logo files to download,
+          colour values to copy, and our visual language.
+        </p>
+        <p class="sandbox__hero-note">
+          Assets are for press and partner use only. Please do not modify logos or use them in ways that misrepresent Usable.
+          For permissions and press enquiries, contact <a href="mailto:usable@usable.dev" class="sandbox__hero-link">usable@usable.dev</a>.
         </p>
       </div>
     </section>
@@ -112,144 +62,59 @@
     <!-- ============================================================
          BRAND ASSETS
          ============================================================ -->
-    <section class="sandbox__section">
+    <section class="sandbox__section sandbox__section--glass">
       <div class="sandbox__container">
         <h2 class="sandbox__section-title">Brand Assets</h2>
 
         <!-- Logos -->
         <h3 class="sandbox__group-title">Logos</h3>
-        <div class="sandbox__asset-grid">
+        <div class="sandbox__asset-grid sandbox__asset-grid--3col">
 
-          <!-- SVG Vector -->
+          <!-- Icon — Transparent -->
           <div class="sandbox-asset-card">
             <div class="sandbox-asset-card__preview sandbox-asset-card__preview--dark-bg">
-              <img src="assets/images/usable-logo.svg" alt="Usable Logo — Vector" class="sandbox-asset-card__image" loading="lazy">
+              <img src="assets/images/Brand/Usable_transparent.png" alt="Usable Logo Icon — Transparent" class="sandbox-asset-card__image" loading="lazy">
             </div>
             <div class="sandbox-asset-card__body">
-              <p class="sandbox-asset-card__name">Logo — Vector</p>
-              <span class="sandbox-asset-card__format">SVG</span>
+              <p class="sandbox-asset-card__name">Logo — Icon</p>
+              <span class="sandbox-asset-card__format">PNG</span>
             </div>
             <div class="sandbox-asset-card__actions">
-              <a href="assets/images/usable-logo.svg" download class="sandbox-asset-card__download">
+              <a href="assets/images/Brand/Usable_transparent.png" download class="sandbox-asset-card__download">
                 <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download SVG
+                Download PNG
               </a>
             </div>
           </div>
 
-          <!-- Standard PNG -->
+          <!-- Side Text — Light mode -->
           <div class="sandbox-asset-card">
             <div class="sandbox-asset-card__preview sandbox-asset-card__preview--light-bg">
-              <img src="assets/images/Usable - Logo.png" alt="Usable Logo — Standard" class="sandbox-asset-card__image" loading="lazy">
+              <img src="assets/images/Brand/Usable_side_text_black_transparent.png" alt="Usable Logo Side Text — Light Mode" class="sandbox-asset-card__image" loading="lazy">
             </div>
             <div class="sandbox-asset-card__body">
-              <p class="sandbox-asset-card__name">Logo — Standard</p>
+              <p class="sandbox-asset-card__name">Logo — Side Text (Light)</p>
               <span class="sandbox-asset-card__format">PNG</span>
             </div>
             <div class="sandbox-asset-card__actions">
-              <a href="assets/images/Usable - Logo.png" download class="sandbox-asset-card__download">
+              <a href="assets/images/Brand/Usable_side_text_black_transparent.png" download class="sandbox-asset-card__download">
                 <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download PNG
               </a>
             </div>
           </div>
 
-          <!-- Transparent PNG -->
-          <div class="sandbox-asset-card">
-            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--checker">
-              <img src="assets/images/Usable - Logo - transparent.png" alt="Usable Logo — Transparent" class="sandbox-asset-card__image" loading="lazy">
-            </div>
-            <div class="sandbox-asset-card__body">
-              <p class="sandbox-asset-card__name">Logo — Transparent</p>
-              <span class="sandbox-asset-card__format">PNG</span>
-            </div>
-            <div class="sandbox-asset-card__actions">
-              <a href="assets/images/Usable - Logo - transparent.png" download class="sandbox-asset-card__download">
-                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download PNG
-              </a>
-            </div>
-          </div>
-
-          <!-- Solid PNG -->
-          <div class="sandbox-asset-card">
-            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--light-bg">
-              <img src="assets/images/Usable - Logo - Solid.png" alt="Usable Logo — Solid" class="sandbox-asset-card__image" loading="lazy">
-            </div>
-            <div class="sandbox-asset-card__body">
-              <p class="sandbox-asset-card__name">Logo — Solid</p>
-              <span class="sandbox-asset-card__format">PNG</span>
-            </div>
-            <div class="sandbox-asset-card__actions">
-              <a href="assets/images/Usable - Logo - Solid.png" download class="sandbox-asset-card__download">
-                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download PNG
-              </a>
-            </div>
-          </div>
-
-          <!-- With Text — Dark Mode -->
+          <!-- Side Text — Dark mode -->
           <div class="sandbox-asset-card">
             <div class="sandbox-asset-card__preview sandbox-asset-card__preview--dark-bg">
-              <img src="assets/images/Usable - Logo - With Text (for dark mode).png" alt="Usable Logo with Text — Dark Mode" class="sandbox-asset-card__image" loading="lazy">
+              <img src="assets/images/Brand/Usable_side_text_white_transparent.png" alt="Usable Logo Side Text — Dark Mode" class="sandbox-asset-card__image" loading="lazy">
             </div>
             <div class="sandbox-asset-card__body">
-              <p class="sandbox-asset-card__name">Logo with Text — Dark</p>
+              <p class="sandbox-asset-card__name">Logo — Side Text (Dark)</p>
               <span class="sandbox-asset-card__format">PNG</span>
             </div>
             <div class="sandbox-asset-card__actions">
-              <a href="assets/images/Usable - Logo - With Text (for dark mode).png" download class="sandbox-asset-card__download">
-                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download PNG
-              </a>
-            </div>
-          </div>
-
-          <!-- With Text — Light Mode -->
-          <div class="sandbox-asset-card">
-            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--light-bg">
-              <img src="assets/images/Usable - Logo - With Text (for light mode).png" alt="Usable Logo with Text — Light Mode" class="sandbox-asset-card__image" loading="lazy">
-            </div>
-            <div class="sandbox-asset-card__body">
-              <p class="sandbox-asset-card__name">Logo with Text — Light</p>
-              <span class="sandbox-asset-card__format">PNG</span>
-            </div>
-            <div class="sandbox-asset-card__actions">
-              <a href="assets/images/Usable - Logo - With Text (for light mode).png" download class="sandbox-asset-card__download">
-                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download PNG
-              </a>
-            </div>
-          </div>
-
-          <!-- Dark variant -->
-          <div class="sandbox-asset-card">
-            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--light-bg">
-              <img src="assets/images/usable-logo-dark.png" alt="Usable Logo — Dark" class="sandbox-asset-card__image" loading="lazy">
-            </div>
-            <div class="sandbox-asset-card__body">
-              <p class="sandbox-asset-card__name">Logo — Dark</p>
-              <span class="sandbox-asset-card__format">PNG</span>
-            </div>
-            <div class="sandbox-asset-card__actions">
-              <a href="assets/images/usable-logo-dark.png" download class="sandbox-asset-card__download">
-                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download PNG
-              </a>
-            </div>
-          </div>
-
-          <!-- Light variant -->
-          <div class="sandbox-asset-card">
-            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--dark-bg">
-              <img src="assets/images/usable-logo-light.png" alt="Usable Logo — Light" class="sandbox-asset-card__image" loading="lazy">
-            </div>
-            <div class="sandbox-asset-card__body">
-              <p class="sandbox-asset-card__name">Logo — Light</p>
-              <span class="sandbox-asset-card__format">PNG</span>
-            </div>
-            <div class="sandbox-asset-card__actions">
-              <a href="assets/images/usable-logo-light.png" download class="sandbox-asset-card__download">
+              <a href="assets/images/Brand/Usable_side_text_white_transparent.png" download class="sandbox-asset-card__download">
                 <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Download PNG
               </a>
@@ -260,14 +125,14 @@
 
         <!-- Mascot -->
         <h3 class="sandbox__group-title sandbox__group-title--spaced">Mascot</h3>
-        <div class="sandbox__asset-grid sandbox__asset-grid--narrow">
+        <div class="sandbox__asset-grid sandbox__asset-grid--single">
 
           <!-- Mascot Standard -->
           <div class="sandbox-asset-card">
             <div class="sandbox-asset-card__preview sandbox-asset-card__preview--dark-bg">
               <picture>
-                <source srcset="assets/images/usable-mascot.webp" type="image/webp">
-                <img src="assets/images/usable-mascot.png" alt="Usable Mascot — Nudibranch" class="sandbox-asset-card__image sandbox-asset-card__image--mascot" loading="lazy">
+                <source srcset="assets/images/Brand/usable-mascot.webp" type="image/webp">
+                <img src="assets/images/Brand/usable-mascot.png" alt="Usable Mascot — Nudibranch" class="sandbox-asset-card__image sandbox-asset-card__image--mascot" loading="lazy">
               </picture>
             </div>
             <div class="sandbox-asset-card__body">
@@ -275,51 +140,13 @@
               <span class="sandbox-asset-card__format">WebP / PNG</span>
             </div>
             <div class="sandbox-asset-card__actions">
-              <a href="assets/images/usable-mascot.webp" download class="sandbox-asset-card__download">
+              <a href="assets/images/Brand/usable-mascot.webp" download class="sandbox-asset-card__download">
                 <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 WebP
               </a>
-              <a href="assets/images/usable-mascot.png" download class="sandbox-asset-card__download">
+              <a href="assets/images/Brand/usable-mascot.png" download class="sandbox-asset-card__download">
                 <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 PNG
-              </a>
-            </div>
-          </div>
-
-          <!-- Mascot White BG -->
-          <div class="sandbox-asset-card">
-            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--light-bg">
-              <img src="assets/images/usable-mascot-white-bg.png" alt="Usable Mascot — White Background" class="sandbox-asset-card__image sandbox-asset-card__image--mascot" loading="lazy">
-            </div>
-            <div class="sandbox-asset-card__body">
-              <p class="sandbox-asset-card__name">Mascot — White BG</p>
-              <span class="sandbox-asset-card__format">PNG / WebP</span>
-            </div>
-            <div class="sandbox-asset-card__actions">
-              <a href="assets/images/usable-mascot-white-bg.webp" download class="sandbox-asset-card__download">
-                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                WebP
-              </a>
-              <a href="assets/images/usable-mascot-white-bg.png" download class="sandbox-asset-card__download">
-                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                PNG
-              </a>
-            </div>
-          </div>
-
-          <!-- Mascot High-Res -->
-          <div class="sandbox-asset-card">
-            <div class="sandbox-asset-card__preview sandbox-asset-card__preview--checker">
-              <img src="assets/images/Usable Mascot.png" alt="Usable Mascot — High Resolution" class="sandbox-asset-card__image sandbox-asset-card__image--mascot" loading="lazy">
-            </div>
-            <div class="sandbox-asset-card__body">
-              <p class="sandbox-asset-card__name">Mascot — High-Res</p>
-              <span class="sandbox-asset-card__format">PNG</span>
-            </div>
-            <div class="sandbox-asset-card__actions">
-              <a href="assets/images/Usable Mascot.png" download class="sandbox-asset-card__download">
-                <svg class="sandbox-asset-card__download-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download PNG
               </a>
             </div>
           </div>
@@ -331,7 +158,7 @@
     <!-- ============================================================
          COLOURS
          ============================================================ -->
-    <section class="sandbox__section sandbox__section--glass">
+    <section class="sandbox__section">
       <div class="sandbox__container">
         <h2 class="sandbox__section-title">Brand Colours</h2>
 
@@ -355,14 +182,6 @@
             </div>
           </div>
 
-          <div class="color-card">
-            <div class="color-swatch color-swatch--blue-light" aria-hidden="true"></div>
-            <div class="color-card__info">
-              <div class="color-card__name">Blue Light</div>
-              <div class="color-card__value" tabindex="0" role="button">#93c5fd</div>
-              <div class="color-card__variable" tabindex="0" role="button">--color-blue-light</div>
-            </div>
-          </div>
 
           <div class="color-card">
             <div class="color-swatch color-swatch--neutral-50" aria-hidden="true"></div>
@@ -389,199 +208,235 @@
     <!-- ============================================================
          TYPOGRAPHY
          ============================================================ -->
-    <section class="sandbox__section">
+    <section class="sandbox__section sandbox__section--glass">
       <div class="sandbox__container">
         <h2 class="sandbox__section-title">Typography</h2>
 
-        <div class="sandbox__card">
-          <p class="sandbox__type-sample sandbox__type-sample--7xl">7xl · 72px</p>
-          <p class="sandbox__type-sample sandbox__type-sample--6xl">6xl · 60px</p>
-          <p class="sandbox__type-sample sandbox__type-sample--5xl">5xl · 48px</p>
-          <p class="sandbox__type-sample sandbox__type-sample--4xl">4xl · 36px</p>
-          <p class="sandbox__type-sample sandbox__type-sample--3xl">3xl · 30px</p>
-          <p class="sandbox__type-sample sandbox__type-sample--2xl">2xl · 24px</p>
-          <p class="sandbox__type-sample sandbox__type-sample--xl">xl · 20px</p>
-          <p class="sandbox__type-sample sandbox__type-sample--lg">lg · 18px — Body lead text, readable paragraph intro</p>
-          <p class="sandbox__type-sample sandbox__type-sample--base">base · 16px — Standard body text, comfortable reading size</p>
-          <p class="sandbox__type-sample sandbox__type-sample--sm">sm · 14px — Labels, captions, supporting information</p>
-          <p class="sandbox__type-sample sandbox__type-sample--xs">xs · 12px — Fine print, metadata, timestamps</p>
+        <h3 class="sandbox__group-title">Type Scale</h3>
+
+          <p class="sandbox__type-sample sandbox__type-sample--7xl">This is a hero heading</p>
+          <p class="sandbox__type-sample sandbox__type-sample--4xl">Section headings anchor the page</p>
+          <p class="sandbox__type-sample sandbox__type-sample--2xl">Subheadings create structure within a section</p>
+          <p class="sandbox__type-sample sandbox__type-sample--lg sandbox__type-sample--prose">Lead paragraphs open a section with a slightly elevated voice — a little more presence than body text, used to draw the reader in before the detail begins.</p>
+          <p class="sandbox__type-sample sandbox__type-sample--base sandbox__type-sample--prose">This is standard body text — the workhorse of the design. Comfortable to read at length, sized for sustained attention. When your copy is at this scale, readers settle in and stay.</p>
+          <p class="sandbox__type-sample sandbox__type-sample--sm sandbox__type-sample--prose">Supporting text sits quietly below the main voice. Good for labels, captions, and secondary information that belongs on the page but shouldn't compete.</p>
+          <p class="sandbox__type-sample sandbox__type-sample--xs sandbox__type-sample--prose">Fine print · Reserved for legal copy, timestamps, and metadata that must be present without drawing attention.</p>
+
+        <h3 class="sandbox__group-title sandbox__group-title--spaced">Typefaces</h3>
+        <div class="sandbox__font-showcase">
+          <div class="sandbox__font-card">
+            <div class="sandbox__font-specimen sandbox__font-specimen--inter">Aa Bb Cc Dd 0–9</div>
+            <div class="sandbox__font-meta">
+              <span class="sandbox__font-name">Inter</span>
+              <span class="sandbox__font-use">Body &amp; headings</span>
+            </div>
+          </div>
+          <div class="sandbox__font-card">
+            <div class="sandbox__font-specimen sandbox__font-specimen--outfit">Aa Bb Cc Dd 0–9</div>
+            <div class="sandbox__font-meta">
+              <span class="sandbox__font-name">Outfit</span>
+              <span class="sandbox__font-use">Brand &amp; logo marks</span>
+            </div>
+          </div>
         </div>
+
+        <h3 class="sandbox__group-title sandbox__group-title--spaced">Links &amp; emphasis</h3>
+        <div class="sandbox__prose-demo">
+          <p>Inline links use brand blue on light backgrounds and blue-light on dark. Here is an <a href="#" class="sandbox__demo-link">inline hyperlink</a> within body text — no underline by default, underline on hover.</p>
+          <p>Text emphasis: <strong>bold text</strong> for key terms and product names; <em>italic text</em> for notes, examples, and quiet emphasis.</p>
+        </div>
+
       </div>
     </section>
 
     <!-- ============================================================
-         CARDS
+         COMPONENTS
          ============================================================ -->
-    <section class="sandbox__section sandbox__section--glass">
+    <section class="sandbox__section">
       <div class="sandbox__container">
-        <h2 class="sandbox__section-title">Cards</h2>
+        <h2 class="sandbox__section-title">Components</h2>
 
+        <!-- Base card styles — 3 variants -->
+        <h3 class="sandbox__group-title">Base card styles</h3>
         <div class="sandbox__token-grid sandbox__token-grid--3">
-
           <div class="sandbox__card">
             <h3 class="sandbox__card-title">Default Card</h3>
-            <p class="sandbox__card-text">White background, subtle border and light shadow. Used for most content blocks.</p>
+            <p class="sandbox__card-text">Standard surface with subtle border and shadow. Foundation for most content blocks.</p>
           </div>
-
           <div class="sandbox__card sandbox__card--highlight">
             <h3 class="sandbox__card-title">Highlighted Card</h3>
             <p class="sandbox__card-text">Blue-tinted background for featured content or callouts.</p>
           </div>
-
           <div class="sandbox__card sandbox__card--accent">
             <h3 class="sandbox__card-title">Accent Card</h3>
-            <p class="sandbox__card-text">Orange accent border. Use sparingly for high-priority items.</p>
+            <p class="sandbox__card-text">Orange left border. Use sparingly for high-priority items.</p>
           </div>
-
         </div>
+
+        <!-- Article cards — blog and news variants side by side -->
+        <h3 class="sandbox__group-title sandbox__group-title--spaced">Article cards</h3>
+        <div class="sandbox__token-grid sandbox__token-grid--2 sandbox__token-grid--equal-height">
+          <div>
+            <p class="sandbox__card-variant-label">Blog — date &amp; author · single CTA</p>
+            <div class="blog-card">
+              <span class="blog-card__badge">Category</span>
+              <h3 class="blog-card__title">Article headline goes here</h3>
+              <div class="blog-card__meta">
+                <span><svg class="blog-card__meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Date</span>
+                <span><svg class="blog-card__meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Author name</span>
+              </div>
+              <p class="blog-card__summary">Blog page — badge, headline, date &amp; author meta, excerpt, single primary CTA.</p>
+              <div class="blog-card__actions">
+                <a href="#" class="btn btn--primary btn--small">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="sandbox__card-variant-label">News — date &amp; location · CTA + text link</p>
+            <div class="news-card">
+              <span class="news-card__badge">Category</span>
+              <h3 class="news-card__title">Press release or announcement headline</h3>
+              <div class="news-card__meta">
+                <span><svg class="news-card__meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Date</span>
+                <span><svg class="news-card__meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Location</span>
+              </div>
+              <p class="news-card__summary">News page — same structure as blog, but meta shows location and actions row adds a secondary text link.</p>
+              <div class="news-card__actions">
+                <a href="#" class="btn btn--primary btn--small">Read more</a>
+                <a href="#" class="news-card__link">Secondary link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature | Contact — 2 columns (informational/service cards) -->
+        <div class="sandbox__token-grid sandbox__token-grid--2 sandbox__token-grid--equal-height sandbox__token-grid--spaced">
+          <div>
+            <h3 class="sandbox__group-title">Feature card</h3>
+            <div class="feature">
+              <div class="feature__icon">
+                <svg class="feature__icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="feature__title">Feature title</h3>
+              <p class="feature__description">Features and How It Works sections. Orange rounded icon is the key visual signature — short title, 1–2 sentence description.</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="sandbox__group-title">Contact card</h3>
+            <div class="contact-card">
+              <h3 class="contact-card__title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                Department
+              </h3>
+              <p class="contact-card__description">Contact page — groups channels by team. Title icon, short description, and one or more contact method rows.</p>
+              <div class="contact-card__methods">
+                <div class="contact-card__method">
+                  <svg class="contact-card__method-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <div class="contact-card__method-content">
+                    <div class="contact-card__method-label">Channel label</div>
+                    <div class="contact-card__method-value"><a href="#">contact value or link</a></div>
+                  </div>
+                </div>
+                <div class="contact-card__method">
+                  <svg class="contact-card__method-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  <div class="contact-card__method-content">
+                    <div class="contact-card__method-label">Channel label</div>
+                    <div class="contact-card__method-value"><a href="#">contact value or link</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team | Pricing | Offering — 3 columns (list-based, taller cards; merge candidates) -->
+        <div class="sandbox__token-grid sandbox__token-grid--3 sandbox__token-grid--equal-height sandbox__token-grid--spaced">
+          <div>
+            <h3 class="sandbox__group-title">Team card</h3>
+            <div class="team-card">
+              <svg class="team-card__photo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Team member photo placeholder">
+                <circle cx="100" cy="100" r="100" style="fill: color-mix(in srgb, var(--color-blue) 15%, transparent);"/>
+                <circle cx="100" cy="78" r="36" style="fill: color-mix(in srgb, var(--color-blue) 40%, transparent);"/>
+                <ellipse cx="100" cy="185" rx="62" ry="52" style="fill: color-mix(in srgb, var(--color-blue) 40%, transparent);"/>
+              </svg>
+              <h3 class="team-card__name">Team member name</h3>
+              <p class="team-card__title">Role &amp; title</p>
+              <p class="team-card__bio">Team page — circular photo with blue border, name, role in brand blue, short bio, LinkedIn link pinned to the bottom.</p>
+              <a href="#" class="team-card__linkedin">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="sandbox__group-title">Pricing card</h3>
+            <div class="pricing-card">
+              <div class="pricing-card__header">
+                <h3 class="pricing-card__title">Plan name</h3>
+              </div>
+              <div class="pricing-card__price">
+                <span class="pricing-card__amount">$XX</span>
+                <span class="pricing-card__period">per month</span>
+              </div>
+              <a href="#" class="btn btn--primary sandbox__btn--full">Choose plan</a>
+              <ul class="pricing-card__features">
+                <li>Pricing page — price is the visual anchor</li>
+                <li>Single full-width primary CTA</li>
+                <li>Feature list with blue checkmarks</li>
+                <li>Supports a "Most popular" floating badge</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 class="sandbox__group-title">Offering card</h3>
+            <div class="offering-card">
+              <h3 class="offering-card__title">Product or service name</h3>
+              <p class="offering-card__description">About page — centered title and description, feature checklist, stacked full-width CTAs.</p>
+              <ul class="offering-card__features">
+                <li class="offering-card__feature-item">Key capability or selling point</li>
+                <li class="offering-card__feature-item">Key capability or selling point</li>
+                <li class="offering-card__feature-item">Key capability or selling point</li>
+              </ul>
+              <div class="offering-card__actions">
+                <a href="#" class="btn btn--primary">Primary action</a>
+                <a href="#" class="btn btn--secondary">Secondary action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ============================================================
-         BUTTONS
-         ============================================================ -->
-    <section class="sandbox__section">
-      <div class="sandbox__container">
-        <h2 class="sandbox__section-title">Buttons</h2>
-
-        <div class="sandbox__card">
-          <div class="sandbox__row">
-            <button class="btn btn--primary">Primary</button>
-            <button class="btn btn--secondary">Secondary</button>
-            <button class="btn btn--orange">Orange</button>
-          </div>
-          <div class="sandbox__row sandbox__row--spaced">
-            <button class="btn btn--primary sandbox__btn--sm">Small</button>
-            <button class="btn btn--primary">Default</button>
-            <button class="btn btn--primary sandbox__btn--lg">Large</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         RADIUS & SHADOWS
+         BUTTONS & BADGES
          ============================================================ -->
     <section class="sandbox__section sandbox__section--glass">
       <div class="sandbox__container">
-        <h2 class="sandbox__section-title">Radius &amp; Shadows</h2>
+        <h2 class="sandbox__section-title">Buttons &amp; Badges</h2>
 
-        <div class="sandbox__token-grid sandbox__token-grid--3 sandbox__token-grid--wide-rows">
-
-          <div class="sandbox__token-item">
-            <div class="sandbox__radius-box sandbox__radius-box--sm"></div>
-            <span class="sandbox__token-label">radius-sm · 6px</span>
-          </div>
-          <div class="sandbox__token-item">
-            <div class="sandbox__radius-box sandbox__radius-box--md"></div>
-            <span class="sandbox__token-label">radius-md · 8px</span>
-          </div>
-          <div class="sandbox__token-item">
-            <div class="sandbox__radius-box sandbox__radius-box--lg"></div>
-            <span class="sandbox__token-label">radius-lg · 12px</span>
-          </div>
-          <div class="sandbox__token-item">
-            <div class="sandbox__radius-box sandbox__radius-box--xl"></div>
-            <span class="sandbox__token-label">radius-xl · 16px</span>
-          </div>
-          <div class="sandbox__token-item">
-            <div class="sandbox__radius-box sandbox__radius-box--2xl"></div>
-            <span class="sandbox__token-label">radius-2xl · 24px</span>
-          </div>
-          <div class="sandbox__token-item">
-            <div class="sandbox__radius-box sandbox__radius-box--full"></div>
-            <span class="sandbox__token-label">radius-full · pill</span>
-          </div>
-
-          <div class="sandbox__token-item">
-            <div class="sandbox__shadow-box sandbox__shadow-box--sm"></div>
-            <span class="sandbox__token-label">shadow-sm</span>
-          </div>
-          <div class="sandbox__token-item">
-            <div class="sandbox__shadow-box sandbox__shadow-box--md"></div>
-            <span class="sandbox__token-label">shadow-md</span>
-          </div>
-          <div class="sandbox__token-item">
-            <div class="sandbox__shadow-box sandbox__shadow-box--lg"></div>
-            <span class="sandbox__token-label">shadow-lg</span>
-          </div>
-          <div class="sandbox__token-item">
-            <div class="sandbox__shadow-box sandbox__shadow-box--xl"></div>
-            <span class="sandbox__token-label">shadow-xl</span>
-          </div>
-          <div class="sandbox__token-item">
-            <div class="sandbox__shadow-box sandbox__shadow-box--2xl"></div>
-            <span class="sandbox__token-label">shadow-2xl</span>
-          </div>
-
+        <h3 class="sandbox__group-title">Buttons</h3>
+        <div class="sandbox__row sandbox__row--centered">
+          <button class="btn btn--primary">Primary</button>
+          <button class="btn btn--secondary">Secondary</button>
+          <button class="btn btn--primary btn--small">Small</button>
+          <button class="btn btn--primary" aria-disabled="true">Disabled</button>
         </div>
-      </div>
-    </section>
 
-    <!-- ============================================================
-         SPACING
-         ============================================================ -->
-    <section class="sandbox__section">
-      <div class="sandbox__container">
-        <h2 class="sandbox__section-title">Spacing</h2>
-
-        <div class="sandbox__card">
-          <div class="sandbox__spacing-list">
-            <div class="sandbox__spacing-item">
-              <div class="sandbox__spacing-bar sandbox__spacing-bar--1"></div>
-              <span class="sandbox__spacing-label">space-1 · 4px</span>
-            </div>
-            <div class="sandbox__spacing-item">
-              <div class="sandbox__spacing-bar sandbox__spacing-bar--2"></div>
-              <span class="sandbox__spacing-label">space-2 · 8px</span>
-            </div>
-            <div class="sandbox__spacing-item">
-              <div class="sandbox__spacing-bar sandbox__spacing-bar--3"></div>
-              <span class="sandbox__spacing-label">space-3 · 12px</span>
-            </div>
-            <div class="sandbox__spacing-item">
-              <div class="sandbox__spacing-bar sandbox__spacing-bar--4"></div>
-              <span class="sandbox__spacing-label">space-4 · 16px</span>
-            </div>
-            <div class="sandbox__spacing-item">
-              <div class="sandbox__spacing-bar sandbox__spacing-bar--6"></div>
-              <span class="sandbox__spacing-label">space-6 · 24px</span>
-            </div>
-            <div class="sandbox__spacing-item">
-              <div class="sandbox__spacing-bar sandbox__spacing-bar--8"></div>
-              <span class="sandbox__spacing-label">space-8 · 32px</span>
-            </div>
-            <div class="sandbox__spacing-item">
-              <div class="sandbox__spacing-bar sandbox__spacing-bar--10"></div>
-              <span class="sandbox__spacing-label">space-10 · 40px</span>
-            </div>
-            <div class="sandbox__spacing-item">
-              <div class="sandbox__spacing-bar sandbox__spacing-bar--12"></div>
-              <span class="sandbox__spacing-label">space-12 · 48px</span>
-            </div>
-            <div class="sandbox__spacing-item">
-              <div class="sandbox__spacing-bar sandbox__spacing-bar--16"></div>
-              <span class="sandbox__spacing-label">space-16 · 64px</span>
-            </div>
-          </div>
+        <h3 class="sandbox__group-title sandbox__group-title--spaced">Badges</h3>
+        <div class="sandbox__row sandbox__row--centered">
+          <span class="hero__badge">
+            <svg class="hero__badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Hero callout — with shimmer
+            <svg class="hero__badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </span>
+          <span class="badge badge--orange">Feature or status label</span>
+          <span class="badge badge--tag">Content category</span>
         </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FREE CANVAS — put any experiments below this comment
-         ============================================================ -->
-    <section class="sandbox__section sandbox__section--canvas">
-      <div class="sandbox__container">
-        <h2 class="sandbox__section-title">Free Canvas</h2>
-        <p class="sandbox__subtitle">Add experimental components, layouts, or anything else here.</p>
-
-        <!-- ✏️  START experimenting below -->
-
-        <!-- ✏️  END of experiments -->
 
       </div>
     </section>
+
 
   </main>
 

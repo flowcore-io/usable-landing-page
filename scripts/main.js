@@ -184,6 +184,20 @@ class UsableApp {
     const mobileCta = this.mobileMenu.querySelector('.nav__cta--mobile');
     if (mobileCta) mobileCta.addEventListener('click', () => this.closeMobileMenu());
 
+    // Accordion section toggles (Product / Resources / About)
+    const accordionToggles = this.mobileMenu.querySelectorAll('.nav__mobile-accordion-toggle');
+    accordionToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        const panel = toggle.nextElementSibling;
+        toggle.setAttribute('aria-expanded', String(!isExpanded));
+        if (panel) {
+          panel.classList.toggle('is-open', !isExpanded);
+          panel.setAttribute('aria-hidden', String(isExpanded));
+        }
+      });
+    });
+
     // Close on backdrop click (WCAG backdrop pattern)
     if (this.backdrop) {
       this.backdrop.addEventListener('click', () => this.closeMobileMenu());
@@ -687,6 +701,15 @@ function handleRouteRedirection() {
   // Use replace instead of assign to avoid adding to browser history
   window.location.replace(redirectUrl);
 }
+
+// Fix iOS Safari 100vh bug — track actual visible viewport height
+(function () {
+  const setAppHeight = () => {
+    document.documentElement.style.setProperty('--app-height', window.innerHeight + 'px');
+  };
+  setAppHeight();
+  window.addEventListener('resize', setAppHeight);
+})();
 
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
