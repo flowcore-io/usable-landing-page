@@ -35,6 +35,7 @@ class UsableApp {
     this.setupParallaxEffects();
     this.setupHoverEffects();
     this.setupUseCasesTabs();
+    this.setupBlogFilter();
   }
   
   /**
@@ -184,7 +185,7 @@ class UsableApp {
     const mobileCta = this.mobileMenu.querySelector('.nav__cta--mobile');
     if (mobileCta) mobileCta.addEventListener('click', () => this.closeMobileMenu());
 
-    // Accordion section toggles (Product / Resources / About)
+    // Accordion section toggles (Product / Solutions / Resources / Company)
     const accordionToggles = this.mobileMenu.querySelectorAll('.nav__mobile-accordion-toggle');
     accordionToggles.forEach(toggle => {
       toggle.addEventListener('click', () => {
@@ -637,6 +638,40 @@ class UsableApp {
           content.style.maxHeight = 'none';
           tab.style.pointerEvents = 'auto';
         }, 300);
+      });
+    });
+  }
+
+  /**
+   * Setup blog category filter — only runs on pages with .blog-filters
+   */
+  setupBlogFilter() {
+    const filterBtns = document.querySelectorAll('.blog-filter-btn');
+    const cards = document.querySelectorAll('.blog-card[data-category]');
+
+    if (filterBtns.length === 0 || cards.length === 0) return;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update active button state
+        filterBtns.forEach(b => {
+          b.classList.remove('blog-filter-btn--active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('blog-filter-btn--active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        // Show/hide cards based on selected category
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('blog-card--hidden');
+          } else {
+            card.classList.add('blog-card--hidden');
+          }
+        });
       });
     });
   }

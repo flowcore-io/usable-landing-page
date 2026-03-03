@@ -511,4 +511,14 @@
   .conference-preview__text {
     font-size: var(--text-base);
   }
+
+  .conference-preview__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .conference-preview__btn {
+    width: 100%;
+    white-space: normal;
+  }
 }

@@ -303,6 +303,13 @@
   color: var(--color-text-muted);
 }
 
+/* Use Cases Preview grid (homepage) */
+.use-cases-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
 /* Responsive Design */
 @media (max-width: 1023px) {
   .use-cases__grid {

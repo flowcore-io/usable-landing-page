@@ -217,6 +217,30 @@
   color: var(--color-blue);
 }
 
+.nav__dropdown-item--external,
+.nav__link--external {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.nav__external-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.nav__dropdown-item--external .nav__external-icon {
+  margin-left: auto;
+}
+
+.nav__dropdown-item--external:hover .nav__external-icon,
+.nav__link--external:hover .nav__external-icon {
+  opacity: 1;
+}
+
 [data-theme="dark"] .nav__dropdown-item:hover {
   background: var(--color-blue-light-15);
   color: var(--color-blue-light); /* Bright blue on hover */

@@ -450,6 +450,14 @@
     color: var(--color-text-primary);
 }
 
+/* FAQ 2-column grid for pricing page */
+.pricing-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    align-items: start;
+}
+
 @media (max-width: 768px) {
     .pricing-page {
         padding: var(--space-20) var(--space-4) var(--space-12);
@@ -471,12 +479,4 @@
     .pricing-faq-grid {
         grid-template-columns: 1fr;
     }
-}
-
-/* FAQ 2-column grid for pricing page */
-.pricing-faq-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-4);
-    align-items: start;
 }

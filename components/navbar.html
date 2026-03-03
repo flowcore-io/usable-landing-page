@@ -1,4 +1,4 @@
-﻿<!-- Navigation Component -->
+<!-- Navigation Component -->
 <nav class="nav">
     <div class="nav__container">
         <a href="/" class="nav__logo">
@@ -19,23 +19,26 @@
                 <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-i18n="nav.product">Product</button>
                 <div class="nav__dropdown-menu">
                     <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__dropdown-item" data-i18n="nav.how-it-works">How It Works</a>
-                    <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__dropdown-item" data-i18n="nav.use-cases">Use Cases</a>
                     <a href="/demo.html" data-clean-url="/demo" class="nav__dropdown-item" data-i18n="nav.demo">Demo</a>
-                    <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__dropdown-item" data-i18n="nav.detailed-screenshots">Detailed Screenshots</a>
+                </div>
+            </div>
+            <div class="nav__dropdown" aria-expanded="false">
+                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-i18n="nav.solutions">Solutions</button>
+                <div class="nav__dropdown-menu">
+                    <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__dropdown-item" data-i18n="nav.use-cases">Use Cases</a>
+                </div>
+            </div>
+            <div class="nav__dropdown" aria-expanded="false">
+                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-i18n="nav.resources">Resources</button>
+                <div class="nav__dropdown-menu">
+                    <a href="/blog.html" data-clean-url="/blog" class="nav__dropdown-item" data-i18n="nav.blog">Blog & News</a>
+                    <a href="https://usable.dev/docs" class="nav__dropdown-item nav__dropdown-item--external" target="_blank" rel="noopener noreferrer"><span data-i18n="nav.docs">Docs</span><svg class="nav__external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+                    <a href="/faq.html" data-clean-url="/faq" class="nav__dropdown-item" data-i18n="nav.faq">FAQ</a>
                 </div>
             </div>
             <a href="/pricing.html" data-clean-url="/pricing" class="nav__link" data-i18n="nav.pricing">Pricing</a>
             <div class="nav__dropdown" aria-expanded="false">
-                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-i18n="nav.resources">Resources</button>
-                <div class="nav__dropdown-menu">
-                    <a href="/blog.html" data-clean-url="/blog" class="nav__dropdown-item" data-i18n="nav.blog">Blog</a>
-                    <a href="/news.html" data-clean-url="/news" class="nav__dropdown-item" data-i18n="nav.news">News</a>
-                    <a href="https://usable.dev/docs" class="nav__dropdown-item" target="_blank" rel="noopener noreferrer" data-i18n="nav.docs">Docs</a>
-                    <a href="/faq.html" data-clean-url="/faq" class="nav__dropdown-item" data-i18n="nav.faq">FAQ</a>
-                </div>
-            </div>
-            <div class="nav__dropdown" aria-expanded="false">
-                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-i18n="nav.about">About</button>
+                <button type="button" class="nav__dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-i18n="nav.company">Company</button>
                 <div class="nav__dropdown-menu">
                     <a href="/about.html" data-clean-url="/about" class="nav__dropdown-item" data-i18n="nav.about">About</a>
                     <a href="/team.html" data-clean-url="/team" class="nav__dropdown-item" data-i18n="nav.team">Team</a>
@@ -65,24 +68,26 @@
         <button class="nav__mobile-accordion-toggle" aria-expanded="false" data-i18n="nav.product">Product</button>
         <div class="nav__mobile-accordion-panel" aria-hidden="true">
             <a href="/how-it-works.html" data-clean-url="/how-it-works" class="nav__link nav__link--mobile" data-i18n="nav.how-it-works">How It Works</a>
-            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile" data-i18n="nav.use-cases">Use Cases</a>
             <a href="/demo.html" data-clean-url="/demo" class="nav__link nav__link--mobile" data-i18n="nav.demo">Demo</a>
-            <a href="/detailed-screenshots.html" data-clean-url="/detailed-screenshots" class="nav__link nav__link--mobile" data-i18n="nav.detailed-screenshots">Detailed Screenshots</a>
+        </div>
+
+        <button class="nav__mobile-accordion-toggle" aria-expanded="false" data-i18n="nav.solutions">Solutions</button>
+        <div class="nav__mobile-accordion-panel" aria-hidden="true">
+            <a href="/use-cases.html" data-clean-url="/use-cases" class="nav__link nav__link--mobile" data-i18n="nav.use-cases">Use Cases</a>
+        </div>
+
+        <button class="nav__mobile-accordion-toggle" aria-expanded="false" data-i18n="nav.resources">Resources</button>
+        <div class="nav__mobile-accordion-panel" aria-hidden="true">
+            <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile" data-i18n="nav.blog">Blog & News</a>
+            <a href="https://usable.dev/docs" class="nav__link nav__link--mobile nav__link--external" target="_blank" rel="noopener noreferrer"><span data-i18n="nav.docs">Docs</span><svg class="nav__external-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+            <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile" data-i18n="nav.faq">FAQ</a>
         </div>
 
         <a href="/pricing.html" data-clean-url="/pricing" class="nav__link nav__link--mobile nav__link--mobile-standalone" data-i18n="nav.pricing">Pricing</a>
 
-        <button class="nav__mobile-accordion-toggle" aria-expanded="false" data-i18n="nav.resources">Resources</button>
+        <button class="nav__mobile-accordion-toggle" aria-expanded="false" data-i18n="nav.company">Company</button>
         <div class="nav__mobile-accordion-panel" aria-hidden="true">
-            <a href="/blog.html" data-clean-url="/blog" class="nav__link nav__link--mobile" data-i18n="nav.blog">Blog</a>
-            <a href="/news.html" data-clean-url="/news" class="nav__link nav__link--mobile" data-i18n="nav.news">News</a>
-            <a href="https://usable.dev/docs" class="nav__link nav__link--mobile" target="_blank" rel="noopener noreferrer" data-i18n="nav.docs">Docs</a>
-            <a href="/faq.html" data-clean-url="/faq" class="nav__link nav__link--mobile" data-i18n="nav.faq">FAQ</a>
-        </div>
-
-        <button class="nav__mobile-accordion-toggle" aria-expanded="false" data-i18n="nav.about">About</button>
-        <div class="nav__mobile-accordion-panel" aria-hidden="true">
-            <a href="/about.html" data-clean-url="/about" class="nav__link nav__link--mobile" data-i18n="nav.about-us">About Us</a>
+            <a href="/about.html" data-clean-url="/about" class="nav__link nav__link--mobile" data-i18n="nav.about">About</a>
             <a href="/team.html" data-clean-url="/team" class="nav__link nav__link--mobile" data-i18n="nav.team">Team</a>
             <a href="/contact.html" data-clean-url="/contact" class="nav__link nav__link--mobile" data-i18n="nav.contact">Contact</a>
         </div>

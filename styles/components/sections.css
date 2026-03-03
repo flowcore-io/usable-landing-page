@@ -161,3 +161,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Section-level CTA row — centered call to action below a grid */
+.page-section__cta {
+  text-align: center;
+  margin-top: var(--space-12);
+}
