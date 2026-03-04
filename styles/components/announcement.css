@@ -1,7 +1,13 @@
 /* ===================================
-   ANNOUNCEMENT BANNER
+   COMPONENT: Announcement Banner
+   BEM Block: announcement
+   Purpose: Dismissible fixed banner rendered below the navbar for time-sensitive notices
+   Dependencies: main.css for CSS variables and z-index tokens
+   Note: Markup not yet implemented in any HTML file (CSS is ready for when it is added).
    =================================== */
 
+/* z-index: var(--z-navbar) keeps the banner in the same stacking layer as the navbar
+   so it sits directly below it (top: 60px = navbar height) without overlapping modal layers. */
 .announcement {
   position: fixed;
   top: 60px;
@@ -115,7 +121,7 @@
   opacity: 0.7;
 }
 
-.announcement__close svg {
+.announcement__close-icon {
   width: 16px;
   height: 16px;
 }
@@ -164,7 +170,11 @@
   }
 }
 
-/* Adjust hero padding when announcement is visible */
+/* Cross-block hero padding override — scoped to body state, not announcement block.
+   When .announcement-hidden is absent on body, the hero must compensate for the
+   banner's fixed height (60px navbar + ~44px banner ≈ 140px). This is documented
+   in hero.css as well; the body:not() pattern avoids JavaScript needing to touch
+   hero padding directly. */
 body:not(.announcement-hidden) .hero {
   padding-top: 140px;
 }

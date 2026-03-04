@@ -1,5 +1,6 @@
 /* ===================================
    COMPONENT: Pricing Page
+   BEM Block: pricing-page, pricing-card, consultancy-card
    Purpose: Pricing page layout and pricing card styles
    Dependencies: main.css for CSS variables
    =================================== */
@@ -314,7 +315,7 @@
     text-align: left;
 }
 
-.pricing-card__features li {
+.pricing-card__feature {
     padding: var(--space-2) 0;
     padding-left: var(--space-6);
     position: relative;
@@ -324,7 +325,7 @@
     font-weight: 400;
 }
 
-.pricing-card__features li::before {
+.pricing-card__feature::before {
     content: "✓";
     position: absolute;
     left: 0;
@@ -332,7 +333,7 @@
     font-weight: 700;
 }
 
-[data-theme="dark"] .pricing-card__features li {
+[data-theme="dark"] .pricing-card__feature {
     color: var(--color-text-primary);
 }
 
@@ -377,7 +378,7 @@
     text-align: left;
 }
 
-.consultancy-card__services li {
+.consultancy-card__service {
     padding: var(--space-2) 0;
     padding-left: var(--space-6);
     position: relative;
@@ -387,7 +388,7 @@
     font-weight: 400;
 }
 
-.consultancy-card__services li::before {
+.consultancy-card__service::before {
     content: "✓";
     position: absolute;
     left: 0;
@@ -395,7 +396,7 @@
     font-weight: 700;
 }
 
-[data-theme="dark"] .consultancy-card__services li {
+[data-theme="dark"] .consultancy-card__service {
     color: var(--color-text-primary);
 }
 

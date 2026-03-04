@@ -1,8 +1,13 @@
 /* ===================================
-   HOW IT WORKS PAGE STYLES
+   COMPONENT: How It Works Page
+   BEM Block: how-it-works, step (extends homepage component)
+   Purpose: Dedicated how-it-works page layout; overrides .step for page context
+   Dependencies: main.css, how-it-works.css (base .step), features.css, cta.css
    =================================== */
 
-/* Page Section Integration for Benefits */
+/* Adjacent sibling selectors manage spacing between consecutive sections on the
+   dedicated page. Using + keeps each section's own CSS self-contained and avoids
+   collapsing margin issues between sections. */
 .how-it-works + .features {
   margin-top: 0;
   padding-top: var(--space-40);
@@ -18,6 +23,9 @@
   margin-bottom: var(--space-16);
 }
 
+/* Tag-qualified selectors differentiate h1 (page title) from h2 (section title).
+   h1.how-it-works__title is larger because it is the unique page-level heading;
+   h2.how-it-works__title matches embedded section headings on composite pages. */
 h1.how-it-works__title {
   font-size: var(--text-6xl);
   font-weight: 800;

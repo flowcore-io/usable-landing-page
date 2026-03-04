@@ -1,5 +1,8 @@
 /* ===================================
-   BUILT WITH USABLE SECTION
+   COMPONENT: Built With Usable Section
+   BEM Block: built-with-usable
+   Purpose: Social proof section highlighting products built on the Usable platform
+   Dependencies: main.css for CSS variables
    =================================== */
 
 .built-with-usable {

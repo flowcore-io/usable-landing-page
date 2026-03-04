@@ -191,7 +191,9 @@ body:not(.announcement-hidden) .hero {
   animation: fadeInUp 1.2s ease-out 0.9s both;
 }
 
-.hero__actions .btn,
+/* Hero button — BEM element class applied alongside global .btn utility.
+   HTML usage: class="btn hero__btn btn--primary btn--large"
+   .hero__btn provides hero-specific sizing; .btn provides base interaction styles. */
 .hero__btn {
   font-size: var(--text-lg);
   font-weight: 700;
@@ -207,7 +209,6 @@ body:not(.announcement-hidden) .hero {
   min-width: 56px;
 }
 
-.hero__actions .btn:hover,
 .hero__btn:hover {
   box-shadow: none;
 }
@@ -312,7 +313,6 @@ body:not(.announcement-hidden) .hero {
     gap: var(--space-4);
   }
 
-  .hero__actions .btn,
   .hero__btn {
     flex: 1;
     max-width: none;
@@ -376,7 +376,6 @@ body:not(.announcement-hidden) .hero {
     align-items: center;
   }
 
-  .hero__actions .btn,
   .hero__btn {
     flex: none;
     width: auto;

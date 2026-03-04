@@ -127,7 +127,6 @@
     gap: var(--space-4);
   }
   
-  .cta__actions .btn,
   .cta__btn {
     flex: 1;
     min-height: 48px;
@@ -140,14 +139,16 @@
     gap: var(--space-6);
   }
   
-  .cta__actions .btn,
   .cta__btn {
     flex: none;
     min-height: 52px;
   }
 }
 
-.cta .btn--primary {
+/* CTA button variant overrides — scoped via .cta__btn.btn--* intersection selectors.
+   Overrides global orange button to enforce CTA colour and sizing.
+   HTML usage: class="btn cta__btn btn--primary btn--large" */
+.cta__btn.btn--primary {
   background: var(--color-orange);
   color: var(--color-background);
   border-color: var(--color-orange);
@@ -156,14 +157,14 @@
   min-width: 200px;
 }
 
-.cta .btn--primary:hover {
+.cta__btn.btn--primary:hover {
   background: var(--color-orange);
   border-color: var(--color-orange);
   color: var(--color-background);
   box-shadow: none;
 }
 
-.cta .btn--secondary {
+.cta__btn.btn--secondary {
   background: var(--color-background);
   color: var(--color-orange);
   border-color: var(--color-orange);
@@ -172,13 +173,13 @@
   min-width: 200px;
 }
 
-[data-theme="dark"] .cta .btn--secondary {
+[data-theme="dark"] .cta__btn.btn--secondary {
   background: var(--color-background);
   color: var(--color-orange);
   border-color: var(--color-orange);
 }
 
-.cta .btn--secondary:hover {
+.cta__btn.btn--secondary:hover {
   background: var(--color-background);
   color: var(--color-orange);
   box-shadow: none;

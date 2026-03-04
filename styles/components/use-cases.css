@@ -1,5 +1,8 @@
 /* ===================================
-   USE CASES SECTION - TABBED INTERFACE
+   COMPONENT: Use Cases Section
+   BEM Block: use-cases, use-cases-preview
+   Purpose: Tabbed interface showcasing product use cases with mock terminal demo
+   Dependencies: main.css for CSS variables
    =================================== */
 
 
@@ -77,6 +80,12 @@
   max-height: none;
 }
 
+/* Panel visibility technique: inactive panels use position: absolute to remove
+   them from flow (preventing layout shift), visibility: hidden (not display: none)
+   to allow opacity transitions, and opacity: 0 for the fade.
+   Active panel switches to position: relative to re-enter the normal flow.
+   visibility and opacity are transitioned together so the element is tabbable
+   only when visible. */
 .use-cases__panel {
   opacity: 0;
   visibility: hidden;
@@ -148,6 +157,10 @@
   position: relative;
 }
 
+/* Vertical connector line drawn with ::after pseudo-element between step items.
+   left: 13px centres on the 28px step number circle (14px radius - 1px border).
+   top: 28px starts below the circle; bottom: -24px bridges the gap to the next step.
+   :not(:last-child) prevents the line appearing after the final step. */
 .use-cases__step:not(:last-child)::after {
   content: '';
   position: absolute;

@@ -1,5 +1,8 @@
 /* ===================================
-   Video Player Styles
+   COMPONENT: Video Player
+   BEM Block: video-container
+   Purpose: Responsive video wrapper with 16:9 aspect ratio and flexible modifier
+   Dependencies: main.css for CSS variables
    =================================== */
 
 /* Responsive video container - maintains 16:9 aspect ratio */

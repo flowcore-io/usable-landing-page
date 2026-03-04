@@ -60,11 +60,32 @@ class UsableApp {
     
     // Track if we're handling a dropdown item click to prevent double-handling
     let handlingItemClick = false;
-    
+
+    const isDesktop = () => window.innerWidth >= 1024;
+
     dropdowns.forEach(dropdown => {
       const toggle = dropdown.querySelector('.nav__dropdown-toggle');
       if (!toggle) return;
-      
+
+      // Open on hover (desktop only)
+      let hoverCloseTimer = null;
+      dropdown.addEventListener('mouseenter', () => {
+        if (!isDesktop()) return;
+        clearTimeout(hoverCloseTimer);
+        closeAllDropdowns();
+        dropdown.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        dropdown.setAttribute('aria-expanded', 'true');
+      });
+      dropdown.addEventListener('mouseleave', () => {
+        if (!isDesktop()) return;
+        hoverCloseTimer = setTimeout(() => {
+          dropdown.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          dropdown.setAttribute('aria-expanded', 'false');
+        }, 100);
+      });
+
       // Toggle dropdown on click
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
@@ -278,6 +299,15 @@ class UsableApp {
   closeMobileMenu() {
     if (this.mobileMenu) {
       this.mobileMenu.classList.remove('is-active');
+
+      // Reset all accordion panels to closed
+      this.mobileMenu.querySelectorAll('.nav__mobile-accordion-toggle').forEach(toggle => {
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+      this.mobileMenu.querySelectorAll('.nav__mobile-accordion-panel').forEach(panel => {
+        panel.classList.remove('is-open');
+        panel.setAttribute('aria-hidden', 'true');
+      });
     }
     if (this.mobileMenuToggle) {
       this.mobileMenuToggle.classList.remove('nav__mobile-toggle--active');

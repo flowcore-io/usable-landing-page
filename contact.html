@@ -100,7 +100,7 @@
                 </p>
                 <div class="contact-hero__channels">
                     <div class="contact-hero__channel" data-i18n-html="contact.hero.channel.usable">
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="contact-hero__channel-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
                             <path d="M2 17l10 5 10-5"></path>
                             <path d="M2 12l10 5 10-5"></path>
@@ -108,13 +108,13 @@
                         Usable
                     </div>
                     <div class="contact-hero__channel" data-i18n-html="contact.hero.channel.flowcore">
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="contact-hero__channel-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                         </svg>
                         Flowcore
                     </div>
                     <div class="contact-hero__channel" data-i18n-html="contact.hero.channel.consultancy">
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="contact-hero__channel-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                             <circle cx="9" cy="7" r="4"></circle>
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -136,7 +136,7 @@
             <div class="contact-page__sections u-animate-on-scroll u-fade-in-up">
                 <div class="contact-card">
                     <h3 class="contact-card__title" data-i18n-html="contact.usable.title">
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="contact-card__title-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
                             <path d="M2 17l10 5 10-5"></path>
                             <path d="M2 12l10 5 10-5"></path>
@@ -155,7 +155,7 @@
                             <div class="contact-card__method-content">
                                 <div class="contact-card__method-label" data-i18n="contact.usable.email-label">Email</div>
                                 <div class="contact-card__method-value">
-                                    <a href="mailto:usable@usable.dev">usable@usable.dev</a>
+                                    <a href="mailto:usable@usable.dev" class="contact-card__method-link">usable@usable.dev</a>
                                 </div>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
                             <div class="contact-card__method-content">
                                 <div class="contact-card__method-label" data-i18n="contact.usable.community-label">Community Support</div>
                                 <div class="contact-card__method-value">
-                                    <a href="https://discord.com/invite/36AuxFNnSE" target="_blank" rel="noopener noreferrer" data-i18n="contact.usable.community-link">Join our Discord</a>
+                                    <a href="https://discord.com/invite/36AuxFNnSE" class="contact-card__method-link" target="_blank" rel="noopener noreferrer" data-i18n="contact.usable.community-link">Join our Discord</a>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +181,7 @@
                             <div class="contact-card__method-content">
                                 <div class="contact-card__method-label" data-i18n="contact.usable.docs-label">Documentation</div>
                                 <div class="contact-card__method-value">
-                                    <a href="https://usable.dev/docs" target="_blank" rel="noopener noreferrer" data-i18n="contact.usable.docs-link">View Documentation</a>
+                                    <a href="https://usable.dev/docs" class="contact-card__method-link" target="_blank" rel="noopener noreferrer" data-i18n="contact.usable.docs-link">View Documentation</a>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
 
                 <div class="contact-card">
                     <h3 class="contact-card__title" data-i18n-html="contact.flowcore.title">
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="contact-card__title-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                         </svg>
                         Flowcore
@@ -207,7 +207,18 @@
                             <div class="contact-card__method-content">
                                 <div class="contact-card__method-label" data-i18n="contact.flowcore.email-label">Email</div>
                                 <div class="contact-card__method-value">
-                                    <a href="mailto:usable@usable.dev">usable@usable.dev</a>
+                                    <a href="mailto:usable@usable.dev" class="contact-card__method-link">usable@usable.dev</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-card__method">
+                            <svg aria-hidden="true" focusable="false" class="contact-card__method-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                            </svg>
+                            <div class="contact-card__method-content">
+                                <div class="contact-card__method-label" data-i18n="contact.flowcore.community-label">Community Support</div>
+                                <div class="contact-card__method-value">
+                                    <a href="https://discord.com/invite/k97YWAw8XF" class="contact-card__method-link" target="_blank" rel="noopener noreferrer" data-i18n="contact.flowcore.community-link">Join our Discord</a>
                                 </div>
                             </div>
                         </div>
@@ -222,7 +233,7 @@
                             <div class="contact-card__method-content">
                                 <div class="contact-card__method-label" data-i18n="contact.flowcore.docs-label">Documentation</div>
                                 <div class="contact-card__method-value">
-                                    <a href="https://flowcore.io" target="_blank" rel="noopener noreferrer" data-i18n="contact.flowcore.docs-link">Visit Flowcore.io</a>
+                                    <a href="https://docs.flowcore.io" class="contact-card__method-link" target="_blank" rel="noopener noreferrer" data-i18n="contact.flowcore.docs-link">View Documentation</a>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +242,7 @@
 
                 <div class="contact-card">
                     <h3 class="contact-card__title" data-i18n-html="contact.consultancy.title">
-                        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg class="contact-card__title-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                             <circle cx="9" cy="7" r="4"></circle>
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -251,7 +262,7 @@
                             <div class="contact-card__method-content">
                                 <div class="contact-card__method-label" data-i18n="contact.consultancy.email-label">Email</div>
                                 <div class="contact-card__method-value">
-                                    <a href="mailto:usable@usable.dev">usable@usable.dev</a>
+                                    <a href="mailto:usable@usable.dev" class="contact-card__method-link">usable@usable.dev</a>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +273,7 @@
                             <div class="contact-card__method-content">
                                 <div class="contact-card__method-label" data-i18n="contact.consultancy.phone-label">Phone</div>
                                 <div class="contact-card__method-value">
-                                    <a href="tel:+298556600">+298 556 600</a>
+                                    <a href="tel:+298556600" class="contact-card__method-link">+298 556 600</a>
                                 </div>
                             </div>
                         </div>
@@ -271,23 +282,23 @@
             </div>
 
             <section class="contact-page__locations u-animate-on-scroll u-fade-in-up">
-                <h2 class="contact-card__title contact-page__locations__title" data-i18n="contact.locations.title">Office Locations</h2>
-                <div class="contact-page__locations__grid">
+                <h2 class="contact-card__title contact-page__locations-title" data-i18n="contact.locations.title">Office Locations</h2>
+                <div class="contact-page__locations-grid">
                     <div class="contact-card">
-                        <h3 class="contact-card__title contact-page__locations__card-title" data-i18n="contact.locations.fo.name">
+                        <h3 class="contact-card__title contact-page__locations-card-title" data-i18n="contact.locations.fo.name">
                             Usable Sp/f
                         </h3>
-                        <p class="contact-card__description contact-page__locations__card-description">
+                        <p class="contact-card__description contact-page__locations-card-description">
                             Vestara Bryggja 15<br>
                             100 Tórshavn<br>
                             Faroe Islands
                         </p>
                     </div>
                     <div class="contact-card">
-                        <h3 class="contact-card__title contact-page__locations__card-title" data-i18n="contact.locations.dk.name">
+                        <h3 class="contact-card__title contact-page__locations-card-title" data-i18n="contact.locations.dk.name">
                             Flowcore ApS
                         </h3>
-                        <p class="contact-card__description contact-page__locations__card-description">
+                        <p class="contact-card__description contact-page__locations-card-description">
                             Vesterbrogade 26<br>
                             1620 København V<br>
                             Denmark

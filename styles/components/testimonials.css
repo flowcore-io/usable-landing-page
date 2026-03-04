@@ -1,5 +1,8 @@
 /* ===================================
-   TESTIMONIALS SECTION - SOCIAL PROOF
+   COMPONENT: Testimonials Section
+   BEM Block: testimonials, testimonial
+   Purpose: Social proof grid with customer quotes
+   Dependencies: main.css for CSS variables
    =================================== */
 
 .testimonials {
@@ -39,6 +42,9 @@
   border-color: var(--color-border);
 }
 
+/* Decorative quote mark via ::before pseudo-element — no extra DOM node needed.
+   position: absolute keeps it out of flow; opacity: 0.3 makes it a subtle accent.
+   z-index on .testimonial__content (var(--z-base)) ensures text renders above it. */
 .testimonial::before {
   content: '"';
   position: absolute;

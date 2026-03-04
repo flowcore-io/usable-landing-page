@@ -104,6 +104,14 @@
     border-color: var(--color-blue-light-18);
 }
 
+/* -----------------------------------------------
+   Rich text zone — tag selectors are intentional here.
+   .article-section contains authored editorial content
+   where adding BEM classes to every heading and paragraph
+   is impractical. This is an accepted exception to BEM,
+   consistent with the "prose content" pattern used across
+   design systems for rich text areas.
+   ----------------------------------------------- */
 .article-section h2 {
     font-size: var(--text-2xl);
     font-weight: 700;
@@ -137,6 +145,7 @@
 [data-theme="dark"] .article-section li {
     color: var(--color-text-on-dark);
 }
+/* End rich text zone ----------------------------------------------- */
 
 .article-list {
     padding-left: var(--space-6);

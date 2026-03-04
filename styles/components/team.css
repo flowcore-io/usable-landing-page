@@ -1,6 +1,7 @@
 /* ===================================
    COMPONENT: Team Page
-   Purpose: Team member cards and layouts
+   BEM Block: team-hero, team-page, team-card
+   Purpose: Team member cards and advisor section layouts
    Dependencies: main.css for CSS variables
    =================================== */
 
@@ -135,7 +136,7 @@
     color: var(--color-link-on-dark);
 }
 
-.team-card__linkedin svg {
+.team-card__linkedin-icon {
     width: 20px;
     height: 20px;
 }
@@ -157,14 +158,14 @@
     color: var(--color-text-on-dark);
 }
 
-.advisors-section__content {
+.team-page__advisors-content {
     text-align: center;
     font-size: var(--text-lg);
     color: var(--color-text-secondary);
     margin-bottom: var(--space-6);
 }
 
-[data-theme="dark"] .advisors-section__content {
+[data-theme="dark"] .team-page__advisors-content {
     color: var(--color-text-on-dark);
 }
 

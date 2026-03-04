@@ -1,6 +1,7 @@
 /* ===================================
    COMPONENT: Blog Page
-   Purpose: Blog post listings and layouts
+   BEM Block: blog-hero, blog-card, blog-filters
+   Purpose: Blog post listing page — card grid, category filters, hero section
    Dependencies: main.css for CSS variables
    =================================== */
 
@@ -84,6 +85,8 @@
     box-shadow: 0 16px 40px var(--black-12);
 }
 
+/* Data-attribute selectors apply category accent colours without extra BEM modifier classes.
+   Keeps HTML semantic (category stored in data-category attribute) and CSS self-documenting. */
 .blog-card[data-category="press-release"],
 .blog-card[data-category="announcement"] {
     border-top-color: var(--color-orange);
@@ -177,6 +180,8 @@
     color: var(--color-text-on-dark);
 }
 
+/* margin-top: auto in a flex column pushes .blog-card__actions to the card bottom,
+   ensuring action rows align across cards of different content heights. */
 .blog-card__actions {
     display: flex;
     flex-wrap: wrap;

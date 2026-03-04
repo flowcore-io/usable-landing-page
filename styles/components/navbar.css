@@ -313,44 +313,15 @@
   position: relative;
 }
 
-/* Desktop CTA button colour override */
+/* Desktop CTA button colour override.
+   Uses element+class intersection selector on the nav__cta--desktop element class
+   (applied directly to the <a> tag) to avoid cross-block .nav .btn nesting. */
 a.nav__cta--desktop.btn.btn--primary {
   box-shadow: none;
   transition: all var(--transition-normal);
   background: var(--color-orange);
   color: var(--color-background);
   border-color: var(--color-orange);
-}
-
-.nav__cta .btn.btn--primary {
-  background: var(--color-orange);
-  color: var(--color-background);
-  border-color: var(--color-orange);
-}
-
-.nav__cta .btn.btn--secondary {
-  background-color: var(--color-background);
-  color: var(--color-orange);
-  border-color: var(--color-orange);
-}
-
-.nav__cta .btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, var(--color-neutral-50-20), transparent);
-  transition: left var(--transition-slow);
-}
-
-.nav__cta .btn:hover::before {
-  left: 100%;
-}
-
-.nav__cta .btn:hover {
-  box-shadow: none;
 }
 
 /* Enhanced Navbar States */

@@ -1,5 +1,6 @@
 /* ===================================
    COMPONENT: Contact Page
+   BEM Block: contact-hero, contact-page, contact-card
    Purpose: Contact page layout and contact methods
    Dependencies: main.css for CSS variables
    =================================== */
@@ -56,7 +57,7 @@
     color: var(--color-text-primary);
 }
 
-.contact-hero__channel svg {
+.contact-hero__channel-icon {
     width: 16px;
     height: 16px;
     color: var(--color-orange);
@@ -69,7 +70,7 @@
     color: var(--color-text-on-dark);
 }
 
-[data-theme="dark"] .contact-hero__channel svg {
+[data-theme="dark"] .contact-hero__channel-icon {
     color: var(--color-orange);
 }
 
@@ -108,13 +109,13 @@
     color: var(--color-text-on-dark);
 }
 
-.contact-card__title svg {
+.contact-card__title-icon {
     width: 28px;
     height: 28px;
     color: var(--color-blue);
 }
 
-[data-theme="dark"] .contact-card__title svg {
+[data-theme="dark"] .contact-card__title-icon {
     color: var(--color-link-on-dark);
 }
 
@@ -190,16 +191,16 @@
     color: var(--color-text-on-dark);
 }
 
-.contact-card__method-value a {
+.contact-card__method-link {
     color: var(--color-blue);
     text-decoration: none;
 }
 
-[data-theme="dark"] .contact-card__method-value a {
+[data-theme="dark"] .contact-card__method-link {
     color: var(--color-link-on-dark);
 }
 
-.contact-card__method-value a:hover {
+.contact-card__method-link:hover {
     text-decoration: underline;
 }
 
@@ -207,24 +208,24 @@
     margin-top: var(--space-12);
 }
 
-.contact-page__locations__title {
+.contact-page__locations-title {
     text-align: center;
     justify-content: center;
     margin-bottom: var(--space-16);
 }
 
-.contact-page__locations__grid {
+.contact-page__locations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-6);
 }
 
-.contact-page__locations__card-title {
+.contact-page__locations-card-title {
     font-size: clamp(1.25rem, 2vw, 1.5rem);
     margin-bottom: var(--space-4);
 }
 
-.contact-page__locations__card-description {
+.contact-page__locations-card-description {
     margin-bottom: 0;
 }
 

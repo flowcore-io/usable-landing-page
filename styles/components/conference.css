@@ -70,7 +70,7 @@
   color: var(--color-blue);
 }
 
-.conference-hero__back-link svg {
+.conference-hero__back-link-icon {
   width: 16px;
   height: 16px;
 }
@@ -108,7 +108,7 @@
   font-weight: 500;
 }
 
-.conference-hero__detail svg {
+.conference-hero__detail-icon {
   width: 20px;
   height: 20px;
   color: var(--color-blue);
@@ -150,6 +150,7 @@
   text-align: center;
 }
 
+/* Prose exception: p tags are authored editorial content inside .conference-about__text */
 .conference-about__text p {
   margin-bottom: var(--space-6);
 }
@@ -183,7 +184,7 @@
   margin: 0;
 }
 
-.conference-about__objectives-list li {
+.conference-about__objectives-list-item {
   padding: var(--space-2) 0;
   padding-left: var(--space-6);
   position: relative;
@@ -191,7 +192,7 @@
   line-height: 1.6;
 }
 
-.conference-about__objectives-list li::before {
+.conference-about__objectives-list-item::before {
   content: "✓";
   position: absolute;
   left: 0;
@@ -317,7 +318,7 @@
   color: var(--color-background);
 }
 
-.conference-audience__icon svg {
+.conference-audience__icon-svg {
   width: 24px;
   height: 24px;
 }
@@ -380,7 +381,6 @@
     width: 100%;
   }
 
-  .conference-hero__actions .btn,
   .conference-hero__btn {
     width: 100%;
   }
@@ -471,7 +471,7 @@
   font-weight: 500;
 }
 
-.conference-preview__detail svg {
+.conference-preview__detail-icon {
   width: 20px;
   height: 20px;
   color: var(--color-blue);

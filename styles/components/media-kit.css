@@ -1,5 +1,6 @@
 /* ===================================
    COMPONENT: Media Kit Page
+   BEM Block: media-kit-page
    Purpose: Media kit page layout and press assets display
    Dependencies: main.css for CSS variables
    =================================== */
@@ -306,16 +307,16 @@
     color: var(--color-text-on-dark);
 }
 
-.media-kit-page__contact-info a {
+.media-kit-page__contact-link {
     color: var(--color-blue);
     text-decoration: none;
 }
 
-.media-kit-page__contact-info a:hover {
+.media-kit-page__contact-link:hover {
     text-decoration: underline;
 }
 
-[data-theme="dark"] .media-kit-page__contact-info a {
+[data-theme="dark"] .media-kit-page__contact-link {
     color: var(--color-link-on-dark);
 }
 

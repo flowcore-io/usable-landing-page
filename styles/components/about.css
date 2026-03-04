@@ -55,6 +55,7 @@
     margin-bottom: var(--space-8);
 }
 
+/* Prose exception: p tags are authored editorial content inside .about-section__content */
 .about-section__content p {
     margin-bottom: var(--space-6);
 }
@@ -71,13 +72,13 @@
     text-align: left;
 }
 
-.about-section__list li {
+.about-section__list-item {
     padding: var(--space-2) 0 var(--space-2) var(--space-6);
     position: relative;
     line-height: 1.8;
 }
 
-.about-section__list li::before {
+.about-section__list-item::before {
     content: "•";
     position: absolute;
     left: 0;
@@ -184,7 +185,7 @@
     gap: var(--space-3);
 }
 
-.offering-card__actions .btn {
+.offering-card__btn {
     width: 100%;
     text-align: center;
 }

@@ -155,8 +155,8 @@
   color: var(--color-text-on-dark);
 }
 
-.integrations__chat .btn:focus:not(:focus-visible),
-.integrations__chat .btn:active {
+.integrations__btn:focus:not(:focus-visible),
+.integrations__btn:active {
   outline: none;
   box-shadow: none;
 }

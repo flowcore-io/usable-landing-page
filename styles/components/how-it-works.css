@@ -1,5 +1,11 @@
 /* ===================================
-   HOW IT WORKS - PROCESS EXPLANATION
+   COMPONENT: How It Works Section (Homepage)
+   BEM Block: how-it-works, step
+   Purpose: Three-step process explanation displayed on the homepage
+   Dependencies: main.css for CSS variables
+   Note: The .step block is shared with how-it-works-page.css (dedicated page).
+   how-it-works-page.css redefines .step with different sizing and box-shadow
+   for the dedicated page context; homepage styles are intentionally minimal.
    =================================== */
 
 .how-it-works {

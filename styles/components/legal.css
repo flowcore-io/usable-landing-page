@@ -1,4 +1,9 @@
-/* Legal Pages Styles (Terms of Service & Privacy Policy) */
+/* ===================================
+   COMPONENT: Legal Pages
+   BEM Block: privacy-page, terms-page
+   Purpose: Privacy Policy and Terms of Service page layouts
+   Dependencies: main.css for CSS variables
+   =================================== */
 
 /* Privacy Page Styles */
 .privacy-page {
@@ -152,7 +157,7 @@
     background: var(--color-blue-10);
 }
 
-.privacy-page__highlight p {
+.privacy-page__highlight-text {
     margin-bottom: 0;
 }
 

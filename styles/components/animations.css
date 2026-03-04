@@ -1,8 +1,17 @@
 /* ===================================
-   ANIMATIONS - SUBTLE & PROFESSIONAL
+   COMPONENT: Global Animations
+   BEM Block: n/a — utility classes and global rules
+   Purpose: Scroll progress bar, shared @keyframes, and utility animation classes
+   Dependencies: main.css for CSS variables and z-index tokens
+   Note: @keyframes fadeInUp and scaleIn are intentionally declared here and
+   also used in hero.css and scroll-animations.css. Each file is self-contained
+   so components don't depend on load order.
    =================================== */
 
-/* Scroll Progress Bar */
+/* Scroll Progress Bar
+   z-index: var(--z-overlay) places the bar above all page content but below modals.
+   Width is set by JavaScript (scrollY / scrollHeight). transition: 0.1s keeps
+   tracking smooth without visual lag. */
 .scroll-progress {
   position: fixed;
   top: 0;

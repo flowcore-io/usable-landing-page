@@ -1,6 +1,7 @@
 /* ===================================
    COMPONENT: News Page
-   Purpose: News and press updates page layout
+   BEM Block: news-hero, news-card
+   Purpose: News and press updates page — card grid and hero section
    Dependencies: main.css for CSS variables
    =================================== */
 
@@ -135,6 +136,8 @@
     color: var(--color-text-on-dark);
 }
 
+/* margin-top: auto in a flex column pushes .news-card__actions to the card bottom,
+   ensuring action rows align across cards of different content heights. */
 .news-card__actions {
     display: flex;
     justify-content: space-between;
