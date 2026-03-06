@@ -130,7 +130,7 @@ body:not(.announcement-hidden) .hero {
   height: 200%;
   background: linear-gradient(45deg, transparent, var(--color-neutral-50-20), transparent);
   transform: rotate(45deg);
-  animation: none;
+  animation: badgeShine 4s linear infinite;
 }
 
 @keyframes badgeGlow {
@@ -340,10 +340,6 @@ body:not(.announcement-hidden) .hero {
     justify-self: center;
     padding: var(--space-2) var(--space-5);
     margin-bottom: var(--space-6);
-  }
-
-  .hero__badge::before {
-    animation: badgeShine 4s linear infinite;
   }
 
   .hero__badge:hover {

@@ -25,7 +25,6 @@ class UsableApp {
    */
   init() {
     this.setupMobileMenu();
-    this.setupThemeTogglePosition();
     this.setupDropdownMenus();
     this.setupSmoothScrolling();
     this.setupFAQAccordion();
@@ -259,38 +258,6 @@ class UsableApp {
     // Move focus to first focusable element inside the menu (WCAG 2.4.3)
     const firstFocusable = this.mobileMenu.querySelector('a[href], button');
     if (firstFocusable) firstFocusable.focus();
-  }
-
-  /**
-   * The theme toggle lives in the mobile dropdown in HTML.
-   * At desktop (≥1024px) it is moved into nav__actions so it appears in the navbar.
-   * At mobile (<1024px) it stays in the dropdown where it belongs.
-   */
-  setupThemeTogglePosition() {
-    const mq = window.matchMedia('(min-width: 1024px)');
-
-    const reposition = () => {
-      const toggle = document.querySelector('.theme-toggle');
-      const navActions = document.querySelector('.nav__actions');
-      const themeRow = document.querySelector('.nav__mobile-theme-row');
-      if (!toggle || !navActions || !themeRow) return;
-
-      if (mq.matches) {
-        // Desktop: move toggle into nav__actions before the LOG IN button
-        const cta = navActions.querySelector('.nav__cta--desktop');
-        if (!navActions.contains(toggle)) {
-          navActions.insertBefore(toggle, cta);
-        }
-      } else {
-        // Mobile: return toggle to the dropdown theme row
-        if (!themeRow.contains(toggle)) {
-          themeRow.appendChild(toggle);
-        }
-      }
-    };
-
-    mq.addEventListener('change', reposition);
-    reposition();
   }
 
   /**
@@ -794,9 +761,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Components are loaded asynchronously, so navbar/footer might not exist yet
   document.addEventListener('all-components-loaded', () => {
     const app = new UsableApp();
-    
+
     // Add scroll progress indicator
     app.addScrollProgress();
+
+    // After async components load they shift the layout, which can push the
+    // page slightly below the true top even when the user was at Y=0.
+    // Snap back to top if there's no hash and we're within 100px of it.
+    if (!window.location.hash && window.scrollY < 10) {
+      window.scrollTo(0, 0);
+    }
   });
 
   // Fetch and render Usable version in footer

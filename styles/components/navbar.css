@@ -472,9 +472,11 @@ a.nav__cta--desktop.btn.btn--primary {
     display: flex;
   }
 
-  /* Hide desktop LOG IN and lang switch from navbar at mobile — both live in the dropdown instead */
+  /* Hide desktop LOG IN, lang switch, and theme toggle from navbar at mobile — all live in the dropdown instead */
+  /* .nav__actions scoping raises specificity to 0,2,0 — beats theme-toggle.css .theme-toggle { display: flex } (0,1,0) */
   .nav__cta--desktop,
-  .nav__actions .nav__lang-switch {
+  .nav__actions .nav__lang-switch,
+  .nav__actions .nav__theme-toggle--desktop {
     display: none;
   }
 
@@ -639,6 +641,7 @@ a.nav__cta--desktop.btn.btn--primary {
 
 .nav__menu--mobile-content {
   flex: 1;
+  min-height: 0; /* Prevents flex item from overflowing container, allows overflow-y: auto to work */
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   /* 150px padding-bottom clears the absolutely positioned actions bar */

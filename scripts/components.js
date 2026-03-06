@@ -109,10 +109,10 @@ class ComponentLoader {
       }
 
       let html = await response.text();
-      
+
       // Fix asset paths for nested directories
       html = this.fixAssetPaths(html);
-      
+
       const targetElement = document.querySelector(targetSelector);
 
       if (!targetElement) {
@@ -120,23 +120,15 @@ class ComponentLoader {
         return;
       }
 
-      // Clear existing content first
-      while (targetElement.firstChild) {
-        targetElement.removeChild(targetElement.firstChild);
-      }
-      
-      // Use DOMParser for more reliable HTML parsing
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const fragment = document.createDocumentFragment();
-      
-      // Move all nodes from parsed document to fragment
-      Array.from(doc.body.childNodes).forEach(node => {
-        fragment.appendChild(node);
-      });
-      
-      // Append fragment to target
-      targetElement.appendChild(fragment);
+      // Use <template> for safe, inert HTML parsing.
+      // Scripts inside <template> never execute, so live-server hot-reload
+      // injections are harmless and all component content is preserved intact.
+      const tpl = document.createElement('template');
+      tpl.innerHTML = html;
+
+      // Clear existing content and append parsed fragment
+      targetElement.innerHTML = '';
+      targetElement.appendChild(tpl.content);
       
       // Set active nav links after navbar is loaded
       if (componentName === 'navbar') {

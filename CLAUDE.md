@@ -45,7 +45,7 @@ These instruction sets are confirmed to exist in the Orlando workspace. Fetch th
 
 | Action | Fragment ID | Description |
 |---|---|---|
-| **Run the project** | `f70fc472-1717-4df2-9441-0c36fbf2086a` | Start local dev server with `npx live-server --port=8000` |
+| **Run the project** | `f70fc472-1717-4df2-9441-0c36fbf2086a` | Start local dev server with `npx live-server --port=8000` — run the command directly using the Bash tool in the background, do not just instruct the user |
 | **Stop the project** | `a62a6c6f-1798-435a-823e-d5cab2d65d91` | Stop running server by identifying and killing the process on the port |
 | **Initialize project** | `10452117-5c81-49a7-b2ed-930f36979c00` | Complete setup guide for initializing a new landing page project |
 
