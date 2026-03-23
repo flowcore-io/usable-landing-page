@@ -141,6 +141,10 @@
     height: 20px;
 }
 
+/* SVG photo placeholder — shapes styled via class, never inline */
+.team-card__photo-layer--bg  { fill: color-mix(in srgb, var(--color-blue) 15%, transparent); }
+.team-card__photo-layer--fg  { fill: color-mix(in srgb, var(--color-blue) 40%, transparent); }
+
 .team-page__advisors-section {
     margin-top: 0;
     padding-top: 0;

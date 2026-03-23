@@ -183,11 +183,6 @@ body:has(.sandbox) .nav__mobile-theme-row {
   grid-template-columns: 1fr 1fr;
 }
 
-/* Single centered example card — for showcasing one component in isolation */
-.sandbox__example-card {
-  max-width: 480px;
-}
-
 /* Variant label — sits above a card inside a multi-card grid cell */
 .sandbox__card-variant-label {
   font-size: var(--text-xs);
@@ -261,10 +256,6 @@ body:has(.sandbox) .nav__mobile-theme-row {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: var(--space-6);
   margin-bottom: var(--space-8);
-}
-
-.color-grid--3col {
-  grid-template-columns: repeat(3, 1fr);
 }
 
 .color-card {
@@ -565,12 +556,6 @@ body:has(.sandbox) .nav__mobile-theme-row {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* Single card — centered */
-.sandbox__asset-grid--single {
-  grid-template-columns: minmax(0, 360px);
-  justify-content: center;
-}
-
 @media (max-width: 720px) {
   .sandbox__asset-grid,
   .sandbox__asset-grid--3col {
@@ -613,8 +598,8 @@ body:has(.sandbox) .nav__mobile-theme-row {
 }
 
 .sandbox-asset-card__preview--light-bg {
-  background: rgba(240, 246, 252, 0.96);
-  border-bottom: 1px solid rgba(180, 200, 220, 0.4);
+  background: var(--color-neutral-50);
+  border-bottom: 1px solid var(--color-blue-25);
 }
 
 
@@ -622,10 +607,6 @@ body:has(.sandbox) .nav__mobile-theme-row {
   max-width: 100%;
   max-height: 120px;
   object-fit: contain;
-}
-
-.sandbox-asset-card__image--mascot {
-  max-height: 160px;
 }
 
 .sandbox-asset-card__body {
