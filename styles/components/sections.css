@@ -12,32 +12,17 @@
   overflow: hidden;
 }
 
-/* Gradient variants - alternate these for visual depth */
-.page-section--gradient-blue-orange {
-  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
-}
-
-[data-theme="dark"] .page-section--gradient-blue-orange {
-  background: linear-gradient(135deg, var(--color-blue-light-12) 0%, var(--color-orange-10) 100%);
-}
-
-.page-section--gradient-orange-blue {
-  background: linear-gradient(135deg, var(--color-orange-25) 0%, var(--color-blue-25) 100%);
-}
-
-[data-theme="dark"] .page-section--gradient-orange-blue {
-  background: linear-gradient(135deg, var(--color-orange-10) 0%, var(--color-blue-light-12) 100%);
-}
-
+/* Section backgrounds — alternating glass / transparent on sea texture */
+/* Glass: frosted panel lets texture show through with depth */
+.page-section--gradient-blue-orange,
 .page-section--gradient-blue {
-  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-blue-25) 100%);
+  background: var(--color-neutral-900-45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
-[data-theme="dark"] .page-section--gradient-blue {
-  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-blue-25) 100%);
-}
-
-/* No background - for alternating pattern */
+/* Transparent: texture fully visible, no overlay */
+.page-section--gradient-orange-blue,
 .page-section--transparent {
   background: transparent;
 }

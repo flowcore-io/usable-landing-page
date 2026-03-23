@@ -68,7 +68,7 @@
 
 .blog-card {
     background: var(--white-60);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     padding: var(--space-6);
     box-shadow: 0 4px 16px var(--black-06);
     position: relative;

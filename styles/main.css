@@ -335,23 +335,33 @@ body {
   font-size: var(--text-base);
   line-height: 1.6;
   color: var(--color-text-primary);
-  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
+  background: var(--color-neutral-900);
   transition: width var(--transition-normal);
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
 }
 
+/* Layer 1 (bottom): tiled sea texture — fixed to viewport */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  background-image: url('../assets/images/sandbox/seaweed+nudibranch_tile_seamless.png');
+  background-repeat: repeat;
+  background-size: auto;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Layer 2: dark overlay + vignette above the texture */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
   background:
-    radial-gradient(circle at 20% 80%, var(--color-blue-03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, var(--color-orange-03) 0%, transparent 50%);
+    radial-gradient(ellipse at center, transparent 25%, color-mix(in srgb, var(--color-neutral-900) 90%, transparent) 100%),
+    color-mix(in srgb, var(--color-neutral-900) 80%, transparent);
   pointer-events: none;
   z-index: -1;
 }

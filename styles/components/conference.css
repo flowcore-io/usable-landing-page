@@ -28,7 +28,7 @@
 /* Conference Hero Section */
 .conference-hero {
   padding: 140px 0 var(--space-20) 0;
-  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
+  background: transparent;
   position: relative;
   overflow: hidden;
   min-height: 60vh;
@@ -37,9 +37,6 @@
   justify-content: center;
 }
 
-[data-theme="dark"] .conference-hero {
-  background: linear-gradient(135deg, var(--color-blue-light-12) 0%, var(--color-orange-10) 100%);
-}
 
 .conference-hero__container {
   max-width: var(--container-max-width);
@@ -203,11 +200,9 @@
 /* Conference Program Section */
 .conference-program {
   padding: var(--space-20) 0;
-  background: linear-gradient(135deg, var(--color-blue-10) 0%, var(--color-orange-10) 100%);
-}
-
-[data-theme="dark"] .conference-program {
-  background: linear-gradient(135deg, var(--color-blue-light-08) 0%, var(--color-orange-05) 100%);
+  background: var(--color-neutral-900-45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .conference-program__container {
@@ -413,11 +408,7 @@
 
 .conference-preview {
   padding: var(--space-20) 0;
-  background: linear-gradient(135deg, var(--color-blue-15) 0%, var(--color-orange-15) 100%);
-}
-
-[data-theme="dark"] .conference-preview {
-  background: linear-gradient(135deg, var(--color-blue-light-08) 0%, var(--color-orange-08) 100%);
+  background: transparent;
 }
 
 .conference-preview__container {

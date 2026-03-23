@@ -3,11 +3,7 @@
     min-height: calc(100vh - 80px);
     position: relative;
     z-index: var(--z-base);
-    background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
-}
-
-[data-theme="dark"] .article-page {
-    background: linear-gradient(135deg, var(--color-blue-light-12) 0%, var(--color-orange-10) 100%);
+    background: transparent;
 }
 
 .article-page__container {

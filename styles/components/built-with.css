@@ -7,14 +7,10 @@
 
 .built-with-usable {
   padding: var(--space-48) 0;
-  background: linear-gradient(135deg, var(--color-orange-25) 0%, var(--color-blue-25) 100%);
+  background: transparent;
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-[data-theme="dark"] .built-with-usable {
-  background: linear-gradient(135deg, var(--color-orange-25) 0%, var(--color-blue-25) 100%);
 }
 
 .built-with-usable__container {

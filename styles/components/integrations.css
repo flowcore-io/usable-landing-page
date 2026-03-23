@@ -7,13 +7,11 @@
 
 .integrations {
   padding: var(--space-32) 0;
-  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
+  background: var(--color-neutral-900-45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   position: relative;
   overflow: hidden;
-}
-
-[data-theme="dark"] .integrations {
-  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
 }
 
 .integrations__container {

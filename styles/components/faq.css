@@ -3,7 +3,7 @@
    =================================== */
 
 .faq {
-  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -66,7 +66,7 @@
 .faq__item {
   background: var(--white-60);
   border: 1px solid var(--color-blue-10);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: 0 4px 16px var(--black-06);
   transition: box-shadow var(--transition-normal), background var(--transition-normal);
   overflow: hidden;
@@ -77,7 +77,7 @@
 /* Open state */
 .faq__item--open {
   box-shadow: 0 4px 16px var(--color-orange-15);
-  background: var(--white-90);
+  background: var(--white-60);
 }
 
 /* Prevent clicks during animation */
@@ -205,10 +205,6 @@
   padding: 0;
 }
 
-/* FAQ Dark Mode */
-[data-theme="dark"] .faq {
-  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
-}
 
 [data-theme="dark"] .faq__item {
   background: var(--color-neutral-900-96);

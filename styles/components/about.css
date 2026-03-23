@@ -101,7 +101,7 @@
 
 .offering-card {
     background: var(--white-60);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     padding: var(--space-8);
     box-shadow: 0 4px 16px var(--black-06);
     border: 1px solid var(--color-blue-10);

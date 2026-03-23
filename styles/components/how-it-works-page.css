@@ -63,7 +63,7 @@ h2.how-it-works__title,
 
 /* Inline style replacements */
 .step__description--secondary {
-  margin-top: 0.5rem;
+  margin-top: var(--space-2);
   opacity: 0.85;
   font-size: 0.95em;
 }
@@ -86,7 +86,7 @@ h2.how-it-works__title,
 .step {
   padding: var(--space-12);
   background: var(--white-60);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: 0 4px 16px var(--black-06);
   border: 1px solid var(--color-blue-10);
   position: relative;
@@ -178,7 +178,7 @@ h2.how-it-works__title,
 
 /* Inline style replacements */
 .step__description--secondary {
-  margin-top: 0.5rem;
+  margin-top: var(--space-2);
   opacity: 0.85;
   font-size: 0.95em;
 }

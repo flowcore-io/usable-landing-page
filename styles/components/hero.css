@@ -27,17 +27,13 @@ body:not(.announcement-hidden) .hero {
 
 .hero {
   padding: var(--space-20) 0 var(--space-20) 0;
-  background: linear-gradient(135deg, var(--color-blue-25) 0%, var(--color-orange-25) 100%);
+  background: transparent;
   position: relative;
   overflow: hidden;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-[data-theme="dark"] .hero {
-  background: linear-gradient(135deg, var(--color-neutral-900-80) 0%, var(--color-blue-30) 100%);
 }
 
 .hero__container {
