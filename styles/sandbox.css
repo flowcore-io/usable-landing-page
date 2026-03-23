@@ -168,6 +168,12 @@ body:has(.sandbox) .nav__mobile-theme-row {
   gap: var(--space-4);
 }
 
+/* Prevent grid items from overflowing their column — default min-width: auto
+   allows items to exceed 1fr. Setting 0 forces them to respect column width. */
+.sandbox__token-grid > * {
+  min-width: 0;
+}
+
 
 .sandbox__token-grid--3 {
   grid-template-columns: repeat(3, 1fr);
@@ -196,21 +202,52 @@ body:has(.sandbox) .nav__mobile-theme-row {
   .sandbox__token-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .sandbox__token-grid--2 {
+    grid-template-columns: 1fr;
+  }
   .sandbox__token-grid--3 {
     grid-template-columns: 1fr 1fr;
   }
+  .sandbox__section {
+    padding: var(--space-12) 0;
+  }
+  .sandbox__header {
+    padding: var(--space-16) 0 var(--space-12);
+  }
+  .sandbox__subtitle {
+    font-size: var(--text-lg);
+  }
 }
 
-@media (max-width: 640px) {
-  .sandbox__token-grid--2 {
+
+@media (max-width: 540px) {
+  .sandbox__token-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Re-assert modifiers — base class above overrides them via cascade */
+  .sandbox__token-grid--2,
+  .sandbox__token-grid--3 {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 380px) {
   .sandbox__token-grid,
+  .sandbox__token-grid--2,
   .sandbox__token-grid--3 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  .sandbox__container {
+    padding: 0 var(--space-3);
+  }
+  .sandbox__subtitle {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 300px) {
+  .sandbox__container {
+    padding: 0 var(--space-2);
   }
 }
 
@@ -408,13 +445,13 @@ body:has(.sandbox) .nav__mobile-theme-row {
   margin-bottom: 0;
 }
 
-.sandbox__type-sample--7xl  { font-size: var(--text-7xl); font-weight: 800; line-height: 1.1; margin-bottom: var(--space-8); }
-.sandbox__type-sample--6xl  { font-size: var(--text-6xl); font-weight: 800; line-height: 1.1; }
-.sandbox__type-sample--5xl  { font-size: var(--text-5xl); font-weight: 800; line-height: 1.1; }
-.sandbox__type-sample--4xl  { font-size: var(--text-4xl); font-weight: 700; margin-bottom: var(--space-6); }
-.sandbox__type-sample--3xl  { font-size: var(--text-3xl); font-weight: 700; }
-.sandbox__type-sample--2xl  { font-size: var(--text-2xl); font-weight: 600; margin-bottom: var(--space-5); }
-.sandbox__type-sample--xl   { font-size: var(--text-xl);  font-weight: 600; }
+.sandbox__type-sample--7xl  { font-size: clamp(3rem, 7vw, 6rem);  font-weight: 800; line-height: 1.1; margin-bottom: var(--space-8); }
+.sandbox__type-sample--6xl  { font-size: clamp(2rem,   6vw, 3.75rem); font-weight: 800; line-height: 1.1; }
+.sandbox__type-sample--5xl  { font-size: clamp(1.75rem, 5vw, 3rem);   font-weight: 800; line-height: 1.1; }
+.sandbox__type-sample--4xl  { font-size: clamp(1.5rem,  4vw, 2.25rem); font-weight: 700; margin-bottom: var(--space-6); }
+.sandbox__type-sample--3xl  { font-size: clamp(1.375rem, 3vw, 1.875rem); font-weight: 700; }
+.sandbox__type-sample--2xl  { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; margin-bottom: var(--space-5); }
+.sandbox__type-sample--xl   { font-size: clamp(1.125rem, 2vw, 1.25rem); font-weight: 600; }
 .sandbox__type-sample--lg   { font-size: var(--text-lg); }
 .sandbox__type-sample--base { font-size: var(--text-base); }
 .sandbox__type-sample--sm   { font-size: var(--text-sm); }
@@ -478,7 +515,9 @@ body:has(.sandbox) .nav__mobile-theme-row {
 }
 
 /* Strip component-specific margins from elements placed inside sandbox rows */
-.sandbox__row .hero__badge {
+.sandbox__row .hero__badge,
+.sandbox__row .blog-card__badge,
+.sandbox__row .news-card__badge {
   margin-bottom: 0;
 }
 
