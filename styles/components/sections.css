@@ -12,19 +12,23 @@
   overflow: hidden;
 }
 
-/* Section backgrounds — alternating glass / transparent on sea texture */
-/* Glass: frosted panel lets texture show through with depth */
+/* Section backgrounds — alternating transparent / glass on sea texture.
+   Naming convention: every page starts with a hero that uses
+   `page-section--gradient-blue-orange` (transparent, texture-forward),
+   then alternates with `page-section--gradient-orange-blue` (frosted glass). */
+
+/* Transparent: texture fully visible, no overlay (hero + every odd section) */
 .page-section--gradient-blue-orange,
+.page-section--transparent {
+  background: transparent;
+}
+
+/* Glass: frosted panel lets texture show through with depth (every even section) */
+.page-section--gradient-orange-blue,
 .page-section--gradient-blue {
   background: var(--color-neutral-900-45);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-}
-
-/* Transparent: texture fully visible, no overlay */
-.page-section--gradient-orange-blue,
-.page-section--transparent {
-  background: transparent;
 }
 
 /* Spacing modifiers */

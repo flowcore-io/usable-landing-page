@@ -16,6 +16,18 @@
   overflow: hidden;
 }
 
+/* Alternation guard: when the CTA placeholder directly follows a section
+   that already has a frosted-glass background, flip the CTA to transparent
+   so the clear/blur rhythm keeps going instead of stacking two blurs. */
+.page-section--gradient-orange-blue + #cta-placeholder .cta,
+.features + #cta-placeholder .cta,
+.how-it-works + #cta-placeholder .cta,
+.integrations + #cta-placeholder .cta {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 @keyframes ctaGlow {
   0%, 100% { opacity: 0.8; }
   50% { opacity: 1; }
