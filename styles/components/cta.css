@@ -67,7 +67,7 @@
   font-weight: 800;
   margin-bottom: var(--space-8);
   color: var(--color-text-primary);
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   line-height: 1.1;
 }
 

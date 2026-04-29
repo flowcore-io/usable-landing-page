@@ -147,10 +147,10 @@
 
 .privacy-page__highlight {
     background: var(--color-blue-50);
-    border-left: 4px solid var(--color-blue);
+    border: 1px solid var(--color-blue-20);
     padding: var(--space-4) var(--space-6);
     margin: var(--space-6) 0;
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    border-radius: var(--radius-md);
 }
 
 [data-theme="dark"] .privacy-page__highlight {

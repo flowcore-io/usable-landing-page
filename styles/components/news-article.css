@@ -150,9 +150,9 @@
 
 .article-meta-highlight {
     background: var(--color-blue-08);
-    border-left: 4px solid var(--color-blue);
+    border: 1px solid var(--color-blue-20);
     padding: var(--space-4) var(--space-5);
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    border-radius: var(--radius-md);
     display: grid;
     gap: var(--space-2);
 }

@@ -5,12 +5,13 @@
     "lastUpdated": "2026-02-25",
     "notes": "Faroese translation for Usable landing page. Keys prefixed by page/component."
   },
-
   "common.skip-to-content": "Far til høvuðsinnihald",
-
   "nav.product": "Vøra",
   "nav.solutions": "Loysnir",
   "nav.company": "Fyritøkan",
+  "nav.usable": "Usable",
+  "nav.usable-chat": "Usable Chat",
+  "nav.features": "Eginleikar",
   "nav.how-it-works": "Hvussu virkar tað",
   "nav.use-cases": "Nýtsludømi",
   "nav.demo": "Demo",
@@ -29,12 +30,14 @@
   "nav.toggle-menu": "Lat valmynd upp",
   "nav.toggle-theme": "Broyt tema",
   "nav.switch-language": "Switch to English",
-
   "footer.tagline": "<span class=\"u-brand-text\">Usable</span> er ikki bara søtt<br>– tað er veruliga brúkbart.",
   "footer.privacy": "Privatlívspolitikkur",
   "footer.terms": "Nýtslutreytir",
   "footer.product": "Vøra",
   "footer.resources": "Tilfeingi",
+  "footer.usable": "Usable",
+  "footer.usable-chat": "Usable Chat",
+  "footer.features": "Eginleikar",
   "footer.flowcore": "Flowcore",
   "footer.consultancy": "Ráðgeving",
   "footer.screenshots": "Skíggjamyndir",
@@ -51,11 +54,9 @@
   "footer.social.reddit": "Ver við á Reddit",
   "footer.social.instagram": "Fylg okkum á Instagram",
   "footer.social.x": "Fylg okkum á X",
-
   "cta.title": "Klár/ur at geva tínum toymi eitt sameint minni?",
   "cta.description": "Byrja at byggja við vitlíkisagentum, ið minnast alt. Ókeypis byrjanarætlan – einki gjaldskort kravt, ongin flókin uppseting.",
   "cta.button": "Skráset teg",
-
   "home.title": "Usable – Vitan fyri vitlíkisagentar",
   "home.meta.description": "Plug-and-play vitanarstýring fyri vitlíkisagentar. Forðast RAG/GraphRAG-kaosið – knýt tínar upplýsingar at Usable og fá framleiðsluklár svar beinanvegin, uttan at byggja eitt vitanarkervi sjálv/ur.",
   "home.hero.badge": "Henda síðan er bygd við Usable",
@@ -66,23 +67,19 @@
   "home.hero.cta-primary": "Byrja ókeypis",
   "home.hero.cta-secondary": "Hvussu virkar tað",
   "home.hero.mascot-alt": "Usable Nudibranch skálkur",
-
   "home.integrations.title": "Virkar við øllum MCP-kompatiblum amboðum",
   "home.integrations.description": "Usable samskiftir lýtaleyst við øllum amboðum, ið stuðla MCP (Model Context Protocol). Knýt at Cursor, VS Code, Claude Code, Gemini CLI, Raycast, Warp, ChatGPT, og óteljandi øðrum.",
   "home.integrations.chat-text": "Ella royn Usable Chat uttan nakað ytra amboð – uppliv okkara minnislag beinleiðis í tínum kagara.",
   "home.integrations.chat-button": "ROYN USABLE CHAT",
-
   "home.conference.title": "Usable Fragments 2026",
   "home.conference.description": "Kom við í altjóða felagsskapin fyri vitlíkisagentmennarar í vøkru Føroyum.",
   "home.conference.date": "7. mai 2026, 09:00-12:00",
   "home.conference.location": "Reinsaríið, Tórshavn",
   "home.conference.text": "Eitt síðutiltak til Tonik, ið savnar altjóða felagsskapin av vitlíkisagentmennarum á einum av teimum mest stórkostligu støðum á jørðini. Knýt samband við starvsfelagar, deil gennumbrot, og finn út av, hvussu tú byggir betri vitlíkisagentar við bestu vitanarstýringini í heiminum.",
   "home.conference.button": "Les meira um Usable Fragments 2026",
-
   "home.built-with.title": "Bygd við Usable",
   "home.built-with.description": "Usable heimasíðan var gjørd av einum persóni, ið ikki hevur nakran forritarabakgrund, í samstarvi við eitt vitlíkishjálparamboð, ið líkist <a href=\"https://orlando.usable.dev/\">Orlando</a> – ein LLM-persónleiki goymdur í Usable sínum almenna arbeiðsøki: <a href=\"https://orlando.usable.dev/\">Orlando</a>. Gjøgnum samrøður, har Orlando minnist sniðreglur, vørumerkjarødd og endamálini hjá verkætlanini, varð ein yrkislig síða til úr reinum samstarvi.",
   "home.built-with.tagline": "Hetta er Usable í verki: at gera vitlíkisagentar veruliga nýttigar.",
-
   "about.title": "Um okkum | Usable",
   "about.meta.description": "Usable Sp/f býður plug-and-play vitanarstýring, ið ger vitlíkisagentar veruliga nýttigar. Les um okkara mál, søgu og trý tilboð: Usable, Flowcore og ráðgeving.",
   "about.hero.title": "Vitanarstýring fyri vitlíkisagentar",
@@ -146,7 +143,6 @@
     "<strong>Ráðgeving</strong> hjálpir stovnum at innleiða loysnir, flyta dátur og byggja sersmíðaðar vitlíkis- og dátuskipanir"
   ],
   "about.why.closing": "Saman byggja vit undirstøðukervið, ið ger vitlíkisagentar veruliga nýttigar – ikki bert áhugaverdar demoir, men framleiðsluklár amboð, ið toymi kunnu stóla á.",
-
   "pricing.title": "Prísir | Usable",
   "pricing.meta.description": "Einfaldir, greiðir prísir fyri Usable, Flowcore og ráðgevingartænastur. Vel ta ætlan, ið passar til tín tørv.",
   "pricing.hero.title": "Einfaldir, greiðir prísir",
@@ -279,7 +275,6 @@
   "pricing.faq.a3": "Vit taka ímóti vanligum gjaldskortum og kunnu avtala fakturering fyri stórar kundar. Set teg í samband fyri meira kunning.",
   "pricing.faq.q4": "Tørvar tær eina sersmíðaða loysn?",
   "pricing.faq.a4": "Set teg í samband fyri stórfyritøkuprísir, sersmíðaðar ætlanir ella ráðgevingartænastur. Vit vilja fegin arbeiða við tær at finna rættu loysnina.",
-
   "contact.title": "Set teg í samband | Usable",
   "contact.meta.description": "Set teg í samband við Usable Sp/f. Kontakta okkum viðvíkjandi Usable, Flowcore ella ráðgeving. Vit eru her at hjálpa við tínum tørvi innan vitlíki og dátur.",
   "contact.hero.title": "Set teg í samband",
@@ -309,7 +304,6 @@
   "contact.locations.fo.address": "Vestara Bryggja 15\n100 Tórshavn\nFøroyar",
   "contact.locations.dk.name": "Flowcore ApS",
   "contact.locations.dk.address": "Vesterbrogade 26\n1620 København V\nDanmark",
-
   "how-it-works.title": "Hvussu virkar tað | Usable",
   "how-it-works.meta.description": "Kom í gongd við Usable beinanvegin. Eingin flókin uppseting kravd. Lær hvussu tú knýtir tíni amboð, fangar vitan og finnur hana beinanvegin.",
   "how-it-works.hero.title": "Hvussu virkar tað",
@@ -337,7 +331,6 @@
   "how-it-works.feature5.description": "Fá fyrimunirnar av graf-grundaðari vitanarheintingu – samband, samhengi og týdningsleiting – uttan at byggja grafdátugrunnar ella umsita embeddings.",
   "how-it-works.feature6.title": "Altíð dagført",
   "how-it-works.feature6.description": "Sjálvvirkandi dagføringar og ábøtur. Vit umsita viðlíkahald, eftirvakt og fínstilling, so títt vitanarlag heldur fram at verða betri.",
-
   "use-cases.title": "Nýtsludømi | Usable",
   "use-cases.meta.description": "Skoða hvussu Usable broytir toymisvitan til veruligt arbeiði. Kanna nýtsludømi fyri forritarar, DevOps og toymi.",
   "use-cases.hero.title": "Nýtsludømi",
@@ -374,7 +367,6 @@
   "use-cases.team.step2.description": "Nýggjir limir scaffolda og senda kodu, leiddir av agentinum, samsvarandi toymisreglum.",
   "use-cases.team.step3.title": "10× avrik",
   "use-cases.team.step3.description": "Verandi limir arbeiða skjótari við savnari vitan um tænastur, forritssøvn og uppsetingar.",
-
   "faq.title": "Spurningar og svar | Usable",
   "faq.meta.description": "Alt tú tørvar at vita um Usable. Ofta spurdir spurningar um vitanarstýring fyri vitlíkisagentar, prísir, samantvinningar og meira.",
   "faq.hero.title": "Ofta spurdir spurningar",
@@ -399,7 +391,6 @@
   "faq.a9": "Høvuðsmunurin er goymslumark (1 GiB / 5 GiB / 80 GiB), vitanarskapandi token-mark (5M / 16M / 40M um mán), vitanarleitandi token-mark (500K / 3M / 7.5M um mán), toymis-støddarmark (5 limir / óavmarkað / óavmarkað) og stuðulsstig (Felagsskapur / Teldupostur / Teldupostur).",
   "faq.q10": "Hvønn stuðul fái eg á hvørjum stigi?",
   "faq.a10": "Ókeypis: Felagsskaparstuðul gjøgnum Discord. Standard & Pro: Teldupoststuðul við fremsta rætti.",
-
   "demo.title": "Vøru-demo | Usable",
   "demo.meta.description": "Skoða Usable í verki. Skoða okkara vørudemo at læra hvussu vitanarstýring fyri vitlíkisagentar virkar.",
   "demo.hero.title": "Skoða Usable í verki",
@@ -417,7 +408,6 @@
   "demo.feature3.description": "Skoða hvussu agentar leita og heinta viðkomandi vitanar-minnisbrot við agentiskari leiting og endurrangering fyri høgan neyvleika.",
   "demo.feature4.title": "Arbeiðsøkisstýring",
   "demo.feature4.description": "Skoða hvussu arbeiðsøki hjálpa at skipuleggja vitan eftir verkætlan, toymi ella øki. Stýr atgongd og samstarva munagott.",
-
   "team.title": "Okkara toymi | Usable",
   "team.meta.description": "Møt stovnarunum av Usable Sp/f: Ólavur Ellefsen, Brian Bischoff og Julius á Rógvi Biskopstø. Lær um okkara leiðslutoymi, ið byggir vitanarstýring fyri vitlíkisagentar.",
   "team.hero.title": "Møt okkara stovnarar",
@@ -443,7 +433,6 @@
   "team.advisors.card.bio3": "Random Ventures er ein Finest Bay Area íløgufyritøka, ið íleggur altjóðaliga í íverksetarafyritøkur á frumbyrjunarstigi. Fyritøkan stuðlar ákafum stovnarum bæði við kapitali og handfastari strategiskari leiðslu tvørtur um marknaðir, og hjálpir fyritøkum sum Usable at skunda teirra vøkstur og altjóða víðkan.",
   "team.advisors.card.button": "Les meira",
   "team.advisors.card.photo-alt": "Kustaa Valtonen og Peter Vesterbacka",
-
   "fragments.title": "Usable Fragments 2026 | Usable",
   "fragments.meta.description": "Kom við 7. mai 2026, 09:00-12:00 á Reinsaríið, Tórshavn til Usable Fragments – síðutiltak til Tonik. Ein savning fyri altjóða felagsskapin av vitlíkisagentmennarum.",
   "fragments.hero.back": "Aftur til heimasíðu",
@@ -472,7 +461,6 @@
   "fragments.cta.description": "Ver partur av vitlíkisagentmennara felagsskaparsavningini. Far á bíðilistan at fáa boð, tá ið skráseting letur upp, og fá snemma atgongd til atgongumerki.",
   "fragments.cta.btn-waitlist": "Bíðilisti (kemur skjótt)",
   "fragments.cta.btn-home": "Aftur til heimasíðu",
-
   "media-kit.title": "Miðlapakki – Tíðindaupplýsingar | Usable",
   "media-kit.meta.description": "Tak niður miðlaupplýsingar, búmerki og vørumerkjastilfar fyri Usable.",
   "media-kit.hero.eyebrow": "Miðlaupplýsingar",
@@ -505,7 +493,9 @@
   "media-kit.advisors.details": "Kustaa Valtonen og Peter Vesterbacka, strategiskir ráðgevarar og íleggjarar frá Random Ventures.",
   "media-kit.press-contact.title": "Miðlasamband",
   "media-kit.press-contact.info": "Ólavur Ellefsen\nForstjóri\nUsable Sp/f\nTeldupostur: olavur@usable.dev\nMiðlafyrispurningar: press@usable.dev\nTelefon: +298 556600\nTíðarøki: UTC",
-
   "detailed-screenshots.title": "Nágreiniligar skíggjamyndir – Sjónlig ferð ígjøgnum Usable | Usable",
-  "detailed-screenshots.meta.description": "Far á eina heildarsjónliga ferð ígjøgnum Usable-brúkaramótið. Skoða hvussu arbeiðsøki, minnisbrot, Usable Chat og MCP-samantvinning virka saman at geva tínum vitlíkisagentum varandi minni."
+  "detailed-screenshots.meta.description": "Far á eina heildarsjónliga ferð ígjøgnum Usable-brúkaramótið. Skoða hvussu arbeiðsøki, minnisbrot, Usable Chat og MCP-samantvinning virka saman at geva tínum vitlíkisagentum varandi minni.",
+  "footer.brand-kit": "Vørumerkjapakki",
+  "contact.flowcore.community-label": "Felagsskaparstuðul",
+  "contact.flowcore.community-link": "Ver við á Flowcore Discord"
 }

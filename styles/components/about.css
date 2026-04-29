@@ -17,7 +17,7 @@
     font-weight: 800;
     color: var(--color-text-primary);
     margin-bottom: var(--space-6);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
 }
 
 [data-theme="dark"] .about-hero__title {
@@ -121,7 +121,7 @@
     line-height: 1.2;
     color: var(--color-text-primary);
     margin-bottom: var(--space-3);
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
     text-align: center;
 }
 

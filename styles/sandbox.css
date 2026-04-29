@@ -352,7 +352,8 @@ body:has(.sandbox) .nav__mobile-theme-row {
 }
 
 .sandbox__card--accent {
-  border-left: 4px solid var(--color-orange);
+  background: var(--color-orange-08);
+  border-color: var(--color-orange-25);
 }
 
 .sandbox__card-title {

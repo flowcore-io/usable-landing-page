@@ -31,7 +31,7 @@ h1.how-it-works__title {
   font-weight: 800;
   color: var(--color-text-primary);
   margin-bottom: var(--space-4);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   line-height: 1.2;
 }
 
@@ -41,7 +41,7 @@ h2.how-it-works__title,
   font-weight: 800;
   color: var(--color-text-primary);
   margin-bottom: var(--space-4);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   line-height: 1.2;
 }
 
@@ -152,7 +152,7 @@ h2.how-it-works__title,
   line-height: 1.2;
   margin-bottom: var(--space-4);
   color: var(--color-text-primary);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   position: relative;
   z-index: var(--z-base);
 }
