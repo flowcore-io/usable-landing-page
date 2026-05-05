@@ -58,6 +58,12 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .product-overview__grid:has(> .product-card:nth-child(2):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-inline: auto;
+    max-width: 980px;
+  }
+
   .product-overview__grid:has(> .product-card:nth-child(4)) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-inline: auto;
@@ -91,10 +97,10 @@
 .product-step {
   background: var(--white-60);
   border: 1px solid var(--color-blue-10);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   box-shadow: 0 4px 16px var(--black-06);
   color: var(--color-text-primary);
-  padding: var(--space-8);
+  padding: var(--space-6);
   position: relative;
 }
 
@@ -330,9 +336,10 @@
 
 .product-callout {
   align-items: center;
-  background: var(--color-blue-12);
-  border: 1px solid var(--color-blue-20);
-  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-blue) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-blue) 25%, transparent);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
   display: grid;
   gap: var(--space-6);
   grid-template-columns: 1fr auto;

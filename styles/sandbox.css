@@ -395,7 +395,7 @@ body:has(.sandbox) .nav__mobile-theme-row {
   margin-bottom: var(--space-5);
 }
 
-.sandbox__font-specimen--inter  { font-family: 'Inter', sans-serif; }
+.sandbox__font-specimen--hanken { font-family: 'Hanken Grotesk', sans-serif; }
 .sandbox__font-specimen--outfit { font-family: 'Outfit', sans-serif; }
 
 .sandbox__font-meta {

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
@@ -11,14 +11,14 @@
     <link rel="canonical" href="https://usable.dev/use-cases">
     <meta name="theme-color" content="#347cbf" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
-    
+
     <!-- Web App Manifest -->
     <link rel="manifest" href="/site.webmanifest">
-    
+
     <!-- DNS Prefetch for External Resources -->
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://plausible.io">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.usable.dev/use-cases">
@@ -28,7 +28,7 @@
     <meta property="og:site_name" content="Usable">
     <meta property="fb:app_id" content="1456799832831747">
     <meta property="og:locale" content="en_US">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://usable.dev/use-cases">
@@ -37,25 +37,25 @@
     <meta property="twitter:image" content="https://www.usable.dev/assets/images/Brand/Usable_og_image.jpg">
     <meta name="twitter:creator" content="@UsableDev">
     <meta name="twitter:site" content="@UsableDev">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Brand/Usable_transparent.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Brand/Usable_transparent.png">
     <link rel="apple-touch-icon" href="assets/images/Brand/Usable_transparent.png">
     <link rel="shortcut icon" href="assets/images/Brand/Usable_transparent.png">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css?v=3">
-    
+
     <!-- Page-Specific Component Styles -->
     <link rel="stylesheet" href="styles/components/use-cases.css?v=3">
-    
+
     <!-- Common Component Styles -->
     <link rel="stylesheet" href="styles/components/utilities.css?v=3">
     <link rel="stylesheet" href="styles/components/navbar.css">
@@ -66,13 +66,13 @@
     <link rel="stylesheet" href="styles/components/sections.css">
     <link rel="stylesheet" href="styles/components/product-pages.css">
     <link rel="stylesheet" href="styles/components/cta.css">
-    
+
     <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-to-content" data-i18n="common.skip-to-content">Skip to main content</a>
-    
+
     <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
     <div class="bokeh bokeh--1"></div>
     <div class="bokeh bokeh--2"></div>
@@ -89,7 +89,7 @@
     <div class="bokeh bokeh--13"></div>
     <div class="bokeh bokeh--14"></div>
     <div class="bokeh bokeh--15"></div>
-    
+
     <!-- Header -->
     <div id="navbar-placeholder"></div>
 
@@ -97,41 +97,44 @@
         <section class="page-section page-section--hero page-section--gradient-blue-orange">
             <div class="page-section__container">
                 <div class="page-section__header u-animate-on-scroll u-fade-in-down">
-                    <div class="product-page__eyebrow">Use cases</div>
-                    <h1 class="page-section__title">Where organisational memory becomes useful</h1>
-                    <p class="product-page__lede">
+                    <h1 class="page-section__title" data-i18n="use-cases.hero.title">Where organisational memory becomes useful</h1>
+                    <p class="page-section__description" data-i18n="use-cases.hero.description">
                         Usable helps organisations keep valuable knowledge under control while making it available to approved AI tools, staff, developers, DevOps teams, and customer-facing assistants.
                     </p>
-                    <div class="product-page__actions">
-                        <a href="https://usable.dev/login" class="btn btn--primary btn--large">Start for free</a>
-                        <a href="/usable.html" data-clean-url="/usable" class="btn btn--secondary btn--large">See Usable</a>
-                    </div>
+                </div>
+                <div class="product-page__actions u-animate-on-scroll u-fade-in-up">
+                    <a href="https://usable.dev/login" class="btn btn--primary btn--large" data-i18n="use-cases.hero.cta-primary">Start for free</a>
+                    <a href="/usable.html" data-clean-url="/usable" class="btn btn--secondary btn--large" data-i18n="use-cases.hero.cta-secondary">See Usable</a>
                 </div>
             </div>
         </section>
 
         <section class="page-section page-section--gradient-orange-blue">
             <div class="page-section__container">
+                <div class="page-section__header u-animate-on-scroll u-fade-in-down">
+                    <h2 class="page-section__title" data-i18n="use-cases.teams.title">Where teams put it to work</h2>
+                    <p class="page-section__description" data-i18n="use-cases.teams.description">Different organisations, different problems, the same governed memory.</p>
+                </div>
                 <div class="product-overview__grid">
                     <article class="product-card u-animate-on-scroll u-fade-in-up">
-                        <div class="product-card__label">Public bodies</div>
-                        <h2 class="product-card__title">Consistent service guidance</h2>
-                        <p class="product-card__description">Keep rules, procedures, prior decisions, and internal guidance in approved workspaces so staff and AI tools use the same source.</p>
+                        <div class="product-card__label" data-i18n="use-cases.teams.public-bodies.label">Public bodies</div>
+                        <h3 class="product-card__title" data-i18n="use-cases.teams.public-bodies.title">Consistent service guidance</h3>
+                        <p class="product-card__description" data-i18n="use-cases.teams.public-bodies.description">Keep rules, procedures, prior decisions, and internal guidance in approved workspaces so staff and AI tools use the same source.</p>
                     </article>
                     <article class="product-card u-animate-on-scroll u-fade-in-up u-stagger-delay-1">
-                        <div class="product-card__label">Consultancies</div>
-                        <h2 class="product-card__title">Reusable client knowledge</h2>
-                        <p class="product-card__description">Turn each engagement into memory: client context, delivery standards, meeting outcomes, and implementation lessons.</p>
+                        <div class="product-card__label" data-i18n="use-cases.teams.consultancies.label">Consultancies</div>
+                        <h3 class="product-card__title" data-i18n="use-cases.teams.consultancies.title">Reusable client knowledge</h3>
+                        <p class="product-card__description" data-i18n="use-cases.teams.consultancies.description">Turn each engagement into memory: client context, delivery standards, meeting outcomes, and implementation lessons.</p>
                     </article>
                     <article class="product-card u-animate-on-scroll u-fade-in-up u-stagger-delay-2">
-                        <div class="product-card__label">Growing teams</div>
-                        <h2 class="product-card__title">Onboarding without repeat explanations</h2>
-                        <p class="product-card__description">Preserve how work is done so new people and AI assistants do not depend on scattered chat history or senior colleagues.</p>
+                        <div class="product-card__label" data-i18n="use-cases.teams.growing-teams.label">Growing teams</div>
+                        <h3 class="product-card__title" data-i18n="use-cases.teams.growing-teams.title">Onboarding without repeat explanations</h3>
+                        <p class="product-card__description" data-i18n="use-cases.teams.growing-teams.description">Preserve how work is done so new people and AI assistants do not depend on scattered chat history or senior colleagues.</p>
                     </article>
                     <article class="product-card u-animate-on-scroll u-fade-in-up u-stagger-delay-3">
-                        <div class="product-card__label">Dev and DevOps</div>
-                        <h2 class="product-card__title">Standards available before work starts</h2>
-                        <p class="product-card__description">Store architecture decisions, repo patterns, deployment rules, incident fixes, and solution writeback so AI-assisted work compounds.</p>
+                        <div class="product-card__label" data-i18n="use-cases.teams.dev-devops.label">Dev and DevOps</div>
+                        <h3 class="product-card__title" data-i18n="use-cases.teams.dev-devops.title">Standards available before work starts</h3>
+                        <p class="product-card__description" data-i18n="use-cases.teams.dev-devops.description">Store architecture decisions, repo patterns, deployment rules, incident fixes, and solution writeback so AI-assisted work compounds.</p>
                     </article>
                 </div>
             </div>
@@ -140,24 +143,24 @@
         <section class="page-section page-section--gradient-blue-orange">
             <div class="page-section__container">
                 <div class="page-section__header u-animate-on-scroll u-fade-in-down">
-                    <h2 class="page-section__title">The common pattern</h2>
-                    <p class="page-section__description">Different teams need different knowledge, but the control model stays the same.</p>
+                    <h2 class="page-section__title" data-i18n="use-cases.pattern.title">The common pattern</h2>
+                    <p class="page-section__description" data-i18n="use-cases.pattern.description">Different teams need different knowledge, but the control model stays the same.</p>
                 </div>
                 <div class="product-workflow">
                     <article class="product-step u-animate-on-scroll u-fade-in-up">
                         <div class="product-step__number">1</div>
-                        <h3 class="product-step__title">Collect what matters</h3>
-                        <p class="product-step__description">Procedures, files, decisions, standards, answers, and project context are stored before they disappear.</p>
+                        <h3 class="product-step__title" data-i18n="use-cases.pattern.step1.title">Collect what matters</h3>
+                        <p class="product-step__description" data-i18n="use-cases.pattern.step1.description">Procedures, files, decisions, standards, answers, and project context are stored before they disappear.</p>
                     </article>
                     <article class="product-step u-animate-on-scroll u-fade-in-up u-stagger-delay-1">
                         <div class="product-step__number">2</div>
-                        <h3 class="product-step__title">Set the boundary</h3>
-                        <p class="product-step__description">Workspace access decides which team, assistant, customer, or product surface can use that memory.</p>
+                        <h3 class="product-step__title" data-i18n="use-cases.pattern.step2.title">Set the boundary</h3>
+                        <p class="product-step__description" data-i18n="use-cases.pattern.step2.description">Workspace access decides which team, assistant, customer, or product surface can use that memory.</p>
                     </article>
                     <article class="product-step u-animate-on-scroll u-fade-in-up u-stagger-delay-2">
                         <div class="product-step__number">3</div>
-                        <h3 class="product-step__title">Ask from the right place</h3>
-                        <p class="product-step__description">Use Usable Chat, embedded assistants, MCP clients, APIs, or internal apps to retrieve approved context.</p>
+                        <h3 class="product-step__title" data-i18n="use-cases.pattern.step3.title">Ask from the right place</h3>
+                        <p class="product-step__description" data-i18n="use-cases.pattern.step3.description">Use Usable Chat, embedded assistants, MCP clients, APIs, or internal apps to retrieve approved context.</p>
                     </article>
                 </div>
             </div>
@@ -166,39 +169,39 @@
         <section class="page-section page-section--gradient-orange-blue">
             <div class="page-section__container">
                 <div class="page-section__header u-animate-on-scroll u-fade-in-down">
-                    <h2 class="page-section__title">Examples by team</h2>
-                    <p class="page-section__description">Start where knowledge is already valuable and repeated often.</p>
+                    <h2 class="page-section__title" data-i18n="use-cases.examples.title">Examples by team</h2>
+                    <p class="page-section__description" data-i18n="use-cases.examples.description">Start where knowledge is already valuable and repeated often.</p>
                 </div>
                 <div class="product-feature-grid">
                     <article class="product-feature u-animate-on-scroll u-fade-in-up">
-                        <div class="product-feature__label">Operations</div>
-                        <h3 class="product-feature__title">Internal service desk</h3>
-                        <p class="product-feature__description">Make policy answers, approval steps, checklists, and escalation routes available from one controlled memory base.</p>
+                        <div class="product-feature__label" data-i18n="use-cases.examples.operations.label">Operations</div>
+                        <h3 class="product-feature__title" data-i18n="use-cases.examples.operations.title">Internal service desk</h3>
+                        <p class="product-feature__description" data-i18n="use-cases.examples.operations.description">Make policy answers, approval steps, checklists, and escalation routes available from one controlled memory base.</p>
                     </article>
                     <article class="product-feature u-animate-on-scroll u-fade-in-up u-stagger-delay-1">
-                        <div class="product-feature__label">Delivery</div>
-                        <h3 class="product-feature__title">Client handovers</h3>
-                        <p class="product-feature__description">Keep project decisions, implementation notes, and client-specific context usable after the original team moves on.</p>
+                        <div class="product-feature__label" data-i18n="use-cases.examples.delivery.label">Delivery</div>
+                        <h3 class="product-feature__title" data-i18n="use-cases.examples.delivery.title">Client handovers</h3>
+                        <p class="product-feature__description" data-i18n="use-cases.examples.delivery.description">Keep project decisions, implementation notes, and client-specific context usable after the original team moves on.</p>
                     </article>
                     <article class="product-feature u-animate-on-scroll u-fade-in-up u-stagger-delay-2">
-                        <div class="product-feature__label">Product</div>
-                        <h3 class="product-feature__title">Customer assistant</h3>
-                        <p class="product-feature__description">Embed Usable Chat in a product so customers can ask against approved documentation and domain knowledge.</p>
+                        <div class="product-feature__label" data-i18n="use-cases.examples.product.label">Product</div>
+                        <h3 class="product-feature__title" data-i18n="use-cases.examples.product.title">Customer assistant</h3>
+                        <p class="product-feature__description" data-i18n="use-cases.examples.product.description">Embed Usable Chat in a product so customers can ask against approved documentation and domain knowledge.</p>
                     </article>
                     <article class="product-feature u-animate-on-scroll u-fade-in-up">
-                        <div class="product-feature__label">Engineering</div>
-                        <h3 class="product-feature__title">Agentic development workflow</h3>
-                        <p class="product-feature__description">Ground plans in prior solutions, enforce standards, and write completed work back as reusable memory for the next task.</p>
+                        <div class="product-feature__label" data-i18n="use-cases.examples.engineering.label">Engineering</div>
+                        <h3 class="product-feature__title" data-i18n="use-cases.examples.engineering.title">Agentic development workflow</h3>
+                        <p class="product-feature__description" data-i18n="use-cases.examples.engineering.description">Ground plans in prior solutions, enforce standards, and write completed work back as reusable memory for the next task.</p>
                     </article>
                     <article class="product-feature u-animate-on-scroll u-fade-in-up u-stagger-delay-1">
-                        <div class="product-feature__label">DevOps</div>
-                        <h3 class="product-feature__title">Infrastructure knowledge that survives incidents</h3>
-                        <p class="product-feature__description">Capture deployment patterns, event flows, runbooks, Kubernetes notes, and fixes so operational knowledge is not trapped in one session.</p>
+                        <div class="product-feature__label" data-i18n="use-cases.examples.devops.label">DevOps</div>
+                        <h3 class="product-feature__title" data-i18n="use-cases.examples.devops.title">Infrastructure knowledge that survives incidents</h3>
+                        <p class="product-feature__description" data-i18n="use-cases.examples.devops.description">Capture deployment patterns, event flows, runbooks, Kubernetes notes, and fixes so operational knowledge is not trapped in one session.</p>
                     </article>
                 </div>
                 <div class="product-callout u-animate-on-scroll u-fade-in-up">
-                    <p class="product-callout__text"><strong>Need technical integrations?</strong> Use the features page for MCP, API, Usable Chat, and workflow details.</p>
-                    <a href="/features.html" data-clean-url="/features" class="btn btn--primary">See features</a>
+                    <p class="product-callout__text" data-i18n-html="use-cases.examples.callout.text"><strong>Need technical integrations?</strong> Use the features page for MCP, API, Usable Chat, and workflow details.</p>
+                    <a href="/features.html" data-clean-url="/features" class="btn btn--primary btn--small" data-i18n="use-cases.examples.callout.button">See features</a>
                 </div>
             </div>
         </section>

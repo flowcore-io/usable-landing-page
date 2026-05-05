@@ -30,7 +30,8 @@ body:not(.announcement-hidden) .hero {
   background: transparent;
   position: relative;
   overflow: hidden;
-  min-height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -357,7 +358,8 @@ body:not(.announcement-hidden) .hero {
 @media (min-width: 768px) {
   .hero {
     padding: var(--space-16) 0 var(--space-10) 0;
-    min-height: min(760px, calc(100vh - var(--space-12)));
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   .hero__container {
@@ -427,7 +429,8 @@ body:not(.announcement-hidden) .hero {
 @media (min-width: 1100px) {
   .hero {
     padding: var(--space-16) 0 clamp(0px, 3vw, var(--space-12)) 0;
-    min-height: min(760px, calc(100vh - var(--space-12)));
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   .hero__container {
