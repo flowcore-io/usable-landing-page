@@ -10,9 +10,7 @@
 
 .how-it-works {
   padding: var(--space-40) 0;
-  background: var(--color-neutral-900-45);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }

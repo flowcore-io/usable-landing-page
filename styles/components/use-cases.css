@@ -118,8 +118,8 @@
 
 .use-cases__card {
   background: var(--white-60);
-  border-radius: var(--radius-lg);
-  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
   box-shadow: 0 4px 16px var(--black-06);
   border: 1px solid var(--color-blue-10);
   position: relative;
@@ -130,6 +130,17 @@
   background: var(--color-neutral-900-96);
   box-shadow: 0 12px 32px var(--black-30);
   border-color: var(--color-blue-light-18);
+}
+
+/* Smaller icon tile inside preview cards — keeps content density balanced */
+.use-cases__card .feature__icon {
+  width: 56px;
+  height: 56px;
+}
+
+.use-cases__card .feature__icon-svg {
+  width: 28px;
+  height: 28px;
 }
 
 .use-cases__card-header {
@@ -316,11 +327,19 @@
   color: var(--color-text-muted);
 }
 
-/* Use Cases Preview grid (homepage) */
+/* Use Cases Preview grid (homepage) — 2x2 layout for 4 cards */
 .use-cases-preview__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-6);
+  margin-inline: auto;
+  max-width: 980px;
+}
+
+@media (min-width: 768px) {
+  .use-cases-preview__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* Responsive Design */

@@ -270,6 +270,17 @@
     margin-bottom: var(--space-6);
 }
 
+/* Optional persona label above the title (e.g. "Start", "Grow", "Scale") */
+.pricing-card__eyebrow {
+    color: var(--color-orange);
+    font-size: var(--text-sm);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+}
+
 .pricing-card__title {
     font-size: var(--text-2xl);
     font-weight: 800;
@@ -280,6 +291,20 @@
 
 [data-theme="dark"] .pricing-card__title {
     color: var(--color-neutral-50); /* Near-white for headings */
+}
+
+/* Optional one-sentence value framing between title and price */
+.pricing-card__tagline {
+    color: var(--color-text-primary);
+    font-size: var(--text-base);
+    line-height: 1.55;
+    margin: 0 auto var(--space-6);
+    max-width: 36ch;
+    text-wrap: pretty;
+}
+
+[data-theme="dark"] .pricing-card__tagline {
+    color: var(--color-text-on-dark);
 }
 
 .pricing-card__price {

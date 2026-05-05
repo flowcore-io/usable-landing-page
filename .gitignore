@@ -1,2 +1,5 @@
 .playwright-mcp*
 .env.local
+.DS_Store
+.playwright-cli/
+.claude/mcp/results/

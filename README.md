@@ -51,7 +51,7 @@ usable-landing-page/
 - **White**: `#ffffff` (Pure white body)
 
 ### Typography
-- **Font Family**: Inter (with system font fallbacks)
+- **Font Family**: Hanken Grotesk for body and headings, Outfit for the wordmark (with system font fallbacks)
 - **Fluid Typography**: Responsive font sizes using CSS clamp()
 - **Font Weights**: Light (300) to Extrabold (800)
 
