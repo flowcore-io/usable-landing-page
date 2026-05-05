@@ -1,42 +1,108 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usable - Redirecting...</title>
-    
+    <title>Page not found | Usable</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Browse to the home page, explore Usable, or get in touch.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#347cbf" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://plausible.io">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Brand/Usable_transparent.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Brand/Usable_transparent.png">
+    <link rel="apple-touch-icon" href="assets/images/Brand/Usable_transparent.png">
+    <link rel="shortcut icon" href="assets/images/Brand/Usable_transparent.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components/navbar.css">
+    <link rel="stylesheet" href="styles/components/footer.css">
+    <link rel="stylesheet" href="styles/components/theme-toggle.css">
+    <link rel="stylesheet" href="styles/components/bokeh.css">
+    <link rel="stylesheet" href="styles/components/scroll-animations.css">
+    <link rel="stylesheet" href="styles/components/sections.css">
+    <link rel="stylesheet" href="styles/components/product-pages.css">
+    <link rel="stylesheet" href="styles/components/not-found.css">
+
+    <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
+
+    <!-- Routing fallback for static hosts: /login and legacy /fo/ URLs are
+         redirected. All other unknown paths show the branded 404 page below. -->
+    <script>
+    (function () {
+        var path = window.location.pathname;
+        if (path === '/login') {
+            window.location.replace('https://usable.dev/login');
+            return;
+        }
+        if (path === '/fo' || path.startsWith('/fo/')) {
+            localStorage.setItem('usable-lang', 'fo');
+            var realPath = path.replace(/^\/fo/, '') || '/';
+            window.location.replace(realPath);
+            return;
+        }
+    })();
+    </script>
+
     <!-- RB2B Tracking -->
     <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("0OV0VHYLWW6Z");</script>
-    
-    <link rel="stylesheet" href="styles/components/404.css">
 </head>
 <body>
-    <div class="redirect-message">
-        <div class="spinner"></div>
-        <p>Redirecting to Usable...</p>
-    </div>
-    
-    <script>
-		// Handle explicit external redirects for hosts that don't honor `_redirects`
-		(function () {
-			var path = window.location.pathname;
-			if (path === '/login') {
-				window.location.replace('https://usable.dev/login');
-				return;
-			}
-			// Legacy /fo/ URLs: set Faroese preference and redirect to the real page.
-			// The i18n system now uses localStorage instead of URL prefixes.
-			if (path === '/fo' || path.startsWith('/fo/')) {
-				localStorage.setItem('usable-lang', 'fo');
-				var realPath = path.replace(/^\/fo/, '') || '/';
-				window.location.replace(realPath);
-				return;
-			}
-			// Fallback: redirect SPA-style unknown routes to the site root
-			// Preserve hash fragments for internal navigation
-			var redirectUrl = '/' + window.location.hash;
-			window.location.replace(redirectUrl);
-		})();
-    </script>
+    <a href="#main-content" class="skip-to-content" data-i18n="common.skip-to-content">Skip to main content</a>
+
+    <div class="bokeh bokeh--1"></div>
+    <div class="bokeh bokeh--2"></div>
+    <div class="bokeh bokeh--3"></div>
+    <div class="bokeh bokeh--4"></div>
+    <div class="bokeh bokeh--5"></div>
+    <div class="bokeh bokeh--6"></div>
+    <div class="bokeh bokeh--7"></div>
+    <div class="bokeh bokeh--8"></div>
+    <div class="bokeh bokeh--9"></div>
+    <div class="bokeh bokeh--10"></div>
+    <div class="bokeh bokeh--11"></div>
+    <div class="bokeh bokeh--12"></div>
+    <div class="bokeh bokeh--13"></div>
+    <div class="bokeh bokeh--14"></div>
+    <div class="bokeh bokeh--15"></div>
+
+    <div id="navbar-placeholder"></div>
+
+    <main id="main-content">
+        <section class="page-section page-section--hero page-section--gradient-blue-orange not-found">
+            <div class="not-found__stack">
+                <picture class="not-found__mascot u-animate-on-scroll u-fade-in-down">
+                    <source srcset="assets/images/Brand/usable-mascot.webp" type="image/webp">
+                    <img src="assets/images/Brand/usable-mascot.png" alt="Usable Nudibranch mascot" data-i18n-alt="not-found.mascot-alt" loading="lazy" width="240" height="240">
+                </picture>
+                <h1 class="not-found__title u-animate-on-scroll u-fade-in-down u-stagger-delay-1" data-i18n="not-found.hero.title">404 Page not found</h1>
+                <p class="not-found__description u-animate-on-scroll u-fade-in-down u-stagger-delay-2" data-i18n="not-found.hero.description">
+                    Looks like this page slipped through the kelp.
+                </p>
+                <a href="/" class="btn btn--primary btn--large u-animate-on-scroll u-fade-in-up u-stagger-delay-3" data-i18n="not-found.hero.cta-primary">Go to homepage</a>
+                <div class="not-found__alt u-animate-on-scroll u-fade-in-up u-stagger-delay-4">
+                    <a href="/usable.html" data-clean-url="/usable" class="btn btn--secondary btn--small" data-i18n="not-found.alt.usable">Explore Usable</a>
+                    <a href="/use-cases.html" data-clean-url="/use-cases" class="btn btn--secondary btn--small" data-i18n="not-found.alt.use-cases">See use cases</a>
+                    <a href="/contact.html" data-clean-url="/contact" class="btn btn--secondary btn--small" data-i18n="not-found.alt.contact">Get in touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="scripts/i18n.js"></script>
+    <script src="scripts/components.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/theme.js"></script>
 </body>
 </html>
