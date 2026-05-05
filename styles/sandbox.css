@@ -1,11 +1,12 @@
 /* ===================================
-   SANDBOX — Visual Experiments
+   BRAND KIT — Style Guide & Component Showcase
    ===================================
-   This file belongs to sandbox.html only.
-   Changes here do NOT affect any other page.
+   Used by brand-kit.html. Class names retain the legacy `.sandbox__*`
+   BEM prefix from when this stylesheet served the now-retired sandbox
+   page; renaming to `.brand-kit__*` is a future cleanup.
    =================================== */
 
-/* Sandbox is always dark — uses Layer 1 base token --color-neutral-900 directly */
+/* Brand kit page is always dark — uses Layer 1 base token --color-neutral-900 directly */
 
 /* ===================================
    SANDBOX LAYOUT
