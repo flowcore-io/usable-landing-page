@@ -218,6 +218,14 @@
   margin-top: var(--space-10);
 }
 
+/* Single-day variant: centers one schedule card on wider viewports */
+.conference-program__days--single {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .conference-program__day {
   background: var(--color-background);
   padding: var(--space-8);
