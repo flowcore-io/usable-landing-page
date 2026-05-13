@@ -8,22 +8,6 @@
    so components don't depend on load order.
    =================================== */
 
-/* Scroll Progress Bar
-   z-index: var(--z-overlay) places the bar above all page content but below modals.
-   Width is set by JavaScript (scrollY / scrollHeight). transition: 0.1s keeps
-   tracking smooth without visual lag. */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 4px;
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-light) 100%);
-  z-index: var(--z-overlay);
-  transition: width 0.1s ease;
-  box-shadow: 0 2px 8px var(--color-blue-30);
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;

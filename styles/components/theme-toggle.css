@@ -27,9 +27,10 @@
   background: var(--color-blue-10);
 }
 
-.theme-toggle:focus,
-.theme-toggle:active,
-.theme-toggle:focus-visible {
+/* Suppress the outline only on mouse / touch click; keyboard focus keeps
+   the global button:focus-visible ring from main.css for WCAG 2.4.7 compliance. */
+.theme-toggle:focus:not(:focus-visible),
+.theme-toggle:active {
   outline: none;
 }
 

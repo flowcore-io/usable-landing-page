@@ -567,23 +567,6 @@ class UsableApp {
     }
   }
   /**
-   * Add scroll progress indicator
-   */
-  addScrollProgress() {
-    const progressBar = document.createElement('div');
-    progressBar.className = 'scroll-progress';
-    document.body.appendChild(progressBar);
-    
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      
-      progressBar.style.width = scrollPercent + '%';
-    });
-  }
-  
-  /**
    * Setup use cases tab functionality
    */
   setupUseCasesTabs() {
@@ -761,9 +744,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Components are loaded asynchronously, so navbar/footer might not exist yet
   document.addEventListener('all-components-loaded', () => {
     const app = new UsableApp();
-
-    // Add scroll progress indicator
-    app.addScrollProgress();
 
     // After async components load they shift the layout, which can push the
     // page slightly below the true top even when the user was at Y=0.

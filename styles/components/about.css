@@ -78,13 +78,24 @@
     line-height: 1.8;
 }
 
+/* CSS-drawn dot — avoids the Hanken Grotesk "•" fallback that
+   renders as a missing-glyph square. The `top` value puts the dot
+   on the first-line optical midline: item padding-top (var(--space-2))
+   plus half the line-height (1.8em / 2 = 0.9em) minus half the dot's
+   own height (≈0.25em). */
 .about-section__list-item::before {
-    content: "•";
+    content: "";
     position: absolute;
     left: 0;
-    color: var(--color-blue);
-    font-weight: 700;
-    font-size: 1.5em;
+    top: calc(var(--space-2) + 0.65em);
+    width: 8px;
+    height: 8px;
+    background: var(--color-blue);
+    border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] .about-section__list-item::before {
+    background: var(--color-blue-light);
 }
 
 .about-section__content--spaced {

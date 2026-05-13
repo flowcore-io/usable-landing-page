@@ -159,3 +159,30 @@
   text-align: center;
   margin-top: var(--space-12);
 }
+
+/* Async placeholders — reserve approximate height so the page does not jump
+   when components.js injects navbar / footer / cta after DOMContentLoaded.
+   Navbar is position:fixed so its placeholder collapses; we still anchor a
+   small min-height as a safety net in case the fixed positioning is later
+   changed. Footer + cta sit in flow and would cause large CLS without this. */
+#navbar-placeholder {
+  min-height: 0;
+}
+
+#footer-placeholder {
+  min-height: 520px;
+}
+
+#cta-placeholder {
+  min-height: 480px;
+}
+
+@media (max-width: 768px) {
+  #footer-placeholder {
+    min-height: 720px;
+  }
+
+  #cta-placeholder {
+    min-height: 560px;
+  }
+}

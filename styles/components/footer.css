@@ -23,60 +23,6 @@
 /* ===================================
    FOOTER BOKEH CIRCLES
    =================================== */
-/* Bokeh replaced by sea texture background — elements hidden */
-.footer__bokeh {
-  display: none;
-}
-
-.footer__bokeh--1 {
-  top: 20px;
-  left: 15%;
-  width: 120px;
-  height: 120px;
-  background: linear-gradient(135deg, var(--color-blue-20) 0%, var(--color-blue-10) 100%);
-  animation-delay: 0s;
-}
-
-.footer__bokeh--2 {
-  bottom: 20px;
-  right: 20%;
-  width: 90px;
-  height: 90px;
-  background: linear-gradient(135deg, var(--color-orange-25) 0%, var(--color-orange-15) 100%);
-  animation-delay: 1.5s;
-  animation-duration: 6s;
-}
-
-.footer__bokeh--3 {
-  top: 50%;
-  right: 3%;
-  width: 75px;
-  height: 75px;
-  background: linear-gradient(135deg, var(--white-30) 0%, var(--white-20) 100%);
-  animation-delay: 3s;
-  animation-duration: 7s;
-}
-
-.footer__bokeh--4 {
-  top: 15%;
-  left: 55%;
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(135deg, var(--color-blue-15) 0%, var(--color-blue-08) 100%);
-  animation-delay: 0.8s;
-  animation-duration: 9s;
-}
-
-.footer__bokeh--5 {
-  bottom: 30%;
-  left: 2%;
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--color-orange-20) 0%, var(--color-orange-10) 100%);
-  animation-delay: 2.2s;
-  animation-duration: 5.5s;
-}
-
 /* ===================================
    FOOTER WRAPPER
    =================================== */
@@ -469,29 +415,6 @@
   .footer__version {
     order: 3;
   }
-  
-  .footer__bokeh--1,
-  .footer__bokeh--4 {
-    display: none;
-  }
-  
-  .footer__bokeh--2 {
-    right: 10%;
-    width: 70px;
-    height: 70px;
-  }
-  
-  .footer__bokeh--3 {
-    right: 5%;
-    width: 60px;
-    height: 60px;
-  }
-  
-  .footer__bokeh--5 {
-    left: 5%;
-    width: 65px;
-    height: 65px;
-  }
 }
 
 /* ===================================
@@ -612,14 +535,6 @@
 
   .footer__version {
     order: 3;
-  }
-
-  .footer__bokeh--1,
-  .footer__bokeh--2,
-  .footer__bokeh--3,
-  .footer__bokeh--4,
-  .footer__bokeh--5 {
-    display: none;
   }
 }
 

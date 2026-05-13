@@ -94,9 +94,10 @@ body:not(.announcement-hidden) .hero {
   color: var(--color-background);
 }
 
-.hero__badge:focus,
-.hero__badge:active,
-.hero__badge:focus-visible {
+/* Suppress the outline only on mouse / touch click; keyboard focus keeps
+   the global a:focus-visible ring from main.css for WCAG 2.4.7 compliance. */
+.hero__badge:focus:not(:focus-visible),
+.hero__badge:active {
   outline: none;
   box-shadow: none;
   color: var(--color-background);
@@ -110,9 +111,8 @@ body:not(.announcement-hidden) .hero {
   color: var(--color-background);
 }
 
-[data-theme="dark"] .hero__badge:focus,
-[data-theme="dark"] .hero__badge:active,
-[data-theme="dark"] .hero__badge:focus-visible {
+[data-theme="dark"] .hero__badge:focus:not(:focus-visible),
+[data-theme="dark"] .hero__badge:active {
   outline: none;
   box-shadow: none;
   color: var(--color-background);
