@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How It Works | Usable</title>
     <meta name="description" content="Learn how Usable stores organisational memory, controls access, and connects approved knowledge to Usable Chat, MCP tools, APIs, and internal workflows.">
-    <meta name="keywords" content="Usable how it works, setup guide, knowledge management, AI agents, MCP integration">
     <meta name="author" content="Usable Sp/f">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.usable.dev/how-it-works">
@@ -36,6 +35,7 @@
     <meta property="og:site_name" content="Usable">
     <meta property="fb:app_id" content="1456799832831747">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fo_FO">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -67,10 +67,66 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.usable.dev/" },
-            { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://www.usable.dev/how-it-works" }
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.usable.dev/" },
+                    { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://www.usable.dev/how-it-works" }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "@id": "https://www.usable.dev/how-it-works#howto",
+                "name": "How to set up shared AI agent memory with Usable",
+                "description": "Three steps to turn organisational knowledge into governed, AI-ready memory: create controlled workspaces, capture useful knowledge, retrieve approved context inside any compatible AI tool.",
+                "totalTime": "PT15M",
+                "supply": [
+                    { "@type": "HowToSupply", "name": "A Usable account (free tier available)" },
+                    { "@type": "HowToSupply", "name": "Source material — procedures, decisions, runbooks, standards, files" }
+                ],
+                "tool": [
+                    { "@type": "HowToTool", "name": "Usable Chat, MCP client, or REST API" }
+                ],
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Create controlled workspaces",
+                        "url": "https://www.usable.dev/how-it-works#step-1",
+                        "itemListElement": [
+                            {
+                                "@type": "HowToDirection",
+                                "text": "Split memory by team, project, customer, documentation set, or public workspace so each group gets the right boundary. Teams can start in the browser, then add Usable Chat, MCP, and API access when needed."
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Capture useful knowledge",
+                        "url": "https://www.usable.dev/how-it-works#step-2",
+                        "itemListElement": [
+                            {
+                                "@type": "HowToDirection",
+                                "text": "Save procedures, decisions, runbooks, standards, implementation lessons, and solved problems as reusable memory. Developers can write back solutions from completed tasks so future plans start with prior context."
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Retrieve approved context",
+                        "url": "https://www.usable.dev/how-it-works#step-3",
+                        "itemListElement": [
+                            {
+                                "@type": "HowToDirection",
+                                "text": "When people, agents, or internal apps need information, Usable returns the right source material from approved workspaces. Agents can retrieve architecture decisions, debugging solutions, runbooks, and team standards during work."
+                            }
+                        ]
+                    }
+                ]
+            }
         ]
     }
     </script>
@@ -79,22 +135,6 @@
     <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-to-content" data-i18n="common.skip-to-content">Skip to main content</a>
     
-    <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
-    <div class="bokeh bokeh--1"></div>
-    <div class="bokeh bokeh--2"></div>
-    <div class="bokeh bokeh--3"></div>
-    <div class="bokeh bokeh--4"></div>
-    <div class="bokeh bokeh--5"></div>
-    <div class="bokeh bokeh--6"></div>
-    <div class="bokeh bokeh--7"></div>
-    <div class="bokeh bokeh--8"></div>
-    <div class="bokeh bokeh--9"></div>
-    <div class="bokeh bokeh--10"></div>
-    <div class="bokeh bokeh--11"></div>
-    <div class="bokeh bokeh--12"></div>
-    <div class="bokeh bokeh--13"></div>
-    <div class="bokeh bokeh--14"></div>
-    <div class="bokeh bokeh--15"></div>
     
     <!-- Header -->
     <div id="navbar-placeholder"></div>

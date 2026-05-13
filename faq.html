@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ | Usable</title>
     <meta name="description" content="Frequently asked questions about Usable: organisational memory, workspaces, integrations, pricing, ownership, and AI data handling.">
-    <meta name="keywords" content="Usable FAQ, frequently asked questions, knowledge management, AI agents, pricing, integration">
     <meta name="author" content="Usable Sp/f">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.usable.dev/faq">
@@ -36,6 +35,7 @@
     <meta property="og:site_name" content="Usable">
     <meta property="fb:app_id" content="1456799832831747">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fo_FO">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -70,6 +70,11 @@
         "@graph": [
             {
                 "@type": "FAQPage",
+                "@id": "https://www.usable.dev/faq",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://www.usable.dev/faq"
+                },
                 "mainEntity": [
                     {
                         "@type": "Question",
@@ -150,6 +155,38 @@
                             "@type": "Answer",
                             "text": "Free: Community support via Discord. Starter & Pro: Email support with priority response times."
                         }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is MCP?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "MCP (Model Context Protocol) is an open standard that lets AI tools like Claude Code, Cursor, Cline, VS Code, and Windsurf connect to external data sources. Usable exposes your workspaces over MCP so any compatible AI agent can search and retrieve approved memory during its work."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is a memory fragment?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "A memory fragment is a single piece of knowledge stored in Usable — a procedure, decision, runbook, code pattern, or solved problem. Fragments have a type (knowledge, recipe, solution, template, instruction set), tags, relationships, and full text. AI tools retrieve fragments instead of trying to fit everything into a prompt."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do AI agents use Usable?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "AI agents connect to Usable through Usable Chat, the MCP protocol, or the REST API. When an agent needs context — a runbook, a prior decision, a coding standard — it queries the workspace it's been granted access to, gets the relevant fragments back, and uses them to ground its response. The agent's organisation controls which workspaces each agent can see."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does Usable work with Claude, ChatGPT, and Cursor?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Usable works with Claude Code, ChatGPT, Cursor, Cline, Windsurf, VS Code, Gemini CLI, Raycast, and any other MCP-compatible tool. You can also integrate via the REST API for tools that don't speak MCP, including internal apps and custom agents."
+                        }
                     }
                 ]
             },
@@ -178,22 +215,6 @@
     <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-to-content" data-i18n="common.skip-to-content">Skip to main content</a>
     
-    <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
-    <div class="bokeh bokeh--1"></div>
-    <div class="bokeh bokeh--2"></div>
-    <div class="bokeh bokeh--3"></div>
-    <div class="bokeh bokeh--4"></div>
-    <div class="bokeh bokeh--5"></div>
-    <div class="bokeh bokeh--6"></div>
-    <div class="bokeh bokeh--7"></div>
-    <div class="bokeh bokeh--8"></div>
-    <div class="bokeh bokeh--9"></div>
-    <div class="bokeh bokeh--10"></div>
-    <div class="bokeh bokeh--11"></div>
-    <div class="bokeh bokeh--12"></div>
-    <div class="bokeh bokeh--13"></div>
-    <div class="bokeh bokeh--14"></div>
-    <div class="bokeh bokeh--15"></div>
     
     <!-- Header -->
     <div id="navbar-placeholder"></div>
@@ -264,8 +285,30 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-11" data-i18n="faq.q11">What is MCP?</button>
+                        <div class="faq__answer" id="faq-answer-11" role="region">
+                            <div class="faq__answer-content">
+                                <p class="faq__answer-text" data-i18n-html="faq.a11">
+                                    MCP (Model Context Protocol) is an open standard that lets AI tools like Claude Code, Cursor, Cline, VS Code, and Windsurf connect to external data sources. <span class="u-brand-text">Usable</span> exposes your workspaces over MCP so any compatible AI agent can search and retrieve approved memory during its work.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-12" data-i18n="faq.q12">What is a memory fragment?</button>
+                        <div class="faq__answer" id="faq-answer-12" role="region">
+                            <div class="faq__answer-content">
+                                <p class="faq__answer-text" data-i18n="faq.a12">
+                                    A memory fragment is a single piece of knowledge stored in Usable — a procedure, decision, runbook, code pattern, or solved problem. Fragments have a type (knowledge, recipe, solution, template, instruction set), tags, relationships, and full text. AI tools retrieve fragments instead of trying to fit everything into a prompt.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+
                 <div class="faq__column">
                     <div class="faq__item">
                         <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-2" data-i18n="faq.q2">Can I integrate with my existing tools?</button>
@@ -313,6 +356,28 @@
                                 <p class="faq__answer-text" data-i18n-html="faq.a10">
                                     <strong>Free:</strong> Community support via Discord.<br>
                                     <strong>Starter &amp; Pro:</strong> Email support with priority response times.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-13" data-i18n="faq.q13">How do AI agents use Usable?</button>
+                        <div class="faq__answer" id="faq-answer-13" role="region">
+                            <div class="faq__answer-content">
+                                <p class="faq__answer-text" data-i18n="faq.a13">
+                                    AI agents connect to Usable through Usable Chat, the MCP protocol, or the REST API. When an agent needs context — a runbook, a prior decision, a coding standard — it queries the workspace it's been granted access to, gets the relevant fragments back, and uses them to ground its response. The agent's organisation controls which workspaces each agent can see.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq__item">
+                        <button class="faq__question" type="button" aria-expanded="false" aria-controls="faq-answer-14" data-i18n="faq.q14">Does Usable work with Claude, ChatGPT, and Cursor?</button>
+                        <div class="faq__answer" id="faq-answer-14" role="region">
+                            <div class="faq__answer-content">
+                                <p class="faq__answer-text" data-i18n="faq.a14">
+                                    Yes. Usable works with Claude Code, ChatGPT, Cursor, Cline, Windsurf, VS Code, Gemini CLI, Raycast, and any other MCP-compatible tool. You can also integrate via the REST API for tools that don't speak MCP, including internal apps and custom agents.
                                 </p>
                             </div>
                         </div>

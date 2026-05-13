@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Team | Usable</title>
     <meta name="description" content="Meet the founders of Usable Sp/f: Ólavur Ellefsen, Brian Bischoff, and Julius á Rógvi Biskopstø. Learn about our leadership team building your own knowledge base.">
-    <meta name="keywords" content="Usable team, founders, leadership, Ólavur Ellefsen, Brian Bischoff, Julius á Rógvi Biskopstø">
     <meta name="author" content="Usable Sp/f">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.usable.dev/team">
@@ -36,6 +35,7 @@
     <meta property="og:site_name" content="Usable">
     <meta property="fb:app_id" content="1456799832831747">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fo_FO">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -66,10 +66,59 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.usable.dev/" },
-            { "@type": "ListItem", "position": 2, "name": "Team", "item": "https://www.usable.dev/team" }
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.usable.dev/" },
+                    { "@type": "ListItem", "position": 2, "name": "Team", "item": "https://www.usable.dev/team" }
+                ]
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://www.usable.dev/#organization",
+                "name": "Usable Sp/f",
+                "url": "https://www.usable.dev",
+                "logo": "https://www.usable.dev/assets/images/Brand/Usable_og_image_dark.jpg",
+                "founder": [
+                    { "@id": "https://www.usable.dev/team#olavur-ellefsen" },
+                    { "@id": "https://www.usable.dev/team#brian-bischoff" },
+                    { "@id": "https://www.usable.dev/team#julius-biskopsto" }
+                ]
+            },
+            {
+                "@type": "Person",
+                "@id": "https://www.usable.dev/team#olavur-ellefsen",
+                "name": "Ólavur Ellefsen",
+                "jobTitle": "CEO & Co-founder",
+                "image": "https://www.usable.dev/assets/images/olavur.png",
+                "worksFor": { "@id": "https://www.usable.dev/#organization" },
+                "sameAs": [
+                    "https://www.linkedin.com/in/olavurellefsen"
+                ]
+            },
+            {
+                "@type": "Person",
+                "@id": "https://www.usable.dev/team#brian-bischoff",
+                "name": "Brian Bischoff",
+                "jobTitle": "COO & Co-founder",
+                "image": "https://www.usable.dev/assets/images/brian.png",
+                "worksFor": { "@id": "https://www.usable.dev/#organization" },
+                "sameAs": [
+                    "https://www.linkedin.com/in/bbischoff"
+                ]
+            },
+            {
+                "@type": "Person",
+                "@id": "https://www.usable.dev/team#julius-biskopsto",
+                "name": "Julius á Rógvi Biskopstø",
+                "jobTitle": "CTO & Co-founder",
+                "image": "https://www.usable.dev/assets/images/julius.png",
+                "worksFor": { "@id": "https://www.usable.dev/#organization" },
+                "sameAs": [
+                    "https://www.linkedin.com/in/jbiskur"
+                ]
+            }
         ]
     }
     </script>
@@ -78,22 +127,6 @@
     <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-to-content" data-i18n="common.skip-to-content">Skip to main content</a>
     
-    <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
-    <div class="bokeh bokeh--1"></div>
-    <div class="bokeh bokeh--2"></div>
-    <div class="bokeh bokeh--3"></div>
-    <div class="bokeh bokeh--4"></div>
-    <div class="bokeh bokeh--5"></div>
-    <div class="bokeh bokeh--6"></div>
-    <div class="bokeh bokeh--7"></div>
-    <div class="bokeh bokeh--8"></div>
-    <div class="bokeh bokeh--9"></div>
-    <div class="bokeh bokeh--10"></div>
-    <div class="bokeh bokeh--11"></div>
-    <div class="bokeh bokeh--12"></div>
-    <div class="bokeh bokeh--13"></div>
-    <div class="bokeh bokeh--14"></div>
-    <div class="bokeh bokeh--15"></div>
     
     <!-- Header -->
     <div id="navbar-placeholder"></div>
@@ -111,7 +144,7 @@
                 </div>
                 <div class="team-page__grid u-animate-on-scroll u-fade-in-up" aria-label="Founders">
                     <article class="team-card">
-                        <img src="assets/images/olavur.png" alt="Ólavur Ellefsen" class="team-card__photo" loading="lazy">
+                        <img src="assets/images/olavur.png" alt="Ólavur Ellefsen" class="team-card__photo" loading="lazy" decoding="async">
                         <h2 class="team-card__name" data-i18n="team.olavur.name">Ólavur Ellefsen</h2>
                         <p class="team-card__title" data-i18n="team.olavur.role">CEO & Co-founder</p>
                         <p class="team-card__bio" data-i18n="team.olavur.bio">
@@ -126,7 +159,7 @@
                     </article>
 
                     <article class="team-card">
-                        <img src="assets/images/brian.png" alt="Brian Bischoff" class="team-card__photo" loading="lazy">
+                        <img src="assets/images/brian.png" alt="Brian Bischoff" class="team-card__photo" loading="lazy" decoding="async">
                         <h2 class="team-card__name" data-i18n="team.brian.name">Brian Bischoff</h2>
                         <p class="team-card__title" data-i18n="team.brian.role">COO & Co-founder</p>
                         <p class="team-card__bio" data-i18n="team.brian.bio">
@@ -141,7 +174,7 @@
                     </article>
 
                     <article class="team-card">
-                        <img src="assets/images/julius.png" alt="Julius á Rógvi Biskopstø" class="team-card__photo" loading="lazy">
+                        <img src="assets/images/julius.png" alt="Julius á Rógvi Biskopstø" class="team-card__photo" loading="lazy" decoding="async">
                         <h2 class="team-card__name" data-i18n="team.julius.name">Julius á Rógvi Biskopstø</h2>
                         <p class="team-card__title" data-i18n="team.julius.role">CTO & Co-founder</p>
                         <p class="team-card__bio" data-i18n="team.julius.bio">
@@ -169,7 +202,7 @@
                     
                     <div class="team-page__grid team-page__grid--advisors">
                         <article class="team-card team-card--advisor">
-                            <img src="assets/images/kustaa-and-peter.jpg" alt="Kustaa Valtonen and Peter Vesterbacka" class="team-card__advisor-photo" loading="lazy" data-i18n-alt="team.advisors.card.photo-alt">
+                            <img src="assets/images/kustaa-and-peter.jpg" alt="Kustaa Valtonen and Peter Vesterbacka" class="team-card__advisor-photo" loading="lazy" decoding="async" data-i18n-alt="team.advisors.card.photo-alt">
                             <div class="team-card__advisor-content">
                                 <h3 class="team-card__name team-card__name--advisor" data-i18n="team.advisors.card.title">Kustaa Valtonen & Peter Vesterbacka</h3>
                                 <p class="team-card__title team-card__title--advisor" data-i18n="team.advisors.card.role">Strategic Advisors & Investors</p>

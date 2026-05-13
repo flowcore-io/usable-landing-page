@@ -120,7 +120,7 @@
     </url>
     <url>
         <loc>https://www.usable.dev/blog</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.usable.dev/blog"/>
@@ -147,7 +147,7 @@
     </url>
     <url>
         <loc>https://www.usable.dev/news/fragments-conference-2026-announcement</loc>
-        <lastmod>2025-11-19</lastmod>
+        <lastmod>2026-05-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.usable.dev/news/fragments-conference-2026-announcement"/>
@@ -156,7 +156,7 @@
     </url>
     <url>
         <loc>https://www.usable.dev/fragments-2026</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.usable.dev/fragments-2026"/>
@@ -165,9 +165,12 @@
     </url>
     <url>
         <loc>https://www.usable.dev/brand-kit</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.usable.dev/brand-kit"/>
+        <xhtml:link rel="alternate" hreflang="fo" href="https://www.usable.dev/fo/brand-kit"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.usable.dev/brand-kit"/>
     </url>
     <url>
         <loc>https://www.usable.dev/privacy</loc>
