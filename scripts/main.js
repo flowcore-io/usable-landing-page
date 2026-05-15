@@ -205,7 +205,7 @@ class UsableApp {
     const mobileCta = this.mobileMenu.querySelector('.nav__cta--mobile');
     if (mobileCta) mobileCta.addEventListener('click', () => this.closeMobileMenu());
 
-    // Accordion section toggles (Product / Solutions / Resources / Company)
+    // Accordion section toggles (Product / Resources / Company)
     const accordionToggles = this.mobileMenu.querySelectorAll('.nav__mobile-accordion-toggle');
     accordionToggles.forEach(toggle => {
       toggle.addEventListener('click', () => {
