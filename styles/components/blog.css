@@ -242,6 +242,16 @@ article.blog-card:hover {
     color: var(--color-orange);
 }
 
+.blog-card__badge--event-recap {
+    background: var(--color-blue-12);
+    color: var(--color-blue);
+}
+
+[data-theme="dark"] .blog-card__badge--event-recap {
+    background: var(--color-blue-light-12);
+    color: var(--color-blue-light);
+}
+
 /* --- Blog filter buttons --- */
 
 .blog-filters {
