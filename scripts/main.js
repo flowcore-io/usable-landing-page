@@ -51,7 +51,6 @@ class UsableApp {
         const toggle = dropdown.querySelector('.nav__dropdown-toggle');
         if (toggle) {
           toggle.setAttribute('aria-expanded', 'false');
-          dropdown.setAttribute('aria-expanded', 'false');
           dropdown.classList.remove('is-open');
         }
       });
@@ -74,14 +73,12 @@ class UsableApp {
         closeAllDropdowns();
         dropdown.classList.add('is-open');
         toggle.setAttribute('aria-expanded', 'true');
-        dropdown.setAttribute('aria-expanded', 'true');
       });
       dropdown.addEventListener('mouseleave', () => {
         if (!isDesktop()) return;
         hoverCloseTimer = setTimeout(() => {
           dropdown.classList.remove('is-open');
           toggle.setAttribute('aria-expanded', 'false');
-          dropdown.setAttribute('aria-expanded', 'false');
         }, 100);
       });
 
@@ -98,7 +95,6 @@ class UsableApp {
             const otherToggle = otherDropdown.querySelector('.nav__dropdown-toggle');
             if (otherToggle) {
               otherToggle.setAttribute('aria-expanded', 'false');
-              otherDropdown.setAttribute('aria-expanded', 'false');
               otherDropdown.classList.remove('is-open');
             }
           }
@@ -108,11 +104,9 @@ class UsableApp {
         if (isOpen) {
           dropdown.classList.remove('is-open');
           toggle.setAttribute('aria-expanded', 'false');
-          dropdown.setAttribute('aria-expanded', 'false');
         } else {
           dropdown.classList.add('is-open');
           toggle.setAttribute('aria-expanded', 'true');
-          dropdown.setAttribute('aria-expanded', 'true');
         }
       });
       

@@ -182,7 +182,6 @@
   box-shadow: 0 8px 24px var(--black-40);
 }
 
-.nav__dropdown[aria-expanded="true"] .nav__dropdown-menu,
 .nav__dropdown.is-open .nav__dropdown-menu {
   opacity: 1;
   visibility: visible;
@@ -310,7 +309,7 @@ a.nav__cta--desktop.btn.btn--primary {
   box-shadow: none;
   transition: all var(--transition-normal);
   background: var(--color-orange);
-  color: var(--color-background);
+  color: var(--color-neutral-900);
   border-color: var(--color-orange);
 }
 

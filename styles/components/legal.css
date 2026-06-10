@@ -390,3 +390,16 @@
 .privacy-page__heading--no-margin-top {
     margin-top: 0;
 }
+
+/* Bare inline prose links inside legal copy (Privacy Policy, mailto:, urls)
+   carry no class, so they fell back to the base `a` brand-blue (#347cbf)
+   which is only 3.09:1 on the dark canvas. Scope them to the existing
+   link-on-dark token (blue-light, 7.62:1). Classed links (.terms-page__link
+   etc.) already have their own dark override and are excluded via :not. */
+[data-theme="dark"] .privacy-page__text a:not([class]),
+[data-theme="dark"] .privacy-page__list-item a:not([class]),
+[data-theme="dark"] .terms-page__text a:not([class]),
+[data-theme="dark"] .terms-page__list-item a:not([class]) {
+    color: var(--color-link-on-dark);
+    text-decoration: underline;
+}

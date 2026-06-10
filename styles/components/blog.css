@@ -80,7 +80,12 @@ article.blog-card {
     border-top: 3px solid var(--color-blue);
     display: flex;
     flex-direction: column;
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    /* Merged transition: opacity + transform at 0.6s ease-out so the .u-animate-on-scroll
+       fade-in reveal works (this component transition otherwise overrides the utility class
+       and cancels the fade/slide), plus box-shadow + border-color for the hover lift.
+       Mirrors the same idiom in .step / .product-feature. */
+    transition: opacity 0.6s ease-out,
+                transform 0.6s ease-out,
                 box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
                 border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
