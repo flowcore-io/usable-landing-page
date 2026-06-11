@@ -256,6 +256,29 @@
     border-color: var(--color-blue-light);
 }
 
+/* Pull-quote for inline quotations in article bodies. Deliberately lighter than the
+   boxed .article-meta-highlight (which is for editor's notes / pull-outs): a left accent
+   border + italic text reads as a quote and doesn't balloon a short line into a full
+   panel. The quote sizes to its own content rather than a fixed box. */
+.article-quote {
+    margin: var(--space-6) 0;
+    padding: var(--space-1) 0 var(--space-1) var(--space-5);
+    border-left: 3px solid var(--color-blue);
+    font-size: var(--text-xl);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.article-quote p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+[data-theme="dark"] .article-quote {
+    border-left-color: var(--color-blue-light);
+}
+
 .article-actions {
     display: flex;
     flex-wrap: wrap;
