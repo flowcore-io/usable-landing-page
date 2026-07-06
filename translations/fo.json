@@ -822,5 +822,33 @@
   "article.fragments-2026.badge": "Tilkynning",
   "article.fragments-2026.headline": "Usable Fragments 2026",
   "article.fragments-2026.date": "19. november 2025",
-  "article.fragments-2026.excerpt": "Tonik 2026 síðutiltakið í Tórshavn — fimm demo í trimum tímum um felagsminni fyri AI-arbeiðsforrløp."
+  "article.fragments-2026.excerpt": "Tonik 2026 síðutiltakið í Tórshavn — fimm demo í trimum tímum um felagsminni fyri AI-arbeiðsforrløp.",
+
+  "blog/usable-chat-inside-microsoft-office.title": "Usable Chat er nú komið inn í Microsoft 365 | Usable Blog",
+  "blog/usable-chat-inside-microsoft-office.meta.description": "Usable Chat riggar nú beint inni í Microsoft 365 — spyr, skriva og skapa í Word, Excel, PowerPoint og Outlook, við tí langtíðarminni, sum ger Usable øðrvísi.",
+  "blog.msoffice.eyebrow": "Vøru-uppdatering",
+  "blog.msoffice.title": "Usable Chat er nú komið inn í Microsoft 365",
+  "blog.msoffice.date": "6. juli 2026",
+  "blog.msoffice.author": "Usable-toymið",
+  "blog.msoffice.lede": "Títt vitlíki eigur ikki at noyða teg at fara úr skjalinum, tú arbeiðir við. Nú noyðist tað ikki — Usable Chat riggar beint inni í Microsoft 365.",
+  "blog.msoffice.intro-1": "Tú ert á kafi í einum Word-skjali, einari Excel-model, einum PowerPoint-sliduskjali ella einari Outlook-samrøðu. Tú hevur ein spurning til títt vitlíki — so skiftir tú teig, missir plássið, kopierar okkurt kontekst, og skiftir aftur. Hvørja ferð.",
+  "blog.msoffice.intro-2": "Hesin lítli forðingin leggur seg saman. So tóku vit hann burtur.",
+  "blog.msoffice.h2-work": "Usable Chat, beint har tú arbeiðir",
+  "blog.msoffice.work-1": "Usable Chat býr nú inni í Microsoft 365. Spyr ein spurning, skriva eina reglu, samandrag eina samrøðu, ella rokna tøl — uttan nakrantíð at fara úr Word, Excel, PowerPoint ella Outlook.",
+  "blog.msoffice.work-2": "Og av tí at tað er Usable Chat, fylgir tað við tí, sum ger Usable øðrvísi: langtíðarminni. Tað minnist títt arbeiðsrúm, tínar verkætlanir, og hvat tú hevur arbeitt við áður — so tú skalt ikki endurgeva kontekst hvørja ferð. Alt, tú hevur bygt við Usable, er tøkt beint har tú skrivar.",
+  "blog.msoffice.h2-do": "Hvat tú kanst gera við tað",
+  "blog.msoffice.do-list": [
+    "<strong>Í Word</strong> — skriva, umskriva og stytta tekst við konteksti úr tínum arbeiðsrúmi, ikki eina blanka síðu.",
+    "<strong>Í Excel</strong> — spyr um tíni dáta og fá hjálp til at byggja formlar og samandrøg á vanligum máli.",
+    "<strong>Í PowerPoint</strong> — ger stuttar notatir til eitt fyrsta sliduskjal, ella umskapa tær slidur, tú longu hevur.",
+    "<strong>Í Outlook</strong> — ger eina langa samrøðu til eitt greitt svar, ella tak virkisstigini út úr einum innbakka-róti."
+  ],
+  "blog.msoffice.do-note": "Alt saman grundað á tínum egna langtíðarminni — so svarini kenna veruliga tín heim.",
+  "blog.msoffice.h2-control": "Á tínum treytum",
+  "blog.msoffice.control": "Tú hevur stýrið allan vegin: atgongd verður givin fyri hvørja app sær, einki dáta verður goymt, og tú kanst taka atgongdina aftur nær sum helst. Legg tað inn, har tú vilt hava tað, og tak tað burtur líka lætt.",
+  "blog.msoffice.h2-try": "Royn tað",
+  "blog.msoffice.try-1": "Tað riggar við tí Microsoft 365-konto og teimum appum, tú longu brúkar — einki nýtt arbeiðslag at læra.",
+  "blog.msoffice.cta": "Fá Usable til Microsoft 365 →",
+  "blog.msoffice.closing": "Vit byggja hetta í almennum, sum altíð — sig okkum, hvat tú vilt tað skal kunna næst.",
+  "blog.msoffice.video": "<video class=\"demo-video\" controls preload=\"metadata\" playsinline aria-label=\"Usable Chat í Microsoft Office — kynningarvideo\"><source src=\"../assets/videos/promo-fo.mp4\" type=\"video/mp4\">Tín kagi kann ikki spæla hetta video.</video>"
 }

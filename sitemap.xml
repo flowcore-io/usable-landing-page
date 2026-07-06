@@ -128,6 +128,15 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.usable.dev/blog"/>
     </url>
     <url>
+        <loc>https://www.usable.dev/blog/usable-chat-inside-microsoft-office</loc>
+        <lastmod>2026-07-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.usable.dev/blog/usable-chat-inside-microsoft-office"/>
+        <xhtml:link rel="alternate" hreflang="fo" href="https://www.usable.dev/fo/blog/usable-chat-inside-microsoft-office"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.usable.dev/blog/usable-chat-inside-microsoft-office"/>
+    </url>
+    <url>
         <loc>https://www.usable.dev/blog/usable-fragments-2026-same-ai-different-memory</loc>
         <lastmod>2026-05-18</lastmod>
         <changefreq>monthly</changefreq>
