@@ -66,7 +66,7 @@
     line-height: 1.8;
     background: var(--white-60);
     padding: var(--space-10);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     box-shadow: 0 8px 24px var(--black-08);
     position: relative;
     z-index: var(--z-base);
@@ -165,7 +165,7 @@
     margin-top: var(--space-10);
     padding: var(--space-6);
     background: var(--color-surface);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
 }
 
 [data-theme="dark"] .privacy-page__contact {
@@ -233,7 +233,7 @@
     line-height: 1.8;
     background: var(--white-60);
     padding: var(--space-10);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     box-shadow: 0 8px 24px var(--black-08);
     position: relative;
     z-index: var(--z-base);
