@@ -671,6 +671,8 @@ function handleRouteRedirection() {
       currentPath === '/privacy.html' ||
       currentPath === '/terms' ||
       currentPath === '/terms.html' ||
+      currentPath === '/refund-and-fulfillment' ||
+      currentPath === '/refund-and-fulfillment.html' ||
       currentPath === '/fragments-2026' ||
       currentPath === '/fragments-2026.html' ||
       currentPath === '/media-kit' ||
@@ -835,4 +837,3 @@ const additionalStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalStyles;
 document.head.appendChild(styleSheet);
-

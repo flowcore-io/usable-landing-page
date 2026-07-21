@@ -198,13 +198,19 @@
     </url>
     <url>
         <loc>https://www.usable.dev/privacy</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-07-21</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://www.usable.dev/terms</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://www.usable.dev/refund-and-fulfillment</loc>
+        <lastmod>2026-07-21</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
