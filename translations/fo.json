@@ -190,6 +190,7 @@
     "Serstøk Slack-rás"
   ],
   "pricing.usable.note": "Nýtsla á gjaldsætlanum omanfyri íroknaðu nøgdina kostar $0,10 fyri hvørt kreditt. Framleiðsla nýtir 1 kreditt fyri hvørji 100.000 virkin token, embeddingar nýta 1 kreditt fyri hvørji 200.000 token, og goymsla omanfyri íroknaðu nøgdina nýtir 5 kredittir fyri hvørt GiB um mánaðin. Prísir eru í USD; viðkomandi skattur verður vístur áðrenn gjalding.",
+  "pricing.usable.acceptedCards": "Visa og Mastercard góðtikin",
   "pricing.flowcore.title": "Flowcore",
   "pricing.flowcore.description": "Hendingargoymsla og viðgerðarkjarni",
   "pricing.flowcore.standard.name": "Standard",

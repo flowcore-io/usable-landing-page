@@ -194,6 +194,52 @@
     color: var(--color-text-muted);
 }
 
+.payment-acceptance {
+    align-items: center;
+    background: var(--white-60);
+    border: 1px solid var(--color-blue-10);
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 16px var(--black-06);
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    margin: var(--space-4) auto 0;
+    max-width: 100%;
+    padding: var(--space-2) var(--space-4);
+    scroll-margin-top: 100px;
+    width: max-content;
+}
+
+[data-theme="dark"] .payment-acceptance {
+    background: var(--color-neutral-900-96);
+    border-color: var(--color-blue-light-18);
+    box-shadow: 0 8px 24px var(--black-30);
+}
+
+.payment-acceptance__label {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+[data-theme="dark"] .payment-acceptance__label {
+    color: var(--color-text-primary);
+}
+
+.payment-acceptance__logos {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: var(--space-2);
+}
+
+.payment-acceptance__logo {
+    display: block;
+    height: 28px;
+    width: auto;
+}
+
 /* Pricing Card Component */
 /* ===================================
    HOVER EFFECT RATIONALE
