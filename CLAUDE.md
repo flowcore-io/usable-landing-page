@@ -537,3 +537,29 @@ The MCP server automatically:
 - **INCLUDE** repository context for better organization
 - **🎯 ALWAYS USE CORRECT FRAGMENT TYPE** - follow the Fragment Type Selection Guide and never default to "Recipe"
 
+## Mandatory Task Workflow
+
+When working on Usable tasks (via `/work-task` or manually), you MUST follow this exact sequence. Skipping steps is NOT allowed.
+
+1. **Pull task** — fetch from Usable, read full content
+2. **Mark in-progress** — use the `usable-tasks` skill for status changes
+3. **Enter plan mode** — use the available planning control before implementation
+4. **Create implementation plan** — include files, TDD sequence, and acceptance-criteria mapping
+5. **Enhance plan** — use the `enhance-plan` skill
+6. **Exit plan mode** — present the plan for approval
+7. **Implement** — write tests first, then implementation
+8. **Verify** — run every repository verification command and keep the suite green
+9. **Mark done** — use the `usable-tasks` skill and add a completion comment
+10. **Create solution fragment** — document the verified implementation in Usable
+11. **Commit & push** — use Conventional Commits syntax
+
+### Task Status Update Rule
+
+Task status, tags, frontmatter, and comments must stay synchronized through the `usable-tasks` workflow. Do not mark a task done until verification, documentation, commit, and push are complete.
+
+## Usable Tasks
+
+- **WorkspaceId**: `e8f2a1ae-02bb-4b39-bb28-269ea33a60ab`
+- **TaskFragmentTypeId**: `9c88ba51-51db-44fd-bf99-d0674fe52b4d`
+- **Project**: `clearhaus-underwriting`
+- **Repo tag**: `repo:usable-landing-page`
