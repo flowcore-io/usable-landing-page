@@ -73,10 +73,13 @@ class ComponentLoader {
       const currentPage = this.currentPath.replace(/^\/fo\//, '/').replace(/^\/fo$/, '/').replace(/^\//, '').replace(/\.html$/, '');
       
       // Check if this link matches the current page
-      if (linkPath === currentPage || 
+      if (linkPath === currentPage ||
           (currentPage && currentPage.startsWith(linkPath + '/')) ||
           (linkPath === '' && currentPage === '')) {
         link.classList.add('nav__link--active');
+        if (linkPath === currentPage) {
+          link.setAttribute('aria-current', 'page');
+        }
       }
     });
   }
