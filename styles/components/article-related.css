@@ -1,0 +1,135 @@
+/* ===================================
+   COMPONENT: Related posts strip
+   BEM Block: article-related
+   Purpose: Small grid of sibling article links at the bottom of
+            blog/news articles. Strengthens internal linking and
+            keeps visitors browsing.
+   Dependencies: main.css for design tokens
+   =================================== */
+
+.article-related {
+    border-top: 1px solid var(--color-blue-10);
+    margin: var(--space-12) 0 var(--space-8);
+    padding-top: var(--space-12);
+}
+
+[data-theme="dark"] .article-related {
+    border-top-color: var(--color-blue-light-18);
+}
+
+.article-related__title {
+    color: var(--color-text-primary);
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin: 0 0 var(--space-6);
+}
+
+[data-theme="dark"] .article-related__title {
+    color: var(--color-text-on-dark);
+}
+
+.article-related__grid {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.article-related__card {
+    background: var(--white-60);
+    border: 1px solid var(--color-blue-10);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 16px var(--black-06);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-5);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* article.article-related__card specificity beats .u-animate-on-scroll.is-animated transform reset
+   so the hover lift survives the cascade — same trick used on .blog-card. */
+article.article-related__card:hover {
+    border-color: var(--color-blue-25);
+    box-shadow: 0 14px 36px var(--black-15);
+    transform: translateY(-4px);
+}
+
+[data-theme="dark"] .article-related__card {
+    background: var(--color-neutral-900-96);
+    border-color: var(--color-blue-light-18);
+    box-shadow: 0 12px 32px var(--black-30);
+}
+
+[data-theme="dark"] article.article-related__card:hover {
+    border-color: var(--color-blue-light-30);
+    box-shadow: 0 18px 44px var(--black-50);
+}
+
+.article-related__badge {
+    align-items: center;
+    align-self: flex-start;
+    background: var(--color-orange-15);
+    border-radius: var(--radius-full);
+    color: var(--color-orange-dark);
+    display: inline-flex;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-3);
+    padding: var(--space-1) var(--space-3);
+    text-transform: uppercase;
+}
+
+[data-theme="dark"] .article-related__badge {
+    background: var(--color-orange-20);
+    color: var(--color-orange);
+}
+
+.article-related__card-title {
+    color: var(--color-text-primary);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.3;
+    margin: 0 0 var(--space-2);
+    text-wrap: balance;
+}
+
+[data-theme="dark"] .article-related__card-title {
+    color: var(--color-text-on-dark);
+}
+
+.article-related__card-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.article-related__card-link:hover {
+    color: var(--color-blue);
+}
+
+[data-theme="dark"] .article-related__card-link:hover {
+    color: var(--color-blue-light);
+}
+
+.article-related__date {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin: 0 0 var(--space-3);
+}
+
+.article-related__excerpt {
+    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    margin: 0;
+    text-wrap: pretty;
+}
+
+[data-theme="dark"] .article-related__excerpt {
+    color: var(--color-text-on-dark);
+}

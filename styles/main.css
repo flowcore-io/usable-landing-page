@@ -275,10 +275,6 @@ select:focus-visible {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
-  .bokeh {
-    animation: none !important;
-  }
 }
 
 /* High Contrast Mode Support */
@@ -350,6 +346,10 @@ body::before {
   position: fixed;
   inset: 0;
   background-image: url('../assets/images/sandbox/seaweed+nudibranch_tile_seamless.png');
+  background-image: image-set(
+    url('../assets/images/sandbox/seaweed+nudibranch_tile_seamless.webp') type('image/webp'),
+    url('../assets/images/sandbox/seaweed+nudibranch_tile_seamless.png') type('image/png')
+  );
   background-repeat: repeat;
   background-size: auto;
   pointer-events: none;

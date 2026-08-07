@@ -1,0 +1,98 @@
+/* ===================================
+   COMPONENT: 404 / Page Not Found
+   BEM Block: not-found
+   Purpose: Single centered viewport-height layout for the 404 page
+   Dependencies: main.css, sections.css, product-pages.css (for __actions)
+   =================================== */
+
+.not-found {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--space-12) var(--container-padding);
+}
+
+/* Single centered stack — visual rhythm groups elements into three blocks:
+   1. Mascot (visual identity)
+   2. Title + description (the message)
+   3. Primary button + alt buttons (the actions)
+   Larger gaps separate the three blocks, smaller gaps pair within each. */
+.not-found__stack {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 60ch;
+  text-align: center;
+  width: 100%;
+}
+
+.not-found__mascot {
+  display: block;
+  margin: 0 0 var(--space-10);
+  max-width: clamp(160px, 22vw, 240px);
+}
+
+.not-found__mascot img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.not-found__title {
+  color: var(--color-text-primary);
+  font-family: var(--font-family-heading);
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin: 0 0 var(--space-4);
+  text-wrap: balance;
+}
+
+[data-theme="dark"] .not-found__title {
+  color: var(--color-text-on-dark);
+}
+
+.not-found__description {
+  color: var(--color-text-primary);
+  font-size: var(--text-xl);
+  line-height: 1.55;
+  margin: 0 0 var(--space-10);
+  max-width: 60ch;
+  text-wrap: balance;
+}
+
+[data-theme="dark"] .not-found__description {
+  color: var(--color-text-on-dark);
+}
+
+.not-found__stack > .btn--large {
+  margin: 0 0 var(--space-8);
+}
+
+.not-found__alt {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  margin: 0;
+}
+
+@media (max-width: 639px) {
+  .not-found__mascot {
+    margin-bottom: var(--space-8);
+  }
+
+  .not-found__title {
+    font-size: var(--text-4xl);
+  }
+
+  .not-found__description {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+}

@@ -164,6 +164,10 @@
     box-shadow: 0 8px 24px var(--black-12);
 }
 
+.article-image--wide {
+    max-width: 100%;
+}
+
 [data-theme="dark"] .article-image {
     box-shadow: 0 8px 24px var(--black-40);
 }
@@ -172,6 +176,36 @@
     width: 100%;
     height: auto;
     display: block;
+}
+
+.article-participant-gallery {
+    margin: var(--space-8) 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 8px 24px var(--black-12);
+}
+
+[data-theme="dark"] .article-participant-gallery {
+    box-shadow: 0 8px 24px var(--black-40);
+}
+
+.article-participant-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    background: var(--color-blue-10);
+}
+
+.article-participant-gallery__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    grid-column: span 2;
+}
+
+.article-participant-gallery__img--wide {
+    grid-column: span 3;
 }
 
 .article-image-caption {
@@ -190,6 +224,24 @@
     border-color: var(--color-blue-light-15);
 }
 
+@media (max-width: 640px) {
+    .article-participant-gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .article-participant-gallery__img--wide {
+        grid-column: span 2;
+    }
+
+    .article-participant-gallery__img {
+        grid-column: span 1;
+    }
+
+    .article-participant-gallery__img--mobile-wide {
+        grid-column: span 2;
+    }
+}
+
 .article-meta-highlight {
     background: var(--color-blue-08);
     border: 1px solid var(--color-blue-20);
@@ -202,6 +254,29 @@
 [data-theme="dark"] .article-meta-highlight {
     background: var(--color-blue-light-12);
     border-color: var(--color-blue-light);
+}
+
+/* Pull-quote for inline quotations in article bodies. Deliberately lighter than the
+   boxed .article-meta-highlight (which is for editor's notes / pull-outs): a left accent
+   border + italic text reads as a quote and doesn't balloon a short line into a full
+   panel. The quote sizes to its own content rather than a fixed box. */
+.article-quote {
+    margin: var(--space-6) 0;
+    padding: var(--space-1) 0 var(--space-1) var(--space-5);
+    border-left: 3px solid var(--color-blue);
+    font-size: var(--text-xl);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.article-quote p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+[data-theme="dark"] .article-quote {
+    border-left-color: var(--color-blue-light);
 }
 
 .article-actions {

@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing | Usable</title>
-    <meta name="description" content="Simple, transparent pricing for Usable, Flowcore, and Consultancy services. Choose the plan that's right for your needs.">
-    <meta name="keywords" content="Usable pricing, Flowcore pricing, consultancy pricing, plans, pricing tiers">
+    <title>AI Knowledge Base Pricing | Usable</title>
+    <meta name="description" content="AI knowledge base pricing for Usable. Start free, then upgrade to Standard or Pro for more team memory, storage, search, and support.">
     <meta name="author" content="Usable Sp/f">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://usable.dev/pricing">
+    <link rel="canonical" href="https://www.usable.dev/pricing">
+
+    <!-- Language Alternates -->
+    <link rel="alternate" hreflang="en" href="https://www.usable.dev/pricing">
+    <link rel="alternate" hreflang="fo" href="https://www.usable.dev/fo/pricing">
+    <link rel="alternate" hreflang="x-default" href="https://www.usable.dev/pricing">
     <meta name="theme-color" content="#347cbf" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
     
@@ -16,33 +20,37 @@
     <link rel="manifest" href="/site.webmanifest">
     
     <!-- DNS Prefetch for External Resources -->
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://plausible.io">
+    <link rel="dns-prefetch" href="https://web-analytics.usable.dev">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.usable.dev/pricing">
-    <meta property="og:title" content="Pricing | Usable">
-    <meta property="og:description" content="Simple, transparent pricing for Usable, Flowcore, and Consultancy services.">
-    <meta property="og:image" content="https://www.usable.dev/assets/images/Brand/Usable_og_image.jpg">
+    <meta property="og:title" content="AI Knowledge Base Pricing | Usable">
+    <meta property="og:description" content="Start free, then upgrade to Standard or Pro for more team memory, storage, search, and support.">
+    <meta property="og:image" content="https://www.usable.dev/assets/images/Brand/Usable_og_image_dark.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Usable — simple, transparent pricing">
     <meta property="og:site_name" content="Usable">
     <meta property="fb:app_id" content="1456799832831747">
     <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fo_FO">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://usable.dev/pricing">
-    <meta property="twitter:title" content="Pricing | Usable">
-    <meta property="twitter:description" content="Simple, transparent pricing for Usable, Flowcore, and Consultancy services.">
-    <meta property="twitter:image" content="https://www.usable.dev/assets/images/Brand/Usable_og_image.jpg">
+    <meta property="twitter:url" content="https://www.usable.dev/pricing">
+    <meta property="twitter:title" content="AI Knowledge Base Pricing | Usable">
+    <meta property="twitter:description" content="Start free, then upgrade to Standard or Pro for more team memory, storage, search, and support.">
+    <meta property="twitter:image" content="https://www.usable.dev/assets/images/Brand/Usable_og_image_dark.jpg">
+    <meta name="twitter:image:alt" content="Usable — simple, transparent pricing">
     <meta name="twitter:creator" content="@UsableDev">
     <meta name="twitter:site" content="@UsableDev">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Brand/Usable_transparent.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/Brand/Usable_transparent.png">
-    <link rel="apple-touch-icon" href="assets/images/Brand/Usable_transparent.png">
-    <link rel="shortcut icon" href="assets/images/Brand/Usable_transparent.png">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/Brand/Usable_transparent.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/Brand/Usable_transparent.png">
+    <link rel="apple-touch-icon" href="/assets/images/Brand/Usable_transparent.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,43 +58,84 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles/main.css">
-    
-    <!-- Common Component Styles -->
-    <link rel="stylesheet" href="styles/components/navbar.css">
-    <link rel="stylesheet" href="styles/components/footer.css">
-    <link rel="stylesheet" href="styles/components/theme-toggle.css">
-    <link rel="stylesheet" href="styles/components/bokeh.css">
-    <link rel="stylesheet" href="styles/components/scroll-animations.css">
-    <link rel="stylesheet" href="styles/components/sections.css">
-    <link rel="stylesheet" href="styles/components/cta.css">
-    
-    <!-- Page-Specific Component Styles -->
-    <link rel="stylesheet" href="styles/components/pricing.css">
-    <link rel="stylesheet" href="styles/components/faq.css">
-    <script defer data-domain="usable.dev" src="https://plausible.io/js/script.js"></script>
+    <!-- Styles — single bundled & minified file generated by build.js -->
+    <link rel="stylesheet" href="/styles/main.min.css">
+    <script defer data-domain="usable.dev" src="https://web-analytics.usable.dev/js/uwa.js"></script>
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Product",
+                "name": "Usable",
+                "description": "A governed knowledge base for organisational memory and AI adoption.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Usable"
+                },
+                "url": "https://www.usable.dev/usable",
+                "image": "https://www.usable.dev/assets/images/Brand/Usable_og_image_dark.jpg",
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "priceCurrency": "USD",
+                    "lowPrice": "0",
+                    "highPrice": "100",
+                    "offerCount": "3",
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Free",
+                            "price": "0",
+                            "priceCurrency": "USD",
+                            "url": "https://www.usable.dev/pricing",
+                            "availability": "https://schema.org/InStock"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Standard",
+                            "price": "20",
+                            "priceCurrency": "USD",
+                            "url": "https://www.usable.dev/pricing",
+                            "availability": "https://schema.org/InStock"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Pro",
+                            "price": "100",
+                            "priceCurrency": "USD",
+                            "url": "https://www.usable.dev/pricing",
+                            "availability": "https://schema.org/InStock"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.usable.dev/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Pricing",
+                        "item": "https://www.usable.dev/pricing"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Skip to Content Link for Accessibility -->
     <a href="#main-content" class="skip-to-content" data-i18n="common.skip-to-content">Skip to main content</a>
     
-    <!-- Bokeh Background Circles (Optimized: 15 elements for better performance) -->
-    <div class="bokeh bokeh--1"></div>
-    <div class="bokeh bokeh--2"></div>
-    <div class="bokeh bokeh--3"></div>
-    <div class="bokeh bokeh--4"></div>
-    <div class="bokeh bokeh--5"></div>
-    <div class="bokeh bokeh--6"></div>
-    <div class="bokeh bokeh--7"></div>
-    <div class="bokeh bokeh--8"></div>
-    <div class="bokeh bokeh--9"></div>
-    <div class="bokeh bokeh--10"></div>
-    <div class="bokeh bokeh--11"></div>
-    <div class="bokeh bokeh--12"></div>
-    <div class="bokeh bokeh--13"></div>
-    <div class="bokeh bokeh--14"></div>
-    <div class="bokeh bokeh--15"></div>
     
     <!-- Header -->
     <div id="navbar-placeholder"></div>
@@ -125,11 +174,10 @@
                                 <span class="pricing-card__period" data-i18n="pricing.usable.free.period">no credit card required</span>
                             </div>
                         </div>
-                        <a href="https://usable.dev/" class="btn btn--primary btn--full" data-i18n="pricing.usable.free.button">START FREE</a>
+                        <a href="https://usable.dev/login" class="btn btn--primary btn--full" data-i18n="pricing.usable.free.button">START FREE</a>
                         <ul class="pricing-card__features" data-i18n-list="pricing.usable.free.features">
+                            <li class="pricing-card__feature"><strong>50</strong> credits included each month</li>
                             <li class="pricing-card__feature"><strong>1</strong> GiB storage included</li>
-                            <li class="pricing-card__feature"><strong>5M</strong> knowledge creation tokens/month</li>
-                            <li class="pricing-card__feature"><strong>500K</strong> knowledge search tokens/month</li>
                             <li class="pricing-card__feature">Up to <strong>5</strong> owned workspaces</li>
                             <li class="pricing-card__feature">Up to <strong>5</strong> team members</li>
                             <li class="pricing-card__feature">Community support</li>
@@ -144,11 +192,10 @@
                                 <span class="pricing-card__period" data-i18n="pricing.usable.standard.period">per month</span>
                             </div>
                         </div>
-                        <a href="https://usable.dev/" class="btn btn--primary btn--full" data-i18n="pricing.usable.standard.button">CHOOSE STANDARD</a>
+                        <a href="https://usable.dev/login" class="btn btn--primary btn--full" data-i18n="pricing.usable.standard.button">CHOOSE STANDARD</a>
                         <ul class="pricing-card__features" data-i18n-list="pricing.usable.standard.features">
+                            <li class="pricing-card__feature"><strong>250</strong> credits included each month</li>
                             <li class="pricing-card__feature"><strong>5</strong> GiB storage included</li>
-                            <li class="pricing-card__feature"><strong>16M</strong> knowledge creation tokens/month</li>
-                            <li class="pricing-card__feature"><strong>3M</strong> knowledge search tokens/month</li>
                             <li class="pricing-card__feature">Advanced graph analysis</li>
                             <li class="pricing-card__feature">Unlimited workspaces</li>
                             <li class="pricing-card__feature">Unlimited team members</li>
@@ -164,11 +211,10 @@
                                 <span class="pricing-card__period" data-i18n="pricing.usable.pro.period">per month</span>
                             </div>
                         </div>
-                        <a href="https://usable.dev/" class="btn btn--primary btn--full" data-i18n="pricing.usable.pro.button">CHOOSE PRO</a>
+                        <a href="https://usable.dev/login" class="btn btn--primary btn--full" data-i18n="pricing.usable.pro.button">CHOOSE PRO</a>
                         <ul class="pricing-card__features" data-i18n-list="pricing.usable.pro.features">
+                            <li class="pricing-card__feature"><strong>1,500</strong> credits included each month</li>
                             <li class="pricing-card__feature"><strong>80</strong> GiB storage included</li>
-                            <li class="pricing-card__feature"><strong>40M</strong> knowledge creation tokens/month</li>
-                            <li class="pricing-card__feature"><strong>7.5M</strong> knowledge search tokens/month</li>
                             <li class="pricing-card__feature">Advanced graph analysis</li>
                             <li class="pricing-card__feature">BYOK agentic search</li>
                             <li class="pricing-card__feature">Unlimited workspaces</li>
@@ -177,7 +223,14 @@
                         </ul>
                     </div>
                 </div>
-                <p class="pricing-note u-animate-on-scroll u-fade-in-up" data-i18n="pricing.usable.note">Usage beyond included limits available as pay-as-you-go</p>
+                <p class="pricing-note u-animate-on-scroll u-fade-in-up" data-i18n="pricing.usable.note">Paid-plan usage above the included allowance is $0.10 per credit. Generation uses 1 credit per 100,000 effective tokens, embeddings use 1 credit per 200,000 tokens, and storage above the included allowance uses 5 credits per GiB-month. Prices are in USD; applicable taxes are shown before payment.</p>
+                <div id="accepted-cards" class="payment-acceptance u-animate-on-scroll u-fade-in-up" aria-label="Accepted payment cards: Visa and Mastercard">
+                    <span class="payment-acceptance__label" data-i18n="pricing.usable.acceptedCards">Visa and Mastercard accepted</span>
+                    <span class="payment-acceptance__logos" aria-hidden="true">
+                        <img class="payment-acceptance__logo" src="assets/payments/visa.svg" alt="" width="71" height="45" loading="lazy" decoding="async">
+                        <img class="payment-acceptance__logo" src="assets/payments/mastercard.svg" alt="" width="70" height="45" loading="lazy" decoding="async">
+                    </span>
+                </div>
             </div>
         </section>
 
@@ -318,7 +371,7 @@
                         <button class="faq__question" data-i18n="pricing.faq.q1">How does billing work?</button>
                         <div class="faq__answer">
                             <div class="faq__answer-content">
-                                <p class="faq__answer-text" data-i18n="pricing.faq.a1">For Usable, workspace owners pay for storage and knowledge creation tokens. Individual users pay for their own knowledge search tokens when they exceed free tier limits. Flowcore pricing is per subscription tier. Consultancy is billed per project.</p>
+                                <p class="faq__answer-text" data-i18n="pricing.faq.a1">Usable plans include a monthly credit allowance. Paid-plan usage above that allowance is $0.10 per credit, calculated using the conversion rates shown above. Flowcore and consultancy pricing are separate.</p>
                             </div>
                         </div>
                     </div>
@@ -326,7 +379,7 @@
                         <button class="faq__question" data-i18n="pricing.faq.q2">Can I change plans later?</button>
                         <div class="faq__answer">
                             <div class="faq__answer-content">
-                                <p class="faq__answer-text" data-i18n="pricing.faq.a2">Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and billing is prorated.</p>
+                                <p class="faq__answer-text" data-i18n="pricing.faq.a2">Yes. Before you confirm a change, the billing area shows when it takes effect and any immediate or prorated amount.</p>
                             </div>
                         </div>
                     </div>
@@ -334,7 +387,7 @@
                         <button class="faq__question" data-i18n="pricing.faq.q3">What payment methods do you accept?</button>
                         <div class="faq__answer">
                             <div class="faq__answer-content">
-                                <p class="faq__answer-text" data-i18n="pricing.faq.a3">We accept major credit cards and can arrange invoicing for enterprise customers. Contact us for details.</p>
+                                <p class="faq__answer-text" data-i18n="pricing.faq.a3">The secure checkout shows the currently accepted card brands before payment. We can also arrange invoicing for approved enterprise customers.</p>
                             </div>
                         </div>
                     </div>
@@ -365,4 +418,3 @@
     <script src="scripts/theme.js"></script>
 </body>
 </html>
-

@@ -5,8 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://usable.dev/sitemap.xml
+Sitemap: https://www.usable.dev/sitemap.xml
 
 # Crawl delay (optional, helps with server load)
 Crawl-delay: 1
-

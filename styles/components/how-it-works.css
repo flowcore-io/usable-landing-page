@@ -50,7 +50,7 @@
   width: 80px;
   height: 80px;
   background: linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange) 100%);
-  color: var(--color-background);
+  color: var(--color-neutral-900);
   font-family: var(--font-family-heading);
   font-size: var(--text-3xl);
   font-weight: 800;
@@ -83,5 +83,5 @@
 }
 
 [data-theme="dark"] .step__number {
-  color: var(--color-text-primary);
+  color: var(--color-neutral-900); /* navy on orange disc — WCAG AA (7.4:1) */
 }

@@ -1,25 +1,32 @@
 {
-    "name": "Usable - Shared Memory for Development Teams",
+    "name": "Usable — Your Own Knowledge Base",
     "short_name": "Usable",
-    "description": "Capture architectural decisions, code patterns, debugging solutions, and team knowledge—then find it instantly when you need it.",
+    "description": "Your organisation's procedures, decisions, files, and institutional memory under your control — so AI tools work from your knowledge.",
     "start_url": "/",
+    "scope": "/",
     "display": "standalone",
-    "background_color": "#ffffff",
+    "background_color": "#1a1a1a",
     "theme_color": "#347cbf",
     "orientation": "any",
+    "lang": "en",
     "icons": [
         {
-            "src": "/assets/images/Usable - Logo.png",
+            "src": "/assets/images/Brand/Usable_transparent.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/images/Brand/Usable_transparent.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any maskable"
         },
         {
-            "src": "/assets/images/Usable - Logo.png",
+            "src": "/assets/images/Brand/Usable_transparent.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "any maskable"
         }
     ]
 }
-

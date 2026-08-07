@@ -5,9 +5,11 @@
    Dependencies: main.css for CSS variables
    =================================== */
 
-/* Responsive video container - maintains 16:9 aspect ratio */
-.video-container,
-.demo-video-container {
+/* Responsive video container - maintains 16:9 aspect ratio.
+   Note: .demo-video-container is owned by demo.css (it uses the modern
+   `aspect-ratio` property). Don't duplicate it here — doing so reintroduces
+   a height:0 / padding-bottom collision that collapses the player to 0px. */
+.video-container {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -17,13 +19,11 @@
   border-radius: var(--radius-lg);
 }
 
-[data-theme="dark"] .video-container,
-[data-theme="dark"] .demo-video-container {
+[data-theme="dark"] .video-container {
   background: var(--black-30);
 }
 
-.video-container__player,
-.demo-video-container__player {
+.video-container__player {
   position: absolute;
   top: 0;
   left: 0;
@@ -33,8 +33,7 @@
 }
 
 /* Video container with max-width constraint */
-.video-container--constrained,
-.demo-video-container--constrained {
+.video-container--constrained {
   max-width: 1000px;
   margin: 0 auto;
 }

@@ -51,7 +51,6 @@ class UsableApp {
         const toggle = dropdown.querySelector('.nav__dropdown-toggle');
         if (toggle) {
           toggle.setAttribute('aria-expanded', 'false');
-          dropdown.setAttribute('aria-expanded', 'false');
           dropdown.classList.remove('is-open');
         }
       });
@@ -74,14 +73,12 @@ class UsableApp {
         closeAllDropdowns();
         dropdown.classList.add('is-open');
         toggle.setAttribute('aria-expanded', 'true');
-        dropdown.setAttribute('aria-expanded', 'true');
       });
       dropdown.addEventListener('mouseleave', () => {
         if (!isDesktop()) return;
         hoverCloseTimer = setTimeout(() => {
           dropdown.classList.remove('is-open');
           toggle.setAttribute('aria-expanded', 'false');
-          dropdown.setAttribute('aria-expanded', 'false');
         }, 100);
       });
 
@@ -98,7 +95,6 @@ class UsableApp {
             const otherToggle = otherDropdown.querySelector('.nav__dropdown-toggle');
             if (otherToggle) {
               otherToggle.setAttribute('aria-expanded', 'false');
-              otherDropdown.setAttribute('aria-expanded', 'false');
               otherDropdown.classList.remove('is-open');
             }
           }
@@ -108,11 +104,9 @@ class UsableApp {
         if (isOpen) {
           dropdown.classList.remove('is-open');
           toggle.setAttribute('aria-expanded', 'false');
-          dropdown.setAttribute('aria-expanded', 'false');
         } else {
           dropdown.classList.add('is-open');
           toggle.setAttribute('aria-expanded', 'true');
-          dropdown.setAttribute('aria-expanded', 'true');
         }
       });
       
@@ -205,7 +199,7 @@ class UsableApp {
     const mobileCta = this.mobileMenu.querySelector('.nav__cta--mobile');
     if (mobileCta) mobileCta.addEventListener('click', () => this.closeMobileMenu());
 
-    // Accordion section toggles (Product / Solutions / Resources / Company)
+    // Accordion section toggles (Product / Resources / Company)
     const accordionToggles = this.mobileMenu.querySelectorAll('.nav__mobile-accordion-toggle');
     accordionToggles.forEach(toggle => {
       toggle.addEventListener('click', () => {
@@ -567,23 +561,6 @@ class UsableApp {
     }
   }
   /**
-   * Add scroll progress indicator
-   */
-  addScrollProgress() {
-    const progressBar = document.createElement('div');
-    progressBar.className = 'scroll-progress';
-    document.body.appendChild(progressBar);
-    
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      
-      progressBar.style.width = scrollPercent + '%';
-    });
-  }
-  
-  /**
    * Setup use cases tab functionality
    */
   setupUseCasesTabs() {
@@ -694,6 +671,8 @@ function handleRouteRedirection() {
       currentPath === '/privacy.html' ||
       currentPath === '/terms' ||
       currentPath === '/terms.html' ||
+      currentPath === '/refund-and-fulfillment' ||
+      currentPath === '/refund-and-fulfillment.html' ||
       currentPath === '/fragments-2026' ||
       currentPath === '/fragments-2026.html' ||
       currentPath === '/media-kit' ||
@@ -761,9 +740,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Components are loaded asynchronously, so navbar/footer might not exist yet
   document.addEventListener('all-components-loaded', () => {
     const app = new UsableApp();
-
-    // Add scroll progress indicator
-    app.addScrollProgress();
 
     // After async components load they shift the layout, which can push the
     // page slightly below the true top even when the user was at Y=0.
@@ -861,4 +837,3 @@ const additionalStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalStyles;
 document.head.appendChild(styleSheet);
-

@@ -66,7 +66,7 @@
     line-height: 1.8;
     background: var(--white-60);
     padding: var(--space-10);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     box-shadow: 0 8px 24px var(--black-08);
     position: relative;
     z-index: var(--z-base);
@@ -165,7 +165,7 @@
     margin-top: var(--space-10);
     padding: var(--space-6);
     background: var(--color-surface);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
 }
 
 [data-theme="dark"] .privacy-page__contact {
@@ -233,7 +233,7 @@
     line-height: 1.8;
     background: var(--white-60);
     padding: var(--space-10);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     box-shadow: 0 8px 24px var(--black-08);
     position: relative;
     z-index: var(--z-base);
@@ -389,4 +389,17 @@
 /* Inline style replacements */
 .privacy-page__heading--no-margin-top {
     margin-top: 0;
+}
+
+/* Bare inline prose links inside legal copy (Privacy Policy, mailto:, urls)
+   carry no class, so they fell back to the base `a` brand-blue (#347cbf)
+   which is only 3.09:1 on the dark canvas. Scope them to the existing
+   link-on-dark token (blue-light, 7.62:1). Classed links (.terms-page__link
+   etc.) already have their own dark override and are excluded via :not. */
+[data-theme="dark"] .privacy-page__text a:not([class]),
+[data-theme="dark"] .privacy-page__list-item a:not([class]),
+[data-theme="dark"] .terms-page__text a:not([class]),
+[data-theme="dark"] .terms-page__list-item a:not([class]) {
+    color: var(--color-link-on-dark);
+    text-decoration: underline;
 }

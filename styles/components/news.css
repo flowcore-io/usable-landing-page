@@ -65,7 +65,10 @@
     gap: var(--space-6);
 }
 
-.news-card {
+/* article.news-card selectors bump specificity above .u-animate-on-scroll.is-animated
+   (which sets transform: translate(0,0) scale(1) and would otherwise win the cascade
+   and cancel the hover lift). */
+article.news-card {
     background: var(--white-60);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
@@ -76,6 +79,15 @@
     border-top: 3px solid var(--color-orange);
     display: flex;
     flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+article.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 44px var(--black-15);
+    border-color: var(--color-orange-25);
 }
 
 [data-theme="dark"] .news-card {
@@ -83,6 +95,11 @@
     box-shadow: 0 12px 32px var(--black-30);
     border-color: var(--color-blue-light-18);
     border-top-color: var(--color-orange);
+}
+
+[data-theme="dark"] .news-card:hover {
+    box-shadow: 0 22px 60px var(--black-50);
+    border-color: var(--color-orange-30);
 }
 
 .news-card__badge {
