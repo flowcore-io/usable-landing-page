@@ -1,0 +1,27 @@
+# The Dockerfile copies the whole tree into the public nginx web root, so
+# anything left here becomes publicly reachable. Keep secrets and local
+# tooling out of the build context.
+
+# Secrets — never ship these
+.env
+.env.*
+
+# Version control
+.git
+.gitignore
+
+# Dependencies & local environments
+node_modules
+.venv
+__pycache__
+
+# Local agent / editor tooling
+.claude
+.cursor
+.playwright-mcp
+AGENTS.md
+
+# Local noise
+.DS_Store
+*.log
+press-release-draft.docx
