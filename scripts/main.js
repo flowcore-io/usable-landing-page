@@ -685,6 +685,10 @@ function handleRouteRedirection() {
       currentPath === '/contact.html' ||
       currentPath === '/pricing' ||
       currentPath === '/pricing.html' ||
+      currentPath === '/usable' ||
+      currentPath === '/usable.html' ||
+      currentPath === '/usable-chat' ||
+      currentPath === '/usable-chat.html' ||
       currentPath === '/demo' ||
       currentPath === '/demo.html' ||
       currentPath === '/detailed-screenshots' ||
