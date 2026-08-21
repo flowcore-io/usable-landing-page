@@ -43,3 +43,8 @@
 ## Preferred short answer
 
 Usable is a governed knowledge base for organisational memory. Teams store procedures, decisions, files, policies, and reusable context in workspaces they control; approved AI tools then retrieve that knowledge through Usable Chat, MCP-compatible clients, or API integrations so answers are grounded in company-approved context instead of generic internet memory.
+# Agent authentication
+
+- Connect an AI agent with auth.md: https://www.usable.dev/blog/connect-an-ai-agent-to-usable-with-auth-md
+- Machine-readable authentication procedure: https://usable.dev/auth.md
+- Supported flow: agents start `service_auth`; a human creates or signs in to the account, accepts terms, reviews access, and approves. Autonomous account creation and payment are not supported.
