@@ -7,6 +7,85 @@
     background: linear-gradient(135deg, var(--color-blue-light-12), var(--color-orange-10));
 }
 
+.auth-guide__requirements {
+    margin-top: var(--space-4);
+}
+
+.auth-guide__compatibility {
+    min-width: 0;
+}
+
+.auth-guide__table-hint {
+    margin-top: var(--space-3);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+}
+
+.auth-guide__table-region {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-top: var(--space-4);
+    overflow-x: auto;
+    border: 1px solid var(--color-blue-light-18);
+    border-radius: var(--radius-xl);
+    background: var(--color-neutral-900-96);
+    box-shadow: 0 12px 32px var(--black-30);
+}
+
+.auth-guide__table-region:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-orange-30), 0 12px 32px var(--black-30);
+}
+
+.auth-guide__table {
+    width: 100%;
+    min-width: 46rem;
+    border-collapse: collapse;
+    color: var(--color-text-primary);
+    text-align: left;
+}
+
+.auth-guide__table th,
+.auth-guide__table td {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-blue-light-18);
+    vertical-align: top;
+}
+
+.auth-guide__table thead th {
+    background: var(--color-blue-light-12);
+    color: var(--color-text-on-dark);
+    font-size: var(--text-sm);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.auth-guide__table tbody th {
+    color: var(--color-text-on-dark);
+}
+
+.auth-guide__table tbody tr:last-child th,
+.auth-guide__table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.auth-guide__warning {
+    padding: var(--space-5);
+    border: 1px solid var(--color-orange-30);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, var(--color-orange-10), var(--color-blue-light-08));
+}
+
+.auth-guide__warning-title {
+    margin-bottom: var(--space-3);
+    color: var(--color-text-on-dark);
+    font-size: var(--text-2xl);
+}
+
+.auth-guide__warning p + p {
+    margin-top: var(--space-3);
+}
+
 .auth-guide__prompt-label {
     color: var(--color-link-on-dark);
     font-size: var(--text-sm);
@@ -93,5 +172,27 @@
 
     .auth-guide__step {
         padding: var(--space-4);
+    }
+
+    .auth-guide__table th,
+    .auth-guide__table td {
+        padding: var(--space-3);
+    }
+
+    .auth-guide__table {
+        min-width: 39rem;
+        table-layout: fixed;
+    }
+
+    .auth-guide__table th:nth-child(1) {
+        width: 10rem;
+    }
+
+    .auth-guide__table th:nth-child(2) {
+        width: 10rem;
+    }
+
+    .auth-guide__table th:nth-child(3) {
+        width: 19rem;
     }
 }

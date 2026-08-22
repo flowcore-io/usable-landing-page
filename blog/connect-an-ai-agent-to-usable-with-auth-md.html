@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect an AI Agent to Usable with auth.md | Usable</title>
-    <meta name="description" content="Give an AI agent a safe, guided way to connect itself to Usable. The agent starts auth.md; you create or sign in to your account and approve access.">
+    <title>auth.md Requirements for AI Agent Connections | Usable</title>
+    <meta name="description" content="Learn what a tool-capable AI runtime needs to execute Usable's service_auth protocol safely, and where human approval remains required.">
     <meta name="author" content="Usable Team">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.usable.dev/blog/connect-an-ai-agent-to-usable-with-auth-md">
@@ -17,8 +17,8 @@
 
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.usable.dev/blog/connect-an-ai-agent-to-usable-with-auth-md">
-    <meta property="og:title" content="Connect an AI Agent to Usable with auth.md">
-    <meta property="og:description" content="Your agent can start and configure its Usable connection. You stay in control of account creation, terms, and approval.">
+    <meta property="og:title" content="Connect a Tool-Capable AI Agent with auth.md">
+    <meta property="og:description" content="Check the runtime, connector, HTTPS, polling, secret-storage, and configuration requirements for Usable's service_auth flow.">
     <meta property="og:image" content="https://www.usable.dev/assets/images/Brand/Usable_og_image_dark.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -29,8 +29,8 @@
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.usable.dev/blog/connect-an-ai-agent-to-usable-with-auth-md">
-    <meta property="twitter:title" content="Connect an AI Agent to Usable with auth.md">
-    <meta property="twitter:description" content="Your agent starts the connection; you create or sign in to your account and approve access.">
+    <meta property="twitter:title" content="Connect a Tool-Capable AI Agent with auth.md">
+    <meta property="twitter:description" content="auth.md documents a protocol. Your AI runtime still needs the tools and secure storage to execute it safely.">
     <meta property="twitter:image" content="https://www.usable.dev/assets/images/Brand/Usable_og_image_dark.jpg">
     <meta name="twitter:image:alt" content="Usable — connect an AI agent with auth.md">
     <meta name="twitter:creator" content="@UsableDev">
@@ -52,11 +52,11 @@
         "@graph": [
             {
                 "@type": "BlogPosting",
-                "headline": "Connect an AI Agent to Usable with auth.md",
-                "description": "A safe, guided flow for an AI agent to connect itself to Usable while its user controls account creation and approval.",
+                "headline": "Connect a Tool-Capable AI Agent to Usable with auth.md",
+                "description": "Runtime requirements and fail-closed guidance for executing Usable's service_auth protocol while the user controls approval.",
                 "image": "https://www.usable.dev/assets/images/Brand/Usable_og_image_dark.jpg",
                 "datePublished": "2026-08-21T00:00:00+00:00",
-                "dateModified": "2026-08-21T00:00:00+00:00",
+                "dateModified": "2026-08-22T00:00:00+00:00",
                 "author": { "@type": "Organization", "name": "Usable Team", "url": "https://www.usable.dev" },
                 "publisher": { "@type": "Organization", "name": "Usable Sp/f", "url": "https://www.usable.dev" },
                 "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.usable.dev/blog/connect-an-ai-agent-to-usable-with-auth-md" },
@@ -67,7 +67,7 @@
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.usable.dev/" },
                     { "@type": "ListItem", "position": 2, "name": "Blog & News", "item": "https://www.usable.dev/blog" },
-                    { "@type": "ListItem", "position": 3, "name": "Connect an AI Agent with auth.md", "item": "https://www.usable.dev/blog/connect-an-ai-agent-to-usable-with-auth-md" }
+                    { "@type": "ListItem", "position": 3, "name": "Connect a Tool-Capable AI Agent with auth.md", "item": "https://www.usable.dev/blog/connect-an-ai-agent-to-usable-with-auth-md" }
                 ]
             }
         ]
@@ -82,44 +82,111 @@
         <div class="article-page__container">
             <section class="article-header u-animate-on-scroll u-fade-in-down">
                 <span class="article-header__eyebrow">Guide</span>
-                <h1 class="article-header__title">Tell your agent to connect to Usable. It can take it from there.</h1>
+                <h1 class="article-header__title">Connect a tool-capable AI agent to Usable with auth.md</h1>
                 <div class="article-header__meta">
                     <span><time datetime="2026-08-21">August 21, 2026</time></span>
+                    <span><time datetime="2026-08-22">Updated August 22, 2026</time></span>
                     <span>Usable Team</span>
-                    <span>4 min read</span>
+                    <span>7 min read</span>
                 </div>
-                <p class="article-body__lede">auth.md gives capable AI agents a machine-readable path to start their own Usable connection. You only step in for the decisions that should remain human.</p>
+                <p class="article-body__lede">auth.md documents Usable's machine-readable <code>service_auth</code> protocol. It works only in runtimes that can make arbitrary HTTPS requests, poll the claim, protect bearer secrets, and configure an MCP or API connection. Reading auth.md alone does not give an ordinary chat those capabilities.</p>
             </section>
 
             <section class="article-body" aria-label="Guide content">
+                <div class="article-section u-animate-on-scroll u-fade-in-up">
+                    <h2>Check your client before you start</h2>
+                    <p>A compatible runtime needs every capability below before it asks for your email address or creates a pending registration:</p>
+                    <ul class="article-list auth-guide__requirements">
+                        <li>Make arbitrary HTTPS GET and POST requests to discovered Usable endpoints.</li>
+                        <li>Poll the claim endpoint at the returned interval and handle protocol responses.</li>
+                        <li>Keep the issued bearer credential in an approved secret store outside chat and logs.</li>
+                        <li>Configure an MCP or API client, prove an authenticated read, and revoke the credential.</li>
+                        <li>Use an installed, allowlisted Usable connector or explicit operator authorization restricted to exact Usable endpoints.</li>
+                        <li>Provide a trusted, non-transcript human handoff for the claim link and six-digit code.</li>
+                    </ul>
+                    <p>Fetching <code>auth.md</code> does not authorize a client to bypass its security policy. If the chat has no trusted Usable connector or general HTTP action, no claim can be created and no approval URL exists. A text-only chat is unsupported even if it can POST.</p>
+                </div>
+
+                <div class="article-section auth-guide__compatibility u-animate-on-scroll u-fade-in-up">
+                    <h2 id="auth-client-compatibility">Observed compatibility in tested sessions</h2>
+                    <p id="auth-client-qualification"><strong>Tested August 22, 2026.</strong> Results apply only to the supplied sessions; exact plan, model, region, and some tool details were not recorded. Products and connectors can change, so retest before claiming current support. <strong>No runtime in this matrix has yet been verified end to end.</strong></p>
+                    <p class="auth-guide__table-hint">On smaller screens, scroll the table horizontally to read each result.</p>
+                    <div class="auth-guide__table-region" role="region" aria-labelledby="auth-client-compatibility" tabindex="0">
+                        <table class="auth-guide__table">
+                            <caption class="u-sr-only">Auth.md interoperability observations from supplied sessions on August 22, 2026</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product or runtime</th>
+                                    <th scope="col">Tested mode</th>
+                                    <th scope="col">Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">ChatGPT</th>
+                                    <td>Ordinary web chat</td>
+                                    <td><strong>Unsupported in tested session</strong> — understood the flow but had no connector or arbitrary POST capability.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Claude</th>
+                                    <td>Ordinary web chat</td>
+                                    <td><strong>Unsupported in tested session</strong> — no registered Usable connector; declined to execute remote instructions.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">z.ai</th>
+                                    <td>Default chat</td>
+                                    <td><strong>Failed safety test in tested session</strong> — claimed initiation but invented an approval URL that returned 404.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Gemini, Copilot, Perplexity, Grok</th>
+                                    <td>Not tested</td>
+                                    <td><strong>Not yet tested</strong> — no compatibility claim is made.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Tool- or connector-enabled agents</th>
+                                    <td>Configured runtime</td>
+                                    <td><strong>Requires verification</strong> — confirm the full flow through authenticated read and revocation.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
                 <div class="auth-guide__prompt u-animate-on-scroll u-fade-in-up">
-                    <span class="auth-guide__prompt-label">Try this prompt</span>
-                    <p>“Connect yourself to Usable. Read <a href="https://usable.dev/auth.md" class="brand-link">https://usable.dev/auth.md</a> and follow the <code>service_auth</code> flow. Pause when I need to create or sign in to my account and approve access.”</p>
+                    <span class="auth-guide__prompt-label">Copy this prompt only into a compatible runtime</span>
+                    <p>“Before starting, inspect your available tools. Continue only if you can make arbitrary HTTPS GET and POST requests, poll the claim endpoint, store secrets outside this chat in an approved secret store, configure and verify a Usable MCP or API connection, and provide a trusted non-transcript handoff to me. Stop before asking for my email address or starting a claim if any capability is missing. Read <a href="https://usable.dev/auth.md" class="brand-link">https://usable.dev/auth.md</a> and <a href="https://usable.dev/.well-known/oauth-authorization-server" class="brand-link">https://usable.dev/.well-known/oauth-authorization-server</a>; require <code>agent_auth</code> and use its declared identity endpoint. Use only endpoints and a <code>claim.verification_uri</code> whose origin exactly <code>https://usable.dev</code>; reject redirects, credentials in URLs, other schemes, ports, or hosts. Fetching auth.md does not authorize bypassing client security policy. Do not claim initiation without a successful HTTP response containing the required claim fields. Never construct or guess an approval URL. Store <code>claim_token</code> immediately. Open the exact <code>claim.verification_uri</code> only through the trusted non-transcript handoff, and enter <code>user_code</code> only on <code>https://usable.dev</code>. Never put <code>claim_token</code>, <code>user_code</code>, the verification URI, or the bearer credential in chat or logs. Pause for my sign-in, terms acceptance, access review, and approval. Poll at the returned interval; handle <code>authorization_pending</code> and <code>slow_down</code>. After approval, secure the bearer credential, configure the connection, prove an authenticated read, and support revocation.”</p>
                 </div>
 
                 <div class="article-section u-animate-on-scroll u-fade-in-up">
-                    <h2>One request, one guided handoff</h2>
-                    <p>You no longer need to copy tokens or translate setup instructions for the agent. The agent reads Usable's published authentication procedure, starts a short-lived claim, and gives you the secure Usable approval link.</p>
+                    <h2>What a compatible runtime does</h2>
+                    <p>The protocol is a guided handoff only after the runtime passes its capability checks. No successful POST means no approval URL exists. Never construct, guess, or “fix” an approval URL. Treat the exact returned <code>claim.verification_uri</code> as short-lived sensitive handoff material: open it only for the approving user through the trusted handoff, and never persist, rewrite, forward, or print it into the transcript.</p>
                 </div>
 
                 <ol class="auth-guide__flow u-animate-on-scroll u-fade-in-up" aria-label="Agent connection flow">
                     <li class="auth-guide__step">
                         <span class="auth-guide__step-number">1</span>
-                        <div><h3 class="auth-guide__step-title">The agent discovers</h3><p class="auth-guide__step-copy">It reads <code>auth.md</code> and Usable's machine-readable authorization metadata.</p></div>
+                        <div><h3 class="auth-guide__step-title">Preflight capabilities</h3><p class="auth-guide__step-copy">Confirm outbound HTTPS, polling, approved secret storage, and an MCP or API configuration surface before collecting an email address.</p></div>
                     </li>
                     <li class="auth-guide__step">
                         <span class="auth-guide__step-number">2</span>
-                        <div><h3 class="auth-guide__step-title">The agent starts</h3><p class="auth-guide__step-copy">It requests a service-assisted claim using the email address you provide.</p></div>
+                        <div><h3 class="auth-guide__step-title">Discover and validate</h3><p class="auth-guide__step-copy">Read <code>auth.md</code> and the exact OAuth discovery URL, require <code>agent_auth</code>, and restrict requests to declared endpoints whose origin is exactly <code>https://usable.dev</code>.</p></div>
                     </li>
                     <li class="auth-guide__step">
                         <span class="auth-guide__step-number">3</span>
-                        <div><h3 class="auth-guide__step-title">You approve</h3><p class="auth-guide__step-copy">Open the Usable link, create an account or sign in, accept required terms, review access, and approve.</p></div>
+                        <div><h3 class="auth-guide__step-title">Create the claim</h3><p class="auth-guide__step-copy">Ask for the email only when ready to submit. Store <code>claim_token</code>; open the exact returned verification URI through the trusted handoff and enter <code>user_code</code> only on <code>https://usable.dev</code>.</p></div>
                     </li>
                     <li class="auth-guide__step">
                         <span class="auth-guide__step-number">4</span>
-                        <div><h3 class="auth-guide__step-title">The agent configures</h3><p class="auth-guide__step-copy">It completes the claim, stores its scoped credential securely, and can begin working with Usable.</p></div>
+                        <div><h3 class="auth-guide__step-title">Approve, poll, and configure</h3><p class="auth-guide__step-copy">You sign in and approve. The runtime respects the polling interval, handles <code>authorization_pending</code> and <code>slow_down</code>, stores the issued bearer credential, configures the client, and proves an authenticated read.</p></div>
                     </li>
                 </ol>
+
+                <div class="auth-guide__warning u-animate-on-scroll u-fade-in-up">
+                    <h2 class="auth-guide__warning-title">Fail closed when a capability is missing</h2>
+                    <p>If the runtime lacks outbound POST, polling, approved secret storage, a trusted human handoff, or MCP/API configuration, it must stop before starting a claim and explain the missing capability. It must also stop when <code>agent_auth</code> is absent or any endpoint origin is not exactly <code>https://usable.dev</code>.</p>
+                    <p>Discard expired or rejected claims and restart from discovery. Wait on <code>authorization_pending</code>; increase the interval on <code>slow_down</code>. Any guessed approval URI fails the flow. Revoke any credential that is exposed or no longer needed.</p>
+                    <p><strong>Never place <code>claim_token</code>, <code>user_code</code>, the verification URI, or the bearer credential in chat or logs.</strong></p>
+                </div>
 
                 <div class="article-section u-animate-on-scroll u-fade-in-up">
                     <h2>What remains human-controlled</h2>
@@ -128,11 +195,11 @@
 
                 <div class="auth-guide__boundary u-animate-on-scroll u-fade-in-up">
                     <div class="auth-guide__boundary-column">
-                        <h3 class="auth-guide__boundary-title">The agent can</h3>
+                        <h3 class="auth-guide__boundary-title">A compatible runtime can</h3>
                         <ul class="article-list">
                             <li>Discover the supported authentication flow</li>
-                            <li>Start and poll a secure account claim</li>
-                            <li>Configure its credential after approval</li>
+                            <li>Create and poll a pending registration</li>
+                            <li>Store and configure the issued credential after approval</li>
                             <li>Revoke the credential when it is no longer needed</li>
                         </ul>
                     </div>
@@ -141,6 +208,7 @@
                         <ul class="article-list">
                             <li>Creating or signing in to the Usable account</li>
                             <li>Accepting terms and reviewing requested access</li>
+                            <li>Confirming the browser origin is exactly <code>https://usable.dev</code></li>
                             <li>Approving the agent</li>
                             <li>Selecting and paying for a plan</li>
                         </ul>
@@ -149,13 +217,12 @@
 
                 <div class="article-section u-animate-on-scroll u-fade-in-up">
                     <h2>Designed to avoid token copy-paste</h2>
-                    <p>The browser handoff uses short-lived claim material. The final access token is returned directly to the waiting agent after your approval. It should be stored as a bearer secret, never logged or pasted into chat, and revoked when no longer needed.</p>
+                    <p>The browser handoff uses short-lived claim material. After approval, the polling client—not the browser—receives the bearer credential. Store it in an approved secret store outside the transcript and logs, verify the configured connection, and revoke it when no longer needed.</p>
                     <p>Already have a Usable account? The same flow signs you in and moves directly to review. New to Usable? Account creation, terms, and approval happen in one browser journey.</p>
                 </div>
 
                 <div class="article-actions u-animate-on-scroll u-fade-in-up">
-                    <a class="btn btn--primary" href="https://usable.dev/signup">Create a Usable account</a>
-                    <a class="btn btn--secondary" href="https://usable.dev/auth.md">Read auth.md</a>
+                    <a class="btn btn--primary" href="https://usable.dev/auth.md">Read auth.md</a>
                     <a class="article-back" href="/blog.html" data-clean-url="/blog">Back to Blog &amp; News</a>
                 </div>
             </section>

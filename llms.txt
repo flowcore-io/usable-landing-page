@@ -47,4 +47,6 @@ Usable is a governed knowledge base for organisational memory. Teams store proce
 
 - Connect an AI agent with auth.md: https://www.usable.dev/blog/connect-an-ai-agent-to-usable-with-auth-md
 - Machine-readable authentication procedure: https://usable.dev/auth.md
-- Supported flow: agents start `service_auth`; a human creates or signs in to the account, accepts terms, reviews access, and approves. Autonomous account creation and payment are not supported.
+- Runtime requirement: `auth.md` documents `service_auth`; it does not give ordinary chat sessions HTTP actions or secret storage. A compatible runtime needs arbitrary HTTPS GET/POST, claim polling, approved secret storage outside chat/logs, an MCP/API configuration surface, and a trusted non-transcript human handoff.
+- Safety rule: stop before requesting an email or starting a claim if a capability is missing. Require all discovered endpoints and `claim.verification_uri` to have origin exactly `https://usable.dev`. Never invent an approval URL. Open the exact returned `claim.verification_uri` only through a trusted non-transcript handoff; never place the verification URI, `claim_token`, `user_code`, or bearer credential in chat or logs.
+- Human boundary: a human creates or signs in to the account, accepts terms, reviews access, and approves. Autonomous account creation and payment are not supported.
