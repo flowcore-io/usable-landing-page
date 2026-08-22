@@ -13,7 +13,7 @@ Animations and transitions were disabled only for deterministic captures.
 - `git diff --check`
 - Chromium console — zero errors and zero warnings
 - desktop 1440 × 1000 — no document overflow
-- mobile 390 × 844 — no document overflow; compatibility table scrolls within its labelled region from 306 px to 736 px
+- mobile 390 × 844 — no document overflow; compatibility table scrolls within its labelled region from 306 px to 624 px
 
 ## Guide overview
 
@@ -43,4 +43,4 @@ The two mobile captures prove both ends of the horizontally scrollable table:
 
 ## Evidence boundary
 
-These screenshots prove the corrected article renders responsively and exposes the capability, compatibility, and fail-closed guidance. They do not claim that an ordinary consumer chat or another named runtime completed the protocol end to end. No email, verification URI, `claim_token`, `user_code`, or bearer credential appears in the evidence.
+These screenshots prove the corrected article renders responsively and exposes the capability, compatibility, and fail-closed guidance. They do not claim that an ordinary consumer chat or another named runtime completed the protocol end to end. No email or live verification URI, claim token, user code, or bearer credential value appears in the evidence.

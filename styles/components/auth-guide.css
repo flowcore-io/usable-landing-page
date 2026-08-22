@@ -178,4 +178,21 @@
     .auth-guide__table td {
         padding: var(--space-3);
     }
+
+    .auth-guide__table {
+        min-width: 39rem;
+        table-layout: fixed;
+    }
+
+    .auth-guide__table th:nth-child(1) {
+        width: 10rem;
+    }
+
+    .auth-guide__table th:nth-child(2) {
+        width: 10rem;
+    }
+
+    .auth-guide__table th:nth-child(3) {
+        width: 19rem;
+    }
 }
