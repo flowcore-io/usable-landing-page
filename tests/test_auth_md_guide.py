@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression checks for concise, evidence-based auth.md compatibility copy."""
+"""Regression checks for concise, customer-facing connection guidance."""
 
 from pathlib import Path
 import unittest
@@ -18,16 +18,26 @@ class AuthMdGuideTest(unittest.TestCase):
             for path in ("blog.html", "index.html", "llms.txt")
         }
 
-    def test_article_lists_compatible_tools_then_auth_md_trial(self):
-        compatible = self.article.index("Compatible with")
-        standard = self.article.index("We support auth.md")
-        testing = self.article.index("How to test it")
+    def test_article_leads_with_supported_connection_methods(self):
+        methods = self.article.index("Ways to connect")
+        compatibility = self.article.index("MCP compatibility")
+        testing = self.article.index("How to test auth.md")
 
-        self.assertLess(compatible, standard)
-        self.assertLess(standard, testing)
+        self.assertLess(methods, compatibility)
+        self.assertLess(compatibility, testing)
+        for method in ("Remote MCP", "Usable API", "auth.md"):
+            self.assertIn(method, self.article)
+        self.assertIn('href="https://usable.dev/docs#mcp"', self.article)
+        self.assertIn('href="https://usable.dev/docs/api-reference"', self.article)
+        self.assertIn('href="https://usable.dev/auth.md"', self.article)
+
+    def test_article_names_mcp_clients_as_examples_not_the_boundary(self):
+        self.assertIn("supports remote MCP and OAuth 2.1", self.article)
         for runtime in ("Codex", "Claude Code", "Claude Desktop", "OpenCode"):
             self.assertIn(runtime, self.article)
-        self.assertIn('href="https://usable.dev/auth.md"', self.article)
+        self.assertIn("other compatible MCP clients", self.article)
+
+    def test_article_explains_how_to_test_auth_md(self):
         self.assertIn("Share the", self.article)
         self.assertIn("auth.md link", self.article)
         self.assertIn("Ask it to connect to Usable", self.article)
@@ -53,11 +63,10 @@ class AuthMdGuideTest(unittest.TestCase):
         for phrase in technical_copy:
             self.assertNotIn(phrase, article)
 
-    def test_public_surfaces_name_supported_tools_without_internal_qa_copy(self):
+    def test_public_surfaces_present_all_connection_methods(self):
         for path, content in self.public_surfaces.items():
-            self.assertIn("Codex", content, path)
-            self.assertIn("Claude Code", content, path)
-            self.assertIn("OpenCode", content, path)
+            self.assertIn("MCP", content, path)
+            self.assertIn("API", content, path)
             self.assertIn("auth.md", content, path)
 
         outward_internal_copy = (
