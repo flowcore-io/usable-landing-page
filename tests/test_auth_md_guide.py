@@ -18,18 +18,20 @@ class AuthMdGuideTest(unittest.TestCase):
             for path in ("blog.html", "index.html", "llms.txt")
         }
 
-    def test_article_lists_supported_then_other_runtimes_then_standard(self):
-        supported = self.article.index("Works with Usable")
-        others = self.article.index("Other runtimes")
-        standard = self.article.index("The auth.md standard")
+    def test_article_lists_compatible_tools_then_auth_md_trial(self):
+        compatible = self.article.index("Compatible with")
+        standard = self.article.index("We support auth.md")
+        testing = self.article.index("How to test it")
 
-        self.assertLess(supported, others)
-        self.assertLess(others, standard)
+        self.assertLess(compatible, standard)
+        self.assertLess(standard, testing)
         for runtime in ("Codex", "Claude Code", "Claude Desktop", "OpenCode"):
             self.assertIn(runtime, self.article)
-        self.assertIn("Not tested yet", self.article)
         self.assertIn('href="https://usable.dev/auth.md"', self.article)
-        self.assertIn("Read the auth.md standard", self.article)
+        self.assertIn("Share the", self.article)
+        self.assertIn("auth.md link", self.article)
+        self.assertIn("Ask it to connect to Usable", self.article)
+        self.assertIn("sign in and approve", self.article)
 
     def test_public_article_does_not_expose_protocol_internals(self):
         technical_copy = (
@@ -39,7 +41,9 @@ class AuthMdGuideTest(unittest.TestCase):
             "claim_token",
             "end-to-end verification",
             "none yet",
+            "not tested yet",
             "oauth-authorization-server",
+            "other runtimes",
             "runtime developers and providers",
             "secret store",
             "slow_down",
@@ -54,7 +58,6 @@ class AuthMdGuideTest(unittest.TestCase):
             self.assertIn("Codex", content, path)
             self.assertIn("Claude Code", content, path)
             self.assertIn("OpenCode", content, path)
-            self.assertIn("other runtimes", content.lower(), path)
             self.assertIn("auth.md", content, path)
 
         outward_internal_copy = (
@@ -64,6 +67,8 @@ class AuthMdGuideTest(unittest.TestCase):
             "end-to-end verification",
             "None yet",
             "No runtime is currently verified",
+            "Not tested yet",
+            "Other runtimes",
             "runtime developers and providers",
             "secret storage",
             "secret-storage",
