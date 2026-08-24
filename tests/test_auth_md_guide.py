@@ -18,15 +18,16 @@ class AuthMdGuideTest(unittest.TestCase):
             for path in ("blog.html", "index.html", "llms.txt")
         }
 
-    def test_article_lists_verified_then_untested_then_standard(self):
-        verified = self.article.index("Verified compatible runtimes")
-        others = self.article.index("Others")
+    def test_article_lists_supported_then_other_runtimes_then_standard(self):
+        supported = self.article.index("Works with Usable")
+        others = self.article.index("Other runtimes")
         standard = self.article.index("The auth.md standard")
 
-        self.assertLess(verified, others)
+        self.assertLess(supported, others)
         self.assertLess(others, standard)
-        self.assertIn("None yet", self.article)
-        self.assertIn("All other runtimes are untested", self.article)
+        for runtime in ("Codex", "Claude Code", "Claude Desktop", "OpenCode"):
+            self.assertIn(runtime, self.article)
+        self.assertIn("Not tested yet", self.article)
         self.assertIn('href="https://usable.dev/auth.md"', self.article)
         self.assertIn("Read the auth.md standard", self.article)
 
@@ -36,7 +37,10 @@ class AuthMdGuideTest(unittest.TestCase):
             "authorization_pending",
             "claim.verification_uri",
             "claim_token",
+            "end-to-end verification",
+            "none yet",
             "oauth-authorization-server",
+            "runtime developers and providers",
             "secret store",
             "slow_down",
             "user_code",
@@ -45,22 +49,27 @@ class AuthMdGuideTest(unittest.TestCase):
         for phrase in technical_copy:
             self.assertNotIn(phrase, article)
 
-    def test_public_surfaces_use_the_same_simple_status(self):
+    def test_public_surfaces_name_supported_tools_without_internal_qa_copy(self):
         for path, content in self.public_surfaces.items():
-            lowered = content.lower()
-            self.assertIn("no runtime", lowered, path)
-            self.assertIn("untested", lowered, path)
+            self.assertIn("Codex", content, path)
+            self.assertIn("Claude Code", content, path)
+            self.assertIn("OpenCode", content, path)
+            self.assertIn("other runtimes", content.lower(), path)
             self.assertIn("auth.md", content, path)
 
-        outward_technical_copy = (
+        outward_internal_copy = (
             "HTTPS GET/POST",
             "HTTPS POST",
             "claim_token",
+            "end-to-end verification",
+            "None yet",
+            "No runtime is currently verified",
+            "runtime developers and providers",
             "secret storage",
             "secret-storage",
         )
         for path, content in self.public_surfaces.items():
-            for phrase in outward_technical_copy:
+            for phrase in outward_internal_copy:
                 self.assertNotIn(phrase, content, path)
 
     def test_article_metadata_records_the_simplification(self):

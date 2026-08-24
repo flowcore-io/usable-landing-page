@@ -13,7 +13,7 @@ Animations and transitions were disabled only for deterministic captures.
 - `git diff --check`
 - Chromium console — zero errors and zero warnings
 - desktop 1440 × 1000 — no document overflow
-- mobile 390 × 844 viewport — no document overflow; article body captured at 358 × 869
+- mobile 390 × 844 viewport — no document overflow; article body captured at 358 × 959
 
 ## Public compatibility page
 
@@ -21,10 +21,10 @@ Animations and transitions were disabled only for deterministic captures.
 
 ![Simplified auth.md compatibility page on desktop](./auth-md-guide-desktop.png)
 
-### Mobile article — 358 × 869
+### Mobile article — 358 × 959
 
 ![Simplified auth.md compatibility list on mobile](./auth-md-guide-mobile.png)
 
 ## Evidence boundary
 
-These screenshots prove the public page now contains only the verified-runtime status, the untested status, and a link to the `auth.md` standard. No protocol internals or secret values appear.
+These screenshots prove the customer page names supported tools, gives a short status for other runtimes, and links to the `auth.md` standard. No protocol internals or secret values appear.

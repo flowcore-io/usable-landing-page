@@ -47,6 +47,6 @@ Usable is a governed knowledge base for organisational memory. Teams store proce
 
 - Connect an AI agent with auth.md: https://www.usable.dev/blog/connect-an-ai-agent-to-usable-with-auth-md
 - Machine-readable authentication procedure: https://usable.dev/auth.md
-- Verified compatible runtimes: no runtime is currently verified end to end.
-- Others: untested. Untested does not mean incompatible.
+- Supported tools: Codex, Claude Code, Claude Desktop, and OpenCode.
+- Other runtimes: not tested yet.
 - Standard: https://usable.dev/auth.md
