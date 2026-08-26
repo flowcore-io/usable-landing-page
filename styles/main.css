@@ -340,6 +340,12 @@ body {
   position: relative;
 }
 
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
 /* Layer 1 (bottom): tiled sea texture — fixed to viewport */
 body::before {
   content: '';
