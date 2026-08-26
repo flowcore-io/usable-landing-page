@@ -48,6 +48,7 @@ body:not(.announcement-hidden) .hero {
   position: relative;
   z-index: var(--z-base);
   width: 100%;
+  min-width: 0;
   text-align: center;
 }
 
@@ -153,6 +154,8 @@ body:not(.announcement-hidden) .hero {
   color: var(--color-text-primary);
   letter-spacing: 0;
   animation: fadeInUp 1.2s ease-out 0.3s both;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 [data-theme="dark"] .hero__title {
@@ -174,6 +177,8 @@ body:not(.announcement-hidden) .hero {
   margin-bottom: var(--space-8);
   font-weight: 500;
   animation: fadeInUp 1.2s ease-out 0.6s both;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 [data-theme="dark"] .hero__description {
@@ -185,6 +190,8 @@ body:not(.announcement-hidden) .hero {
   gap: var(--space-4);
   margin-bottom: var(--space-8);
   align-items: center;
+  max-width: 100%;
+  width: 100%;
   animation: fadeInUp 1.2s ease-out 0.9s both;
 }
 
@@ -201,7 +208,7 @@ body:not(.announcement-hidden) .hero {
   box-shadow: none;
   transition: width var(--transition-normal);
   width: 100%;
-  max-width: 300px;
+  max-width: min(100%, 300px);
   min-height: 56px;
   min-width: 56px;
 }
@@ -297,41 +304,6 @@ body:not(.announcement-hidden) .hero {
 }
 
 [data-theme="dark"] .hero__mascot {
-}
-
-@media (max-width: 639px) {
-  .hero {
-    padding: var(--space-8) 0 var(--space-4) 0;
-  }
-
-  .hero__container {
-    gap: var(--space-5);
-  }
-
-  .hero__badge {
-    margin-bottom: var(--space-2);
-  }
-
-  .hero__title {
-    margin-bottom: var(--space-4);
-  }
-
-  .hero__description {
-    margin-bottom: var(--space-5);
-  }
-
-  .hero__actions {
-    gap: var(--space-3);
-    margin-bottom: var(--space-4);
-  }
-
-  .hero__btn {
-    min-height: 52px;
-  }
-
-  .hero__visual {
-    display: none;
-  }
 }
 
 /* ===================================
@@ -498,5 +470,40 @@ body:not(.announcement-hidden) .hero {
 
   .hero__logos {
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero {
+    padding: var(--space-8) 0 var(--space-4) 0;
+  }
+
+  .hero__container {
+    gap: var(--space-5);
+  }
+
+  .hero__badge {
+    margin-bottom: var(--space-2);
+  }
+
+  .hero__title {
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__description {
+    margin-bottom: var(--space-5);
+  }
+
+  .hero__actions {
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__btn {
+    min-height: 52px;
+  }
+
+  .hero__visual {
+    display: none;
   }
 }
