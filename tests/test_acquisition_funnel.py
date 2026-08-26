@@ -75,6 +75,11 @@ class AcquisitionFunnelLinksTest(unittest.TestCase):
             r"https://www\.usable\.dev/?\s*;",
             "Do not redirect to bare www host because that drops campaign parameters",
         )
+        self.assertLess(
+            nginx_conf.index("server_name www.usable.dev _"),
+            nginx_conf.index("server_name usable.dev"),
+            "The serving/default server must come before the apex redirect so Fly health checks do not get 308s",
+        )
 
     def test_signup_ctas_are_marked_for_campaign_attribution_continuity(self):
         for relative_path in ("index.html", "pricing.html", "usable.html", "use-cases.html"):
