@@ -2,6 +2,7 @@
 """Regression checks for public acquisition links."""
 
 from html.parser import HTMLParser
+import hashlib
 from pathlib import Path
 import re
 import unittest
@@ -115,6 +116,38 @@ class AcquisitionFunnelLinksTest(unittest.TestCase):
             hero_css,
             re.compile(r"@media \(max-width: 639px\)[\s\S]*?\.hero__btn\s*{[\s\S]*?min-width\s*:\s*(?:[1-9]\d{2,}|\d{3,})px"),
             "Mobile hero buttons must not carry a fixed min-width that can overflow 320-412px viewports",
+        )
+
+    def test_every_page_uses_the_current_stylesheet_content_hash(self):
+        stylesheet = (ROOT / "styles/main.min.css").read_bytes()
+        cache_version = hashlib.sha256(stylesheet).hexdigest()[:12]
+        expected_href = f'/styles/main.min.css?v={cache_version}'
+        stylesheet_href = re.compile(r'href=["\'](/styles/main\.min\.css(?:\?v=[^"\']+)?)')
+        failures = []
+
+        excluded_directories = {
+            ".git",
+            ".venv",
+            "components",
+            "node_modules",
+            "opendesign",
+            "tests",
+        }
+        html_paths = sorted(
+            path
+            for path in ROOT.rglob("*.html")
+            if not excluded_directories.intersection(path.relative_to(ROOT).parts)
+        )
+        for path in html_paths:
+            html = path.read_text(encoding="utf-8")
+            hrefs = stylesheet_href.findall(html)
+            if hrefs != [expected_href]:
+                failures.append(f"{path.relative_to(ROOT)}: expected one {expected_href!r}, found {hrefs!r}")
+
+        self.assertEqual(
+            [],
+            failures,
+            f"Every bundled stylesheet URL must match {expected_href!r}:\n" + "\n".join(failures),
         )
 
 

@@ -12,6 +12,7 @@
 
 # Dependencies & local environments
 node_modules
+package*.json
 .venv
 __pycache__
 

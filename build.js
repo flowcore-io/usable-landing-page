@@ -9,9 +9,19 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const STYLES_DIR = path.join(__dirname, 'styles');
 const OUTPUT_FILE = path.join(STYLES_DIR, 'main.min.css');
+const STYLESHEET_PATH = '/styles/main.min.css';
+const HTML_EXCLUDED_DIRECTORIES = new Set([
+  '.git',
+  '.venv',
+  'components',
+  'node_modules',
+  'opendesign',
+  'tests',
+]);
 
 // Simple CSS minifier — strips comments, collapses whitespace, removes unnecessary
 // spaces around braces/colons/semicolons. Safe for vanilla CSS3.
@@ -52,6 +62,44 @@ function collectCSSFiles() {
   return files;
 }
 
+function collectPublicHTMLFiles(directory = __dirname) {
+  const files = [];
+
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      if (!HTML_EXCLUDED_DIRECTORIES.has(entry.name) && !entry.name.startsWith('.')) {
+        files.push(...collectPublicHTMLFiles(path.join(directory, entry.name)));
+      }
+    } else if (entry.isFile() && entry.name.endsWith('.html')) {
+      files.push(path.join(directory, entry.name));
+    }
+  }
+
+  return files.sort();
+}
+
+// Version the shared stylesheet URL from its content so a deployment never serves
+// new HTML with a stale bundle from the browser cache. Query strings keep the
+// stable on-disk filename while giving every bundle revision a unique cache key.
+function versionStylesheetLinks(css) {
+  const version = crypto.createHash('sha256').update(css).digest('hex').slice(0, 12);
+  const versionedPath = `${STYLESHEET_PATH}?v=${version}`;
+  const stylesheetPattern = /\/styles\/main\.min\.css(?:\?v=[^"'\s#]+)?/g;
+  let updatedFiles = 0;
+
+  for (const file of collectPublicHTMLFiles()) {
+    const html = fs.readFileSync(file, 'utf8');
+    const versionedHtml = html.replace(stylesheetPattern, versionedPath);
+
+    if (versionedHtml !== html) {
+      fs.writeFileSync(file, versionedHtml, 'utf8');
+      updatedFiles += 1;
+    }
+  }
+
+  return { version, updatedFiles };
+}
+
 function build() {
   console.log('Building Usable Landing Page CSS bundle...\n');
 
@@ -71,6 +119,7 @@ function build() {
 
   const minified = minifyCSS(combined);
   fs.writeFileSync(OUTPUT_FILE, minified, 'utf8');
+  const cacheVersion = versionStylesheetLinks(minified);
 
   const minifiedSize = Buffer.byteLength(minified, 'utf8');
   const savings = originalSize - minifiedSize;
@@ -80,6 +129,8 @@ function build() {
   console.log(`  Original: ${(originalSize / 1024).toFixed(2)} KB`);
   console.log(`  Minified: ${(minifiedSize / 1024).toFixed(2)} KB`);
   console.log(`  Savings:  ${(savings / 1024).toFixed(2)} KB (${savingsPct}%)\n`);
+  console.log(`  Cache version: ${cacheVersion.version}`);
+  console.log(`  Versioned HTML files: ${cacheVersion.updatedFiles}\n`);
   console.log('Build complete.');
 }
 
