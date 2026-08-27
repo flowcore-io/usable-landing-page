@@ -671,6 +671,8 @@ function handleRouteRedirection() {
       currentPath === '/privacy.html' ||
       currentPath === '/terms' ||
       currentPath === '/terms.html' ||
+      currentPath === '/refund-and-fulfillment' ||
+      currentPath === '/refund-and-fulfillment.html' ||
       currentPath === '/fragments-2026' ||
       currentPath === '/fragments-2026.html' ||
       currentPath === '/media-kit' ||
@@ -683,6 +685,10 @@ function handleRouteRedirection() {
       currentPath === '/contact.html' ||
       currentPath === '/pricing' ||
       currentPath === '/pricing.html' ||
+      currentPath === '/usable' ||
+      currentPath === '/usable.html' ||
+      currentPath === '/usable-chat' ||
+      currentPath === '/usable-chat.html' ||
       currentPath === '/demo' ||
       currentPath === '/demo.html' ||
       currentPath === '/detailed-screenshots' ||
@@ -835,4 +841,3 @@ const additionalStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalStyles;
 document.head.appendChild(styleSheet);
-

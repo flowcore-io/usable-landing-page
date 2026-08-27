@@ -72,6 +72,10 @@ class RedirectingRequestHandler(http.server.SimpleHTTPRequestHandler):
             self.path = "/terms.html"
             return super().do_HEAD() if method == "HEAD" else super().do_GET()
 
+        if path == "/refund-and-fulfillment" or path == "/refund-and-fulfillment.html":
+            self.path = "/refund-and-fulfillment.html"
+            return super().do_HEAD() if method == "HEAD" else super().do_GET()
+
         if path == "/media-kit" or path == "/media-kit.html":
             self.path = "/media-kit.html"
             return super().do_HEAD() if method == "HEAD" else super().do_GET()
@@ -127,5 +131,4 @@ if __name__ == "__main__":
     except ValueError:
         port = 8080
     serve(port)
-
 

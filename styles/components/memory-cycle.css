@@ -1,0 +1,137 @@
+/* ===================================
+   COMPONENT: Organisational Memory Cycle
+   BEM Block: memory-cycle
+   Purpose: Explain how each experience improves the next starting point
+   Dependencies: main.css and sections.css
+   =================================== */
+
+.memory-cycle {
+  scroll-margin-top: 84px;
+}
+
+.memory-cycle__eyebrow {
+  margin-bottom: var(--space-3);
+  color: var(--color-orange);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.memory-cycle__steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.memory-cycle__step {
+  position: relative;
+  min-height: 210px;
+  padding: var(--space-6);
+  border: 1px solid var(--color-blue-light-26);
+  border-radius: var(--radius-xl);
+  background: var(--color-neutral-900-60);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.memory-cycle__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  margin-bottom: var(--space-5);
+  border: 1px solid var(--color-orange-30);
+  border-radius: var(--radius-full);
+  color: var(--color-orange);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.memory-cycle__title {
+  margin-bottom: var(--space-3);
+  color: var(--color-neutral-50);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+}
+
+.memory-cycle__description {
+  margin: 0;
+  color: var(--color-neutral-200);
+  font-size: var(--text-base);
+  line-height: 1.55;
+}
+
+.memory-cycle__return {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  width: fit-content;
+  margin: var(--space-8) auto 0;
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--color-orange-30);
+  border-radius: var(--radius-full);
+  background: var(--color-orange-08);
+  color: var(--color-neutral-50);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.memory-cycle__return-arrow {
+  color: var(--color-orange);
+  font-size: var(--text-2xl);
+  line-height: 1;
+}
+
+.memory-cycle__punch {
+  margin: var(--space-8) 0 0;
+  color: var(--color-neutral-50);
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .memory-cycle__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .memory-cycle__steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+
+  .memory-cycle__step:not(:last-child)::after {
+    position: absolute;
+    top: 50%;
+    right: -2.03rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.55rem;
+    height: 1.55rem;
+    border: 1px solid var(--color-blue-light-26);
+    border-radius: var(--radius-full);
+    background: var(--color-neutral-900);
+    color: var(--color-blue-light);
+    content: '→';
+    font-size: var(--text-sm);
+    line-height: 1;
+    transform: translateY(-50%);
+  }
+}

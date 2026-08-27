@@ -96,6 +96,31 @@
   font-weight: 600;
 }
 
+.footer__business-details {
+  color: var(--color-blue);
+  font-size: var(--text-sm);
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.footer__business-details a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.footer__business-details a:hover {
+  color: var(--color-background);
+}
+
+[data-theme="dark"] .footer__business-details {
+  color: var(--color-blue-light);
+}
+
+[data-theme="dark"] .footer__business-details a:hover {
+  color: var(--color-neutral-50);
+}
+
 [data-theme="dark"] .footer__tagline {
   color: var(--color-blue-light);
 }
