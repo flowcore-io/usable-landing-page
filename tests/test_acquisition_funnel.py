@@ -109,7 +109,8 @@ class AcquisitionFunnelLinksTest(unittest.TestCase):
     def test_mobile_hero_css_has_no_fixed_width_overflow_at_common_meta_widths(self):
         hero_css = (ROOT / "styles/components/hero.css").read_text(encoding="utf-8")
         main_css = (ROOT / "styles/main.css").read_text(encoding="utf-8")
-        self.assertIn("overflow-wrap: anywhere", hero_css)
+        self.assertIn("overflow-wrap: normal", hero_css)
+        self.assertIn("word-break: break-word", hero_css)
         self.assertIn("max-width: min(100%, 300px)", hero_css)
         self.assertIn("max-width: 100%", main_css)
         self.assertNotRegex(
