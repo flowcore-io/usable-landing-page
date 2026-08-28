@@ -55,7 +55,7 @@ body:not(.announcement-hidden) .hero {
   line-height: 0.98;
   letter-spacing: -0.035em;
   max-width: 100%;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal; word-break: break-word;
   text-wrap: balance;
 }
 
@@ -74,7 +74,7 @@ body:not(.announcement-hidden) .hero {
   font-size: clamp(var(--text-lg), 2.3vw, var(--text-xl));
   font-weight: 500;
   line-height: 1.55;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal; word-break: break-word;
 }
 
 .hero__actions {
