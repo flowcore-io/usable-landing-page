@@ -164,6 +164,8 @@ body:not(.announcement-hidden) .hero {
 }
 
 .hero-loop__stage {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,6 +189,8 @@ body:not(.announcement-hidden) .hero {
 .hero-loop__stage--capture { grid-column: 1; grid-row: 3; }
 
 .hero-loop__arrow {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,13 +200,25 @@ body:not(.announcement-hidden) .hero {
   line-height: 1;
 }
 
-.hero-loop__arrow--top { grid-column: 2; grid-row: 1; }
+.hero-loop__arrow--top {
+  grid-column: 2;
+  grid-row: 1;
+  transform: translateY(calc(-1 * var(--space-3)));
+}
+
 .hero-loop__arrow--right { grid-column: 3; grid-row: 2; }
-.hero-loop__arrow--bottom { grid-column: 2; grid-row: 3; }
+
+.hero-loop__arrow--bottom {
+  grid-column: 2;
+  grid-row: 3;
+  transform: translateY(var(--space-3));
+}
+
 .hero-loop__arrow--left { grid-column: 1; grid-row: 2; }
 
 .hero-loop__memory {
   position: absolute;
+  z-index: 1;
   top: 50%;
   left: 50%;
   display: flex;
