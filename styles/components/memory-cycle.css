@@ -112,13 +112,13 @@
 @media (min-width: 1024px) {
   .memory-cycle__steps {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: var(--space-5);
+    gap: var(--space-8);
   }
 
   .memory-cycle__step:not(:last-child)::after {
     position: absolute;
     top: 50%;
-    right: -2.03rem;
+    right: -1.8rem;
     z-index: 2;
     display: flex;
     align-items: center;
