@@ -18,6 +18,8 @@ const I18N_FILE = path.join(__dirname, 'scripts', 'i18n.js');
 const I18N_PATH = '/scripts/i18n.js';
 const MAIN_FILE = path.join(__dirname, 'scripts', 'main.js');
 const MAIN_PATH = '/scripts/main.js';
+const WEB_ANALYTICS_FILE = path.join(__dirname, 'scripts', 'web-analytics.js');
+const WEB_ANALYTICS_PATH = '/scripts/web-analytics.js';
 const HTML_EXCLUDED_DIRECTORIES = new Set([
   '.git',
   '.venv',
@@ -151,6 +153,8 @@ function build() {
   const i18nCacheVersion = versionScriptLinks(i18nSource, I18N_PATH);
   const mainSource = fs.readFileSync(MAIN_FILE);
   const mainCacheVersion = versionScriptLinks(mainSource, MAIN_PATH);
+  const webAnalyticsSource = fs.readFileSync(WEB_ANALYTICS_FILE);
+  const webAnalyticsCacheVersion = versionScriptLinks(webAnalyticsSource, WEB_ANALYTICS_PATH);
 
   const minifiedSize = Buffer.byteLength(minified, 'utf8');
   const savings = originalSize - minifiedSize;
@@ -165,7 +169,9 @@ function build() {
   console.log(`  i18n cache version: ${i18nCacheVersion.version}`);
   console.log(`  Versioned i18n HTML files: ${i18nCacheVersion.updatedFiles}`);
   console.log(`  main cache version: ${mainCacheVersion.version}`);
-  console.log(`  Versioned main HTML files: ${mainCacheVersion.updatedFiles}\n`);
+  console.log(`  Versioned main HTML files: ${mainCacheVersion.updatedFiles}`);
+  console.log(`  web analytics cache version: ${webAnalyticsCacheVersion.version}`);
+  console.log(`  Versioned web analytics HTML files: ${webAnalyticsCacheVersion.updatedFiles}\n`);
   console.log('Build complete.');
 }
 
