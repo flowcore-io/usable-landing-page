@@ -15,6 +15,7 @@ node_modules
 package*.json
 .venv
 __pycache__
+tests/
 
 # Local agent / editor tooling
 .claude
@@ -26,3 +27,4 @@ AGENTS.md
 .DS_Store
 *.log
 press-release-draft.docx
+tmp/
