@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 I18N_SOURCE = ROOT / "scripts" / "i18n.js"
+MAIN_SOURCE = ROOT / "scripts" / "main.js"
 RUNTIME_URL_PATTERN = re.compile(
     r"\b(?:src|srcset|href)=[\"'](?:\.\.?/)*(?:assets|scripts|styles|components|translations)/"
 )
@@ -58,6 +59,31 @@ process.stdout.write(JSON.stringify({
 }));
 """
 
+NODE_ROUTE_PROBE = r"""
+const fs = require('fs');
+const vm = require('vm');
+
+const config = JSON.parse(process.argv[1]);
+const location = {
+  protocol: 'https:',
+  hostname: 'www.usable.dev',
+  pathname: config.pathname,
+  hash: config.hash,
+  replace(target) { this.replaced = target; }
+};
+const context = { window: { location } };
+
+vm.createContext(context);
+const source = fs.readFileSync(config.sourcePath, 'utf8');
+const start = source.indexOf('function handleRouteRedirection()');
+const end = source.indexOf('// Fix iOS Safari 100vh bug', start);
+if (start === -1 || end === -1) throw new Error('Route redirection function not found');
+vm.runInContext(source.slice(start, end), context);
+context.handleRouteRedirection();
+
+process.stdout.write(JSON.stringify({ replaced: location.replaced || null }));
+"""
+
 
 class DirectFaroeseRouteTests(unittest.TestCase):
     def probe(self, pathname, saved_language=None, search="?source=test", hash_value="#content"):
@@ -70,6 +96,21 @@ class DirectFaroeseRouteTests(unittest.TestCase):
         }
         result = subprocess.run(
             ["node", "-e", NODE_PROBE, json.dumps(config)],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        return json.loads(result.stdout)
+
+    def probe_production_route(self, pathname, hash_value=""):
+        config = {
+            "sourcePath": str(MAIN_SOURCE),
+            "pathname": pathname,
+            "hash": hash_value,
+        }
+        result = subprocess.run(
+            ["node", "-e", NODE_ROUTE_PROBE, json.dumps(config)],
             cwd=ROOT,
             check=True,
             capture_output=True,
@@ -92,25 +133,40 @@ class DirectFaroeseRouteTests(unittest.TestCase):
 
         self.assertEqual([], offenders, f"Document-relative runtime URLs: {offenders}")
 
-    def test_every_i18n_script_url_uses_the_current_content_hash(self):
-        cache_version = hashlib.sha256(I18N_SOURCE.read_bytes()).hexdigest()[:12]
-        expected_src = f"/scripts/i18n.js?v={cache_version}"
-        script_pattern = re.compile(
-            r"<script\s+src=[\"'](/scripts/i18n\.js(?:\?v=[^\"']+)?)"
-        )
+    def test_every_route_script_url_uses_the_current_content_hash(self):
         public_html = list(ROOT.glob("*.html"))
         for directory in ("blog", "news"):
             public_html.extend((ROOT / directory).rglob("*.html"))
 
         failures = []
-        for html_path in sorted(public_html):
-            matches = script_pattern.findall(html_path.read_text(encoding="utf-8"))
-            if matches and matches != [expected_src]:
-                failures.append(
-                    f"{html_path.relative_to(ROOT)}: expected {expected_src!r}, found {matches!r}"
-                )
+        for source_path, public_path in (
+            (I18N_SOURCE, "/scripts/i18n.js"),
+            (MAIN_SOURCE, "/scripts/main.js"),
+        ):
+            cache_version = hashlib.sha256(source_path.read_bytes()).hexdigest()[:12]
+            expected_src = f"{public_path}?v={cache_version}"
+            escaped_path = re.escape(public_path)
+            script_pattern = re.compile(
+                rf"<script\s+src=[\"']({escaped_path}(?:\?v=[^\"']+)?)"
+            )
+            for html_path in sorted(public_html):
+                matches = script_pattern.findall(html_path.read_text(encoding="utf-8"))
+                if matches and matches != [expected_src]:
+                    failures.append(
+                        f"{html_path.relative_to(ROOT)}: expected {expected_src!r}, found {matches!r}"
+                    )
 
         self.assertEqual([], failures, "\n".join(failures))
+
+    def test_production_route_guard_accepts_faroese_routes(self):
+        for pathname in ("/fo/", "/fo/privacy", "/fo/blog/example"):
+            with self.subTest(pathname=pathname):
+                self.assertIsNone(self.probe_production_route(pathname)["replaced"])
+
+    def test_production_route_guard_still_rejects_unknown_routes(self):
+        result = self.probe_production_route("/fo/not-a-public-route", "#details")
+
+        self.assertEqual("/#details", result["replaced"])
 
     def test_direct_faroese_home_route_activates_home_translation(self):
         result = self.probe("/fo/")

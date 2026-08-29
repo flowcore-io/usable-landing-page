@@ -660,7 +660,12 @@ function handleRouteRedirection() {
   const isLocalhost = window.location.hostname.includes('localhost') || window.location.hostname === '127.0.0.1';
   if (isFileProtocol || isLocalhost) return;
 
-  const currentPath = window.location.pathname;
+  const requestedPath = window.location.pathname;
+  const currentPath = requestedPath === '/fo'
+    ? '/'
+    : requestedPath.startsWith('/fo/')
+      ? requestedPath.slice(3) || '/'
+      : requestedPath;
   const currentHash = window.location.hash;
 
   // Allow root path, index.html, legal pages, and other static pages (both clean URLs and .html)
