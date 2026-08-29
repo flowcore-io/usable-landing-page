@@ -20,16 +20,43 @@ class I18n {
     this.translations = null;
   }
 
-  /** Detect language from localStorage preference */
+  /** Check whether a path uses the Faroese route prefix. */
+  isFaroesePath(pathname = window.location.pathname) {
+    return pathname === '/fo' || pathname.startsWith('/fo/');
+  }
+
+  /** Remove the Faroese route prefix while preserving the page path. */
+  stripLanguagePrefix(pathname = window.location.pathname) {
+    if (pathname === '/fo' || pathname === '/fo/') return '/';
+    if (pathname.startsWith('/fo/')) return pathname.slice(3) || '/';
+    return pathname || '/';
+  }
+
+  /** Build the Faroese route for an unprefixed or already-prefixed path. */
+  getFaroesePath(pathname = window.location.pathname) {
+    const unprefixedPath = this.stripLanguagePrefix(pathname);
+    return unprefixedPath === '/' ? '/fo/' : `/fo${unprefixedPath}`;
+  }
+
+  /** Detect language from the URL first, then the saved preference. */
   detectLanguage() {
+    if (this.isFaroesePath()) return 'fo';
     return localStorage.getItem('usable-lang') || 'en';
   }
 
   /** Map the current pathname to a page key for meta-tag lookups */
   getPageKey() {
-    let p = window.location.pathname;
+    let p = this.stripLanguagePrefix();
     p = p.replace(/^\//, '').replace(/\.html$/, '').replace(/\/$/, '');
     return p || 'home';
+  }
+
+  /** Build the next URL for the language switcher. */
+  getLanguageSwitchTarget() {
+    const pathname = this.lang === 'fo'
+      ? this.stripLanguagePrefix()
+      : this.getFaroesePath();
+    return `${pathname}${window.location.search}${window.location.hash}`;
   }
 
   /** Load the translation JSON file */
@@ -123,7 +150,14 @@ class I18n {
         } else {
           localStorage.setItem('usable-lang', 'fo');
         }
-        window.location.reload();
+
+        const target = this.getLanguageSwitchTarget();
+        const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+        if (target === current) {
+          window.location.reload();
+        } else {
+          window.location.assign(target);
+        }
       });
     });
   }
