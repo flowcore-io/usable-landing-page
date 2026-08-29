@@ -14,6 +14,8 @@ const crypto = require('crypto');
 const STYLES_DIR = path.join(__dirname, 'styles');
 const OUTPUT_FILE = path.join(STYLES_DIR, 'main.min.css');
 const STYLESHEET_PATH = '/styles/main.min.css';
+const I18N_FILE = path.join(__dirname, 'scripts', 'i18n.js');
+const I18N_PATH = '/scripts/i18n.js';
 const HTML_EXCLUDED_DIRECTORIES = new Set([
   '.git',
   '.venv',
@@ -100,6 +102,28 @@ function versionStylesheetLinks(css) {
   return { version, updatedFiles };
 }
 
+// Version the route-aware i18n script for the same reason as the CSS bundle:
+// browsers may otherwise keep the previous language-routing behavior for an
+// hour after deploy because nginx marks JavaScript as publicly cacheable.
+function versionI18nScriptLinks(source) {
+  const version = crypto.createHash('sha256').update(source).digest('hex').slice(0, 12);
+  const versionedPath = `${I18N_PATH}?v=${version}`;
+  const scriptPattern = /\/scripts\/i18n\.js(?:\?v=[^"'\s#]+)?/g;
+  let updatedFiles = 0;
+
+  for (const file of collectPublicHTMLFiles()) {
+    const html = fs.readFileSync(file, 'utf8');
+    const versionedHtml = html.replace(scriptPattern, versionedPath);
+
+    if (versionedHtml !== html) {
+      fs.writeFileSync(file, versionedHtml, 'utf8');
+      updatedFiles += 1;
+    }
+  }
+
+  return { version, updatedFiles };
+}
+
 function build() {
   console.log('Building Usable Landing Page CSS bundle...\n');
 
@@ -120,6 +144,8 @@ function build() {
   const minified = minifyCSS(combined);
   fs.writeFileSync(OUTPUT_FILE, minified, 'utf8');
   const cacheVersion = versionStylesheetLinks(minified);
+  const i18nSource = fs.readFileSync(I18N_FILE);
+  const i18nCacheVersion = versionI18nScriptLinks(i18nSource);
 
   const minifiedSize = Buffer.byteLength(minified, 'utf8');
   const savings = originalSize - minifiedSize;
@@ -130,7 +156,9 @@ function build() {
   console.log(`  Minified: ${(minifiedSize / 1024).toFixed(2)} KB`);
   console.log(`  Savings:  ${(savings / 1024).toFixed(2)} KB (${savingsPct}%)\n`);
   console.log(`  Cache version: ${cacheVersion.version}`);
-  console.log(`  Versioned HTML files: ${cacheVersion.updatedFiles}\n`);
+  console.log(`  Versioned HTML files: ${cacheVersion.updatedFiles}`);
+  console.log(`  i18n cache version: ${i18nCacheVersion.version}`);
+  console.log(`  Versioned i18n HTML files: ${i18nCacheVersion.updatedFiles}\n`);
   console.log('Build complete.');
 }
 

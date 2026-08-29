@@ -1,3 +1,4 @@
+import hashlib
 import json
 import re
 import subprocess
@@ -90,6 +91,26 @@ class DirectFaroeseRouteTests(unittest.TestCase):
                     offenders.append(f"{html_path.relative_to(ROOT)}:{line_number}")
 
         self.assertEqual([], offenders, f"Document-relative runtime URLs: {offenders}")
+
+    def test_every_i18n_script_url_uses_the_current_content_hash(self):
+        cache_version = hashlib.sha256(I18N_SOURCE.read_bytes()).hexdigest()[:12]
+        expected_src = f"/scripts/i18n.js?v={cache_version}"
+        script_pattern = re.compile(
+            r"<script\s+src=[\"'](/scripts/i18n\.js(?:\?v=[^\"']+)?)"
+        )
+        public_html = list(ROOT.glob("*.html"))
+        for directory in ("blog", "news"):
+            public_html.extend((ROOT / directory).rglob("*.html"))
+
+        failures = []
+        for html_path in sorted(public_html):
+            matches = script_pattern.findall(html_path.read_text(encoding="utf-8"))
+            if matches and matches != [expected_src]:
+                failures.append(
+                    f"{html_path.relative_to(ROOT)}: expected {expected_src!r}, found {matches!r}"
+                )
+
+        self.assertEqual([], failures, "\n".join(failures))
 
     def test_direct_faroese_home_route_activates_home_translation(self):
         result = self.probe("/fo/")
