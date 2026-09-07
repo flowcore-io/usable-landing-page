@@ -205,6 +205,42 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.usable.dev/blog/connect-an-ai-agent-to-usable-with-auth-md"/>
     </url>
     <url>
+        <loc>https://www.usable.dev/blog/building-a-national-ai-strategy-on-a-shared-memory-layer</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.usable.dev/blog/building-a-national-ai-strategy-on-a-shared-memory-layer"/>
+        <xhtml:link rel="alternate" hreflang="fo" href="https://www.usable.dev/fo/blog/building-a-national-ai-strategy-on-a-shared-memory-layer"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.usable.dev/blog/building-a-national-ai-strategy-on-a-shared-memory-layer"/>
+    </url>
+    <url>
+        <loc>https://www.usable.dev/blog/from-fast-to-aligned-taming-ai-assisted-development-at-scale</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.usable.dev/blog/from-fast-to-aligned-taming-ai-assisted-development-at-scale"/>
+        <xhtml:link rel="alternate" hreflang="fo" href="https://www.usable.dev/fo/blog/from-fast-to-aligned-taming-ai-assisted-development-at-scale"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.usable.dev/blog/from-fast-to-aligned-taming-ai-assisted-development-at-scale"/>
+    </url>
+    <url>
+        <loc>https://www.usable.dev/blog/from-napkin-idea-to-shipped-game-using-usable-for-game-development</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.usable.dev/blog/from-napkin-idea-to-shipped-game-using-usable-for-game-development"/>
+        <xhtml:link rel="alternate" hreflang="fo" href="https://www.usable.dev/fo/blog/from-napkin-idea-to-shipped-game-using-usable-for-game-development"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.usable.dev/blog/from-napkin-idea-to-shipped-game-using-usable-for-game-development"/>
+    </url>
+    <url>
+        <loc>https://www.usable.dev/blog/one-memory-two-operators-personal-and-production-ai-agents</loc>
+        <lastmod>2026-08-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.usable.dev/blog/one-memory-two-operators-personal-and-production-ai-agents"/>
+        <xhtml:link rel="alternate" hreflang="fo" href="https://www.usable.dev/fo/blog/one-memory-two-operators-personal-and-production-ai-agents"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.usable.dev/blog/one-memory-two-operators-personal-and-production-ai-agents"/>
+    </url>
+    <url>
         <loc>https://www.usable.dev/privacy</loc>
         <lastmod>2026-07-21</lastmod>
         <changefreq>yearly</changefreq>
