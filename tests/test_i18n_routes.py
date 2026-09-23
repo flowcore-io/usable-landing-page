@@ -9,6 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 I18N_SOURCE = ROOT / "scripts" / "i18n.js"
 MAIN_SOURCE = ROOT / "scripts" / "main.js"
+HOME_SOURCE = ROOT / "index.html"
+FAROESE_TRANSLATIONS = ROOT / "translations" / "fo.json"
 RUNTIME_URL_PATTERN = re.compile(
     r"\b(?:src|srcset|href)=[\"'](?:\.\.?/)*(?:assets|scripts|styles|components|translations)/"
 )
@@ -86,6 +88,28 @@ process.stdout.write(JSON.stringify({ replaced: location.replaced || null }));
 
 
 class DirectFaroeseRouteTests(unittest.TestCase):
+    def test_answer_first_section_has_complete_faroese_copy(self):
+        homepage = HOME_SOURCE.read_text(encoding="utf-8")
+        translations = json.loads(FAROESE_TRANSLATIONS.read_text(encoding="utf-8"))
+        keys = (
+            "home.answer-first.title",
+            "home.answer-first.description",
+            "home.answer-first.what.label",
+            "home.answer-first.what.title",
+            "home.answer-first.what.description",
+            "home.answer-first.agents.label",
+            "home.answer-first.agents.title",
+            "home.answer-first.agents.description",
+            "home.answer-first.verify.label",
+            "home.answer-first.verify.title",
+            "home.answer-first.verify.description",
+        )
+
+        for key in keys:
+            with self.subTest(key=key):
+                self.assertIn(key, homepage)
+                self.assertTrue(translations.get(key))
+
     def probe(self, pathname, saved_language=None, search="?source=test", hash_value="#content"):
         config = {
             "sourcePath": str(I18N_SOURCE),
