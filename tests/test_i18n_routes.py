@@ -88,6 +88,14 @@ process.stdout.write(JSON.stringify({ replaced: location.replaced || null }));
 
 
 class DirectFaroeseRouteTests(unittest.TestCase):
+    def test_translation_catalog_bypasses_browser_cache(self):
+        source = I18N_SOURCE.read_text(encoding="utf-8")
+
+        self.assertIn(
+            "fetch('/translations/fo.json', { cache: 'no-store' })",
+            source,
+        )
+
     def test_answer_first_section_has_complete_faroese_copy(self):
         homepage = HOME_SOURCE.read_text(encoding="utf-8")
         translations = json.loads(FAROESE_TRANSLATIONS.read_text(encoding="utf-8"))

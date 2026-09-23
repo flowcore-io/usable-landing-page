@@ -63,7 +63,7 @@ class I18n {
   async loadTranslations() {
     if (this.lang === 'en') return;
     try {
-      const resp = await fetch('/translations/fo.json');
+      const resp = await fetch('/translations/fo.json', { cache: 'no-store' });
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       this.translations = await resp.json();
     } catch (e) {
