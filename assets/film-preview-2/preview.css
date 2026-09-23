@@ -1,0 +1,74 @@
+/* Preview-only enhancements; the existing homepage and its bundle stay intact. */
+.preview-page { --preview-deep: #0b1b2c; background: var(--preview-deep); }
+.preview-page::before, .preview-page::after { content: none; }
+.preview-page [hidden] { display: none !important; }
+.preview-page .hero__mascot, .preview-page .hero__actions { animation: none !important; }
+.preview-page .u-animate-on-scroll { opacity: 1; transform: none; }
+.preview-hero { min-height: min(900px, 100svh); padding: 9rem 0 5rem; }
+.preview-hero__art { position: absolute; inset: 0; pointer-events: none; }
+.preview-hero__art img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; }
+.preview-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,20,34,.92), rgba(8,20,34,.64) 55%, rgba(8,20,34,.3)), linear-gradient(0deg, var(--preview-deep), transparent 35%); }
+.preview-hero .hero__container { z-index: 1; max-width: 1440px; gap: 3rem; padding-inline: clamp(1.25rem,5vw,5rem); }
+.preview-hero .hero__title { font-size: clamp(2.7rem,5.7vw,5.6rem); }
+.preview-hero .hero__description { max-width: 38ch; font-size: clamp(1.0625rem,1.6vw,1.3rem); }
+.preview-hero .hero__actions { flex-wrap: wrap; }
+.preview-hero .hero__btn { min-height: 52px; padding: 1rem 1.5rem; font-size: .9375rem; }
+.preview-page .btn--primary { color: var(--color-neutral-900); }
+.preview-hero .btn--secondary { background: rgba(8,20,34,.6); }
+.preview-hero .hero-loop { box-shadow: none; background: rgba(15,34,50,.88); }
+.preview-mode { margin-top: 1.75rem; }
+.preview-mode__button { display: inline-flex; align-items: center; justify-content: center; gap: .65rem; min-height: 44px; padding: .5rem .75rem; border: 1px solid var(--color-blue-light-26); border-radius: var(--radius-lg); background: rgba(11,27,44,.85); color: var(--color-neutral-50); font: inherit; font-size: .875rem; font-weight: 650; text-decoration: none; cursor: pointer; }
+.preview-mode__button:hover { border-color: var(--color-orange); }
+.preview-mode__button:disabled { cursor: wait; opacity: .7; }
+.preview-mode__note { margin-top: .6rem; color: var(--color-neutral-300); font-size: .75rem; line-height: 1.5; }
+.preview-page .memory-cycle { position: relative; z-index: 30; background: var(--preview-deep); scroll-margin-top: 75px; }
+.preview-page .memory-cycle__steps { gap: 1.5rem; }
+.preview-page .memory-cycle__step { background: rgba(28,47,64,.65); box-shadow: none; }
+.preview-page .memory-cycle__return { max-width: 100%; }
+.preview-page .memory-cycle__step:not(:last-child)::after { right: -1.6rem; }
+.preview-page .hero-loop__grid { grid-template-columns: minmax(80px,1fr) 44px minmax(80px,1fr); }
+.preview-page .hero-loop__stage { overflow-wrap: anywhere; }
+.preview-page .preview-noscript { position: relative; z-index: 1000; margin-top: 64px; display: flex; justify-content: center; gap: 1.5rem; padding: 1rem; }
+.preview-page .preview-noscript a { color: var(--color-orange); }
+.preview-film-pending #adaptive-film { visibility: hidden; height: 0; overflow: hidden; }
+.preview-film-active .preview-hero { min-height: 0; padding: 4rem 0 2rem; background: var(--preview-deep); position: relative; z-index: 30; }
+.preview-film-active .preview-hero__art, .preview-film-active .preview-hero::after, .preview-film-active .hero__content { display: none; }
+.preview-film-active .preview-hero .hero__container { display: block; }
+.preview-film-controls { position: fixed; z-index: 100; bottom: 1rem; right: 1rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+.preview-film-active .film__rail { bottom: 5.5rem; }
+.preview-film-active .film__world { z-index: 1; }
+.preview-film-active .film__copy { z-index: 2; }
+.preview-film-active #adaptive-film ~ section, .preview-film-active .cta, .preview-film-active .footer { position: relative; z-index: 30; }
+/* The film is mounted only after all its scripts and styles are available. */
+@media (min-width: 1100px) { .preview-hero .hero__container { grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); } }
+@media (max-width: 1099px) { .preview-hero .hero__content { max-width: 720px; } .preview-hero .hero__visual { justify-content: flex-start; } }
+@media (max-width: 700px) {
+  .preview-hero { min-height: 0; padding: 7rem 0 3rem; }
+  .preview-hero .hero__container { gap: 2.5rem; }
+  .preview-hero .hero__title { font-size: clamp(2.5rem,10vw,3.8rem); }
+  .preview-hero .hero__actions { gap: .75rem; }
+  .preview-hero .hero__btn { max-width: 100%; }
+  .preview-hero .hero-loop { padding: 1.25rem; }
+  .preview-page .memory-cycle__step { min-height: 0; }
+  .preview-film-controls { right: .75rem; bottom: .75rem; left: .75rem; }
+  .preview-film-controls .preview-mode__button { font-size: .75rem; }
+}
+/* Keep the complete still hero on screen until the film has mounted. */
+.preview-film-pending .preview-hero { min-height: min(900px,100svh); padding: 9rem 0 5rem; background: transparent; }
+.preview-film-pending .preview-hero__art, .preview-film-pending .preview-hero::after, .preview-film-pending .hero__content { display: block; }
+.preview-film-pending .preview-hero .hero__container { display: grid; }
+@media (max-width: 700px) { .preview-film-pending .preview-hero { min-height: 0; padding: 7rem 0 3rem; } }
+@media (max-width: 400px) {
+  .preview-page .how-it-works__steps { grid-template-columns: minmax(0,1fr); }
+}
+/* Keep both actions clear of the film controls on short phones. */
+@media (max-width: 700px) and (max-height: 650px) {
+  .preview-film-active .film__block--hero, .preview-film-active .film__block--finale { top: 76px; }
+  .preview-film-active .film__eyebrow { font-size: .6875rem; line-height: 1.35; margin-bottom: .5rem; }
+  .preview-film-active .film__title { font-size: 2rem; line-height: 1; margin-bottom: .75rem; }
+  .preview-film-active .film__lede { font-size: .875rem; line-height: 1.4; }
+  .preview-film-active .film__actions { gap: .5rem; margin-top: .875rem; }
+  .preview-film-active .film__actions .btn { min-height: 44px; padding: .6rem .7rem; font-size: .6875rem; letter-spacing: .03em; }
+  .preview-film-active .film__proof { margin-top: .75rem; gap: .35rem .7rem; font-size: .6875rem; line-height: 1.3; }
+  .preview-film-active .film__statement { font-size: 1.8rem; }
+}
