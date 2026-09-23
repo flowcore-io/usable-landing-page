@@ -1,0 +1,306 @@
+/* ===================================
+   HOMEPAGE: THE FILM
+   One continuous camera flight through the painted Usable sea, scrubbed by
+   scroll (scrollcraft worldflight mode, /assets/scrollcraft/, homepage only).
+   The copy windows walk the organisational memory cycle. After the film the
+   page continues with the normal homepage sections over the sea texture.
+   Scoped to .film-page / .film* / .product-extras.
+   =================================== */
+
+.film-page {
+  --film-ink: #f6f8fb;
+  --film-ink-soft: #d4dde7;
+  --film-deep: #0b1b2c;
+
+  /* scrollcraft tokens, mapped to the brand */
+  --sc-canvas: var(--film-deep);
+  --sc-ink: var(--film-ink);
+  --sc-ink-soft: var(--film-ink-soft);
+  --sc-accent: var(--color-orange);
+  --sc-accent-ink: var(--color-neutral-900);
+  --sc-font-display: var(--font-family-heading);
+  --sc-font-text: var(--font-family-body);
+
+  /* Restore the site's body look; the engine stylesheet loads after the bundle. */
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  letter-spacing: normal;
+  background: var(--color-neutral-900);
+  /* overflow-x: hidden on body breaks sticky and fixed stacking; clip does not. */
+  overflow-x: clip;
+}
+
+/* ---------- The stage ---------- */
+.film__world video,
+.film__world .sc-world__poster {
+  object-position: 62% 50%;
+}
+
+/* Fades out over the last screen of the flight (--film-out from JS). */
+.film__world {
+  opacity: var(--film-out, 1);
+}
+
+.film__copy {
+  opacity: var(--film-copy-out, 1);
+}
+
+/* Hidden once the flight is over, so the sea texture shows behind the page. */
+.film--done .film__world,
+.film--done .film__copy {
+  visibility: hidden;
+}
+
+/* ---------- The copy ---------- */
+.film__scrim {
+  background: linear-gradient(90deg, rgba(8, 20, 34, 0.78) 0%, rgba(8, 20, 34, 0.5) 34%, rgba(8, 20, 34, 0) 60%);
+}
+
+.film__block {
+  position: absolute;
+  z-index: 1;
+  left: clamp(1.25rem, 6vw, 6rem);
+  max-width: min(46rem, calc(100vw - 2.5rem));
+}
+
+.film__block--hero,
+.film__block--finale {
+  top: calc(60px + clamp(2rem, 11vh, 8rem));
+}
+
+.film__block--step {
+  top: 50%;
+  translate: 0 -50%;
+  max-width: min(38rem, calc(100vw - 2.5rem));
+}
+
+.film__eyebrow {
+  margin: 0 0 1rem;
+  font-size: clamp(0.8125rem, 0.75rem + 0.25vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+}
+
+.film__title {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-family-heading);
+  font-size: clamp(2.8rem, 1.4rem + 5vw, 6rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: var(--film-ink);
+}
+
+.film__title > span {
+  display: block;
+}
+
+.film__title--finale {
+  font-size: clamp(2.4rem, 1.3rem + 4vw, 5rem);
+  text-wrap: balance;
+}
+
+.film__accent {
+  color: var(--color-orange);
+}
+
+.film__lede {
+  max-width: 34rem;
+  margin: 0;
+  font-size: clamp(1.0625rem, 0.98rem + 0.4vw, 1.3125rem);
+  line-height: 1.6;
+  color: var(--film-ink-soft);
+  text-wrap: pretty;
+}
+
+.film__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* White on orange fails contrast; navy on orange passes (about 7.4:1). */
+.film .btn--primary,
+.film .btn--primary:hover,
+.film .btn--primary:focus {
+  color: var(--color-neutral-900);
+}
+
+.film .film__btn-secondary {
+  background: rgba(8, 20, 34, 0.55);
+}
+
+.film__proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 600;
+  color: var(--film-ink-soft);
+}
+
+.film__proof li::before {
+  content: "";
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-orange);
+  vertical-align: 0.15em;
+}
+
+.film__step {
+  margin: 0 0 0.75rem;
+  font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1.0625rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+}
+
+.film__statement {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: clamp(2rem, 1.2rem + 3vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: var(--film-ink);
+  text-wrap: balance;
+}
+
+/* The memory cycle as a route rail along the bottom of the film. */
+.film__rail {
+  position: absolute;
+  z-index: 1;
+  left: clamp(1.25rem, 6vw, 6rem);
+  bottom: clamp(1.25rem, 5vh, 3rem);
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  opacity: var(--film-rail, 0);
+  transition: opacity 300ms ease-out;
+}
+
+.film__rail-step {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(212, 221, 231, 0.28);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(212, 221, 231, 0.7);
+  background: rgba(8, 20, 34, 0.4);
+  transition: color 240ms ease-out, background-color 240ms ease-out, border-color 240ms ease-out;
+}
+
+.film__rail-step.is-current {
+  color: var(--color-neutral-900);
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.film__rail-step.is-past {
+  color: var(--film-ink);
+  border-color: rgba(252, 175, 42, 0.6);
+}
+
+/* "See it in action" lands at the Trigger step (one leg into the flight). */
+.film__spacer {
+  position: relative;
+}
+
+.film__anchor {
+  position: absolute;
+  top: 118vh;
+  left: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* ---------- After the film ---------- */
+.film-after,
+.film-page #cta-placeholder,
+.film-page #footer-placeholder {
+  position: relative;
+  z-index: 30;
+}
+
+/* Extra products under the two product cards. */
+.product-extras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  max-width: 1200px;
+  margin: var(--space-8) auto 0;
+  padding: 0 var(--space-4);
+}
+
+.product-extras__item {
+  padding: var(--space-6);
+  background: rgba(28, 47, 64, 0.96);
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.product-extras__name {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-neutral-50);
+}
+
+.product-extras__text {
+  margin: 0 0 var(--space-4);
+  color: var(--color-neutral-50);
+}
+
+.product-extras__link {
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 700px) {
+  .film__scrim {
+    background: linear-gradient(180deg, rgba(8, 20, 34, 0.82) 0%, rgba(8, 20, 34, 0.55) 45%, rgba(8, 20, 34, 0.1) 70%, rgba(8, 20, 34, 0.55) 100%);
+  }
+
+  .film__block--hero,
+  .film__block--finale {
+    top: calc(60px + 1.75rem);
+  }
+
+  .film__block--step {
+    top: calc(60px + 2rem);
+    translate: none;
+  }
+
+  .film__title {
+    font-size: clamp(2.5rem, 1.4rem + 6vw, 3.4rem);
+  }
+
+  .film__proof {
+    font-size: 0.875rem;
+  }
+
+  .film__rail-step {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.6875rem;
+  }
+
+  .product-extras {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
