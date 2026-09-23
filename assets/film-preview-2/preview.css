@@ -1,6 +1,6 @@
 /* Preview-only enhancements; the existing homepage and its bundle stay intact. */
 .preview-page { --preview-deep: #0b1b2c; background: var(--preview-deep); }
-.preview-page::before, .preview-page::after { content: none; }
+.preview-page::before, .preview-page::after { content: none; background-image: none; }
 .preview-page [hidden] { display: none !important; }
 .preview-page .hero__mascot, .preview-page .hero__actions { animation: none !important; }
 .preview-page .u-animate-on-scroll { opacity: 1; transform: none; }
