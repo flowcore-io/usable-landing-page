@@ -1,6 +1,17 @@
 /* Preview-only enhancements; the existing homepage and its bundle stay intact. */
 .preview-page { --preview-deep: #0b1b2c; background: var(--preview-deep); }
 .preview-page::before, .preview-page::after { content: none; background-image: none; }
+/* The film fades into Julius's sea texture. Load it only once the optional
+   story is ready, so still mode keeps its lightweight background. */
+.preview-page.preview-film-active:not(.preview-film-pending) { background: var(--color-neutral-900); }
+.preview-page.preview-film-active:not(.preview-film-pending)::before {
+  content: '';
+  background-image: url('/assets/images/sandbox/seaweed+nudibranch_tile_seamless.webp');
+}
+.preview-page.preview-film-active:not(.preview-film-pending)::after {
+  content: '';
+  background: radial-gradient(ellipse at center, transparent 25%, color-mix(in srgb, var(--color-neutral-900) 90%, transparent) 100%), color-mix(in srgb, var(--color-neutral-900) 80%, transparent);
+}
 .preview-page [hidden] { display: none !important; }
 .preview-page .hero__mascot, .preview-page .hero__actions { animation: none !important; }
 .preview-page .u-animate-on-scroll { opacity: 1; transform: none; }
@@ -31,9 +42,11 @@
 .preview-page .preview-noscript { position: relative; z-index: 1000; margin-top: 64px; display: flex; justify-content: center; gap: 1.5rem; padding: 1rem; }
 .preview-page .preview-noscript a { color: var(--color-orange); }
 .preview-film-pending #adaptive-film { visibility: hidden; height: 0; overflow: hidden; }
-.preview-film-active .preview-hero { min-height: 0; padding: 4rem 0 2rem; background: var(--preview-deep); position: relative; z-index: 30; }
+.preview-page.preview-film-active:not(.preview-film-pending) .preview-hero { min-height: 0; padding: 4rem 0 2rem; background: transparent; position: relative; z-index: 30; }
 .preview-film-active .preview-hero__art, .preview-film-active .preview-hero::after, .preview-film-active .hero__content { display: none; }
 .preview-film-active .preview-hero .hero__container { display: block; }
+.preview-film-active .preview-hero .hero__visual { justify-content: center; }
+.preview-film-active .memory-cycle { background: var(--color-neutral-900-45); }
 .preview-film-controls { position: fixed; z-index: 100; bottom: 1rem; right: 1rem; display: flex; flex-wrap: wrap; gap: .5rem; }
 .preview-film-active .film__rail { bottom: 5.5rem; }
 .preview-film-active .film__world { z-index: 1; }

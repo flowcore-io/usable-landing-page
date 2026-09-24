@@ -28,6 +28,12 @@ errors remain on their posters without retry loops. Invisible film scenes and th
 outer finale fade are inert to keyboard navigation. These files do not modify the
 original preview's engine or shared site styles.
 
+After the optional film mounts, the page restores the original sea texture and
+vignette so the final scene fades into the textured page. The compact memory
+diagram is centered, and its section is transparent rather than an opaque block.
+The texture (about 290 KB) is requested only in successfully mounted film mode;
+the still page and failed film initialization keep their lightweight background.
+
 Navbar, CTA and footer are copied from the shared components into this unlisted
 preview so essential content does not depend on their asynchronous loader. Keep
 these copies aligned if shared component content changes before promotion.
